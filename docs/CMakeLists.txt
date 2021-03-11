@@ -6,7 +6,7 @@ if (DOXYGEN_FOUND)
     message("Building Docs")
 
     add_custom_target(
-            doc ALL
+            docs ALL
             COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE}
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             COMMENT "Generating API documentation with Doxygen"
