@@ -1,0 +1,10 @@
+PROJECT_NAME = Backend
+
+OUTPUT_DIRECTORY = .
+INPUT = ../src/main ../src/test
+
+GENERATE_HTML = YES
+HTML_OUTPUT = docs/
+HTML_FILE_EXTENSION = .html
+
+GENERATE_LATEX = NO

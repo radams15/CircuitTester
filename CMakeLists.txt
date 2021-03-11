@@ -8,14 +8,16 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
+set(MAKE_DOCS ON)
+set(DO_TESTS ON)
+
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 
 find_package(QT NAMES Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 
-if(CMAKE_BUILD_TYPE MATCHES DEBUG) # if debugging, build tests
+if(DO_TESTS) # if debugging, build tests
     message("Tests Enabled")
 
     add_subdirectory(lib/doctest)
@@ -24,5 +26,9 @@ if(CMAKE_BUILD_TYPE MATCHES DEBUG) # if debugging, build tests
 else()
     message("Tests Disabled!")
 endif()
+
+if(MAKE_DOCS)
+    add_subdirectory(docs)
+endif(MAKE_DOCS)
 
 add_subdirectory(src/main)
