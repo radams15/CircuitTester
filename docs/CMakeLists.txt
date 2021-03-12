@@ -1,8 +1,8 @@
-option(BUILD_DOC "Build documentation" ON)
-
-set(DOXYFILE "${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in")
 find_package(Doxygen)
 if (DOXYGEN_FOUND)
+    option(BUILD_DOC "Build documentation" ON)
+
+    set(DOXYFILE "${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in")
     message("Building Docs")
 
     add_custom_target(
@@ -16,3 +16,5 @@ if (DOXYGEN_FOUND)
 else (DOXYGEN_FOUND)
     message("Doxygen need to be installed to generate the documentation")
 endif (DOXYGEN_FOUND)
+
+return(TRUE)
