@@ -43,7 +43,7 @@ install(TARGETS CircuitTester
         RUNTIME DESTINATION ${BUILD_DIR}/release/bin)
 
 
-add_custom_target(Qt5CopyBinaries
+add_custom_target(copy_libs
   COMMAND ${CMAKE_COMMAND} -E copy ${Qt5Core_DIR}/../../../bin/Qt5Cored.dll         ${BUILD_DIR}/debug/bin
   COMMAND ${CMAKE_COMMAND} -E copy ${Qt5Core_DIR}/../../../bin/Qt5Guid.dll          ${BUILD_DIR}/debug/bin
   COMMAND ${CMAKE_COMMAND} -E copy ${Qt5Core_DIR}/../../../bin/Qt5Widgetsd.dll      ${BUILD_DIR}/debug/bin
