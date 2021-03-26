@@ -8,9 +8,10 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(MAKE_DOCS ON)
+set(MAKE_DOCS OFF)
 set(DO_TESTS ON)
 
+set(DOCTEST_NO_INSTALL ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -32,3 +33,4 @@ if(MAKE_DOCS)
 endif(MAKE_DOCS)
 
 add_subdirectory(src/main)
+

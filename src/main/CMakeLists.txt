@@ -1,3 +1,13 @@
+if(APPLE)
+    set(SYS "macos")
+elseif(UNIX)
+    set(SYS "unix")
+elseif(WIN32)
+    set(SYS "windows")
+else()
+    set(SYS "unknown")
+endif()
+
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
@@ -21,3 +31,11 @@ else()
 endif()
 
 target_link_libraries(CircuitTester PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
+install(TARGETS CircuitTester
+        CONFIGURATIONS Debug
+        RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/builds/${SYS}/debug/bin)
+
+install(TARGETS CircuitTester
+        CONFIGURATIONS Release
+        RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/builds/${SYS}/release/bin)
