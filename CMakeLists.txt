@@ -22,6 +22,7 @@ if(DO_TESTS) # if debugging, build tests
     message("Tests Enabled")
 
     add_subdirectory(lib/doctest)
+    add_subdirectory(lib/googletest)
     add_subdirectory(src/test)
 
 else()
@@ -33,4 +34,3 @@ if(MAKE_DOCS)
 endif(MAKE_DOCS)
 
 add_subdirectory(src/main)
-

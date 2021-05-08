@@ -10,9 +10,18 @@ endif()
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        )
+        UI/mainwindow.cpp
+        UI/mainwindow.h
+        Analysis/Equation.cpp
+        Analysis/Equation.h
+        Analysis/MNACircuit.cpp
+        Analysis/MNACircuit.h
+        Analysis/MNAElement.cpp
+        Analysis/MNAElement.h
+        Analysis/MNASolution.cpp
+        Analysis/MNASolution.h
+        Analysis/MNA.h
+        Components/Battery.cpp Components/Battery.h Components/Resistor.cpp Components/Resistor.h Components/CurrentSource.cpp Components/CurrentSource.h)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(CircuitTester
@@ -30,6 +39,12 @@ else()
     endif()
 endif()
 
+set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen-3.3.9)
+set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/lib)
+
+find_package(Eigen3 3.3.9 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
+
 target_link_libraries(CircuitTester PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
 set(BUILD_DIR ${PROJECT_SOURCE_DIR}/builds/${SYS})
@@ -44,14 +59,7 @@ install(TARGETS CircuitTester
 
 
 add_custom_target(copy_libs
-  COMMAND ${CMAKE_COMMAND} -E copy ${Qt5Core_DIR}/../../../bin/Qt5Cored.dll         ${BUILD_DIR}/debug/bin
-  COMMAND ${CMAKE_COMMAND} -E copy ${Qt5Core_DIR}/../../../bin/Qt5Guid.dll          ${BUILD_DIR}/debug/bin
-  COMMAND ${CMAKE_COMMAND} -E copy ${Qt5Core_DIR}/../../../bin/Qt5Widgetsd.dll      ${BUILD_DIR}/debug/bin
-
-  COMMAND ${CMAKE_COMMAND} -E copy ${Qt5Core_DIR}/../../../bin/Qt5Core.dll         ${BUILD_DIR}/release/bin
-  COMMAND ${CMAKE_COMMAND} -E copy ${Qt5Core_DIR}/../../../bin/Qt5Gui.dll          ${BUILD_DIR}/release/bin
-  COMMAND ${CMAKE_COMMAND} -E copy ${Qt5Core_DIR}/../../../bin/Qt5Widgets.dll      ${BUILD_DIR}/release/bin
-
-  # Output Message
-  COMMENT "Copying Qt binaries from '${Qt5Core_DIR}/../../bin/' to '${CMAKE_BINARY_DIR}'" VERBATIM
+        COMMAND windeployqt ${BUILD_DIR}/release/bin
+        # Output Message
+        COMMENT "Copying Qt binaries from '${Qt5Core_DIR}/../../bin/' to '${CMAKE_BINARY_DIR}'" VERBATIM
 )
