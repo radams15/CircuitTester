@@ -1,3 +1,6 @@
+/** @file main.cpp
+ * This is the main entry point of the program.
+ */
 #include <iostream>
 
 
@@ -9,10 +12,14 @@
 #include "Analysis/MNASolution.h"
 #include "Analysis/MNACircuit.h"
 
-#include "Analysis/Components/Battery.h"
-#include "Analysis/Components/Resistor.h"
+#include "Components/Battery.h"
+#include "Components/Resistor.h"
 
 
+/** @brief Main GUI method.
+ * This method runs the QT GUI code and
+ * returns the status code of it.
+ */
 int guiMain(int argc, char** argv){
     QApplication a(argc, argv);
     MainWindow w;
@@ -20,6 +27,9 @@ int guiMain(int argc, char** argv){
     return QApplication::exec();
 }
 
+/** @brief Main method.
+ * This is the main program entry point.
+ */
 int main(int argc, char** argv){
     auto bat1 = new Battery(0, 1, -4);
     auto bat2 = new Battery(1, 2, -4);

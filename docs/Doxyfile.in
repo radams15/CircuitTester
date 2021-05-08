@@ -1,4 +1,4 @@
-PROJECT_NAME = Backend
+PROJECT_NAME = Circuit Simulator
 
 OUTPUT_DIRECTORY = .
 INPUT = ../src/main ../src/test
@@ -6,5 +6,8 @@ INPUT = ../src/main ../src/test
 GENERATE_HTML = YES
 HTML_OUTPUT = docs/
 HTML_FILE_EXTENSION = .html
+
+EXTRACT_ALL = YES
+SOURCE_BROWSER = YES
 
 GENERATE_LATEX = NO

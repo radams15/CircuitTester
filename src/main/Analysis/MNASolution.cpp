@@ -11,18 +11,18 @@ MNASolution::MNASolution(std::map<int, double> nodeVoltages, std::vector<MNAElem
 }
 
 bool MNASolution::approxEquals(MNASolution otherMnaSolution) {
-    std::vector<int> keys;
-    std::vector<int> otherKeys;
+    std::vector<int> nodes; // The nodes of this circuit.
+    std::vector<int> otherNodes; // The nodes of the circuit to compare to.
 
     for(auto n : nodeVoltages){
-        keys.push_back(n.first);
+        nodes.push_back(n.first);
     }
 
     for(auto n : otherMnaSolution.nodeVoltages){
-        otherKeys.push_back(n.first);
+        otherNodes.push_back(n.first);
     }
 
-    for(auto key : keys){
+    for(auto key : nodes){
         if(!numApproxEquals(getNodeVoltage(key), otherMnaSolution.getNodeVoltage(key))){
             return false;
         }
