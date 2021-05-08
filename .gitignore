@@ -53,6 +53,5 @@ compile_commands.json
 *.DS_Store
 
 #doxygen
-/docs/docs/
-builds/
-/chroot*
+/docs/docs/*
+/builds/
