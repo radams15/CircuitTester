@@ -39,7 +39,7 @@ else()
     endif()
 endif()
 
-set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen-3.3.9)
+set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/lib)
 
 find_package(Eigen3 3.3.9 REQUIRED)

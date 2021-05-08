@@ -21,7 +21,6 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 if(DO_TESTS) # if debugging, build tests
     message("Tests Enabled")
 
-    add_subdirectory(lib/doctest)
     add_subdirectory(lib/googletest)
     add_subdirectory(src/test)
 

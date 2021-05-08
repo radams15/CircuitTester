@@ -18,10 +18,10 @@ set(C_FILES
         ../main/Components/CurrentSource.cpp
         ../main/Components/CurrentSource.h)
 
-set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen-3.3.9)
+set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/lib)
 
-find_package(Eigen3 3.3.9 REQUIRED)
+find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
 add_executable(test ${TEST_FILES} ${C_FILES})
