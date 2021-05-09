@@ -9,15 +9,17 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
 set(MAKE_DOCS ON)
-set(DO_TESTS ON)
-set(MAKE_PROG ON)
+set(DO_TESTS ON CACHE BOOL "Enable Testing")
+set(MAKE_PROG ON CACHE BOOL "Enable building program")
 
 set(DOCTEST_NO_INSTALL ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt5 COMPONENTS Widgets REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+if(DO_TESTS OR MAKE_PROG)
+    find_package(QT NAMES Qt5 COMPONENTS Widgets REQUIRED)
+    find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+endif()
 
 if(DO_TESTS) # if debugging, build tests
     message("Tests Enabled")
