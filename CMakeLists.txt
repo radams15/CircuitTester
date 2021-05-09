@@ -10,6 +10,7 @@ set(CMAKE_AUTORCC ON)
 
 set(MAKE_DOCS ON)
 set(DO_TESTS ON)
+set(MAKE_PROG ON)
 
 set(DOCTEST_NO_INSTALL ON)
 set(CMAKE_CXX_STANDARD 11)
@@ -32,4 +33,6 @@ if(MAKE_DOCS)
     add_subdirectory(docs)
 endif(MAKE_DOCS)
 
-add_subdirectory(src/main)
+IF(MAKE_PROG)
+    add_subdirectory(src/main)
+endif(MAKE_PROG)

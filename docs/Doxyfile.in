@@ -1,7 +1,7 @@
 PROJECT_NAME = Circuit Simulator
 
 OUTPUT_DIRECTORY = .
-INPUT = ../src/main ../src/test
+INPUT = ../src/main ../src/main/Analysis ../src/main/Components ../src/main/UI ../src/test
 
 GENERATE_HTML = YES
 HTML_OUTPUT = docs/
@@ -11,3 +11,6 @@ EXTRACT_ALL = YES
 SOURCE_BROWSER = YES
 
 GENERATE_LATEX = NO
+
+HTML_EXTRA_STYLESHEET = customdoxygen.css
+LAYOUT_FILE = DoxygenLayout.xml
