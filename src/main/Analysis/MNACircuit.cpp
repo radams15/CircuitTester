@@ -51,7 +51,7 @@ MNACircuit::MNACircuit(std::vector<MNAElement *> elements) {
     }
 }
 
-int MNACircuit::getCurrentCount() {
+int MNACircuit::getNumUnknownCurrents() {
     int freeResistors = 0;
     for(auto r : resistors){
         if(r->value == 0){
@@ -63,10 +63,10 @@ int MNACircuit::getCurrentCount() {
 }
 
 int MNACircuit::getNumVars() {
-    return nodeCount+getCurrentCount();
+    return nodeCount + getNumUnknownCurrents();
 }
 
-double MNACircuit::getCurrentSourceTotal(int nodeIndex) {
+double MNACircuit::getCurrentTotal(int nodeIndex) {
     double numCurrentSources = 0.0;
 
     for(auto c : currentSources){
@@ -82,7 +82,7 @@ double MNACircuit::getCurrentSourceTotal(int nodeIndex) {
     return numCurrentSources;
 }
 
-std::vector<Term *>* MNACircuit::getCurrentTerms(int node, int side, int sign) {
+std::vector<Term *>* MNACircuit::getCurrents(int node, int side, int sign) {
     auto* out = new std::vector<Term*>;
 
     for(auto b : batteries){
@@ -109,7 +109,7 @@ std::vector<Term *>* MNACircuit::getCurrentTerms(int node, int side, int sign) {
     return out;
 }
 
-std::vector<int>* MNACircuit::getReferenceNodeIds() {
+std::vector<int>* MNACircuit::getRefNodes() {
     auto* out = new std::vector<int>;
 
     std::vector<int> toVisit;
@@ -122,7 +122,7 @@ std::vector<int>* MNACircuit::getReferenceNodeIds() {
 
         out->push_back(refNodeId);
 
-        std::vector<int>* connectedNodes = getConnectedNodeIds(refNodeId);
+        std::vector<int>* connectedNodes = getConnectedNodes(refNodeId);
 
         for(auto c : *connectedNodes){
             toVisit.erase(std::remove_if(toVisit.begin(), toVisit.end(), [c](int i){
@@ -134,7 +134,7 @@ std::vector<int>* MNACircuit::getReferenceNodeIds() {
     return out;
 }
 
-std::vector<int> *MNACircuit::getConnectedNodeIds(int node) {
+std::vector<int> *MNACircuit::getConnectedNodes(int node) {
     auto* visited = new std::vector<int>;
     std::vector<int> toVisit = {node};
 
@@ -144,8 +144,8 @@ std::vector<int> *MNACircuit::getConnectedNodeIds(int node) {
         visited->push_back(nodeToVisit);
 
         for(auto e : elements){
-            if(e->containsNode(nodeToVisit)){
-                int oppositeNode = e->getOppositeNode(nodeToVisit);
+            if(e->contains(nodeToVisit)){
+                int oppositeNode = e->opposite(nodeToVisit);
                 if(! std::count(visited->begin(), visited->end(), oppositeNode)){
                     toVisit.push_back(oppositeNode);
                 }
@@ -160,7 +160,7 @@ std::vector<int> *MNACircuit::getConnectedNodeIds(int node) {
 std::vector<Equation *>* MNACircuit::getEquations() {
     auto* equations = new std::vector<Equation *>;
 
-    std::vector<int>* refNodeIds = getReferenceNodeIds();
+    std::vector<int>* refNodeIds = getRefNodes();
 
     for(auto r : *refNodeIds){
         equations->push_back(new Equation(0, {
@@ -170,14 +170,14 @@ std::vector<Equation *>* MNACircuit::getEquations() {
 
     for(auto n : nodes){
         if(! std::count(refNodeIds->begin(), refNodeIds->end(), n)){
-            std::vector<Term *>* incoming = getCurrentTerms(n, 1, -1);
-            std::vector<Term *>* outgoing = getCurrentTerms(n, 0, +1);
+            std::vector<Term *>* incoming = getCurrents(n, 1, -1);
+            std::vector<Term *>* outgoing = getCurrents(n, 0, +1);
 
             auto* conserved = new std::vector<Term *>;
             conserved->insert(conserved->end(), incoming->begin(), incoming->end());
             conserved->insert(conserved->end(), outgoing->begin(), outgoing->end());
 
-            equations->push_back(new Equation(getCurrentSourceTotal(n), *conserved));
+            equations->push_back(new Equation(getCurrentTotal(n), *conserved));
         }
     }
 
@@ -234,8 +234,8 @@ MNASolution *MNACircuit::solve() {
     auto z = Eigen::MatrixXd(equations->size(), 1).setZero();
 
     for(int i=0 ; i<equations->size() ; i++){
-        equations->at(i)->stamp(i, &A, &z, [this, unknowns](Unknown* u) {
-            return getIndexByEquals(unknowns, u);
+        equations->at(i)->apply(i, &A, &z, [this, unknowns](Unknown *u) {
+            return getElementIndex(unknowns, u);
         });
     }
 
@@ -244,7 +244,7 @@ MNASolution *MNACircuit::solve() {
     auto* voltageMap = new std::map<int, double>;
 
     for(auto v : *unknownVoltages){
-        auto rhs = x(getIndexByEquals(unknowns, v));
+        auto rhs = x(getElementIndex(unknowns, v));
 
         voltageMap->insert(std::pair<int, double>(v->node, rhs));
     }
@@ -252,7 +252,7 @@ MNASolution *MNACircuit::solve() {
     std::vector<MNAElement*> elems;
 
     for(auto c : *unknownCurrents){
-        c->element->currentSolution = x(getIndexByEquals(unknowns, c), 0);
+        c->element->currentSolution = x(getElementIndex(unknowns, c), 0);
         elems.push_back(c->element);
 
     }
@@ -260,7 +260,7 @@ MNASolution *MNACircuit::solve() {
     return new MNASolution(*voltageMap, elems);
 }
 
-int MNACircuit::getIndexByEquals(std::vector<Unknown*>* array, Unknown* element) {
+int MNACircuit::getElementIndex(std::vector<Unknown*>* array, Unknown* element) {
     for(int i=0 ; i<array->size() ; i++){
         if(array->at(i)->equals(element)){
             return i;

@@ -16,46 +16,12 @@ std::string Term::str() {
     return prefix + variable->toTermName();
 }
 
-UnknownCurrent::UnknownCurrent(MNAElement *element) : Unknown(CURRENT) {
-    this->element = element;
-}
-
-std::string UnknownCurrent::toTermName() {
-    return "I"+std::to_string(element->n0)+"_"+std::to_string(element->n1);
-}
-
-bool UnknownCurrent::equals(Unknown* other) {
-    if(other->t != Unknown::CURRENT){
-        return false;
-    }
-
-    auto* c = (UnknownCurrent*) other;
-    return c->element == element;
-}
-
-UnknownVoltage::UnknownVoltage(int node)  : Unknown(VOLTAGE) {
-    this->node = node;
-}
-
-std::string UnknownVoltage::toTermName() {
-    return "V"+std::to_string(node);
-}
-
-bool UnknownVoltage::equals(Unknown *other) {
-    if(other->t != Unknown::VOLTAGE){
-        return false;
-    }
-
-    auto* c = (UnknownVoltage*) other;
-    return c->node == node;
-}
-
 Equation::Equation(double value, std::vector<Term*> terms) {
     this->value = value;
     this->terms = terms;
 }
 
-void Equation::stamp(int row, Eigen::MatrixXd* a, Eigen::MatrixXd* z, std::function<int(Unknown*)> getIndexFunc) {
+void Equation::apply(int row, Eigen::MatrixXd* a, Eigen::MatrixXd* z, std::function<int(Unknown*)> getIndexFunc) {
     (*z)(row, 0) = value;
 
     for(auto t : terms){

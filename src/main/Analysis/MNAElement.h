@@ -28,11 +28,11 @@ public:
 
     MNAElement* withCurrentSolution(double newCurrentSolution);
 
-    bool containsNode(int n);
+    bool contains(int n);
 
-    int getOppositeNode(int n);
+    int opposite(int n);
 
-    bool equals (const MNAElement& other) const;
+    bool equals(MNAElement other);
 };
 
 

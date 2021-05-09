@@ -2,7 +2,7 @@
  * This tests the modified nodal analysis code
  */
 //
-// Created by rhys on 01/02/2021.
+// Created by rhys on 09/05/2021.
 //
 
 #include <gtest/gtest.h>
@@ -33,7 +33,7 @@ TEST(NodalAnalysis, OneResistorCurrent){
 
     auto sol = cir->solve();
 
-    ASSERT_EQ(sol->approxEquals(*dessol), true);
+    ASSERT_EQ(sol->equals(*dessol), true);
 
     ASSERT_EQ(sol->getCurrentForResistor(*res), 2.5);
 }
@@ -63,7 +63,7 @@ TEST(NodalAnalysis, TwoResistorsInSeries){
 
     auto sol = cir->solve();
 
-    ASSERT_EQ(sol->approxEquals(*dessol), true);
+    ASSERT_EQ(sol->equals(*dessol), true);
 
     ASSERT_EQ(sol->getCurrentForResistor(*res1), 1.0);
     ASSERT_EQ(sol->getCurrentForResistor(*res2), 0.5);
@@ -92,7 +92,7 @@ TEST(NodalAnalysis, TwoBatteriesInSeries){
 
     auto sol = cir->solve();
 
-    ASSERT_EQ(sol->approxEquals(*dessol), true);
+    ASSERT_EQ(sol->equals(*dessol), true);
 }
 
 /**
@@ -119,13 +119,5 @@ TEST(NodalAnalysis, TwoBatteriesInParallel){
 
     auto sol = cir->solve();
 
-    for(auto v : sol->elements){
-        std::cout << v->n0 << "=>" << v->n1 << " @ " << v->currentSolution << std::endl;
-    }
-
-    for(auto v : sol->nodeVoltages){
-        std::cout << v.first << ":" << v.second << std::endl;
-    }
-
-    ASSERT_EQ(sol->approxEquals(*dessol), true);
+    ASSERT_EQ(sol->equals(*dessol), true);
 }

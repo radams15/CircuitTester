@@ -13,20 +13,19 @@
 
 class MNASolution {
 private:
-
     bool numApproxEquals(double a, double b);
 
-    bool hasAllCurrents(MNASolution mnaSolution);
+    bool hasAllElements(MNASolution mnaSolution);
 
-    bool hasMatchingElement(MNAElement* element);
+    bool containsElement(MNAElement* element);
 
 public:
-    std::map<int, double> nodeVoltages;
+    std::map<int, double> voltageMap;
     std::vector<MNAElement*> elements;
 
-    MNASolution(std::map<int, double> nodeVoltages, std::vector<MNAElement*> elements);
+    MNASolution(std::map<int, double> voltageMap, std::vector<MNAElement*> elements);
 
-    bool approxEquals(MNASolution mnaSolution);
+    bool equals(MNASolution mnaSolution);
 
     double getNodeVoltage(int nodeIndex);
     double getVoltage(MNAElement element);

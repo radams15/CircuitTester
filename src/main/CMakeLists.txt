@@ -21,7 +21,7 @@ set(PROJECT_SOURCES
         Analysis/MNASolution.cpp
         Analysis/MNASolution.h
         Analysis/MNA.h
-        Components/Battery.cpp Components/Battery.h Components/Resistor.cpp Components/Resistor.h Components/CurrentSource.cpp Components/CurrentSource.h)
+        Components/Battery.cpp Components/Battery.h Components/Resistor.cpp Components/Resistor.h Components/CurrentSource.cpp Components/CurrentSource.h Analysis/Unknown.cpp Analysis/Unknown.h)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(CircuitTester

@@ -19,15 +19,15 @@ MNAElement* MNAElement::withCurrentSolution(double newCurrentSolution) {
     return new MNAElement(n0, n1, type, value, newCurrentSolution);
 }
 
-bool MNAElement::containsNode(int n) {
+bool MNAElement::contains(int n) {
     return n == n0 || n == n1;
 }
 
-int MNAElement::getOppositeNode(int n) {
+int MNAElement::opposite(int n) {
     return n == n0? n1 : n0;
 }
 
-bool MNAElement::equals(const MNAElement &other) const {
+bool MNAElement::equals(MNAElement other) {
     if(other.n0 == n0 && other.n1 == n1){
         return true;
     }

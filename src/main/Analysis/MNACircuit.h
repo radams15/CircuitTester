@@ -29,22 +29,23 @@ public:
 
     explicit MNACircuit(std::vector<MNAElement *> elements);
 
-    int getCurrentCount();
+    int getNumUnknownCurrents();
 
     int getNumVars();
-    double getCurrentSourceTotal(int nodeIndex);
 
-    std::vector<Term*>* getCurrentTerms(int node, int side, int sign);
+    double getCurrentTotal(int nodeIndex);
 
-    std::vector<int>* getReferenceNodeIds();
+    std::vector<Term*>* getCurrents(int node, int side, int sign);
 
-    std::vector<int>* getConnectedNodeIds(int node);
+    std::vector<int>* getRefNodes();
+
+    std::vector<int>* getConnectedNodes(int node);
 
     std::vector<Equation*>* getEquations();
 
     std::vector<UnknownCurrent*>* getUnknownCurrents();
 
-    int getIndexByEquals(std::vector<Unknown*>* array, Unknown* element);
+    int getElementIndex(std::vector<Unknown*>* array, Unknown* element);
 
     MNASolution* solve();
 };

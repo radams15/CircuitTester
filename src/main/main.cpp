@@ -47,13 +47,13 @@ int main(int argc, char** argv){
 
     auto sol = cir->solve();
 
-    if(sol->approxEquals(*dessol)){
+    if(sol->equals(*dessol)){
         std::cout << "Good\n";
     }else{
         std::cout << "Bad!\n";
     }
 
-    for(auto v : sol->nodeVoltages){
+    for(auto v : sol->voltageMap){
         std::cout << v.first << ": " << v.second << std::endl;
     }
 

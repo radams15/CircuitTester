@@ -5,34 +5,34 @@
 #include <iostream>
 #include "MNASolution.h"
 
-MNASolution::MNASolution(std::map<int, double> nodeVoltages, std::vector<MNAElement *> elements) {
-    this->nodeVoltages = nodeVoltages;
+MNASolution::MNASolution(std::map<int, double> voltageMap, std::vector<MNAElement *> elements) {
+    this->voltageMap = voltageMap;
     this->elements = elements;
 }
 
-bool MNASolution::approxEquals(MNASolution otherMnaSolution) {
+bool MNASolution::equals(MNASolution mnaSolution) {
     std::vector<int> nodes; // The nodes of this circuit.
     std::vector<int> otherNodes; // The nodes of the circuit to compare to.
 
-    for(auto n : nodeVoltages){
+    for(auto n : voltageMap){
         nodes.push_back(n.first);
     }
 
-    for(auto n : otherMnaSolution.nodeVoltages){
+    for(auto n : mnaSolution.voltageMap){
         otherNodes.push_back(n.first);
     }
 
     for(auto key : nodes){
-        if(!numApproxEquals(getNodeVoltage(key), otherMnaSolution.getNodeVoltage(key))){
+        if(!numApproxEquals(getNodeVoltage(key), mnaSolution.getNodeVoltage(key))){
             return false;
         }
     }
 
-    if((!hasAllCurrents(otherMnaSolution))){
+    if((!hasAllElements(mnaSolution))){
         return false;
     }
 
-    if(!otherMnaSolution.hasAllCurrents(*this)) {
+    if(!mnaSolution.hasAllElements(*this)) {
         return false;
     }
 
@@ -44,7 +44,7 @@ bool MNASolution::numApproxEquals(double a, double b) {
 }
 
 double MNASolution::getNodeVoltage(int nodeIndex) {
-    return nodeVoltages.at(nodeIndex);
+    return voltageMap.at(nodeIndex);
 }
 
 double MNASolution::getCurrentForResistor(MNAElement resistor) {
@@ -52,12 +52,12 @@ double MNASolution::getCurrentForResistor(MNAElement resistor) {
 }
 
 double MNASolution::getVoltage(MNAElement element) {
-    return nodeVoltages.at(element.n1) - nodeVoltages.at(element.n0);
+    return voltageMap.at(element.n1) - voltageMap.at(element.n0);
 }
 
-bool MNASolution::hasAllCurrents(MNASolution mnaSolution) {
+bool MNASolution::hasAllElements(MNASolution mnaSolution) {
     for(auto e : mnaSolution.elements){
-        if(!hasMatchingElement(e)){
+        if(!containsElement(e)){
             return false;
         }
     }
@@ -65,7 +65,7 @@ bool MNASolution::hasAllCurrents(MNASolution mnaSolution) {
     return true;
 }
 
-bool MNASolution::hasMatchingElement(MNAElement *element) {
+bool MNASolution::containsElement(MNAElement *element) {
     for(auto e : elements){
         if(e->n0 == element->n0 && e->n1 == element->n1 && numApproxEquals(e->currentSolution, element->currentSolution)){
             return true;
