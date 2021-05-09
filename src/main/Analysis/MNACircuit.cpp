@@ -83,6 +83,8 @@ double MNACircuit::getCurrentTotal(int nodeIndex) {
 }
 
 std::vector<Term *>* MNACircuit::getCurrents(int node, int side, int sign) {
+    if(sign != -1 and sign != 1) throw std::invalid_argument("Invalid Sign!");
+
     auto* out = new std::vector<Term*>;
 
     for(auto b : batteries){
@@ -134,7 +136,7 @@ std::vector<int>* MNACircuit::getRefNodes() {
     return out;
 }
 
-std::vector<int> *MNACircuit::getConnectedNodes(int node) {
+std::vector<int>* MNACircuit::getConnectedNodes(int node) {
     auto* visited = new std::vector<int>;
     std::vector<int> toVisit = {node};
 
