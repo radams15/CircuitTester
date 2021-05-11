@@ -44,19 +44,6 @@ TEST(MNACircuit, GetCurrentTotalNonExistant){
     ASSERT_EQ(c->getCurrentTotal(100), 0);
 }
 
-/** @brief getCurrents invalid sign I
- *
- * Type: invalid
- *
- * Data: sign = -2
- *
- * Expected: Controlled error thrown.
- */
-TEST(MNACircuit, GetCurrentsInvalidSign1){
-    auto c = new MNACircuit({new Battery(0, 0, 4)});
-    ASSERT_THROW(c->getCurrents(0, 0, -2), std::invalid_argument);
-}
-
 /** @brief getConnectedNodes invalid node
  *
  * Type: invalid

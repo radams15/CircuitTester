@@ -40,13 +40,13 @@ TEST(NodalAnalysis, OneResistorCurrent){
 
 
 /**
- * @brief Two Resistors In Series.
+ * @brief Two Resistors In Parallel.
  * Tests to see if the currents of two resistors
  * of resistances 10.0 &Omega; and 20.0 &Omega; on a
  * 10V battery are 1.0A and 0.5A respectively to test
  * current splitting.
  */
-TEST(NodalAnalysis, TwoResistorsInSeries){
+TEST(NodalAnalysis, TwoResistorsInParallel){
     auto bat = new Battery(0, 1, 10);
     auto res1 = new Resistor(1, 0, 10);
     auto res2 = new Resistor(1, 0, 20);
@@ -76,7 +76,7 @@ TEST(NodalAnalysis, TwoResistorsInSeries){
  * of 8.0V.
  */
 TEST(NodalAnalysis, TwoBatteriesInSeries){
-    auto bat1 = new Battery(0, 1, 4);
+    auto bat1 = new Battery(0, 1, 3);
     auto bat2 = new Battery(1, 2, 4);
     auto res = new Resistor(2, 0, 2);
 
@@ -84,11 +84,11 @@ TEST(NodalAnalysis, TwoBatteriesInSeries){
 
     std::map<int, double> vmap = {
             {0, 0.0},
-            {1, 4.0},
-            {2, 8.0},
+            {1, 3.0},
+            {2, 7.0},
     };
 
-    auto dessol = new MNASolution(vmap, {bat1->withCurrentSolution(4), bat2->withCurrentSolution(4)});
+    auto dessol = new MNASolution(vmap, {bat1->withCurrentSolution(3.5), bat2->withCurrentSolution(3.5)});
 
     auto sol = cir->solve();
 

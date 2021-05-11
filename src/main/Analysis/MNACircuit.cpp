@@ -7,12 +7,14 @@
 #include <Eigen/Dense>
 #include <iostream>
 
+#define CUR_IN 1
+#define CUR_OUT 0
 
 template<typename T>
-T vec_pop_front(std::vector<T>& vec){
+T MNACircuit::vecPopFront(std::vector<T>& vec){
     std::reverse(vec.begin(),vec.end()); // first becomes last, reverses the vector
-    T out = vec.back();
-    vec.pop_back(); // pop last
+    T out = vec.back(); // get last element
+    vec.pop_back(); // pop last element off the vector
     std::reverse(vec.begin(),vec.end()); // reverses it again, so the elements are in the same order as before
 
     return out;
@@ -25,6 +27,7 @@ MNACircuit::MNACircuit(std::vector<MNAElement *> elements) {
 
     this->elements = elements;
 
+    // Split the elements into the 3 types: battery, resistor and current source.
     for(auto e : elements){
         switch(e->type){
             case BATTERY:
@@ -39,13 +42,16 @@ MNACircuit::MNACircuit(std::vector<MNAElement *> elements) {
         }
     }
 
+    // Populates the nodeSet map - the name vesus the node number.
     for(auto e : elements){
         nodeSet.insert(std::pair<int, int>{e->n0, e->n0});
         nodeSet.insert(std::pair<int, int>{e->n1, e->n1});
     }
 
+    // Counts the number of nodes.
     nodeCount = nodeSet.size();
 
+    // Set nodes to just the node ids.
     for(auto n : nodeSet){
         nodes.push_back(n.second);
     }
@@ -82,8 +88,12 @@ double MNACircuit::getCurrentTotal(int nodeIndex) {
     return numCurrentSources;
 }
 
-std::vector<Term *>* MNACircuit::getCurrents(int node, int side, int sign) {
-    if(sign != -1 and sign != 1) throw std::invalid_argument("Invalid Sign!");
+std::vector<Term *>* MNACircuit::getCurrents(int node, int side) {
+    /*Convert the side to the current direction - if side is 0, current direction
+     * is 1, otherwise the current direction is -1*/
+    int currentDirection = side == 0 ? 1 : -1;
+
+    if(side != 0 and side != 1) throw std::invalid_argument("Invalid Side!");
 
     auto* out = new std::vector<Term*>;
 
@@ -91,7 +101,7 @@ std::vector<Term *>* MNACircuit::getCurrents(int node, int side, int sign) {
         int bside = side == 0? b->n0 : b->n1;
 
         if(bside == node) {
-            out->push_back(new Term(sign, new UnknownCurrent(b)));
+            out->push_back(new Term(currentDirection, new UnknownCurrent(b)));
         }
     }
 
@@ -99,12 +109,10 @@ std::vector<Term *>* MNACircuit::getCurrents(int node, int side, int sign) {
         int rside = side == 0 ? r->n0 : r->n1;
 
         if (rside == node && r->value == 0) {
-            out->push_back(new Term(sign, new UnknownCurrent(r)));
-        }
-
-        if(rside == node && r->value != 0){
-            out->push_back(new Term(-sign / r->value, new UnknownVoltage(r->n1 )));
-            out->push_back(new Term(sign / r->value, new UnknownVoltage(r->n0 )));
+            out->push_back(new Term(currentDirection, new UnknownCurrent(r)));
+        }else if(rside == node && r->value != 0){
+            out->push_back(new Term(-currentDirection / r->value, new UnknownVoltage(r->n1 )));
+            out->push_back(new Term(currentDirection / r->value, new UnknownVoltage(r->n0 )));
         }
     }
 
@@ -141,7 +149,7 @@ std::vector<int>* MNACircuit::getConnectedNodes(int node) {
     std::vector<int> toVisit = {node};
 
     while(! toVisit.empty()){
-        int nodeToVisit = vec_pop_front<int>(toVisit);
+        int nodeToVisit = vecPopFront<int>(toVisit);
 
         visited->push_back(nodeToVisit);
 
@@ -172,8 +180,8 @@ std::vector<Equation *>* MNACircuit::getEquations() {
 
     for(auto n : nodes){
         if(! std::count(refNodeIds->begin(), refNodeIds->end(), n)){
-            std::vector<Term *>* incoming = getCurrents(n, 1, -1);
-            std::vector<Term *>* outgoing = getCurrents(n, 0, +1);
+            std::vector<Term *>* incoming = getCurrents(n, CUR_IN);
+            std::vector<Term *>* outgoing = getCurrents(n, CUR_OUT);
 
             auto* conserved = new std::vector<Term *>;
             conserved->insert(conserved->end(), incoming->begin(), incoming->end());
@@ -223,6 +231,7 @@ MNASolution *MNACircuit::solve() {
     std::vector<UnknownCurrent*>* unknownCurrents = getUnknownCurrents();
     auto* unknownVoltages = new std::vector<UnknownVoltage*>;
 
+    // Create an UnknownVoltage for each node as we don't know any voltage for any node.
     for(auto v : nodes){
         unknownVoltages->push_back(new UnknownVoltage(v));
     }
@@ -231,30 +240,43 @@ MNASolution *MNACircuit::solve() {
 
     unknowns->insert(unknowns->end(), unknownVoltages->begin(), unknownVoltages->end());
 
-
+    //Make two matrices, one which is the width of the number of equations by the number
+    // of variables, and the other has a width of the number of equations but is only 1 wide
     auto A = Eigen::MatrixXd(equations->size(), getNumVars()).setZero();
     auto z = Eigen::MatrixXd(equations->size(), 1).setZero();
 
     for(int i=0 ; i<equations->size() ; i++){
+        //Apply the correct numbers of every equation onto the matrices,
+        //  passing in a lambda to find the index of each
+        //  term of the equation in class attribute unknowns.
         equations->at(i)->apply(i, &A, &z, [this, unknowns](Unknown *u) {
-            return getElementIndex(unknowns, u);
+            return getElementIndex<Unknown>(unknowns, u);
         });
     }
 
+    // Solve the matrix equation a = z
     Eigen::MatrixXd x = A.fullPivLu().solve(z); // https://eigen.tuxfamily.org/dox/group__TutorialLinearAlgebra.html
 
+    //std::cout << A << "\n\n" << z << "\n\n" << x << "\n\n";
+
+    // A map of which nodes have which voltages on the circuit.
     auto* voltageMap = new std::map<int, double>;
 
     for(auto v : *unknownVoltages){
-        auto rhs = x(getElementIndex(unknowns, v));
+        // Get the voltage out from the solved matrix at the index of the element
+        // in the vector of unknowns. As the solved matrix stores
+        auto voltage = x(getElementIndex<Unknown>(unknowns, v));
 
-        voltageMap->insert(std::pair<int, double>(v->node, rhs));
+        // Add to the voltage map
+        voltageMap->insert(std::pair<int, double>(v->node, voltage));
     }
 
+    //
     std::vector<MNAElement*> elems;
 
     for(auto c : *unknownCurrents){
-        c->element->currentSolution = x(getElementIndex(unknowns, c), 0);
+        // Set the new current for each element, as the matrix column 0 has the solved currents.
+        c->element->currentSolution = x(getElementIndex<Unknown>(unknowns, c), 0);
         elems.push_back(c->element);
 
     }
@@ -262,7 +284,8 @@ MNASolution *MNACircuit::solve() {
     return new MNASolution(*voltageMap, elems);
 }
 
-int MNACircuit::getElementIndex(std::vector<Unknown*>* array, Unknown* element) {
+template <typename T>
+int MNACircuit::getElementIndex(std::vector<T*>* array, T* element) {
     for(int i=0 ; i<array->size() ; i++){
         if(array->at(i)->equals(element)){
             return i;
