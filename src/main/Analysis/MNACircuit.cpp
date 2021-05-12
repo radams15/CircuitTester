@@ -42,19 +42,18 @@ MNACircuit::MNACircuit(std::vector<MNAElement *> elements) {
         }
     }
 
-    // Populates the nodeSet map - the name vesus the node number.
+    // Populates the nodes list.
     for(auto e : elements){
-        nodeSet.insert(std::pair<int, int>{e->n0, e->n0});
-        nodeSet.insert(std::pair<int, int>{e->n1, e->n1});
+        nodes.push_back(e->n0);
+        nodes.push_back(e->n1);
     }
+
+    // Remove duplicates in nodes by sorting then erasing duplicates.
+    std::sort(nodes.begin(), nodes.end());
+    nodes.erase(std::unique(nodes.begin(), nodes.end()), nodes.end());
 
     // Counts the number of nodes.
-    nodeCount = nodeSet.size();
-
-    // Set nodes to just the node ids.
-    for(auto n : nodeSet){
-        nodes.push_back(n.second);
-    }
+    nodeCount = nodes.size();
 }
 
 int MNACircuit::getNumUnknownCurrents() {
@@ -122,10 +121,7 @@ std::vector<Term *>* MNACircuit::getCurrents(int node, int side) {
 std::vector<int>* MNACircuit::getRefNodes() {
     auto* out = new std::vector<int>;
 
-    std::vector<int> toVisit;
-    for(auto n : nodeSet){
-        toVisit.push_back(n.second);
-    }
+    std::vector<int> toVisit = nodes; // Make a copy of the nodes vector.
 
     while(! toVisit.empty()){
         int refNodeId = toVisit.at(0);

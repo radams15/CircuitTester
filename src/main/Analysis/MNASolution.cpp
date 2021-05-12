@@ -40,7 +40,7 @@ bool MNASolution::equals(MNASolution mnaSolution) {
 }
 
 bool MNASolution::numApproxEquals(double a, double b) {
-    return std::abs(a-b) < 1e-6;
+    return fabs(a - b) <= ( (fabs(a) < fabs(b) ? fabs(b) : fabs(a)) * 1e-6);
 }
 
 double MNASolution::getNodeVoltage(int nodeIndex) {

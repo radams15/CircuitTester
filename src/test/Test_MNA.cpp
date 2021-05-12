@@ -70,6 +70,40 @@ TEST(NodalAnalysis, TwoResistorsInParallel){
 }
 
 /**
+ * @brief Parallel And Series Resistors.
+ *
+ * Two resistors in series (5 &Omega; and 10 &Omega;) connected to
+ * one 7 &Omega; resistor, connected to a 9V battery.
+ *
+ * Currents should be 0.58A, 0.29A and 0.87A respectively.
+ */
+TEST(NodalAnalysis, ParalellAndSeriesResistors){
+    auto bat = new Battery(0, 1, 9);
+    auto res1 = new Resistor(1, 2, 5);
+    auto res2 = new Resistor(1, 2, 10);
+    auto res3 = new Resistor(2, 0, 7);
+
+    auto cir = new MNACircuit({bat, res1, res2, res3});
+
+    std::map<int, double> vmap = {
+            {0, 0.0},
+            {1, 9.0},
+            {2, 6.09677},
+    };
+
+    auto dessol = new MNASolution(vmap, {bat->withCurrentSolution(0.870968)});
+
+    auto sol = cir->solve();
+
+    ASSERT_EQ(sol->equals(*dessol), true);
+
+    ASSERT_DOUBLE_EQ(round(sol->getCurrentForResistor(*res1)*100)/100, 0.58);
+    ASSERT_DOUBLE_EQ(round(sol->getCurrentForResistor(*res2)*100)/100, 0.29);
+    ASSERT_DOUBLE_EQ(round(sol->getCurrentForResistor(*res3)*100)/100, 0.87);
+}
+
+
+/**
  * @brief Two Batteries In Series.
  * Tests to see if the voltage of two 4.0V
  * batteries are added together to get a total

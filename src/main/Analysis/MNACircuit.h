@@ -32,9 +32,6 @@ private:
     /** @brief Holds all the MNAElements combined */
     std::vector<MNAElement*> elements;
 
-    /** @brief A map of node names against node values */
-    std::map<int, int> nodeSet;
-
     /** @brief The total number of nodes */
     int nodeCount;
 
