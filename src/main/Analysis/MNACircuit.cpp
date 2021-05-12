@@ -1,4 +1,4 @@
-//
+g//
 // Created by rhys on 18/04/2021.
 //
 
@@ -21,14 +21,20 @@ T MNACircuit::vecPopFront(std::vector<T>& vec){
 }
 
 MNACircuit::MNACircuit(std::vector<MNAElement *> elements) {
+    // Clear the batteries, resistors and currentSources lists just in case they
+    // contain some elements for any reason.
     batteries.clear();
     resistors.clear();
     currentSources.clear();
 
+    // Instead of adding the 3 lists, just copy the passed list into the
+    // class attribute.
     this->elements = elements;
 
     // Split the elements into the 3 types: battery, resistor and current source.
     for(auto e : elements){
+        // Each Element object is checked for its type attribute to sort it.
+        // This element was set by the Resistor, Battery, CurrentSource or derivitave classes.
         switch(e->type){
             case BATTERY:
                 batteries.push_back(e);
@@ -58,17 +64,23 @@ MNACircuit::MNACircuit(std::vector<MNAElement *> elements) {
 }
 
 int MNACircuit::getNumUnknownCurrents() {
-    int freeResistors = 0;
+    int zeroResistors = 0;
+
+    // Every resistor with a zero resistance has
+    // an unknown current that needs to be counted.
     for(auto r : resistors){
         if(r->value == 0){
-            freeResistors++;
+            zeroResistors++;
         }
     }
 
-    return batteries.size()-freeResistors;
+    // Add the zero resistance resistors to the number of batteries.
+    return batteries.size()+zeroResistors;
 }
 
 int MNACircuit::getNumVars() {
+    // The node count is the number of voltage nodes, and each node
+    // has an unknown voltage.
     return nodeCount + getNumUnknownCurrents();
 }
 
@@ -77,10 +89,12 @@ double MNACircuit::getCurrentTotal(int nodeIndex) {
 
     for(auto c : currentSources){
         if(c->n1 == nodeIndex){
+            // Convention states that incoming current is negative
             numCurrentSources -= c->value;
         }
 
         if(c->n0 == nodeIndex){
+	    // Convention states that outgoing current is positive.
             numCurrentSources += c->value;
         }
     }
@@ -93,24 +107,34 @@ std::vector<Term *>* MNACircuit::getCurrents(int node, int side) {
      * is 1, otherwise the current direction is -1*/
     int currentDirection = side == 0 ? 1 : -1;
 
+    // Check that the side is valid - either 0 or 1.
     if(side != 0 and side != 1) throw std::invalid_argument("Invalid Side!");
 
+    // The current terms to return.
     auto* out = new std::vector<Term*>;
 
     for(auto b : batteries){
-        int bside = side == 0? b->n0 : b->n1;
+        // Convert node index into node value.
+        int n = side == 0? b->n0 : b->n1;
 
-        if(bside == node) {
+	// If this is the node that was specified in the parameter.
+        if(n == node) {
+	    // Batteries have an unknown current.
             out->push_back(new Term(currentDirection, new UnknownCurrent(b)));
         }
     }
 
     for(auto r : resistors) {
-        int rside = side == 0 ? r->n0 : r->n1;
+        // Convert node index into node value.
+        int n = side == 0 ? r->n0 : r->n1;
 
-        if (rside == node && r->value == 0) {
+	// If correct node and a zero-resistance resistor.
+        if (n == node && r->value == 0) {
+	    // The resistor has an unknown current, make the object.
             out->push_back(new Term(currentDirection, new UnknownCurrent(r)));
-        }else if(rside == node && r->value != 0){
+        }else if(n == node && r->value != 0){
+	    // If the resistance is not 0, the resistor has an unknown voltage.
+	    // The voltage enters and leaves the component, so there are 2 terms.
             out->push_back(new Term(-currentDirection / r->value, new UnknownVoltage(r->n1 )));
             out->push_back(new Term(currentDirection / r->value, new UnknownVoltage(r->n0 )));
         }
@@ -122,19 +146,27 @@ std::vector<Term *>* MNACircuit::getCurrents(int node, int side) {
 std::vector<int>* MNACircuit::getRefNodes() {
     auto* out = new std::vector<int>;
 
+    // For every component, 
+
     std::vector<int> toVisit;
     for(auto n : nodeSet){
         toVisit.push_back(n.second);
     }
 
     while(! toVisit.empty()){
+        // Get the element to visit next from toVisit.
         int refNodeId = toVisit.at(0);
 
+	// Add the reference node to the output list
         out->push_back(refNodeId);
 
         std::vector<int>* connectedNodes = getConnectedNodes(refNodeId);
 
+	// Remove every node that is directly connected to this reference node,
+	// as there cannot be 2 nodes that are connected but are both reference nodes.
         for(auto c : *connectedNodes){
+	    // Remove c from toVisit by iterating over every item and removing
+	    // the matching one.
             toVisit.erase(std::remove_if(toVisit.begin(), toVisit.end(), [c](int i){
                 return i == c;
             }));
