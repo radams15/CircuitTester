@@ -6,6 +6,7 @@
 #include "MNASolution.h"
 
 MNASolution::MNASolution(std::map<int, double> voltageMap, std::vector<MNAElement *> elements) {
+    // Setup class variables.
     this->voltageMap = voltageMap;
     this->elements = elements;
 }
