@@ -48,7 +48,7 @@ MNACircuit::MNACircuit(std::vector<MNAElement *> elements) {
         }
     }
 
-    // Populates the nodeSet map - the name versus the node number.
+    // Populates the node list.
     for(auto e : elements){
         nodes.push_back(e->n0);
         nodes.push_back(e->n1);
