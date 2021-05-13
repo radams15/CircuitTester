@@ -314,8 +314,6 @@ MNASolution *MNACircuit::solve() {
     // Solve the matrix equation a = z
     Eigen::MatrixXd x = A.fullPivLu().solve(z); // https://eigen.tuxfamily.org/dox/group__TutorialLinearAlgebra.html
 
-    //std::cout << A << "\n\n" << z << "\n\n" << x << "\n\n";
-
     // A map of which nodes have which voltages on the circuit.
     auto* voltageMap = new std::map<int, double>;
 

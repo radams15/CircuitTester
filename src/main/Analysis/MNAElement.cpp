@@ -6,6 +6,7 @@
 #include "MNAElement.h"
 
 MNAElement::MNAElement(int n0, int n1, ElementType type, double value, double currentSolution) {
+    // Sets the class attributes from the passed initialiser values.
     this->n0 = n0;
     this->n1 = n1;
 
@@ -20,17 +21,16 @@ MNAElement* MNAElement::withCurrentSolution(double newCurrentSolution) {
 }
 
 bool MNAElement::contains(int n) {
+    // n is contained if n0 or n1 are equal to n.
     return n == n0 || n == n1;
 }
 
 int MNAElement::opposite(int n) {
+    // The opposite of n1 is n0, and vice-versa.
     return n == n0? n1 : n0;
 }
 
 bool MNAElement::equals(MNAElement other) {
-    if(other.n0 == n0 && other.n1 == n1){
-        return true;
-    }
-
-    return false;
+    // If n0, n1 and type from other are the same as this, they are equal.
+    return other.n0 == n0 && other.n1 == n1 && other.type == type;
 }
