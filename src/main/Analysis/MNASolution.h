@@ -1,6 +1,7 @@
-//
-// Created by rhys on 18/04/2021.
-//
+/**
+ * @author Rhys Adams
+ * @date 18/04/2021
+ */
 
 #ifndef CircuitTester_MNASOLUTION_H
 #define CircuitTester_MNASOLUTION_H
