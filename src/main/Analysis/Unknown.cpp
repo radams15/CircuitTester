@@ -8,12 +8,12 @@ UnknownCurrent::UnknownCurrent(MNAElement *element) : Unknown(CURRENT) {
     this->element = element;
 }
 
-std::string UnknownCurrent::toTermName() {
+std::string UnknownCurrent::str() {
     return "I"+std::to_string(element->n0)+"_"+std::to_string(element->n1);
 }
 
 bool UnknownCurrent::equals(Unknown* other) {
-    if(other->t != Unknown::CURRENT){
+    if(other->type != Unknown::CURRENT){
         return false;
     }
 
@@ -25,15 +25,19 @@ UnknownVoltage::UnknownVoltage(int node)  : Unknown(VOLTAGE) {
     this->node = node;
 }
 
-std::string UnknownVoltage::toTermName() {
+std::string UnknownVoltage::str() {
     return "V"+std::to_string(node);
 }
 
 bool UnknownVoltage::equals(Unknown *other) {
-    if(other->t != Unknown::VOLTAGE){
+    if(other->type != Unknown::VOLTAGE){
         return false;
     }
 
     auto* c = (UnknownVoltage*) other;
     return c->node == node;
+}
+
+Unknown::Unknown(Type t) {
+    this->type = t;
 }

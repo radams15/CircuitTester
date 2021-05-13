@@ -1,4 +1,4 @@
-/** @brief Circuit class for the modified nodal analysis
+/** @brief
  * @author Rhys Adams
  * @date 18/04/2021
  */
