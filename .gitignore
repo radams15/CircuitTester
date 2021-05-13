@@ -52,7 +52,6 @@ compile_commands.json
 *creator.user*
 *.DS_Store
 
-#doxygen
-/docs/docs/*
+
 /builds/
 /build/
