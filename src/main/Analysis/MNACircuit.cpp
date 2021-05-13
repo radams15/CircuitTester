@@ -173,17 +173,25 @@ std::vector<int>* MNACircuit::getRefNodes() {
 }
 
 std::vector<int>* MNACircuit::getConnectedNodes(int node) {
+    // A queue of visited nodes from this node.
     auto* visited = new std::vector<int>;
+
+    // A list of nodes that we want to visit in the future.
     std::vector<int> toVisit = {node};
 
-    while(! toVisit.empty()){
+    // This is basically a breadth first iteration of every element connected to this node.
+    while(not toVisit.empty()){
+        // Get the top vector item.
         int nodeToVisit = vecPopFront<int>(toVisit);
 
         visited->push_back(nodeToVisit);
 
         for(auto e : elements){
             if(e->contains(nodeToVisit)){
+                // Get the node leaving the element.
                 int oppositeNode = e->opposite(nodeToVisit);
+
+                // Visit the opposite node in the future if we have not already visited it.
                 if(! std::count(visited->begin(), visited->end(), oppositeNode)){
                     toVisit.push_back(oppositeNode);
                 }
@@ -191,6 +199,7 @@ std::vector<int>* MNACircuit::getConnectedNodes(int node) {
         }
     }
 
+    // Remove duplicate values, just in case there was an error.
     visited->erase(unique( visited->begin(), visited->end() ), visited->end());
     return visited;
 }
@@ -201,26 +210,42 @@ std::vector<Equation *>* MNACircuit::getEquations() {
     std::vector<int>* refNodeIds = getRefNodes();
 
     for(auto r : *refNodeIds){
+        // Reference nodes have a voltage of zero as the voltage is relative to this node.
         equations->push_back(new Equation(0, {
                 new Term(1, new UnknownVoltage(r))
         }));
     }
 
     for(auto n : nodes){
-        if(! std::count(refNodeIds->begin(), refNodeIds->end(), n)){
+        //Create an equation containing the total current
+        // source multiplied by each of the outgoing and incoming
+        // current nodes from the node.
+
+        // If n not in refNodeIds.
+        if(not std::count(refNodeIds->begin(), refNodeIds->end(), n)){
+            // All current nodes entering node n at n1.
             std::vector<Term *>* incoming = getCurrents(n, CUR_IN);
+            // All current nodes leaving node n at n0.
             std::vector<Term *>* outgoing = getCurrents(n, CUR_OUT);
 
+            //Currents leave at n0 and enter at n1 because conventional
+            // currents are opposite to actual charge flow.
+
+            // Add together the two lists of terms.
             auto* conserved = new std::vector<Term *>;
             conserved->insert(conserved->end(), incoming->begin(), incoming->end());
             conserved->insert(conserved->end(), outgoing->begin(), outgoing->end());
 
+            // Create an equation of total current equals the sum of all the terms.
             equations->push_back(new Equation(getCurrentTotal(n), *conserved));
         }
     }
 
     for(auto b : batteries){
+        // Make an equation for every battery.
         equations->push_back(new Equation(b->value, {
+                // N0 is negative as voltage is lost.
+                // N1 is the positive as voltage is gained.
                 new Term(-1, new UnknownVoltage(b->n0)),
                 new Term(1, new UnknownVoltage(b->n1))
         }));
@@ -228,6 +253,8 @@ std::vector<Equation *>* MNACircuit::getEquations() {
 
     for(auto r : resistors){
         if(r->value == 0){
+            //If resistance is 0, n0 and n1 are the same, as there
+            // may as well not be a component there
             equations->push_back(new Equation(r->value, {
                     new Term(1, new UnknownVoltage(r->n0)),
                     new Term(-1, new UnknownVoltage(r->n1))
@@ -242,11 +269,13 @@ std::vector<UnknownCurrent *> *MNACircuit::getUnknownCurrents() {
     auto* out = new std::vector<UnknownCurrent*>;
 
     for(auto b : batteries){
+        //Batteries have an unknown current before they are placed into a circuit.
         out->push_back(new UnknownCurrent(b));
     }
 
     for(auto r : resistors){
         if(r->value == 0) {
+            // Zero-resistance resistors have an unknown current.
             out->push_back(new UnknownCurrent(r));
         }
     }
@@ -314,11 +343,14 @@ MNASolution *MNACircuit::solve() {
 
 template <typename T>
 int MNACircuit::getElementIndex(std::vector<T*>* array, T* element) {
+    // Iterate over every index in the array.
     for(int i=0 ; i<array->size() ; i++){
         if(array->at(i)->equals(element)){
+            //If the array element equals the passed element, return the index.
             return i;
         }
     }
 
+    // Not found, return -1.
     return -1;
 }
