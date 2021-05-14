@@ -1,5 +1,0 @@
-/home/alarm/scripts/CircuitTester/build/CMakeFiles/rebuild_cache.dir
-/home/alarm/scripts/CircuitTester/build/CMakeFiles/edit_cache.dir
-/home/alarm/scripts/CircuitTester/build/docs/CMakeFiles/rebuild_cache.dir
-/home/alarm/scripts/CircuitTester/build/docs/CMakeFiles/edit_cache.dir
-/home/alarm/scripts/CircuitTester/build/docs/CMakeFiles/docs.dir
