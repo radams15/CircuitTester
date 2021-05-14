@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['battery_89',['Battery',['../classBattery.html',1,'']]]
+  ['battery_90',['Battery',['../classBattery.html',1,'']]]
 ];

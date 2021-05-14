@@ -43,5 +43,5 @@ bool UnknownVoltage::equals(Unknown *other) {
 }
 
 Unknown::Unknown(Type t) {
-    this->type = t;.
+    this->type = t;
 }

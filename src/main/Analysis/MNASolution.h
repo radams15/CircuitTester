@@ -30,7 +30,7 @@ private:
      * @param b The second double
      * @return Whether they are equal or not
      */
-    bool numApproxEquals(double a, double b);
+    static bool numApproxEquals(double a, double b);
 
     /** @brief Whether this solution has all the same elements
      * as the other solution.
@@ -94,7 +94,7 @@ public:
      * @param resistor The resistor to get the current of
      * @return The current at that resistor.
      */
-    double getCurrentForResistor(MNAElement resistor);
+    double getCurrent(MNAElement resistor);
 };
 
 

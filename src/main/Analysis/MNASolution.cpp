@@ -3,7 +3,10 @@
 //
 
 #include <iostream>
+#include <algorithm>
 #include "MNASolution.h"
+
+#define APPROX_EPSILON 1e-6
 
 MNASolution::MNASolution(std::map<int, double> voltageMap, std::vector<MNAElement *> elements) {
     // Setup class variables.
@@ -24,54 +27,68 @@ bool MNASolution::equals(MNASolution mnaSolution) {
     }
 
     for(auto key : nodes){
+        // Check if every key in this equals the same key in the solution.
         if(!numApproxEquals(getNodeVoltage(key), mnaSolution.getNodeVoltage(key))){
             return false;
         }
     }
 
+    // Check if all the currents in this are in solution.
     if((!hasAllElements(mnaSolution))){
         return false;
     }
 
+    // Check if all the currents in solution are in this.
     if(!mnaSolution.hasAllElements(*this)) {
         return false;
     }
 
+    // All checks passed, must be equal.
     return true;
 }
 
-bool MNASolution::numApproxEquals(double a, double b) {
-    return fabs(a - b) <= ( (fabs(a) < fabs(b) ? fabs(b) : fabs(a)) * 1e-6);
-}
-
 double MNASolution::getNodeVoltage(int nodeIndex) {
-    return voltageMap.at(nodeIndex);
+    // Gets the voltage from the voltageMap.
+    return voltageMap[nodeIndex];
 }
 
-double MNASolution::getCurrentForResistor(MNAElement resistor) {
-    return -getVoltage(resistor) / resistor.value;
+double MNASolution::getCurrent(MNAElement resistor) {
+    // Returns the current by doing V=IR, which is equal to I=V/R.
+    double v = -getVoltage(resistor);
+    double r = resistor.value;
+    double i = v / r;
+
+    return  i;
 }
 
 double MNASolution::getVoltage(MNAElement element) {
+    // Gets the difference between the voltages the start and end nodes
+    // as voltage is the potential difference between two components.
     return voltageMap.at(element.n1) - voltageMap.at(element.n0);
 }
 
 bool MNASolution::hasAllElements(MNASolution mnaSolution) {
-    for(auto e : mnaSolution.elements){
-        if(!containsElement(e)){
-            return false;
-        }
-    }
-
-    return true;
+    // Return whether containsElement returns true for every
+    // element in mnaSolution.
+    return std::all_of(mnaSolution.elements.begin(),
+                       mnaSolution.elements.end(),
+                       [this](MNAElement* e){
+        return containsElement(e);
+    });
 }
 
-bool MNASolution::containsElement(MNAElement *element) {
-    for(auto e : elements){
-        if(e->n0 == element->n0 && e->n1 == element->n1 && numApproxEquals(e->currentSolution, element->currentSolution)){
-            return true;
-        }
-    }
+bool MNASolution::containsElement(MNAElement* element) {
+    // Returns whether any of the elements in this are equal
+    // to the passed element.
+    return std::any_of(elements.begin(),
+                       elements.end(),
+                       [this, element](MNAElement* e){
+        return e->n0 == element->n0 && e->n1 == element->n1 && numApproxEquals(e->currentSolution, element->currentSolution);
+    });
+}
 
-    return false;
+bool MNASolution::numApproxEquals(double a, double b) {
+    // Finds the difference between a and b then compares the difference
+    // to an epsilon.
+    return fabs(a - b) <= ( (fabs(a) < fabs(b) ? fabs(b) : fabs(a)) * APPROX_EPSILON);
 }

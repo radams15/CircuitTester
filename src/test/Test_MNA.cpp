@@ -35,7 +35,7 @@ TEST(NodalAnalysis, OneResistorCurrent){
 
     ASSERT_EQ(sol->equals(*dessol), true);
 
-    ASSERT_EQ(sol->getCurrentForResistor(*res), 2.5);
+    ASSERT_EQ(sol->getCurrent(*res), 2.5);
 }
 
 
@@ -65,8 +65,8 @@ TEST(NodalAnalysis, TwoResistorsInParallel){
 
     ASSERT_EQ(sol->equals(*dessol), true);
 
-    ASSERT_EQ(sol->getCurrentForResistor(*res1), 1.0);
-    ASSERT_EQ(sol->getCurrentForResistor(*res2), 0.5);
+    ASSERT_EQ(sol->getCurrent(*res1), 1.0);
+    ASSERT_EQ(sol->getCurrent(*res2), 0.5);
 }
 
 /**
@@ -97,9 +97,9 @@ TEST(NodalAnalysis, ParalellAndSeriesResistors){
 
     ASSERT_EQ(sol->equals(*dessol), true);
 
-    ASSERT_DOUBLE_EQ(round(sol->getCurrentForResistor(*res1)*100)/100, 0.58);
-    ASSERT_DOUBLE_EQ(round(sol->getCurrentForResistor(*res2)*100)/100, 0.29);
-    ASSERT_DOUBLE_EQ(round(sol->getCurrentForResistor(*res3)*100)/100, 0.87);
+    ASSERT_DOUBLE_EQ(round(sol->getCurrent(*res1) * 100) / 100, 0.58);
+    ASSERT_DOUBLE_EQ(round(sol->getCurrent(*res2) * 100) / 100, 0.29);
+    ASSERT_DOUBLE_EQ(round(sol->getCurrent(*res3) * 100) / 100, 0.87);
 }
 
 
