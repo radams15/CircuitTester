@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -72,42 +79,57 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Stores the solution of a circuit.  
+ <a href="classMNASolution.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="MNASolution_8h_source.html">MNASolution.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a74159dca67f54652f6995a542474c485"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a74159dca67f54652f6995a542474c485">MNASolution</a> (std::map&lt; int, double &gt; <a class="el" href="classMNASolution.html#a5872dd7edd59b100bcf24d35de16f9ff">voltageMap</a>, std::vector&lt; <a class="el" href="classMNAElement.html">MNAElement</a> * &gt; <a class="el" href="classMNASolution.html#a06a08bf735f9edcd2a82b52ca2840460">elements</a>)</td></tr>
+<tr class="memdesc:a74159dca67f54652f6995a542474c485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser.  <a href="classMNASolution.html#a74159dca67f54652f6995a542474c485">More...</a><br /></td></tr>
 <tr class="separator:a74159dca67f54652f6995a542474c485"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fef603c0f58a4bff7ca0da98b991f9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a4fef603c0f58a4bff7ca0da98b991f9a">equals</a> (<a class="el" href="classMNASolution.html">MNASolution</a> mnaSolution)</td></tr>
+<tr class="memdesc:a4fef603c0f58a4bff7ca0da98b991f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this has every element and every element is approximately equal to the other in the opposing <a class="el" href="classMNASolution.html" title="Stores the solution of a circuit.">MNASolution</a>.  <a href="classMNASolution.html#a4fef603c0f58a4bff7ca0da98b991f9a">More...</a><br /></td></tr>
 <tr class="separator:a4fef603c0f58a4bff7ca0da98b991f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d0e3d261f981b1055ba00a9f70ec3bb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a1d0e3d261f981b1055ba00a9f70ec3bb">getNodeVoltage</a> (int nodeIndex)</td></tr>
+<tr class="memdesc:a1d0e3d261f981b1055ba00a9f70ec3bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the voltage at a specific node.  <a href="classMNASolution.html#a1d0e3d261f981b1055ba00a9f70ec3bb">More...</a><br /></td></tr>
 <tr class="separator:a1d0e3d261f981b1055ba00a9f70ec3bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a328c04370537093181facc0e162f1905"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a328c04370537093181facc0e162f1905">getVoltage</a> (<a class="el" href="classMNAElement.html">MNAElement</a> element)</td></tr>
+<tr class="memdesc:a328c04370537093181facc0e162f1905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the voltage of a specified element.  <a href="classMNASolution.html#a328c04370537093181facc0e162f1905">More...</a><br /></td></tr>
 <tr class="separator:a328c04370537093181facc0e162f1905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a916b6c6921c8d71c1fa5b90cede77666"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a916b6c6921c8d71c1fa5b90cede77666">getCurrentForResistor</a> (<a class="el" href="classMNAElement.html">MNAElement</a> resistor)</td></tr>
+<tr class="memdesc:a916b6c6921c8d71c1fa5b90cede77666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current at a resistor through I=V/R.  <a href="classMNASolution.html#a916b6c6921c8d71c1fa5b90cede77666">More...</a><br /></td></tr>
 <tr class="separator:a916b6c6921c8d71c1fa5b90cede77666"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a5872dd7edd59b100bcf24d35de16f9ff"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a5872dd7edd59b100bcf24d35de16f9ff">voltageMap</a></td></tr>
+<tr class="memdesc:a5872dd7edd59b100bcf24d35de16f9ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">A map of node:voltage.  <a href="classMNASolution.html#a5872dd7edd59b100bcf24d35de16f9ff">More...</a><br /></td></tr>
 <tr class="separator:a5872dd7edd59b100bcf24d35de16f9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06a08bf735f9edcd2a82b52ca2840460"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMNAElement.html">MNAElement</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a06a08bf735f9edcd2a82b52ca2840460">elements</a></td></tr>
+<tr class="memdesc:a06a08bf735f9edcd2a82b52ca2840460"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of elements in the solution which have a known current.  <a href="classMNASolution.html#a06a08bf735f9edcd2a82b52ca2840460">More...</a><br /></td></tr>
 <tr class="separator:a06a08bf735f9edcd2a82b52ca2840460"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a3461c4c6c7759a00d738cad083aca034"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a3461c4c6c7759a00d738cad083aca034">numApproxEquals</a> (double a, double b)</td></tr>
+<tr class="memdesc:a3461c4c6c7759a00d738cad083aca034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether double a is equal to double b.  <a href="classMNASolution.html#a3461c4c6c7759a00d738cad083aca034">More...</a><br /></td></tr>
 <tr class="separator:a3461c4c6c7759a00d738cad083aca034"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4605bb5d9c74ef5d93788a18272e0027"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a4605bb5d9c74ef5d93788a18272e0027">hasAllElements</a> (<a class="el" href="classMNASolution.html">MNASolution</a> mnaSolution)</td></tr>
+<tr class="memdesc:a4605bb5d9c74ef5d93788a18272e0027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this solution has all the same elements as the other solution.  <a href="classMNASolution.html#a4605bb5d9c74ef5d93788a18272e0027">More...</a><br /></td></tr>
 <tr class="separator:a4605bb5d9c74ef5d93788a18272e0027"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23daab2f96d6fe5b5bf9ad03c2cae0b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a23daab2f96d6fe5b5bf9ad03c2cae0b1">containsElement</a> (<a class="el" href="classMNAElement.html">MNAElement</a> *element)</td></tr>
+<tr class="memdesc:a23daab2f96d6fe5b5bf9ad03c2cae0b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if element is in this solution.  <a href="classMNASolution.html#a23daab2f96d6fe5b5bf9ad03c2cae0b1">More...</a><br /></td></tr>
 <tr class="separator:a23daab2f96d6fe5b5bf9ad03c2cae0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rhys Adams </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>18/04/2021 </dd></dl>
+<div class="textblock"><p>Stores the solution of a circuit. </p>
+<dl class="section author"><dt>Author</dt><dd>Rhys Adams </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>18/04/2021</dd></dl>
+<p>This class stores the voltage map, and every element that has a known current so that voltages can be calculated through V=IR. </p>
 
-<p class="definition">Definition at line <a class="el" href="MNASolution_8h_source.html#l00015">15</a> of file <a class="el" href="MNASolution_8h_source.html">MNASolution.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNASolution_8h_source.html#l00021">21</a> of file <a class="el" href="MNASolution_8h_source.html">MNASolution.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a74159dca67f54652f6995a542474c485"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a74159dca67f54652f6995a542474c485">&#9670;&nbsp;</a></span>MNASolution()</h2>
@@ -134,6 +156,15 @@ Private Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialiser. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">voltageMap</td><td>A map of node:voltage </td></tr>
+    <tr><td class="paramname">elements</td><td>A list of elements in the solution which have a known current. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="MNASolution_8cpp_source.html#l00008">8</a> of file <a class="el" href="MNASolution_8cpp_source.html">MNASolution.cpp</a>.</p>
 
@@ -164,6 +195,15 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Determines if element is in this solution. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">element</td><td>The element to check exists. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the element is inside the elements list. </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="MNASolution_8cpp_source.html#l00069">69</a> of file <a class="el" href="MNASolution_8cpp_source.html">MNASolution.cpp</a>.</p>
 
 </div>
@@ -183,6 +223,15 @@ Private Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Whether this has every element and every element is approximately equal to the other in the opposing <a class="el" href="classMNASolution.html" title="Stores the solution of a circuit.">MNASolution</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mnaSolution</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="MNASolution_8cpp_source.html#l00014">14</a> of file <a class="el" href="MNASolution_8cpp_source.html">MNASolution.cpp</a>.</p>
 
@@ -204,6 +253,15 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets the current at a resistor through I=V/R. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resistor</td><td>The resistor to get the current of </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The current at that resistor. </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="MNASolution_8cpp_source.html#l00051">51</a> of file <a class="el" href="MNASolution_8cpp_source.html">MNASolution.cpp</a>.</p>
 
 </div>
@@ -224,6 +282,15 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get the voltage at a specific node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nodeIndex</td><td>The node to check at. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The voltage at that node. </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="MNASolution_8cpp_source.html#l00047">47</a> of file <a class="el" href="MNASolution_8cpp_source.html">MNASolution.cpp</a>.</p>
 
 </div>
@@ -243,6 +310,15 @@ Private Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the voltage of a specified element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">element</td><td>The <a class="el" href="classMNAElement.html" title="Main class that holds circuit elements for modified nodal analysis (MNA).">MNAElement</a> to check at. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The voltage at that element. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="MNASolution_8cpp_source.html#l00055">55</a> of file <a class="el" href="MNASolution_8cpp_source.html">MNASolution.cpp</a>.</p>
 
@@ -271,6 +347,15 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Whether this solution has all the same elements as the other solution. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mnaSolution</td><td>The other <a class="el" href="classMNASolution.html" title="Stores the solution of a circuit.">MNASolution</a> to compare to this. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the two solutions are equal. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="MNASolution_8cpp_source.html#l00059">59</a> of file <a class="el" href="MNASolution_8cpp_source.html">MNASolution.cpp</a>.</p>
 
@@ -310,6 +395,17 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Check whether double a is equal to double b. </p>
+<p>This compares two double values by subtracting, getting the absolute value, then comparing the difference to an epsilon, which here is 1x10^-6.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first double </td></tr>
+    <tr><td class="paramname">b</td><td>The second double </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether they are equal or not </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="MNASolution_8cpp_source.html#l00043">43</a> of file <a class="el" href="MNASolution_8cpp_source.html">MNASolution.cpp</a>.</p>
 
 </div>
@@ -327,7 +423,9 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MNASolution_8h_source.html#l00025">25</a> of file <a class="el" href="MNASolution_8h_source.html">MNASolution.h</a>.</p>
+<p>A list of elements in the solution which have a known current. </p>
+
+<p class="definition">Definition at line <a class="el" href="MNASolution_8h_source.html#l00060">60</a> of file <a class="el" href="MNASolution_8h_source.html">MNASolution.h</a>.</p>
 
 </div>
 </div>
@@ -343,7 +441,9 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MNASolution_8h_source.html#l00024">24</a> of file <a class="el" href="MNASolution_8h_source.html">MNASolution.h</a>.</p>
+<p>A map of node:voltage. </p>
+
+<p class="definition">Definition at line <a class="el" href="MNASolution_8h_source.html#l00055">55</a> of file <a class="el" href="MNASolution_8h_source.html">MNASolution.h</a>.</p>
 
 </div>
 </div>

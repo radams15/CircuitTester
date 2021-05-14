@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -129,9 +136,9 @@ $(function() {
 <div class="ttc" id="aResistor_8h_html"><div class="ttname"><a href="Resistor_8h.html">Resistor.h</a></div></div>
 <div class="ttc" id="aclassBattery_html"><div class="ttname"><a href="classBattery.html">Battery</a></div><div class="ttdoc">Battery class derived from MNAElement.</div><div class="ttdef"><b>Definition:</b> <a href="Battery_8h_source.html#l00011">Battery.h:11</a></div></div>
 <div class="ttc" id="aclassMNACircuit_html"><div class="ttname"><a href="classMNACircuit.html">MNACircuit</a></div><div class="ttdoc">Main class that holds a circuit for modified nodal analysis (MNA).</div><div class="ttdef"><b>Definition:</b> <a href="MNACircuit_8h_source.html#l00021">MNACircuit.h:21</a></div></div>
-<div class="ttc" id="aclassMNASolution_html"><div class="ttname"><a href="classMNASolution.html">MNASolution</a></div><div class="ttdef"><b>Definition:</b> <a href="MNASolution_8h_source.html#l00015">MNASolution.h:15</a></div></div>
-<div class="ttc" id="aclassMNASolution_html_a4fef603c0f58a4bff7ca0da98b991f9a"><div class="ttname"><a href="classMNASolution.html#a4fef603c0f58a4bff7ca0da98b991f9a">MNASolution::equals</a></div><div class="ttdeci">bool equals(MNASolution mnaSolution)</div><div class="ttdef"><b>Definition:</b> <a href="MNASolution_8cpp_source.html#l00014">MNASolution.cpp:14</a></div></div>
-<div class="ttc" id="aclassMNASolution_html_a5872dd7edd59b100bcf24d35de16f9ff"><div class="ttname"><a href="classMNASolution.html#a5872dd7edd59b100bcf24d35de16f9ff">MNASolution::voltageMap</a></div><div class="ttdeci">std::map&lt; int, double &gt; voltageMap</div><div class="ttdef"><b>Definition:</b> <a href="MNASolution_8h_source.html#l00024">MNASolution.h:24</a></div></div>
+<div class="ttc" id="aclassMNASolution_html"><div class="ttname"><a href="classMNASolution.html">MNASolution</a></div><div class="ttdoc">Stores the solution of a circuit.</div><div class="ttdef"><b>Definition:</b> <a href="MNASolution_8h_source.html#l00021">MNASolution.h:21</a></div></div>
+<div class="ttc" id="aclassMNASolution_html_a4fef603c0f58a4bff7ca0da98b991f9a"><div class="ttname"><a href="classMNASolution.html#a4fef603c0f58a4bff7ca0da98b991f9a">MNASolution::equals</a></div><div class="ttdeci">bool equals(MNASolution mnaSolution)</div><div class="ttdoc">Whether this has every element and every element is approximately equal to the other in the opposing ...</div><div class="ttdef"><b>Definition:</b> <a href="MNASolution_8cpp_source.html#l00014">MNASolution.cpp:14</a></div></div>
+<div class="ttc" id="aclassMNASolution_html_a5872dd7edd59b100bcf24d35de16f9ff"><div class="ttname"><a href="classMNASolution.html#a5872dd7edd59b100bcf24d35de16f9ff">MNASolution::voltageMap</a></div><div class="ttdeci">std::map&lt; int, double &gt; voltageMap</div><div class="ttdoc">A map of node:voltage.</div><div class="ttdef"><b>Definition:</b> <a href="MNASolution_8h_source.html#l00055">MNASolution.h:55</a></div></div>
 <div class="ttc" id="aclassMainWindow_html"><div class="ttname"><a href="classMainWindow.html">MainWindow</a></div><div class="ttdoc">Main window class for the program.</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8h_source.html#l00011">mainwindow.h:11</a></div></div>
 <div class="ttc" id="aclassResistor_html"><div class="ttname"><a href="classResistor.html">Resistor</a></div><div class="ttdoc">Resistor class derived from MNAElement.</div><div class="ttdef"><b>Definition:</b> <a href="Resistor_8h_source.html#l00011">Resistor.h:11</a></div></div>
 <div class="ttc" id="amain_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdoc">Main method. This is the main program entry point.</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00033">main.cpp:33</a></div></div>
