@@ -1,22 +1,22 @@
 set(TEST_FILES
-        Test_MNA.cpp
-        Test_MNACircuit.cpp)
+        Test_MNA.cc
+        Test_MNACircuit.cc)
 
 set(C_FILES
-        ../main/Analysis/Equation.cpp
+        ../main/Analysis/Equation.cc
         ../main/Analysis/Equation.h
-        ../main/Analysis/MNACircuit.cpp
+        ../main/Analysis/MNACircuit.cc
         ../main/Analysis/MNACircuit.h
-        ../main/Analysis/MNAComponent.cpp
+        ../main/Analysis/MNAComponent.cc
         ../main/Analysis/MNAComponent.h
-        ../main/Analysis/MNASolution.cpp
+        ../main/Analysis/MNASolution.cc
         ../main/Analysis/MNASolution.h
         ../main/Analysis/MNA.h
-        ../main/UI/Components/Battery.cpp
+        ../main/UI/Components/Battery.cc
         ../main/UI/Components/Battery.h
-        ../main/UI/Components/Resistor.cpp
+        ../main/UI/Components/Resistor.cc
         ../main/UI/Components/Resistor.h
-        ../main/Analysis/Unknown.cpp ../main/Analysis/Unknown.h Test_MNACircuit.cpp ../main/Analysis/Term.cpp ../main/Analysis/Term.h)
+        ../main/Analysis/Unknown.cc ../main/Analysis/Unknown.h Test_MNACircuit.cc ../main/Analysis/Term.cc ../main/Analysis/Term.h)
 
 set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/lib)

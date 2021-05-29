@@ -9,41 +9,41 @@ else()
 endif()
 
 set(PROJECT_SOURCES
-        main.cpp
+        main.cc
 
         ../../resources/resources.qrc
 
-        UI/MainWindow.cpp
+        UI/MainWindow.cc
         UI/MainWindow.h
-        UI/Arrow.cpp
+        UI/Arrow.cc
         UI/Arrow.h
-        UI/Scene.cpp
+        UI/Scene.cc
         UI/Scene.h
-        UI/SceneItem.cpp
+        UI/SceneItem.cc
         UI/SceneItem.h
-        UI/SceneText.cpp
+        UI/SceneText.cc
         UI/SceneText.h
 
-        Analysis/Equation.cpp
+        Analysis/Equation.cc
         Analysis/Equation.h
-        Analysis/MNACircuit.cpp
+        Analysis/MNACircuit.cc
         Analysis/MNACircuit.h
-        Analysis/MNAComponent.cpp
+        Analysis/MNAComponent.cc
         Analysis/MNAComponent.h
-        Analysis/MNASolution.cpp
+        Analysis/MNASolution.cc
         Analysis/MNASolution.h
         Analysis/MNA.h
-        UI/Components/Battery.cpp
+        UI/Components/Battery.cc
         UI/Components/Battery.h
-        UI/Components/Resistor.cpp
+        UI/Components/Resistor.cc
         UI/Components/Resistor.h
-        Analysis/Unknown.cpp
+        Analysis/Unknown.cc
         Analysis/Unknown.h
-        Analysis/Term.cpp
+        Analysis/Term.cc
         Analysis/Term.h
-        UI/UIComponent.cpp
+        UI/UIComponent.cc
         UI/UIComponent.h
-        UI/AnalysisMapper.cpp
+        UI/AnalysisMapper.cc
         UI/AnalysisMapper.h)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
