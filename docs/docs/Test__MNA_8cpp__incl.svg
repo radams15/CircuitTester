@@ -84,7 +84,7 @@ var sectionId = 'dynsection-0';
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="MNAElement_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="380.72,-56.5 380.72,-75.5 535.72,-75.5 535.72,-56.5 380.72,-56.5"/>
-<text text-anchor="middle" x="458.22" y="-63.5" font-family="Helvetica" font-size="10.00">../main/Analysis/MNAElement.h</text>
+<text text-anchor="middle" x="458.22" y="-63.5" font-family="Helvetica" font-size="10.00">../main/Analysis/MNAComponent.h</text>
 </a>
 </g>
 </g>

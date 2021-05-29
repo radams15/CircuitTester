@@ -7,7 +7,7 @@
 
 #include "MNACircuit.h"
 #include "MNASolution.h"
-#include "MNAElement.h"
+#include "MNAComponent.h"
 #include "Equation.h"
 #include "Component.h"
 

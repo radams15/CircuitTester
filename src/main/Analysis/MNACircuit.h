@@ -10,7 +10,7 @@
 #include <map>
 #include <string>
 
-#include "MNAElement.h"
+#include "MNAComponent.h"
 #include "Equation.h"
 #include "MNASolution.h"
 
@@ -21,16 +21,16 @@
 class MNACircuit {
 private:
     /** @brief Holds all the MNAElements that are batteries */
-    std::vector<MNAElement*> batteries;
+    std::vector<MNAComponent*> batteries;
 
     /** @brief Holds all the MNAElements that are resistors */
-    std::vector<MNAElement*> resistors;
+    std::vector<MNAComponent*> resistors;
 
     /** @brief Holds all the MNAElements that are current sources */
-    std::vector<MNAElement*> currentSources;
+    std::vector<MNAComponent*> currentSources;
 
     /** @brief Holds all the MNAElements combined */
-    std::vector<MNAElement*> elements;
+    std::vector<MNAComponent*> elements;
 
     /** @brief The total number of nodes */
     int nodeCount;
@@ -106,7 +106,7 @@ public:
      *
      * @param elements The list of all circuit elements.
     */
-    explicit MNACircuit(std::vector<MNAElement *> elements);
+    explicit MNACircuit(std::vector<MNAComponent *> elements);
 
     /** @brief Solves the circuit using linear algebra and matrices.
      *

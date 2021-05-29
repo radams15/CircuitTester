@@ -7,7 +7,7 @@
 
 #include <gtest/gtest.h>
 
-#include "../main/Analysis/MNAElement.h"
+#include "../main/Analysis/MNAComponent.h"
 #include "../main/Analysis/MNACircuit.h"
 #include "../main/Analysis/MNASolution.h"
 #include "../main/Components/Battery.h"

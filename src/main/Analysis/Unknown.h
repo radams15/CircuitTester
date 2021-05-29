@@ -8,7 +8,7 @@
 #define CIRCUITTESTER_UNKNOWN_H
 
 #include <string>
-#include "MNAElement.h"
+#include "MNAComponent.h"
 
 /** @brief Base class for unknown values
  *
@@ -60,7 +60,7 @@ protected:
 };
 
 
-/** @brief Stores an MNAElement for which the current is unknown.
+/** @brief Stores an MNAComponent for which the current is unknown.
  *
  */
 class UnknownCurrent : public Unknown {
@@ -70,7 +70,7 @@ public:
     /** @brief The element for which the current is unknown.
      *
      */
-    MNAElement* element;
+    MNAComponent* element;
 
     /** @brief Initialiser
      *
@@ -79,7 +79,7 @@ public:
      *
      * @param element The element for which current is unknown.
      */
-    explicit UnknownCurrent(MNAElement* element);
+    explicit UnknownCurrent(MNAComponent* element);
 
     std::string str() override;
     bool equals(Unknown* other) override;

@@ -17,7 +17,7 @@ enum ElementType{
 /**@brief Main class that holds circuit elements for
  * modified nodal analysis (MNA).
  */
-class MNAElement {
+class MNAComponent {
 private:
 
 public:
@@ -60,7 +60,7 @@ public:
      * @param value The value of this component
      * @param currentSolution The current solution if needed, otherwise it is just NAN
      */
-    MNAElement(int n0, int n1, ElementType type, double value, double currentSolution=NAN);
+    MNAComponent(int n0, int n1, ElementType type, double value, double currentSolution=NAN);
 
     /** @brief With specified current solution.
      *
@@ -69,7 +69,7 @@ public:
      * @param newCurrentSolution The current solution for the new element to have.
      * @return
      */
-    MNAElement* withCurrentSolution(double newCurrentSolution);
+    MNAComponent* withCurrentSolution(double newCurrentSolution);
 
     /** @brief Node in this element.
      *
@@ -94,7 +94,7 @@ public:
      * @param other The node to compare against.
      * @return Whether other has the same contents as this element.
      */
-    bool equals(MNAElement other);
+    bool equals(MNAComponent other);
 };
 
 

@@ -8,7 +8,7 @@
 
 #define APPROX_EPSILON 1e-6
 
-MNASolution::MNASolution(std::map<int, double> voltageMap, std::vector<MNAElement *> elements) {
+MNASolution::MNASolution(std::map<int, double> voltageMap, std::vector<MNAComponent *> elements) {
     // Setup class variables.
     this->voltageMap = voltageMap;
     this->elements = elements;
@@ -52,7 +52,7 @@ double MNASolution::getNodeVoltage(int nodeIndex) {
     return voltageMap[nodeIndex];
 }
 
-double MNASolution::getCurrent(MNAElement resistor) {
+double MNASolution::getCurrent(MNAComponent resistor) {
     // Returns the current by doing V=IR, which is equal to I=V/R.
     double v = -getVoltage(resistor);
     double r = resistor.value;
@@ -61,7 +61,7 @@ double MNASolution::getCurrent(MNAElement resistor) {
     return  i;
 }
 
-double MNASolution::getVoltage(MNAElement element) {
+double MNASolution::getVoltage(MNAComponent element) {
     // Gets the difference between the voltages the start and end nodes
     // as voltage is the potential difference between two components.
     return voltageMap.at(element.n1) - voltageMap.at(element.n0);
@@ -72,17 +72,17 @@ bool MNASolution::hasAllElements(MNASolution mnaSolution) {
     // element in mnaSolution.
     return std::all_of(mnaSolution.elements.begin(),
                        mnaSolution.elements.end(),
-                       [this](MNAElement* e){
+                       [this](MNAComponent* e){
         return containsElement(e);
     });
 }
 
-bool MNASolution::containsElement(MNAElement* element) {
+bool MNASolution::containsElement(MNAComponent* element) {
     // Returns whether any of the elements in this are equal
     // to the passed element.
     return std::any_of(elements.begin(),
                        elements.end(),
-                       [this, element](MNAElement* e){
+                       [this, element](MNAComponent* e){
         return e->n0 == element->n0 && e->n1 == element->n1 && numApproxEquals(e->currentSolution, element->currentSolution);
     });
 }

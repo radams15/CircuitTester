@@ -38,7 +38,7 @@
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="classMNAElement.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="76,-67.5 76,-86.5 150,-86.5 150,-67.5 76,-67.5"/>
-<text text-anchor="middle" x="113" y="-74.5" font-family="Helvetica" font-size="10.00">MNAElement</text>
+<text text-anchor="middle" x="113" y="-74.5" font-family="Helvetica" font-size="10.00">MNAComponent</text>
 </a>
 </g>
 </g>

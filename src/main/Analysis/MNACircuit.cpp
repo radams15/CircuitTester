@@ -20,7 +20,7 @@ T MNACircuit::vecPopFront(std::vector<T>& vec){
     return out;
 }
 
-MNACircuit::MNACircuit(std::vector<MNAElement *> elements) {
+MNACircuit::MNACircuit(std::vector<MNAComponent *> elements) {
     // Clear the batteries, resistors and currentSources lists just in case they
     // contain some elements for any reason.
     batteries.clear();
@@ -327,7 +327,7 @@ MNASolution *MNACircuit::solve() {
     }
 
     //
-    std::vector<MNAElement*> elems;
+    std::vector<MNAComponent*> elems;
 
     for(auto c : *unknownCurrents){
         // Set the new current for each element, as the matrix column 0 has the solved currents.

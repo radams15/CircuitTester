@@ -87,7 +87,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a74159dca67f54652f6995a542474c485"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a74159dca67f54652f6995a542474c485">MNASolution</a> (std::map&lt; int, double &gt; <a class="el" href="classMNASolution.html#a5872dd7edd59b100bcf24d35de16f9ff">voltageMap</a>, std::vector&lt; <a class="el" href="classMNAElement.html">MNAElement</a> * &gt; <a class="el" href="classMNASolution.html#a06a08bf735f9edcd2a82b52ca2840460">elements</a>)</td></tr>
+<tr class="memitem:a74159dca67f54652f6995a542474c485"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a74159dca67f54652f6995a542474c485">MNASolution</a> (std::map&lt; int, double &gt; <a class="el" href="classMNASolution.html#a5872dd7edd59b100bcf24d35de16f9ff">voltageMap</a>, std::vector&lt; <a class="el" href="classMNAElement.html">MNAComponent</a> * &gt; <a class="el" href="classMNASolution.html#a06a08bf735f9edcd2a82b52ca2840460">elements</a>)</td></tr>
 <tr class="memdesc:a74159dca67f54652f6995a542474c485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser.  <a href="classMNASolution.html#a74159dca67f54652f6995a542474c485">More...</a><br /></td></tr>
 <tr class="separator:a74159dca67f54652f6995a542474c485"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fef603c0f58a4bff7ca0da98b991f9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a4fef603c0f58a4bff7ca0da98b991f9a">equals</a> (<a class="el" href="classMNASolution.html">MNASolution</a> mnaSolution)</td></tr>
@@ -96,10 +96,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d0e3d261f981b1055ba00a9f70ec3bb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a1d0e3d261f981b1055ba00a9f70ec3bb">getNodeVoltage</a> (int nodeIndex)</td></tr>
 <tr class="memdesc:a1d0e3d261f981b1055ba00a9f70ec3bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the voltage at a specific node.  <a href="classMNASolution.html#a1d0e3d261f981b1055ba00a9f70ec3bb">More...</a><br /></td></tr>
 <tr class="separator:a1d0e3d261f981b1055ba00a9f70ec3bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a328c04370537093181facc0e162f1905"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a328c04370537093181facc0e162f1905">getVoltage</a> (<a class="el" href="classMNAElement.html">MNAElement</a> element)</td></tr>
+<tr class="memitem:a328c04370537093181facc0e162f1905"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a328c04370537093181facc0e162f1905">getVoltage</a> (<a class="el" href="classMNAElement.html">MNAComponent</a> element)</td></tr>
 <tr class="memdesc:a328c04370537093181facc0e162f1905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the voltage of a specified element.  <a href="classMNASolution.html#a328c04370537093181facc0e162f1905">More...</a><br /></td></tr>
 <tr class="separator:a328c04370537093181facc0e162f1905"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a213ec063238eeaaf3dee97801c596a93"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a213ec063238eeaaf3dee97801c596a93">getCurrent</a> (<a class="el" href="classMNAElement.html">MNAElement</a> resistor)</td></tr>
+<tr class="memitem:a213ec063238eeaaf3dee97801c596a93"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a213ec063238eeaaf3dee97801c596a93">getCurrent</a> (<a class="el" href="classMNAElement.html">MNAComponent</a> resistor)</td></tr>
 <tr class="memdesc:a213ec063238eeaaf3dee97801c596a93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current at a resistor through I=V/R.  <a href="classMNASolution.html#a213ec063238eeaaf3dee97801c596a93">More...</a><br /></td></tr>
 <tr class="separator:a213ec063238eeaaf3dee97801c596a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -108,7 +108,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a5872dd7edd59b100bcf24d35de16f9ff"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a5872dd7edd59b100bcf24d35de16f9ff">voltageMap</a></td></tr>
 <tr class="memdesc:a5872dd7edd59b100bcf24d35de16f9ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">A map of node:voltage.  <a href="classMNASolution.html#a5872dd7edd59b100bcf24d35de16f9ff">More...</a><br /></td></tr>
 <tr class="separator:a5872dd7edd59b100bcf24d35de16f9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06a08bf735f9edcd2a82b52ca2840460"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMNAElement.html">MNAElement</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a06a08bf735f9edcd2a82b52ca2840460">elements</a></td></tr>
+<tr class="memitem:a06a08bf735f9edcd2a82b52ca2840460"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMNAElement.html">MNAComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a06a08bf735f9edcd2a82b52ca2840460">elements</a></td></tr>
 <tr class="memdesc:a06a08bf735f9edcd2a82b52ca2840460"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of elements in the solution which have a known current.  <a href="classMNASolution.html#a06a08bf735f9edcd2a82b52ca2840460">More...</a><br /></td></tr>
 <tr class="separator:a06a08bf735f9edcd2a82b52ca2840460"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -117,7 +117,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a4605bb5d9c74ef5d93788a18272e0027"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a4605bb5d9c74ef5d93788a18272e0027">hasAllElements</a> (<a class="el" href="classMNASolution.html">MNASolution</a> mnaSolution)</td></tr>
 <tr class="memdesc:a4605bb5d9c74ef5d93788a18272e0027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this solution has all the same elements as the other solution.  <a href="classMNASolution.html#a4605bb5d9c74ef5d93788a18272e0027">More...</a><br /></td></tr>
 <tr class="separator:a4605bb5d9c74ef5d93788a18272e0027"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23daab2f96d6fe5b5bf9ad03c2cae0b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a23daab2f96d6fe5b5bf9ad03c2cae0b1">containsElement</a> (<a class="el" href="classMNAElement.html">MNAElement</a> *element)</td></tr>
+<tr class="memitem:a23daab2f96d6fe5b5bf9ad03c2cae0b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNASolution.html#a23daab2f96d6fe5b5bf9ad03c2cae0b1">containsElement</a> (<a class="el" href="classMNAElement.html">MNAComponent</a> *element)</td></tr>
 <tr class="memdesc:a23daab2f96d6fe5b5bf9ad03c2cae0b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if element is in this solution.  <a href="classMNASolution.html#a23daab2f96d6fe5b5bf9ad03c2cae0b1">More...</a><br /></td></tr>
 <tr class="separator:a23daab2f96d6fe5b5bf9ad03c2cae0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -150,7 +150,7 @@ Static Private Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classMNAElement.html">MNAElement</a> * &gt;&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classMNAElement.html">MNAComponent</a> * &gt;&#160;</td>
           <td class="paramname"><em>elements</em>&#160;</td>
         </tr>
         <tr>
@@ -187,7 +187,7 @@ Static Private Member Functions</h2></td></tr>
         <tr>
           <td class="memname">bool MNASolution::containsElement </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classMNAElement.html">MNAElement</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classMNAElement.html">MNAComponent</a> *&#160;</td>
           <td class="paramname"><em>element</em></td><td>)</td>
           <td></td>
         </tr>
@@ -250,7 +250,7 @@ Static Private Member Functions</h2></td></tr>
         <tr>
           <td class="memname">double MNASolution::getCurrent </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classMNAElement.html">MNAElement</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classMNAElement.html">MNAComponent</a>&#160;</td>
           <td class="paramname"><em>resistor</em></td><td>)</td>
           <td></td>
         </tr>
@@ -308,7 +308,7 @@ Static Private Member Functions</h2></td></tr>
         <tr>
           <td class="memname">double MNASolution::getVoltage </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classMNAElement.html">MNAElement</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classMNAElement.html">MNAComponent</a>&#160;</td>
           <td class="paramname"><em>element</em></td><td>)</td>
           <td></td>
         </tr>
@@ -318,7 +318,7 @@ Static Private Member Functions</h2></td></tr>
 <p>Get the voltage of a specified element. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">element</td><td>The <a class="el" href="classMNAElement.html" title="Main class that holds circuit elements for modified nodal analysis (MNA).">MNAElement</a> to check at. </td></tr>
+    <tr><td class="paramname">element</td><td>The <a class="el" href="classMNAElement.html" title="Main class that holds circuit elements for modified nodal analysis (MNA).">MNAComponent</a> to check at. </td></tr>
   </table>
   </dd>
 </dl>
@@ -422,7 +422,7 @@ Static Private Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classMNAElement.html">MNAElement</a>*&gt; MNASolution::elements</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classMNAElement.html">MNAComponent</a>*&gt; MNASolution::elements</td>
         </tr>
       </table>
 </div><div class="memdoc">

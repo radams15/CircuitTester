@@ -4,7 +4,7 @@
 
 #include "Unknown.h"
 
-UnknownCurrent::UnknownCurrent(MNAElement *element) : Unknown(CURRENT) {
+UnknownCurrent::UnknownCurrent(MNAComponent *element) : Unknown(CURRENT) {
     this->element = element;
 }
 

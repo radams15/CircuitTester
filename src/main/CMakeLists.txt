@@ -10,18 +10,41 @@ endif()
 
 set(PROJECT_SOURCES
         main.cpp
-        UI/mainwindow.cpp
-        UI/mainwindow.h
+
+        ../../resources/resources.qrc
+
+        UI/MainWindow.cpp
+        UI/MainWindow.h
+        UI/Arrow.cpp
+        UI/Arrow.h
+        UI/Scene.cpp
+        UI/Scene.h
+        UI/SceneItem.cpp
+        UI/SceneItem.h
+        UI/SceneText.cpp
+        UI/SceneText.h
+
         Analysis/Equation.cpp
         Analysis/Equation.h
         Analysis/MNACircuit.cpp
         Analysis/MNACircuit.h
-        Analysis/MNAElement.cpp
-        Analysis/MNAElement.h
+        Analysis/MNAComponent.cpp
+        Analysis/MNAComponent.h
         Analysis/MNASolution.cpp
         Analysis/MNASolution.h
         Analysis/MNA.h
-        Components/Battery.cpp Components/Battery.h Components/Resistor.cpp Components/Resistor.h Components/CurrentSource.cpp Components/CurrentSource.h Analysis/Unknown.cpp Analysis/Unknown.h Analysis/Term.cpp Analysis/Term.h)
+        UI/Components/Battery.cpp
+        UI/Components/Battery.h
+        UI/Components/Resistor.cpp
+        UI/Components/Resistor.h
+        Analysis/Unknown.cpp
+        Analysis/Unknown.h
+        Analysis/Term.cpp
+        Analysis/Term.h
+        UI/UIComponent.cpp
+        UI/UIComponent.h
+        UI/AnalysisMapper.cpp
+        UI/AnalysisMapper.h)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(CircuitTester
