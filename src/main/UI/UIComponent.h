@@ -5,7 +5,8 @@
 #ifndef CIRCUITTESTER_UICOMPONENT_H
 #define CIRCUITTESTER_UICOMPONENT_H
 
-#include <QIcon>
+#include <string>
+
 #include <utility>
 
 #include "SceneItem.h"
@@ -14,7 +15,7 @@ class UIComponent : public SceneItem{
 protected:
     int ID;
 
-    explicit UIComponent(int id, QString resourcePath): ID(id), SceneItem(std::move(resourcePath)){};
+    explicit UIComponent(int id, std::string resourcePath): ID(id), SceneItem(std::move(resourcePath)){};
 
 private:
 

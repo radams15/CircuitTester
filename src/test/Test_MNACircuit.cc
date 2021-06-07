@@ -4,7 +4,6 @@
 #include <gtest/gtest.h>
 
 #include "../main/Analysis/MNACircuit.h"
-#include "../main/Components/Battery.h"
 
 /** @brief Initialiser empty list
  *

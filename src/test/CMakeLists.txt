@@ -12,10 +12,6 @@ set(C_FILES
         ../main/Analysis/MNASolution.cc
         ../main/Analysis/MNASolution.h
         ../main/Analysis/MNA.h
-        ../main/UI/Components/Battery.cc
-        ../main/UI/Components/Battery.h
-        ../main/UI/Components/Resistor.cc
-        ../main/UI/Components/Resistor.h
         ../main/Analysis/Unknown.cc ../main/Analysis/Unknown.h Test_MNACircuit.cc ../main/Analysis/Term.cc ../main/Analysis/Term.h)
 
 set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)

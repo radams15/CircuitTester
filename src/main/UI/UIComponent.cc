@@ -5,7 +5,7 @@
 #include "UIComponent.h"
 
 std::string UIComponent::str() {
-    return resourcePath.toStdString() + "(n" + std::to_string(n0) + ")";
+    return resourcePath + "(n" + std::to_string(n0) + ")";
 }
 
 bool UIComponent::equals(UIComponent* c) {

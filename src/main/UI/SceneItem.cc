@@ -14,9 +14,9 @@
 #define GRID_SNAP_STEP 20
 
 
-SceneItem::SceneItem(QString resourcePath, QGraphicsItem *parent) : QGraphicsPixmapItem(parent){
+SceneItem::SceneItem(std::string resourcePath, QGraphicsItem *parent) : QGraphicsPixmapItem(parent){
     this->resourcePath = resourcePath;
-    this->pixmap = QPixmap(resourcePath);
+    this->pixmap = QPixmap(QString::fromStdString(resourcePath));
     pixmap = pixmap.scaled(200, 200);
     setPixmap(this->pixmap);
 

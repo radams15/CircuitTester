@@ -10,7 +10,7 @@ class Arrow;
 class SceneItem : public QGraphicsPixmapItem {
 public:
 
-    SceneItem(QString resourcePath, QGraphicsItem *parent = nullptr);
+    SceneItem(std::string resourcePath, QGraphicsItem *parent = nullptr);
 
     void removeArrow(Arrow *arrow);
     void removeArrows();
@@ -30,7 +30,7 @@ public:
 protected:
     QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;
     QPixmap pixmap;
-    QString resourcePath;
+    std::string resourcePath;
 
 private:
     QPolygonF myPolygon;

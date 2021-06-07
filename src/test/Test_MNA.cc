@@ -10,8 +10,6 @@
 #include "../main/Analysis/MNAComponent.h"
 #include "../main/Analysis/MNACircuit.h"
 #include "../main/Analysis/MNASolution.h"
-#include "../main/Components/Battery.h"
-#include "../main/Components/Resistor.h"
 
 /**
  * @brief One Resistor Current.
@@ -19,8 +17,8 @@
  * connected to a 10.0V battery is 2.5A.
  */
 TEST(NodalAnalysis, OneResistorCurrent){
-    auto bat = new Battery(0, 1, 10);
-    auto res = new Resistor(1, 0, 4);
+    auto bat = new MNAComponent(0, 1, BATTERY, 10);
+    auto res = new MNAComponent(1, 0, RESISTOR, 4);
 
     auto cir = new MNACircuit({bat, res});
 
@@ -47,9 +45,9 @@ TEST(NodalAnalysis, OneResistorCurrent){
  * current splitting.
  */
 TEST(NodalAnalysis, TwoResistorsInParallel){
-    auto bat = new Battery(0, 1, 10);
-    auto res1 = new Resistor(1, 0, 10);
-    auto res2 = new Resistor(1, 0, 20);
+    auto bat = new MNAComponent(0, 1, BATTERY, 10);
+    auto res1 = new MNAComponent(1, 0, RESISTOR, 10);
+    auto res2 = new MNAComponent(1, 0, RESISTOR, 20);
 
     auto cir = new MNACircuit({bat, res1, res2});
 
@@ -78,10 +76,10 @@ TEST(NodalAnalysis, TwoResistorsInParallel){
  * Currents should be 0.58A, 0.29A and 0.87A respectively.
  */
 TEST(NodalAnalysis, ParalellAndSeriesResistors){
-    auto bat = new Battery(0, 1, 9);
-    auto res1 = new Resistor(1, 2, 5);
-    auto res2 = new Resistor(1, 2, 10);
-    auto res3 = new Resistor(2, 0, 7);
+    auto bat = new MNAComponent(0, 1, BATTERY, 9);
+    auto res1 = new MNAComponent(1, 2, RESISTOR, 5);
+    auto res2 = new MNAComponent(1, 2, RESISTOR, 10);
+    auto res3 = new MNAComponent(2, 0, RESISTOR, 7);
 
     auto cir = new MNACircuit({bat, res1, res2, res3});
 
@@ -110,9 +108,9 @@ TEST(NodalAnalysis, ParalellAndSeriesResistors){
  * of 8.0V.
  */
 TEST(NodalAnalysis, TwoBatteriesInSeries){
-    auto bat1 = new Battery(0, 1, 3);
-    auto bat2 = new Battery(1, 2, 4);
-    auto res = new Resistor(2, 0, 2);
+    auto bat1 = new MNAComponent(0, 1, BATTERY, 3);
+    auto bat2 = new MNAComponent(1, 2, BATTERY, 4);
+    auto res = new MNAComponent(2, 0, RESISTOR, 2);
 
     auto cir = new MNACircuit({bat1, bat2, res});
 
@@ -138,9 +136,9 @@ TEST(NodalAnalysis, TwoBatteriesInSeries){
  * if there is only 1 4.0V battery.
  */
 TEST(NodalAnalysis, TwoBatteriesInParallel){
-    auto bat1 = new Battery(0, 1, 4);
-    auto bat2 = new Battery(0, 1, 4);
-    auto res = new Resistor(1, 0, 10);
+    auto bat1 = new MNAComponent(0, 1, BATTERY, 4);
+    auto bat2 = new MNAComponent(0, 1, BATTERY, 4);
+    auto res = new MNAComponent(1, 0, RESISTOR, 10);
 
     auto cir = new MNACircuit({bat1, bat2, res});
 
