@@ -54,7 +54,7 @@ sub archive {
 
 `rm -rf out/`;
 
-#make_win();
-#make_lin();
+make_win();
+make_lin();
 move();
 archive();
