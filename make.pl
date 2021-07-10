@@ -1,9 +1,10 @@
 #!/bin/perl
+use Cwd;
 
 use warnings;
 use strict;
 
-my $ROOT = '/CircuitTester';
+my $ROOT = getcwd;
 
 sub make_win {
 	`rm -rf winbuild`;
