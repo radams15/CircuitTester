@@ -26,9 +26,6 @@ private:
     /** @brief Holds all the MNAElements that are resistors */
     std::vector<MNAComponent*> resistors;
 
-    /** @brief Holds all the MNAElements that are current sources */
-    std::vector<MNAComponent*> currentSources;
-
     /** @brief Holds all the MNAElements combined */
     std::vector<MNAComponent*> elements;
 
@@ -113,13 +110,6 @@ public:
      * @return An MNASolution class for this circuit.
      */
     MNASolution* solve();
-
-    /** @brief Finds the total current leaving a node.
-     *
-     * @param nodeIndex The node to search around.
-     * @return The current flowing from that node.
-     */
-    double getCurrentTotal(int nodeIndex);
 
     /** Finds the nodes that are connected to the passed node.
      *

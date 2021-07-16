@@ -25,7 +25,6 @@ MNACircuit::MNACircuit(std::vector<MNAComponent *> elements) {
     // contain some elements for any reason.
     batteries.clear();
     resistors.clear();
-    currentSources.clear();
 
     // Instead of adding the 3 lists, just copy the passed list into the
     // class attribute.
@@ -41,9 +40,6 @@ MNACircuit::MNACircuit(std::vector<MNAComponent *> elements) {
                 break;
             case RESISTOR:
                 resistors.push_back(e);
-                break;
-            case CURRENT_SRC:
-                currentSources.push_back(e);
                 break;
         }
     }
@@ -63,42 +59,14 @@ MNACircuit::MNACircuit(std::vector<MNAComponent *> elements) {
 }
 
 int MNACircuit::getNumUnknownCurrents() {
-    int zeroResistors = 0;
-
-    // Every resistor with a zero resistance has
-    // an unknown current that needs to be counted.
-    for(auto r : resistors){
-        if(r->value == 0){
-            zeroResistors++;
-        }
-    }
-
-    // Add the zero resistance resistors to the number of batteries.
-    return batteries.size()+zeroResistors;
+    // Batteries arehe only component with an unknown resistance.
+    return batteries.size();
 }
 
 int MNACircuit::getNumVars() {
     // The node count is the number of voltage nodes, and each node
     // has an unknown voltage.
     return nodeCount + getNumUnknownCurrents();
-}
-
-double MNACircuit::getCurrentTotal(int nodeIndex) {
-    double numCurrentSources = 0.0;
-
-    for(auto c : currentSources){
-        if(c->n1 == nodeIndex){
-            // Convention states that incoming current is negative
-            numCurrentSources -= c->value;
-        }
-
-        if(c->n0 == nodeIndex){
-            // Convention states that outgoing current is positive.
-            numCurrentSources += c->value;
-        }
-    }
-
-    return numCurrentSources;
 }
 
 std::vector<Term *>* MNACircuit::getCurrents(int node, int side) {
@@ -127,13 +95,9 @@ std::vector<Term *>* MNACircuit::getCurrents(int node, int side) {
         // Convert node index into node value.
         int n = side == 0 ? r->n0 : r->n1;
 
-        // If correct node and a zero-resistance resistor.
-        if (n == node && r->value == 0) {
-            // The resistor has an unknown current, make the object.
-            out->push_back(new Term(currentDirection, new UnknownCurrent(r)));
-        }else if(n == node && r->value != 0){
-            // If the resistance is not 0, the resistor has an unknown voltage.
-            // The voltage enters and leaves the component, so there are 2 terms.
+        // If correct node
+        if(n == node){
+            // The voltage enters and leaves the component, so there are 2 terms. This uses V=IR to find current, e.g. (1/R)*V =  V/R = I
             out->push_back(new Term(-currentDirection / r->value, new UnknownVoltage(r->n1 )));
             out->push_back(new Term(currentDirection / r->value, new UnknownVoltage(r->n0 )));
         }
@@ -237,7 +201,7 @@ std::vector<Equation *>* MNACircuit::getEquations() {
             conserved->insert(conserved->end(), outgoing->begin(), outgoing->end());
 
             // Create an equation of total current equals the sum of all the terms.
-            equations->push_back(new Equation(getCurrentTotal(n), *conserved));
+            equations->push_back(new Equation(0, *conserved));
         }
     }
 
@@ -251,17 +215,6 @@ std::vector<Equation *>* MNACircuit::getEquations() {
         }));
     }
 
-    for(auto r : resistors){
-        if(r->value == 0){
-            //If resistance is 0, n0 and n1 are the same, as there
-            // may as well not be a component there
-            equations->push_back(new Equation(r->value, {
-                    new Term(1, new UnknownVoltage(r->n0)),
-                    new Term(-1, new UnknownVoltage(r->n1))
-            }));
-        }
-    }
-
     return equations;
 }
 
@@ -271,13 +224,6 @@ std::vector<UnknownCurrent *> *MNACircuit::getUnknownCurrents() {
     for(auto b : batteries){
         //Batteries have an unknown current before they are placed into a circuit.
         out->push_back(new UnknownCurrent(b));
-    }
-
-    for(auto r : resistors){
-        if(r->value == 0) {
-            // Zero-resistance resistors have an unknown current.
-            out->push_back(new UnknownCurrent(r));
-        }
     }
 
     return out;

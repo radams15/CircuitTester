@@ -44,7 +44,9 @@ set(PROJECT_SOURCES
         UI/UIComponent.cc
         UI/UIComponent.h
         UI/AnalysisMapper.cc
-        UI/AnalysisMapper.h)
+        UI/AnalysisMapper.h
+        Saves/UserUtils.cpp
+        Saves/UserUtils.h Saves/CircuitSaver.cc Saves/CircuitSaver.h)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(CircuitTester

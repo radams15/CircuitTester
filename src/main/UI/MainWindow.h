@@ -42,7 +42,7 @@ private:
 
     template<class T> QWidget *createCellWidget(const QString &text);
 
-    Path* find_shortest_path(Graph* graph, UIComponent* start, UIComponent* end);
+    static Path* find_shortest_path(Graph* graph, UIComponent* start, UIComponent* end);
 
     Scene *scene;
     QGraphicsView *view;

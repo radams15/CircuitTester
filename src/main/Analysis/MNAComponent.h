@@ -10,8 +10,7 @@
 
 enum ElementType{
     BATTERY,
-    RESISTOR,
-    CURRENT_SRC
+    RESISTOR
 };
 
 /**@brief Main class that holds circuit elements for

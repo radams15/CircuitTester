@@ -1,5 +1,4 @@
 #include <iostream>
-#include <map>
 #include <vector>
 #include <queue>
 #include <algorithm>
@@ -12,6 +11,8 @@
 
 #include "Components/Resistor.h"
 #include "Components/Battery.h"
+
+#include "../Saves/CircuitSaver.h"
 
 #include <QtWidgets>
 
@@ -39,7 +40,7 @@ MainWindow::MainWindow() {
     widget->setLayout(layout);
 
     setCentralWidget(widget);
-    setWindowTitle(tr("Layout Test 1"));
+    setWindowTitle(tr("Circuit Simulator"));
 
     setUnifiedTitleAndToolBarOnMac(true);
 }
@@ -115,8 +116,8 @@ void MainWindow::sceneScaleChanged(const QString &scale) {
 
 
 void MainWindow::about() {
-    QMessageBox::about(this, tr("About"),
-                       tr("This is the <b>first</b> layout test."));
+    QMessageBox::about(this, tr("About Circuit Simulator"),
+                       tr("This is a circuit simulation program written by Rhys Adams (2021-22)"));
 }
 
 
@@ -126,14 +127,14 @@ void MainWindow::createToolBox() {
     connect(buttonGroup, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked),
             this, &MainWindow::buttonGroupClicked);
 
-    QGridLayout *layout = new QGridLayout;
+    auto *layout = new QGridLayout;
     layout->addWidget(createCellWidget<Resistor>(tr("Resistor")), 0, 0);
     layout->addWidget(createCellWidget<Battery>(tr("Battery")), 0, 1);
 
     layout->setRowStretch(3, 10);
     layout->setColumnStretch(2, 10);
 
-    QWidget *itemWidget = new QWidget;
+    auto *itemWidget = new QWidget;
     itemWidget->setLayout(layout);
 
 
@@ -183,11 +184,11 @@ void MainWindow::createMenus() {
 
 
 void MainWindow::createToolbars() {
-    QToolButton *pointerButton = new QToolButton;
+    auto *pointerButton = new QToolButton;
     pointerButton->setCheckable(true);
     pointerButton->setChecked(true);
     pointerButton->setIcon(QIcon(":/images/pointer.png"));
-    QToolButton *linePointerButton = new QToolButton;
+    auto *linePointerButton = new QToolButton;
     linePointerButton->setCheckable(true);
     linePointerButton->setIcon(QIcon(":/images/linepointer.png"));
 
@@ -219,17 +220,17 @@ QWidget *MainWindow::createCellWidget(const QString &text) {
 
     QIcon icon(item.getPixmap());
 
-    QToolButton *button = new QToolButton;
+    auto *button = new QToolButton;
     button->setIcon(icon);
     button->setIconSize(QSize(50, 50));
     button->setCheckable(true);
     buttonGroup->addButton(button, item.getId());
 
-    QGridLayout *layout = new QGridLayout;
+    auto *layout = new QGridLayout;
     layout->addWidget(button, 0, 0, Qt::AlignHCenter);
     layout->addWidget(new QLabel(text), 1, 0, Qt::AlignCenter);
 
-    QWidget *widget = new QWidget;
+    auto *widget = new QWidget;
     widget->setLayout(layout);
 
     return widget;
@@ -247,9 +248,15 @@ void MainWindow::runSimulation() {
         }
     }
 
-    if(components.size() == 0){
+    if(components.empty()){
         return;
     }
+
+    CircuitSaver c;
+
+    c.saveCircuit(components, arrows);
+
+    return;
 
     Graph graph;
 
