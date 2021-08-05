@@ -17,32 +17,6 @@ TEST(MNACircuit, EmptyList){
     auto c = new MNACircuit({});
 }
 
-/** @brief getCurrentTotal negative index
- *
- * Type: invalid
- *
- * Data: -1
- *
- * Expected: Returns a total of 0 as the node does not exist.
- */
-TEST(MNACircuit, GetCurrentTotalNegative){
-    auto c = new MNACircuit({});
-    ASSERT_EQ(c->getCurrentTotal(-1), 0);
-}
-
-/** @brief getCurrentTotal non-existant index
- *
- * Type: invalid
- *
- * Data: 100
- *
- * Expected: Returns a total of 0 as the node does not exist.
- */
-TEST(MNACircuit, GetCurrentTotalNonExistant){
-    auto c = new MNACircuit({});
-    ASSERT_EQ(c->getCurrentTotal(100), 0);
-}
-
 /** @brief getConnectedNodes invalid node
  *
  * Type: invalid

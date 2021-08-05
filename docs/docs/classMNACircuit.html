@@ -86,15 +86,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad76efa513703e1af82df86523039a6c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNACircuit.html#ad76efa513703e1af82df86523039a6c5">MNACircuit</a> (std::vector&lt; <a class="el" href="classMNAElement.html">MNAComponent</a> * &gt; <a class="el" href="classMNACircuit.html#afcf35afd795badc7e9432deb975e466d">elements</a>)</td></tr>
-<tr class="memdesc:ad76efa513703e1af82df86523039a6c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises <a class="el" href="classMNACircuit.html" title="Main class that holds a circuit for modified nodal analysis (MNA).">MNACircuit</a> object.  <a href="classMNACircuit.html#ad76efa513703e1af82df86523039a6c5">More...</a><br /></td></tr>
-<tr class="separator:ad76efa513703e1af82df86523039a6c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe51d2e49f7b916f506a9ebcb08c433f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNACircuit.html#afe51d2e49f7b916f506a9ebcb08c433f">MNACircuit</a> (std::vector&lt; <a class="el" href="classMNAComponent.html">MNAComponent</a> * &gt; <a class="el" href="classMNACircuit.html#a4d1bb2b3212da50aead467185a772de2">elements</a>)</td></tr>
+<tr class="memdesc:afe51d2e49f7b916f506a9ebcb08c433f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises <a class="el" href="classMNACircuit.html" title="Main class that holds a circuit for modified nodal analysis (MNA).">MNACircuit</a> object.  <a href="classMNACircuit.html#afe51d2e49f7b916f506a9ebcb08c433f">More...</a><br /></td></tr>
+<tr class="separator:afe51d2e49f7b916f506a9ebcb08c433f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a627e83c432583f7a52b233691785bfdd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMNASolution.html">MNASolution</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNACircuit.html#a627e83c432583f7a52b233691785bfdd">solve</a> ()</td></tr>
 <tr class="memdesc:a627e83c432583f7a52b233691785bfdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the circuit using linear algebra and matrices.  <a href="classMNACircuit.html#a627e83c432583f7a52b233691785bfdd">More...</a><br /></td></tr>
 <tr class="separator:a627e83c432583f7a52b233691785bfdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b2b5f872f522f246bb04958a86a43c5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNACircuit.html#a0b2b5f872f522f246bb04958a86a43c5">getCurrentTotal</a> (int nodeIndex)</td></tr>
-<tr class="memdesc:a0b2b5f872f522f246bb04958a86a43c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the total current leaving a node.  <a href="classMNACircuit.html#a0b2b5f872f522f246bb04958a86a43c5">More...</a><br /></td></tr>
-<tr class="separator:a0b2b5f872f522f246bb04958a86a43c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33ec8e37f240fd8ebc09f34597bd6100"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNACircuit.html#a33ec8e37f240fd8ebc09f34597bd6100">getConnectedNodes</a> (int node)</td></tr>
 <tr class="separator:a33ec8e37f240fd8ebc09f34597bd6100"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2041e65d97176c154242bcd2eb60201"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classTerm.html">Term</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNACircuit.html#ad2041e65d97176c154242bcd2eb60201">getCurrents</a> (int node, int side)</td></tr>
@@ -129,18 +126,15 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a31ec036ae58a77a3d867f7e433adc2ce"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMNAElement.html">MNAComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNACircuit.html#a31ec036ae58a77a3d867f7e433adc2ce">batteries</a></td></tr>
-<tr class="memdesc:a31ec036ae58a77a3d867f7e433adc2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds all the MNAElements that are batteries.  <a href="classMNACircuit.html#a31ec036ae58a77a3d867f7e433adc2ce">More...</a><br /></td></tr>
-<tr class="separator:a31ec036ae58a77a3d867f7e433adc2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9919e9cebfe8d1ab9f7a616fad728fb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMNAElement.html">MNAComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNACircuit.html#af9919e9cebfe8d1ab9f7a616fad728fb">resistors</a></td></tr>
-<tr class="memdesc:af9919e9cebfe8d1ab9f7a616fad728fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds all the MNAElements that are resistors.  <a href="classMNACircuit.html#af9919e9cebfe8d1ab9f7a616fad728fb">More...</a><br /></td></tr>
-<tr class="separator:af9919e9cebfe8d1ab9f7a616fad728fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9eaf73cf8558d366cf45af25c3852e6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMNAElement.html">MNAComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNACircuit.html#ab9eaf73cf8558d366cf45af25c3852e6">currentSources</a></td></tr>
-<tr class="memdesc:ab9eaf73cf8558d366cf45af25c3852e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds all the MNAElements that are current sources.  <a href="classMNACircuit.html#ab9eaf73cf8558d366cf45af25c3852e6">More...</a><br /></td></tr>
-<tr class="separator:ab9eaf73cf8558d366cf45af25c3852e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcf35afd795badc7e9432deb975e466d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMNAElement.html">MNAComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNACircuit.html#afcf35afd795badc7e9432deb975e466d">elements</a></td></tr>
-<tr class="memdesc:afcf35afd795badc7e9432deb975e466d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds all the MNAElements combined.  <a href="classMNACircuit.html#afcf35afd795badc7e9432deb975e466d">More...</a><br /></td></tr>
-<tr class="separator:afcf35afd795badc7e9432deb975e466d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74dd94858e339c5d47f482c9975a4c4f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMNAComponent.html">MNAComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNACircuit.html#a74dd94858e339c5d47f482c9975a4c4f">batteries</a></td></tr>
+<tr class="memdesc:a74dd94858e339c5d47f482c9975a4c4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds all the MNAElements that are batteries.  <a href="classMNACircuit.html#a74dd94858e339c5d47f482c9975a4c4f">More...</a><br /></td></tr>
+<tr class="separator:a74dd94858e339c5d47f482c9975a4c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a78a7517bddc93653edff82aa9358b5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMNAComponent.html">MNAComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNACircuit.html#a3a78a7517bddc93653edff82aa9358b5">resistors</a></td></tr>
+<tr class="memdesc:a3a78a7517bddc93653edff82aa9358b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds all the MNAElements that are resistors.  <a href="classMNACircuit.html#a3a78a7517bddc93653edff82aa9358b5">More...</a><br /></td></tr>
+<tr class="separator:a3a78a7517bddc93653edff82aa9358b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d1bb2b3212da50aead467185a772de2"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMNAComponent.html">MNAComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNACircuit.html#a4d1bb2b3212da50aead467185a772de2">elements</a></td></tr>
+<tr class="memdesc:a4d1bb2b3212da50aead467185a772de2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds all the MNAElements combined.  <a href="classMNACircuit.html#a4d1bb2b3212da50aead467185a772de2">More...</a><br /></td></tr>
+<tr class="separator:a4d1bb2b3212da50aead467185a772de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f9ad534d3a1322877360535bebb8f1c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNACircuit.html#a2f9ad534d3a1322877360535bebb8f1c">nodeCount</a></td></tr>
 <tr class="memdesc:a2f9ad534d3a1322877360535bebb8f1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The total number of nodes.  <a href="classMNACircuit.html#a2f9ad534d3a1322877360535bebb8f1c">More...</a><br /></td></tr>
 <tr class="separator:a2f9ad534d3a1322877360535bebb8f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,8 +149,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MNACircuit_8h_source.html#l00021">21</a> of file <a class="el" href="MNACircuit_8h_source.html">MNACircuit.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad76efa513703e1af82df86523039a6c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad76efa513703e1af82df86523039a6c5">&#9670;&nbsp;</a></span>MNACircuit()</h2>
+<a id="afe51d2e49f7b916f506a9ebcb08c433f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe51d2e49f7b916f506a9ebcb08c433f">&#9670;&nbsp;</a></span>MNACircuit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,7 +161,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">MNACircuit::MNACircuit </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classMNAElement.html">MNAComponent</a> * &gt;&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classMNAComponent.html">MNAComponent</a> * &gt;&#160;</td>
           <td class="paramname"><em>elements</em></td><td>)</td>
           <td></td>
         </tr>
@@ -188,7 +182,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8cpp_source.html#l00023">23</a> of file <a class="el" href="MNACircuit_8cpp_source.html">MNACircuit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNACircuit_8cc_source.html#l00023">23</a> of file <a class="el" href="MNACircuit_8cc_source.html">MNACircuit.cc</a>.</p>
 
 </div>
 </div>
@@ -217,7 +211,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8cpp_source.html#l00175">175</a> of file <a class="el" href="MNACircuit_8cpp_source.html">MNACircuit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNACircuit_8cc_source.html#l00139">139</a> of file <a class="el" href="MNACircuit_8cc_source.html">MNACircuit.cc</a>.</p>
 
 </div>
 </div>
@@ -258,36 +252,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8cpp_source.html#l00104">104</a> of file <a class="el" href="MNACircuit_8cpp_source.html">MNACircuit.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a0b2b5f872f522f246bb04958a86a43c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b2b5f872f522f246bb04958a86a43c5">&#9670;&nbsp;</a></span>getCurrentTotal()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double MNACircuit::getCurrentTotal </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nodeIndex</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Finds the total current leaving a node. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nodeIndex</td><td>The node to search around. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The current flowing from that node. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8cpp_source.html#l00086">86</a> of file <a class="el" href="MNACircuit_8cpp_source.html">MNACircuit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNACircuit_8cc_source.html#l00072">72</a> of file <a class="el" href="MNACircuit_8cc_source.html">MNACircuit.cc</a>.</p>
 
 </div>
 </div>
@@ -344,7 +309,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The element index in the vector, or -1 if the element is not found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8cpp_source.html#l00343">343</a> of file <a class="el" href="MNACircuit_8cpp_source.html">MNACircuit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNACircuit_8cc_source.html#l00289">289</a> of file <a class="el" href="MNACircuit_8cc_source.html">MNACircuit.cc</a>.</p>
 
 </div>
 </div>
@@ -374,7 +339,7 @@ template&lt;typename T &gt; </div>
 <p>Returns a list of equations that must be solved to solve the overall circuit. </p>
 <dl class="section return"><dt>Returns</dt><dd>A list of solvable <a class="el" href="classEquation.html" title="Class that holds an equation.">Equation</a> objects. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8cpp_source.html#l00207">207</a> of file <a class="el" href="MNACircuit_8cpp_source.html">MNACircuit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNACircuit_8cc_source.html#l00171">171</a> of file <a class="el" href="MNACircuit_8cc_source.html">MNACircuit.cc</a>.</p>
 
 </div>
 </div>
@@ -405,7 +370,7 @@ template&lt;typename T &gt; </div>
 <p>Current sources are not calculated as they are known currents.</p>
 <dl class="section return"><dt>Returns</dt><dd>The number of unknown currents. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8cpp_source.html#l00065">65</a> of file <a class="el" href="MNACircuit_8cpp_source.html">MNACircuit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNACircuit_8cc_source.html#l00061">61</a> of file <a class="el" href="MNACircuit_8cc_source.html">MNACircuit.cc</a>.</p>
 
 </div>
 </div>
@@ -435,7 +400,7 @@ template&lt;typename T &gt; </div>
 <p>Used to find out the number of both current and voltage variables. </p>
 <dl class="section return"><dt>Returns</dt><dd>The total number of variables in the circuit. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8cpp_source.html#l00080">80</a> of file <a class="el" href="MNACircuit_8cpp_source.html">MNACircuit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNACircuit_8cc_source.html#l00066">66</a> of file <a class="el" href="MNACircuit_8cc_source.html">MNACircuit.cc</a>.</p>
 
 </div>
 </div>
@@ -466,7 +431,7 @@ template&lt;typename T &gt; </div>
 <p>This is the voltage that other components are comparedto.</p>
 <dl class="section return"><dt>Returns</dt><dd>A list of nodes that are references. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8cpp_source.html#l00145">145</a> of file <a class="el" href="MNACircuit_8cpp_source.html">MNACircuit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNACircuit_8cc_source.html#l00109">109</a> of file <a class="el" href="MNACircuit_8cc_source.html">MNACircuit.cc</a>.</p>
 
 </div>
 </div>
@@ -496,7 +461,7 @@ template&lt;typename T &gt; </div>
 <p>Returns all unknown currents in thecircuit. </p>
 <dl class="section return"><dt>Returns</dt><dd>A list of all the <a class="el" href="classUnknownCurrent.html" title="Stores an MNAComponent for which the current is unknown.">UnknownCurrent</a> objects. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8cpp_source.html#l00268">268</a> of file <a class="el" href="MNACircuit_8cpp_source.html">MNACircuit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNACircuit_8cc_source.html#l00221">221</a> of file <a class="el" href="MNACircuit_8cc_source.html">MNACircuit.cc</a>.</p>
 
 </div>
 </div>
@@ -518,7 +483,7 @@ template&lt;typename T &gt; </div>
 <p>Solves the circuit using linear algebra and matrices. </p>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classMNASolution.html" title="Stores the solution of a circuit.">MNASolution</a> class for this circuit. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8cpp_source.html#l00286">286</a> of file <a class="el" href="MNACircuit_8cpp_source.html">MNACircuit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNACircuit_8cc_source.html#l00232">232</a> of file <a class="el" href="MNACircuit_8cc_source.html">MNACircuit.cc</a>.</p>
 
 </div>
 </div>
@@ -564,13 +529,13 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first element that was removed. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8cpp_source.html#l00014">14</a> of file <a class="el" href="MNACircuit_8cpp_source.html">MNACircuit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNACircuit_8cc_source.html#l00014">14</a> of file <a class="el" href="MNACircuit_8cc_source.html">MNACircuit.cc</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a31ec036ae58a77a3d867f7e433adc2ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31ec036ae58a77a3d867f7e433adc2ce">&#9670;&nbsp;</a></span>batteries</h2>
+<a id="a74dd94858e339c5d47f482c9975a4c4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74dd94858e339c5d47f482c9975a4c4f">&#9670;&nbsp;</a></span>batteries</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -579,7 +544,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classMNAElement.html">MNAComponent</a>*&gt; MNACircuit::batteries</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classMNAComponent.html">MNAComponent</a>*&gt; MNACircuit::batteries</td>
         </tr>
       </table>
   </td>
@@ -595,8 +560,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="ab9eaf73cf8558d366cf45af25c3852e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9eaf73cf8558d366cf45af25c3852e6">&#9670;&nbsp;</a></span>currentSources</h2>
+<a id="a4d1bb2b3212da50aead467185a772de2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d1bb2b3212da50aead467185a772de2">&#9670;&nbsp;</a></span>elements</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -605,33 +570,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classMNAElement.html">MNAComponent</a>*&gt; MNACircuit::currentSources</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Holds all the MNAElements that are current sources. </p>
-
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8h_source.html#l00030">30</a> of file <a class="el" href="MNACircuit_8h_source.html">MNACircuit.h</a>.</p>
-
-</div>
-</div>
-<a id="afcf35afd795badc7e9432deb975e466d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcf35afd795badc7e9432deb975e466d">&#9670;&nbsp;</a></span>elements</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classMNAElement.html">MNAComponent</a>*&gt; MNACircuit::elements</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classMNAComponent.html">MNAComponent</a>*&gt; MNACircuit::elements</td>
         </tr>
       </table>
   </td>
@@ -643,7 +582,7 @@ template&lt;typename T &gt; </div>
 
 <p>Holds all the MNAElements combined. </p>
 
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8h_source.html#l00033">33</a> of file <a class="el" href="MNACircuit_8h_source.html">MNACircuit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNACircuit_8h_source.html#l00030">30</a> of file <a class="el" href="MNACircuit_8h_source.html">MNACircuit.h</a>.</p>
 
 </div>
 </div>
@@ -669,7 +608,7 @@ template&lt;typename T &gt; </div>
 
 <p>The total number of nodes. </p>
 
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8h_source.html#l00036">36</a> of file <a class="el" href="MNACircuit_8h_source.html">MNACircuit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNACircuit_8h_source.html#l00033">33</a> of file <a class="el" href="MNACircuit_8h_source.html">MNACircuit.h</a>.</p>
 
 </div>
 </div>
@@ -695,12 +634,12 @@ template&lt;typename T &gt; </div>
 
 <p>All the nodes in the circuit. </p>
 
-<p class="definition">Definition at line <a class="el" href="MNACircuit_8h_source.html#l00039">39</a> of file <a class="el" href="MNACircuit_8h_source.html">MNACircuit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MNACircuit_8h_source.html#l00036">36</a> of file <a class="el" href="MNACircuit_8h_source.html">MNACircuit.h</a>.</p>
 
 </div>
 </div>
-<a id="af9919e9cebfe8d1ab9f7a616fad728fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9919e9cebfe8d1ab9f7a616fad728fb">&#9670;&nbsp;</a></span>resistors</h2>
+<a id="a3a78a7517bddc93653edff82aa9358b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a78a7517bddc93653edff82aa9358b5">&#9670;&nbsp;</a></span>resistors</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -709,7 +648,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classMNAElement.html">MNAComponent</a>*&gt; MNACircuit::resistors</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classMNAComponent.html">MNAComponent</a>*&gt; MNACircuit::resistors</td>
         </tr>
       </table>
   </td>
@@ -727,7 +666,7 @@ template&lt;typename T &gt; </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/mnt/files/scripts/CircuitTester/src/main/Analysis/<a class="el" href="MNACircuit_8h_source.html">MNACircuit.h</a></li>
-<li>/mnt/files/scripts/CircuitTester/src/main/Analysis/<a class="el" href="MNACircuit_8cpp_source.html">MNACircuit.cpp</a></li>
+<li>/mnt/files/scripts/CircuitTester/src/main/Analysis/<a class="el" href="MNACircuit_8cc_source.html">MNACircuit.cc</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

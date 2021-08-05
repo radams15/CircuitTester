@@ -8,22 +8,11 @@
 
 #include <string>
 
-/** @brief Determines which OS is being used
- *
- */
-enum OS{
-    MACOS,
-    LINUX,
-    WINDOWS,
-    OTHER
-};
-
 class UserUtils {
 private:
     static std::string getUserName();
 
 public:
-    static OS getOs();
     static std::string getSaveDir();
     static bool saveDirExists();
     static bool createSaveDir();

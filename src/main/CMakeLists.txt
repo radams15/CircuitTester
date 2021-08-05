@@ -64,6 +64,8 @@ else()
     endif()
 endif()
 
+target_compile_features(CircuitTester PRIVATE cxx_std_17)
+
 set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/lib)
 

@@ -7,6 +7,7 @@
 #include <QApplication>
 
 #include "UI/MainWindow.h"
+#include "Saves/UserUtils.h"
 
 
 /** @brief Main GUI method.
@@ -24,7 +25,8 @@ int guiMain(int argc, char** argv){
 }
 
 /** @brief Main method.
- * This is the main program entry point.
+ * This is the main program entry point, which for now just starts the guiMain
+ * method and returns the output to the caller.
  */
 int main(int argc, char** argv){
     return guiMain(argc, argv);

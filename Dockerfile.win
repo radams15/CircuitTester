@@ -7,5 +7,5 @@ RUN dnf in -y mingw64-qt5-qtbase-devel make cmake gcc gcc-c++
 RUN adduser builder;
 RUN echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers;
 
-RUN echo -e '#!/bin/bash\ncd /CircuitTester/\nmkdir -p winbuild\ncd winbuild\nmingw64-cmake -DEIGEN3_INCLUDE_DIR=/CircuitTester/lib/eigen/ -DCMAKE_BUILD_TYPE=release ..\nmingw64-make -j4 ; cd /CircuitTester/; ./movewindeps.pl' > /bin/build
+RUN echo -e '#!/bin/bash\ncd /CircuitTester/\nmkdir -p winbuild\ncd winbuild\nmingw64-cmake -DDO_TESTS=off -DMAKE_DOCS=off -DEIGEN3_INCLUDE_DIR=/CircuitTester/lib/eigen/ -DCMAKE_BUILD_TYPE=release ..\nmingw64-make -j4 ; cd /CircuitTester/; ./movewindeps.pl' > /bin/build
 RUN chmod +x /bin/build

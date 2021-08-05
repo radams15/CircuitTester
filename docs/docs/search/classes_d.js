@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['tab_11731',['Tab',['https://doc.qt.io/qt-5/qtgui/qtextoption-tab.html',1,'QTextOption']]],
-  ['term_11732',['Term',['../classTerm.html',1,'']]],
-  ['timerinfo_11733',['TimerInfo',['https://doc.qt.io/qt-5/qabstracteventdispatcher-timerinfo.html',1,'QAbstractEventDispatcher']]],
-  ['touchpoint_11734',['TouchPoint',['https://doc.qt.io/qt-5/qtgui/qtouchevent-touchpoint.html',1,'QTouchEvent']]]
+  ['uicomponent_11819',['UIComponent',['../classUIComponent.html',1,'']]],
+  ['unknown_11820',['Unknown',['../classUnknown.html',1,'']]],
+  ['unknowncurrent_11821',['UnknownCurrent',['../classUnknownCurrent.html',1,'']]],
+  ['unknownvoltage_11822',['UnknownVoltage',['../classUnknownVoltage.html',1,'']]]
 ];
