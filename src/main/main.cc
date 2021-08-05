@@ -3,12 +3,9 @@
  */
 #include <iostream>
 
-
 #include <QApplication>
 
 #include "UI/MainWindow.h"
-#include "Saves/UserUtils.h"
-
 
 /** @brief Main GUI method.
  * This method runs the QT GUI code and

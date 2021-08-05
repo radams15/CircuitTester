@@ -8,11 +8,13 @@
 #include "Scene.h"
 #include "SceneText.h"
 #include "MainWindow.h"
+#include "SettingsMenu.h"
 
 #include "Components/Resistor.h"
 #include "Components/Battery.h"
 
 #include "../Saves/CircuitSaver.h"
+#include "AnalysisMapper.h"
 
 #include <QtWidgets>
 
@@ -36,8 +38,20 @@ MainWindow::MainWindow() {
     view = new QGraphicsView(scene);
     layout->addWidget(view);
 
+
+
+    QVBoxLayout* helpBox = new QVBoxLayout();
+    QLabel* helpLabel = new QLabel("Settings");
+    helpBox->addWidget(helpLabel);
+
+    SettingsMenu* helpMenu = new SettingsMenu();
+    helpMenu->setContentLayout(*helpBox);
+    layout->addWidget(helpMenu);
+
     QWidget *widget = new QWidget;
     widget->setLayout(layout);
+
+
 
     setCentralWidget(widget);
     setWindowTitle(tr("Circuit Simulator"));
@@ -237,103 +251,10 @@ QWidget *MainWindow::createCellWidget(const QString &text) {
 }
 
 void MainWindow::runSimulation() {
-    std::vector<UIComponent*> components;
-    std::vector<Arrow*> arrows;
+    AnalysisMapper mapper(scene->items().toStdList());
 
-    for(QGraphicsItem *i : scene->items()){
-        if(dynamic_cast<UIComponent*>(i) != nullptr) { // is a Component
-            components.push_back((UIComponent*) i);
-        } else if(dynamic_cast<Arrow*>(i) != nullptr) { // is an Arrow
-            arrows.push_back((Arrow*) i);
-        }
-    }
+    auto* sol = mapper.getSolution();
 
-    if(components.empty()){
-        return;
-    }
-
-    CircuitSaver c;
-
-    c.saveCircuit(components, arrows);
-
-    return;
-
-    Graph graph;
-
-    for(auto c : components){
-        std::vector<UIComponent*> connections;
-
-        for(auto a : c->arrows){
-            if(c == a->endItem()){
-                continue;
-            }
-            connections.push_back((UIComponent*) a->endItem());
-        }
-
-        graph[c] = connections;
-    }
-
-    std::cout << graph.size() << std::endl;
-
-
-    auto start_node = components[0];
-
-    for(auto n : graph){
-        auto* path = find_shortest_path(&graph, start_node, n.first);
-
-        n.first->n0 = path->size()-1;
-        n.first->n1 = 0;
-    }
-
-
-    for(auto n : graph){
-        n.first->connections.clear();
-        for(auto c : graph.at(n.first)){
-            n.first->n1 = c->n0;
-        }
-
-        std::cout << n.first->n0 << "(" << n.first->getId() << ") => " << n.first->n1 << std::endl;
-    }
+    /**/
 }
 
-Path *MainWindow::find_shortest_path(Graph *graph, UIComponent *start, UIComponent *end) {
-    std::vector<UIComponent*> explored;
-
-    std::queue<std::vector<UIComponent*>*> q;
-
-    auto v = new std::vector<UIComponent*>;
-    v->push_back(start);
-    q.emplace(v);
-
-    if(start == end){
-        auto out = new Path;
-        out->push_back(end);
-        return out;
-    }
-
-    while(! q.empty()){
-        Path* path = q.front();
-        q.pop();
-
-        UIComponent* node = path->at(path->size()-1);
-
-        if(std::find(explored.begin(), explored.end(), node) == explored.end()){
-            auto neighbors = graph->at(node);
-
-            for(auto neighbor : neighbors){
-                Path* new_path = new Path;
-                std::copy(path->begin(), path->end(), back_inserter(*new_path));
-                new_path->push_back(neighbor);
-                q.emplace(new_path);
-
-                if(neighbor == end){
-                    return new_path;
-                }
-            }
-
-            explored.push_back(node);
-        }
-    }
-
-    return new Path;
-}

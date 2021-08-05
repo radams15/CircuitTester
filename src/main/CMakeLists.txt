@@ -23,6 +23,8 @@ set(PROJECT_SOURCES
         UI/SceneItem.h
         UI/SceneText.cc
         UI/SceneText.h
+        UI/SettingsMenu.cc
+        UI/SettingsMenu.h
 
         Analysis/Equation.cc
         Analysis/Equation.h

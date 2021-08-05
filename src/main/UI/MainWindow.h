@@ -16,8 +16,7 @@
 #include "SceneItem.h"
 #include "Scene.h"
 
-typedef std::map<UIComponent*, std::vector<UIComponent*>> Graph;
-typedef std::vector<UIComponent*> Path;
+
 
 class MainWindow : public QMainWindow{
     Q_OBJECT
@@ -40,9 +39,7 @@ private:
     void createMenus();
     void createToolbars();
 
-    template<class T> QWidget *createCellWidget(const QString &text);
-
-    static Path* find_shortest_path(Graph* graph, UIComponent* start, UIComponent* end);
+    template<class T> QWidget* createCellWidget(const QString &text);
 
     Scene *scene;
     QGraphicsView *view;
