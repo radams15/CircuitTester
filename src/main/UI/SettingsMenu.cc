@@ -3,12 +3,15 @@
 //
 
 #include "SettingsMenu.h"
+#include <iostream>
 
 SettingsMenu::SettingsMenu(QWidget *parent) : QWidget(parent){
     toggleAnimation = new QParallelAnimationGroup(parent);
     contentArea = new QScrollArea();
     toggleButton = new QToolButton();
     mainLayout = new QGridLayout();
+
+    innerLayout = new QVBoxLayout;
 
     //toggleButton->setStyleSheet("QToolButton { border: none; }");
     toggleButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
@@ -35,6 +38,8 @@ SettingsMenu::SettingsMenu(QWidget *parent) : QWidget(parent){
     setLayout(mainLayout);
 
     connect(toggleButton, &QToolButton::clicked, this, &SettingsMenu::startAnimation);
+
+    setContentLayout(innerLayout);
 }
 
 void SettingsMenu::startAnimation(bool checked) {
@@ -44,11 +49,11 @@ void SettingsMenu::startAnimation(bool checked) {
     toggleAnimation->start();
 }
 
-void SettingsMenu::setContentLayout(QLayout& contentLayout) {
-    contentArea->setLayout(&contentLayout);
+void SettingsMenu::setContentLayout(QLayout* contentLayout) {
+    contentArea->setLayout(contentLayout);
 
     int collapsedHeight = sizeHint().width() - contentArea->maximumWidth();
-    int contentHeight = contentLayout.sizeHint().width();
+    int contentHeight = 150;
 
     for(int i=0 ; i<toggleAnimation->animationCount()-1 ; i++){
         QPropertyAnimation* HelpMenuAnimation = (QPropertyAnimation*) toggleAnimation->animationAt(i);
@@ -61,4 +66,21 @@ void SettingsMenu::setContentLayout(QLayout& contentLayout) {
     contentAnimation->setDuration(animationDuration);
     contentAnimation->setStartValue(0);
     contentAnimation->setEndValue(contentHeight);
+}
+
+void SettingsMenu::clear() {
+
+}
+
+void SettingsMenu::setInteriorLayout(QLayout* layout) {
+    if(changingLayout != nullptr){
+        std::cout << "Delete Old\n";
+        innerLayout->removeItem(changingLayout);
+    }
+
+    std::cout << layout << std::endl;
+
+    changingLayout = layout;
+
+    innerLayout->addLayout(changingLayout);
 }

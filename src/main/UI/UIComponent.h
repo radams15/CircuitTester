@@ -8,19 +8,25 @@
 #include <string>
 
 #include <utility>
+#include <QVBoxLayout>
 
 #include "SceneItem.h"
+
+enum ComponentType{
+    UI_RESISTOR,
+    UI_BATTERY,
+};
 
 class UIComponent : public SceneItem{
 protected:
     int ID;
 
-    explicit UIComponent(int id, std::string resourcePath): ID(id), SceneItem(std::move(resourcePath)){};
-
-private:
+    UIComponent(int id, std::string resourcePath);
 
 public:
     inline int getId() { return ID; }
+
+    QVBoxLayout* settingsBox;
 
     int n0 = -1;
     int n1 = -1;

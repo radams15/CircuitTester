@@ -15,14 +15,15 @@
 #include "UIComponent.h"
 #include "SceneItem.h"
 #include "Scene.h"
-
+#include "SettingsMenu.h"
 
 
 class MainWindow : public QMainWindow{
     Q_OBJECT
 
 public:
-   MainWindow();
+    MainWindow();
+    void itemRightClicked(UIComponent* item);
 
 private slots:
     void buttonGroupClicked(QAbstractButton *button);
@@ -43,6 +44,7 @@ private:
 
     Scene *scene;
     QGraphicsView *view;
+    SettingsMenu* settingsMenu;
 
     QAction *exitAction;
     QAction *deleteAction;

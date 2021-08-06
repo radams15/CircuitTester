@@ -3,3 +3,12 @@
 //
 
 #include "Battery.h"
+
+Battery::Battery() : UIComponent(ID, ":/images/battery.png") {
+    voltageSpinner = new QDoubleSpinBox;
+    settingsBox->addWidget(voltageSpinner);
+}
+
+double Battery::getVoltage() {
+    return voltageSpinner->value();
+}

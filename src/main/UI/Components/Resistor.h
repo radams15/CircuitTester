@@ -12,7 +12,7 @@ private:
 
 public:
     enum{
-        ID = 1
+        ID = UI_RESISTOR
     };
 
 

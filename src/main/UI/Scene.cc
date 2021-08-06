@@ -5,7 +5,7 @@
 #include <QTextCursor>
 #include <iostream>
 
-#include "Components/Resistor.h"
+#include "MainWindow.h"
 
 
 Scene::Scene(QMenu *itemMenu, QObject *parent)
@@ -46,28 +46,33 @@ void Scene::editorLostFocus(SceneText *item){
 
 
 void Scene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent){
-    if (mouseEvent->button() != Qt::LeftButton)
-        return;
+    if (mouseEvent->button() == Qt::RightButton){
+        if(! selectedItems().empty()){
+            auto* item = ((UIComponent*) selectedItems().at(0));
+            //std::cout << item << std::endl;
+            ((MainWindow*)parent())->itemRightClicked(item);
+        }
+    } else if (mouseEvent->button() == Qt::LeftButton){
+        switch (myMode) {
+            case InsertItem:
+                addItem(component);
+                component->setPos(mouseEvent->scenePos());
+                emit itemInserted(component);
+                break;
 
-    switch (myMode) {
-        case InsertItem:
-            addItem(component);
-            component->setPos(mouseEvent->scenePos());
-            emit itemInserted(component);
-            break;
+            case InsertLine:
+                line = new QGraphicsLineItem(QLineF(mouseEvent->scenePos(), mouseEvent->scenePos()));
 
-        case InsertLine:
-            line = new QGraphicsLineItem(QLineF(mouseEvent->scenePos(), mouseEvent->scenePos()));
+                line->setPen(QPen(myLineColor, 2));
 
-            line->setPen(QPen(myLineColor, 2));
+                addItem(line);
+                break;
 
-            addItem(line);
-            break;
- 
-    default:
-        ;
+            default:
+                break;
+        }
+        QGraphicsScene::mousePressEvent(mouseEvent);
     }
-    QGraphicsScene::mousePressEvent(mouseEvent);
 }
 
 

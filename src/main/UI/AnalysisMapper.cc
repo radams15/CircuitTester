@@ -6,17 +6,17 @@
 #include "AnalysisMapper.h"
 
 #include "UIComponent.h"
+#include "Components/Battery.h"
+#include "Components/Resistor.h"
 #include "Arrow.h"
 
 #include <iostream>
 
-#define IS_TYPE(type, ptr) dynamic_cast<type*>(ptr) != nullptr
-
 AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
     for(QGraphicsItem *i : graphicsItems){
-        if(IS_TYPE(UIComponent, i)) { // is a Component
+        if(IS_TYPE(UIComponent, i)) {
             components.push_back((UIComponent*) i);
-        } else if(IS_TYPE(Arrow, i)) { // is an Arrow
+        } else if(IS_TYPE(Arrow, i)) {
             arrows.push_back((Arrow*) i);
         }
     }
@@ -75,6 +75,9 @@ Graph AnalysisMapper::makeGraph() {
 
     for(auto c : components){
         std::vector<UIComponent*> connections;
+        if(c->getId() == UI_BATTERY){
+            std::cout << ((Battery*) c)->getVoltage() << "V\n";
+        }
 
         for(auto a : c->arrows){
             if(c == a->endItem()){

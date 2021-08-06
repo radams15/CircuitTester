@@ -6,17 +6,22 @@
 #define LAYOUTTEST1_BATTERY_H
 
 
+#include <QDoubleSpinBox>
 #include "../UIComponent.h"
 
 class Battery : public UIComponent {
 private:
 
+    QDoubleSpinBox* voltageSpinner;
+
 public:
     enum{
-        ID = 2
+        ID = UI_BATTERY
     };
 
-    Battery() : UIComponent(ID, ":/images/battery.png") {};
+    double getVoltage();
+
+    Battery();
 };
 
 

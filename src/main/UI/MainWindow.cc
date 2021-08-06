@@ -8,7 +8,6 @@
 #include "Scene.h"
 #include "SceneText.h"
 #include "MainWindow.h"
-#include "SettingsMenu.h"
 
 #include "Components/Resistor.h"
 #include "Components/Battery.h"
@@ -17,6 +16,8 @@
 #include "AnalysisMapper.h"
 
 #include <QtWidgets>
+#include <UI/MainWindow.h>
+
 
 const int InsertTextButton = 10;
 
@@ -44,9 +45,10 @@ MainWindow::MainWindow() {
     QLabel* helpLabel = new QLabel("Settings");
     helpBox->addWidget(helpLabel);
 
-    SettingsMenu* helpMenu = new SettingsMenu();
-    helpMenu->setContentLayout(*helpBox);
-    layout->addWidget(helpMenu);
+    settingsMenu = new SettingsMenu();
+    //settingsMenu->innerLayout->addLayout(helpBox);
+    settingsMenu->setInteriorLayout(helpBox);
+    layout->addWidget(settingsMenu);
 
     QWidget *widget = new QWidget;
     widget->setLayout(layout);
@@ -71,9 +73,9 @@ void MainWindow::buttonGroupClicked(QAbstractButton *button) {
     if (id == InsertTextButton) {
         scene->setMode(Scene::InsertText);
     } else {
-        if(id == Resistor::ID){
+        if(id == UI_RESISTOR){
             scene->setItemType(new Resistor);
-        }else if(id == Battery::ID){
+        }else if(id == UI_BATTERY){
             scene->setItemType(new Battery);
         }else{
             return;
@@ -251,10 +253,19 @@ QWidget *MainWindow::createCellWidget(const QString &text) {
 }
 
 void MainWindow::runSimulation() {
+    if(scene->items().empty()){
+        return;
+    }
+
     AnalysisMapper mapper(scene->items().toStdList());
 
     auto* sol = mapper.getSolution();
-
-    /**/
 }
 
+void MainWindow::itemRightClicked(UIComponent* item) {
+    auto* c = (UIComponent*) item;
+
+    settingsMenu->setInteriorLayout(c->settingsBox);
+
+    //std::cout << c << std::endl;
+}

@@ -45,7 +45,7 @@ bool dirExists(std::string dir){
 #endif
 }
 
-bool createDirTree(std::string tree){
+bool createDirTree(std::string tree){ // https://stackoverflow.com/questions/675039/how-can-i-create-directory-tree-in-c-linux
 #if UNIX
     mode_t mode = 0755;
     int ret = mkdir(tree.c_str(), mode);

@@ -9,8 +9,8 @@
 #include <cmath>
 
 enum ElementType{
-    BATTERY,
-    RESISTOR
+    MNA_BATTERY,
+    MNA_RESISTOR
 };
 
 /**@brief Main class that holds circuit elements for
@@ -47,7 +47,7 @@ public:
 
     /** @brief Element Type
      *
-     * This is set by derivative classes, can be BATTERY, RESISTOR or CURRENT_SRC
+     * This is set by derivative classes, can be MNA_BATTERY, MNA_RESISTOR or CURRENT_SRC
      */
     ElementType type;
 
