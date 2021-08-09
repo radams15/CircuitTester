@@ -10,6 +10,8 @@
 #include "Components/Resistor.h"
 #include "Arrow.h"
 
+#include "../Analysis/MNACircuit.h"
+
 #include <iostream>
 
 AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
@@ -23,9 +25,23 @@ AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
 }
 
 MNASolution* AnalysisMapper::getSolution() {
-    Graph g = makeGraph();
+    Graph graph = makeGraph();
 
-    return nullptr;
+    auto* components = new std::vector<MNAComponent*>;
+
+    for(auto n : graph){
+        if(n.first->getId() == UI_BATTERY){
+            components->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_BATTERY, ((Battery*)n.first)->getVoltage()));
+        }else if(n.first->getId() == UI_RESISTOR){
+            components->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Resistor*)n.first)->getResistance()));
+        }
+
+        std::cout << components->at(components->size()-1)->str() << std::endl;
+    }
+
+    auto* cir = new MNACircuit(*components);
+
+    return cir->solve();
 }
 
 Path* AnalysisMapper::find_shortest_path(Graph *graph, UIComponent *start, UIComponent *end) {
@@ -75,9 +91,12 @@ Graph AnalysisMapper::makeGraph() {
 
     for(auto c : components){
         std::vector<UIComponent*> connections;
-        if(c->getId() == UI_BATTERY){
+
+        /*if(c->getId() == UI_BATTERY){
             std::cout << ((Battery*) c)->getVoltage() << "V\n";
-        }
+        } else if(c->getId() == UI_RESISTOR){
+            std::cout << ((Resistor*) c)->getResistance() << "Ω\n";
+        }*/
 
         for(auto a : c->arrows){
             if(c == a->endItem()){
@@ -98,14 +117,13 @@ Graph AnalysisMapper::makeGraph() {
         n.first->n1 = 0;
     }
 
-
     for(auto n : graph){
         n.first->connections.clear();
         for(auto c : graph.at(n.first)){
             n.first->n1 = c->n0;
         }
 
-        std::cout << n.first->n0 << "(" << n.first->getId() << ") => " << n.first->n1 << std::endl;
+        //std::cout << n.first->n0 << "(" << n.first->getId() << ") => " << n.first->n1 << std::endl;
     }
 
     return graph;

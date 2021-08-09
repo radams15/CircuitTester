@@ -24,6 +24,8 @@ public:
     QPixmap image(){ return pixmap; }
 
     QPointF centerpoint();
+    QPointF startPoint();
+    QPointF endPoint();
 
     std::vector<Arrow *> arrows;
 

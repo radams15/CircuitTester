@@ -52,7 +52,7 @@ private:
      * @param end The node to find the shortest path to.
      * @return The shortest path between the start and end components.
      */
-    Path* find_shortest_path(Graph* graph, UIComponent* start, UIComponent* end);
+    static Path* find_shortest_path(Graph* graph, UIComponent* start, UIComponent* end);
 
     /** @brief Makes an adjacency list out of the components of the circuit.
      *

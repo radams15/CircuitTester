@@ -53,7 +53,7 @@ void SettingsMenu::setContentLayout(QLayout* contentLayout) {
     contentArea->setLayout(contentLayout);
 
     int collapsedHeight = sizeHint().width() - contentArea->maximumWidth();
-    int contentHeight = 150;
+    int contentHeight = 200;
 
     for(int i=0 ; i<toggleAnimation->animationCount()-1 ; i++){
         auto* HelpMenuAnimation = (QPropertyAnimation*) toggleAnimation->animationAt(i);

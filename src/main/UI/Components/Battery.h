@@ -7,13 +7,13 @@
 
 
 #include <QDoubleSpinBox>
+#include <QCheckBox>
 #include "../UIComponent.h"
 
 class Battery : public UIComponent {
 private:
-
-public:
     QDoubleSpinBox* voltageSpinner;
+    QCheckBox* onOffCheckbox;
 
 public:
     enum{

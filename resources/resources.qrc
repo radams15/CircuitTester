@@ -6,7 +6,6 @@
     <file>images/resistor.png</file>
     <file>images/bulb.png</file>
     <file>images/battery.png</file>
-    <file>images/capacitor.png</file>
 </qresource>
 </RCC>
 

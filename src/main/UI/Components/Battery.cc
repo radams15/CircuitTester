@@ -3,20 +3,29 @@
 //
 
 #include <iostream>
+#include <QLabel>
 #include "Battery.h"
 
-double fRand(double fMin, double fMax){
-    double f = (double)rand() / RAND_MAX;
-    return fMin + f * (fMax - fMin);
-}
-
 Battery::Battery() : UIComponent(ID, ":/images/battery.png") {
+    auto* voltageBox = new QHBoxLayout;
+    auto* voltageLabel = new QLabel("Voltage (V)");
     voltageSpinner = new QDoubleSpinBox;
-    settingsBox->addWidget(voltageSpinner);
+    voltageSpinner->setMinimum(0.1);
+    voltageBox->addWidget(voltageLabel);
+    voltageBox->addWidget(voltageSpinner);
+    settingsBox->addLayout(voltageBox);
 
-    voltageSpinner->setValue(fRand(0.1, 100));
+    auto* onOffBox = new QHBoxLayout;
+    auto* onOffLabel = new QLabel("On/Off");
+    onOffCheckbox = new QCheckBox;
+    onOffCheckbox->setChecked(true);
+    onOffBox->addWidget(onOffLabel);
+    onOffBox->addWidget(onOffCheckbox);
+    settingsBox->addLayout(onOffBox);
+
+    voltageSpinner->setValue(1.0f);
 }
 
 double Battery::getVoltage() {
-    return voltageSpinner->value();
+    return onOffCheckbox->isChecked()? voltageSpinner->value() : 0.0001;
 }

@@ -50,7 +50,7 @@ void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *
     painter->setPen(myPen);
     painter->setBrush(myColor);
 
-    setLine(QLineF(myEndItem->centerpoint(), myStartItem->centerpoint()));
+    setLine(QLineF(myEndItem->endPoint(), myStartItem->startPoint()));
  
     painter->drawLine(line());
 

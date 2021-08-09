@@ -6,7 +6,6 @@
 #include <QMenu>
 #include <QPainter>
 #include <QResource>
-#include <QFile>
 #include <QMessageBox>
 #include <iostream>
 #include <cmath>
@@ -86,4 +85,16 @@ void SceneItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event) {
 
     setPos(xx,yy);
     QGraphicsItem::mouseReleaseEvent(event);
+}
+
+QPointF SceneItem::startPoint() {
+    auto center = centerpoint();
+
+    return QPointF(center.x()-(pixmap.width()/2), center.y());
+}
+
+QPointF SceneItem::endPoint() {
+    auto center = centerpoint();
+
+    return QPointF(center.x()+(pixmap.width()/2), center.y());
 }

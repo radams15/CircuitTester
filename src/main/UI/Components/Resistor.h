@@ -5,6 +5,7 @@
 #ifndef LAYOUTTEST1_RESISTOR_H
 #define LAYOUTTEST1_RESISTOR_H
 
+#include <QDoubleSpinBox>
 #include "../UIComponent.h"
 
 class Resistor : public UIComponent {
@@ -15,8 +16,11 @@ public:
         ID = UI_RESISTOR
     };
 
+    QDoubleSpinBox* resistanceSpinner{};
 
-    Resistor() : UIComponent(ID, ":/images/resistor.png") {};
+    Resistor();
+
+    double getResistance();
 };
 
 
