@@ -24,7 +24,7 @@ protected:
     UIComponent(int id, std::string resourcePath);
 
 public:
-    inline int getId() { return ID; }
+    inline int getId() const { return ID; }
 
     QVBoxLayout* settingsBox;
 
@@ -33,7 +33,6 @@ public:
 
     std::vector<Arrow*> connections;
 
-    std::string str();
     bool equals(UIComponent* c);
 };
 

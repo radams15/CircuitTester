@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <queue>
-#include <algorithm>
 
 #include "Arrow.h"
 #include "SceneItem.h"
@@ -16,7 +15,6 @@
 #include "AnalysisMapper.h"
 
 #include <QtWidgets>
-#include <UI/MainWindow.h>
 
 
 const int InsertTextButton = 10;
@@ -34,15 +32,15 @@ MainWindow::MainWindow() {
 
     createToolbars();
 
-    QHBoxLayout *layout = new QHBoxLayout;
+    auto* layout = new QHBoxLayout;
     layout->addWidget(toolBox);
     view = new QGraphicsView(scene);
     layout->addWidget(view);
 
 
 
-    QVBoxLayout* helpBox = new QVBoxLayout();
-    QLabel* helpLabel = new QLabel("Settings");
+    auto* helpBox = new QVBoxLayout();
+    auto* helpLabel = new QLabel("Settings");
     helpBox->addWidget(helpLabel);
 
     settingsMenu = new SettingsMenu();
@@ -50,7 +48,7 @@ MainWindow::MainWindow() {
     settingsMenu->setInteriorLayout(helpBox);
     layout->addWidget(settingsMenu);
 
-    QWidget *widget = new QWidget;
+    auto *widget = new QWidget;
     widget->setLayout(layout);
 
 
@@ -93,7 +91,7 @@ void MainWindow::deleteItem() {
     for (QGraphicsItem *item : qAsConst(selectedItems)) {
         if (item->type() == Arrow::Type) {
             scene->removeItem(item);
-            Arrow *arrow = qgraphicsitem_cast<Arrow *>(item);
+            auto *arrow = qgraphicsitem_cast<Arrow *>(item);
             arrow->startItem()->removeArrow(arrow);
             arrow->endItem()->removeArrow(arrow);
             delete item;
@@ -123,7 +121,7 @@ void MainWindow::itemInserted(UIComponent* c) {
 
 
 void MainWindow::sceneScaleChanged(const QString &scale) {
-    double newScale = scale.left(scale.indexOf(tr("%"))).toDouble() / 100.0;
+    double newScale = scale.leftRef(scale.indexOf(tr("%"))).toDouble() / 100.0;
     QTransform oldMatrix = view->transform();
     view->resetTransform();
     view->translate(oldMatrix.dx(), oldMatrix.dy());
@@ -263,9 +261,5 @@ void MainWindow::runSimulation() {
 }
 
 void MainWindow::itemRightClicked(UIComponent* item) {
-    auto* c = (UIComponent*) item;
-
-    settingsMenu->setInteriorLayout(c->settingsBox);
-
-    //std::cout << c << std::endl;
+    settingsMenu->setInteriorLayout(item->settingsBox);
 }

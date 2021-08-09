@@ -12,6 +12,7 @@
 class Battery : public UIComponent {
 private:
 
+public:
     QDoubleSpinBox* voltageSpinner;
 
 public:

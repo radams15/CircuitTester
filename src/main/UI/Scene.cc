@@ -50,7 +50,7 @@ void Scene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent){
         if(! selectedItems().empty()){
             auto* item = ((UIComponent*) selectedItems().at(0));
             //std::cout << item << std::endl;
-            ((MainWindow*)parent())->itemRightClicked(item);
+            ((MainWindow*) parent())->itemRightClicked(item);
         }
     } else if (mouseEvent->button() == Qt::LeftButton){
         switch (myMode) {

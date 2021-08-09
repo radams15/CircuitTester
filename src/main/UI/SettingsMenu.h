@@ -23,11 +23,7 @@ private:
     QToolButton* toggleButton;
     QGridLayout* mainLayout;
 
-    QLayout* changingLayout;
-
     void startAnimation(bool checked);
-
-    QScrollArea* getContentArea();
 
 public:
     SettingsMenu(QWidget *parent = nullptr);

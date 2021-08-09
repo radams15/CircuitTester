@@ -11,7 +11,7 @@ SettingsMenu::SettingsMenu(QWidget *parent) : QWidget(parent){
     toggleButton = new QToolButton();
     mainLayout = new QGridLayout();
 
-    innerLayout = new QVBoxLayout;
+    innerLayout = new QVBoxLayout();
 
     //toggleButton->setStyleSheet("QToolButton { border: none; }");
     toggleButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
@@ -56,31 +56,30 @@ void SettingsMenu::setContentLayout(QLayout* contentLayout) {
     int contentHeight = 150;
 
     for(int i=0 ; i<toggleAnimation->animationCount()-1 ; i++){
-        QPropertyAnimation* HelpMenuAnimation = (QPropertyAnimation*) toggleAnimation->animationAt(i);
+        auto* HelpMenuAnimation = (QPropertyAnimation*) toggleAnimation->animationAt(i);
         HelpMenuAnimation->setDuration(animationDuration);
         HelpMenuAnimation->setStartValue(collapsedHeight);
         HelpMenuAnimation->setEndValue(collapsedHeight+contentHeight);
     }
 
-    QPropertyAnimation* contentAnimation = (QPropertyAnimation*) toggleAnimation->animationAt(toggleAnimation->animationCount()-1);
+    auto* contentAnimation = (QPropertyAnimation*) toggleAnimation->animationAt(toggleAnimation->animationCount()-1);
     contentAnimation->setDuration(animationDuration);
     contentAnimation->setStartValue(0);
     contentAnimation->setEndValue(contentHeight);
 }
 
 void SettingsMenu::clear() {
-
+    for(int i=0 ; i<innerLayout->count() ; i++){
+        innerLayout->itemAt(i)->widget()->setHidden(true);
+        innerLayout->removeItem(innerLayout->itemAt(i));
+    }
 }
 
 void SettingsMenu::setInteriorLayout(QLayout* layout) {
-    if(changingLayout != nullptr){
-        std::cout << "Delete Old\n";
-        innerLayout->removeItem(changingLayout);
-    }
+    clear();
 
-    std::cout << layout << std::endl;
+    auto* newWidget = new QWidget;
+    newWidget->setLayout(layout);
 
-    changingLayout = layout;
-
-    innerLayout->addLayout(changingLayout);
+    innerLayout->addWidget(newWidget);
 }
