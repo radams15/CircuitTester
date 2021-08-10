@@ -79,82 +79,120 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>The main window class that is the GUI for the user on startup.  
+ <a href="classMainWindow.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a34c4b4207b46d11a4100c9b19f0e81bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb">MainWindow</a> ()</td></tr>
+<tr class="memdesc:a34c4b4207b46d11a4100c9b19f0e81bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser for the main window object.  <a href="#a34c4b4207b46d11a4100c9b19f0e81bb">More...</a><br /></td></tr>
 <tr class="separator:a34c4b4207b46d11a4100c9b19f0e81bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af086da67bae487867bf7511d5bd833bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#af086da67bae487867bf7511d5bd833bc">itemRightClicked</a> (<a class="el" href="classUIComponent.html">UIComponent</a> *item)</td></tr>
+<tr class="memdesc:af086da67bae487867bf7511d5bd833bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from the <a class="el" href="classScene.html">Scene</a> when any <a class="el" href="classSceneItem.html">SceneItem</a> is right clicked. Places the settings widget from the <a class="el" href="classSceneItem.html">SceneItem</a> into the <a class="el" href="classSettingsMenu.html">SettingsMenu</a>.  <a href="#af086da67bae487867bf7511d5bd833bc">More...</a><br /></td></tr>
+<tr class="separator:af086da67bae487867bf7511d5bd833bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
 Private Slots</h2></td></tr>
 <tr class="memitem:a5ac1ad5e3c553e50a1ac39b8ecaee2e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a5ac1ad5e3c553e50a1ac39b8ecaee2e6">buttonGroupClicked</a> (QAbstractButton *button)</td></tr>
+<tr class="memdesc:a5ac1ad5e3c553e50a1ac39b8ecaee2e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when any component button is clicked.  <a href="#a5ac1ad5e3c553e50a1ac39b8ecaee2e6">More...</a><br /></td></tr>
 <tr class="separator:a5ac1ad5e3c553e50a1ac39b8ecaee2e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24bbb70be6f6e1007b0d6cbf7cd5f64d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a24bbb70be6f6e1007b0d6cbf7cd5f64d">deleteItem</a> ()</td></tr>
+<tr class="memdesc:a24bbb70be6f6e1007b0d6cbf7cd5f64d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the delete button is pressed. Deletes all items that are selected.  <a href="#a24bbb70be6f6e1007b0d6cbf7cd5f64d">More...</a><br /></td></tr>
 <tr class="separator:a24bbb70be6f6e1007b0d6cbf7cd5f64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47861a70255f7d4571fede912751412e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a47861a70255f7d4571fede912751412e">pointerGroupClicked</a> ()</td></tr>
+<tr class="memdesc:a47861a70255f7d4571fede912751412e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when either the drag button or the line buttons are pressed.  <a href="#a47861a70255f7d4571fede912751412e">More...</a><br /></td></tr>
 <tr class="separator:a47861a70255f7d4571fede912751412e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4d0f5cb119e307658fb559f4af83304"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ab4d0f5cb119e307658fb559f4af83304">itemInserted</a> (<a class="el" href="classUIComponent.html">UIComponent</a> *item)</td></tr>
+<tr class="memdesc:ab4d0f5cb119e307658fb559f4af83304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when any item is inserted onto the <a class="el" href="classScene.html">Scene</a>. This unchecks the tool button of that item.  <a href="#ab4d0f5cb119e307658fb559f4af83304">More...</a><br /></td></tr>
 <tr class="separator:ab4d0f5cb119e307658fb559f4af83304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad17ac0e360294d0ff6807cb0cfd49736"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ad17ac0e360294d0ff6807cb0cfd49736">sceneScaleChanged</a> (const <a class="elRef" doxygen="/mnt/files/scripts/CircuitTester/docs/tagfiles/qtcore.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qstring.html">QString</a> &amp;scale)</td></tr>
+<tr class="memdesc:ad17ac0e360294d0ff6807cb0cfd49736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the scene scale QComboBox is changed. This changes the scale of the <a class="el" href="classScene.html">Scene</a>.  <a href="#ad17ac0e360294d0ff6807cb0cfd49736">More...</a><br /></td></tr>
 <tr class="separator:ad17ac0e360294d0ff6807cb0cfd49736"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7be6a5d98970ac1a6296c6f9aee1e9bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a7be6a5d98970ac1a6296c6f9aee1e9bb">about</a> ()</td></tr>
+<tr class="memdesc:a7be6a5d98970ac1a6296c6f9aee1e9bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the about button is clicked from the toolbar.  <a href="#a7be6a5d98970ac1a6296c6f9aee1e9bb">More...</a><br /></td></tr>
 <tr class="separator:a7be6a5d98970ac1a6296c6f9aee1e9bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acebf5a46f730eb3e65092c2398acebd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#acebf5a46f730eb3e65092c2398acebd5">runSimulation</a> ()</td></tr>
+<tr class="memdesc:acebf5a46f730eb3e65092c2398acebd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the run button is clicked from the toolbar.  <a href="#acebf5a46f730eb3e65092c2398acebd5">More...</a><br /></td></tr>
 <tr class="separator:acebf5a46f730eb3e65092c2398acebd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:afab2197ed7c6296238dd1f898b1f0fc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#afab2197ed7c6296238dd1f898b1f0fc4">createToolBox</a> ()</td></tr>
+<tr class="memdesc:afab2197ed7c6296238dd1f898b1f0fc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the toolbox of components.  <a href="#afab2197ed7c6296238dd1f898b1f0fc4">More...</a><br /></td></tr>
 <tr class="separator:afab2197ed7c6296238dd1f898b1f0fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62cd8712fb41a754298f6f60eead2cb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a62cd8712fb41a754298f6f60eead2cb0">createActions</a> ()</td></tr>
+<tr class="memdesc:a62cd8712fb41a754298f6f60eead2cb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates all actions for the toolbar and the menubar.  <a href="#a62cd8712fb41a754298f6f60eead2cb0">More...</a><br /></td></tr>
 <tr class="separator:a62cd8712fb41a754298f6f60eead2cb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4907b0251d305659e403c62921ef331"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aa4907b0251d305659e403c62921ef331">createMenus</a> ()</td></tr>
+<tr class="memdesc:aa4907b0251d305659e403c62921ef331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the menubar for the actions.  <a href="#aa4907b0251d305659e403c62921ef331">More...</a><br /></td></tr>
 <tr class="separator:aa4907b0251d305659e403c62921ef331"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bb86fc5cd917093593fcf0b0009e018"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a2bb86fc5cd917093593fcf0b0009e018">createToolbars</a> ()</td></tr>
+<tr class="memdesc:a2bb86fc5cd917093593fcf0b0009e018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the toolbar for the actions.  <a href="#a2bb86fc5cd917093593fcf0b0009e018">More...</a><br /></td></tr>
 <tr class="separator:a2bb86fc5cd917093593fcf0b0009e018"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22fd833b5b4eafd8c1bd3ab207af8d72"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a22fd833b5b4eafd8c1bd3ab207af8d72"><td class="memTemplItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a22fd833b5b4eafd8c1bd3ab207af8d72">createCellWidget</a> (const <a class="elRef" doxygen="/mnt/files/scripts/CircuitTester/docs/tagfiles/qtcore.tags:https://doc.qt.io/qt-5/" href="https://doc.qt.io/qt-5/qstring.html">QString</a> &amp;text)</td></tr>
+<tr class="memdesc:a22fd833b5b4eafd8c1bd3ab207af8d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a tool button for a component.  <a href="#a22fd833b5b4eafd8c1bd3ab207af8d72">More...</a><br /></td></tr>
 <tr class="separator:a22fd833b5b4eafd8c1bd3ab207af8d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a5fac52928ceff08c8137f4689aee3874"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScene.html">Scene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a5fac52928ceff08c8137f4689aee3874">scene</a></td></tr>
+<tr class="memdesc:a5fac52928ceff08c8137f4689aee3874"><td class="mdescLeft">&#160;</td><td class="mdescRight">The scene where the SceneItems are placed.  <a href="#a5fac52928ceff08c8137f4689aee3874">More...</a><br /></td></tr>
 <tr class="separator:a5fac52928ceff08c8137f4689aee3874"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e33bc418ea3e6d93b3021933bfa3baa"><td class="memItemLeft" align="right" valign="top">QGraphicsView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a6e33bc418ea3e6d93b3021933bfa3baa">view</a></td></tr>
+<tr class="memdesc:a6e33bc418ea3e6d93b3021933bfa3baa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The view that shows the <a class="el" href="classScene.html">Scene</a>.  <a href="#a6e33bc418ea3e6d93b3021933bfa3baa">More...</a><br /></td></tr>
 <tr class="separator:a6e33bc418ea3e6d93b3021933bfa3baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23365d69d6ceeb0af303bfb273aa6d15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSettingsMenu.html">SettingsMenu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a23365d69d6ceeb0af303bfb273aa6d15">settingsMenu</a></td></tr>
+<tr class="memdesc:a23365d69d6ceeb0af303bfb273aa6d15"><td class="mdescLeft">&#160;</td><td class="mdescRight">The collapsable settings menu for components.  <a href="#a23365d69d6ceeb0af303bfb273aa6d15">More...</a><br /></td></tr>
+<tr class="separator:a23365d69d6ceeb0af303bfb273aa6d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a480862e5bff02a85e6de35513eceff2c"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a480862e5bff02a85e6de35513eceff2c">exitAction</a></td></tr>
+<tr class="memdesc:a480862e5bff02a85e6de35513eceff2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">An action that exits the application.  <a href="#a480862e5bff02a85e6de35513eceff2c">More...</a><br /></td></tr>
 <tr class="separator:a480862e5bff02a85e6de35513eceff2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acda4f1b59ac5e55f37e98e35bf5dc9b6"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#acda4f1b59ac5e55f37e98e35bf5dc9b6">deleteAction</a></td></tr>
+<tr class="memdesc:acda4f1b59ac5e55f37e98e35bf5dc9b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">An action that deletes the selected component.  <a href="#acda4f1b59ac5e55f37e98e35bf5dc9b6">More...</a><br /></td></tr>
 <tr class="separator:acda4f1b59ac5e55f37e98e35bf5dc9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84ae1463c68554b9d2e3ff3fa2c30c25"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a84ae1463c68554b9d2e3ff3fa2c30c25">runAction</a></td></tr>
+<tr class="memdesc:a84ae1463c68554b9d2e3ff3fa2c30c25"><td class="mdescLeft">&#160;</td><td class="mdescRight">An action that runs the simulation.  <a href="#a84ae1463c68554b9d2e3ff3fa2c30c25">More...</a><br /></td></tr>
 <tr class="separator:a84ae1463c68554b9d2e3ff3fa2c30c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bc4ae131d91d1eece03c36fd0c2d3fa"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a4bc4ae131d91d1eece03c36fd0c2d3fa">aboutAction</a></td></tr>
+<tr class="memdesc:a4bc4ae131d91d1eece03c36fd0c2d3fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">An action that shows the about popup.  <a href="#a4bc4ae131d91d1eece03c36fd0c2d3fa">More...</a><br /></td></tr>
 <tr class="separator:a4bc4ae131d91d1eece03c36fd0c2d3fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a426da48f6e2f865b07a28533c07c4f7a"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a426da48f6e2f865b07a28533c07c4f7a">fileMenu</a></td></tr>
+<tr class="memdesc:a426da48f6e2f865b07a28533c07c4f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file menu on the menubar.  <a href="#a426da48f6e2f865b07a28533c07c4f7a">More...</a><br /></td></tr>
 <tr class="separator:a426da48f6e2f865b07a28533c07c4f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a723b9e6e09139a5568741da34509d8ea"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a723b9e6e09139a5568741da34509d8ea">itemMenu</a></td></tr>
+<tr class="memdesc:a723b9e6e09139a5568741da34509d8ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">The item menu on the menubar.  <a href="#a723b9e6e09139a5568741da34509d8ea">More...</a><br /></td></tr>
 <tr class="separator:a723b9e6e09139a5568741da34509d8ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a94812e78960650b33ea84d2a4220b6"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a0a94812e78960650b33ea84d2a4220b6">aboutMenu</a></td></tr>
+<tr class="memdesc:a0a94812e78960650b33ea84d2a4220b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The about menu on the menubar.  <a href="#a0a94812e78960650b33ea84d2a4220b6">More...</a><br /></td></tr>
 <tr class="separator:a0a94812e78960650b33ea84d2a4220b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecfd1fdf477ecbb0adc8b29f8ab9abd6"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aecfd1fdf477ecbb0adc8b29f8ab9abd6">simMenu</a></td></tr>
+<tr class="memdesc:aecfd1fdf477ecbb0adc8b29f8ab9abd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The simulation menu on the menubar.  <a href="#aecfd1fdf477ecbb0adc8b29f8ab9abd6">More...</a><br /></td></tr>
 <tr class="separator:aecfd1fdf477ecbb0adc8b29f8ab9abd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae134656261b4eb2ecd1945ead684124c"><td class="memItemLeft" align="right" valign="top">QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ae134656261b4eb2ecd1945ead684124c">pointerToolbar</a></td></tr>
+<tr class="memdesc:ae134656261b4eb2ecd1945ead684124c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The toolbar that allows you to select either movement or line mode.  <a href="#ae134656261b4eb2ecd1945ead684124c">More...</a><br /></td></tr>
 <tr class="separator:ae134656261b4eb2ecd1945ead684124c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01b90235dc5aab0787e009763d8ab873"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a01b90235dc5aab0787e009763d8ab873">sceneScaleCombo</a></td></tr>
+<tr class="memdesc:a01b90235dc5aab0787e009763d8ab873"><td class="mdescLeft">&#160;</td><td class="mdescRight">The QComboBox that allows you to select the scene scale.  <a href="#a01b90235dc5aab0787e009763d8ab873">More...</a><br /></td></tr>
 <tr class="separator:a01b90235dc5aab0787e009763d8ab873"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82a53e7c565bff816a83f4da64a3a638"><td class="memItemLeft" align="right" valign="top">QToolBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a82a53e7c565bff816a83f4da64a3a638">toolBox</a></td></tr>
+<tr class="memdesc:a82a53e7c565bff816a83f4da64a3a638"><td class="mdescLeft">&#160;</td><td class="mdescRight">The toolbox that contains the component buttons.  <a href="#a82a53e7c565bff816a83f4da64a3a638">More...</a><br /></td></tr>
 <tr class="separator:a82a53e7c565bff816a83f4da64a3a638"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8321cfb1de4169baddb4a0b36aa7d57a"><td class="memItemLeft" align="right" valign="top">QButtonGroup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a8321cfb1de4169baddb4a0b36aa7d57a">buttonGroup</a></td></tr>
+<tr class="memdesc:a8321cfb1de4169baddb4a0b36aa7d57a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The button group that holds the multiple components.  <a href="#a8321cfb1de4169baddb4a0b36aa7d57a">More...</a><br /></td></tr>
 <tr class="separator:a8321cfb1de4169baddb4a0b36aa7d57a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78f0bc349e0a6cff30851ae986deee24"><td class="memItemLeft" align="right" valign="top">QButtonGroup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a78f0bc349e0a6cff30851ae986deee24">pointerTypeGroup</a></td></tr>
+<tr class="memdesc:a78f0bc349e0a6cff30851ae986deee24"><td class="mdescLeft">&#160;</td><td class="mdescRight">The button group that holds buttons for movement or line mode.  <a href="#a78f0bc349e0a6cff30851ae986deee24">More...</a><br /></td></tr>
 <tr class="separator:a78f0bc349e0a6cff30851ae986deee24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e787e601be0b9234b556cc6e6c91afc"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a1e787e601be0b9234b556cc6e6c91afc">lineAction</a></td></tr>
-<tr class="separator:a1e787e601be0b9234b556cc6e6c91afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00021">21</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<div class="textblock"><p>The main window class that is the GUI for the user on startup. </p>
+<dl class="section author"><dt>Author</dt><dd>Rhys Adams </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>29/01/2021 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00028">28</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 </div><div class="dynheader">
 Inheritance diagram for MainWindow:</div>
 <div class="dyncontent">
@@ -179,7 +217,9 @@ Inheritance diagram for MainWindow:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00023">23</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+<p>Initialiser for the main window object. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00021">21</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
 
 </div>
 </div>
@@ -207,7 +247,9 @@ Inheritance diagram for MainWindow:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00132">132</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+<p>Called when the about button is clicked from the toolbar. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00120">120</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
 
 </div>
 </div>
@@ -235,7 +277,15 @@ Inheritance diagram for MainWindow:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00063">63</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+<p>Called when any component button is clicked. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">button</td><td>The button that was clicked. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00052">52</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
 
 </div>
 </div>
@@ -262,7 +312,9 @@ Inheritance diagram for MainWindow:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00162">162</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+<p>Creates all actions for the toolbar and the menubar. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00152">152</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
 
 </div>
 </div>
@@ -292,7 +344,22 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00232">232</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+<p>Creates a tool button for a component. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The class of component to create a button for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>The text for the label under the button. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A QWidget pointer to the newly created widget. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00222">222</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
 
 </div>
 </div>
@@ -319,7 +386,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00184">184</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+<p>Creates the menubar for the actions. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00174">174</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
 
 </div>
 </div>
@@ -346,7 +415,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00200">200</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+<p>Creates the toolbar for the actions. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00190">190</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
 
 </div>
 </div>
@@ -373,7 +444,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00138">138</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+<p>Creates the toolbox of components. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00126">126</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
 
 </div>
 </div>
@@ -400,7 +473,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00089">89</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+<p>Called when the delete button is pressed. Deletes all items that are selected. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00077">77</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
 
 </div>
 </div>
@@ -428,7 +503,43 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00116">116</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+<p>Called when any item is inserted onto the <a class="el" href="classScene.html">Scene</a>. This unchecks the tool button of that item. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The item that has been inserted. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00104">104</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+
+</div>
+</div>
+<a id="af086da67bae487867bf7511d5bd833bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af086da67bae487867bf7511d5bd833bc">&#9670;&nbsp;</a></span>itemRightClicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::itemRightClicked </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classUIComponent.html">UIComponent</a> *&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Called from the <a class="el" href="classScene.html">Scene</a> when any <a class="el" href="classSceneItem.html">SceneItem</a> is right clicked. Places the settings widget from the <a class="el" href="classSceneItem.html">SceneItem</a> into the <a class="el" href="classSettingsMenu.html">SettingsMenu</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The item that has been right clicked. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00253">253</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
 
 </div>
 </div>
@@ -455,7 +566,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00111">111</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+<p>Called when either the drag button or the line buttons are pressed. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00099">99</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
 
 </div>
 </div>
@@ -482,7 +595,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00253">253</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+<p>Called when the run button is clicked from the toolbar. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00243">243</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
 
 </div>
 </div>
@@ -510,7 +625,15 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00123">123</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+<p>Called when the scene scale QComboBox is changed. This changes the scale of the <a class="el" href="classScene.html">Scene</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scale</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00111">111</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
 
 </div>
 </div>
@@ -535,7 +658,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00050">50</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>An action that shows the about popup. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00147">147</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -559,7 +684,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00054">54</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>The about menu on the menubar. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00162">162</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -583,7 +710,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00062">62</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>The button group that holds the multiple components. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00187">187</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -607,7 +736,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00048">48</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>An action that deletes the selected component. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00137">137</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -631,7 +762,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00047">47</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>An action that exits the application. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00132">132</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -655,7 +788,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00052">52</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>The file menu on the menubar. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00152">152</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -679,31 +814,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00053">53</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>The item menu on the menubar. </p>
 
-</div>
-</div>
-<a id="a1e787e601be0b9234b556cc6e6c91afc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e787e601be0b9234b556cc6e6c91afc">&#9670;&nbsp;</a></span>lineAction</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QAction* MainWindow::lineAction</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00064">64</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00157">157</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -727,7 +840,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00057">57</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>The toolbar that allows you to select either movement or line mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00172">172</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -751,7 +866,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00063">63</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>The button group that holds buttons for movement or line mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00192">192</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -775,7 +892,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00049">49</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>An action that runs the simulation. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00142">142</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -799,7 +918,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00044">44</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>The scene where the SceneItems are placed. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00117">117</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -823,7 +944,35 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00059">59</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>The QComboBox that allows you to select the scene scale. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00177">177</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+
+</div>
+</div>
+<a id="a23365d69d6ceeb0af303bfb273aa6d15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23365d69d6ceeb0af303bfb273aa6d15">&#9670;&nbsp;</a></span>settingsMenu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSettingsMenu.html">SettingsMenu</a>* MainWindow::settingsMenu</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The collapsable settings menu for components. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00127">127</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -847,7 +996,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00055">55</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>The simulation menu on the menubar. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00167">167</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -871,7 +1022,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00061">61</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>The toolbox that contains the component buttons. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00182">182</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -895,7 +1048,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00045">45</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
+<p>The view that shows the <a class="el" href="classScene.html">Scene</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="MainWindow_8h_source.html#l00122">122</a> of file <a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>.</p>
 
 </div>
 </div>

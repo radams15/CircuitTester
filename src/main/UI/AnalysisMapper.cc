@@ -29,23 +29,23 @@ AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
 MNASolution* AnalysisMapper::getSolution() {
     Graph graph = makeGraph();
 
-    auto* components = new std::vector<MNAComponent*>;
+    auto* MNAComponents = new std::vector<MNAComponent*>;
 
     for(auto n : graph){
         if(n.first->getId() == UI_BATTERY){
-            components->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_BATTERY, ((Battery*)n.first)->getVoltage()));
+            MNAComponents->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_BATTERY, ((Battery*)n.first)->getVoltage()));
         }else if(n.first->getId() == UI_RESISTOR){
-            components->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Resistor*)n.first)->getResistance()));
+            MNAComponents->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Resistor*)n.first)->getResistance()));
         }else if(n.first->getId() == UI_WIRE){
-            components->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Wire*)n.first)->getResistance()));
+            MNAComponents->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Wire*)n.first)->getResistance()));
         }else if(n.first->getId() == UI_SWITCH){
-            components->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Switch*)n.first)->getEnabled()? 0.000001 : 1000000));
+            MNAComponents->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Switch*)n.first)->getEnabled() ? 0.000001 : 1000000));
         }
 
-        std::cout << components->at(components->size()-1)->str() << std::endl;
+        std::cout << MNAComponents->at(MNAComponents->size() - 1)->str() << std::endl;
     }
 
-    auto* cir = new MNACircuit(*components);
+    auto* cir = new MNACircuit(*MNAComponents);
 
     return cir->solve();
 }

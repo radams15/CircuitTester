@@ -16,6 +16,8 @@ Resistor::Resistor() : UIComponent(ID, ":/images/resistor.png") {
     settingsBox->addLayout(resistanceBox);
 
     resistanceSpinner->setValue(1.0f);
+
+    settingsBox->addSpacerItem(new QSpacerItem(0,0, QSizePolicy::Expanding,QSizePolicy::Expanding));
 }
 
 double Resistor::getResistance() {

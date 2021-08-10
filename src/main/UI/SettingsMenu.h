@@ -12,6 +12,7 @@
 #include <QToolButton>
 #include <QGridLayout>
 #include <QPropertyAnimation>
+#include <QGroupBox>
 
 class SettingsMenu : public QWidget { // https://stackoverflow.com/questions/32476006/how-to-make-an-expandable-collapsable-section-widget-in-qt
 Q_OBJECT
@@ -19,14 +20,14 @@ Q_OBJECT
 private:
     const int animationDuration = 300;
     QParallelAnimationGroup* toggleAnimation;
-    QScrollArea* contentArea;
+    QGroupBox* contentArea;
     QToolButton* toggleButton;
     QGridLayout* mainLayout;
 
+public:
     void startAnimation(bool checked);
 
-public:
-    SettingsMenu(QWidget *parent = nullptr);
+    SettingsMenu(QWidget* parent = nullptr);
 
     void setContentLayout(QLayout* contentLayout);
 

@@ -52,7 +52,6 @@ var searchData=
   ['batakscript',['BatakScript',['https://doc.qt.io/qt-5/qlocale.html#Script-enum',1,'QLocale']]],
   ['bataktoba',['BatakToba',['https://doc.qt.io/qt-5/qlocale.html#Language-enum',1,'QLocale']]],
   ['batteries',['batteries',['../classMNACircuit.html#a74dd94858e339c5d47f482c9975a4c4f',1,'MNACircuit']]],
-  ['battery',['BATTERY',['../MNAComponent_8h.html#a16b11be27a8e9362dd122c4d879e01aeabed030efadd25858cf02b8abd31905bb',1,'MNAComponent.h']]],
   ['bcp47name',['bcp47Name',['https://doc.qt.io/qt-5/qlocale.html#bcp47Name',1,'QLocale']]],
   ['bdiagpattern',['BDiagPattern',['https://doc.qt.io/qt-5/qt.html#BrushStyle-enum',1,'Qt']]],
   ['before',['before',['https://doc.qt.io/qt-5/qtgui/qactionevent.html#before',1,'QActionEvent']]],

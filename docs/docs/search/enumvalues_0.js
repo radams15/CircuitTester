@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['battery',['BATTERY',['../MNAComponent_8h.html#a16b11be27a8e9362dd122c4d879e01aeabed030efadd25858cf02b8abd31905bb',1,'MNAComponent.h']]]
+  ['current',['CURRENT',['../classUnknown.html#a7f0c0a904314de1c5575a0b4513d8421a50ec9d72816b576aec7275d402eee447',1,'Unknown']]]
 ];

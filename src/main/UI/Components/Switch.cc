@@ -14,6 +14,9 @@ Switch::Switch() : UIComponent(ID, ":/images/switch_open.png") {
     enabledBox->addWidget(enabledLabel);
     enabledBox->addWidget(enabledButton);
     settingsBox->addLayout(enabledBox);
+
+
+    settingsBox->addSpacerItem(new QSpacerItem(0,0, QSizePolicy::Expanding,QSizePolicy::Expanding));
 }
 
 bool Switch::getEnabled() {

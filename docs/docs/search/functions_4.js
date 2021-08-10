@@ -46,6 +46,7 @@ var searchData=
   ['endnativepainting',['endNativePainting',['https://doc.qt.io/qt-5/qtgui/qpainter.html#endNativePainting',1,'QPainter']]],
   ['endofday',['endOfDay',['https://doc.qt.io/qt-5/qdate.html#endOfDay',1,'QDate::endOfDay(Qt::TimeSpec spec, int offsetSeconds) const const'],['https://doc.qt.io/qt-5/qdate.html#endOfDay-1',1,'QDate::endOfDay(const QTimeZone &amp;zone) const const']]],
   ['endpaint',['endPaint',['https://doc.qt.io/qt-5/qtgui/qbackingstore.html#endPaint',1,'QBackingStore']]],
+  ['endpoint',['endPoint',['../classSceneItem.html#a4cec31e99d6de09cb0004379670b3ee7',1,'SceneItem']]],
   ['endprefixmapping',['endPrefixMapping',['https://doc.qt.io/qt-5/qtxml/qxmlcontenthandler.html#endPrefixMapping',1,'QXmlContentHandler::endPrefixMapping()'],['https://doc.qt.io/qt-5/qtxml/qxmldefaulthandler.html#endPrefixMapping',1,'QXmlDefaultHandler::endPrefixMapping()']]],
   ['endremovecolumns',['endRemoveColumns',['https://doc.qt.io/qt-5/qabstractitemmodel.html#endRemoveColumns',1,'QAbstractItemModel']]],
   ['endremoverows',['endRemoveRows',['https://doc.qt.io/qt-5/qabstractitemmodel.html#endRemoveRows',1,'QAbstractItemModel']]],

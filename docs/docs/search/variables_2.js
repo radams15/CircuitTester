@@ -192,7 +192,7 @@ var searchData=
   ['constructor',['Constructor',['https://doc.qt.io/qt-5/qmetamethod.html#MethodType-enum',1,'QMetaMethod']]],
   ['containsitemboundingrect',['ContainsItemBoundingRect',['https://doc.qt.io/qt-5/qt.html#ItemSelectionMode-enum',1,'Qt']]],
   ['containsitemshape',['ContainsItemShape',['https://doc.qt.io/qt-5/qt.html#ItemSelectionMode-enum',1,'Qt']]],
-  ['contentarea',['contentArea',['../classSettingsMenu.html#afaa32fd31a78b5a63a94dd1eeceb4b6e',1,'SettingsMenu']]],
+  ['contentarea',['contentArea',['../classSettingsMenu.html#ac8c465fc77c1265426b18e4edac4fdcd',1,'SettingsMenu']]],
   ['contentsrectchange',['ContentsRectChange',['https://doc.qt.io/qt-5/qevent.html#Type-enum',1,'QEvent']]],
   ['contexthelpend',['ContextHelpEnd',['https://doc.qt.io/qt-5/qtgui/qaccessible.html#Event-enum',1,'QAccessible']]],
   ['contexthelpstart',['ContextHelpStart',['https://doc.qt.io/qt-5/qtgui/qaccessible.html#Event-enum',1,'QAccessible']]],

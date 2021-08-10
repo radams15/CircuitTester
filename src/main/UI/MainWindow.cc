@@ -1,4 +1,3 @@
-#include <iostream>
 #include <vector>
 #include <queue>
 
@@ -19,8 +18,6 @@
 #include <QtWidgets>
 
 
-const int InsertTextButton = 10;
-
 MainWindow::MainWindow() {
     createActions();
     createToolBox();
@@ -39,21 +36,11 @@ MainWindow::MainWindow() {
     view = new QGraphicsView(scene);
     layout->addWidget(view);
 
-
-
-    auto* helpBox = new QVBoxLayout();
-    auto* helpLabel = new QLabel("Settings");
-    helpBox->addWidget(helpLabel);
-
     settingsMenu = new SettingsMenu();
-    //settingsMenu->innerLayout->addLayout(helpBox);
-    settingsMenu->setInteriorLayout(helpBox);
     layout->addWidget(settingsMenu);
 
     auto *widget = new QWidget;
     widget->setLayout(layout);
-
-
 
     setCentralWidget(widget);
     setWindowTitle(tr("Circuit Simulator"));
@@ -70,24 +57,19 @@ void MainWindow::buttonGroupClicked(QAbstractButton *button) {
     }
     const int id = buttonGroup->id(button);
 
-    if (id == InsertTextButton) {
-        scene->setMode(Scene::InsertText);
-    } else {
-        if(id == UI_RESISTOR){
-            scene->setItemType(new Resistor);
-        }else if(id == UI_BATTERY){
-            scene->setItemType(new Battery);
-        }else if(id == UI_WIRE){
-            scene->setItemType(new Wire);
-        }else if(id == UI_SWITCH){
-            scene->setItemType(new Switch);
-        }else{
-            return;
-        }
-
-        scene->setMode(Scene::InsertItem);
-
+    if(id == UI_RESISTOR){
+        scene->setItemType(new Resistor);
+    }else if(id == UI_BATTERY){
+        scene->setItemType(new Battery);
+    }else if(id == UI_WIRE){
+        scene->setItemType(new Wire);
+    }else if(id == UI_SWITCH){
+        scene->setItemType(new Switch);
+    }else{
+        return;
     }
+
+    scene->setMode(Scene::InsertItem);
 }
 
 
@@ -193,7 +175,7 @@ void MainWindow::createMenus() {
     fileMenu = menuBar()->addMenu(tr("&File"));
     fileMenu->addAction(exitAction);
 
-    simMenu = menuBar()->addMenu(tr("&Sim"));
+    simMenu = menuBar()->addMenu(tr("&Simulation"));
     simMenu->addAction(runAction);
 
     itemMenu = menuBar()->addMenu(tr("&Item"));
@@ -270,4 +252,5 @@ void MainWindow::runSimulation() {
 
 void MainWindow::itemRightClicked(UIComponent* item) {
     settingsMenu->setInteriorLayout(item->settingsBox);
+    settingsMenu->startAnimation(true);
 }

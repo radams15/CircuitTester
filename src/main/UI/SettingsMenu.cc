@@ -7,7 +7,7 @@
 
 SettingsMenu::SettingsMenu(QWidget *parent) : QWidget(parent){
     toggleAnimation = new QParallelAnimationGroup(parent);
-    contentArea = new QScrollArea();
+    contentArea = new QGroupBox("Settings");
     toggleButton = new QToolButton();
     mainLayout = new QGridLayout();
 
@@ -19,7 +19,7 @@ SettingsMenu::SettingsMenu(QWidget *parent) : QWidget(parent){
     toggleButton->setCheckable(true);
     toggleButton->setChecked(false);
 
-    contentArea->setStyleSheet("QScrollArea { border: none; }");
+    //contentArea->setStyleSheet("QGroupBox { border: none; }");
     contentArea->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
 
     contentArea->setMaximumWidth(0);

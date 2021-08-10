@@ -96,6 +96,7 @@ var searchData=
   ['endofstring',['EndOfString',['https://doc.qt.io/qt-5/qcborstreamreader.html#StringResultCode-enum',1,'QCborStreamReader']]],
   ['endofword',['EndOfWord',['https://doc.qt.io/qt-5/qtgui/qtextcursor.html#MoveOperation-enum',1,'QTextCursor']]],
   ['endpaint',['endPaint',['https://doc.qt.io/qt-5/qtgui/qbackingstore.html#endPaint',1,'QBackingStore']]],
+  ['endpoint',['endPoint',['../classSceneItem.html#a4cec31e99d6de09cb0004379670b3ee7',1,'SceneItem']]],
   ['endprefixmapping',['endPrefixMapping',['https://doc.qt.io/qt-5/qtxml/qxmlcontenthandler.html#endPrefixMapping',1,'QXmlContentHandler::endPrefixMapping()'],['https://doc.qt.io/qt-5/qtxml/qxmldefaulthandler.html#endPrefixMapping',1,'QXmlDefaultHandler::endPrefixMapping()']]],
   ['endremovecolumns',['endRemoveColumns',['https://doc.qt.io/qt-5/qabstractitemmodel.html#endRemoveColumns',1,'QAbstractItemModel']]],
   ['endremoverows',['endRemoveRows',['https://doc.qt.io/qt-5/qabstractitemmodel.html#endRemoveRows',1,'QAbstractItemModel']]],

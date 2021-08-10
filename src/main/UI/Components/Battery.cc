@@ -24,6 +24,8 @@ Battery::Battery() : UIComponent(ID, ":/images/battery.png") {
     settingsBox->addLayout(onOffBox);
 
     voltageSpinner->setValue(1.0f);
+
+    settingsBox->addSpacerItem(new QSpacerItem(0,0, QSizePolicy::Expanding,QSizePolicy::Expanding));
 }
 
 double Battery::getVoltage() {

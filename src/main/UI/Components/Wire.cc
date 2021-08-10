@@ -39,6 +39,8 @@ Wire::Wire() : UIComponent(ID, ":/images/wire.png") {
 
     lengthSpinner->setValue(1.0f);
     areaSpinner->setValue(1.0f);
+
+    settingsBox->addSpacerItem(new QSpacerItem(0,0, QSizePolicy::Expanding,QSizePolicy::Expanding));
 }
 
 double Wire::getResistance() {
