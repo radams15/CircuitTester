@@ -21,11 +21,12 @@ private:
     const int animationDuration = 300;
     QParallelAnimationGroup* toggleAnimation;
     QGroupBox* contentArea;
-    QToolButton* toggleButton;
+
     QGridLayout* mainLayout;
 
 public:
     void startAnimation(bool checked);
+    QToolButton* toggleButton;
 
     SettingsMenu(QWidget* parent = nullptr);
 

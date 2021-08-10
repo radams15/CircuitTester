@@ -252,5 +252,5 @@ void MainWindow::runSimulation() {
 
 void MainWindow::itemRightClicked(UIComponent* item) {
     settingsMenu->setInteriorLayout(item->settingsBox);
-    settingsMenu->startAnimation(true);
+    settingsMenu->toggleButton->click();
 }

@@ -46,13 +46,7 @@ void Scene::editorLostFocus(SceneText *item){
 
 
 void Scene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent){
-    if (mouseEvent->button() == Qt::RightButton){
-        if(! selectedItems().empty()){
-            auto* item = ((UIComponent*) selectedItems().at(0));
-            //std::cout << item << std::endl;
-            ((MainWindow*) parent())->itemRightClicked(item);
-        }
-    } else if (mouseEvent->button() == Qt::LeftButton){
+    if (mouseEvent->button() == Qt::LeftButton){
         switch (myMode) {
             case InsertItem:
                 addItem(component);
@@ -74,6 +68,17 @@ void Scene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent){
         QGraphicsScene::mousePressEvent(mouseEvent);
     }
 }
+
+void Scene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *mouseEvent) {
+    if(! selectedItems().empty()){
+        auto* item = ((UIComponent*) selectedItems().at(0));
+        ((MainWindow*) parent())->itemRightClicked(item);
+    }
+
+    QGraphicsScene::mouseDoubleClickEvent(mouseEvent);
+}
+
+
 
 
 
@@ -127,4 +132,3 @@ bool Scene::isItemChange(int type) const{
         return item->type() == type;
     }) != items.end();
 }
-
