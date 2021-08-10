@@ -10,6 +10,8 @@
 
 #include "Components/Resistor.h"
 #include "Components/Battery.h"
+#include "Components/Wire.h"
+#include "Components/Switch.h"
 
 #include "../Saves/CircuitSaver.h"
 #include "AnalysisMapper.h"
@@ -75,6 +77,10 @@ void MainWindow::buttonGroupClicked(QAbstractButton *button) {
             scene->setItemType(new Resistor);
         }else if(id == UI_BATTERY){
             scene->setItemType(new Battery);
+        }else if(id == UI_WIRE){
+            scene->setItemType(new Wire);
+        }else if(id == UI_SWITCH){
+            scene->setItemType(new Switch);
         }else{
             return;
         }
@@ -144,6 +150,8 @@ void MainWindow::createToolBox() {
     auto *layout = new QGridLayout;
     layout->addWidget(createCellWidget<Resistor>(tr("Resistor")), 0, 0);
     layout->addWidget(createCellWidget<Battery>(tr("Battery")), 0, 1);
+    layout->addWidget(createCellWidget<Wire>(tr("Wire")), 1, 0);
+    layout->addWidget(createCellWidget<Switch>(tr("Switch")), 1, 1);
 
     layout->setRowStretch(3, 10);
     layout->setColumnStretch(2, 10);

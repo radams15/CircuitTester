@@ -15,6 +15,8 @@
 enum ComponentType{
     UI_RESISTOR,
     UI_BATTERY,
+    UI_WIRE,
+    UI_SWITCH
 };
 
 class UIComponent : public SceneItem{

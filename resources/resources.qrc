@@ -6,6 +6,9 @@
     <file>images/resistor.png</file>
     <file>images/bulb.png</file>
     <file>images/battery.png</file>
+    <file>images/wire.png</file>
+    <file>images/switch_closed.png</file>
+    <file>images/switch_open.png</file>
 </qresource>
 </RCC>
 

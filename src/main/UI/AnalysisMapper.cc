@@ -8,6 +8,8 @@
 #include "UIComponent.h"
 #include "Components/Battery.h"
 #include "Components/Resistor.h"
+#include "Components/Wire.h"
+#include "Components/Switch.h"
 #include "Arrow.h"
 
 #include "../Analysis/MNACircuit.h"
@@ -34,6 +36,10 @@ MNASolution* AnalysisMapper::getSolution() {
             components->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_BATTERY, ((Battery*)n.first)->getVoltage()));
         }else if(n.first->getId() == UI_RESISTOR){
             components->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Resistor*)n.first)->getResistance()));
+        }else if(n.first->getId() == UI_WIRE){
+            components->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Wire*)n.first)->getResistance()));
+        }else if(n.first->getId() == UI_SWITCH){
+            components->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Switch*)n.first)->getEnabled()? 0.000001 : 1000000));
         }
 
         std::cout << components->at(components->size()-1)->str() << std::endl;

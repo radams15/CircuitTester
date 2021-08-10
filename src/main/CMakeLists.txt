@@ -39,6 +39,10 @@ set(PROJECT_SOURCES
         UI/Components/Battery.h
         UI/Components/Resistor.cc
         UI/Components/Resistor.h
+        UI/Components/Wire.cc
+        UI/Components/Wire.h
+        UI/Components/Switch.cc
+        UI/Components/Switch.h
         Analysis/Unknown.cc
         Analysis/Unknown.h
         Analysis/Term.cc
