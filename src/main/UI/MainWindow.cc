@@ -69,7 +69,7 @@ void MainWindow::buttonGroupClicked(QAbstractButton *button) {
         return;
     }
 
-    scene->setMode(Scene::InsertItem);
+    scene->setMode(Scene::INSERT_ITEM);
 }
 
 
@@ -102,7 +102,7 @@ void MainWindow::pointerGroupClicked() {
 
 
 void MainWindow::itemInserted(UIComponent* c) {
-    pointerTypeGroup->button(int(Scene::MoveItem))->setChecked(true);
+    pointerTypeGroup->button(int(Scene::MOVE_ITEM))->setChecked(true);
     scene->setMode(Scene::Mode(pointerTypeGroup->checkedId()));
     buttonGroup->button(c->getId())->setChecked(false);
 }
@@ -197,8 +197,8 @@ void MainWindow::createToolbars() {
     linePointerButton->setIcon(QIcon(":/images/linepointer.png"));
 
     pointerTypeGroup = new QButtonGroup(this);
-    pointerTypeGroup->addButton(pointerButton, int(Scene::MoveItem));
-    pointerTypeGroup->addButton(linePointerButton, int(Scene::InsertLine));
+    pointerTypeGroup->addButton(pointerButton, int(Scene::MOVE_ITEM));
+    pointerTypeGroup->addButton(linePointerButton, int(Scene::INSERT_LINE));
     connect(pointerTypeGroup, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked),
             this, &MainWindow::pointerGroupClicked);
 
@@ -247,7 +247,21 @@ void MainWindow::runSimulation() {
 
     AnalysisMapper mapper(scene->items().toStdList());
 
-    auto* sol = mapper.getSolution();
+    auto sol = mapper.getSolution();
+
+    scene->removeAllText();
+
+    for(auto it : sol){
+        std::string textData = "Voltage: " + std::to_string(it.second.voltage) + "V";
+        if (std::to_string(it.second.current) != "nan"){
+            textData += "\nCurrent: " + std::to_string(it.second.current) + "A";
+        }
+
+        auto textBox = new SceneText(textData);
+        auto componentPos = it.first->pos();
+        scene->addItem(textBox);
+        textBox->setPos(QPointF(componentPos.x()+100, componentPos.y()+200));
+    }
 }
 
 void MainWindow::itemRightClicked(UIComponent* item) {

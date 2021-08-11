@@ -2,10 +2,11 @@
 #include "Scene.h"
 
 
-SceneText::SceneText(QGraphicsItem *parent)
+SceneText::SceneText(std::string text, QGraphicsItem *parent)
     : QGraphicsTextItem(parent){
     setFlag(QGraphicsItem::ItemIsMovable);
     setFlag(QGraphicsItem::ItemIsSelectable);
+    setPlainText(QString::fromStdString(text));
 }
 
 

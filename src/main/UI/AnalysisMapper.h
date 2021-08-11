@@ -34,6 +34,22 @@ typedef std::map<UIComponent*, std::vector<UIComponent*>> Graph;
  */
 typedef std::vector<UIComponent*> Path;
 
+/** @brief Returned from the AnalysisMapper::getSolution function to show the currents
+ * and voltages for each component;
+ *
+ */
+struct ComponentValue {
+    /** @brief The voltage of the component - all components have a voltage.
+     *
+     */
+    double voltage;
+
+    /** @brief The current of the component, only resistors and derivatives have a current.
+     *
+     */
+    double current;
+};
+
 /** @brief Class that maps UI components onto MNA components.
  *
  */
@@ -68,11 +84,11 @@ public:
      */
     explicit AnalysisMapper(std::list<QGraphicsItem*> graphicsItems);
 
-    /** @brief Gets an MNASolution from the circuit canvas.
+    /** @brief Gets solves the circuit, returning a map of components to values.
      *
-     * @return MNASolution from the graph.
+     * @return Map of UIComponent pointer to ComponentValue struct.
      */
-    MNASolution* getSolution();
+    std::map<UIComponent*, ComponentValue> getSolution();
 };
 
 

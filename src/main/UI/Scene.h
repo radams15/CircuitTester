@@ -7,12 +7,20 @@
 #include <QGraphicsScene>
 #include "UIComponent.h"
 
+/**
+ * \def IS_TYPE(type, ptr)
+ * Attempts to find whether \ptr is an instance of \type through a dynamic cast.
+ *
+ * If they are not the same class, then a dynamic cast returns a nullptr.
+*/
+
+#define IS_TYPE(type, ptr) dynamic_cast<type*>(ptr) != nullptr
 
 class Scene : public QGraphicsScene{
     Q_OBJECT
 
 public:
-    enum Mode { InsertItem, InsertLine, InsertText, MoveItem };
+    enum Mode { INSERT_ITEM, INSERT_LINE, MOVE_ITEM };
 
     explicit Scene(QMenu *itemMenu, QObject *parent = nullptr);
     QFont font() const { return myFont; }
@@ -20,10 +28,11 @@ public:
     QColor itemColor() const { return myItemColor; }
     QColor lineColor() const { return myLineColor; }
 
+    void removeAllText();
+
 public slots:
-    void setMode(Mode mode);
+    void setMode(Scene::Mode mode);
     void setItemType(UIComponent* c);
-    void editorLostFocus(SceneText *item);
 
 signals:
     void itemInserted(UIComponent *c);

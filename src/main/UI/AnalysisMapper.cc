@@ -26,28 +26,61 @@ AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
     }
 }
 
-MNASolution* AnalysisMapper::getSolution() {
+std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
     Graph graph = makeGraph();
 
     auto* MNAComponents = new std::vector<MNAComponent*>;
+    auto* MNAMap = new std::map<UIComponent*, MNAComponent*>;
 
     for(auto n : graph){
+        MNAComponent* c;
         if(n.first->getId() == UI_BATTERY){
-            MNAComponents->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_BATTERY, ((Battery*)n.first)->getVoltage()));
+            c = new MNAComponent(n.first->n0, n.first->n1, MNA_BATTERY, ((Battery*)n.first)->getVoltage());
+            MNAComponents->push_back(c);
         }else if(n.first->getId() == UI_RESISTOR){
-            MNAComponents->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Resistor*)n.first)->getResistance()));
+            c = new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Resistor*)n.first)->getResistance());
+            MNAComponents->push_back(c);
         }else if(n.first->getId() == UI_WIRE){
-            MNAComponents->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Wire*)n.first)->getResistance()));
+            c = new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Wire*)n.first)->getResistance());
+            MNAComponents->push_back(c);
         }else if(n.first->getId() == UI_SWITCH){
-            MNAComponents->push_back(new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Switch*)n.first)->getEnabled() ? 0.000001 : 1000000));
+            c = new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Switch*)n.first)->getEnabled() ? 0.000001 : 1000000);
+            MNAComponents->push_back(c);
+        }else{
+            continue;
         }
 
-        std::cout << MNAComponents->at(MNAComponents->size() - 1)->str() << std::endl;
+        MNAMap->insert(std::make_pair(n.first, c));
     }
 
     auto* cir = new MNACircuit(*MNAComponents);
 
-    return cir->solve();
+    auto* sol = cir->solve();
+
+    std::map<UIComponent*, ComponentValue> out;
+
+    for(auto c : *MNAMap){
+        switch(c.second->type){
+            case MNA_RESISTOR:
+                out[c.first] = {
+                        sol->getVoltage(*c.second),
+                        sol->getCurrent(*c.second)
+                };
+                break;
+
+            case MNA_BATTERY:
+                out[c.first] = {
+                        sol->getVoltage(*c.second),
+                        NAN
+                };
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    return out;
 }
 
 Path* AnalysisMapper::find_shortest_path(Graph *graph, UIComponent *start, UIComponent *end) {
@@ -97,12 +130,6 @@ Graph AnalysisMapper::makeGraph() {
 
     for(auto c : components){
         std::vector<UIComponent*> connections;
-
-        /*if(c->getId() == UI_BATTERY){
-            std::cout << ((Battery*) c)->getVoltage() << "V\n";
-        } else if(c->getId() == UI_RESISTOR){
-            std::cout << ((Resistor*) c)->getResistance() << "Ω\n";
-        }*/
 
         for(auto a : c->arrows){
             if(c == a->endItem()){

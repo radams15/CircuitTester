@@ -2,6 +2,7 @@
 #define DIAGRAMTEXTITEM_H
 
 #include <QGraphicsTextItem>
+#include <string>
 
 class SceneText : public QGraphicsTextItem{
     Q_OBJECT
@@ -9,7 +10,7 @@ class SceneText : public QGraphicsTextItem{
 public:
     enum { Type = UserType + 3 };
 
-    SceneText(QGraphicsItem *parent = nullptr);
+    SceneText(std::string text, QGraphicsItem *parent = nullptr);
 
     int type() const override { return Type; }
 
