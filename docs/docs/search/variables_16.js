@@ -198,6 +198,7 @@ var searchData=
   ['wineventact',['WinEventAct',['https://doc.qt.io/qt-5/qevent.html#Type-enum',1,'QEvent']]],
   ['winidchange',['WinIdChange',['https://doc.qt.io/qt-5/qevent.html#Type-enum',1,'QEvent']]],
   ['winterneva',['WinterNeva',['https://doc.qt.io/qt-5/qtgui/qgradient.html#Preset-enum',1,'QGradient']]],
+  ['wirecombo',['wireCombo',['../classWire.html#ae144fb019e6dae1eb80d82490bea1ce2',1,'Wire']]],
   ['witchdance',['WitchDance',['https://doc.qt.io/qt-5/qtgui/qgradient.html#Preset-enum',1,'QGradient']]],
   ['withbraces',['WithBraces',['https://doc.qt.io/qt-5/quuid.html#StringFormat-enum',1,'QUuid']]],
   ['withoutbraces',['WithoutBraces',['https://doc.qt.io/qt-5/quuid.html#StringFormat-enum',1,'QUuid']]],

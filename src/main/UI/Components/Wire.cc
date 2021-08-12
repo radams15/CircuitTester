@@ -6,7 +6,7 @@
 #include <iostream>
 #include "Wire.h"
 
-Wire::Wire() : UIComponent(ID, ":/images/wire.png") {
+Wire::Wire() : ResistiveElement(ID, ":/images/wire.png") {
     auto* lengthLabel = new QLabel("Length (cm)");
     lengthSpinner = new QDoubleSpinBox;
     lengthSpinner->setMinimum(0.1);

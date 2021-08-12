@@ -225,6 +225,7 @@ var searchData=
   ['diren',['DirEN',['https://doc.qt.io/qt-5/qchar.html#Direction-enum',1,'QChar']]],
   ['dires',['DirES',['https://doc.qt.io/qt-5/qchar.html#Direction-enum',1,'QChar']]],
   ['diret',['DirET',['https://doc.qt.io/qt-5/qchar.html#Direction-enum',1,'QChar']]],
+  ['direxists',['dirExists',['../UserUtils_8cpp.html#ae840f0cff7f74439e810f057d9789d67',1,'UserUtils.cpp']]],
   ['dirfsi',['DirFSI',['https://doc.qt.io/qt-5/qchar.html#Direction-enum',1,'QChar']]],
   ['dirl',['DirL',['https://doc.qt.io/qt-5/qchar.html#Direction-enum',1,'QChar']]],
   ['dirlre',['DirLRE',['https://doc.qt.io/qt-5/qchar.html#Direction-enum',1,'QChar']]],

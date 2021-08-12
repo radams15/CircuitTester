@@ -15,7 +15,7 @@ var searchData=
   ['names',['names',['https://doc.qt.io/qt-5/qcommandlineoption.html#names',1,'QCommandLineOption']]],
   ['namespacedeclarations',['namespaceDeclarations',['https://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceDeclarations',1,'QXmlStreamReader']]],
   ['namespaceprocessing',['namespaceProcessing',['https://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceProcessing-prop',1,'QXmlStreamReader::namespaceProcessing()'],['https://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceProcessing-prop',1,'QXmlStreamReader::namespaceProcessing() const const']]],
-  ['namespaceuri',['namespaceUri',['https://doc.qt.io/qt-5/qxmlstreamattribute.html#namespaceUri',1,'QXmlStreamAttribute::namespaceUri()'],['https://doc.qt.io/qt-5/qxmlstreamnamespacedeclaration.html#namespaceUri',1,'QXmlStreamNamespaceDeclaration::namespaceUri()'],['https://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceUri',1,'QXmlStreamReader::namespaceUri()'],['https://doc.qt.io/qt-5/qtxml/qdomnode.html#namespaceURI',1,'QDomNode::namespaceURI()']]],
+  ['namespaceuri',['namespaceURI',['https://doc.qt.io/qt-5/qtxml/qdomnode.html#namespaceURI',1,'QDomNode::namespaceURI()'],['https://doc.qt.io/qt-5/qxmlstreamattribute.html#namespaceUri',1,'QXmlStreamAttribute::namespaceUri()'],['https://doc.qt.io/qt-5/qxmlstreamnamespacedeclaration.html#namespaceUri',1,'QXmlStreamNamespaceDeclaration::namespaceUri()'],['https://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceUri',1,'QXmlStreamReader::namespaceUri()']]],
   ['nametotype',['nameToType',['https://doc.qt.io/qt-5/qvariant.html#nameToType',1,'QVariant']]],
   ['nametype',['NameType',['https://doc.qt.io/qt-5/qtimezone.html#NameType-enum',1,'QTimeZone']]],
   ['namibia',['Namibia',['https://doc.qt.io/qt-5/qlocale.html#Country-enum',1,'QLocale']]],

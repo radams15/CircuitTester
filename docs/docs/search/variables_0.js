@@ -228,6 +228,7 @@ var searchData=
   ['arche',['ArchE',['https://doc.qt.io/qt-5/qtgui/qpagesize.html#PageSizeId-enum',1,'QPageSize::ArchE()'],['https://doc.qt.io/qt-5/qtgui/qpagedpaintdevice.html#PageSize-enum',1,'QPagedPaintDevice::ArchE()']]],
   ['ardhamagadhiprakrit',['ArdhamagadhiPrakrit',['https://doc.qt.io/qt-5/qlocale.html#Language-enum',1,'QLocale']]],
   ['area',['Area',['https://doc.qt.io/qt-5/qtgui/qtouchdevice.html#CapabilityFlag-enum',1,'QTouchDevice']]],
+  ['areaspinner',['areaSpinner',['../classWire.html#ae206fb3ab805d038e6811e957d7889bd',1,'Wire']]],
   ['argentina',['Argentina',['https://doc.qt.io/qt-5/qlocale.html#Country-enum',1,'QLocale']]],
   ['armenia',['Armenia',['https://doc.qt.io/qt-5/qlocale.html#Country-enum',1,'QLocale']]],
   ['armenian',['Armenian',['https://doc.qt.io/qt-5/qlocale.html#Language-enum',1,'QLocale::Armenian()'],['https://doc.qt.io/qt-5/qtgui/qfontdatabase.html#WritingSystem-enum',1,'QFontDatabase::Armenian()']]],

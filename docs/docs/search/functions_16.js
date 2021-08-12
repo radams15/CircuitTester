@@ -41,6 +41,7 @@ var searchData=
   ['windowtext',['windowText',['https://doc.qt.io/qt-5/qtgui/qpalette.html#windowText',1,'QPalette']]],
   ['windowtitlechanged',['windowTitleChanged',['https://doc.qt.io/qt-5/qtgui/qwindow.html#title-prop',1,'QWindow']]],
   ['winid',['winId',['https://doc.qt.io/qt-5/qtgui/qwindow.html#winId',1,'QWindow']]],
+  ['wire',['Wire',['../classWire.html#a66dc5e7067329d8661456b272d2566ea',1,'Wire']]],
   ['withcurrentsolution',['withCurrentSolution',['../classMNAComponent.html#aab630074c93a2521492c87ca46a869fd',1,'MNAComponent']]],
   ['withtransferfunction',['withTransferFunction',['https://doc.qt.io/qt-5/qtgui/qcolorspace.html#withTransferFunction',1,'QColorSpace']]],
   ['wordspacing',['wordSpacing',['https://doc.qt.io/qt-5/qtgui/qfont.html#wordSpacing',1,'QFont']]],

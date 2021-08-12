@@ -5,7 +5,7 @@
 #include <QLabel>
 #include "Switch.h"
 
-Switch::Switch() : UIComponent(ID, ":/images/switch_open.png") {
+Switch::Switch() : ResistiveElement(ID, ":/images/switch_open.png") {
     auto* enabledLabel = new QLabel("Enabled");
     enabledButton = new QCheckBox;
     enabledButton->setChecked(true);
@@ -19,6 +19,6 @@ Switch::Switch() : UIComponent(ID, ":/images/switch_open.png") {
     settingsBox->addSpacerItem(new QSpacerItem(0,0, QSizePolicy::Expanding,QSizePolicy::Expanding));
 }
 
-bool Switch::getEnabled() {
-    return enabledButton->isChecked();
+double Switch::getResistance() {
+    return enabledButton->isChecked()? switchOn : switchOff;
 }

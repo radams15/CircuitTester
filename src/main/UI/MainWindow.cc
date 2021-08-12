@@ -253,7 +253,7 @@ void MainWindow::runSimulation() {
 
     for(auto it : sol){
         std::string textData = "Voltage: " + std::to_string(it.second.voltage) + "V";
-        if (std::to_string(it.second.current) != "nan"){
+        if (std::to_string(it.second.current) != "nan"){ //TODO FIX THIS
             textData += "\nCurrent: " + std::to_string(it.second.current) + "A";
         }
 

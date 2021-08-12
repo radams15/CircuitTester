@@ -11,15 +11,16 @@
 
 #include <QDoubleSpinBox>
 #include <QComboBox>
-#include "../UIComponent.h"
+#include "ResistiveElement.h"
 
-class Wire : public UIComponent {
+class Wire : public ResistiveElement {
 private:
     std::map<std::string, long double> resistivities = {
             {"Copper", 0.0000000168}
     };
 
 public:
+
     enum{
         ID = UI_WIRE
     };
@@ -30,8 +31,8 @@ public:
 
     Wire();
 
-    double getResistance();
+    double getResistance() override;
 };
 
 
-#endif //LAYOUTTEST1_RESISTOR_H
+#endif //LAYOUTTEST1_WIRE_H

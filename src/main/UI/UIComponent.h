@@ -1,6 +1,7 @@
-//
-// Created by rhys on 15/05/2021.
-//
+/** @brief
+ * @author Rhys Adams
+ * @date 15/05/2021
+ */
 
 #ifndef CIRCUITTESTER_UICOMPONENT_H
 #define CIRCUITTESTER_UICOMPONENT_H
@@ -12,6 +13,10 @@
 
 #include "SceneItem.h"
 
+/** @brief Enum to determine the type of UI component is in the
+ * generic UIComponent.
+ *
+ */
 enum ComponentType{
     UI_RESISTOR,
     UI_BATTERY,
@@ -19,8 +24,15 @@ enum ComponentType{
     UI_SWITCH
 };
 
+/** @brief SceneItem derivative that has information about generic component
+ * info such as nodes and arrow connections.
+ *
+ */
 class UIComponent : public SceneItem{
 protected:
+    /** @brief ComponentType
+     *
+     */
     int ID;
 
     UIComponent(int id, std::string resourcePath);

@@ -1,7 +1,6 @@
 var searchData=
 [
   ['easingcurve',['easingCurve',['https://doc.qt.io/qt-5/qtimeline.html#easingCurve-prop',1,'QTimeLine::easingCurve()'],['https://doc.qt.io/qt-5/qvariantanimation.html#easingCurve-prop',1,'QVariantAnimation::easingCurve()']]],
-  ['editorlostfocus',['editorLostFocus',['../classScene.html#a1b9a6713ea3cffd507a4bf3648c0c386',1,'Scene']]],
   ['elapsed',['elapsed',['https://doc.qt.io/qt-5/qelapsedtimer.html#elapsed',1,'QElapsedTimer::elapsed()'],['https://doc.qt.io/qt-5/qtime-obsolete.html#elapsed',1,'QTime::elapsed()']]],
   ['elementat',['elementAt',['https://doc.qt.io/qt-5/qtgui/qpainterpath.html#elementAt',1,'QPainterPath']]],
   ['elementbyid',['elementById',['https://doc.qt.io/qt-5/qtxml/qdomdocument.html#elementById',1,'QDomDocument']]],

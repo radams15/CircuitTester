@@ -1,7 +1,7 @@
 PROJECT_NAME = Circuit Simulator
 
 OUTPUT_DIRECTORY = .
-INPUT = ../src/main ../src/main/Analysis ../src/main/Components ../src/main/UI ../src/test
+INPUT = ../src/main ../src/main/Analysis ../src/main/Saves ../src/main/UI/Components ../src/main/UI ../src/test
 
 GENERATE_TAGFILE = YES
 TAGFILES = tagfiles/qtcore.tags=https://doc.qt.io/qt-5/ \

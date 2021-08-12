@@ -86,7 +86,7 @@ void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent){
 
         removeItem(line);
         delete line;
- 
+
 
         if (startItems.count() > 0 && endItems.count() > 0 && startItems.first()->type() == SceneItem::Type && endItems.first()->type() == SceneItem::Type &&  startItems.first() != endItems.first()) {
             auto *startItem = qgraphicsitem_cast<SceneItem *>(startItems.first());

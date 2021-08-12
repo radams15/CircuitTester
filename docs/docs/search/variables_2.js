@@ -242,7 +242,7 @@ var searchData=
   ['currencydisplayname',['CurrencyDisplayName',['https://doc.qt.io/qt-5/qlocale.html#CurrencySymbolFormat-enum',1,'QLocale']]],
   ['currencyisocode',['CurrencyIsoCode',['https://doc.qt.io/qt-5/qlocale.html#CurrencySymbolFormat-enum',1,'QLocale']]],
   ['currencysymbol',['CurrencySymbol',['https://doc.qt.io/qt-5/qlocale.html#CurrencySymbolFormat-enum',1,'QLocale']]],
-  ['current',['Current',['https://doc.qt.io/qt-5/qitemselectionmodel.html#SelectionFlag-enum',1,'QItemSelectionModel::Current()'],['https://doc.qt.io/qt-5/qtgui/qpalette.html#ColorGroup-enum',1,'QPalette::Current()']]],
+  ['current',['current',['../structComponentValue.html#a227fbec87df45fed37a69a26a1a7abba',1,'ComponentValue::current()'],['https://doc.qt.io/qt-5/qitemselectionmodel.html#SelectionFlag-enum',1,'QItemSelectionModel::Current()'],['https://doc.qt.io/qt-5/qtgui/qpalette.html#ColorGroup-enum',1,'QPalette::Current()']]],
   ['currentsolution',['currentSolution',['../classMNAComponent.html#a08d7e4fb509a3c5c9e7638648eb62934',1,'MNAComponent']]],
   ['currentsystemendian',['CurrentSystemEndian',['https://doc.qt.io/qt-5/qtgui/qpixelformat.html#ByteOrder-enum',1,'QPixelFormat']]],
   ['cursive',['Cursive',['https://doc.qt.io/qt-5/qtgui/qfont.html#StyleHint-enum',1,'QFont']]],

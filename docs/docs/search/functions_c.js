@@ -168,7 +168,7 @@ var searchData=
   ['mountedvolumes',['mountedVolumes',['https://doc.qt.io/qt-5/qstorageinfo.html#mountedVolumes',1,'QStorageInfo']]],
   ['mousebuttons',['mouseButtons',['https://doc.qt.io/qt-5/qtgui/qdropevent.html#mouseButtons',1,'QDropEvent::mouseButtons()'],['https://doc.qt.io/qt-5/qtgui/qguiapplication.html#mouseButtons',1,'QGuiApplication::mouseButtons()']]],
   ['mousedoubleclickdistance',['mouseDoubleClickDistance',['https://doc.qt.io/qt-5/qtgui/qstylehints.html#mouseDoubleClickDistance-prop',1,'QStyleHints']]],
-  ['mousedoubleclickevent',['mouseDoubleClickEvent',['https://doc.qt.io/qt-5/qtgui/qwindow.html#mouseDoubleClickEvent',1,'QWindow::mouseDoubleClickEvent()'],['../classSceneText.html#aefe1e0eb64b44cc6961cafbff547a63e',1,'SceneText::mouseDoubleClickEvent()']]],
+  ['mousedoubleclickevent',['mouseDoubleClickEvent',['https://doc.qt.io/qt-5/qtgui/qwindow.html#mouseDoubleClickEvent',1,'QWindow::mouseDoubleClickEvent()'],['../classScene.html#a0972e4f90445de32d68e7862ebf01de1',1,'Scene::mouseDoubleClickEvent()'],['../classSceneText.html#aefe1e0eb64b44cc6961cafbff547a63e',1,'SceneText::mouseDoubleClickEvent()']]],
   ['mousedoubleclickinterval',['mouseDoubleClickInterval',['https://doc.qt.io/qt-5/qtgui/qstylehints.html#mouseDoubleClickInterval-prop',1,'QStyleHints']]],
   ['mousedoubleclickintervalchanged',['mouseDoubleClickIntervalChanged',['https://doc.qt.io/qt-5/qtgui/qstylehints.html#mouseDoubleClickInterval-prop',1,'QStyleHints']]],
   ['mousemoveevent',['mouseMoveEvent',['https://doc.qt.io/qt-5/qtgui/qwindow.html#mouseMoveEvent',1,'QWindow::mouseMoveEvent()'],['../classScene.html#a1d0d5e510fb2cbaf2d03736b07576497',1,'Scene::mouseMoveEvent()']]],

@@ -5,7 +5,7 @@
 #include <QLabel>
 #include "Resistor.h"
 
-Resistor::Resistor() : UIComponent(ID, ":/images/resistor.png") {
+Resistor::Resistor() : ResistiveElement(ID, ":/images/resistor.png") {
     auto* resistanceLabel = new QLabel("Resistance (Ω)");
     resistanceSpinner = new QDoubleSpinBox;
     resistanceSpinner->setMinimum(0.1);

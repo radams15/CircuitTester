@@ -99,6 +99,7 @@ var searchData=
   ['directories',['directories',['https://doc.qt.io/qt-5/qfilesystemwatcher.html#directories',1,'QFileSystemWatcher']]],
   ['directorychanged',['directoryChanged',['https://doc.qt.io/qt-5/qfilesystemwatcher.html#directoryChanged',1,'QFileSystemWatcher']]],
   ['directwritefallback',['directWriteFallback',['https://doc.qt.io/qt-5/qsavefile.html#directWriteFallback',1,'QSaveFile']]],
+  ['direxists',['dirExists',['../UserUtils_8cpp.html#ae840f0cff7f74439e810f057d9789d67',1,'UserUtils.cpp']]],
   ['dirname',['dirName',['https://doc.qt.io/qt-5/qdir.html#dirName',1,'QDir']]],
   ['disableattributearray',['disableAttributeArray',['https://doc.qt.io/qt-5/qtgui/qopenglshaderprogram.html#disableAttributeArray',1,'QOpenGLShaderProgram::disableAttributeArray(int location)'],['https://doc.qt.io/qt-5/qtgui/qopenglshaderprogram.html#disableAttributeArray-1',1,'QOpenGLShaderProgram::disableAttributeArray(const char *name)']]],
   ['disablemessages',['disableMessages',['https://doc.qt.io/qt-5/qtgui/qopengldebuglogger.html#disableMessages',1,'QOpenGLDebugLogger::disableMessages(QOpenGLDebugMessage::Sources sources, QOpenGLDebugMessage::Types types, QOpenGLDebugMessage::Severities severities)'],['https://doc.qt.io/qt-5/qtgui/qopengldebuglogger.html#disableMessages-1',1,'QOpenGLDebugLogger::disableMessages(const QVector&lt; GLuint &gt; &amp;ids, QOpenGLDebugMessage::Sources sources, QOpenGLDebugMessage::Types types)']]],

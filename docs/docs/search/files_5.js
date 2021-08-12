@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['uicomponent_2ecc',['UIComponent.cc',['../UIComponent_8cc.html',1,'']]],
-  ['uicomponent_2eh',['UIComponent.h',['../UIComponent_8h.html',1,'']]],
-  ['unknown_2ecc',['Unknown.cc',['../Unknown_8cc.html',1,'']]],
-  ['unknown_2eh',['Unknown.h',['../Unknown_8h.html',1,'']]]
+  ['resistiveelement_2eh',['ResistiveElement.h',['../ResistiveElement_8h.html',1,'']]],
+  ['resistor_2ecc',['Resistor.cc',['../Resistor_8cc.html',1,'']]],
+  ['resistor_2eh',['Resistor.h',['../Resistor_8h.html',1,'']]]
 ];

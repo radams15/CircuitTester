@@ -46,6 +46,7 @@ var searchData=
   ['omittrailingequals',['OmitTrailingEquals',['https://doc.qt.io/qt-5/qbytearray.html#Base64Option-enum',1,'QByteArray']]],
   ['on',['On',['https://doc.qt.io/qt-5/qtgui/qicon.html#State-enum',1,'QIcon']]],
   ['onevalue',['OneValue',['https://doc.qt.io/qt-5/qtgui/qopengltexture.html#SwizzleValue-enum',1,'QOpenGLTexture']]],
+  ['onoffcheckbox',['onOffCheckbox',['../classBattery.html#a1aa526a1da195452c717dc1f3e2020c3',1,'Battery']]],
   ['opaquehint',['OpaqueHint',['https://doc.qt.io/qt-5/qtgui/qpainter.html#PixmapFragmentHint-enum',1,'QPainter']]],
   ['opaquemode',['OpaqueMode',['https://doc.qt.io/qt-5/qt.html#BGMode-enum',1,'Qt']]],
   ['open',['Open',['https://doc.qt.io/qt-5/qsystemsemaphore.html#AccessMode-enum',1,'QSystemSemaphore::Open()'],['https://doc.qt.io/qt-5/qtgui/qkeysequence.html#StandardKey-enum',1,'QKeySequence::Open()']]],

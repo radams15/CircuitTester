@@ -64,6 +64,7 @@ var searchData=
   ['legal',['Legal',['https://doc.qt.io/qt-5/qtgui/qpagesize.html#PageSizeId-enum',1,'QPageSize::Legal()'],['https://doc.qt.io/qt-5/qtgui/qpagedpaintdevice.html#PageSize-enum',1,'QPagedPaintDevice::Legal()']]],
   ['legalextra',['LegalExtra',['https://doc.qt.io/qt-5/qtgui/qpagesize.html#PageSizeId-enum',1,'QPageSize::LegalExtra()'],['https://doc.qt.io/qt-5/qtgui/qpagedpaintdevice.html#PageSize-enum',1,'QPagedPaintDevice::LegalExtra()']]],
   ['lemongate',['LemonGate',['https://doc.qt.io/qt-5/qtgui/qgradient.html#Preset-enum',1,'QGradient']]],
+  ['lengthspinner',['lengthSpinner',['../classWire.html#ad61f2ddbe3dbb7573ef595f1d72365a4',1,'Wire']]],
   ['lepcha',['Lepcha',['https://doc.qt.io/qt-5/qlocale.html#Language-enum',1,'QLocale']]],
   ['lepchascript',['LepchaScript',['https://doc.qt.io/qt-5/qlocale.html#Script-enum',1,'QLocale']]],
   ['lesotho',['Lesotho',['https://doc.qt.io/qt-5/qlocale.html#Country-enum',1,'QLocale']]],

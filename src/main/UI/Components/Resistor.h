@@ -6,9 +6,9 @@
 #define LAYOUTTEST1_RESISTOR_H
 
 #include <QDoubleSpinBox>
-#include "../UIComponent.h"
+#include "ResistiveElement.h"
 
-class Resistor : public UIComponent {
+class Resistor : public ResistiveElement {
 private:
 
 public:
@@ -16,11 +16,11 @@ public:
         ID = UI_RESISTOR
     };
 
-    QDoubleSpinBox* resistanceSpinner{};
+    QDoubleSpinBox* resistanceSpinner;
 
     Resistor();
 
-    double getResistance();
+    double getResistance() override;
 };
 
 

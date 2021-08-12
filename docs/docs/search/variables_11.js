@@ -119,6 +119,8 @@ var searchData=
   ['reserved',['Reserved',['https://doc.qt.io/qt-5/quuid.html#Variant-enum',1,'QUuid']]],
   ['resetnotification',['ResetNotification',['https://doc.qt.io/qt-5/qtgui/qsurfaceformat.html#FormatOption-enum',1,'QSurfaceFormat']]],
   ['resettextureunit',['ResetTextureUnit',['https://doc.qt.io/qt-5/qtgui/qopengltexture.html#TextureUnitReset-enum',1,'QOpenGLTexture']]],
+  ['resistancespinner',['resistanceSpinner',['../classResistor.html#ac881e01633d512ec18a8b5ab0f8cbad0',1,'Resistor']]],
+  ['resistivities',['resistivities',['../classWire.html#a173171f090dc3e2b56dd86738c10f62c',1,'Wire']]],
   ['resistors',['resistors',['../classMNACircuit.html#a3a78a7517bddc93653edff82aa9358b5',1,'MNACircuit']]],
   ['resize',['Resize',['https://doc.qt.io/qt-5/qevent.html#Type-enum',1,'QEvent']]],
   ['resizeerror',['ResizeError',['https://doc.qt.io/qt-5/qfiledevice.html#FileError-enum',1,'QFileDevice']]],

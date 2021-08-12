@@ -114,7 +114,7 @@ var searchData=
   ['highseverity',['HighSeverity',['https://doc.qt.io/qt-5/qtgui/qopengldebugmessage.html#Severity-enum',1,'QOpenGLDebugMessage']]],
   ['highsurrogate',['highSurrogate',['https://doc.qt.io/qt-5/qchar.html#highSurrogate',1,'QChar']]],
   ['hindi',['Hindi',['https://doc.qt.io/qt-5/qlocale.html#Language-enum',1,'QLocale']]],
-  ['hintingpreference',['HintingPreference',['https://doc.qt.io/qt-5/qtgui/qfont.html#HintingPreference-enum',1,'QFont::HintingPreference()'],['https://doc.qt.io/qt-5/qtgui/qfont.html#hintingPreference',1,'QFont::hintingPreference() const const'],['https://doc.qt.io/qt-5/qtgui/qrawfont.html#hintingPreference',1,'QRawFont::hintingPreference()']]],
+  ['hintingpreference',['hintingPreference',['https://doc.qt.io/qt-5/qtgui/qfont.html#hintingPreference',1,'QFont::hintingPreference()'],['https://doc.qt.io/qt-5/qtgui/qrawfont.html#hintingPreference',1,'QRawFont::hintingPreference()'],['https://doc.qt.io/qt-5/qtgui/qfont.html#HintingPreference-enum',1,'QFont::HintingPreference()']]],
   ['hiraganascript',['HiraganaScript',['https://doc.qt.io/qt-5/qlocale.html#Script-enum',1,'QLocale']]],
   ['hiresglobalx',['hiResGlobalX',['https://doc.qt.io/qt-5/qtgui/qtabletevent-obsolete.html#hiResGlobalX',1,'QTabletEvent']]],
   ['hiresglobaly',['hiResGlobalY',['https://doc.qt.io/qt-5/qtgui/qtabletevent-obsolete.html#hiResGlobalY',1,'QTabletEvent']]],

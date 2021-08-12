@@ -3,7 +3,7 @@ var searchData=
   ['vai',['Vai',['https://doc.qt.io/qt-5/qlocale.html#Language-enum',1,'QLocale']]],
   ['vaiscript',['VaiScript',['https://doc.qt.io/qt-5/qlocale.html#Script-enum',1,'QLocale']]],
   ['validate',['Validate',['https://doc.qt.io/qt-5/qjsondocument.html#DataValidation-enum',1,'QJsonDocument']]],
-  ['value',['value',['../classEquation.html#acc5de909a6de828d78578a29f46a1252',1,'Equation::value()'],['../classMNAComponent.html#a2f92de04e6b721a51a75c85edcea517d',1,'MNAComponent::value()'],['https://doc.qt.io/qt-5/qtgui/qaccessible.html#Text-enum',1,'QAccessible::Value()']]],
+  ['value',['Value',['https://doc.qt.io/qt-5/qtgui/qaccessible.html#Text-enum',1,'QAccessible::Value()'],['../classEquation.html#acc5de909a6de828d78578a29f46a1252',1,'Equation::value()'],['../classMNAComponent.html#a2f92de04e6b721a51a75c85edcea517d',1,'MNAComponent::value()']]],
   ['value_5ftype',['value_type',['https://doc.qt.io/qt-5/qcborarray.html#value_type-typedef',1,'QCborArray::value_type()'],['https://doc.qt.io/qt-5/qcbormap.html#value_type-typedef',1,'QCborMap::value_type()'],['https://doc.qt.io/qt-5/qfuture-const-iterator.html#value_type-typedef',1,'QFuture::const_iterator::value_type()'],['https://doc.qt.io/qt-5/qjsonarray.html#value_type-typedef',1,'QJsonArray::value_type()'],['https://doc.qt.io/qt-5/qlatin1string.html#value_type-alias',1,'QLatin1String::value_type()'],['https://doc.qt.io/qt-5/qlinkedlist.html#value_type-typedef',1,'QLinkedList::value_type()'],['https://doc.qt.io/qt-5/qlist.html#value_type-typedef',1,'QList::value_type()'],['https://doc.qt.io/qt-5/qset.html#value_type-typedef',1,'QSet::value_type()'],['https://doc.qt.io/qt-5/qset-const-iterator.html#value_type-typedef',1,'QSet::const_iterator::value_type()'],['https://doc.qt.io/qt-5/qset-iterator.html#value_type-typedef',1,'QSet::iterator::value_type()'],['https://doc.qt.io/qt-5/qstring.html#value_type-typedef',1,'QString::value_type()'],['https://doc.qt.io/qt-5/qstringview.html#value_type-typedef',1,'QStringView::value_type()'],['https://doc.qt.io/qt-5/qvarlengtharray.html#value_type-typedef',1,'QVarLengthArray::value_type()'],['https://doc.qt.io/qt-5/qvector.html#value_type-typedef',1,'QVector::value_type()']]],
   ['valuechanged',['ValueChanged',['https://doc.qt.io/qt-5/qtgui/qaccessible.html#Event-enum',1,'QAccessible']]],
   ['valueinterface',['ValueInterface',['https://doc.qt.io/qt-5/qtgui/qaccessible.html#InterfaceType-enum',1,'QAccessible']]],
@@ -35,7 +35,9 @@ var searchData=
   ['void',['Void',['https://doc.qt.io/qt-5/qmetatype.html#Type-enum',1,'QMetaType']]],
   ['voidstar',['VoidStar',['https://doc.qt.io/qt-5/qmetatype.html#Type-enum',1,'QMetaType']]],
   ['volapuk',['Volapuk',['https://doc.qt.io/qt-5/qlocale.html#Language-enum',1,'QLocale']]],
+  ['voltage',['voltage',['../structComponentValue.html#aea45b0b1139f15174cc7caeac5597a7e',1,'ComponentValue']]],
   ['voltagemap',['voltageMap',['../classMNASolution.html#a5872dd7edd59b100bcf24d35de16f9ff',1,'MNASolution']]],
+  ['voltagespinner',['voltageSpinner',['../classBattery.html#a8f43a97c72253f622c011f6e58f24c02',1,'Battery']]],
   ['vulkansurface',['VulkanSurface',['https://doc.qt.io/qt-5/qtgui/qsurface.html#SurfaceType-enum',1,'QSurface']]],
   ['vunjo',['Vunjo',['https://doc.qt.io/qt-5/qlocale.html#Language-enum',1,'QLocale']]]
 ];

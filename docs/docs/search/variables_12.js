@@ -538,6 +538,8 @@ var searchData=
   ['swipegesture',['SwipeGesture',['https://doc.qt.io/qt-5/qt.html#GestureType-enum',1,'Qt']]],
   ['swipenativegesture',['SwipeNativeGesture',['https://doc.qt.io/qt-5/qt.html#NativeGestureType-enum',1,'Qt']]],
   ['swissgerman',['SwissGerman',['https://doc.qt.io/qt-5/qlocale.html#Language-enum',1,'QLocale']]],
+  ['switchoff',['switchOff',['../classSwitch.html#adc5d830e82ff65ab339e981a21afe9fb',1,'Switch']]],
+  ['switchon',['switchOn',['../classSwitch.html#a1ca60b9287b97bb5c1f9f6dd08bda713',1,'Switch']]],
   ['switzerland',['Switzerland',['https://doc.qt.io/qt-5/qlocale.html#Country-enum',1,'QLocale']]],
   ['swizzle',['Swizzle',['https://doc.qt.io/qt-5/qtgui/qopengltexture.html#Feature-enum',1,'QOpenGLTexture']]],
   ['swizzlealpha',['SwizzleAlpha',['https://doc.qt.io/qt-5/qtgui/qopengltexture.html#SwizzleComponent-enum',1,'QOpenGLTexture']]],

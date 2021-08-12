@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['equation_2ecc',['Equation.cc',['../Equation_8cc.html',1,'']]],
-  ['equation_2eh',['Equation.h',['../Equation_8h.html',1,'']]]
+  ['battery_2ecc',['Battery.cc',['../Battery_8cc.html',1,'']]],
+  ['battery_2eh',['Battery.h',['../Battery_8h.html',1,'']]]
 ];

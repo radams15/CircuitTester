@@ -7,12 +7,23 @@
 
 #include <QDoubleSpinBox>
 #include <QCheckBox>
-#include "../UIComponent.h"
+#include "ResistiveElement.h"
 
-class Switch : public UIComponent {
+class Switch : public ResistiveElement {
 private:
 
+    /** @brief The resistance when the switch is off is miniscule so that current can flow.
+     *
+     */
+    const double switchOn = 0.000001;
+
+    /** @brief The resistance when the switch is on is very large so that current cannot flow.
+     *
+     */
+    const double switchOff = 10000000;
+
 public:
+
     enum{
         ID = UI_SWITCH
     };
@@ -21,8 +32,8 @@ public:
 
     Switch();
 
-    bool getEnabled();
+    double getResistance() override;
 };
 
 
-#endif //LAYOUTTEST1_RESISTOR_H
+#endif //LAYOUTTEST1_SWITCH_H

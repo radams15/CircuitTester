@@ -34,21 +34,20 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
 
     for(auto n : graph){
         MNAComponent* c;
-        if(n.first->getId() == UI_BATTERY){
-            c = new MNAComponent(n.first->n0, n.first->n1, MNA_BATTERY, ((Battery*)n.first)->getVoltage());
-            MNAComponents->push_back(c);
-        }else if(n.first->getId() == UI_RESISTOR){
-            c = new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Resistor*)n.first)->getResistance());
-            MNAComponents->push_back(c);
-        }else if(n.first->getId() == UI_WIRE){
-            c = new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Wire*)n.first)->getResistance());
-            MNAComponents->push_back(c);
-        }else if(n.first->getId() == UI_SWITCH){
-            c = new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((Switch*)n.first)->getEnabled() ? 0.000001 : 1000000);
-            MNAComponents->push_back(c);
-        }else{
-            continue;
+
+        switch(n.first->getId()){
+            case UI_BATTERY:
+                c = new MNAComponent(n.first->n0, n.first->n1, MNA_BATTERY, ((Battery*)n.first)->getVoltage());
+                break;
+
+            case UI_RESISTOR: case UI_WIRE: case UI_SWITCH:
+                c = new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((ResistiveElement*)n.first)->getResistance());
+                break;
+            default:
+                continue;
         }
+
+        MNAComponents->push_back(c);
 
         MNAMap->insert(std::make_pair(n.first, c));
     }
