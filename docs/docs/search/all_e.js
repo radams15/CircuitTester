@@ -82,7 +82,7 @@ var searchData=
   ['openglfeature',['OpenGLFeature',['https://doc.qt.io/qt-5/qtgui/qopenglfunctions.html#OpenGLFeature-enum',1,'QOpenGLFunctions']]],
   ['openglfeatures',['OpenGLFeatures',['https://doc.qt.io/qt-5/qtgui/qopenglfunctions.html#OpenGLFeature-enum',1,'QOpenGLFunctions::OpenGLFeatures()'],['https://doc.qt.io/qt-5/qtgui/qopenglfunctions.html#openGLFeatures',1,'QOpenGLFunctions::openGLFeatures() const const']]],
   ['openglmodulehandle',['openGLModuleHandle',['https://doc.qt.io/qt-5/qtgui/qopenglcontext.html#openGLModuleHandle',1,'QOpenGLContext']]],
-  ['openglmoduletype',['openGLModuleType',['https://doc.qt.io/qt-5/qtgui/qopenglcontext.html#openGLModuleType',1,'QOpenGLContext::openGLModuleType()'],['https://doc.qt.io/qt-5/qtgui/qopenglcontext.html#OpenGLModuleType-enum',1,'QOpenGLContext::OpenGLModuleType()']]],
+  ['openglmoduletype',['OpenGLModuleType',['https://doc.qt.io/qt-5/qtgui/qopenglcontext.html#OpenGLModuleType-enum',1,'QOpenGLContext::OpenGLModuleType()'],['https://doc.qt.io/qt-5/qtgui/qopenglcontext.html#openGLModuleType',1,'QOpenGLContext::openGLModuleType()']]],
   ['openglsurface',['OpenGLSurface',['https://doc.qt.io/qt-5/qtgui/qsurface.html#SurfaceType-enum',1,'QSurface']]],
   ['openhandcursor',['OpenHandCursor',['https://doc.qt.io/qt-5/qt.html#CursorShape-enum',1,'Qt']]],
   ['openmode',['OpenMode',['https://doc.qt.io/qt-5/qiodevice.html#OpenModeFlag-enum',1,'QIODevice::OpenMode()'],['https://doc.qt.io/qt-5/qiodevice.html#openMode',1,'QIODevice::openMode() const const']]],

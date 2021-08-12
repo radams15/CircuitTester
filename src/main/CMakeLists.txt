@@ -70,15 +70,13 @@ else()
     endif()
 endif()
 
-target_compile_features(CircuitTester PRIVATE cxx_std_17)
-
 set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/lib)
 
 find_package(Eigen3 3.3.9 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
-target_link_libraries(CircuitTester PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(CircuitTester PRIVATE Qt${QT_VERSION_MAJOR}::Widgets nlohmann_json::nlohmann_json)
 
 set(BUILD_DIR ${PROJECT_SOURCE_DIR}/builds/${SYS})
 
@@ -89,10 +87,3 @@ install(TARGETS CircuitTester
 install(TARGETS CircuitTester
         CONFIGURATIONS Release
         RUNTIME DESTINATION ${BUILD_DIR}/release/bin)
-
-
-add_custom_target(copy_libs
-        COMMAND windeployqt ${BUILD_DIR}/release/bin
-        # Output Message
-        COMMENT "Copying Qt binaries from '${Qt5Core_DIR}/../../bin/' to '${CMAKE_BINARY_DIR}'" VERBATIM
-)

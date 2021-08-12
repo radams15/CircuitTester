@@ -1,6 +1,8 @@
-//
-// Created by rhys on 09/05/2021.
-//
+/** @file Test_MNACircuit.cc
+ * This tests the modified nodal analysis circuit class.
+ * @date 09/05/2021
+ * @author Rhys Adams
+ */
 #include <gtest/gtest.h>
 
 #include "../main/Analysis/MNACircuit.h"

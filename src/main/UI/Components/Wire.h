@@ -20,7 +20,6 @@ private:
     };
 
 public:
-
     enum{
         ID = UI_WIRE
     };

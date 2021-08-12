@@ -54,7 +54,6 @@ var searchData=
   ['left',['Left',['https://doc.qt.io/qt-5/qtgui/qtextcursor.html#MoveOperation-enum',1,'QTextCursor']]],
   ['leftarrow',['LeftArrow',['https://doc.qt.io/qt-5/qt.html#ArrowType-enum',1,'Qt']]],
   ['leftbutton',['LeftButton',['https://doc.qt.io/qt-5/qt.html#MouseButton-enum',1,'Qt']]],
-  ['leftbuttondown',['leftButtonDown',['../classScene.html#ad299ea0ccf5aa5be89a0ac09bf1eac2d',1,'Scene']]],
   ['leftdockwidgetarea',['LeftDockWidgetArea',['https://doc.qt.io/qt-5/qt.html#DockWidgetArea-enum',1,'Qt']]],
   ['leftedge',['LeftEdge',['https://doc.qt.io/qt-5/qt.html#Edge-enum',1,'Qt']]],
   ['leftsection',['LeftSection',['https://doc.qt.io/qt-5/qt.html#WindowFrameSection-enum',1,'Qt']]],

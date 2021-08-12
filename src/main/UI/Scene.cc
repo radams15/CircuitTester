@@ -8,10 +8,9 @@
 #include "MainWindow.h"
 
 
-Scene::Scene(QMenu *itemMenu, QObject *parent)
+Scene::Scene(QObject *parent)
     : QGraphicsScene(parent){
 
-    myItemMenu = itemMenu;
     myMode = MOVE_ITEM;
     component = nullptr;
     line = nullptr;

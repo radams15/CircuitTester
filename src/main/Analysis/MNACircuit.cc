@@ -33,7 +33,7 @@ MNACircuit::MNACircuit(std::vector<MNAComponent *> elements) {
     // Split the elements into the 3 types: battery, resistor and current source.
     for(auto e : elements){
         // Each Element object is checked for its type attribute to sort it.
-        // This element was set by the Resistor, Battery, CurrentSource or derivitave classes.
+        // This element was set by the Resistor, Battery, CurrentSource or derivative classes.
         switch(e->type){
             case MNA_BATTERY:
                 batteries.push_back(e);

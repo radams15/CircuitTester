@@ -12,6 +12,10 @@ MNAComponent::MNAComponent(int n0, int n1, ElementType type, double value, doubl
 
     this->type = type;
 
+    if(this->value <= 0.01){
+        throw std::string("Cannot have a zero-valued component!\n");
+    }
+
     this->value = value;
     this->currentSolution = currentSolution;
 }

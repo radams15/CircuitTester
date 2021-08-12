@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unix',['UNIX',['../UserUtils_8cpp.html#a2dafe4a81445873e5c3cb0dff7741429',1,'UserUtils.cpp']]]
+  ['save_5ffolder',['SAVE_FOLDER',['../UserUtils_8cpp.html#a9413d72dc356c6e5c11b7577c1f1db1a',1,'UserUtils.cpp']]]
 ];

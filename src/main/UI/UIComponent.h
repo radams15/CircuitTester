@@ -18,10 +18,10 @@
  *
  */
 enum ComponentType{
-    UI_RESISTOR,
-    UI_BATTERY,
-    UI_WIRE,
-    UI_SWITCH
+    UI_RESISTOR = 1,
+    UI_BATTERY = 2,
+    UI_WIRE = 3,
+    UI_SWITCH = 4
 };
 
 /** @brief SceneItem derivative that has information about generic component

@@ -35,6 +35,7 @@ var searchData=
   ['joinstyle',['joinStyle',['https://doc.qt.io/qt-5/qtgui/qpainterpathstroker.html#joinStyle',1,'QPainterPathStroker::joinStyle()'],['https://doc.qt.io/qt-5/qtgui/qpen.html#joinStyle',1,'QPen::joinStyle()']]],
   ['jolafonyi',['JolaFonyi',['https://doc.qt.io/qt-5/qlocale.html#Language-enum',1,'QLocale']]],
   ['jordan',['Jordan',['https://doc.qt.io/qt-5/qlocale.html#Country-enum',1,'QLocale']]],
+  ['json',['json',['../CircuitSaver_8h.html#ab701e3ac61a85b337ec5c1abaad6742d',1,'CircuitSaver.h']]],
   ['jsonformat',['JsonFormat',['https://doc.qt.io/qt-5/qjsondocument.html#JsonFormat-enum',1,'QJsonDocument']]],
   ['juicycake',['JuicyCake',['https://doc.qt.io/qt-5/qtgui/qgradient.html#Preset-enum',1,'QGradient']]],
   ['juicypeach',['JuicyPeach',['https://doc.qt.io/qt-5/qtgui/qgradient.html#Preset-enum',1,'QGradient']]],

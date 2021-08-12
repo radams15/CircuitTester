@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['windows',['WINDOWS',['../UserUtils_8cpp.html#a987b73d7cc6da72732af75c5d7872d29',1,'UserUtils.cpp']]]
+  ['unix',['UNIX',['../UserUtils_8cpp.html#a2dafe4a81445873e5c3cb0dff7741429',1,'UserUtils.cpp']]]
 ];

@@ -22,7 +22,7 @@ class Scene : public QGraphicsScene{
 public:
     enum Mode { INSERT_ITEM, INSERT_LINE, MOVE_ITEM };
 
-    explicit Scene(QMenu *itemMenu, QObject *parent = nullptr);
+    explicit Scene(QObject *parent = nullptr);
     QFont font() const { return myFont; }
     QColor textColor() const { return myTextColor; }
     QColor itemColor() const { return myItemColor; }
@@ -49,9 +49,7 @@ private:
     bool isItemChange(int type) const;
 
     UIComponent* component;
-    QMenu *myItemMenu;
     Mode myMode;
-    bool leftButtonDown;
     QPointF startPoint;
     QGraphicsLineItem *line;
     QFont myFont;

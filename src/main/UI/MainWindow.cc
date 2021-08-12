@@ -23,7 +23,7 @@ MainWindow::MainWindow() {
     createToolBox();
     createMenus();
 
-    scene = new Scene(itemMenu, this);
+    scene = new Scene(this);
     scene->setSceneRect(QRectF(0, 0, 5000, 5000));
 
     connect(scene, &Scene::itemInserted,

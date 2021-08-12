@@ -12,4 +12,4 @@ Planning documentation are located at https://github.com/radams15/CircuitTesterD
 
 ## Documentation
 
-Documentation is located at https://radams15.github.io/CircuitTester/
+Documentation is located at https://radams15.github.io/CircuitTester/docs

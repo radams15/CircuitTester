@@ -69,7 +69,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="classCircuitSaver-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CircuitSaver Class Reference</div>  </div>
@@ -78,24 +79,42 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="CircuitSaver_8h_source.html">CircuitSaver.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a80b2fb479608d817e18d795756691904"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuitSaver.html#a80b2fb479608d817e18d795756691904">saveCircuit</a> (std::vector&lt; <a class="el" href="classUIComponent.html">UIComponent</a> *&gt; components, std::vector&lt; <a class="el" href="classArrow.html">Arrow</a> *&gt; arrows)</td></tr>
-<tr class="separator:a80b2fb479608d817e18d795756691904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ab2caa88078e6b774d27c765c87c01078"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuitSaver.html#ab2caa88078e6b774d27c765c87c01078">serialiseCircuit</a> (std::string name, std::vector&lt; <a class="el" href="classUIComponent.html">UIComponent</a> *&gt; components, std::vector&lt; <a class="el" href="classArrow.html">Arrow</a> *&gt; arrows, <a class="el" href="classScene.html">Scene</a> *s=nullptr)</td></tr>
+<tr class="separator:ab2caa88078e6b774d27c765c87c01078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af175647b831cce089278e6503b971473"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuitSaver.html#af175647b831cce089278e6503b971473">saveCircuit</a> (std::string name, std::vector&lt; <a class="el" href="classUIComponent.html">UIComponent</a> *&gt; components, std::vector&lt; <a class="el" href="classArrow.html">Arrow</a> *&gt; arrows, <a class="el" href="classScene.html">Scene</a> *s=nullptr)</td></tr>
+<tr class="separator:af175647b831cce089278e6503b971473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:ab1ecbfbe42c275809303e3e7c6822b77"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuitSaver.html#ab1ecbfbe42c275809303e3e7c6822b77">sceneToImage</a> (<a class="el" href="classScene.html">Scene</a> *s, <a class="elRef" doxygen="/mnt/files/scripts/CircuitTester/docs/tagfiles/qtgui.tags:https://doc.qt.io/qt-5/qtgui/" href="https://doc.qt.io/qt-5/qtgui/qimage.html#Format-enum">QImage::Format</a> format=<a class="elRef" doxygen="/mnt/files/scripts/CircuitTester/docs/tagfiles/qtgui.tags:https://doc.qt.io/qt-5/qtgui/" href="https://doc.qt.io/qt-5/qtgui/qimage.html#Format-enum">QImage::Format_RGB16</a>)</td></tr>
+<tr class="separator:ab1ecbfbe42c275809303e3e7c6822b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7793face49101a08b0008875c4e79e3b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CircuitSaver_8h.html#ab701e3ac61a85b337ec5c1abaad6742d">json</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuitSaver.html#a7793face49101a08b0008875c4e79e3b">serialiseUIComponent</a> (<a class="el" href="classUIComponent.html">UIComponent</a> *comp)</td></tr>
+<tr class="separator:a7793face49101a08b0008875c4e79e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="CircuitSaver_8h_source.html#l00013">13</a> of file <a class="el" href="CircuitSaver_8h_source.html">CircuitSaver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircuitSaver_8h_source.html#l00018">18</a> of file <a class="el" href="CircuitSaver_8h_source.html">CircuitSaver.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a80b2fb479608d817e18d795756691904"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80b2fb479608d817e18d795756691904">&#9670;&nbsp;</a></span>saveCircuit()</h2>
+<a id="af175647b831cce089278e6503b971473"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af175647b831cce089278e6503b971473">&#9670;&nbsp;</a></span>saveCircuit()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void CircuitSaver::saveCircuit </td>
           <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">std::vector&lt; <a class="el" href="classUIComponent.html">UIComponent</a> *&gt;&#160;</td>
           <td class="paramname"><em>components</em>, </td>
         </tr>
@@ -103,7 +122,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; <a class="el" href="classArrow.html">Arrow</a> *&gt;&#160;</td>
-          <td class="paramname"><em>arrows</em>&#160;</td>
+          <td class="paramname"><em>arrows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classScene.html">Scene</a> *&#160;</td>
+          <td class="paramname"><em>s</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -111,9 +136,130 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CircuitSaver_8cc_source.html#l00009">9</a> of file <a class="el" href="CircuitSaver_8cc_source.html">CircuitSaver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CircuitSaver_8cc_source.html#l00017">17</a> of file <a class="el" href="CircuitSaver_8cc_source.html">CircuitSaver.cc</a>.</p>
+
+</div>
+</div>
+<a id="ab1ecbfbe42c275809303e3e7c6822b77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1ecbfbe42c275809303e3e7c6822b77">&#9670;&nbsp;</a></span>sceneToImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string CircuitSaver::sceneToImage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classScene.html">Scene</a> *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/mnt/files/scripts/CircuitTester/docs/tagfiles/qtgui.tags:https://doc.qt.io/qt-5/qtgui/" href="https://doc.qt.io/qt-5/qtgui/qimage.html#Format-enum">QImage::Format</a>&#160;</td>
+          <td class="paramname"><em>format</em> = <code><a class="elRef" doxygen="/mnt/files/scripts/CircuitTester/docs/tagfiles/qtgui.tags:https://doc.qt.io/qt-5/qtgui/" href="https://doc.qt.io/qt-5/qtgui/qimage.html#Format-enum">QImage::Format_RGB16</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="CircuitSaver_8cc_source.html#l00057">57</a> of file <a class="el" href="CircuitSaver_8cc_source.html">CircuitSaver.cc</a>.</p>
+
+</div>
+</div>
+<a id="ab2caa88078e6b774d27c765c87c01078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2caa88078e6b774d27c765c87c01078">&#9670;&nbsp;</a></span>serialiseCircuit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string CircuitSaver::serialiseCircuit </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classUIComponent.html">UIComponent</a> *&gt;&#160;</td>
+          <td class="paramname"><em>components</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classArrow.html">Arrow</a> *&gt;&#160;</td>
+          <td class="paramname"><em>arrows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classScene.html">Scene</a> *&#160;</td>
+          <td class="paramname"><em>s</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="CircuitSaver_8cc_source.html#l00021">21</a> of file <a class="el" href="CircuitSaver_8cc_source.html">CircuitSaver.cc</a>.</p>
+
+</div>
+</div>
+<a id="a7793face49101a08b0008875c4e79e3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7793face49101a08b0008875c4e79e3b">&#9670;&nbsp;</a></span>serialiseUIComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CircuitSaver_8h.html#ab701e3ac61a85b337ec5c1abaad6742d">json</a> CircuitSaver::serialiseUIComponent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classUIComponent.html">UIComponent</a> *&#160;</td>
+          <td class="paramname"><em>comp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="CircuitSaver_8cc_source.html#l00076">76</a> of file <a class="el" href="CircuitSaver_8cc_source.html">CircuitSaver.cc</a>.</p>
 
 </div>
 </div>

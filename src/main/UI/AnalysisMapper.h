@@ -70,13 +70,13 @@ private:
      */
     static Path* find_shortest_path(Graph* graph, UIComponent* start, UIComponent* end);
 
+public:
+
     /** @brief Makes an adjacency list out of the components of the circuit.
      *
      * @return A graph object of connections in the circuit.
      */
     Graph makeGraph();
-
-public:
 
     /** @brief Initialises AnalysisMapper.
      *

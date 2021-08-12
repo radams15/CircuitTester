@@ -1,9 +1,8 @@
-/** @file nodal_analysis.cpp
+/** @file Test_MNA.cc
  * This tests the modified nodal analysis code
+ * @date 09/05/2021
+ * @author Rhys Adams
  */
-//
-// Created by rhys on 09/05/2021.
-//
 
 #include <gtest/gtest.h>
 
