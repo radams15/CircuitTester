@@ -59,7 +59,7 @@ MNACircuit::MNACircuit(std::vector<MNAComponent *> elements) {
 }
 
 int MNACircuit::getNumUnknownCurrents() {
-    // Batteries arehe only component with an unknown resistance.
+    // Batteries are the only component with an unknown resistance and therefore an unknown current.
     return batteries.size();
 }
 
@@ -109,8 +109,6 @@ std::vector<Term *>* MNACircuit::getCurrents(int node, int side) {
 std::vector<int>* MNACircuit::getRefNodes() {
     auto* out = new std::vector<int>;
 
-    // For every component,
-
     std::vector<int> toVisit = nodes;
 
     while(! toVisit.empty()){
@@ -129,7 +127,7 @@ std::vector<int>* MNACircuit::getRefNodes() {
             // the matching one.
             toVisit.erase(std::remove_if(toVisit.begin(), toVisit.end(), [c](int i){
                 return i == c;
-            }));
+            }), toVisit.end());
         }
     }
 

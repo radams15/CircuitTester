@@ -4,5 +4,6 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lib/eigen" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lib/googletest" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/nlohmann_json_cmake_fetchcontent" vcs="Git" />
   </component>
 </project>

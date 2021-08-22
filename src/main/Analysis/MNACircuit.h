@@ -63,7 +63,8 @@ private:
 
     /** @brief Selects the components that have the reference voltage.
      *
-     * This is the voltage that other components are comparedto.
+     * This is the voltage that other components are compared to.
+     * There is 1 reference node per circuit.
      *
      * @return A list of nodes that are references.
      */
@@ -76,7 +77,7 @@ private:
      */
     std::vector<Equation*>* getEquations();
 
-    /** @brief Returns all unknown currents in thecircuit
+    /** @brief Returns all unknown currents in the circuit
      *
      * @return A list of all the UnknownCurrent objects.
      */

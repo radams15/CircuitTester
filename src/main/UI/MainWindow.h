@@ -77,6 +77,16 @@ private slots:
      */
     void about();
 
+    /** @brief Called when the save button is clicked from the toolbar.
+     *
+     */
+    void saveScene();
+
+    /** @brief Called when the open button is clicked from the toolbar.
+     *
+     */
+    void openScene();
+
     /** @brief Called when the run button is clicked from the toolbar.
      *
     */
@@ -145,6 +155,16 @@ private:
      *
      */
     QAction* aboutAction;
+
+    /** @brief An action that saves the scene.
+     *
+     */
+    QAction* saveAction;
+
+    /** @brief An action that opens a save file.
+     *
+     */
+    QAction* openAction;
 
     /** @brief The file menu on the menubar.
      *

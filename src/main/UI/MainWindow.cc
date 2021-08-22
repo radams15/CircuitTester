@@ -16,6 +16,7 @@
 #include "AnalysisMapper.h"
 
 #include <QtWidgets>
+#include <iostream>
 
 
 MainWindow::MainWindow() {
@@ -46,6 +47,10 @@ MainWindow::MainWindow() {
     setWindowTitle(tr("Circuit Simulator"));
 
     setUnifiedTitleAndToolBarOnMac(true);
+
+    QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(runSimulation()));
+    timer->start(1000); //time specified in ms
 }
 
 
@@ -160,19 +165,29 @@ void MainWindow::createActions() {
     exitAction->setStatusTip(tr("Quit the circuit simulator"));
     connect(exitAction, &QAction::triggered, this, &QWidget::close);
 
-    runAction = new QAction(tr("R&un"), this);
+    runAction = new QAction(tr("&Run"), this);
     runAction->setShortcut(tr("F5"));
     runAction->setStatusTip(tr("Run the circuit"));
     connect(runAction, &QAction::triggered, this, &MainWindow::runSimulation);
 
-    aboutAction = new QAction(tr("A&bout"), this);
+    aboutAction = new QAction(tr("&About"), this);
     aboutAction->setShortcut(tr("F1"));
     connect(aboutAction, &QAction::triggered, this, &MainWindow::about);
+
+    saveAction = new QAction(tr("&Save"), this);
+    saveAction->setShortcut(tr("Ctrl+S"));
+    connect(saveAction, &QAction::triggered, this, &MainWindow::saveScene);
+
+    openAction = new QAction(tr("&Open"), this);
+    openAction->setShortcut(tr("Ctrl+O"));
+    connect(openAction, &QAction::triggered, this, &MainWindow::openScene);
 }
 
 
 void MainWindow::createMenus() {
     fileMenu = menuBar()->addMenu(tr("&File"));
+    fileMenu->addAction(saveAction);
+    fileMenu->addAction(openAction);
     fileMenu->addAction(exitAction);
 
     simMenu = menuBar()->addMenu(tr("&Simulation"));
@@ -267,4 +282,12 @@ void MainWindow::runSimulation() {
 void MainWindow::itemRightClicked(UIComponent* item) {
     settingsMenu->setInteriorLayout(item->settingsBox);
     settingsMenu->toggleButton->click();
+}
+
+void MainWindow::saveScene() {
+    std::cout << "Save" << std::endl;
+}
+
+void MainWindow::openScene() {
+    std::cout << "Open" << std::endl;
 }
