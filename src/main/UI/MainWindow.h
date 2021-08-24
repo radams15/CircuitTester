@@ -22,6 +22,9 @@
 #include "Scene.h"
 #include "SettingsMenu.h"
 
+#define CANVAS_SIZE 1000, 1000
+#define WINDOW_SIZE 1200, 700
+
 /** @brief The main window class that is the GUI for the user on startup.
  *
  */

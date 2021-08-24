@@ -24,25 +24,34 @@ MainWindow::MainWindow() {
     createToolBox();
     createMenus();
 
+    // Create the scene, set it to the specified size.
     scene = new Scene(this);
-    scene->setSceneRect(QRectF(0, 0, 5000, 5000));
+    scene->setSceneRect(QRectF(0, 0, CANVAS_SIZE));
 
+    // Resize the window
+    resize(WINDOW_SIZE);
+
+    // Call itemInserted when an item is inserted into the scene.
     connect(scene, &Scene::itemInserted,
             this, &MainWindow::itemInserted);
 
     createToolbars();
 
+    // Create the main layout, add the graphics view.
     auto* layout = new QHBoxLayout;
     layout->addWidget(toolBox);
     view = new QGraphicsView(scene);
     layout->addWidget(view);
 
+    // Create and add the settings menu.
     settingsMenu = new SettingsMenu();
     layout->addWidget(settingsMenu);
 
+    // Create a widget to hold the layout.
     auto *widget = new QWidget;
     widget->setLayout(layout);
 
+    // Set the widget to the centre of the window.
     setCentralWidget(widget);
     setWindowTitle(tr("Circuit Simulator"));
 

@@ -12,11 +12,11 @@
  * returns the status code of it.
  */
 int guiMain(int argc, char** argv){
+    // Load all the images from the resources folder.
     Q_INIT_RESOURCE(resources);
 
     QApplication a(argc, argv);
     MainWindow w;
-    w.setGeometry(100, 100, 800, 500);
     w.show();
     return QApplication::exec();
 }

@@ -9,25 +9,15 @@ my $ROOT = getcwd;
 sub make_win {
 	`rm -rf winbuild`;
 	`mkdir -p winbuild`;
-	chdir 'winbuild';
 	
-	`mingw64-cmake -DEIGEN3_INCLUDE_DIR=$ROOT/lib/eigen/ -DCMAKE_BUILD_TYPE=release ..`;
-	`mingw64-make -j4`;
-	
-	chdir "$ROOT";
-	
-	`perl movewindeps.pl`;
+	`podman run -v $ROOT:/CircuitTester:z -it --rm qtwin build`
 }
 
 sub make_lin {
 	`rm -rf linbuild`;
 	`mkdir -p linbuild`;
-	chdir "linbuild";
 	
-	`cmake -DEIGEN3_INCLUDE_DIR=$ROOT/lib/eigen/ -DCMAKE_BUILD_TYPE=release ..`;
-	`make -j4`;
-	
-	chdir "$ROOT";
+	`podman run -v $ROOT:/CircuitTester:z -it --rm qtlin build`
 }
 
 sub move {

@@ -76,7 +76,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/lib)
 find_package(Eigen3 3.3.9 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
-target_link_libraries(CircuitTester PRIVATE Qt${QT_VERSION_MAJOR}::Widgets nlohmann_json::nlohmann_json)
+target_link_libraries(CircuitTester PRIVATE Qt${QT_VER}::Widgets nlohmann_json::nlohmann_json)
 
 
 set(BUILD_DIR ${PROJECT_SOURCE_DIR}/builds/${SYS})

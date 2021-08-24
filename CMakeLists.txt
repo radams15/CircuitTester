@@ -16,12 +16,21 @@ set(DOCTEST_NO_INSTALL ON)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-set(QT_VERSION_MAJOR 5)
+
+message("QT version: ${QT_VER}")
+
+if(${QT_VER})
+
+else()
+    set(QT_VER 5)
+endif()
+
+message("QT version: ${QT_VER}")
 
 if(DO_TESTS OR MAKE_PROG)
     add_subdirectory(lib/nlohmann_json_cmake_fetchcontent)
-    find_package(QT NAMES Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
-    find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+    find_package(QT NAMES Qt${QT_VER} COMPONENTS Widgets REQUIRED)
+    find_package(Qt${QT_VER} COMPONENTS Widgets REQUIRED)
 endif()
 
 if(DO_TESTS) # if debugging, build tests
