@@ -20,13 +20,11 @@ class Scene : public QGraphicsScene{
     Q_OBJECT
 
 public:
-    enum Mode { INSERT_ITEM, INSERT_LINE, MOVE_ITEM };
+    enum Mode {
+        INSERT_ITEM, INSERT_LINE, MOVE_ITEM
+    };
 
     explicit Scene(QObject *parent = nullptr);
-    QFont font() const { return myFont; }
-    QColor textColor() const { return myTextColor; }
-    QColor itemColor() const { return myItemColor; }
-    QColor lineColor() const { return myLineColor; }
 
     void removeAllText();
 
@@ -46,17 +44,10 @@ protected:
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent) override;
 
 private:
-    bool isItemChange(int type) const;
-
     UIComponent* component;
-    Mode myMode;
+    Mode currentMode;
     QPointF startPoint;
-    QGraphicsLineItem *line;
-    QFont myFont;
-    SceneText *textItem;
-    QColor myTextColor;
-    QColor myItemColor;
-    QColor myLineColor;
+    QGraphicsLineItem* line;
 };
 
 

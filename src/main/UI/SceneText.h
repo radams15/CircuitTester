@@ -4,24 +4,11 @@
 #include <QGraphicsTextItem>
 #include <string>
 
-class SceneText : public QGraphicsTextItem{
+class SceneText : public QGraphicsTextItem {
     Q_OBJECT
 
 public:
-    enum { Type = UserType + 3 };
-
-    SceneText(std::string text, QGraphicsItem *parent = nullptr);
-
-    int type() const override { return Type; }
-
-signals:
-    void lostFocus(SceneText *item);
-    void selectedChange(QGraphicsItem *item);
-
-protected:
-    QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;
-    void focusOutEvent(QFocusEvent *event) override;
-    void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event) override;
+    explicit SceneText(const std::string text, QGraphicsItem *parent = nullptr);
 };
 
 

@@ -17,6 +17,7 @@
 
 #include <QtWidgets>
 #include <iostream>
+#include <iomanip>
 
 
 MainWindow::MainWindow() {
@@ -267,12 +268,24 @@ void MainWindow::runSimulation() {
     scene->removeAllText();
 
     for(auto it : sol){
-        std::string textData = "Voltage: " + std::to_string(it.second.voltage) + "V";
-        if (std::to_string(it.second.current) != "nan"){ //TODO FIX THIS
-            textData += "\nCurrent: " + std::to_string(it.second.current) + "A";
+        std::stringstream ss;
+        ss << std::setprecision(2);
+
+        ss << "Voltage: ";
+        ss << it.second.voltage;
+        ss << "V";
+
+        if (std::to_string(it.second.current) != "nan"){ //TODO FIX THIS MONSTROSITY
+            ss << "\nCurrent: ";
+            if(it.second.current < 1000){
+                ss << it.second.current;
+            }else{
+                ss << "∞";
+            }
+            ss << "A";
         }
 
-        auto textBox = new SceneText(textData);
+        auto textBox = new SceneText(ss.str());
         auto componentPos = it.first->pos();
         scene->addItem(textBox);
         textBox->setPos(QPointF(componentPos.x()+100, componentPos.y()+200));
@@ -281,11 +294,26 @@ void MainWindow::runSimulation() {
 
 void MainWindow::itemRightClicked(UIComponent* item) {
     settingsMenu->setInteriorLayout(item->settingsBox);
-    settingsMenu->toggleButton->click();
+
+    if(not settingsMenu->toggleButton->isChecked()){ // BUG this check means the window only opens once when double-clicked.
+        settingsMenu->toggleButton->click();
+    }
 }
 
 void MainWindow::saveScene() {
-    std::cout << "Save" << std::endl;
+    std::vector<UIComponent*> components;
+    std::vector<Arrow*> arrows;
+
+    for(QGraphicsItem *i : scene->items()){
+        if(IS_TYPE(UIComponent, i)) {
+            components.push_back((UIComponent*) i);
+        } else if(IS_TYPE(Arrow, i)) {
+            arrows.push_back((Arrow*) i);
+        }
+    }
+
+
+    std::cout << CircuitSaver::serialiseCircuit("C1", components, arrows) << std::endl;
 }
 
 void MainWindow::openScene() {

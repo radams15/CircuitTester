@@ -14,10 +14,10 @@
 
 #include "../Analysis/MNACircuit.h"
 
-#include <iostream>
-
 AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
-    for(QGraphicsItem *i : graphicsItems){
+
+    // Sorts the QGraphicsItems into UIComponents and Arrows.
+    for(QGraphicsItem* i : graphicsItems){
         if(IS_TYPE(UIComponent, i)) {
             components.push_back((UIComponent*) i);
         } else if(IS_TYPE(Arrow, i)) {
@@ -29,47 +29,56 @@ AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
 std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
     Graph graph = makeGraph();
 
-    auto* MNAComponents = new std::vector<MNAComponent*>;
-    auto* MNAMap = new std::map<UIComponent*, MNAComponent*>;
+    auto* mNAComponents = new std::vector<MNAComponent*>;
 
-    for(auto n : graph){
-        MNAComponent* c;
+    // Map of UIComponent:MNAComponent to help to return the correct values to the correct UIComponent.
+    auto* mNAMap = new std::map<UIComponent*, MNAComponent*>;
 
-        switch(n.first->getId()){
+    for(auto node : graph){
+        MNAComponent* component;
+
+        // Get the type of the node (node.first is node, node.second is connections).
+        switch(node.first->getId()){
             case UI_BATTERY:
-                c = new MNAComponent(n.first->n0, n.first->n1, MNA_BATTERY, ((Battery*)n.first)->getVoltage());
+                component = new MNAComponent(node.first->n0, node.first->n1, MNA_BATTERY, ((Battery*)node.first)->getVoltage());
                 break;
 
+            // Resistors, wires and switches all have resistances.
             case UI_RESISTOR: case UI_WIRE: case UI_SWITCH:
-                c = new MNAComponent(n.first->n0, n.first->n1, MNA_RESISTOR, ((ResistiveElement*)n.first)->getResistance());
+                component = new MNAComponent(node.first->n0, node.first->n1, MNA_RESISTOR, ((ResistiveElement*)node.first)->getResistance());
                 break;
+
             default:
                 continue;
         }
 
-        MNAComponents->push_back(c);
+        // Add the new component to the list of components.
+        mNAComponents->push_back(component);
 
-        MNAMap->insert(std::make_pair(n.first, c));
+        // Add the component to the list to set the (UIComponent => MNAComponent).
+        mNAMap->insert(std::make_pair(node.first, component));
     }
 
-    auto* cir = new MNACircuit(*MNAComponents);
+    auto* cir = new MNACircuit(*mNAComponents);
 
     auto* sol = cir->solve();
 
     std::map<UIComponent*, ComponentValue> out;
 
-    for(auto c : *MNAMap){
-        switch(c.second->type){
+    for(auto it : *mNAMap){
+        switch(it.second->type){
+            // Resistors have a current and a voltage.
             case MNA_RESISTOR:
-                out[c.first] = {
-                        sol->getVoltage(*c.second),
-                        sol->getCurrent(*c.second)
+                out[it.first] = {
+                        sol->getVoltage(*it.second),
+                        sol->getCurrent(*it.second)
                 };
                 break;
 
+            // Batteries have only a voltage, not a current.
             case MNA_BATTERY:
-                out[c.first] = {
-                        sol->getVoltage(*c.second),
+                out[it.first] = {
+                        sol->getVoltage(*it.second),
                         NAN
                 };
                 break;
@@ -91,6 +100,8 @@ Path* AnalysisMapper::find_shortest_path(Graph *graph, UIComponent *start, UICom
     v->push_back(start);
     q.emplace(v);
 
+    // Is the path to the same node?
+    // If so just return the end node.
     if(start == end){
         auto out = new Path;
         out->push_back(end);
@@ -101,8 +112,10 @@ Path* AnalysisMapper::find_shortest_path(Graph *graph, UIComponent *start, UICom
         Path* path = q.front();
         q.pop();
 
+        // Get end node from the path.
         UIComponent* node = path->at(path->size()-1);
 
+        // If node has not already been explored
         if(std::find(explored.begin(), explored.end(), node) == explored.end()){
             auto neighbors = graph->at(node);
 
@@ -112,6 +125,8 @@ Path* AnalysisMapper::find_shortest_path(Graph *graph, UIComponent *start, UICom
                 new_path->push_back(neighbor);
                 q.emplace(new_path);
 
+                // Have we reached the end node?
+                // If so return the path.
                 if(neighbor == end){
                     return new_path;
                 }
@@ -121,41 +136,50 @@ Path* AnalysisMapper::find_shortest_path(Graph *graph, UIComponent *start, UICom
         }
     }
 
+    // If no path was found return an empty path.
     return new Path;
 }
 
 Graph AnalysisMapper::makeGraph() {
+    // This is a map of UIComponent:list of UIComponents to show a matrix as an adjacency list.
     Graph graph;
 
-    for(auto c : components){
+    for(auto comp : components){
         std::vector<UIComponent*> connections;
 
-        for(auto a : c->arrows){
-            if(c == a->endItem()){
+        for(auto a : comp->arrows){
+            // If the arrow goes to the component rather than away from it, ignore it.
+            if(comp == a->endItem()){
                 continue;
             }
+            // Add a connection to the list.
             connections.push_back((UIComponent*) a->endItem());
         }
 
-        graph[c] = connections;
+        // Add the list to the graph.
+        graph[comp] = connections;
     }
 
+    // TODO select correct start node
     auto start_node = components[0];
 
     for(auto n : graph){
+        // For each node set the node 0 to the distance from the start node.
         auto* path = find_shortest_path(&graph, start_node, n.first);
 
         n.first->n0 = path->size()-1;
+
+        // Temporarily set node 1 to 0.
         n.first->n1 = 0;
     }
 
-    for(auto n : graph){
-        n.first->connections.clear();
-        for(auto c : graph.at(n.first)){
-            n.first->n1 = c->n0;
-        }
+    for(auto node : graph){
+        node.first->connections.clear();
 
-        //std::cout << n.first->n0 << "(" << n.first->getId() << ") => " << n.first->n1 << std::endl;
+        for(auto connectedComp : graph.at(node.first)){
+            // For each connection to this node, set node 1 to the node 0 of the node it is connected to.
+            node.first->n1 = connectedComp->n0;
+        }
     }
 
     return graph;

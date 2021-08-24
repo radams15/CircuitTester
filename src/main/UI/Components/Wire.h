@@ -16,7 +16,10 @@
 class Wire : public ResistiveElement {
 private:
     std::map<std::string, long double> resistivities = {
-            {"Copper", 0.0000000168}
+            {"Copper", 1.68E-8},
+            {"Iron", 1.0E-8},
+            {"Lead", 2.2E-8},
+            {"Carbon", 6E-4},
     };
 
 public:

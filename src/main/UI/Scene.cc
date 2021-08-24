@@ -11,19 +11,14 @@
 Scene::Scene(QObject *parent)
     : QGraphicsScene(parent){
 
-    myMode = MOVE_ITEM;
+    currentMode = MOVE_ITEM;
     component = nullptr;
     line = nullptr;
-    textItem = nullptr;
-    myItemColor = Qt::white;
-    myTextColor = Qt::black;
-    myLineColor = Qt::black;
-
 }
 
 
 void Scene::setMode(Mode mode){
-    myMode = mode;
+    currentMode = mode;
 }
 
 void Scene::setItemType(UIComponent* c){
@@ -32,7 +27,7 @@ void Scene::setItemType(UIComponent* c){
 
 void Scene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent){
     if (mouseEvent->button() == Qt::LeftButton){
-        switch (myMode) {
+        switch (currentMode) {
             case INSERT_ITEM:
                 addItem(component);
                 component->setPos(mouseEvent->scenePos());
@@ -42,7 +37,7 @@ void Scene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent){
             case INSERT_LINE:
                 line = new QGraphicsLineItem(QLineF(mouseEvent->scenePos(), mouseEvent->scenePos()));
 
-                line->setPen(QPen(myLineColor, 2));
+                line->setPen(QPen(Qt::black, 2));
 
                 addItem(line);
                 break;
@@ -64,10 +59,10 @@ void Scene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *mouseEvent) {
 }
 
 void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent){
-    if (myMode == INSERT_LINE && line != nullptr) {
+    if (currentMode == INSERT_LINE && line != nullptr) {
         QLineF newLine(line->line().p1(), mouseEvent->scenePos());
         line->setLine(newLine);
-    } else if (myMode == MOVE_ITEM) {
+    } else if (currentMode == MOVE_ITEM) {
         QGraphicsScene::mouseMoveEvent(mouseEvent);
     }
 }
@@ -75,7 +70,7 @@ void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent){
 
 
 void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent){
-    if (line != nullptr && myMode == INSERT_LINE) {
+    if (line != nullptr && currentMode == INSERT_LINE) {
         QList<QGraphicsItem *> startItems = items(line->line().p1());
         if (startItems.count() && startItems.first() == line)
             startItems.removeFirst();
@@ -91,7 +86,7 @@ void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent){
             auto *startItem = qgraphicsitem_cast<SceneItem *>(startItems.first());
             auto *endItem = qgraphicsitem_cast<SceneItem *>(endItems.first());
             auto *arrow = new Arrow(startItem, endItem);
-            arrow->setColor(myLineColor);
+            arrow->setColor(Qt::black);
             startItem->addArrow(arrow);
             endItem->addArrow(arrow);
             arrow->setZValue(-1000.0);
