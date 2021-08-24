@@ -1,0 +1,11 @@
+FROM fedora:30
+
+RUN dnf -y up
+
+RUN dnf in -y qt5-qtbase-devel gcc gcc-c++ cmake make
+
+RUN adduser builder
+RUN echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+RUN echo -e '#!/bin/bash\ncd /CircuitTester/\nmkdir -p linbuild\ncd linbuild\ncmake -DCMAKE_BUILD_TYPE=release ..\nmake -j4' > /bin/build && chmod +x /bin/build
+RUN echo -e '#!/bin/bash\ncd /CircuitTester/linbuild/src/test/\n./test' > /bin/Test && chmod +x /bin/Test

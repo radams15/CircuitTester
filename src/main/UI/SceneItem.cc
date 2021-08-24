@@ -49,8 +49,9 @@ void SceneItem::addArrow(Arrow *arrow){
 
 QVariant SceneItem::itemChange(GraphicsItemChange change, const QVariant &value){
     if (change == QGraphicsItem::ItemPositionChange) {
-        for (Arrow *arrow : qAsConst(arrows))
+        for (Arrow *arrow : arrows){
             arrow->updatePosition();
+        }
     }
 
     return value;

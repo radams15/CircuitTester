@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-my $IN = "deps.txt";
+my $IN = "deps.txt.x86";
 my $OUT = "winbuild/src/main";
 
 sub find{

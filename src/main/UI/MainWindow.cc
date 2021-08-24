@@ -19,7 +19,6 @@
 #include <iostream>
 #include <iomanip>
 
-
 MainWindow::MainWindow() {
     createActions();
     createToolBox();
@@ -58,8 +57,9 @@ MainWindow::MainWindow() {
 void MainWindow::buttonGroupClicked(QAbstractButton *button) {
     const QList<QAbstractButton *> buttons = buttonGroup->buttons();
     for (QAbstractButton *myButton : buttons) {
-        if (myButton != button)
+        if (myButton != button){
             button->setChecked(false);
+        }
     }
     const int id = buttonGroup->id(button);
 
@@ -82,7 +82,7 @@ void MainWindow::buttonGroupClicked(QAbstractButton *button) {
 
 void MainWindow::deleteItem() {
     QList<QGraphicsItem *> selectedItems = scene->selectedItems();
-    for (QGraphicsItem *item : qAsConst(selectedItems)) {
+    for (QGraphicsItem *item : selectedItems) {
         if (item->type() == Arrow::Type) {
             scene->removeItem(item);
             auto *arrow = qgraphicsitem_cast<Arrow *>(item);
@@ -93,7 +93,7 @@ void MainWindow::deleteItem() {
     }
 
     selectedItems = scene->selectedItems();
-    for (QGraphicsItem *item : qAsConst(selectedItems)) {
+    for (QGraphicsItem *item : selectedItems) {
          if (item->type() == SceneItem::Type)
              qgraphicsitem_cast<SceneItem *>(item)->removeArrows();
          scene->removeItem(item);
@@ -115,7 +115,7 @@ void MainWindow::itemInserted(UIComponent* c) {
 
 
 void MainWindow::sceneScaleChanged(const QString &scale) {
-    double newScale = scale.leftRef(scale.indexOf(tr("%"))).toDouble() / 100.0;
+    double newScale = scale.left(scale.indexOf(tr("%"))).toDouble() / 100.0;
     QTransform oldMatrix = view->transform();
     view->resetTransform();
     view->translate(oldMatrix.dx(), oldMatrix.dy());
@@ -132,8 +132,11 @@ void MainWindow::about() {
 void MainWindow::createToolBox() {
     buttonGroup = new QButtonGroup(this);
     buttonGroup->setExclusive(false);
-    connect(buttonGroup, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked),
-            this, &MainWindow::buttonGroupClicked);
+    /*connect(buttonGroup, qOverload<QAbstractButton *>(&QButtonGroup::buttonClicked),
+            this, &MainWindow::buttonGroupClicked);*/
+
+    connect(buttonGroup, static_cast<void(QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked),
+            this, &MainWindow::buttonGroupClicked); // https://doc.qt.io/archives/qt-5.6/qbuttongroup.html#buttonClicked
 
     auto *layout = new QGridLayout;
     layout->addWidget(createCellWidget<Resistor>(tr("Resistor")), 0, 0);
@@ -215,8 +218,8 @@ void MainWindow::createToolbars() {
     pointerTypeGroup = new QButtonGroup(this);
     pointerTypeGroup->addButton(pointerButton, int(Scene::MOVE_ITEM));
     pointerTypeGroup->addButton(linePointerButton, int(Scene::INSERT_LINE));
-    connect(pointerTypeGroup, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked),
-            this, &MainWindow::pointerGroupClicked);
+    connect(pointerTypeGroup, static_cast<void(QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked),
+            this, &MainWindow::pointerGroupClicked);  // https://doc.qt.io/archives/qt-5.6/qbuttongroup.html#buttonClicked
 
     sceneScaleCombo = new QComboBox;
     QStringList scales;
@@ -256,12 +259,22 @@ QWidget *MainWindow::createCellWidget(const QString &text) {
     return widget;
 }
 
+template<class T> std::list<T> toStdList(QList<T> in){
+    std::list<T> out;
+
+    for(auto i : in){
+        out.push_back(i);
+    }
+
+    return out;
+}
+
 void MainWindow::runSimulation() {
     if(scene->items().empty()){
         return;
     }
 
-    AnalysisMapper mapper(scene->items().toStdList());
+    AnalysisMapper mapper(toStdList(scene->items()));
 
     auto sol = mapper.getSolution();
 
