@@ -40,6 +40,9 @@ protected:
 public:
     inline int getId() const { return ID; }
 
+    static int currentId;
+    int componentId;
+
     QVBoxLayout* settingsBox;
 
     int n0 = -1;

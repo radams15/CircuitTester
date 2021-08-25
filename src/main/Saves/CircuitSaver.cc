@@ -46,6 +46,8 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
     in >> data;
     in.close();
 
+    std::map<int, UIComponent*> components;
+
     for(auto part : data["parts"]){
         UIComponent* comp = nullptr;
 
@@ -81,19 +83,30 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
 
         if(comp != nullptr){
             comp->setPos(part["component"]["pos"][0].get<double>(), part["component"]["pos"][1].get<double>());
+            comp->componentId = part["id"].get<int>();
+            if(comp->componentId > UIComponent::currentId){
+                UIComponent::currentId = comp->componentId;
+            }
             s->addItem(comp);
+            components[comp->componentId] = comp;
         }
     }
 
     for(auto part : data["parts"]){
-        auto comp = part["component"];
-        auto startItem = (SceneItem*) s->itemAt(comp["pos"][0].get<double>(), comp["pos"][1].get<double>(), QTransform());
+        auto startItem = components[part["id"].get<int>()];
 
         for(auto conn : part["connections"]){
-            // https://stackoverflow.com/questions/14025588/what-is-the-qtransform-in-qgraphicssceneitemat
-            auto endItem = (SceneItem*) s->itemAt(conn[0].get<double>(), conn[1].get<double>(), QTransform());
+            auto endItem = components[conn.get<int>()];
 
-            std::cout << startItem << endItem << std::endl;
+            std::cout << startItem->componentId << " => " << endItem->componentId << std::endl;
+
+            auto *arrow = new Arrow(startItem, endItem);
+            arrow->setColor(Qt::black);
+            startItem->addArrow(arrow);
+            endItem->addArrow(arrow);
+            arrow->setZValue(-1000.0);
+            s->addItem(arrow);
+            arrow->updatePosition();
         }
     }
 
@@ -113,34 +126,18 @@ std::string CircuitSaver::serialiseCircuit(std::string name, SceneItems items) {
 
     json parts = json::array();
 
-    int num = 0;
     for(auto i : g){
         json sect = json::object();
-        json comp = serialiseUIComponent(i.first, num);
-        //json connections = json::array();
-        /*for(auto c : i.second){
-            connections.push_back({c->pos().x(), c->pos().y()});
-        }*/
+        json comp = serialiseUIComponent(i.first);
+        json connections = json::array();
+        for(auto c : i.second){
+            connections.push_back(c->componentId);
+        }
         sect["component"] = comp;
-        //sect["connections"] = connections;
+        sect["connections"] = connections;
+        sect["id"] = i.first->componentId;
 
         parts.push_back(sect);
-
-        num++;
-    }
-
-    num = 0;
-    for(auto i : g){
-        json connections = json::array();
-
-        for(auto c : i.second){
-            //std::string ser = serialiseUIComponent(c);
-            connections.push_back({c->pos().x(), c->pos().y()});
-        }
-
-        parts[num]["connections"] = connections;
-
-        num++;
     }
 
     out["parts"] = parts;
@@ -171,10 +168,9 @@ std::string CircuitSaver::sceneToImage(Scene *s, QImage::Format format) {
     return ba.toBase64().toStdString();
 }
 
-json CircuitSaver::serialiseUIComponent(UIComponent* comp, int num) {
+json CircuitSaver::serialiseUIComponent(UIComponent* comp) {
     json out = json::object();
     out["type"] = comp->getId();
-    out["num"] = num;
 
     switch(comp->getId()){
         case UI_BATTERY:

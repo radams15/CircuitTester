@@ -58,8 +58,6 @@ MainWindow::MainWindow() {
 
     setUnifiedTitleAndToolBarOnMac(true);
 
-    //CircuitSaver::loadCircuit("test1", scene);
-
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(runSimulation()));
     timer->start(1000); //time specified in ms
@@ -348,4 +346,5 @@ void MainWindow::saveScene() {
 void MainWindow::openScene() {
     std::string name = QInputDialog::getText(this, tr("Circuit Name"), tr("Name")).toStdString();
     currentOpenedCircuit = name;
+    CircuitSaver::loadCircuit(name, scene);
 }

@@ -26,7 +26,7 @@ private:
 
     static std::string sceneToImage(Scene *s, QImage::Format format=QImage::Format_RGB16);
 
-    static json serialiseUIComponent(UIComponent* comp, int num);
+    static json serialiseUIComponent(UIComponent* comp);
 
     static std::string getPath(std::string name);
 

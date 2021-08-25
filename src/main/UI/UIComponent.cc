@@ -5,7 +5,14 @@
 #include <iostream>
 #include "UIComponent.h"
 
+int UIComponent::currentId = 0;
+
 UIComponent::UIComponent(int id, std::string resourcePath): ID(id), SceneItem(std::move(resourcePath)){
+    componentId = currentId;
+    currentId++;
+
+    std::cout << "New component: " << componentId << std::endl;
+
     settingsBox = new QVBoxLayout();
 }
 
