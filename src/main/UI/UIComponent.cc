@@ -11,8 +11,6 @@ UIComponent::UIComponent(int id, std::string resourcePath): ID(id), SceneItem(st
     componentId = currentId;
     currentId++;
 
-    std::cout << "New component: " << componentId << std::endl;
-
     settingsBox = new QVBoxLayout();
 }
 
