@@ -48,7 +48,7 @@ TEST(SaveLoad, Serialise1){
     components[1]->addArrow(arrows[0]);
     components[1]->addArrow(arrows[1]);
 
-    std::string out = CircuitSaver::serialiseCircuit("Circuit 1", components, arrows, nullptr);
+    std::string out = CircuitSaver::serialiseCircuit("Circuit 1", SceneItems{components, arrows, nullptr});
 
     /*std::string expected = R"({"name":"Circuit 1","parts":[{"component":{"state":true,"type":2,"voltage":15.0},"connections":[[1.0,17.0]]},{"component":{"resistance":2.0,"type":1},"connections":[[10.0,20.0]]}]})";
 

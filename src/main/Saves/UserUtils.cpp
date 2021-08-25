@@ -7,9 +7,6 @@
 #include <iostream>
 #include <sstream>
 
-#define UNIX defined(unix) || defined(__unix__) || defined(__unix) || defined(__APPLE__) || defined(__linux) || defined(__linux__)
-#define WINDOWS defined(_WIN32)
-
 #if UNIX
 #include <unistd.h>
 #include <pwd.h>

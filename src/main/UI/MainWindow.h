@@ -96,6 +96,13 @@ private slots:
     void runSimulation();
 
 private:
+    /** @brief The name of the circuit that is open.
+     *
+     * This is empty before a circuit is opened or saved.
+     *
+     */
+    std::string currentOpenedCircuit;
+
     /** @brief Creates the toolbox of components.
      *
      */

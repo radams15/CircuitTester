@@ -16,6 +16,7 @@
 #include "AnalysisMapper.h"
 
 #include <QtWidgets>
+#include <QInputDialog>
 #include <iostream>
 #include <iomanip>
 
@@ -56,6 +57,8 @@ MainWindow::MainWindow() {
     setWindowTitle(tr("Circuit Simulator"));
 
     setUnifiedTitleAndToolBarOnMac(true);
+
+    //CircuitSaver::loadCircuit("test1", scene);
 
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(runSimulation()));
@@ -334,10 +337,15 @@ void MainWindow::saveScene() {
         }
     }
 
+    if(currentOpenedCircuit.empty()){
+        std::string name = QInputDialog::getText(this, tr("Circuit Name"), tr("Name")).toStdString();
+        currentOpenedCircuit = name;
+    }
 
-    std::cout << CircuitSaver::serialiseCircuit("C1", components, arrows) << std::endl;
+    CircuitSaver::saveCircuit(currentOpenedCircuit, SceneItems{components, arrows});
 }
 
 void MainWindow::openScene() {
-    std::cout << "Open" << std::endl;
+    std::string name = QInputDialog::getText(this, tr("Circuit Name"), tr("Name")).toStdString();
+    currentOpenedCircuit = name;
 }

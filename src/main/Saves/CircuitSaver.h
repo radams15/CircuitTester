@@ -15,17 +15,28 @@
 
 using json = nlohmann::json;
 
+struct SceneItems{
+    std::vector<UIComponent*> components;
+    std::vector<Arrow*> arrows;
+    Scene* scene = nullptr;
+};
+
 class CircuitSaver {
 private:
 
     static std::string sceneToImage(Scene *s, QImage::Format format=QImage::Format_RGB16);
 
-    static json serialiseUIComponent(UIComponent* comp);
+    static json serialiseUIComponent(UIComponent* comp, int num);
+
+    static std::string getPath(std::string name);
 
 public:
-    static std::string serialiseCircuit(std::string name, std::vector<UIComponent*> components, std::vector<Arrow*> arrows, Scene* s=nullptr);
-    static void saveCircuit(std::string name, std::vector<UIComponent*> components, std::vector<Arrow*> arrows, Scene* s=nullptr);
-};
+    static const std::string ext;
 
+    static std::string serialiseCircuit(std::string name, SceneItems items);
+    static void saveCircuit(std::string name, SceneItems items);
+
+    static void loadCircuit(std::string name, Scene* s);
+};
 
 #endif //CIRCUITTESTER_CIRCUITSAVER_H

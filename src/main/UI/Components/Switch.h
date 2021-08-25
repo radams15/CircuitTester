@@ -28,7 +28,7 @@ public:
         ID = UI_SWITCH
     };
 
-    QCheckBox* enabledButton;
+    QCheckBox* onOffCheckbox;
 
     Switch();
 

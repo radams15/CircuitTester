@@ -7,12 +7,12 @@
 
 Switch::Switch() : ResistiveElement(ID, ":/images/switch_open.png") {
     auto* enabledLabel = new QLabel("Enabled");
-    enabledButton = new QCheckBox;
-    enabledButton->setChecked(true);
+    onOffCheckbox = new QCheckBox;
+    onOffCheckbox->setChecked(true);
 
     auto* enabledBox = new QHBoxLayout();
     enabledBox->addWidget(enabledLabel);
-    enabledBox->addWidget(enabledButton);
+    enabledBox->addWidget(onOffCheckbox);
     settingsBox->addLayout(enabledBox);
 
 
@@ -20,5 +20,5 @@ Switch::Switch() : ResistiveElement(ID, ":/images/switch_open.png") {
 }
 
 double Switch::getResistance() {
-    return enabledButton->isChecked()? switchOn : switchOff;
+    return onOffCheckbox->isChecked() ? switchOn : switchOff;
 }

@@ -27,7 +27,6 @@ QRectF Arrow::boundingRect() const{
 
 QPainterPath Arrow::shape() const{
     QPainterPath path = QGraphicsLineItem::shape();
-    path.addPolygon(arrowHead);
     return path;
 }
 
@@ -50,7 +49,7 @@ void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *
     painter->setPen(myPen);
     painter->setBrush(myColor);
 
-    setLine(QLineF(myEndItem->endPoint(), myStartItem->startPoint()));
+    setLine(QLineF(myStartItem->startPoint(), myEndItem->endPoint()));
  
     painter->drawLine(line());
 

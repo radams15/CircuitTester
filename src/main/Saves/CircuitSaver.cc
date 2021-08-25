@@ -8,50 +8,148 @@
 #include "../UI/Components/Resistor.h"
 #include "../UI/Components/Wire.h"
 #include "../UI/Components/Switch.h"
+#include "UserUtils.h"
 
 #include <iostream>
 #include <QPainter>
 #include <QBuffer>
+#include <fstream>
 
+const std::string CircuitSaver::ext = ".cir";
 
-void CircuitSaver::saveCircuit(std::string name, std::vector<UIComponent *> components, std::vector<Arrow *> arrows, Scene* s) {
-    std::string data = serialiseCircuit(name, components, arrows, s);
+std::string CircuitSaver::getPath(std::string name){
+    std::string saveDir = UserUtils::getSaveDir();
+
+    return saveDir + name + ext;
 }
 
-std::string CircuitSaver::serialiseCircuit(std::string name, std::vector<UIComponent *> components, std::vector<Arrow *> arrows, Scene* s) {
+void CircuitSaver::saveCircuit(std::string name, SceneItems items) {
+    std::string data = serialiseCircuit(name, items);
+
+    std::string path = getPath(name);
+
+    std::cout << "Save to: " << path << std::endl;
+
+    std::ofstream file(path);
+    file << data << std::endl;
+    file.close();
+}
+
+void CircuitSaver::loadCircuit(std::string name, Scene* s) {
+    std::string path = getPath(name);
+
+    std::cout << "Load: " << path << std::endl;
+
+    std::ifstream in(path);
+
+    json data;
+    in >> data;
+    in.close();
+
+    for(auto part : data["parts"]){
+        UIComponent* comp = nullptr;
+
+        switch(part["component"]["type"].get<int>()){ // TODO validate all this
+            case UI_BATTERY: {
+                auto b = new Battery;
+                b->voltageSpinner->setValue(part["component"]["voltage"].get<double>());
+                b->onOffCheckbox->setChecked(part["component"]["state"].get<bool>());
+                comp = (UIComponent*) b;
+                break;
+            }
+            case UI_RESISTOR: {
+                auto r = new Resistor;
+                r->resistanceSpinner->setValue(part["component"]["resistance"].get<double>());
+                comp = (UIComponent*) r;
+                break;
+            }
+            case UI_WIRE: {
+                auto w = new Wire;
+                w->areaSpinner->setValue(part["component"]["area"].get<double>());
+                w->lengthSpinner->setValue(part["component"]["length"].get<double>());
+                w->wireCombo->setCurrentText(QString::fromStdString(part["component"]["material"].get<std::string>()));
+                comp = (UIComponent*) w;
+                break;
+            }
+            case UI_SWITCH: {
+                auto sw = new Switch;
+                sw->onOffCheckbox->setChecked(part["component"]["state"].get<bool>());
+                comp = (UIComponent*) sw;
+                break;
+            }
+        }
+
+        if(comp != nullptr){
+            comp->setPos(part["component"]["pos"][0].get<double>(), part["component"]["pos"][1].get<double>());
+            s->addItem(comp);
+        }
+    }
+
+    for(auto part : data["parts"]){
+        auto comp = part["component"];
+        auto startItem = (SceneItem*) s->itemAt(comp["pos"][0].get<double>(), comp["pos"][1].get<double>(), QTransform());
+
+        for(auto conn : part["connections"]){
+            // https://stackoverflow.com/questions/14025588/what-is-the-qtransform-in-qgraphicssceneitemat
+            auto endItem = (SceneItem*) s->itemAt(conn[0].get<double>(), conn[1].get<double>(), QTransform());
+
+            std::cout << startItem << endItem << std::endl;
+        }
+    }
+
+}
+
+std::string CircuitSaver::serialiseCircuit(std::string name, SceneItems items) {
     json out = json::object();
     out["name"] = name;
 
-    std::list<QGraphicsItem*> gi;
-    std::transform(components.begin(), components.end(), std::back_inserter(gi), [](UIComponent* c){
+    std::list<QGraphicsItem*> graphicsItems;
+    std::transform(items.components.begin(), items.components.end(), std::back_inserter(graphicsItems), [](UIComponent* c){
         return (QGraphicsItem*) c;
     });
 
-    AnalysisMapper am(gi);
+    AnalysisMapper am(graphicsItems);
     Graph g = am.makeGraph();
 
     json parts = json::array();
 
+    int num = 0;
     for(auto i : g){
         json sect = json::object();
-        json comp = serialiseUIComponent(i.first);
-        json connections = json::array();
-        for(auto c : i.second){
+        json comp = serialiseUIComponent(i.first, num);
+        //json connections = json::array();
+        /*for(auto c : i.second){
             connections.push_back({c->pos().x(), c->pos().y()});
-        }
+        }*/
         sect["component"] = comp;
-        sect["connections"] = connections;
+        //sect["connections"] = connections;
 
         parts.push_back(sect);
+
+        num++;
+    }
+
+    num = 0;
+    for(auto i : g){
+        json connections = json::array();
+
+        for(auto c : i.second){
+            //std::string ser = serialiseUIComponent(c);
+            connections.push_back({c->pos().x(), c->pos().y()});
+        }
+
+        parts[num]["connections"] = connections;
+
+        num++;
     }
 
     out["parts"] = parts;
 
-    if(s != nullptr){
-        out["image"] = sceneToImage(s);
+    if(items.scene != nullptr){
+        out["image"] = sceneToImage(items.scene);
     }
 
-    return out.dump();
+    return out.dump(4);
 }
 
 std::string CircuitSaver::sceneToImage(Scene *s, QImage::Format format) {
@@ -73,9 +171,10 @@ std::string CircuitSaver::sceneToImage(Scene *s, QImage::Format format) {
     return ba.toBase64().toStdString();
 }
 
-json CircuitSaver::serialiseUIComponent(UIComponent* comp) {
+json CircuitSaver::serialiseUIComponent(UIComponent* comp, int num) {
     json out = json::object();
     out["type"] = comp->getId();
+    out["num"] = num;
 
     switch(comp->getId()){
         case UI_BATTERY:
@@ -91,9 +190,11 @@ json CircuitSaver::serialiseUIComponent(UIComponent* comp) {
             out["material"] = ((Wire*) comp)->wireCombo->currentText().toStdString();
             break;
         case UI_SWITCH:
-            out["state"] = ((Switch*) comp)->enabledButton->isChecked();
+            out["state"] = ((Switch*) comp)->onOffCheckbox->isChecked();
             break;
     }
+
+    out["pos"] = json::array({comp->pos().x(), comp->pos().y()});
 
     return out;
 }

@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include <QApplication>
+#include "Saves/UserUtils.h"
 
 #include "UI/MainWindow.h"
 
@@ -26,5 +27,6 @@ int guiMain(int argc, char** argv){
  * method and returns the output to the caller.
  */
 int main(int argc, char** argv){
+    UserUtils::createSaveDir();
     return guiMain(argc, argv);
 }

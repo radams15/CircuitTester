@@ -24,7 +24,6 @@ protected:
 private:
     SceneItem *myStartItem;
     SceneItem *myEndItem;
-    QPolygonF arrowHead;
     QColor myColor = Qt::black;
 };
 
