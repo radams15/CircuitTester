@@ -28,13 +28,13 @@ private:
 
     static json serialiseUIComponent(UIComponent* comp);
 
+public:
     static std::string getPath(std::string name);
 
-public:
     static const std::string ext;
 
-    static std::string serialiseCircuit(std::string name, SceneItems items);
     static void saveCircuit(std::string name, SceneItems items);
+    static std::string serialiseCircuit(std::string name, SceneItems items);
 
     static void loadCircuit(std::string name, Scene* s);
 };

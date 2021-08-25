@@ -19,6 +19,8 @@
 #include <QInputDialog>
 #include <iostream>
 #include <iomanip>
+#include <fstream>
+#include <regex>
 
 MainWindow::MainWindow() {
     createActions();
@@ -195,6 +197,14 @@ void MainWindow::createActions() {
     openAction = new QAction(tr("&Open"), this);
     openAction->setShortcut(tr("Ctrl+O"));
     connect(openAction, &QAction::triggered, this, &MainWindow::openScene);
+
+    importAction = new QAction(tr("&Import"), this);
+    importAction->setShortcut(tr("Ctrl+I"));
+    connect(importAction, &QAction::triggered, this, &MainWindow::importScene);
+
+    exportAction = new QAction(tr("&Export"), this);
+    exportAction->setShortcut(tr("Ctrl+E"));
+    connect(exportAction, &QAction::triggered, this, &MainWindow::exportScene);
 }
 
 
@@ -202,6 +212,8 @@ void MainWindow::createMenus() {
     fileMenu = menuBar()->addMenu(tr("&File"));
     fileMenu->addAction(saveAction);
     fileMenu->addAction(openAction);
+    fileMenu->addAction(importAction);
+    fileMenu->addAction(exportAction);
     fileMenu->addAction(exitAction);
 
     simMenu = menuBar()->addMenu(tr("&Simulation"));
@@ -340,6 +352,10 @@ void MainWindow::saveScene() {
         currentOpenedCircuit = name;
     }
 
+    if(currentOpenedCircuit == ""){
+        return;
+    }
+
     CircuitSaver::saveCircuit(currentOpenedCircuit, SceneItems{components, arrows});
 }
 
@@ -347,4 +363,52 @@ void MainWindow::openScene() {
     std::string name = QInputDialog::getText(this, tr("Circuit Name"), tr("Name")).toStdString();
     currentOpenedCircuit = name;
     CircuitSaver::loadCircuit(name, scene);
+}
+
+void copyFile(std::string src, std::string dst){
+    std::ifstream in(src);
+    std::ofstream out(dst);
+
+    out << in.rdbuf();
+
+    in.close();
+    out.close();
+}
+
+bool endsWith(std::string fullString, std::string ending) {
+    if (fullString.length() >= ending.length()) {
+        return (0 == fullString.compare (fullString.length() - ending.length(), ending.length(), ending));
+    } else {
+        return false;
+    }
+}
+
+void MainWindow::importScene() {
+    std::string toImport = QFileDialog::getOpenFileName(this, tr("Source"), ".", tr("Circuit Files (*.cir)")).toStdString();
+
+    std::regex nameRegex(R"(.*(\/|\\)(.*).cir)");
+    std::cmatch match;
+    if(! std::regex_search(toImport.c_str(), match, nameRegex)){
+        std::cerr << "Cannot regex match: " << toImport << std::endl;
+        return;
+    }
+
+    if(match[2] != ""){
+        auto saveFile = CircuitSaver::getPath(match[2]);
+        copyFile(toImport, saveFile);
+    }
+}
+
+void MainWindow::exportScene() {
+    saveScene();
+    auto saveFile = CircuitSaver::getPath(currentOpenedCircuit);
+
+    auto fileName = QFileDialog::getSaveFileName(this, tr("Destination"), ".", tr("Circuit Files (*.cir)")).toStdString();
+
+    if(fileName != ""){
+        if(!endsWith(fileName, ".cir")){
+            fileName += ".cir";
+        }
+        copyFile(saveFile, fileName);
+    }
 }

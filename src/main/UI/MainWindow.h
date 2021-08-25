@@ -90,6 +90,16 @@ private slots:
      */
     void openScene();
 
+    /** @brief Called when the import button is clicked from the toolbar.
+     *
+     */
+    void importScene();
+
+    /** @brief Called when the export button is clicked from the toolbar.
+     *
+     */
+    void exportScene();
+
     /** @brief Called when the run button is clicked from the toolbar.
      *
     */
@@ -175,6 +185,16 @@ private:
      *
      */
     QAction* openAction;
+
+    /** @brief An action that exports the scene.
+ *
+ */
+    QAction* exportAction;
+
+    /** @brief An action that imports a save file.
+     *
+     */
+    QAction* importAction;
 
     /** @brief The file menu on the menubar.
      *
