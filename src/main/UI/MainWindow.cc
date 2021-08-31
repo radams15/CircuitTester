@@ -58,9 +58,10 @@ MainWindow::MainWindow() {
     setCentralWidget(widget);
     setWindowTitle(tr("Circuit Simulator"));
 
+    // Makes the toolbar on mac look the same colour as the titlebar - just aesthetic.
     setUnifiedTitleAndToolBarOnMac(true);
 
-    QTimer *timer = new QTimer(this);
+    auto* timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(runSimulation()));
     timer->start(1000); //time specified in ms
 }
@@ -128,6 +129,7 @@ void MainWindow::itemInserted(UIComponent* c) {
 
 void MainWindow::sceneScaleChanged(const QString &scale) {
     double newScale = scale.left(scale.indexOf(tr("%"))).toDouble() / 100.0;
+
     QTransform oldMatrix = view->transform();
     view->resetTransform();
     view->translate(oldMatrix.dx(), oldMatrix.dy());
@@ -144,8 +146,6 @@ void MainWindow::about() {
 void MainWindow::createToolBox() {
     buttonGroup = new QButtonGroup(this);
     buttonGroup->setExclusive(false);
-    /*connect(buttonGroup, qOverload<QAbstractButton *>(&QButtonGroup::buttonClicked),
-            this, &MainWindow::buttonGroupClicked);*/
 
     connect(buttonGroup, static_cast<void(QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked),
             this, &MainWindow::buttonGroupClicked); // https://doc.qt.io/archives/qt-5.6/qbuttongroup.html#buttonClicked
@@ -315,7 +315,7 @@ void MainWindow::runSimulation() {
             if(it.second.current < 1000){
                 ss << it.second.current;
             }else{
-                ss << "∞";
+                ss << "\u221E";
             }
             ss << "A";
         }
@@ -352,7 +352,7 @@ void MainWindow::saveScene() {
         currentOpenedCircuit = name;
     }
 
-    if(currentOpenedCircuit == ""){
+    if(currentOpenedCircuit.empty()){
         return;
     }
 
@@ -405,7 +405,7 @@ void MainWindow::exportScene() {
 
     auto fileName = QFileDialog::getSaveFileName(this, tr("Destination"), ".", tr("Circuit Files (*.cir)")).toStdString();
 
-    if(fileName != ""){
+    if(! fileName.empty()){
         if(!endsWith(fileName, ".cir")){
             fileName += ".cir";
         }

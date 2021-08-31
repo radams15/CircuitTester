@@ -13,7 +13,7 @@
 #define GRID_SNAP_STEP 20
 
 
-SceneItem::SceneItem(std::string resourcePath, QGraphicsItem *parent) : QGraphicsPixmapItem(parent){
+SceneItem::SceneItem(std::string resourcePath, QGraphicsItem* parent) : QGraphicsPixmapItem(parent) {
     this->resourcePath = resourcePath;
     this->pixmap = QPixmap(QString::fromStdString(resourcePath));
     pixmap = pixmap.scaled(200, 200);
@@ -21,7 +21,6 @@ SceneItem::SceneItem(std::string resourcePath, QGraphicsItem *parent) : QGraphic
 
     setFlag(QGraphicsItem::ItemIsMovable, true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);
-    setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
 }
 
 
@@ -43,13 +42,13 @@ void SceneItem::removeArrows(){
 }
 
 
-void SceneItem::addArrow(Arrow *arrow){
+void SceneItem::addArrow(Arrow* arrow){
     arrows.push_back(arrow);
 }
 
 QVariant SceneItem::itemChange(GraphicsItemChange change, const QVariant &value){
     if (change == QGraphicsItem::ItemPositionChange) {
-        for (Arrow *arrow : arrows){
+        for (Arrow* arrow : arrows){
             arrow->updatePosition();
         }
     }
@@ -73,18 +72,18 @@ QPointF SceneItem::centerpoint() {
 }
 
 void SceneItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event) {
-    double xx=x();
-    double yy=y();
+    double newX = x();
+    double newY = y();
 
-    if((int)xx / GRID_SNAP_STEP != xx/(float)GRID_SNAP_STEP){
-        xx=5.0*round(xx/5.);
+    if((int) newX / GRID_SNAP_STEP != newX / (float)GRID_SNAP_STEP){
+        newX= 5.0 * round(newX / 5.);
     }
 
-    if((int)yy / GRID_SNAP_STEP != yy/(float)GRID_SNAP_STEP){
-        yy=(float)GRID_SNAP_STEP*round(yy/(float)GRID_SNAP_STEP);
+    if((int)newY / GRID_SNAP_STEP != newY / (float)GRID_SNAP_STEP){
+        newY= (float)GRID_SNAP_STEP * round(newY / (float)GRID_SNAP_STEP);
     }
 
-    setPos(xx,yy);
+    setPos(newX, newY);
     QGraphicsItem::mouseReleaseEvent(event);
 }
 
