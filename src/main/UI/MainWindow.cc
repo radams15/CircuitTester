@@ -147,31 +147,37 @@ void MainWindow::itemInserted(UIComponent* c) {
 }
 
 void MainWindow::about() {
+    // Start simple info box
     QMessageBox::about(this, tr("About Circuit Simulator"),
                        tr("This is a circuit simulation program written by Rhys Adams (2021-22)"));
 }
 
 
 void MainWindow::createToolBox() {
+    // Create the button group.
     buttonGroup = new QButtonGroup(this);
     buttonGroup->setExclusive(false);
 
+    // When the button group is clicked, call buttonGroupClicked.
     connect(buttonGroup, static_cast<void(QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked),
             this, &MainWindow::buttonGroupClicked); // https://doc.qt.io/archives/qt-5.6/qbuttongroup.html#buttonClicked
 
-    auto *layout = new QGridLayout;
+    // Create new grid layout, add the widgets for each component type to a 2*n grid.
+    auto* layout = new QGridLayout;
     layout->addWidget(createCellWidget<Resistor>(tr("Resistor")), 0, 0);
     layout->addWidget(createCellWidget<Battery>(tr("Battery")), 0, 1);
     layout->addWidget(createCellWidget<Wire>(tr("Wire")), 1, 0);
     layout->addWidget(createCellWidget<Switch>(tr("Switch")), 1, 1);
 
+    // Don't stretch completely, just 3 pixels stretch per row.
     layout->setRowStretch(3, 10);
     layout->setColumnStretch(2, 10);
 
-    auto *itemWidget = new QWidget;
+    // Create a widget to hold the layout, add the widget.
+    auto* itemWidget = new QWidget;
     itemWidget->setLayout(layout);
 
-
+    // Create a toolbox to hold the components.
     toolBox = new QToolBox;
     toolBox->setSizePolicy(QSizePolicy(QSizePolicy::Maximum, QSizePolicy::Ignored));
     toolBox->setMinimumWidth(itemWidget->sizeHint().width());
@@ -180,12 +186,16 @@ void MainWindow::createToolBox() {
 
 
 void MainWindow::createActions() {
-    deleteAction = new QAction(QIcon(":/images/delete.png"), tr("&Delete"), this);
+    // Create many actions which can be placed in menubars or toolbars.
+
+    // The ambersand is placed before the letter that is used for alt-navigation.
+    deleteAction = new QAction(tr("&Delete"), this);
     deleteAction->setShortcut(tr("Delete"));
     deleteAction->setStatusTip(tr("Delete item from diagram"));
     connect(deleteAction, &QAction::triggered, this, &MainWindow::deleteItem);
 
     exitAction = new QAction(tr("E&xit"), this);
+    // Shortcut is the OS quit key: command-q for mac, control-q for linux/windows.
     exitAction->setShortcuts(QKeySequence::Quit);
     exitAction->setStatusTip(tr("Quit the circuit simulator"));
     connect(exitAction, &QAction::triggered, this, &QWidget::close);
@@ -218,6 +228,8 @@ void MainWindow::createActions() {
 
 
 void MainWindow::createMenus() {
+    // Add the different actions to the menubar.
+
     fileMenu = menuBar()->addMenu(tr("&File"));
     fileMenu->addAction(saveAction);
     fileMenu->addAction(openAction);
@@ -238,8 +250,10 @@ void MainWindow::createMenus() {
 
 
 void MainWindow::createToolbars() {
+    // Create button for the scene move mode.
     auto *pointerButton = new QToolButton;
     pointerButton->setCheckable(true);
+    // Set the move mode default on.
     pointerButton->setChecked(true);
     pointerButton->setIcon(QIcon(":/images/pointer.png"));
     auto *linePointerButton = new QToolButton;
@@ -247,8 +261,9 @@ void MainWindow::createToolbars() {
     linePointerButton->setIcon(QIcon(":/images/linepointer.png"));
 
     pointerTypeGroup = new QButtonGroup(this);
-    pointerTypeGroup->addButton(pointerButton, int(Scene::MOVE));
-    pointerTypeGroup->addButton(linePointerButton, int(Scene::INSERT_LINE));
+    pointerTypeGroup->addButton(pointerButton, (int) Scene::MOVE);
+    pointerTypeGroup->addButton(linePointerButton, (int) Scene::INSERT_LINE);
+
     connect(pointerTypeGroup, static_cast<void(QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked),
             this, &MainWindow::pointerGroupClicked);  // https://doc.qt.io/archives/qt-5.6/qbuttongroup.html#buttonClicked
 
@@ -261,27 +276,32 @@ void MainWindow::createToolbars() {
 
 template<class T>
 QWidget *MainWindow::createCellWidget(const QString &text) {
+    // Initialise the widget to get the pixmap.
     T item;
-
     QIcon icon(item.getPixmap());
 
-    auto *button = new QToolButton;
+    // Make a 50*50 icon button for to select the item.
+    auto* button = new QToolButton;
     button->setIcon(icon);
     button->setIconSize(QSize(50, 50));
     button->setCheckable(true);
+    // Add the button to the buttongroup.
     buttonGroup->addButton(button, item.getId());
 
+    // Create a grid with the icon and a label of the icon name.
     auto *layout = new QGridLayout;
     layout->addWidget(button, 0, 0, Qt::AlignHCenter);
     layout->addWidget(new QLabel(text), 1, 0, Qt::AlignCenter);
 
-    auto *widget = new QWidget;
+    // Create a widget for the layout.
+    auto* widget = new QWidget;
     widget->setLayout(layout);
 
     return widget;
 }
 
 template<class T> std::list<T> toStdList(QList<T> in){
+    // Turn a QList into a std::list. QT has this by default in Qt 5.12 but I am targeting 5.7 so cannot use this.
     std::list<T> out;
 
     for(auto i : in){
@@ -292,16 +312,20 @@ template<class T> std::list<T> toStdList(QList<T> in){
 }
 
 void MainWindow::runSimulation() {
+    // Is the scene empty? If it is, don't run as this crashes the program.
     if(scene->items().empty()){
         return;
     }
 
+    // Initialise AnalysisMapper with a std::list of scene items.
     AnalysisMapper mapper(toStdList(scene->items()));
 
     auto sol = mapper.getSolution();
 
+    // Remove all existing text boxes.
     scene->removeAllText();
 
+    // 'it' is a map of  UIComponent: ComponentValue.
     for(auto it : sol){
         std::stringstream ss;
         ss << std::setprecision(2);
@@ -314,23 +338,29 @@ void MainWindow::runSimulation() {
             ss << "\nCurrent: ";
             if(it.second.current < 1000){
                 ss << it.second.current;
+            }else if(it.second.current < 0.01) {
+                ss << 0;
             }else{
-                ss << "\u221E";
+                ss << "\u221E"; // Infinity symbol unicode escape.
             }
             ss << "A";
         }
 
+        // Create a textbox.
         auto textBox = new SceneText(ss.str());
         auto componentPos = it.first->pos();
         scene->addItem(textBox);
+        // Add textbox underneath the component.
         textBox->setPos(QPointF(componentPos.x()+100, componentPos.y()+200));
     }
 }
 
 void MainWindow::itemRightClicked(UIComponent* item) {
+    // Set the contents of the settingsmenu to the settingsbox of the item.
     settingsMenu->setInteriorLayout(item->settingsBox);
 
-    if(not settingsMenu->toggleButton->isChecked()){ // BUG this check means the window only opens once when double-clicked.
+    // Open the menu if the menu is not opened.
+    if(not settingsMenu->toggleButton->isChecked()){
         settingsMenu->toggleButton->click();
     }
 }
