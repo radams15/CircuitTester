@@ -116,8 +116,8 @@ void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent){
             auto* endItem = (SceneItem *) endItems.first();
 
             auto* newLine = new Line(startItem, endItem);
-            startItem->addArrow(newLine);
-            endItem->addArrow(newLine);
+            startItem->addLine(newLine);
+            endItem->addLine(newLine);
             addItem(newLine);
             newLine->update();
         }

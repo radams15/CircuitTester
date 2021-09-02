@@ -101,8 +101,8 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
             std::cout << startItem->componentId << " => " << endItem->componentId << std::endl;
 
             auto* line = new Line(startItem, endItem);
-            startItem->addArrow(line);
-            endItem->addArrow(line);
+            startItem->addLine(line);
+            endItem->addLine(line);
             s->addItem(line);
             line->update();
         }

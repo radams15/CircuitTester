@@ -147,7 +147,7 @@ Graph AnalysisMapper::makeGraph() {
     for(auto comp : components){
         std::vector<UIComponent*> connections;
 
-        for(auto a : comp->arrows){
+        for(auto a : comp->lines){
             // If the arrow goes to the component rather than away from it, ignore it.
             if(comp == a->endItem()){
                 continue;

@@ -68,13 +68,6 @@ private slots:
      */
     void itemInserted(UIComponent* item);
 
-    /** @brief Called when the scene scale QComboBox is changed.
-     * This changes the scale of the Scene.
-     *
-     * @param scale
-     */
-    void sceneScaleChanged(const QString &scale);
-
     /** @brief Called when the about button is clicked from the toolbar.
      *
      */
@@ -220,11 +213,6 @@ private:
      *
      */
     QToolBar* pointerToolbar;
-
-    /** @brief The QComboBox that allows you to select the scene scale.
-     *
-     */
-    QComboBox* sceneScaleCombo;
 
     /** @brief The toolbox that contains the component buttons.
      *

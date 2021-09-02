@@ -10,39 +10,91 @@
 #include <vector>
 #include <QIcon>
 
+// Define Line as empty class here as Line depends on SceneItem and vice-versa so they cannot include each other.
 class Line;
 
+/** @brief An image on the Scene.
+ *
+ */
 class SceneItem : public QGraphicsPixmapItem {
 public:
 
-    SceneItem(std::string resourcePath, QGraphicsItem *parent = nullptr);
+    /** @brief Initialiser
+     *
+     * @param resourcePath The path to the image of the item.
+     * @param parent
+     */
+    explicit SceneItem(std::string resourcePath, QGraphicsItem *parent = nullptr);
 
-    void removeArrow(Line *arrow);
-    void removeArrows();
+    /** @brief Removes a specified line from lines.
+     *
+     * @param line Pointer to the line to remove.
+     */
+    void removeLine(Line *line);
 
+    /** @brief Removes all allows from the item.
+     *
+     */
+    void removeLines();
+
+    /** @brief Returns the image of the SceneItem.
+     *
+     * Only ever used to set the icon on the MainWindow.
+     *
+     * @return QPixmap which is the current image of the SceneItem.
+     */
     inline QPixmap getPixmap() { return pixmap; }
 
-    void addArrow(Line *arrow);
+    /** @brief Add a line that is attached to this SceneItem.
+     *
+     * @param line Pointer to the line to add.
+     */
+    void addLine(Line* line);
 
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
+    /** @brief Called when the mouse is released.
+     *
+     * Called to handle dropping the SceneItem to a new location.
+     *
+     * @param event Event of the dropping of the item.
+     */
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* event) override;
 
-    QPixmap image(){ return pixmap; }
+    /** @brief Gets the centre of the component.
+     *
+     * @return Centre point of the item.
+     */
+    QPointF centrePoint();
 
-    QPointF centerpoint();
+    /** @brief Gets the start point of the component.
+     *
+     * @return Start point of the component.
+     */
     QPointF startPoint();
+
+    /** @brief Gets the end point of the component.
+     *
+     * @return End point of the component.
+     */
     QPointF endPoint();
 
-    std::vector<Line *> arrows;
+    /** @brief All the lines attached to this item.
+     *
+     */
+    std::vector<Line*> lines;
 
 protected:
+    /** @brief Item position has changed.
+     *
+     * @param change Unused.
+     * @param value Unused.
+     * @return value parameter above.
+     */
     QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;
+
+    /** @brief The image of this component set during initialisation.
+     *
+     */
     QPixmap pixmap;
-    std::string resourcePath;
-
-private:
-    QPolygonF myPolygon;
-
-    void loadPolygon(QString path);
 };
 
 

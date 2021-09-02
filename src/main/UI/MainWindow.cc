@@ -69,23 +69,31 @@ MainWindow::MainWindow() {
 
 void MainWindow::buttonGroupClicked(QAbstractButton *button) {
     const QList<QAbstractButton *> buttons = buttonGroup->buttons();
-    for (QAbstractButton *myButton : buttons) {
+
+    for (QAbstractButton* myButton : buttons) {
+        // Uncheck all the buttons that are not the clicked one.
         if (myButton != button){
             button->setChecked(false);
         }
     }
     const int id = buttonGroup->id(button);
 
-    if(id == UI_RESISTOR){
-        scene->setItemType(new Resistor);
-    }else if(id == UI_BATTERY){
-        scene->setItemType(new Battery);
-    }else if(id == UI_WIRE){
-        scene->setItemType(new Wire);
-    }else if(id == UI_SWITCH){
-        scene->setItemType(new Switch);
-    }else{
-        return;
+    // Set the scene item to a new instance of the selected button.
+    switch(id){
+        case UI_RESISTOR:
+            scene->setItemType(new Resistor);
+            break;
+        case UI_BATTERY:
+            scene->setItemType(new Battery);
+            break;
+        case UI_WIRE:
+            scene->setItemType(new Wire);
+            break;
+        case UI_SWITCH:
+            scene->setItemType(new Switch);
+            break;
+        default:
+            return;
     }
 
     scene->setMode(Scene::INSERT_ITEM);
@@ -94,48 +102,49 @@ void MainWindow::buttonGroupClicked(QAbstractButton *button) {
 
 
 void MainWindow::deleteItem() {
+    // First delete all the arrows.
     QList<QGraphicsItem *> selectedItems = scene->selectedItems();
     for (QGraphicsItem *item : selectedItems) {
         if (item->type() == Line::Type) {
             scene->removeItem(item);
-            auto *arrow = qgraphicsitem_cast<Line *>(item);
-            arrow->startItem()->removeArrow(arrow);
-            arrow->endItem()->removeArrow(arrow);
+            auto *arrow = (Line*) item;
+            arrow->startItem()->removeLine(arrow);
+            arrow->endItem()->removeLine(arrow);
             delete item;
         }
     }
 
+    // Then delete all items.
     selectedItems = scene->selectedItems();
     for (QGraphicsItem *item : selectedItems) {
-         if (item->type() == SceneItem::Type)
-             qgraphicsitem_cast<SceneItem *>(item)->removeArrows();
+        // Delete all items that are selected
+         if (item->type() == SceneItem::Type) {
+             // If it's a SceneItem delete all the lines on it also.
+             ((SceneItem*) item)->removeLines();
+         }
          scene->removeItem(item);
          delete item;
      }
 }
 
 
+
 void MainWindow::pointerGroupClicked() {
+    // Selected either line or move mode, set the mode.
     scene->setMode(Scene::Mode(pointerTypeGroup->checkedId()));
 }
 
 
 void MainWindow::itemInserted(UIComponent* c) {
-    pointerTypeGroup->button(int(Scene::MOVE))->setChecked(true);
-    scene->setMode(Scene::Mode(pointerTypeGroup->checkedId()));
+    // Check the move mode button.
+    pointerTypeGroup->button((int) Scene::MOVE)->setChecked(true);
+
+    // Set the mode to move mode.
+    scene->setMode(Scene::Mode((int) Scene::MOVE));
+
+    // Uncheck the button of that component.
     buttonGroup->button(c->getId())->setChecked(false);
 }
-
-
-void MainWindow::sceneScaleChanged(const QString &scale) {
-    double newScale = scale.left(scale.indexOf(tr("%"))).toDouble() / 100.0;
-
-    QTransform oldMatrix = view->transform();
-    view->resetTransform();
-    view->translate(oldMatrix.dx(), oldMatrix.dy());
-    view->scale(newScale, newScale);
-}
-
 
 void MainWindow::about() {
     QMessageBox::about(this, tr("About Circuit Simulator"),
@@ -243,18 +252,9 @@ void MainWindow::createToolbars() {
     connect(pointerTypeGroup, static_cast<void(QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked),
             this, &MainWindow::pointerGroupClicked);  // https://doc.qt.io/archives/qt-5.6/qbuttongroup.html#buttonClicked
 
-    sceneScaleCombo = new QComboBox;
-    QStringList scales;
-    scales << tr("50%") << tr("75%") << tr("100%") << tr("125%") << tr("150%");
-    sceneScaleCombo->addItems(scales);
-    sceneScaleCombo->setCurrentIndex(2);
-    connect(sceneScaleCombo, &QComboBox::currentTextChanged,
-            this, &MainWindow::sceneScaleChanged);
-
     pointerToolbar = addToolBar(tr("Pointer type"));
     pointerToolbar->addWidget(pointerButton);
     pointerToolbar->addWidget(linePointerButton);
-    pointerToolbar->addWidget(sceneScaleCombo);
 
 }
 

@@ -180,8 +180,8 @@ $(function() {
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            std::cout &lt;&lt; startItem-&gt;<a class="code" href="classUIComponent.html#a39679cd78fb01b55b048f064f0a4d1ee">componentId</a> &lt;&lt; <span class="stringliteral">&quot; =&gt; &quot;</span> &lt;&lt; endItem-&gt;componentId &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keyword">auto</span>* line = <span class="keyword">new</span> <a class="code" href="classLine.html">Line</a>(startItem, endItem);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            startItem-&gt;addArrow(line);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            endItem-&gt;addArrow(line);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            startItem-&gt;addLine(line);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            endItem-&gt;addLine(line);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            s-&gt;addItem(line);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            line-&gt;update();</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>

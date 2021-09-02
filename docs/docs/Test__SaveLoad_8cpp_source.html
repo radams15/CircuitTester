@@ -113,10 +113,10 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">new</span> <a class="code" href="classLine.html">Line</a>(components[0], components[1]),</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">new</span> <a class="code" href="classLine.html">Line</a>(components[1], components[0]),</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    components[0]-&gt;addArrow(arrows[0]);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    components[0]-&gt;addArrow(arrows[1]);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    components[1]-&gt;addArrow(arrows[0]);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    components[1]-&gt;addArrow(arrows[1]);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    components[0]-&gt;addLine(arrows[0]);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    components[0]-&gt;addLine(arrows[1]);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    components[1]-&gt;addLine(arrows[0]);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    components[1]-&gt;addLine(arrows[1]);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::string out = <a class="code" href="classCircuitSaver.html#aab319e8ddda0f4e6ceb944d88359b51b">CircuitSaver::serialiseCircuit</a>(<span class="stringliteral">&quot;Circuit 1&quot;</span>, <a class="code" href="structSceneItems.html">SceneItems</a>{components, arrows, <span class="keyword">nullptr</span>});</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>

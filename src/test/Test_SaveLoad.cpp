@@ -43,10 +43,10 @@ TEST(SaveLoad, Serialise1){
             new Line(components[0], components[1]),
             new Line(components[1], components[0]),
     };
-    components[0]->addArrow(arrows[0]);
-    components[0]->addArrow(arrows[1]);
-    components[1]->addArrow(arrows[0]);
-    components[1]->addArrow(arrows[1]);
+    components[0]->addLine(arrows[0]);
+    components[0]->addLine(arrows[1]);
+    components[1]->addLine(arrows[0]);
+    components[1]->addLine(arrows[1]);
 
     std::string out = CircuitSaver::serialiseCircuit("Circuit 1", SceneItems{components, arrows, nullptr});
 

@@ -11,60 +11,74 @@
 #include <cmath>
 
 #define GRID_SNAP_STEP 20
-
+#define SCENEITEM_SIZE 200, 200
 
 SceneItem::SceneItem(std::string resourcePath, QGraphicsItem* parent) : QGraphicsPixmapItem(parent) {
-    this->resourcePath = resourcePath;
+    // Create pixmap from resource path.
     this->pixmap = QPixmap(QString::fromStdString(resourcePath));
-    pixmap = pixmap.scaled(200, 200);
+
+    // Scale the pixmap to defined size.
+    pixmap = pixmap.scaled(SCENEITEM_SIZE);
+
+    // Set the pixmap of this item.
     setPixmap(this->pixmap);
 
+    // Allow movement and selection.
     setFlag(QGraphicsItem::ItemIsMovable, true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);
 }
 
 
-void SceneItem::removeArrow(Line *arrow){
-    arrows.erase(std::remove(arrows.begin(), arrows.end(), arrow), arrows.end());
+void SceneItem::removeLine(Line* line){
+    // Delete all from lines list which are the passed line pointer.
+    lines.erase(std::remove(lines.begin(), lines.end(), line), lines.end());
 }
 
 
-void SceneItem::removeArrows(){
-    // need a copy here since removeArrow() will
-    // modify the arrows container
-    const auto arrowsCopy = arrows;
-    for (Line *arrow : arrowsCopy) {
-        arrow->startItem()->removeArrow(arrow);
-        arrow->endItem()->removeArrow(arrow);
-        scene()->removeItem(arrow);
-        delete arrow;
+void SceneItem::removeLines(){
+    // need a copy here since removeLine() modifies the lines list
+    const auto linesCopy = lines;
+    for (Line* line : linesCopy) {
+        // Remove the line from the start and end items.
+        line->startItem()->removeLine(line);
+        line->endItem()->removeLine(line);
+
+        // Remove the line from the Scene.
+        scene()->removeItem(line);
+        delete line;
     }
 }
 
 
-void SceneItem::addArrow(Line* arrow){
-    arrows.push_back(arrow);
+void SceneItem::addLine(Line* line){
+    // Append to the lines list.
+    lines.push_back(line);
 }
 
 QVariant SceneItem::itemChange(GraphicsItemChange change, const QVariant &value){
     if (change == QGraphicsItem::ItemPositionChange) {
-        for (Line* arrow : arrows){
+        // Update all the arrows attached to this item.
+        for (Line* arrow : lines){
             arrow->update();
         }
     }
 
+    // Return the value parameter to caller as it is unused.
     return value;
 }
 
-QPointF SceneItem::centerpoint() {
+QPointF SceneItem::centrePoint() {
+    // Get width and height of the image.
     double w = pixmap.width();
     double h = pixmap.height();
 
     QPointF p = pos();
 
+    // Get x, y coordinates of this SceneItem.
     double x = p.x();
     double y = p.y();
 
+    // Find the centre of the SceneItem by adding half the width to the x and adding half the height to the y.
     double xc = x + (w/2);
     double yc = y + (h/2);
 
@@ -75,26 +89,34 @@ void SceneItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event) {
     double newX = x();
     double newY = y();
 
+    // Round x and y to GRID_SNAP_STEP pixels.
     if((int) newX / GRID_SNAP_STEP != newX / (float)GRID_SNAP_STEP){
-        newX= 5.0 * round(newX / 5.);
+        newX= GRID_SNAP_STEP * floor(newX / GRID_SNAP_STEP);
     }
 
     if((int)newY / GRID_SNAP_STEP != newY / (float)GRID_SNAP_STEP){
-        newY= (float)GRID_SNAP_STEP * round(newY / (float)GRID_SNAP_STEP);
+        newY= (float)GRID_SNAP_STEP * floor(newY / (float)GRID_SNAP_STEP);
     }
 
+    // Change to the rounded pixels
     setPos(newX, newY);
+
+    // Continue mouseReleaseEvent parent method.
     QGraphicsItem::mouseReleaseEvent(event);
 }
 
 QPointF SceneItem::startPoint() {
-    auto center = centerpoint();
+    auto centre = centrePoint();
 
-    return QPointF(center.x()-(pixmap.width()/2), center.y());
+    // Start is the centre x - half the width.
+
+    return {centre.x() - (pixmap.width() / 2), centre.y()};
 }
 
 QPointF SceneItem::endPoint() {
-    auto center = centerpoint();
+    auto centre = centrePoint();
 
-    return QPointF(center.x()+(pixmap.width()/2), center.y());
+    // Start is the centre x + half the width.
+
+    return {centre.x() + (pixmap.width() / 2), centre.y()};
 }
