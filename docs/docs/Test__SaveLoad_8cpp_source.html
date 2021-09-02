@@ -109,9 +109,9 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    ((<a class="code" href="classBattery.html">Battery</a>*)components[0])-&gt;voltageSpinner-&gt;setValue(15);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ((<a class="code" href="classResistor.html">Resistor</a>*)components[1])-&gt;resistanceSpinner-&gt;setValue(2);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::vector&lt;Arrow*&gt; arrows = {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">new</span> <a class="code" href="classArrow.html">Arrow</a>(components[0], components[1]),</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">new</span> <a class="code" href="classArrow.html">Arrow</a>(components[1], components[0]),</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::vector&lt;Line*&gt; arrows = {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">new</span> <a class="code" href="classLine.html">Line</a>(components[0], components[1]),</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">new</span> <a class="code" href="classLine.html">Line</a>(components[1], components[0]),</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    components[0]-&gt;addArrow(arrows[0]);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    components[0]-&gt;addArrow(arrows[1]);</div>
@@ -125,11 +125,11 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">    ASSERT_EQ(out, expected);*/</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="ttc" id="aTest__SaveLoad_8cpp_html_a2f4dbcb6849848f8b5d722713b2ed890"><div class="ttname"><a href="Test__SaveLoad_8cpp.html#a2f4dbcb6849848f8b5d722713b2ed890">TEST</a></div><div class="ttdeci">TEST(SaveLoad, Serialise1)</div><div class="ttdoc">Serialise #1. Tests to see whether a simple circuit is serialised properly.</div><div class="ttdef"><b>Definition:</b> <a href="Test__SaveLoad_8cpp_source.html#l00022">Test_SaveLoad.cpp:22</a></div></div>
-<div class="ttc" id="aclassArrow_html"><div class="ttname"><a href="classArrow.html">Arrow</a></div><div class="ttdoc">Arrow between two components on a Scene.</div><div class="ttdef"><b>Definition:</b> <a href="Arrow_8h_source.html#l00016">Arrow.h:16</a></div></div>
 <div class="ttc" id="aclassBattery_html"><div class="ttname"><a href="classBattery.html">Battery</a></div><div class="ttdef"><b>Definition:</b> <a href="Battery_8h_source.html#l00013">Battery.h:13</a></div></div>
 <div class="ttc" id="aclassCircuitSaver_html_aab319e8ddda0f4e6ceb944d88359b51b"><div class="ttname"><a href="classCircuitSaver.html#aab319e8ddda0f4e6ceb944d88359b51b">CircuitSaver::serialiseCircuit</a></div><div class="ttdeci">static std::string serialiseCircuit(std::string name, SceneItems items)</div><div class="ttdef"><b>Definition:</b> <a href="CircuitSaver_8cc_source.html#l00113">CircuitSaver.cc:113</a></div></div>
+<div class="ttc" id="aclassLine_html"><div class="ttname"><a href="classLine.html">Line</a></div><div class="ttdoc">Line between two components on a Scene.</div><div class="ttdef"><b>Definition:</b> <a href="Line_8h_source.html#l00016">Line.h:16</a></div></div>
 <div class="ttc" id="aclassResistor_html"><div class="ttname"><a href="classResistor.html">Resistor</a></div><div class="ttdef"><b>Definition:</b> <a href="Resistor_8h_source.html#l00011">Resistor.h:11</a></div></div>
-<div class="ttc" id="aclassScene_html"><div class="ttname"><a href="classScene.html">Scene</a></div><div class="ttdef"><b>Definition:</b> <a href="Scene_8h_source.html#l00024">Scene.h:24</a></div></div>
+<div class="ttc" id="aclassScene_html"><div class="ttname"><a href="classScene.html">Scene</a></div><div class="ttdoc">The scene class is a QGraphicsScene derivitive that holds the components in the circuit.</div><div class="ttdef"><b>Definition:</b> <a href="Scene_8h_source.html#l00027">Scene.h:27</a></div></div>
 <div class="ttc" id="aqrectf_html"><div class="ttname"><a href="https://doc.qt.io/qt-5/qrectf.html">QRectF</a></div></div>
 <div class="ttc" id="astructSceneItems_html"><div class="ttname"><a href="structSceneItems.html">SceneItems</a></div><div class="ttdef"><b>Definition:</b> <a href="CircuitSaver_8h_source.html#l00018">CircuitSaver.h:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

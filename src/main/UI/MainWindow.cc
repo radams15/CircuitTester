@@ -1,7 +1,7 @@
 #include <vector>
 #include <queue>
 
-#include "Arrow.h"
+#include "Line.h"
 #include "SceneItem.h"
 #include "Scene.h"
 #include "SceneText.h"
@@ -96,9 +96,9 @@ void MainWindow::buttonGroupClicked(QAbstractButton *button) {
 void MainWindow::deleteItem() {
     QList<QGraphicsItem *> selectedItems = scene->selectedItems();
     for (QGraphicsItem *item : selectedItems) {
-        if (item->type() == Arrow::Type) {
+        if (item->type() == Line::Type) {
             scene->removeItem(item);
-            auto *arrow = qgraphicsitem_cast<Arrow *>(item);
+            auto *arrow = qgraphicsitem_cast<Line *>(item);
             arrow->startItem()->removeArrow(arrow);
             arrow->endItem()->removeArrow(arrow);
             delete item;
@@ -337,13 +337,13 @@ void MainWindow::itemRightClicked(UIComponent* item) {
 
 void MainWindow::saveScene() {
     std::vector<UIComponent*> components;
-    std::vector<Arrow*> arrows;
+    std::vector<Line*> arrows;
 
     for(QGraphicsItem *i : scene->items()){
         if(IS_TYPE(UIComponent, i)) {
             components.push_back((UIComponent*) i);
-        } else if(IS_TYPE(Arrow, i)) {
-            arrows.push_back((Arrow*) i);
+        } else if(IS_TYPE(Line, i)) {
+            arrows.push_back((Line*) i);
         }
     }
 

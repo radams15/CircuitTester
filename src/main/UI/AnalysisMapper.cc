@@ -10,7 +10,7 @@
 #include "Components/Resistor.h"
 #include "Components/Wire.h"
 #include "Components/Switch.h"
-#include "Arrow.h"
+#include "Line.h"
 
 #include "../Analysis/MNACircuit.h"
 
@@ -20,8 +20,8 @@ AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
     for(QGraphicsItem* i : graphicsItems){
         if(IS_TYPE(UIComponent, i)) {
             components.push_back((UIComponent*) i);
-        } else if(IS_TYPE(Arrow, i)) {
-            arrows.push_back((Arrow*) i);
+        } else if(IS_TYPE(Line, i)) {
+            arrows.push_back((Line*) i);
         }
     }
 }

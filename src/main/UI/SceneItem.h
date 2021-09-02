@@ -10,19 +10,19 @@
 #include <vector>
 #include <QIcon>
 
-class Arrow;
+class Line;
 
 class SceneItem : public QGraphicsPixmapItem {
 public:
 
     SceneItem(std::string resourcePath, QGraphicsItem *parent = nullptr);
 
-    void removeArrow(Arrow *arrow);
+    void removeArrow(Line *arrow);
     void removeArrows();
 
     inline QPixmap getPixmap() { return pixmap; }
 
-    void addArrow(Arrow *arrow);
+    void addArrow(Line *arrow);
 
     void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
 
@@ -32,7 +32,7 @@ public:
     QPointF startPoint();
     QPointF endPoint();
 
-    std::vector<Arrow *> arrows;
+    std::vector<Line *> arrows;
 
 protected:
     QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;

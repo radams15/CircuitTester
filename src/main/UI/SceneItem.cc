@@ -1,5 +1,5 @@
 #include "SceneItem.h"
-#include "Arrow.h"
+#include "Line.h"
 
 #include <QGraphicsScene>
 #include <QGraphicsSceneContextMenuEvent>
@@ -24,7 +24,7 @@ SceneItem::SceneItem(std::string resourcePath, QGraphicsItem* parent) : QGraphic
 }
 
 
-void SceneItem::removeArrow(Arrow *arrow){
+void SceneItem::removeArrow(Line *arrow){
     arrows.erase(std::remove(arrows.begin(), arrows.end(), arrow), arrows.end());
 }
 
@@ -33,7 +33,7 @@ void SceneItem::removeArrows(){
     // need a copy here since removeArrow() will
     // modify the arrows container
     const auto arrowsCopy = arrows;
-    for (Arrow *arrow : arrowsCopy) {
+    for (Line *arrow : arrowsCopy) {
         arrow->startItem()->removeArrow(arrow);
         arrow->endItem()->removeArrow(arrow);
         scene()->removeItem(arrow);
@@ -42,13 +42,13 @@ void SceneItem::removeArrows(){
 }
 
 
-void SceneItem::addArrow(Arrow* arrow){
+void SceneItem::addArrow(Line* arrow){
     arrows.push_back(arrow);
 }
 
 QVariant SceneItem::itemChange(GraphicsItemChange change, const QVariant &value){
     if (change == QGraphicsItem::ItemPositionChange) {
-        for (Arrow* arrow : arrows){
+        for (Line* arrow : arrows){
             arrow->update();
         }
     }

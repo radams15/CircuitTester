@@ -48,7 +48,7 @@ public:
     int n0 = -1;
     int n1 = -1;
 
-    std::vector<Arrow*> connections;
+    std::vector<Line*> connections;
 
     bool equals(UIComponent* c);
 };

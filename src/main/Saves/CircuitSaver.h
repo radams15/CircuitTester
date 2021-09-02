@@ -8,7 +8,7 @@
 #include <QList>
 #include <QGraphicsItem>
 #include "../UI/UIComponent.h"
-#include "../UI/Arrow.h"
+#include "../UI/Line.h"
 #include "../UI/Scene.h"
 
 #include <nlohmann/json.hpp>
@@ -17,7 +17,7 @@ using json = nlohmann::json;
 
 struct SceneItems{
     std::vector<UIComponent*> components;
-    std::vector<Arrow*> arrows;
+    std::vector<Line*> arrows;
     Scene* scene = nullptr;
 };
 

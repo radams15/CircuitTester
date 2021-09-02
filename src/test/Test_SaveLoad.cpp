@@ -39,9 +39,9 @@ TEST(SaveLoad, Serialise1){
 
     ((Battery*)components[0])->voltageSpinner->setValue(15);
     ((Resistor*)components[1])->resistanceSpinner->setValue(2);
-    std::vector<Arrow*> arrows = {
-            new Arrow(components[0], components[1]),
-            new Arrow(components[1], components[0]),
+    std::vector<Line*> arrows = {
+            new Line(components[0], components[1]),
+            new Line(components[1], components[0]),
     };
     components[0]->addArrow(arrows[0]);
     components[0]->addArrow(arrows[1]);

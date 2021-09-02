@@ -15,8 +15,8 @@ set(PROJECT_SOURCES
 
         UI/MainWindow.cc
         UI/MainWindow.h
-        UI/Arrow.cc
-        UI/Arrow.h
+        UI/Line.cc
+        UI/Line.h
         UI/Scene.cc
         UI/Scene.h
         UI/SceneItem.cc

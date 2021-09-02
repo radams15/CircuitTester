@@ -1,4 +1,4 @@
-#include "Arrow.h"
+#include "Line.h"
 #include "SceneItem.h"
 
 #include <QPainter>
@@ -6,7 +6,7 @@
 #include <QtMath>
 
 
-Arrow::Arrow(SceneItem *startItem, SceneItem *endItem, QGraphicsItem *parent)
+Line::Line(SceneItem *startItem, SceneItem *endItem, QGraphicsItem *parent)
     : QGraphicsLineItem(parent), start(startItem), end(endItem){
     // Create a solid black pen with a width of 2px.
     setPen(QPen(penColour, penSize, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
@@ -18,13 +18,13 @@ Arrow::Arrow(SceneItem *startItem, SceneItem *endItem, QGraphicsItem *parent)
     setZValue(-1000);
 }
 
-void Arrow::update(){
+void Line::update(){
     QLineF line(mapFromItem(start, start->startPoint()), mapFromItem(end, end->endPoint()));
     setLine(line);
 }
 
 
-void Arrow::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget){
+void Line::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget){
     // If they are inside each other don't draw the line.
     if (start->collidesWithItem(end)) {
         return;

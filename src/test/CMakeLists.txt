@@ -7,8 +7,8 @@ set(C_FILES
 
        ../main/UI/MainWindow.cc
        ../main/UI/MainWindow.h
-       ../main/UI/Arrow.cc
-       ../main/UI/Arrow.h
+        ../main/UI/Line.cc
+        ../main/UI/Line.h
        ../main/UI/Scene.cc
        ../main/UI/Scene.h
        ../main/UI/SceneItem.cc

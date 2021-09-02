@@ -59,7 +59,7 @@ private:
     std::vector<UIComponent*> components;
 
     /** @brief List of arrows on the canvas*/
-    std::vector<Arrow*> arrows;
+    std::vector<Line*> arrows;
 
     /** @brief Finds the shortest path between two nodes on a graph using Dijkstra's algorithm.
      *

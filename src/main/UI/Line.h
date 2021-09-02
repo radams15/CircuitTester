@@ -3,17 +3,17 @@
  * @date 29/01/2021
  */
 
-#ifndef ARROW_H
-#define ARROW_H
+#ifndef LINE_H
+#define LINE_H
 
 #include <QGraphicsLineItem>
 
 #include "SceneItem.h"
 
-/** @brief Arrow between two components on a Scene.
+/** @brief Line between two components on a Scene.
  *
  */
-class Arrow : public QGraphicsLineItem{
+class Line : public QGraphicsLineItem{
 public:
 
     /** @brief Initialiser
@@ -22,7 +22,7 @@ public:
      * @param endItem The item to end at.
      * @param parent The parent widget (never used but is an argument of QGraphicsLineItem so is kept optional).
      */
-    Arrow(SceneItem *startItem, SceneItem *endItem, QGraphicsItem *parent = nullptr);
+    Line(SceneItem *startItem, SceneItem *endItem, QGraphicsItem *parent = nullptr);
 
     /** @brief Simply returns the start item.
      *
@@ -74,4 +74,4 @@ private:
 };
 
 
-#endif // ARROW_H
+#endif // LINE_H
