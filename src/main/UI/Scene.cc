@@ -11,7 +11,7 @@
 Scene::Scene(QObject *parent)
     : QGraphicsScene(parent){
 
-    currentMode = MOVE_ITEM;
+    currentMode = MOVE;
     component = nullptr;
     line = nullptr;
 }
@@ -62,7 +62,7 @@ void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent){
     if (currentMode == INSERT_LINE && line != nullptr) {
         QLineF newLine(line->line().p1(), mouseEvent->scenePos());
         line->setLine(newLine);
-    } else if (currentMode == MOVE_ITEM) {
+    } else if (currentMode == MOVE) {
         QGraphicsScene::mouseMoveEvent(mouseEvent);
     }
 }
@@ -86,12 +86,10 @@ void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent){
             auto *startItem = qgraphicsitem_cast<SceneItem *>(startItems.first());
             auto *endItem = qgraphicsitem_cast<SceneItem *>(endItems.first());
             auto *arrow = new Arrow(startItem, endItem);
-            arrow->setColor(Qt::black);
             startItem->addArrow(arrow);
             endItem->addArrow(arrow);
-            arrow->setZValue(-1000.0);
             addItem(arrow);
-            arrow->updatePosition();
+            arrow->update();
         }
     }
  

@@ -1,3 +1,8 @@
+/**
+ * @author Rhys Adams
+ * @date 29/01/2021
+ */
+
 #ifndef DIAGRAMITEM_H
 #define DIAGRAMITEM_H
 

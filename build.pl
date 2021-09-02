@@ -10,7 +10,7 @@ if($ARGV[0] eq "build"){
 }elsif($ARGV[0] eq "lin"){
 	print `podman run -u=builder:builder --volume /mnt/files/scripts/CircuitTester:/CircuitTester:z -ti qtlin /bin/build`;
 }elsif($ARGV[0] eq "test"){
-	print `podman run -u=builder:builder --volume /mnt/files/scripts/CircuitTester:/CircuitTester:z -ti qtlin /bin/Test`;
+	print `podman run -u=builder:builder --volume /mnt/files/scripts/CircuitTester:/CircuitTester:z -ti qtlin /bin/runtest`;
 }elsif($ARGV[0] eq "win"){
 	print `podman run -u=builder:builder --volume /mnt/files/scripts/CircuitTester:/CircuitTester:z -ti qtwin /bin/build`;
 }

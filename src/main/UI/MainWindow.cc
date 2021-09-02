@@ -121,7 +121,7 @@ void MainWindow::pointerGroupClicked() {
 
 
 void MainWindow::itemInserted(UIComponent* c) {
-    pointerTypeGroup->button(int(Scene::MOVE_ITEM))->setChecked(true);
+    pointerTypeGroup->button(int(Scene::MOVE))->setChecked(true);
     scene->setMode(Scene::Mode(pointerTypeGroup->checkedId()));
     buttonGroup->button(c->getId())->setChecked(false);
 }
@@ -238,7 +238,7 @@ void MainWindow::createToolbars() {
     linePointerButton->setIcon(QIcon(":/images/linepointer.png"));
 
     pointerTypeGroup = new QButtonGroup(this);
-    pointerTypeGroup->addButton(pointerButton, int(Scene::MOVE_ITEM));
+    pointerTypeGroup->addButton(pointerButton, int(Scene::MOVE));
     pointerTypeGroup->addButton(linePointerButton, int(Scene::INSERT_LINE));
     connect(pointerTypeGroup, static_cast<void(QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked),
             this, &MainWindow::pointerGroupClicked);  // https://doc.qt.io/archives/qt-5.6/qbuttongroup.html#buttonClicked
@@ -365,6 +365,8 @@ void MainWindow::openScene() {
     CircuitSaver::loadCircuit(name, scene);
 }
 
+
+//TODO move all this to the SaveLoad class
 void copyFile(std::string src, std::string dst){
     std::ifstream in(src);
     std::ofstream out(dst);

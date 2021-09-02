@@ -101,12 +101,10 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
             std::cout << startItem->componentId << " => " << endItem->componentId << std::endl;
 
             auto *arrow = new Arrow(startItem, endItem);
-            arrow->setColor(Qt::black);
             startItem->addArrow(arrow);
             endItem->addArrow(arrow);
-            arrow->setZValue(-1000.0);
             s->addItem(arrow);
-            arrow->updatePosition();
+            arrow->update();
         }
     }
 

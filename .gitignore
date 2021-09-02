@@ -55,5 +55,7 @@ compile_commands.json
 
 /builds/
 /build/
-/linbuild/
-/winbuild/
+/linbuild5/
+/linbuild6/
+/winbuild5/
+/winbuild6/

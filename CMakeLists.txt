@@ -17,10 +17,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-message("QT version: ${QT_VER}")
-
 if(${QT_VER})
-
 else()
     set(QT_VER 5)
 endif()

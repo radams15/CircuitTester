@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['ui_5fbattery',['UI_BATTERY',['../UIComponent_8h.html#a81f78fc173dedefe5a049c0aa3eed2c0a49f40959c027bf64b81e72ff62fa02f8',1,'UIComponent.h']]],
-  ['ui_5fresistor',['UI_RESISTOR',['../UIComponent_8h.html#a81f78fc173dedefe5a049c0aa3eed2c0ac2ffe4039c0c95e07d62ab54c1edec87',1,'UIComponent.h']]],
-  ['ui_5fswitch',['UI_SWITCH',['../UIComponent_8h.html#a81f78fc173dedefe5a049c0aa3eed2c0a14b78befbb80279e2b846dff8316337f',1,'UIComponent.h']]],
-  ['ui_5fwire',['UI_WIRE',['../UIComponent_8h.html#a81f78fc173dedefe5a049c0aa3eed2c0ada0267a92df06ed966af7520301b2a2e',1,'UIComponent.h']]]
+  ['voltage_22955',['VOLTAGE',['../classUnknown.html#a7f0c0a904314de1c5575a0b4513d8421a95300c3bdd033ed11361fee99bca9071',1,'Unknown']]]
 ];

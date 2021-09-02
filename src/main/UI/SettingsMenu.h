@@ -1,6 +1,7 @@
-//
-// Created by rhys on 05/08/2021.
-//
+/** @brief
+ * @author Rhys Adams
+ * @date 05/08/2021
+ */
 
 #ifndef CIRCUITTESTER_CPP_SPOILER_H
 #define CIRCUITTESTER_CPP_SPOILER_H

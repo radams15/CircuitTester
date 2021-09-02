@@ -1,3 +1,8 @@
+/**
+ * @author Rhys Adams
+ * @date 29/01/2021
+ */
+
 #ifndef DIAGRAMSCENE_H
 #define DIAGRAMSCENE_H
 
@@ -21,7 +26,9 @@ class Scene : public QGraphicsScene{
 
 public:
     enum Mode {
-        INSERT_ITEM, INSERT_LINE, MOVE_ITEM
+        INSERT_ITEM,
+        INSERT_LINE,
+        MOVE
     };
 
     explicit Scene(QObject *parent = nullptr);
