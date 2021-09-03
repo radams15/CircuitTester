@@ -14,6 +14,7 @@
 #include <QPainter>
 #include <QBuffer>
 #include <fstream>
+#include <regex>
 
 const std::string CircuitSaver::ext = ".cir";
 
@@ -28,7 +29,7 @@ void CircuitSaver::saveCircuit(std::string name, SceneItems items) {
 
     std::string path = getPath(name);
 
-    std::cout << "Save to: " << path << std::endl;
+    std::cout << "Save: '" << path << "'" << std::endl;
 
     std::ofstream file(path);
     file << data << std::endl;
@@ -38,7 +39,12 @@ void CircuitSaver::saveCircuit(std::string name, SceneItems items) {
 void CircuitSaver::loadCircuit(std::string name, Scene* s) {
     std::string path = getPath(name);
 
-    std::cout << "Load: " << path << std::endl;
+    if(not UserUtils::pathExists(path)){
+        std::cerr << "Directory: '" << path << "' does not exist!" << std::endl;
+        return;
+    }
+
+    std::cout << "Load: '" << path << "'" << std::endl;
 
     std::ifstream in(path);
 
@@ -191,4 +197,32 @@ json CircuitSaver::serialiseUIComponent(UIComponent* comp) {
     out["pos"] = json::array({comp->pos().x(), comp->pos().y()});
 
     return out;
+}
+
+void CircuitSaver::exportCircuit(std::string name, std::string path) {
+    auto saveFile = getPath(name);
+
+    if(path.empty()){
+        return;
+    }
+
+    if(! UserUtils::endsWith(path, ".cir")){
+        path += ".cir";
+    }
+
+    UserUtils::copyFile(saveFile, path);
+}
+
+void CircuitSaver::importCircuit(std::string path) {
+    std::regex nameRegex(R"(.*(\/|\\)(.*).cir)");
+    std::cmatch match;
+    if(! std::regex_search(path.c_str(), match, nameRegex)){
+        std::cerr << "Cannot regex match: " << path << std::endl;
+        return;
+    }
+
+    if(match[2] != ""){
+        auto saveFile = CircuitSaver::getPath(match[2]);
+        UserUtils::copyFile(path, saveFile);
+    }
 }

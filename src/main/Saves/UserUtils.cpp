@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <sstream>
+#include <fstream>
 
 #if UNIX
 #include <unistd.h>
@@ -18,10 +19,10 @@
 
 #define SAVE_FOLDER "CircuitSimulator"
 
-bool dirExists(std::string dir){
+bool UserUtils::pathExists(std::string dir){
 #if UNIX
     struct stat sb; // https://stackoverflow.com/questions/3828192/checking-if-a-directory-exists-in-unix-system-call
-    if (stat(dir.c_str(), &sb) == 0 && S_ISDIR(sb.st_mode)){
+    if (stat(dir.c_str(), &sb) == 0){
         return true;
     }
     return false;
@@ -31,18 +32,17 @@ bool dirExists(std::string dir){
         return false;
     }
 
-    if (ftyp & FILE_ATTRIBUTE_DIRECTORY){
+    if (ftyp){
         return true;
     }
 
     return false;
 #else
-    std::cerr << "Cannot determine OS (dirExists)!" << std::endl;
-    exit(1);
+#error Cannot determine OS (dirExists)!
 #endif
 }
 
-bool createDirTree(std::string tree){ // https://stackoverflow.com/questions/675039/how-can-i-create-directory-tree-in-c-linux
+bool UserUtils::createDirTree(std::string tree){ // https://stackoverflow.com/questions/675039/how-can-i-create-directory-tree-in-c-linux
 #if UNIX
     mode_t mode = 0755;
     int ret = mkdir(tree.c_str(), mode);
@@ -66,7 +66,7 @@ bool createDirTree(std::string tree){ // https://stackoverflow.com/questions/675
             return 0 == mkdir(tree.c_str(), mode);
 
         case EEXIST:
-            return dirExists(tree);
+            return pathExists(tree);
 
             default:
                 return false;
@@ -80,7 +80,7 @@ bool createDirTree(std::string tree){ // https://stackoverflow.com/questions/675
 
     return false;
 #else
-#error "Cannot determine OS (createDirTree)!"
+#error Cannot determine OS (createDirTree)!
 #endif
 }
 
@@ -94,7 +94,7 @@ std::string UserUtils::getSaveDir() {
 #elif defined(_WIN32)
     out << R"(C:\Users\)" << getUserName() << R"(\AppData\Local\)" << SAVE_FOLDER << R"(\save\)";
 #else
-#error "Cannot determine OS (getOs)!"
+#error Cannot determine OS (getOs)!
 #endif
 
     return out.str();
@@ -116,14 +116,32 @@ std::string UserUtils::getUserName() {
     GetUserName(username, &username_len);
     return std::string(username);
 #else
-#error "Cannot determine OS (getUsername)!"
+#error Cannot determine OS (getUsername)!
 #endif
 }
 
 bool UserUtils::saveDirExists() {
-    return dirExists(getSaveDir());
+    return pathExists(getSaveDir());
 }
 
 bool UserUtils::createSaveDir() {
     return createDirTree(getSaveDir());
+}
+
+void UserUtils::copyFile(std::string src, std::string dst){
+    std::ifstream in(src);
+    std::ofstream out(dst);
+
+    out << in.rdbuf();
+
+    in.close();
+    out.close();
+}
+
+bool UserUtils::endsWith(std::string fullString, std::string ending) {
+    if (fullString.length() >= ending.length()) {
+        return (0 == fullString.compare (fullString.length() - ending.length(), ending.length(), ending));
+    } else {
+        return false;
+    }
 }

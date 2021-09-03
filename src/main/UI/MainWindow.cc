@@ -15,6 +15,8 @@
 #include "../Saves/CircuitSaver.h"
 #include "AnalysisMapper.h"
 
+#include "../Saves/UserUtils.h"
+
 #include <QtWidgets>
 #include <QInputDialog>
 #include <iostream>
@@ -102,7 +104,7 @@ void MainWindow::buttonGroupClicked(QAbstractButton *button) {
 
 
 void MainWindow::deleteItem() {
-    // First delete all the arrows.
+    // First delete all the lines.
     QList<QGraphicsItem *> selectedItems = scene->selectedItems();
     for (QGraphicsItem *item : selectedItems) {
         if (item->type() == Line::Type) {
@@ -367,80 +369,57 @@ void MainWindow::itemRightClicked(UIComponent* item) {
 
 void MainWindow::saveScene() {
     std::vector<UIComponent*> components;
-    std::vector<Line*> arrows;
+    std::vector<Line*> lines;
 
+    // Sort the items into components and lines.
     for(QGraphicsItem *i : scene->items()){
         if(IS_TYPE(UIComponent, i)) {
+            // If it is a component, cast and add to components.
             components.push_back((UIComponent*) i);
         } else if(IS_TYPE(Line, i)) {
-            arrows.push_back((Line*) i);
+            // If it is a line, cast and add to lines.
+            lines.push_back((Line*) i);
         }
     }
 
+    // Is there already a circuit open? If not name this circuit.
     if(currentOpenedCircuit.empty()){
+        // Prompt the user for the name of the circuit to save.
         std::string name = QInputDialog::getText(this, tr("Circuit Name"), tr("Name")).toStdString();
         currentOpenedCircuit = name;
     }
 
+    // If the user still didn't name the circuit then quit the save.
     if(currentOpenedCircuit.empty()){
         return;
     }
 
-    CircuitSaver::saveCircuit(currentOpenedCircuit, SceneItems{components, arrows});
+    CircuitSaver::saveCircuit(currentOpenedCircuit, SceneItems{components, lines});
 }
 
 void MainWindow::openScene() {
+    // Prompt the user for the name of the circuit to open.
     std::string name = QInputDialog::getText(this, tr("Circuit Name"), tr("Name")).toStdString();
-    currentOpenedCircuit = name;
     CircuitSaver::loadCircuit(name, scene);
+    currentOpenedCircuit = name;
 }
 
-
-//TODO move all this to the SaveLoad class
-void copyFile(std::string src, std::string dst){
-    std::ifstream in(src);
-    std::ofstream out(dst);
-
-    out << in.rdbuf();
-
-    in.close();
-    out.close();
-}
-
-bool endsWith(std::string fullString, std::string ending) {
-    if (fullString.length() >= ending.length()) {
-        return (0 == fullString.compare (fullString.length() - ending.length(), ending.length(), ending));
-    } else {
-        return false;
-    }
-}
 
 void MainWindow::importScene() {
+    // Get the file which the user wants to load.
     std::string toImport = QFileDialog::getOpenFileName(this, tr("Source"), ".", tr("Circuit Files (*.cir)")).toStdString();
 
-    std::regex nameRegex(R"(.*(\/|\\)(.*).cir)");
-    std::cmatch match;
-    if(! std::regex_search(toImport.c_str(), match, nameRegex)){
-        std::cerr << "Cannot regex match: " << toImport << std::endl;
-        return;
-    }
-
-    if(match[2] != ""){
-        auto saveFile = CircuitSaver::getPath(match[2]);
-        copyFile(toImport, saveFile);
-    }
+    // Load that file.
+    CircuitSaver::importCircuit(toImport);
 }
 
 void MainWindow::exportScene() {
+    // Save the scene if not already saved.
     saveScene();
-    auto saveFile = CircuitSaver::getPath(currentOpenedCircuit);
 
+    // Get the path where the user wants to export the scene.
     auto fileName = QFileDialog::getSaveFileName(this, tr("Destination"), ".", tr("Circuit Files (*.cir)")).toStdString();
 
-    if(! fileName.empty()){
-        if(!endsWith(fileName, ".cir")){
-            fileName += ".cir";
-        }
-        copyFile(saveFile, fileName);
-    }
+    // Export the circuit to that location.
+    CircuitSaver::exportCircuit(currentOpenedCircuit, fileName);
 }

@@ -8,12 +8,14 @@
 
 #include <string>
 
-#define UNIX defined(unix) || defined(__unix__) || defined(__unix) || defined(__APPLE__) || defined(__linux) || defined(__linux__)
-#define WINDOWS defined(_WIN32)
+#define UNIX (defined(unix) || defined(__unix__) || defined(__unix) || defined(__APPLE__) || defined(__linux) || defined(__linux__))
+#define WINDOWS (defined(_WIN32))
 
 class UserUtils {
 private:
     static std::string getUserName();
+
+    static bool createDirTree(std::string tree);
 
 public:
 #if UNIX
@@ -25,6 +27,11 @@ public:
     static std::string getSaveDir();
     static bool saveDirExists();
     static bool createSaveDir();
+    static bool pathExists(std::string dir);
+
+    static void copyFile(std::string src, std::string dst);
+
+    static bool endsWith(std::string fullString, std::string ending);
 };
 
 

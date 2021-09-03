@@ -57,7 +57,7 @@ void SceneItem::addLine(Line* line){
 
 QVariant SceneItem::itemChange(GraphicsItemChange change, const QVariant &value){
     if (change == QGraphicsItem::ItemPositionChange) {
-        // Update all the arrows attached to this item.
+        // Update all the lines attached to this item.
         for (Line* arrow : lines){
             arrow->update();
         }

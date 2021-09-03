@@ -109,16 +109,16 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    ((<a class="code" href="classBattery.html">Battery</a>*)components[0])-&gt;voltageSpinner-&gt;setValue(15);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ((<a class="code" href="classResistor.html">Resistor</a>*)components[1])-&gt;resistanceSpinner-&gt;setValue(2);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::vector&lt;Line*&gt; arrows = {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::vector&lt;Line*&gt; lines = {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">new</span> <a class="code" href="classLine.html">Line</a>(components[0], components[1]),</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">new</span> <a class="code" href="classLine.html">Line</a>(components[1], components[0]),</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    components[0]-&gt;addLine(arrows[0]);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    components[0]-&gt;addLine(arrows[1]);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    components[1]-&gt;addLine(arrows[0]);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    components[1]-&gt;addLine(arrows[1]);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    components[0]-&gt;addLine(lines[0]);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    components[0]-&gt;addLine(lines[1]);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    components[1]-&gt;addLine(lines[0]);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    components[1]-&gt;addLine(lines[1]);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::string out = <a class="code" href="classCircuitSaver.html#aab319e8ddda0f4e6ceb944d88359b51b">CircuitSaver::serialiseCircuit</a>(<span class="stringliteral">&quot;Circuit 1&quot;</span>, <a class="code" href="structSceneItems.html">SceneItems</a>{components, arrows, <span class="keyword">nullptr</span>});</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::string out = <a class="code" href="classCircuitSaver.html#aab319e8ddda0f4e6ceb944d88359b51b">CircuitSaver::serialiseCircuit</a>(<span class="stringliteral">&quot;Circuit 1&quot;</span>, <a class="code" href="structSceneItems.html">SceneItems</a>{components, lines, <span class="keyword">nullptr</span>});</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">/*std::string expected = R&quot;({&quot;name&quot;:&quot;Circuit 1&quot;,&quot;parts&quot;:[{&quot;component&quot;:{&quot;state&quot;:true,&quot;type&quot;:2,&quot;voltage&quot;:15.0},&quot;connections&quot;:[[1.0,17.0]]},{&quot;component&quot;:{&quot;resistance&quot;:2.0,&quot;type&quot;:1},&quot;connections&quot;:[[10.0,20.0]]}]})&quot;;</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"></span> </div>

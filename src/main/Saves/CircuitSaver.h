@@ -17,7 +17,7 @@ using json = nlohmann::json;
 
 struct SceneItems{
     std::vector<UIComponent*> components;
-    std::vector<Line*> arrows;
+    std::vector<Line*> lines;
     Scene* scene = nullptr;
 };
 
@@ -37,6 +37,9 @@ public:
     static std::string serialiseCircuit(std::string name, SceneItems items);
 
     static void loadCircuit(std::string name, Scene* s);
+
+    static void exportCircuit(std::string name, std::string path);
+    static void importCircuit(std::string path);
 };
 
 #endif //CIRCUITTESTER_CIRCUITSAVER_H

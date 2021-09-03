@@ -136,7 +136,7 @@ $(function() {
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classSceneItem.html#a960792141ca3864aa08589095357ad5c">   58</a></span>&#160;<a class="codeRef" href="https://doc.qt.io/qt-5/qvariant.html">QVariant</a> <a class="code" href="classSceneItem.html#a960792141ca3864aa08589095357ad5c">SceneItem::itemChange</a>(GraphicsItemChange change, <span class="keyword">const</span> <a class="codeRef" href="https://doc.qt.io/qt-5/qvariant.html">QVariant</a> &amp;value){</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (change == QGraphicsItem::ItemPositionChange) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// Update all the arrows attached to this item.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// Update all the lines attached to this item.</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classLine.html">Line</a>* arrow : <a class="code" href="classSceneItem.html#a4bdba74b206e8baaa8e6711b1027d75a">lines</a>){</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            arrow-&gt;update();</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>

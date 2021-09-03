@@ -181,7 +181,7 @@ $(function() {
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classMainWindow.html#a24bbb70be6f6e1007b0d6cbf7cd5f64d">  104</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMainWindow.html#a24bbb70be6f6e1007b0d6cbf7cd5f64d">MainWindow::deleteItem</a>() {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// First delete all the arrows.</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// First delete all the lines.</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="codeRef" href="https://doc.qt.io/qt-5/qlist.html">QList&lt;QGraphicsItem *&gt;</a> selectedItems = <a class="code" href="classMainWindow.html#a5fac52928ceff08c8137f4689aee3874">scene</a>-&gt;selectedItems();</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">for</span> (QGraphicsItem *item : selectedItems) {</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span> (item-&gt;type() == Line::Type) {</div>
@@ -446,13 +446,13 @@ $(function() {
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
 <div class="line"><a name="l00368"></a><span class="lineno"><a class="line" href="classMainWindow.html#a8c5c70395af911e771dbf61da52169ab">  368</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMainWindow.html#a8c5c70395af911e771dbf61da52169ab">MainWindow::saveScene</a>() {</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    std::vector&lt;UIComponent*&gt; components;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    std::vector&lt;Line*&gt; arrows;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    std::vector&lt;Line*&gt; lines;</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordflow">for</span>(QGraphicsItem *i : <a class="code" href="classMainWindow.html#a5fac52928ceff08c8137f4689aee3874">scene</a>-&gt;items()){</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="AnalysisMapper_8h.html#ac2f2b00884edd6025a1dd60300a7ed84">IS_TYPE</a>(<a class="code" href="classUIComponent.html">UIComponent</a>, i)) {</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            components.push_back((<a class="code" href="classUIComponent.html">UIComponent</a>*) i);</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="AnalysisMapper_8h.html#ac2f2b00884edd6025a1dd60300a7ed84">IS_TYPE</a>(<a class="code" href="classLine.html">Line</a>, i)) {</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            arrows.push_back((<a class="code" href="classLine.html">Line</a>*) i);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            lines.push_back((<a class="code" href="classLine.html">Line</a>*) i);</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        }</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    }</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
@@ -465,7 +465,7 @@ $(function() {
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    }</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <a class="code" href="classCircuitSaver.html#ac93a4ae9dca765e7ae89e20e5e5ab718">CircuitSaver::saveCircuit</a>(<a class="code" href="classMainWindow.html#ad60b3bc3902643dd8f4dbf48ed1c2b6b">currentOpenedCircuit</a>, <a class="code" href="structSceneItems.html">SceneItems</a>{components, arrows});</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <a class="code" href="classCircuitSaver.html#ac93a4ae9dca765e7ae89e20e5e5ab718">CircuitSaver::saveCircuit</a>(<a class="code" href="classMainWindow.html#ad60b3bc3902643dd8f4dbf48ed1c2b6b">currentOpenedCircuit</a>, <a class="code" href="structSceneItems.html">SceneItems</a>{components, lines});</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
 <div class="line"><a name="l00392"></a><span class="lineno"><a class="line" href="classMainWindow.html#af302ce74b30876facddc371a6842d76a">  392</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMainWindow.html#af302ce74b30876facddc371a6842d76a">MainWindow::openScene</a>() {</div>
