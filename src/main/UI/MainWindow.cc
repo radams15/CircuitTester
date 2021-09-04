@@ -21,6 +21,7 @@
 #include <QInputDialog>
 #include <iostream>
 #include <iomanip>
+#include <sstream>
 
 MainWindow::MainWindow() {
     createActions();

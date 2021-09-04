@@ -81,12 +81,13 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Scene_8h.html">Scene.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classSceneText.html#a3dcbb62d06008130e4fc08716e4574bc">    5</a></span>&#160;<a class="code" href="classSceneText.html#a3dcbb62d06008130e4fc08716e4574bc">SceneText::SceneText</a>(<span class="keyword">const</span> std::string text, QGraphicsItem *parent) : QGraphicsTextItem(parent){</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    setPlainText(<a class="codeRef" href="https://doc.qt.io/qt-5/qstring.html#fromStdString">QString::fromStdString</a>(text));</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classSceneText.html#ac068306858a45a3b5033ea0b98170be7">    5</a></span>&#160;<a class="code" href="classSceneText.html#ac068306858a45a3b5033ea0b98170be7">SceneText::SceneText</a>(<span class="keyword">const</span> std::string text) : QGraphicsTextItem(nullptr){</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="comment">// Set the text to the text param by converting to QString.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    setPlainText(<a class="codeRef" href="https://doc.qt.io/qt-5/qstring.html#fromStdString">QString::fromStdString</a>(text));</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
 <div class="ttc" id="aSceneText_8h_html"><div class="ttname"><a href="SceneText_8h.html">SceneText.h</a></div></div>
 <div class="ttc" id="aScene_8h_html"><div class="ttname"><a href="Scene_8h.html">Scene.h</a></div></div>
-<div class="ttc" id="aclassSceneText_html_a3dcbb62d06008130e4fc08716e4574bc"><div class="ttname"><a href="classSceneText.html#a3dcbb62d06008130e4fc08716e4574bc">SceneText::SceneText</a></div><div class="ttdeci">SceneText(const std::string text, QGraphicsItem *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="SceneText_8cc_source.html#l00005">SceneText.cc:5</a></div></div>
+<div class="ttc" id="aclassSceneText_html_ac068306858a45a3b5033ea0b98170be7"><div class="ttname"><a href="classSceneText.html#ac068306858a45a3b5033ea0b98170be7">SceneText::SceneText</a></div><div class="ttdeci">SceneText(const std::string text)</div><div class="ttdoc">Initialiser.</div><div class="ttdef"><b>Definition:</b> <a href="SceneText_8cc_source.html#l00005">SceneText.cc:5</a></div></div>
 <div class="ttc" id="aqstring_html_fromStdString"><div class="ttname"><a href="https://doc.qt.io/qt-5/qstring.html#fromStdString">QString::fromStdString</a></div><div class="ttdeci">QString fromStdString(const std::string &amp;str)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

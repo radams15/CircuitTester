@@ -14,8 +14,6 @@
 
 #include "SceneItem.h"
 
-//TODO Finish commenting
-
 /** @brief Enum to determine the type of UI component is in the
  * generic UIComponent.
  *
@@ -33,27 +31,62 @@ enum ComponentType{
  */
 class UIComponent : public SceneItem{
 protected:
-    /** @brief ComponentType
+    /** @brief Is type ComponentType, allows other functions to find what type of element
+     * pointers are.
      *
      */
     int ID;
 
+    /** @brief Protected initialiser as we don't want to be able to
+     * initialise a bare UIComponent, only its derivatives.
+     *
+     * @param id The type of component.
+     * @param resourcePath The path to the image of the component.
+     */
     UIComponent(int id, std::string resourcePath);
 
 public:
+    /** @brief Getter for ID.
+     *
+     * @return The component ID.
+     */
     inline int getId() const { return ID; }
 
+    /** @brief The constantly incrementing id field which is used to differentiate between
+     * individual unique components. This is only used in CircuitSaver.
+     *
+     */
     static int currentId;
+
+    /** @brief The id of the component, this does not change but is to show connections
+     * in save files, e.g. component 1 connects to component 2.
+     *
+     */
     int componentId;
 
+    /** @brief A container that holds the settings for each component.
+     *
+     */
     QVBoxLayout* settingsBox;
 
+    /** @brief Stores the start node for conversion to MNAComponents.
+     *
+     * Default -1 as unset.
+     *
+     */
     int n0 = -1;
+
+    /** @brief Stores the end node for conversion to MNAComponents.
+     *
+     * Default -1 as unset.
+     *
+     */
     int n1 = -1;
 
+    /** @brief List of lines that are connected to this component.
+     *
+     */
     std::vector<Line*> connections;
-
-    bool equals(UIComponent* c);
 };
 
 

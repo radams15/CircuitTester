@@ -9,11 +9,20 @@
 #include <QGraphicsTextItem>
 #include <string>
 
+/** @brief Places text on the screen.
+ *
+ * Simple wrapper that sets the text as std::string through the initialiser.
+ *
+ */
 class SceneText : public QGraphicsTextItem {
     Q_OBJECT
 
 public:
-    explicit SceneText(const std::string text, QGraphicsItem *parent = nullptr);
+    /** @brief Initialiser.
+     *
+     * @param text The text to show.
+     */
+    explicit SceneText(const std::string text);
 };
 
 
