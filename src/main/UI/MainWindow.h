@@ -93,6 +93,11 @@ private slots:
      */
     void exportScene();
 
+    /** @brief Called when the open save directory button is clicked from the toolbar.
+     *
+     */
+    void openSaveDir();
+
     /** @brief Called when the run button is clicked from the toolbar.
      *
     */
@@ -188,6 +193,11 @@ private:
      *
      */
     QAction* importAction;
+
+    /** @brief An action that opens the save directory.
+     *
+     */
+    QAction* saveDirAction;
 
     /** @brief The file menu on the menubar.
      *

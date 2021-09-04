@@ -77,13 +77,18 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Parent class of anything with a resistance (<a class="el" href="classResistor.html" title="Resistor component with configurable resistance.">Resistor</a>, <a class="el" href="classSwitch.html" title="Switch component that can be on/off.">Switch</a>, <a class="el" href="classWire.html" title="Wire component with configurable length, area and material.">Wire</a>).  
+ <a href="classResistiveElement.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ResistiveElement_8h_source.html">ResistiveElement.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7d22751834fa24a4bc3d2bb73af08a67"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classResistiveElement.html#a7d22751834fa24a4bc3d2bb73af08a67">ResistiveElement</a> (int <a class="el" href="classUIComponent.html#a8b136c41f4894ab6b01e9bd807ad8c2f">ID</a>, std::string resourcePath)</td></tr>
+<tr class="memdesc:a7d22751834fa24a4bc3d2bb73af08a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser.  <a href="classResistiveElement.html#a7d22751834fa24a4bc3d2bb73af08a67">More...</a><br /></td></tr>
 <tr class="separator:a7d22751834fa24a4bc3d2bb73af08a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a679c018a5a9b174b5290f31e0d25596c"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classResistiveElement.html#a679c018a5a9b174b5290f31e0d25596c">getResistance</a> ()=0</td></tr>
+<tr class="memdesc:a679c018a5a9b174b5290f31e0d25596c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual method for getting the resistance of a resistive element.  <a href="classResistiveElement.html#a679c018a5a9b174b5290f31e0d25596c">More...</a><br /></td></tr>
 <tr class="separator:a679c018a5a9b174b5290f31e0d25596c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classUIComponent"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classUIComponent')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classUIComponent.html">UIComponent</a></td></tr>
 <tr class="memitem:aecae5af70cb4662d433eb6f5c4b32924 inherit pub_methods_classUIComponent"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIComponent.html#aecae5af70cb4662d433eb6f5c4b32924">getId</a> () const</td></tr>
@@ -156,8 +161,11 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a37db454e182a96cd68f1aa06ed0db665 inherit pro_attribs_classSceneItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="ResistiveElement_8h_source.html#l00012">12</a> of file <a class="el" href="ResistiveElement_8h_source.html">ResistiveElement.h</a>.</p>
+<div class="textblock"><p>Parent class of anything with a resistance (<a class="el" href="classResistor.html" title="Resistor component with configurable resistance.">Resistor</a>, <a class="el" href="classSwitch.html" title="Switch component that can be on/off.">Switch</a>, <a class="el" href="classWire.html" title="Wire component with configurable length, area and material.">Wire</a>). </p>
+<dl class="section author"><dt>Author</dt><dd>Rhys Adams </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>12/08/2021 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ResistiveElement_8h_source.html#l00016">16</a> of file <a class="el" href="ResistiveElement_8h_source.html">ResistiveElement.h</a>.</p>
 </div><div class="dynheader">
 Inheritance diagram for ResistiveElement:</div>
 <div class="dyncontent">
@@ -166,9 +174,9 @@ Inheritance diagram for ResistiveElement:</div>
   <map id="ResistiveElement_map" name="ResistiveElement_map">
 <area href="classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="UIComponent" shape="rect" coords="145,112,280,136"/>
 <area href="classSceneItem.html" title="An image on the Scene." alt="SceneItem" shape="rect" coords="145,56,280,80"/>
-<area href="classResistor.html" alt="Resistor" shape="rect" coords="0,224,135,248"/>
-<area href="classSwitch.html" alt="Switch" shape="rect" coords="145,224,280,248"/>
-<area href="classWire.html" alt="Wire" shape="rect" coords="290,224,425,248"/>
+<area href="classResistor.html" title="Resistor component with configurable resistance." alt="Resistor" shape="rect" coords="0,224,135,248"/>
+<area href="classSwitch.html" title="Switch component that can be on/off." alt="Switch" shape="rect" coords="145,224,280,248"/>
+<area href="classWire.html" title="Wire component with configurable length, area and material." alt="Wire" shape="rect" coords="290,224,425,248"/>
   </map>
 </div></div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -206,7 +214,16 @@ Inheritance diagram for ResistiveElement:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ResistiveElement_8h_source.html#l00016">16</a> of file <a class="el" href="ResistiveElement_8h_source.html">ResistiveElement.h</a>.</p>
+<p>Initialiser. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ID</td><td>Type of the component. </td></tr>
+    <tr><td class="paramname">resourcePath</td><td>Path to the image of the component. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="ResistiveElement_8h_source.html#l00023">23</a> of file <a class="el" href="ResistiveElement_8h_source.html">ResistiveElement.h</a>.</p>
 
 </div>
 </div>
@@ -233,6 +250,9 @@ Inheritance diagram for ResistiveElement:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Virtual method for getting the resistance of a resistive element. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 <p>Implemented in <a class="el" href="classWire.html#a550394607e3aef80775fb47679457e5b">Wire</a>, <a class="el" href="classSwitch.html#a65477636556e38f8612fa10794a7cbbf">Switch</a>, and <a class="el" href="classResistor.html#ac177bb5486b29fc9fef311cc7a42c919">Resistor</a>.</p>
 

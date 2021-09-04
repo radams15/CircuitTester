@@ -136,3 +136,12 @@ void Scene::removeAllText() {
         }
     }
 }
+
+void Scene::setSize(int width, int height) {
+    // Set class values width, height for reference later in CircuitSaver.
+    this->width = width;
+    this->height = height;
+
+    // Set scene size to width, height starting at 0, 0 at the top left.
+    setSceneRect(QRectF(0, 0, width, height));
+}

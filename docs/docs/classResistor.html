@@ -72,12 +72,15 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classResistor-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Resistor Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="classResistor.html" title="Resistor component with configurable resistance.">Resistor</a> component with configurable resistance.  
+ <a href="classResistor.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Resistor_8h_source.html">Resistor.h</a>&gt;</code></p>
 <table class="memberdecls">
@@ -89,12 +92,15 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab2f7a86185be7da9d228a77683b87040"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classResistor.html#ab2f7a86185be7da9d228a77683b87040">Resistor</a> ()</td></tr>
-<tr class="separator:ab2f7a86185be7da9d228a77683b87040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50e62c21274a8b929d2fbdb8e0d8653e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classResistor.html#a50e62c21274a8b929d2fbdb8e0d8653e">Resistor</a> (double resistance=1.0f)</td></tr>
+<tr class="memdesc:a50e62c21274a8b929d2fbdb8e0d8653e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser.  <a href="classResistor.html#a50e62c21274a8b929d2fbdb8e0d8653e">More...</a><br /></td></tr>
+<tr class="separator:a50e62c21274a8b929d2fbdb8e0d8653e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac177bb5486b29fc9fef311cc7a42c919"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classResistor.html#ac177bb5486b29fc9fef311cc7a42c919">getResistance</a> () override</td></tr>
+<tr class="memdesc:ac177bb5486b29fc9fef311cc7a42c919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overrides the value in <a class="el" href="classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire).">ResistiveElement</a> to return the value of resistanceSpinner.  <a href="classResistor.html#ac177bb5486b29fc9fef311cc7a42c919">More...</a><br /></td></tr>
 <tr class="separator:ac177bb5486b29fc9fef311cc7a42c919"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classResistiveElement"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classResistiveElement')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classResistiveElement.html">ResistiveElement</a></td></tr>
 <tr class="memitem:a7d22751834fa24a4bc3d2bb73af08a67 inherit pub_methods_classResistiveElement"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classResistiveElement.html#a7d22751834fa24a4bc3d2bb73af08a67">ResistiveElement</a> (int <a class="el" href="classUIComponent.html#a8b136c41f4894ab6b01e9bd807ad8c2f">ID</a>, std::string resourcePath)</td></tr>
+<tr class="memdesc:a7d22751834fa24a4bc3d2bb73af08a67 inherit pub_methods_classResistiveElement"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser.  <a href="classResistiveElement.html#a7d22751834fa24a4bc3d2bb73af08a67">More...</a><br /></td></tr>
 <tr class="separator:a7d22751834fa24a4bc3d2bb73af08a67 inherit pub_methods_classResistiveElement"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classUIComponent"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classUIComponent')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classUIComponent.html">UIComponent</a></td></tr>
 <tr class="memitem:aecae5af70cb4662d433eb6f5c4b32924 inherit pub_methods_classUIComponent"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIComponent.html#aecae5af70cb4662d433eb6f5c4b32924">getId</a> () const</td></tr>
@@ -130,10 +136,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4cec31e99d6de09cb0004379670b3ee7 inherit pub_methods_classSceneItem"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the end point of the component.  <a href="classSceneItem.html#a4cec31e99d6de09cb0004379670b3ee7">More...</a><br /></td></tr>
 <tr class="separator:a4cec31e99d6de09cb0004379670b3ee7 inherit pub_methods_classSceneItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
 <tr class="memitem:ac881e01633d512ec18a8b5ab0f8cbad0"><td class="memItemLeft" align="right" valign="top">QDoubleSpinBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classResistor.html#ac881e01633d512ec18a8b5ab0f8cbad0">resistanceSpinner</a></td></tr>
 <tr class="separator:ac881e01633d512ec18a8b5ab0f8cbad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_classUIComponent"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classUIComponent')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classUIComponent.html">UIComponent</a></td></tr>
 <tr class="memitem:a39679cd78fb01b55b048f064f0a4d1ee inherit pub_attribs_classUIComponent"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIComponent.html#a39679cd78fb01b55b048f064f0a4d1ee">componentId</a></td></tr>
 <tr class="separator:a39679cd78fb01b55b048f064f0a4d1ee inherit pub_attribs_classUIComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,9 +158,6 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a4bdba74b206e8baaa8e6711b1027d75a inherit pub_attribs_classSceneItem"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classLine.html">Line</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSceneItem.html#a4bdba74b206e8baaa8e6711b1027d75a">lines</a></td></tr>
 <tr class="memdesc:a4bdba74b206e8baaa8e6711b1027d75a inherit pub_attribs_classSceneItem"><td class="mdescLeft">&#160;</td><td class="mdescRight">All the lines attached to this item.  <a href="classSceneItem.html#a4bdba74b206e8baaa8e6711b1027d75a">More...</a><br /></td></tr>
 <tr class="separator:a4bdba74b206e8baaa8e6711b1027d75a inherit pub_attribs_classSceneItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_attribs_classUIComponent"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classUIComponent')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classUIComponent.html">UIComponent</a></td></tr>
 <tr class="memitem:a1681d42bed3ef67dc7a31f80ab824a9c inherit pub_static_attribs_classUIComponent"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIComponent.html#a1681d42bed3ef67dc7a31f80ab824a9c">currentId</a> = 0</td></tr>
 <tr class="separator:a1681d42bed3ef67dc7a31f80ab824a9c inherit pub_static_attribs_classUIComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,15 +178,18 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a37db454e182a96cd68f1aa06ed0db665 inherit pro_attribs_classSceneItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Resistor_8h_source.html#l00011">11</a> of file <a class="el" href="Resistor_8h_source.html">Resistor.h</a>.</p>
+<div class="textblock"><p><a class="el" href="classResistor.html" title="Resistor component with configurable resistance.">Resistor</a> component with configurable resistance. </p>
+<dl class="section author"><dt>Author</dt><dd>Rhys Adams </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>08/04/2021 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Resistor_8h_source.html#l00015">15</a> of file <a class="el" href="Resistor_8h_source.html">Resistor.h</a>.</p>
 </div><div class="dynheader">
 Inheritance diagram for Resistor:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classResistor.png" usemap="#Resistor_map" alt=""/>
   <map id="Resistor_map" name="Resistor_map">
-<area href="classResistiveElement.html" alt="ResistiveElement" shape="rect" coords="0,168,135,192"/>
+<area href="classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="ResistiveElement" shape="rect" coords="0,168,135,192"/>
 <area href="classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="UIComponent" shape="rect" coords="0,112,135,136"/>
 <area href="classSceneItem.html" title="An image on the Scene." alt="SceneItem" shape="rect" coords="0,56,135,80"/>
   </map>
@@ -198,16 +207,17 @@ Inheritance diagram for Resistor:</div>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6c79ef4d777ae348037cbe90b353f9faa594d6bcaf55f234086d224223421ae9d"></a>ID&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6c79ef4d777ae348037cbe90b353f9faa594d6bcaf55f234086d224223421ae9d"></a>ID&#160;</td><td class="fielddoc"><p>Set ID to resistor. </p>
+</td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="Resistor_8h_source.html#l00015">15</a> of file <a class="el" href="Resistor_8h_source.html">Resistor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Resistor_8h_source.html#l00022">22</a> of file <a class="el" href="Resistor_8h_source.html">Resistor.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab2f7a86185be7da9d228a77683b87040"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2f7a86185be7da9d228a77683b87040">&#9670;&nbsp;</a></span>Resistor()</h2>
+<a id="a50e62c21274a8b929d2fbdb8e0d8653e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50e62c21274a8b929d2fbdb8e0d8653e">&#9670;&nbsp;</a></span>Resistor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,11 +225,20 @@ Inheritance diagram for Resistor:</div>
         <tr>
           <td class="memname">Resistor::Resistor </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>resistance</em> = <code>1.0f</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialiser. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resistance</td><td>Set resistance of the resistor in Ohms (Default 1 Ohm) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="Resistor_8cc_source.html#l00008">8</a> of file <a class="el" href="Resistor_8cc_source.html">Resistor.cc</a>.</p>
 
@@ -249,9 +268,12 @@ Inheritance diagram for Resistor:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Overrides the value in <a class="el" href="classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire).">ResistiveElement</a> to return the value of resistanceSpinner. </p>
+<dl class="section return"><dt>Returns</dt><dd>Resistance of the component in Ohms. </dd></dl>
+
 <p>Implements <a class="el" href="classResistiveElement.html#a679c018a5a9b174b5290f31e0d25596c">ResistiveElement</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Resistor_8cc_source.html#l00023">23</a> of file <a class="el" href="Resistor_8cc_source.html">Resistor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Resistor_8cc_source.html#l00027">27</a> of file <a class="el" href="Resistor_8cc_source.html">Resistor.cc</a>.</p>
 
 </div>
 </div>
@@ -261,14 +283,23 @@ Inheritance diagram for Resistor:</div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">QDoubleSpinBox* Resistor::resistanceSpinner</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+<p>Spinbox to set resistance. </p>
 
-<p class="definition">Definition at line <a class="el" href="Resistor_8h_source.html#l00019">19</a> of file <a class="el" href="Resistor_8h_source.html">Resistor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Resistor_8h_source.html#l00020">20</a> of file <a class="el" href="Resistor_8h_source.html">Resistor.h</a>.</p>
 
 </div>
 </div>

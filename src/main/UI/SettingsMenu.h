@@ -6,6 +6,7 @@
 #ifndef CIRCUITTESTER_CPP_SPOILER_H
 #define CIRCUITTESTER_CPP_SPOILER_H
 
+//TODO Start commenting
 
 #include <QWidget>
 #include <QParallelAnimationGroup>

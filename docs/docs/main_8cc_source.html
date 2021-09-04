@@ -81,7 +81,7 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QApplication&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="UserUtils_8h.html">Saves/UserUtils.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="FileUtils_8h.html">Saves/FileUtils.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MainWindow_8h.html">UI/MainWindow.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
@@ -96,13 +96,16 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">   29</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv){</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classUserUtils.html#ad0f96a09d6036f841a9ee79cba7a478a">UserUtils::createSaveDir</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="main_8cc.html#a56ae5d455770b213da90891275df2914">guiMain</a>(argc, argv);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="classFileUtils.html#a8f735203dc8b8b1e8cde47078407182a">FileUtils::saveDirExists</a>()) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classFileUtils.html#a192d3127dbd45fb7661ff69b74e99c9f">FileUtils::createSaveDir</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="main_8cc.html#a56ae5d455770b213da90891275df2914">guiMain</a>(argc, argv);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="ttc" id="aFileUtils_8h_html"><div class="ttname"><a href="FileUtils_8h.html">FileUtils.h</a></div></div>
 <div class="ttc" id="aMainWindow_8h_html"><div class="ttname"><a href="MainWindow_8h.html">MainWindow.h</a></div></div>
-<div class="ttc" id="aUserUtils_8h_html"><div class="ttname"><a href="UserUtils_8h.html">UserUtils.h</a></div></div>
+<div class="ttc" id="aclassFileUtils_html_a192d3127dbd45fb7661ff69b74e99c9f"><div class="ttname"><a href="classFileUtils.html#a192d3127dbd45fb7661ff69b74e99c9f">FileUtils::createSaveDir</a></div><div class="ttdeci">static bool createSaveDir()</div><div class="ttdoc">Creates the save directory.</div><div class="ttdef"><b>Definition:</b> <a href="FileUtils_8cpp_source.html#l00135">FileUtils.cpp:135</a></div></div>
+<div class="ttc" id="aclassFileUtils_html_a8f735203dc8b8b1e8cde47078407182a"><div class="ttname"><a href="classFileUtils.html#a8f735203dc8b8b1e8cde47078407182a">FileUtils::saveDirExists</a></div><div class="ttdeci">static bool saveDirExists()</div><div class="ttdoc">Does the save directory exist?</div><div class="ttdef"><b>Definition:</b> <a href="FileUtils_8cpp_source.html#l00131">FileUtils.cpp:131</a></div></div>
 <div class="ttc" id="aclassMainWindow_html"><div class="ttname"><a href="classMainWindow.html">MainWindow</a></div><div class="ttdoc">The main window class that is the GUI for the user on startup.</div><div class="ttdef"><b>Definition:</b> <a href="MainWindow_8h_source.html#l00031">MainWindow.h:31</a></div></div>
-<div class="ttc" id="aclassUserUtils_html_ad0f96a09d6036f841a9ee79cba7a478a"><div class="ttname"><a href="classUserUtils.html#ad0f96a09d6036f841a9ee79cba7a478a">UserUtils::createSaveDir</a></div><div class="ttdeci">static bool createSaveDir()</div><div class="ttdef"><b>Definition:</b> <a href="UserUtils_8cpp_source.html#l00127">UserUtils.cpp:127</a></div></div>
 <div class="ttc" id="amain_8cc_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdoc">Main method. This is the main program entry point, which for now just starts the guiMain method and r...</div><div class="ttdef"><b>Definition:</b> <a href="main_8cc_source.html#l00029">main.cc:29</a></div></div>
 <div class="ttc" id="amain_8cc_html_a56ae5d455770b213da90891275df2914"><div class="ttname"><a href="main_8cc.html#a56ae5d455770b213da90891275df2914">guiMain</a></div><div class="ttdeci">int guiMain(int argc, char **argv)</div><div class="ttdoc">Main GUI method. This method runs the QT GUI code and returns the status code of it.</div><div class="ttdef"><b>Definition:</b> <a href="main_8cc_source.html#l00015">main.cc:15</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

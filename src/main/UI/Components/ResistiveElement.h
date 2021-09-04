@@ -1,6 +1,7 @@
-//
-// Created by rhys on 12/08/2021.
-//
+/** @brief
+ * @author Rhys Adams
+ * @date 12/08/2021
+ */
 
 #ifndef CIRCUITTESTER_RESISTIVEELEMENT_H
 #define CIRCUITTESTER_RESISTIVEELEMENT_H
@@ -9,12 +10,22 @@
 
 #include "../UIComponent.h"
 
+/** @brief Parent class of anything with a resistance (Resistor, Switch, Wire).
+ *
+ */
 class ResistiveElement : public UIComponent {
-private:
-
 public:
+    /** @brief Initialiser.
+     *
+     * @param ID Type of the component.
+     * @param resourcePath Path to the image of the component.
+     */
     ResistiveElement(int ID, std::string resourcePath) : UIComponent(ID, std::move(resourcePath)){}
 
+    /** @brief Virtual method for getting the resistance of a resistive element.
+     *
+     * @return
+     */
     virtual double getResistance() = 0;
 };
 

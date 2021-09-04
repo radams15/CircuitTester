@@ -15,14 +15,12 @@
 #include "../Saves/CircuitSaver.h"
 #include "AnalysisMapper.h"
 
-#include "../Saves/UserUtils.h"
+#include "../Saves/FileUtils.h"
 
 #include <QtWidgets>
 #include <QInputDialog>
 #include <iostream>
 #include <iomanip>
-#include <fstream>
-#include <regex>
 
 MainWindow::MainWindow() {
     createActions();
@@ -31,7 +29,7 @@ MainWindow::MainWindow() {
 
     // Create the scene, set it to the specified size.
     scene = new Scene(this);
-    scene->setSceneRect(QRectF(0, 0, CANVAS_SIZE));
+    scene->setSize(CANVAS_SIZE);
 
     // Resize the window
     resize(WINDOW_SIZE);
@@ -226,6 +224,9 @@ void MainWindow::createActions() {
     exportAction = new QAction(tr("&Export"), this);
     exportAction->setShortcut(tr("Ctrl+E"));
     connect(exportAction, &QAction::triggered, this, &MainWindow::exportScene);
+
+    saveDirAction = new QAction(tr("Open Save Directory"), this);
+    connect(saveDirAction, &QAction::triggered, this, &MainWindow::openSaveDir);
 }
 
 
@@ -247,6 +248,7 @@ void MainWindow::createMenus() {
     itemMenu->addSeparator();
 
     aboutMenu = menuBar()->addMenu(tr("&Help"));
+    aboutMenu->addAction(saveDirAction);
     aboutMenu->addAction(aboutAction);
 }
 
@@ -422,4 +424,10 @@ void MainWindow::exportScene() {
 
     // Export the circuit to that location.
     CircuitSaver::exportCircuit(currentOpenedCircuit, fileName);
+}
+
+void MainWindow::openSaveDir() {
+    // TODO Fix open save directory button.
+    // Opens the save directory in file explorer. Not working on mac/windows yet.
+    QDesktopServices::openUrl(QString::fromStdString(FileUtils::getSaveDir()));
 }

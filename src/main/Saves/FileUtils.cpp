@@ -2,7 +2,7 @@
 // Created by rhys on 16/07/2021.
 //
 
-#include "UserUtils.h"
+#include "FileUtils.h"
 
 #include <iostream>
 #include <sstream>
@@ -19,15 +19,17 @@
 
 #define SAVE_FOLDER "CircuitSimulator"
 
-bool UserUtils::pathExists(std::string dir){
+bool FileUtils::pathExists(std::string path){
 #if UNIX
-    struct stat sb; // https://stackoverflow.com/questions/3828192/checking-if-a-directory-exists-in-unix-system-call
-    if (stat(dir.c_str(), &sb) == 0){
+    // Adapted from https://stackoverflow.com/questions/3828192/checking-if-a-directory-exists-in-unix-system-call
+    struct stat sb;
+    if (stat(path.c_str(), &sb) == 0){
         return true;
     }
     return false;
 #elif WINDOWS
-    DWORD ftyp = GetFileAttributesA(dir.c_str()); // https://stackoverflow.com/questions/8233842/how-to-check-if-directory-exist-using-c-and-winapi
+    // Adapted from https://stackoverflow.com/questions/8233842/how-to-check-if-directory-exist-using-c-and-winapi
+    DWORD ftyp = GetFileAttributesA(path.c_str());
     if (ftyp == INVALID_FILE_ATTRIBUTES){
         return false;
     }
@@ -42,40 +44,46 @@ bool UserUtils::pathExists(std::string dir){
 #endif
 }
 
-bool UserUtils::createDirTree(std::string tree){ // https://stackoverflow.com/questions/675039/how-can-i-create-directory-tree-in-c-linux
+bool FileUtils::createDirTree(std::string tree){
 #if UNIX
+    // Adapted from https://stackoverflow.com/questions/675039/how-can-i-create-directory-tree-in-c-linux
     mode_t mode = 0755;
-    int ret = mkdir(tree.c_str(), mode);
-    if (ret == 0)
+    if (mkdir(tree.c_str(), mode) == 0) { // Already exists.
         return true;
+    }
 
-    switch (errno)
-    {
-        case ENOENT:
+    switch (errno){
+        case ENOENT: // File does not exist.
             {
                 int pos = tree.find_last_of('/');
 
+                // No separators in the path, all finished.
                 if (pos == std::string::npos){
                     return false;
                 }
 
+                // Recursively create again with path up to the last separator.
                 if (!createDirTree( tree.substr(0, pos) )){
                     return false;
                 }
             }
+            // Check if file exists.
             return 0 == mkdir(tree.c_str(), mode);
 
-        case EEXIST:
+        case EEXIST: // File already exists
             return pathExists(tree);
 
-            default:
-                return false;
+        default:
+            return false;
     }
 #elif WINDOWS
-    size_t pos = 0; // https://stackoverflow.com/questions/1517685/recursive-createdirectory#12745750
+    // Adapted from https://stackoverflow.com/questions/1517685/recursive-createdirectory#12745750
+    size_t pos = 0;
     do {
+        // Find position of the last path separator.
         pos = tree.find_first_of("\\/", pos + 1);
-         CreateDirectory(tree.substr(0, pos).c_str(), NULL);
+        // CreateDirectory repeatedly until pos is end of the string.
+        CreateDirectory(tree.substr(0, pos).c_str(), NULL);
     } while (pos != std::string::npos);
 
     return false;
@@ -84,7 +92,7 @@ bool UserUtils::createDirTree(std::string tree){ // https://stackoverflow.com/qu
 #endif
 }
 
-std::string UserUtils::getSaveDir() {
+std::string FileUtils::getSaveDir() {
     std::stringstream out;
 
 #if defined(__APPLE__)
@@ -100,7 +108,7 @@ std::string UserUtils::getSaveDir() {
     return out.str();
 }
 
-std::string UserUtils::getUserName() {
+std::string FileUtils::getUserName() {
 #if UNIX
     uid_t uid = getuid(); // https://stackoverflow.com/questions/8953424/how-to-get-the-username-in-c-c-in-linux
     struct passwd* pw = getpwuid(uid);
@@ -120,28 +128,31 @@ std::string UserUtils::getUserName() {
 #endif
 }
 
-bool UserUtils::saveDirExists() {
+bool FileUtils::saveDirExists() {
     return pathExists(getSaveDir());
 }
 
-bool UserUtils::createSaveDir() {
+bool FileUtils::createSaveDir() {
     return createDirTree(getSaveDir());
 }
 
-void UserUtils::copyFile(std::string src, std::string dst){
+void FileUtils::copyFile(std::string src, std::string dst){
     std::ifstream in(src);
     std::ofstream out(dst);
 
+    // Write content of in to out.
     out << in.rdbuf();
 
     in.close();
     out.close();
 }
 
-bool UserUtils::endsWith(std::string fullString, std::string ending) {
+bool FileUtils::endsWith(std::string fullString, std::string ending) {
     if (fullString.length() >= ending.length()) {
-        return (0 == fullString.compare (fullString.length() - ending.length(), ending.length(), ending));
-    } else {
-        return false;
+        // Compare the last n (length of ending) chars of fullString to all the chars of ending.
+        // Compare returns 0 if they are identical.
+        return (fullString.compare(fullString.length() - ending.length(), ending.length(), ending) == 0);
     }
+
+    return false;
 }

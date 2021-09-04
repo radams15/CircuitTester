@@ -10,8 +10,11 @@
 
 #include <utility>
 #include <QVBoxLayout>
+#include <cfloat>
 
 #include "SceneItem.h"
+
+//TODO Finish commenting
 
 /** @brief Enum to determine the type of UI component is in the
  * generic UIComponent.

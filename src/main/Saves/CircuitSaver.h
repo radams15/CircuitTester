@@ -15,30 +15,95 @@
 
 using json = nlohmann::json;
 
+/** @brief Items in the scene.
+ *
+ */
 struct SceneItems{
+    /** @brief List of components on the scene.
+     *
+     */
     std::vector<UIComponent*> components;
+
+    /** @brief List of lines on the scene.
+     *
+     */
     std::vector<Line*> lines;
+
+    /** @brief Scene pointer itself.
+     *
+     * Only passed if an image of the scene should be generated.
+     *
+     */
     Scene* scene = nullptr;
 };
 
+/** @brief Class that saves/loads/exports/imports circuits.
+ *
+ */
 class CircuitSaver {
 private:
 
+    /** @brief Converts the scene to a base64 encoded image.
+     *
+     * @param s The scene to convert.
+     * @param format The image format. Defaults to 16 bit RGB to save storage.
+     * @return The base64 encoded image as a string.
+     */
     static std::string sceneToImage(Scene *s, QImage::Format format=QImage::Format_RGB16);
 
+    /** @brief Convert a UIComponent into JSON data.
+     *
+     * @param comp The component to convert.
+     * @return JSON data that corresponds to the component.
+     */
     static json serialiseUIComponent(UIComponent* comp);
 
 public:
+    /** @brief Gets the save path from the circuit name.
+     *
+     * @param name The name of the circuit.
+     * @return The path to save/load the circuit from.
+     */
     static std::string getPath(std::string name);
 
-    static const std::string ext;
+    /** @brief The file extension to use.
+     *
+     */
+    static constexpr const char* ext = ".cir";
 
+    /** @brief Save circuit to file.
+     *
+     * @param name The name of the circuit.
+     * @param items The SceneItems object containing the components and lines.
+     */
     static void saveCircuit(std::string name, SceneItems items);
+
+    /** @brief Converts circuit to string.
+     *
+     * @param name The name of the circuit.
+     * @param items The SceneItems object containing the components and lines.
+     * @return JSON string of circuit.
+     */
     static std::string serialiseCircuit(std::string name, SceneItems items);
 
+    /** Load circuit onto scene.
+     *
+     * @param name Name of the circuit to load.
+     * @param s Scene pointer to write the components to.
+     */
     static void loadCircuit(std::string name, Scene* s);
 
+    /** @brief Copy circuit to directory to send to others.
+     *
+     * @param name Name of circuit to export.
+     * @param path Path to export to.
+     */
     static void exportCircuit(std::string name, std::string path);
+
+    /** @brief Import circuit to library.
+     *
+     * @param path Path to import into library.
+     */
     static void importCircuit(std::string path);
 };
 

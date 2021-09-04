@@ -92,12 +92,11 @@ $(function() {
 <code>#include &quot;<a class="el" href="Switch_8h_source.html">Components/Switch.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="CircuitSaver_8h_source.html">../Saves/CircuitSaver.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="AnalysisMapper_8h_source.html">AnalysisMapper.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="FileUtils_8h_source.html">../Saves/FileUtils.h</a>&quot;</code><br />
 <code>#include &lt;QtWidgets&gt;</code><br />
 <code>#include &lt;QInputDialog&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;iomanip&gt;</code><br />
-<code>#include &lt;fstream&gt;</code><br />
-<code>#include &lt;regex&gt;</code><br />
 </div>
 <p><a href="MainWindow_8cc_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -106,72 +105,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a8ab63f91737d9bc9d7a41e487a5c840d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a8ab63f91737d9bc9d7a41e487a5c840d"><td class="memTemplItemLeft" align="right" valign="top">std::list&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="MainWindow_8cc.html#a8ab63f91737d9bc9d7a41e487a5c840d">toStdList</a> (<a class="elRef" href="https://doc.qt.io/qt-5/qlist.html">QList</a>&lt; T &gt; in)</td></tr>
 <tr class="separator:a8ab63f91737d9bc9d7a41e487a5c840d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9251b1db9e4643e2ae6290d7e28ae6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MainWindow_8cc.html#af9251b1db9e4643e2ae6290d7e28ae6d">copyFile</a> (std::string src, std::string dst)</td></tr>
-<tr class="separator:af9251b1db9e4643e2ae6290d7e28ae6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef6ebc64a1f8d97b9aa340ffce6f47fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MainWindow_8cc.html#aef6ebc64a1f8d97b9aa340ffce6f47fa">endsWith</a> (std::string fullString, std::string ending)</td></tr>
-<tr class="separator:aef6ebc64a1f8d97b9aa340ffce6f47fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af9251b1db9e4643e2ae6290d7e28ae6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9251b1db9e4643e2ae6290d7e28ae6d">&#9670;&nbsp;</a></span>copyFile()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void copyFile </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>src</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>dst</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00400">400</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
-
-</div>
-</div>
-<a id="aef6ebc64a1f8d97b9aa340ffce6f47fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef6ebc64a1f8d97b9aa340ffce6f47fa">&#9670;&nbsp;</a></span>endsWith()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool endsWith </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>fullString</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>ending</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00410">410</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
-
-</div>
-</div>
 <a id="a8ab63f91737d9bc9d7a41e487a5c840d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ab63f91737d9bc9d7a41e487a5c840d">&#9670;&nbsp;</a></span>toStdList()</h2>
 
@@ -190,7 +125,7 @@ template&lt;class T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00303">303</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MainWindow_8cc_source.html#l00307">307</a> of file <a class="el" href="MainWindow_8cc_source.html">MainWindow.cc</a>.</p>
 
 </div>
 </div>

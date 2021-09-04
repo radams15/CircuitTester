@@ -43,8 +43,8 @@ set(C_FILES
        ../main/UI/UIComponent.h
        ../main/UI/AnalysisMapper.cc
        ../main/UI/AnalysisMapper.h
-        ../main/Saves/UserUtils.cpp
-        ../main/Saves/UserUtils.h ../main/Saves/CircuitSaver.cc ../main/Saves/CircuitSaver.h ../main/UI/Components/ResistiveElement.h)
+        ../main/Saves/FileUtils.cpp
+        ../main/Saves/FileUtils.h ../main/Saves/CircuitSaver.cc ../main/Saves/CircuitSaver.h ../main/UI/Components/ResistiveElement.h)
 
 set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/lib)

@@ -47,11 +47,20 @@ public:
         MOVE
     };
 
+    int width, height;
+
     /** @brief Initialises the scene.
      *
      * @param parent The parent widget - unused but argument of by QGraphicsScene.
      */
     explicit Scene(QObject* parent = nullptr);
+
+    /** @brief Sets the canvas size.
+     *
+     * @param width Width of canvas.
+     * @param height Height of canvas.
+     */
+    void setSize(int width, int height);
 
     /** @brief Removes all text boxes from the scene.
      *

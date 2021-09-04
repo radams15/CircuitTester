@@ -72,12 +72,15 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classBattery-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Battery Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A battery class that has a configurable voltage and on/off state.  
+ <a href="classBattery.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Battery_8h_source.html">Battery.h</a>&gt;</code></p>
 <table class="memberdecls">
@@ -90,9 +93,17 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab15a43356ff0804dfe7e75c3aab5d531"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBattery.html#ab15a43356ff0804dfe7e75c3aab5d531">getVoltage</a> ()</td></tr>
+<tr class="memdesc:ab15a43356ff0804dfe7e75c3aab5d531"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the voltage, but takes into account the state.  <a href="classBattery.html#ab15a43356ff0804dfe7e75c3aab5d531">More...</a><br /></td></tr>
 <tr class="separator:ab15a43356ff0804dfe7e75c3aab5d531"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36a6234c583e3b3506f4a77e3eb49989"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBattery.html#a36a6234c583e3b3506f4a77e3eb49989">Battery</a> ()</td></tr>
-<tr class="separator:a36a6234c583e3b3506f4a77e3eb49989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad80e0c71cc478a3f238f095a964b0111"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBattery.html#ad80e0c71cc478a3f238f095a964b0111">Battery</a> (double voltage=1.0f, bool on=true)</td></tr>
+<tr class="memdesc:ad80e0c71cc478a3f238f095a964b0111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser.  <a href="classBattery.html#ad80e0c71cc478a3f238f095a964b0111">More...</a><br /></td></tr>
+<tr class="separator:ad80e0c71cc478a3f238f095a964b0111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e87ed3bdfa3cc452350f783f76d04f2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBattery.html#a8e87ed3bdfa3cc452350f783f76d04f2">getVoltageValue</a> ()</td></tr>
+<tr class="memdesc:a8e87ed3bdfa3cc452350f783f76d04f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the direct value of the voltage spinner for <a class="el" href="classCircuitSaver.html" title="Class that saves/loads/exports/imports circuits.">CircuitSaver</a>.  <a href="classBattery.html#a8e87ed3bdfa3cc452350f783f76d04f2">More...</a><br /></td></tr>
+<tr class="separator:a8e87ed3bdfa3cc452350f783f76d04f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6061f3b73a078a9eba0ae8c67eaa8a40"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBattery.html#a6061f3b73a078a9eba0ae8c67eaa8a40">getState</a> ()</td></tr>
+<tr class="memdesc:a6061f3b73a078a9eba0ae8c67eaa8a40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the on/off state of the battery.  <a href="classBattery.html#a6061f3b73a078a9eba0ae8c67eaa8a40">More...</a><br /></td></tr>
+<tr class="separator:a6061f3b73a078a9eba0ae8c67eaa8a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classUIComponent"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classUIComponent')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classUIComponent.html">UIComponent</a></td></tr>
 <tr class="memitem:aecae5af70cb4662d433eb6f5c4b32924 inherit pub_methods_classUIComponent"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIComponent.html#aecae5af70cb4662d433eb6f5c4b32924">getId</a> () const</td></tr>
 <tr class="separator:aecae5af70cb4662d433eb6f5c4b32924 inherit pub_methods_classUIComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,12 +138,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4cec31e99d6de09cb0004379670b3ee7 inherit pub_methods_classSceneItem"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the end point of the component.  <a href="classSceneItem.html#a4cec31e99d6de09cb0004379670b3ee7">More...</a><br /></td></tr>
 <tr class="separator:a4cec31e99d6de09cb0004379670b3ee7 inherit pub_methods_classSceneItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
 <tr class="memitem:a8f43a97c72253f622c011f6e58f24c02"><td class="memItemLeft" align="right" valign="top">QDoubleSpinBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBattery.html#a8f43a97c72253f622c011f6e58f24c02">voltageSpinner</a></td></tr>
+<tr class="memdesc:a8f43a97c72253f622c011f6e58f24c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spinbox to set voltage.  <a href="classBattery.html#a8f43a97c72253f622c011f6e58f24c02">More...</a><br /></td></tr>
 <tr class="separator:a8f43a97c72253f622c011f6e58f24c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1aa526a1da195452c717dc1f3e2020c3"><td class="memItemLeft" align="right" valign="top">QCheckBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBattery.html#a1aa526a1da195452c717dc1f3e2020c3">onOffCheckbox</a></td></tr>
+<tr class="memdesc:a1aa526a1da195452c717dc1f3e2020c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checkbox to set on/off state.  <a href="classBattery.html#a1aa526a1da195452c717dc1f3e2020c3">More...</a><br /></td></tr>
 <tr class="separator:a1aa526a1da195452c717dc1f3e2020c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_classUIComponent"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classUIComponent')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classUIComponent.html">UIComponent</a></td></tr>
 <tr class="memitem:a39679cd78fb01b55b048f064f0a4d1ee inherit pub_attribs_classUIComponent"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIComponent.html#a39679cd78fb01b55b048f064f0a4d1ee">componentId</a></td></tr>
 <tr class="separator:a39679cd78fb01b55b048f064f0a4d1ee inherit pub_attribs_classUIComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,9 +164,6 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a4bdba74b206e8baaa8e6711b1027d75a inherit pub_attribs_classSceneItem"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classLine.html">Line</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSceneItem.html#a4bdba74b206e8baaa8e6711b1027d75a">lines</a></td></tr>
 <tr class="memdesc:a4bdba74b206e8baaa8e6711b1027d75a inherit pub_attribs_classSceneItem"><td class="mdescLeft">&#160;</td><td class="mdescRight">All the lines attached to this item.  <a href="classSceneItem.html#a4bdba74b206e8baaa8e6711b1027d75a">More...</a><br /></td></tr>
 <tr class="separator:a4bdba74b206e8baaa8e6711b1027d75a inherit pub_attribs_classSceneItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_attribs_classUIComponent"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classUIComponent')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classUIComponent.html">UIComponent</a></td></tr>
 <tr class="memitem:a1681d42bed3ef67dc7a31f80ab824a9c inherit pub_static_attribs_classUIComponent"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIComponent.html#a1681d42bed3ef67dc7a31f80ab824a9c">currentId</a> = 0</td></tr>
 <tr class="separator:a1681d42bed3ef67dc7a31f80ab824a9c inherit pub_static_attribs_classUIComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,8 +184,11 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a37db454e182a96cd68f1aa06ed0db665 inherit pro_attribs_classSceneItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Battery_8h_source.html#l00013">13</a> of file <a class="el" href="Battery_8h_source.html">Battery.h</a>.</p>
+<div class="textblock"><p>A battery class that has a configurable voltage and on/off state. </p>
+<dl class="section author"><dt>Author</dt><dd>Rhys Adams </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>21/04/2021 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Battery_8h_source.html#l00018">18</a> of file <a class="el" href="Battery_8h_source.html">Battery.h</a>.</p>
 </div><div class="dynheader">
 Inheritance diagram for Battery:</div>
 <div class="dyncontent">
@@ -196,16 +212,17 @@ Inheritance diagram for Battery:</div>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2b6c731ab9ef6f4abc5e76cf6473711fa74efa0ccc75380da87eb8ecb151ed108"></a>ID&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2b6c731ab9ef6f4abc5e76cf6473711fa74efa0ccc75380da87eb8ecb151ed108"></a>ID&#160;</td><td class="fielddoc"><p>Set the ID to a battery. </p>
+</td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="Battery_8h_source.html#l00018">18</a> of file <a class="el" href="Battery_8h_source.html">Battery.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Battery_8h_source.html#l00032">32</a> of file <a class="el" href="Battery_8h_source.html">Battery.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a36a6234c583e3b3506f4a77e3eb49989"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36a6234c583e3b3506f4a77e3eb49989">&#9670;&nbsp;</a></span>Battery()</h2>
+<a id="ad80e0c71cc478a3f238f095a964b0111"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad80e0c71cc478a3f238f095a964b0111">&#9670;&nbsp;</a></span>Battery()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,17 +230,67 @@ Inheritance diagram for Battery:</div>
         <tr>
           <td class="memname">Battery::Battery </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>voltage</em> = <code>1.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>on</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialiser. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">voltage</td><td>Voltage to set the battery to in volts (default 1V). </td></tr>
+    <tr><td class="paramname">on</td><td>Whether the battery is on/off (default on). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="Battery_8cc_source.html#l00009">9</a> of file <a class="el" href="Battery_8cc_source.html">Battery.cc</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6061f3b73a078a9eba0ae8c67eaa8a40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6061f3b73a078a9eba0ae8c67eaa8a40">&#9670;&nbsp;</a></span>getState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Battery::getState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the on/off state of the battery. </p>
+<dl class="section return"><dt>Returns</dt><dd>Whether the on/off box is checked or not. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Battery_8h_source.html#l00063">63</a> of file <a class="el" href="Battery_8h_source.html">Battery.h</a>.</p>
+
+</div>
+</div>
 <a id="ab15a43356ff0804dfe7e75c3aab5d531"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab15a43356ff0804dfe7e75c3aab5d531">&#9670;&nbsp;</a></span>getVoltage()</h2>
 
@@ -239,7 +306,40 @@ Inheritance diagram for Battery:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Battery_8cc_source.html#l00031">31</a> of file <a class="el" href="Battery_8cc_source.html">Battery.cc</a>.</p>
+<p>Gets the voltage, but takes into account the state. </p>
+<dl class="section return"><dt>Returns</dt><dd>Voltage or 0.0001 if battery is turned off. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Battery_8cc_source.html#l00042">42</a> of file <a class="el" href="Battery_8cc_source.html">Battery.cc</a>.</p>
+
+</div>
+</div>
+<a id="a8e87ed3bdfa3cc452350f783f76d04f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e87ed3bdfa3cc452350f783f76d04f2">&#9670;&nbsp;</a></span>getVoltageValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Battery::getVoltageValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the direct value of the voltage spinner for <a class="el" href="classCircuitSaver.html" title="Class that saves/loads/exports/imports circuits.">CircuitSaver</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The value of voltageSpinner. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Battery_8h_source.html#l00057">57</a> of file <a class="el" href="Battery_8h_source.html">Battery.h</a>.</p>
 
 </div>
 </div>
@@ -249,14 +349,24 @@ Inheritance diagram for Battery:</div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">QCheckBox* Battery::onOffCheckbox</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Battery_8h_source.html#l00016">16</a> of file <a class="el" href="Battery_8h_source.html">Battery.h</a>.</p>
+<p>Checkbox to set on/off state. </p>
+
+<p class="definition">Definition at line <a class="el" href="Battery_8h_source.html#l00029">29</a> of file <a class="el" href="Battery_8h_source.html">Battery.h</a>.</p>
 
 </div>
 </div>
@@ -265,14 +375,24 @@ Inheritance diagram for Battery:</div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">QDoubleSpinBox* Battery::voltageSpinner</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Battery_8h_source.html#l00015">15</a> of file <a class="el" href="Battery_8h_source.html">Battery.h</a>.</p>
+<p>Spinbox to set voltage. </p>
+
+<p class="definition">Definition at line <a class="el" href="Battery_8h_source.html#l00024">24</a> of file <a class="el" href="Battery_8h_source.html">Battery.h</a>.</p>
 
 </div>
 </div>
