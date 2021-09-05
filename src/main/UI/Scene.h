@@ -78,7 +78,7 @@ public slots:
      *
      * @param c A pointer to a new UIComponent to be placed down.
      */
-    void setItemType(UIComponent* c);
+    void setItem(UIComponent* c);
 
 signals:
     /** @brief Called when an item is inserted into the scene.
@@ -87,17 +87,6 @@ signals:
      */
     void itemInserted(UIComponent* c);
 
-    /** Called when any text is inserted into the scene.
-     *
-     * @param item The QGraphicsTextItem that was inserted.
-     */
-    void textInserted(QGraphicsTextItem* item);
-
-    /** Called when any part of the scene was selected.
-     *
-     * @param item The QGraphicsItem that was selected.
-     */
-    void itemSelected(QGraphicsItem* item);
 
 protected:
     /** @brief Called when the mouse is pressed once.
@@ -112,7 +101,7 @@ protected:
      *
      * Called to handle accessing the settings menu of a component.
      *
-     * @param mouseEvent
+     * @param mouseEvent The event that is created when an item is double clicked.
      */
     void mouseDoubleClickEvent(QGraphicsSceneMouseEvent* mouseEvent) override;
 

@@ -82,16 +82,16 @@ void MainWindow::buttonGroupClicked(QAbstractButton *button) {
     // Set the scene item to a new instance of the selected button.
     switch(id){
         case UI_RESISTOR:
-            scene->setItemType(new Resistor);
+            scene->setItem(new Resistor);
             break;
         case UI_BATTERY:
-            scene->setItemType(new Battery);
+            scene->setItem(new Battery);
             break;
         case UI_WIRE:
-            scene->setItemType(new Wire);
+            scene->setItem(new Wire);
             break;
         case UI_SWITCH:
-            scene->setItemType(new Switch);
+            scene->setItem(new Switch);
             break;
         default:
             return;
@@ -360,7 +360,7 @@ void MainWindow::runSimulation() {
     }
 }
 
-void MainWindow::itemRightClicked(UIComponent* item) {
+void MainWindow::itemDoubleClicked(UIComponent* item) {
     // Set the contents of the settingsmenu to the settingsbox of the item.
     settingsMenu->setInteriorLayout(item->settingsBox);
 

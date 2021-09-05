@@ -37,12 +37,12 @@ public:
      */
     MainWindow();
 
-    /** @brief Called from the Scene when any SceneItem is right clicked.
+    /** @brief Called from the Scene when any SceneItem is double clicked.
      * Places the settings widget from the SceneItem into the SettingsMenu.
      *
-     * @param item The item that has been right clicked.
+     * @param item The item that has been double clicked.
      */
-    void itemRightClicked(UIComponent* item);
+    void itemDoubleClicked(UIComponent* item);
 
 private slots:
     /** @brief Called when any component button is clicked.

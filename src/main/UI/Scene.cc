@@ -22,7 +22,7 @@ void Scene::setMode(Mode mode){
     currentMode = mode;
 }
 
-void Scene::setItemType(UIComponent* c){
+void Scene::setItem(UIComponent* c){
     this->component = c;
 }
 
@@ -34,11 +34,11 @@ void Scene::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent){
                 // Add the item to the scene.
                 addItem(component);
 
-                // Set the position of the component to where the mouse click occured.
+                // Set the position of the component to where the mouse click occurred.
                 component->setPos(mouseEvent->scenePos());
 
                 // Notify others that an item was inserted.
-                emit itemInserted(component);
+                itemInserted(component);
                 break;
 
             case INSERT_LINE:
@@ -69,7 +69,7 @@ void Scene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* mouseEvent) {
 
         // Is the item a UIComponent (it could be a line as this causes a crash)
         if(IS_TYPE(UIComponent, item)) {
-            ((MainWindow *) parent())->itemRightClicked((UIComponent*) item);
+            ((MainWindow *) parent())->itemDoubleClicked((UIComponent *) item);
         }
     }
 
