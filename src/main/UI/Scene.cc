@@ -8,9 +8,7 @@
 #include "MainWindow.h"
 
 
-Scene::Scene(QObject *parent)
-    : QGraphicsScene(parent){
-
+Scene::Scene(QObject *parent) : QGraphicsScene(parent){
     // Default to move mode.
     currentMode = MOVE;
 
@@ -70,7 +68,7 @@ void Scene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* mouseEvent) {
         auto* item = selectedItems().at(0);
 
         // Is the item a UIComponent (it could be a line as this causes a crash)
-        if (1){//if(IS_TYPE(UIComponent, item)) {
+        if(IS_TYPE(UIComponent, item)) {
             ((MainWindow *) parent())->itemRightClicked((UIComponent*) item);
         }
     }

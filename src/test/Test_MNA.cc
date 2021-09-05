@@ -10,6 +10,8 @@
 #include "../main/Analysis/MNACircuit.h"
 #include "../main/Analysis/MNASolution.h"
 
+#define APROX_EQ(a,b) ASSERT_TRUE((abs(a - b) <= 1E-3))
+
 /**
  * @brief One Resistor Current.
  * Tests to see if the current of one 4.0 &Omega; resistor
@@ -35,20 +37,20 @@ TEST(NodalAnalysis, OneResistorCurrent){
     ASSERT_EQ(sol->getCurrent(*res), 2.5);
 }
 
-
 /**
  * @brief Two Resistors In Parallel.
  * Tests to see if the currents of two resistors
  * of resistances 10.0 &Omega; and 20.0 &Omega; on a
- * 10V battery are 1.0A and 0.5A respectively to test
- * current splitting.
+ * 9.0V battery are 0.9A and 0.45A respectively with a total current
+ * of 1.35A to test current splitting.
  */
 TEST(NodalAnalysis, TwoResistorsInParallel){
-    auto bat = new MNAComponent(0, 1, MNA_BATTERY, 10);
-    auto res1 = new MNAComponent(1, 0, MNA_RESISTOR, 10);
-    auto res2 = new MNAComponent(1, 0, MNA_RESISTOR, 20);
+    auto bat = new MNAComponent(0, 1, MNA_BATTERY, 9);
+    auto res1 = new MNAComponent(2, 0, MNA_RESISTOR, 10);
+    auto res2 = new MNAComponent(2, 0, MNA_RESISTOR, 20);
+    auto am1 = new MNAComponent(1, 2, MNA_RESISTOR, 0.001);
 
-    auto cir = new MNACircuit({bat, res1, res2});
+    auto cir = new MNACircuit({bat, res1, res2, am1});
 
     std::map<int, double> vmap = {
             {0, 0.0},
@@ -56,14 +58,11 @@ TEST(NodalAnalysis, TwoResistorsInParallel){
             {2, 10.0},
     };
 
-    auto dessol = new MNASolution(vmap, {bat->withCurrentSolution(1.5)});
-
     auto sol = cir->solve();
 
-    ASSERT_EQ(sol->equals(*dessol), true);
-
-    ASSERT_EQ(sol->getCurrent(*res1), 1.0);
-    ASSERT_EQ(sol->getCurrent(*res2), 0.5);
+    APROX_EQ(sol->getCurrent(*res1), 0.9);
+    APROX_EQ(sol->getCurrent(*res2), 0.45);
+    APROX_EQ(sol->getCurrent(*am1), 1.35);
 }
 
 /**
@@ -88,7 +87,7 @@ TEST(NodalAnalysis, ParalellAndSeriesResistors){
             {2, 6.09677},
     };
 
-    auto dessol = new MNASolution(vmap, {bat->withCurrentSolution(0.870968)});
+    auto dessol = new MNASolution(vmap, {bat->withCurrent(0.870968)});
 
     auto sol = cir->solve();
 
@@ -102,35 +101,38 @@ TEST(NodalAnalysis, ParalellAndSeriesResistors){
 
 /**
  * @brief Two Batteries In Series.
- * Tests to see if the voltage of two 4.0V
+ * Tests to see if the voltage of two 9.0V
  * batteries are added together to get a total
- * of 8.0V.
+ * of 18.0V.
  */
 TEST(NodalAnalysis, TwoBatteriesInSeries){
-    auto bat1 = new MNAComponent(0, 1, MNA_BATTERY, 3);
-    auto bat2 = new MNAComponent(1, 2, MNA_BATTERY, 4);
-    auto res = new MNAComponent(2, 0, MNA_RESISTOR, 2);
+    auto bat1 = new MNAComponent(0, 1, MNA_BATTERY, 9);
+    auto bat2 = new MNAComponent(1, 2, MNA_BATTERY, 9);
+    auto am1 = new MNAComponent(2, 0, MNA_RESISTOR, 10);
 
-    auto cir = new MNACircuit({bat1, bat2, res});
+    auto cir = new MNACircuit({bat1, bat2, am1});
 
     std::map<int, double> vmap = {
             {0, 0.0},
-            {1, 3.0},
-            {2, 7.0},
+            {1, 9.0},
+            {2, 18.0},
     };
 
-    auto dessol = new MNASolution(vmap, {bat1->withCurrentSolution(3.5), bat2->withCurrentSolution(3.5)});
+    auto dessol = new MNASolution(vmap, {bat1->withCurrent(1.8), bat2->withCurrent(1.8)});
 
     auto sol = cir->solve();
 
     ASSERT_EQ(sol->equals(*dessol), true);
+
+    APROX_EQ(sol->getCurrent(*am1), 1.8);
+    APROX_EQ(sol->getVoltage(*am1), 18);
 }
 
 /**
  * @brief Two Batteries In Parallel.
  * Tests to see if the voltage of two 4.0V
- * batteries is 4.0V, and have a current of
- * 0.2A.
+ * batteries is 4.0V, and only one has a current of
+ * 0.4A.
  * Also tests if the values are identical to
  * if there is only 1 4.0V battery.
  */
@@ -146,7 +148,7 @@ TEST(NodalAnalysis, TwoBatteriesInParallel){
             {1, 4.0},
     };
 
-    auto dessol = new MNASolution(vmap, {bat1->withCurrentSolution(0.4), bat2->withCurrentSolution(0.0)});
+    auto dessol = new MNASolution(vmap, {bat1->withCurrent(0.4), bat2->withCurrent(0.0)});
 
     auto sol = cir->solve();
 

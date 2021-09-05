@@ -54,7 +54,7 @@ double MNASolution::getNodeVoltage(int nodeIndex) {
 
 double MNASolution::getCurrent(MNAComponent resistor) {
     // Returns the current by doing V=IR, which is equal to I=V/R.
-    double v = -getVoltage(resistor);
+    double v = getVoltage(resistor);
     double r = resistor.value;
     double i = v / r;
 
@@ -64,7 +64,7 @@ double MNASolution::getCurrent(MNAComponent resistor) {
 double MNASolution::getVoltage(MNAComponent element) {
     // Gets the difference between the voltages the start and end nodes
     // as voltage is the potential difference between two components.
-    return voltageMap.at(element.n1) - voltageMap.at(element.n0);
+    return std::abs(voltageMap.at(element.n1) - voltageMap.at(element.n0));
 }
 
 bool MNASolution::hasAllElements(MNASolution mnaSolution) {

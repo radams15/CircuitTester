@@ -23,7 +23,7 @@ SettingsMenu::SettingsMenu() : QWidget(nullptr){
 
     // Fixed horizontal size, expands vertically as much as possible.
     contentArea->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
-    // Set width to 0.
+    // Set width to 0 initially so it starts minimised.
     contentArea->setMaximumWidth(0);
     contentArea->setMinimumWidth(0);
 
@@ -49,18 +49,24 @@ SettingsMenu::SettingsMenu() : QWidget(nullptr){
 }
 
 void SettingsMenu::startAnimation(bool checked) {
+    // Change arrow depending on direction. E.g. right arrow to close if open, left arrow to open if closed.
     toggleButton->setArrowType(checked? Qt::RightArrow : Qt::LeftArrow);
 
+    // Set the animation to move forward or backward, e.g. to open move the animation forward,
+    // to close move the animation backward.
     toggleAnimation->setDirection(checked? QAbstractAnimation::Forward : QAbstractAnimation::Backward);
+    // Begin the animation.
     toggleAnimation->start();
 }
 
 void SettingsMenu::setContentLayout(QLayout* contentLayout) {
     contentArea->setLayout(contentLayout);
 
+    // Width of the content area when it should be collapsed.
     int collapsedWidth = sizeHint().width() - contentArea->maximumWidth();
     int contentWidth = 200;
 
+    // Run through each animation except the last to set the properties.
     for(int i=0 ; i<toggleAnimation->animationCount()-1 ; i++){
         auto* HelpMenuAnimation = (QPropertyAnimation*) toggleAnimation->animationAt(i);
         HelpMenuAnimation->setDuration(animationDuration);
@@ -76,16 +82,27 @@ void SettingsMenu::setContentLayout(QLayout* contentLayout) {
 
 void SettingsMenu::clear() {
     for(int i=0 ; i<innerLayout->count() ; i++){
+        // Hide the widget so it disappears.
         innerLayout->itemAt(i)->widget()->setHidden(true);
+
+        // Remove the widget.
         innerLayout->removeItem(innerLayout->itemAt(i));
     }
 }
 
 void SettingsMenu::setInteriorLayout(QLayout* layout) {
+    // Check layout is not a null pointer.
+    if(layout == nullptr){
+        return;
+    }
+
+    // Remove any widgets there already.
     clear();
 
+    // Create a widget, set the layout to the passed layout.
     auto* newWidget = new QWidget;
     newWidget->setLayout(layout);
 
+    // Add the widget to the inner layout.
     innerLayout->addWidget(newWidget);
 }

@@ -21,8 +21,8 @@ MNAComponent::MNAComponent(int n0, int n1, ElementType type, double value, doubl
     this->currentSolution = currentSolution;
 }
 
-MNAComponent* MNAComponent::withCurrentSolution(double newCurrentSolution) {
-    return new MNAComponent(n0, n1, type, value, newCurrentSolution);
+MNAComponent* MNAComponent::withCurrent(double newCurrent) {
+    return new MNAComponent(n0, n1, type, value, newCurrent);
 }
 
 bool MNAComponent::contains(int n) {

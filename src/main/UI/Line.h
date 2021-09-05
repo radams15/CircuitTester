@@ -20,9 +20,8 @@ public:
      *
      * @param startItem The item to start from.
      * @param endItem The item to end at.
-     * @param parent The parent widget (never used but is an argument of QGraphicsLineItem so is kept optional).
      */
-    Line(SceneItem *startItem, SceneItem *endItem, QGraphicsItem *parent = nullptr);
+    Line(SceneItem *startItem, SceneItem *endItem);
 
     /** @brief Simply returns the start item.
      *

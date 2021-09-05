@@ -65,10 +65,10 @@ public:
      *
      * New element with identical values but with a different current solution.
      *
-     * @param newCurrentSolution The current solution for the new element to have.
+     * @param newCurrent The current for the new element to have.
      * @return
      */
-    MNAComponent* withCurrentSolution(double newCurrentSolution);
+    MNAComponent* withCurrent(double newCurrent);
 
     /** @brief Node in this element.
      *

@@ -247,7 +247,7 @@ MNASolution *MNACircuit::solve() {
     auto z = Eigen::MatrixXd(equations->size(), 1).setZero();
 
     for(int i=0 ; i<equations->size() ; i++){
-        //Apply the correct numbers of every equation onto the matrices,
+        // Apply the correct numbers of every equation onto the matrices,
         //  passing in a lambda to find the index of each
         //  term of the equation in class attribute unknowns.
         equations->at(i)->apply(i, &A, &z, [this, unknowns](Unknown *u) {
@@ -263,7 +263,7 @@ MNASolution *MNACircuit::solve() {
 
     for(auto v : *unknownVoltages){
         // Get the voltage out from the solved matrix at the index of the element
-        // in the vector of unknowns. As the solved matrix stores
+        // in the vector of unknowns. As the index is the node, and the node has the voltage.
         auto voltage = x(getElementIndex<Unknown>(unknowns, v));
 
         // Add to the voltage map

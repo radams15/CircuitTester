@@ -17,7 +17,8 @@ SceneItem::SceneItem(std::string resourcePath, QGraphicsItem* parent) : QGraphic
     // Create pixmap from resource path.
     this->pixmap = QPixmap(QString::fromStdString(resourcePath));
 
-    // Scale the pixmap to defined size.
+    // Scale the pixmap to defined size, because this greatly helps to determine where the
+    // centre and ends of the component are.
     pixmap = pixmap.scaled(SCENEITEM_SIZE);
 
     // Set the pixmap of this item.

@@ -398,6 +398,9 @@ void MainWindow::saveScene() {
     }
 
     CircuitSaver::saveCircuit(currentOpenedCircuit, SceneItems{components, lines});
+
+    // Indicate to the user the name of the open file.
+    setWindowTitle(tr(("Circuit Simulator: " + currentOpenedCircuit).c_str()));
 }
 
 void MainWindow::openScene() {
@@ -405,6 +408,9 @@ void MainWindow::openScene() {
     std::string name = QInputDialog::getText(this, tr("Circuit Name"), tr("Name")).toStdString();
     CircuitSaver::loadCircuit(name, scene);
     currentOpenedCircuit = name;
+
+    // Indicate to the user the name of the open file.
+    setWindowTitle(tr(("Circuit Simulator: " + currentOpenedCircuit).c_str()));
 }
 
 
