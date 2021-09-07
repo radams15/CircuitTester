@@ -326,7 +326,7 @@ $(function() {
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keyword">auto</span> z = Eigen::MatrixXd(equations-&gt;size(), 1).setZero();</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0 ; i&lt;equations-&gt;size() ; i++){</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="comment">//Apply the correct numbers of every equation onto the matrices,</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="comment">// Apply the correct numbers of every equation onto the matrices,</span></div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="comment">//  passing in a lambda to find the index of each</span></div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="comment">//  term of the equation in class attribute unknowns.</span></div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        equations-&gt;at(i)-&gt;apply(i, &amp;A, &amp;z, [<span class="keyword">this</span>, unknowns](<a class="code" href="classUnknown.html">Unknown</a> *u) {</div>
@@ -342,7 +342,7 @@ $(function() {
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> v : *unknownVoltages){</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="comment">// Get the voltage out from the solved matrix at the index of the element</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="comment">// in the vector of unknowns. As the solved matrix stores</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="comment">// in the vector of unknowns. As the index is the node, and the node has the voltage.</span></div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keyword">auto</span> voltage = x(getElementIndex&lt;Unknown&gt;(unknowns, v));</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="comment">// Add to the voltage map</span></div>

@@ -26,7 +26,7 @@
 MainWindow::MainWindow() {
     createActions();
     createToolBox();
-    createMenus();
+    createMenubar();
 
     // Create the scene, set it to the specified size.
     scene = new Scene(this);
@@ -39,7 +39,7 @@ MainWindow::MainWindow() {
     connect(scene, &Scene::itemInserted,
             this, &MainWindow::itemInserted);
 
-    createToolbars();
+    createToolbar();
 
     // Create the main layout, add the graphics view.
     auto* layout = new QHBoxLayout;
@@ -165,10 +165,10 @@ void MainWindow::createToolBox() {
 
     // Create new grid layout, add the widgets for each component type to a 2*n grid.
     auto* layout = new QGridLayout;
-    layout->addWidget(createCellWidget<Resistor>(tr("Resistor")), 0, 0);
-    layout->addWidget(createCellWidget<Battery>(tr("Battery")), 0, 1);
-    layout->addWidget(createCellWidget<Wire>(tr("Wire")), 1, 0);
-    layout->addWidget(createCellWidget<Switch>(tr("Switch")), 1, 1);
+    layout->addWidget(createCellWidget<Resistor>("Resistor"), 0, 0);
+    layout->addWidget(createCellWidget<Battery>("Battery"), 0, 1);
+    layout->addWidget(createCellWidget<Wire>("Wire"), 1, 0);
+    layout->addWidget(createCellWidget<Switch>("Switch"), 1, 1);
 
     // Don't stretch completely, just 3 pixels stretch per row.
     layout->setRowStretch(3, 10);
@@ -231,7 +231,7 @@ void MainWindow::createActions() {
 }
 
 
-void MainWindow::createMenus() {
+void MainWindow::createMenubar() {
     // Add the different actions to the menubar.
 
     fileMenu = menuBar()->addMenu(tr("&File"));
@@ -254,7 +254,7 @@ void MainWindow::createMenus() {
 }
 
 
-void MainWindow::createToolbars() {
+void MainWindow::createToolbar() {
     // Create button for the scene move mode.
     auto *pointerButton = new QToolButton;
     pointerButton->setCheckable(true);
@@ -280,7 +280,7 @@ void MainWindow::createToolbars() {
 
 
 template<class T>
-QWidget *MainWindow::createCellWidget(const QString &text) {
+QWidget *MainWindow::createCellWidget(std::string text) {
     // Initialise the widget to get the pixmap.
     T item;
     QIcon icon(item.getPixmap());
@@ -296,7 +296,7 @@ QWidget *MainWindow::createCellWidget(const QString &text) {
     // Create a grid with the icon and a label of the icon name.
     auto *layout = new QGridLayout;
     layout->addWidget(button, 0, 0, Qt::AlignHCenter);
-    layout->addWidget(new QLabel(text), 1, 0, Qt::AlignCenter);
+    layout->addWidget(new QLabel(tr(text.c_str())), 1, 0, Qt::AlignCenter);
 
     // Create a widget for the layout.
     auto* widget = new QWidget;

@@ -96,7 +96,7 @@ private slots:
     /** @brief Called when the open save directory button is clicked from the toolbar.
      *
      */
-    void openSaveDir();
+    static void openSaveDir();
 
     /** @brief Called when the run button is clicked from the toolbar.
      *
@@ -124,12 +124,12 @@ private:
     /** @brief Creates the menubar for the actions.
     *
     */
-    void createMenus();
+    void createMenubar();
 
     /** @brief Creates the toolbar for the actions.
     *
     */
-    void createToolbars();
+    void createToolbar();
 
     /** @brief Creates a tool button for a component.
      *
@@ -137,7 +137,7 @@ private:
      * @param text The text for the label under the button.
      * @return A QWidget pointer to the newly created widget.
      */
-    template<class T> QWidget* createCellWidget(const QString &text);
+    template<class T> QWidget* createCellWidget(std::string text);
 
     /** @brief The scene where the SceneItems are placed.
      *
