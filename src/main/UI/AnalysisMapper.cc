@@ -91,7 +91,7 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
     return out;
 }
 
-Path* AnalysisMapper::find_shortest_path(Graph *graph, UIComponent *start, UIComponent *end) {
+Path* AnalysisMapper::findShortestPath(Graph *graph, UIComponent *start, UIComponent *end) {
     std::vector<UIComponent*> explored;
 
     std::queue<std::vector<UIComponent*>*> q;
@@ -165,7 +165,7 @@ Graph AnalysisMapper::makeGraph() {
 
     for(auto n : graph){
         // For each node set the node 0 to the distance from the start node.
-        auto* path = find_shortest_path(&graph, start_node, n.first);
+        auto* path = findShortestPath(&graph, start_node, n.first);
 
         n.first->n0 = path->size()-1;
 
