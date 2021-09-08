@@ -261,6 +261,7 @@ void MainWindow::createMenubar() {
     aboutMenu = menuBar()->addMenu(tr("&Help"));
     aboutMenu->addAction(saveDirAction);
     aboutMenu->addAction(aboutAction);
+    aboutMenu->addAction(tutorialAction);
 }
 
 
