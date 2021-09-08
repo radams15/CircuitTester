@@ -1,0 +1,3 @@
+From this folder:
+	linepointer.png and pointer.png are from openclipart.org released under a public domain license.
+	The other files I created myself so are similarly released under a public domain license.

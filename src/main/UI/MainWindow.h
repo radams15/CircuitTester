@@ -73,6 +73,11 @@ private slots:
      */
     void about();
 
+    /** @brief Called when the tutorial button is clicked from the toolbar.
+     *
+     */
+    void tutorial();
+
     /** @brief Called when the save button is clicked from the toolbar.
      *
      */
@@ -173,6 +178,11 @@ private:
      *
      */
     QAction* aboutAction;
+
+    /** @brief An action that shows the tutorial popup.
+     *
+     */
+    QAction* tutorialAction;
 
     /** @brief An action that saves the scene.
      *

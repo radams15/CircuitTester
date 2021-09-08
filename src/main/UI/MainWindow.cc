@@ -148,9 +148,15 @@ void MainWindow::itemInserted(UIComponent* c) {
 }
 
 void MainWindow::about() {
-    // Start simple info box
+    // Start simple about box
     QMessageBox::about(this, tr("About Circuit Simulator"),
                        tr("This is a circuit simulation program written by Rhys Adams (2021-22)"));
+}
+
+void MainWindow::tutorial() {
+    // Start simple about box
+    QMessageBox::about(this, tr("Tutorial"),
+                       tr("Welcome to Rhys' circuit simulation program.\n\nHere is a brief tutorial to understand how the program works.\n\nTo place down a component, first click on the component button, then click on the location\non the canvas where you want the component to go.\n\nYou can move components by dragging the black parts.\n\nAt the top left, you can either select movement mode (the mouse pointer button) to drag components,\nor the connector button (the black line to the left of the mouse pointer) to connect components\nwith lines.\n\nDouble-clicking any component will open up the settings menu on the right, which allows you to\nchange anything about any of the Components, such as voltage, resistance or whether they are on or off.\n\nYou can reach this info again at the help->Tutorial menu."));
 }
 
 
@@ -209,6 +215,10 @@ void MainWindow::createActions() {
     aboutAction = new QAction(tr("&About"), this);
     aboutAction->setShortcut(tr("F1"));
     connect(aboutAction, &QAction::triggered, this, &MainWindow::about);
+
+    tutorialAction = new QAction(tr("&Tutorial"), this);
+    tutorialAction->setShortcut(tr("F2"));
+    connect(tutorialAction, &QAction::triggered, this, &MainWindow::tutorial);
 
     saveAction = new QAction(tr("&Save"), this);
     saveAction->setShortcut(tr("Ctrl+S"));
