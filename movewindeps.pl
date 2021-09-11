@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
-my $IN = "deps.txt.x86";
-my $OUT = "winbuild5/src/main";
+my $IN = @ARGV[0] || "deps.win";
+my $OUT = @ARGV[1] ||"winbuild5/src/main";
 
 sub find{
 	my ($file, $where) = @_;

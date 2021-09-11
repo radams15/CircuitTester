@@ -82,9 +82,4 @@ target_link_libraries(CircuitTester PRIVATE Qt${QT_VER}::Widgets nlohmann_json::
 set(BUILD_DIR ${PROJECT_SOURCE_DIR}/builds/${SYS})
 
 install(TARGETS CircuitTester
-        CONFIGURATIONS Debug
-        RUNTIME DESTINATION ${BUILD_DIR}/debug/bin)
-
-install(TARGETS CircuitTester
-        CONFIGURATIONS Release
-        RUNTIME DESTINATION ${BUILD_DIR}/release/bin)
+        RUNTIME DESTINATION bin)

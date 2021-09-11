@@ -59,3 +59,5 @@ compile_commands.json
 /linbuild6/
 /winbuild5/
 /winbuild6/
+/build-dir/
+/.flatpak-builder/
