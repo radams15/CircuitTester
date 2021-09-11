@@ -27,6 +27,9 @@ MainWindow::MainWindow() {
     createActions();
     createToolBox();
     createMenubar();
+    
+    // Set window icon to the connector image.
+    setWindowIcon(QIcon(":/images/linepointer.png"));
 
     // Create the scene, set it to the specified size.
     scene = new Scene(this);

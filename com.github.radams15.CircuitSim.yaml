@@ -3,12 +3,15 @@ runtime: org.kde.Platform
 runtime-version: '5.15'
 sdk: org.kde.Sdk
 command: CircuitTester
+finish-args:
+ - "--socket=x11"
+ - "--filesystem=home"
 modules:
   - name: CircuiSim
     sources:
      - type: git
        url: https://github.com/radams15/CircuitTester.git
-       commit: 1ae4ec6255694a77abd4bd6cb4455d556d771e7b
+       commit: ae0e0139aa3110b40598839ebcbd6764f9ca9e4a
     buildsystem: cmake
     config-opts:
       - "-DCMAKE_BUILD_TYPE=Release"
