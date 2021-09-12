@@ -26,6 +26,7 @@ message("QT version: ${QT_VER}")
 
 if(DO_TESTS OR MAKE_PROG)
     add_subdirectory(lib/nlohmann_json_cmake_fetchcontent)
+    add_subdirectory(resources)
     find_package(QT NAMES Qt${QT_VER} COMPONENTS Widgets REQUIRED)
     find_package(Qt${QT_VER} COMPONENTS Widgets REQUIRED)
 endif()

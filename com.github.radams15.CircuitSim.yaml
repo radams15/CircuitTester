@@ -11,7 +11,7 @@ modules:
     sources:
      - type: git
        url: https://github.com/radams15/CircuitTester.git
-       commit: ae0e0139aa3110b40598839ebcbd6764f9ca9e4a
+       commit: v40
     buildsystem: cmake
     config-opts:
       - "-DCMAKE_BUILD_TYPE=Release"
