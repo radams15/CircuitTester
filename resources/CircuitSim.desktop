@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=Circuit Simulator
-Exec=CircuitSim
+Exec=CircuitTester
 Icon=CircuitSim
 Categories=Education;
