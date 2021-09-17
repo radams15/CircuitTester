@@ -17,6 +17,9 @@
 /** @brief Enum to determine the type of UI component is in the
  * generic UIComponent.
  *
+ * Must be numbered so that when saved they can be re-loaded with
+ * the same values.
+ *
  */
 enum ComponentType{
     UI_RESISTOR = 1,

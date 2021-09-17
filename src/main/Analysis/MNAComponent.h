@@ -88,14 +88,6 @@ public:
      */
     int opposite(int n);
 
-    /** @brief Simple string function to aid in debugging.
-     *
-     * @return Returns a string of the nodes (n0 and n1), the type of component, and its value.
-     */
-    inline std::string str() const{
-        return "n(" + std::to_string(n0) + ") => n(" + std::to_string(n1) + "), Type: " + (type == MNA_RESISTOR? "Resistor" : "Battery") + ", Value: " + std::to_string(value);
-    }
-
     /** @brief Equality to another node.
      *
      * @param other The node to compare against.

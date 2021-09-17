@@ -69,6 +69,8 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
         switch(it.second->type){
             // Resistors have a current and a voltage.
             case MNA_RESISTOR:
+            	// Add the voltage and the current of the MNAComponent into the solution map
+            	// with the key of the UIComponent.
                 out[it.first] = {
                         sol->getVoltage(*it.second),
                         sol->getCurrent(*it.second)
@@ -77,6 +79,8 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
 
             // Batteries have only a voltage, not a current.
             case MNA_BATTERY:
+            	// Add the voltage of the MNAComponent into the solution map.
+            	// with the key of the UIComponent.
                 out[it.first] = {
                         sol->getVoltage(*it.second),
                         NAN

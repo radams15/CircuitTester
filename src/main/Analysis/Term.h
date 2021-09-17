@@ -37,12 +37,6 @@ public:
      * @param variable
      */
     Term(double coefficient, Unknown* variable);
-
-    /** @brief String representation (for debugging)
-     *
-     * @return The string representation.
-     */
-    std::string str();
 };
 
 

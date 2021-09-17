@@ -23,13 +23,3 @@ void Equation::apply(int row, Eigen::MatrixXd* A, Eigen::MatrixXd* z, std::funct
         (*A)(row, index) += t->coefficient;
     }
 }
-
-std::string Equation::str() {
-    std::stringstream termList;
-
-    for (auto t : terms) {
-        termList << t->str() << " + ";
-    }
-
-    return termList.str() + " = " + std::to_string(value);
-}

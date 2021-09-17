@@ -41,12 +41,6 @@ public:
      */
     virtual bool equals(Unknown* other) = 0;
 
-    /** @brief Get string representation.
-     *
-     * @return The string representation of this Unknown.
-     */
-    virtual std::string str() = 0;
-
 protected:
 
     /** @brief initialiser
@@ -81,7 +75,6 @@ public:
      */
     explicit UnknownCurrent(MNAComponent* element);
 
-    std::string str() override;
     bool equals(Unknown* other) override;
 };
 
@@ -106,7 +99,6 @@ public:
      */
     explicit UnknownVoltage(int node);
 
-    std::string str() override;
     bool equals(Unknown* other) override;
 };
 

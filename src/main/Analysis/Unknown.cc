@@ -8,10 +8,6 @@ UnknownCurrent::UnknownCurrent(MNAComponent *element) : Unknown(CURRENT) {
     this->element = element;
 }
 
-std::string UnknownCurrent::str() {
-    return "I"+std::to_string(element->n0)+"_"+std::to_string(element->n1);
-}
-
 bool UnknownCurrent::equals(Unknown* other) {
     // If they are not the same type they are obviously not equal.
     if(other->type != Unknown::CURRENT){
@@ -25,10 +21,6 @@ bool UnknownCurrent::equals(Unknown* other) {
 
 UnknownVoltage::UnknownVoltage(int node)  : Unknown(VOLTAGE) {
     this->node = node;
-}
-
-std::string UnknownVoltage::str() {
-    return "V"+std::to_string(node);
 }
 
 bool UnknownVoltage::equals(Unknown *other) {

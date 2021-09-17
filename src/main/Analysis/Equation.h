@@ -49,12 +49,6 @@ public:
      * @param getIndexFunc A function that returns the index of the Unknown on the circuit that is passed into it.
      */
     void apply(int row, Eigen::MatrixXd* A, Eigen::MatrixXd* z, std::function<int(Unknown*)> getIndexFunc);
-
-    /** @brief String representation of the Equation (for debugging).
-     *
-     * @return The string representation.
-     */
-    std::string str();
 };
 
 
