@@ -156,3 +156,52 @@ bool FileUtils::endsWith(std::string fullString, std::string ending) {
 
     return false;
 }
+
+
+static std::vector<std::string> FileUtils::getSaveFiles(){
+    std::vector<std::string> out;
+#if UNIX
+  DIR *d;
+  struct dirent *dir;
+  d = opendir(getSaveDir().c_str());
+  if (d) {
+    while ((dir = readdir(d)) != NULL) {
+      out.push_back(std::string(dir->d_name));
+    }
+    closedir(d);
+  }
+#elif WINDOWS
+    WIN32_FIND_DATA fdFile;
+    HANDLE hFind = NULL;
+
+    char sPath[2048];
+
+    sprintf(sPath, "%s\\*.*", getSaveDir().c_str());
+
+    if((hFind = FindFirstFile(sPath, &fdFile)) == INVALID_HANDLE_VALUE){
+        printf("Path not found: [%s]\n", sDir);
+        return false;
+    }
+
+    do{
+        if(strcmp(fdFile.cFileName, ".") != 0 && strcmp(fdFile.cFileName, "..") != 0){
+            sprintf(sPath, "%s\\%s", sDir, fdFile.cFileName);
+
+            if(fdFile.dwFileAttributes &FILE_ATTRIBUTE_DIRECTORY)
+            {
+                printf("Directory: %s\n", sPath);
+                ListDirectoryContents(sPath);
+            }
+            else{
+                out.push_back(std::string(sPath));
+            }
+        }
+    }
+    while(FindNextFile(hFind, &fdFile));
+
+    FindClose(hFind);
+#else
+#error Cannot determine OS (getSaveFiles)!
+#endif
+    return out;
+}

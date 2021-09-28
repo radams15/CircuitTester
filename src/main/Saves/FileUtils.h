@@ -7,6 +7,7 @@
 #define SAVELOAD1_USERUTILS_H
 
 #include <string>
+#include <vector>
 
 // Definitions to decide if host is unix (linux/mac) or windows.
 #define UNIX (defined(unix) || defined(__unix__) || defined(__unix) || defined(__APPLE__) || defined(__linux) || defined(__linux__))
@@ -55,6 +56,9 @@ public:
      * @return The save directory.
      */
     static std::string getSaveDir();
+    
+    static std::vector<std::string> getSaveFiles();
+    
 
     /** @brief Does the save directory exist?
      *

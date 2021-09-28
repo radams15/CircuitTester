@@ -30,5 +30,10 @@ int main(int argc, char** argv){
     if(!FileUtils::saveDirExists()) {
         FileUtils::createSaveDir();
     }
-    return guiMain(argc, argv);
+    
+    auto t = FileUtils::getSaveFiles();
+    for(auto f : t){
+        std::cout << f << std::endl;
+    }
+    //return guiMain(argc, argv);
 }
