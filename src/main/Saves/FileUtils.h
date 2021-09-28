@@ -32,6 +32,8 @@ private:
      */
     static bool createDirTree(std::string tree);
 
+    static std::string replace(std::string subj, std::string from, std::string to);
+
 public:
 #if UNIX
     /** @brief Unix path separator: /

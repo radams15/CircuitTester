@@ -12,6 +12,7 @@
 #include <unistd.h>
 #include <pwd.h>
 #include <sys/stat.h>
+#include <dirent.h> 
 #elif WINDOWS
 #include <windows.h>
 #include <lmcons.h>
@@ -97,7 +98,7 @@ std::string FileUtils::getSaveDir() {
 
 #if defined(__APPLE__)
     out << "/Users/" << getUserName() << "/Library/" << SAVE_FOLDER << "/save/";
-#elif defined(__linux)
+#elif defined(__linux)|| UNIX
     out << "/home/" << getUserName() << "/.local/share/" << SAVE_FOLDER << "/save/";
 #elif defined(_WIN32)
     out << R"(C:\Users\)" << getUserName() << R"(\AppData\Local\)" << SAVE_FOLDER << R"(\save\)";
@@ -157,21 +158,36 @@ bool FileUtils::endsWith(std::string fullString, std::string ending) {
     return false;
 }
 
+std::string FileUtils::replace(std::string subj, std::string from, std::string to) {
+    // Find position of the from string in the subj string
+    size_t pos = subj.find(from);
+    // If the position is not a position, return the unmodified string.
+    if(pos == std::string::npos) {
+        return subj;
+    }
 
-static std::vector<std::string> FileUtils::getSaveFiles(){
+    // Replace the position pos in subject with to.
+    subj.replace(pos, from.length(), to);
+    return subj;
+}
+
+
+std::vector<std::string> FileUtils::getSaveFiles(){
     std::vector<std::string> out;
 #if UNIX
-  DIR *d;
+  DIR *d; // https://stackoverflow.com/questions/4204666/how-to-list-files-in-a-directory-in-a-c-program
   struct dirent *dir;
   d = opendir(getSaveDir().c_str());
   if (d) {
     while ((dir = readdir(d)) != NULL) {
-      out.push_back(std::string(dir->d_name));
+        if(endsWith(dir->d_name, ".cir")){
+            out.push_back(replace(std::string(dir->d_name), ".cir", ""));
+        }
     }
     closedir(d);
   }
 #elif WINDOWS
-    WIN32_FIND_DATA fdFile;
+    WIN32_FIND_DATA fdFile; // https://stackoverflow.com/questions/2314542/listing-directory-contents-using-c-and-windows
     HANDLE hFind = NULL;
 
     char sPath[2048];
@@ -179,25 +195,21 @@ static std::vector<std::string> FileUtils::getSaveFiles(){
     sprintf(sPath, "%s\\*.*", getSaveDir().c_str());
 
     if((hFind = FindFirstFile(sPath, &fdFile)) == INVALID_HANDLE_VALUE){
-        printf("Path not found: [%s]\n", sDir);
-        return false;
+        printf("Path not found: [%s]\n", getSaveDir().c_str());
+        return out;
     }
 
     do{
         if(strcmp(fdFile.cFileName, ".") != 0 && strcmp(fdFile.cFileName, "..") != 0){
-            sprintf(sPath, "%s\\%s", sDir, fdFile.cFileName);
+            sprintf(sPath, "%s\\%s", getSaveDir().c_str(), fdFile.cFileName);
 
-            if(fdFile.dwFileAttributes &FILE_ATTRIBUTE_DIRECTORY)
-            {
-                printf("Directory: %s\n", sPath);
-                ListDirectoryContents(sPath);
-            }
-            else{
-                out.push_back(std::string(sPath));
+            if(fdFile.dwFileAttributes &FILE_ATTRIBUTE_DIRECTORY){}else{
+                if(endsWith(sPath, ".cir")){
+                    out.push_back(replace(std::string(fdFile.cFileName), ".cir", ""));
+                }
             }
         }
-    }
-    while(FindNextFile(hFind, &fdFile));
+    } while(FindNextFile(hFind, &fdFile));
 
     FindClose(hFind);
 #else

@@ -419,7 +419,17 @@ void MainWindow::saveScene() {
 
 void MainWindow::openScene() {
     // Prompt the user for the name of the circuit to open.
-    std::string name = QInputDialog::getText(this, tr("Circuit Name"), tr("Name")).toStdString();
+    //std::string name = QInputDialog::getText(this, tr("Circuit Name"), tr("Name")).toStdString();
+
+    auto files = FileUtils::getSaveFiles();
+
+    QStringList items;
+    for(auto file : files){ items << QString::fromStdString(file); }
+
+    bool ok;
+
+    std::string name = QInputDialog::getItem(this, tr("Source"), tr("Select a file to open"), items, 0, false, &ok).toStdString();
+
     CircuitSaver::loadCircuit(name, scene);
     currentOpenedCircuit = name;
 
