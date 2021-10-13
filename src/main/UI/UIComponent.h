@@ -25,7 +25,9 @@ enum ComponentType{
     UI_RESISTOR = 1,
     UI_BATTERY = 2,
     UI_WIRE = 3,
-    UI_SWITCH = 4
+    UI_SWITCH = 4,
+    UI_VOLTMETER = 5,
+    UI_AMMETER = 6,
 };
 
 /** @brief SceneItem derivative that has information about generic component

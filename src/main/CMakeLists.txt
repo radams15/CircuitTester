@@ -43,6 +43,10 @@ set(PROJECT_SOURCES
         UI/Components/Wire.h
         UI/Components/Switch.cc
         UI/Components/Switch.h
+        UI/Components/Voltmeter.cc
+        UI/Components/Voltmeter.h
+        UI/Components/Ammeter.cc
+        UI/Components/Ammeter.h
         Analysis/Unknown.cc
         Analysis/Unknown.h
         Analysis/Term.cc

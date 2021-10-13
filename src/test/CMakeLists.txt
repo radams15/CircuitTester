@@ -35,6 +35,10 @@ set(C_FILES
        ../main/UI/Components/Wire.h
        ../main/UI/Components/Switch.cc
        ../main/UI/Components/Switch.h
+       ../main/UI/Components/Voltmeter.cc
+       ../main/UI/Components/Voltmeter.h
+       ../main/UI/Components/Ammeter.cc
+       ../main/UI/Components/Ammeter.h
        ../main/Analysis/Unknown.cc
        ../main/Analysis/Unknown.h
        ../main/Analysis/Term.cc

@@ -8,6 +8,8 @@
     <file>images/wire.png</file>
     <file>images/switch_closed.png</file>
     <file>images/switch_open.png</file>
+    <file>images/ammeter.png</file>
+    <file>images/voltmeter.png</file>
 </qresource>
 </RCC>
 

@@ -11,6 +11,8 @@
 #include "Components/Battery.h"
 #include "Components/Wire.h"
 #include "Components/Switch.h"
+#include "Components/Voltmeter.h"
+#include "Components/Ammeter.h"
 
 #include "../Saves/CircuitSaver.h"
 #include "AnalysisMapper.h"
@@ -96,6 +98,12 @@ void MainWindow::buttonGroupClicked(QAbstractButton *button) {
         case UI_SWITCH:
             scene->setItem(new Switch);
             break;
+        case UI_VOLTMETER:
+            scene->setItem(new Voltmeter);
+            break;
+        case UI_AMMETER:
+            scene->setItem(new Ammeter);
+            break;
         default:
             return;
     }
@@ -178,6 +186,8 @@ void MainWindow::createToolBox() {
     layout->addWidget(createCellWidget<Battery>("Battery"), 0, 1);
     layout->addWidget(createCellWidget<Wire>("Wire"), 1, 0);
     layout->addWidget(createCellWidget<Switch>("Switch"), 1, 1);
+    layout->addWidget(createCellWidget<Ammeter>("Ammeter"), 2, 0);
+    layout->addWidget(createCellWidget<Voltmeter>("Voltmeter"), 2, 1);
 
     // Don't stretch completely, just 3 pixels stretch per row.
     layout->setRowStretch(3, 10);
