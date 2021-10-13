@@ -44,7 +44,7 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
                 break;
 
             // Resistors, wires and switches all have resistances.
-            case UI_RESISTOR: case UI_WIRE: case UI_SWITCH:
+            case UI_RESISTOR: case UI_WIRE: case UI_SWITCH: case UI_AMMETER: case UI_VOLTMETER:
                 component = new MNAComponent(node.first->n0, node.first->n1, MNA_RESISTOR, ((ResistiveElement*)node.first)->getResistance());
                 break;
 
@@ -90,6 +90,25 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
             default:
                 break;
         }
+
+	switch(it.first->getId()){
+		case UI_VOLTMETER:
+			out[it.first] = {
+                	        sol->getVoltage(*it.second),
+				NAN
+                	};
+                	break;
+
+		case UI_AMMETER:
+			out[it.first] = {
+                	        NAN,
+				sol->getCurrent(*it.second)
+                	};
+                	break;
+
+		default:
+			break;
+	}
     }
 
     return out;

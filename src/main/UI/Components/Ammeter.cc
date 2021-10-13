@@ -11,5 +11,5 @@ Ammeter::Ammeter() : ResistiveElement(ID, ":/images/ammeter.png") {
 
 double Ammeter::getResistance() {
     // Min resistance means max current, which is the perfect ammeter.
-    return 0;
+    return 0.000000001;
 }

@@ -354,14 +354,22 @@ void MainWindow::runSimulation() {
     // Remove all existing text boxes.
     scene->removeAllText();
 
-    // 'it' is a map of  UIComponent: ComponentValue.
+    // 'it' is an iterator of a map of  UIComponent: ComponentValue.
     for(auto it : sol){
         std::stringstream ss;
         ss << std::setprecision(2);
 
-        ss << "Voltage: ";
-        ss << it.second.voltage;
-        ss << "V";
+	if (std::to_string(it.second.voltage) != "nan"){ //TODO FIX THIS MONSTROSITY
+            ss << "Voltage: ";
+            if(it.second.voltage < 1000){
+                ss << it.second.voltage;
+            }else if(it.second.voltage < 0.01) {
+                ss << 0;
+            }else{
+                ss << "\u221E"; // Infinity symbol unicode escape.
+            }
+            ss << "V";
+        }
 
         if (std::to_string(it.second.current) != "nan"){ //TODO FIX THIS MONSTROSITY
             ss << "\nCurrent: ";
