@@ -1,6 +1,5 @@
 set(TEST_FILES
-        Test_MNA.cc
-        Test_MNACircuit.cc Test_SaveLoad.cpp)
+	Test_SaveLoad.cc)
 
 set(C_FILES
         ../../resources/resources.qrc
@@ -18,15 +17,6 @@ set(C_FILES
        ../main/UI/SettingsMenu.cc
        ../main/UI/SettingsMenu.h
 
-       ../main/Analysis/Equation.cc
-       ../main/Analysis/Equation.h
-       ../main/Analysis/MNACircuit.cc
-       ../main/Analysis/MNACircuit.h
-       ../main/Analysis/MNAComponent.cc
-       ../main/Analysis/MNAComponent.h
-       ../main/Analysis/MNASolution.cc
-       ../main/Analysis/MNASolution.h
-       ../main/Analysis/MNA.h
        ../main/UI/Components/Battery.cc
        ../main/UI/Components/Battery.h
        ../main/UI/Components/Resistor.cc
@@ -39,15 +29,11 @@ set(C_FILES
        ../main/UI/Components/Voltmeter.h
        ../main/UI/Components/Ammeter.cc
        ../main/UI/Components/Ammeter.h
-       ../main/Analysis/Unknown.cc
-       ../main/Analysis/Unknown.h
-       ../main/Analysis/Term.cc
-       ../main/Analysis/Term.h
        ../main/UI/UIComponent.cc
        ../main/UI/UIComponent.h
        ../main/UI/AnalysisMapper.cc
        ../main/UI/AnalysisMapper.h
-        ../main/Saves/FileUtils.cpp
+        ../main/Saves/FileUtils.cc
         ../main/Saves/FileUtils.h ../main/Saves/CircuitSaver.cc ../main/Saves/CircuitSaver.h ../main/UI/Components/ResistiveElement.h)
 
 set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)

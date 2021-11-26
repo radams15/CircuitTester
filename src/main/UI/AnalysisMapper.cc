@@ -12,7 +12,7 @@
 #include "Components/Switch.h"
 #include "Line.h"
 
-#include "../Analysis/MNACircuit.h"
+#include <cmath>
 
 AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
 
@@ -29,7 +29,7 @@ AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
 std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
     Graph graph = makeGraph();
 
-    auto* mNAComponents = new std::vector<MNAComponent*>;
+    auto* mNAComponents = CompVector_new();
 
     // Map of UIComponent:MNAComponent to help to return the correct values to the correct UIComponent.
     auto* mNAMap = new std::map<UIComponent*, MNAComponent*>;
@@ -40,12 +40,12 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
         // Get the type of the node (node.first is node, node.second is connections).
         switch(node.first->getId()){
             case UI_BATTERY:
-                component = new MNAComponent(node.first->n0, node.first->n1, MNA_BATTERY, ((Battery*)node.first)->getVoltage());
+                component = MNAComponent_new(node.first->n0, node.first->n1, MNA_BATTERY, ((Battery*)node.first)->getVoltage());
                 break;
 
             // Resistors, wires and switches all have resistances.
             case UI_RESISTOR: case UI_WIRE: case UI_SWITCH: case UI_AMMETER: case UI_VOLTMETER:
-                component = new MNAComponent(node.first->n0, node.first->n1, MNA_RESISTOR, ((ResistiveElement*)node.first)->getResistance());
+                component = MNAComponent_new(node.first->n0, node.first->n1, MNA_RESISTOR, ((ResistiveElement*)node.first)->getResistance());
                 break;
 
             default:
@@ -53,27 +53,27 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
         }
 
         // Add the new component to the list of components.
-        mNAComponents->push_back(component);
+        CompVector_push_back(mNAComponents, component);
 
         // Add the component to the list to set the (UIComponent => MNAComponent).
         mNAMap->insert(std::make_pair(node.first, component));
     }
 
-    auto* cir = new MNACircuit(*mNAComponents);
+    auto* cir = MNACircuit_new(mNAComponents);
 
-    auto* sol = cir->solve();
+    auto* sol = MNACircuit_solve(cir);
 
     std::map<UIComponent*, ComponentValue> out;
 
     for(auto it : *mNAMap){
-        switch(it.second->type){
+        switch(MNAComponent_type_get(it.second)){
             // Resistors have a current and a voltage.
             case MNA_RESISTOR:
             	// Add the voltage and the current of the MNAComponent into the solution map
             	// with the key of the UIComponent.
                 out[it.first] = {
-                        sol->getVoltage(*it.second),
-                        sol->getCurrent(*it.second)
+                        MNASolution_getVoltage(sol, it.second),
+                        MNASolution_getCurrent(sol, it.second)
                 };
                 break;
 
@@ -82,7 +82,7 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
             	// Add the voltage of the MNAComponent into the solution map.
             	// with the key of the UIComponent.
                 out[it.first] = {
-                        sol->getVoltage(*it.second),
+                        MNASolution_getVoltage(sol, it.second),
                         NAN
                 };
                 break;
@@ -94,7 +94,7 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
 	switch(it.first->getId()){
 		case UI_VOLTMETER:
 			out[it.first] = {
-                	        sol->getVoltage(*it.second),
+                	        MNASolution_getVoltage(sol, it.second),
 				NAN
                 	};
                 	break;
@@ -102,7 +102,7 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
 		case UI_AMMETER:
 			out[it.first] = {
                 	        NAN,
-				sol->getCurrent(*it.second)
+				MNASolution_getCurrent(sol, it.second)
                 	};
                 	break;
 

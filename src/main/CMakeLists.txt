@@ -26,15 +26,6 @@ set(PROJECT_SOURCES
         UI/SettingsMenu.cc
         UI/SettingsMenu.h
 
-        Analysis/Equation.cc
-        Analysis/Equation.h
-        Analysis/MNACircuit.cc
-        Analysis/MNACircuit.h
-        Analysis/MNAComponent.cc
-        Analysis/MNAComponent.h
-        Analysis/MNASolution.cc
-        Analysis/MNASolution.h
-        Analysis/MNA.h
         UI/Components/Battery.cc
         UI/Components/Battery.h
         UI/Components/Resistor.cc
@@ -47,16 +38,16 @@ set(PROJECT_SOURCES
         UI/Components/Voltmeter.h
         UI/Components/Ammeter.cc
         UI/Components/Ammeter.h
-        Analysis/Unknown.cc
-        Analysis/Unknown.h
-        Analysis/Term.cc
-        Analysis/Term.h
         UI/UIComponent.cc
         UI/UIComponent.h
         UI/AnalysisMapper.cc
         UI/AnalysisMapper.h
-        Saves/FileUtils.cpp
-        Saves/FileUtils.h Saves/CircuitSaver.cc Saves/CircuitSaver.h UI/Components/ResistiveElement.h)
+        Saves/FileUtils.cc
+        Saves/FileUtils.h
+	Saves/CircuitSaver.cc
+	Saves/CircuitSaver.h
+	UI/Components/ResistiveElement.h
+)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(CircuitTester
@@ -76,11 +67,16 @@ endif()
 
 set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/lib)
+list(APPEND CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/lib/MNA")
 
 find_package(Eigen3 3.3.9 REQUIRED)
-include_directories(${EIGEN3_INCLUDE_DIR})
+find_package(PkgConfig)
+find_path(MNA_INC "libMNA.h")
+include_directories(${EIGEN3_INCLUDE_DIR} ${CIRCUIT_INCLUDE_DIRS} ${MNA_INC})
 
-target_link_libraries(CircuitTester PRIVATE Qt${QT_VER}::Widgets nlohmann_json::nlohmann_json)
+target_link_libraries(CircuitTester PRIVATE Qt${QT_VER}::Widgets nlohmann_json::nlohmann_json "${CMAKE_SOURCE_DIR}/lib/MNA/libMNA.so")
+
+target_compile_options(CircuitTester PUBLIC)
 
 
 set(BUILD_DIR ${PROJECT_SOURCE_DIR}/builds/${SYS})
