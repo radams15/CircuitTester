@@ -17,11 +17,11 @@ if($ARGV[0] eq "build"){
 }elsif($ARGV[0] eq "lin"){
 	print `podman run --volume $PWD:/CircuitTester:z -ti qtlin /bin/build`;
 }elsif($ARGV[0] eq "lin6"){
-	print `podman run -u=builder:builder --volume $PWD:/CircuitTester:z -ti qtlin6 /bin/build`;
+	print `podman run --volume $PWD:/CircuitTester:z -ti qtlin6 /bin/build`;
 }elsif($ARGV[0] eq "test"){
-	print `podman run -u=builder:builder --volume $PWD:/CircuitTester:z -ti qtlin /bin/runtest`;
+	print `podman run --volume $PWD:/CircuitTester:z -ti qtlin /bin/runtest`;
 }elsif($ARGV[0] eq "win"){
-	print `podman run -u=builder:builder --volume $PWD:/CircuitTester:z -ti qtwin /bin/build`;
+	print `podman run --volume $PWD:/CircuitTester:z -ti qtwin /bin/build`;
 }elsif($ARGV[0] eq "run"){
 	print `podman run --volume $PWD:/CircuitTester:z -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -ti qtlin /CircuitTester/linbuild5/src/main/CircuitTester`;
 }elsif($ARGV[0] eq "run6"){
