@@ -13,6 +13,7 @@
 #include "Line.h"
 
 #include <cmath>
+#include <iostream>
 
 AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
 
@@ -29,10 +30,10 @@ AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
 std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
     Graph graph = makeGraph();
 
-    auto* mNAComponents = CompVector_new();
+    auto mNAComponents = CompVector_new();
 
     // Map of UIComponent:MNAComponent to help to return the correct values to the correct UIComponent.
-    auto* mNAMap = new std::map<UIComponent*, MNAComponent*>;
+    auto mNAMap = new std::map<UIComponent*, MNAComponent*>;
 
     for(auto node : graph){
         MNAComponent* component;
@@ -52,16 +53,26 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
                 continue;
         }
 
+
         // Add the new component to the list of components.
-        CompVector_push_back(mNAComponents, component);
+        CompVector_push_back(mNAComponents, component); // TODO CompVector is corrupted. Below is broken.
+
+		std::cout << MNAComponent_value_get(CompVector_get(mNAComponents, 0)) << " Test 1\n";
 
         // Add the component to the list to set the (UIComponent => MNAComponent).
         mNAMap->insert(std::make_pair(node.first, component));
+
+		std::cout << "Test 2\n";
     }
+
 
     auto* cir = MNACircuit_new(mNAComponents);
 
+	std::cout << "Test 3\n";
+
     auto* sol = MNACircuit_solve(cir);
+
+	std::cout << "Test 4\n";
 
     std::map<UIComponent*, ComponentValue> out;
 

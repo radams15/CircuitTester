@@ -11,7 +11,7 @@
 
 #include "SceneItem.h"
 
-#include "../../../lib/MNA/libMNA.h"
+#include "../../../lib/MNA/MNA.h"
 #include "UIComponent.h"
 
 /**

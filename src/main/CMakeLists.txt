@@ -71,7 +71,7 @@ list(APPEND CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/lib/MNA")
 
 find_package(Eigen3 3.3.9 REQUIRED)
 find_package(PkgConfig)
-find_path(MNA_INC "libMNA.h")
+find_path(MNA_INC "MNA.h")
 include_directories(${EIGEN3_INCLUDE_DIR} ${CIRCUIT_INCLUDE_DIRS} ${MNA_INC})
 
 target_link_libraries(CircuitTester PRIVATE Qt${QT_VER}::Widgets nlohmann_json::nlohmann_json "${CMAKE_SOURCE_DIR}/lib/MNA/libMNA.so")
