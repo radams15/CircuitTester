@@ -55,7 +55,7 @@ set(PROJECT_SOURCES
         UI/UIComponent.h
         UI/AnalysisMapper.cc
         UI/AnalysisMapper.h
-        Saves/FileUtils.cpp
+        Saves/FileUtils.cc
         Saves/FileUtils.h Saves/CircuitSaver.cc Saves/CircuitSaver.h UI/Components/ResistiveElement.h)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

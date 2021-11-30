@@ -340,6 +340,20 @@ template<class T> std::list<T> toStdList(QList<T> in){
     return out;
 }
 
+std::string dtos(double in){
+	/* Alloc 10 bytes: will take up 4 bytes for the max integer part (1000 max), 2 for the 2dp, 
+	1 for the point char, and the null byte.*/
+	auto outa = (char*) calloc(8, sizeof(char));
+
+	sprintf(outa, "%.2f", in);
+
+	auto outs = std::string(outa);
+
+	free((void*) outa);
+
+	return outs;
+}
+
 void MainWindow::runSimulation() {
     // Is the scene empty? If it is, don't run as this crashes the program.
     if(scene->items().empty()){
@@ -362,9 +376,9 @@ void MainWindow::runSimulation() {
 	if (std::to_string(it.second.voltage) != "nan"){ //TODO FIX THIS MONSTROSITY
             ss << "Voltage: ";
             if(it.second.voltage < 1000){
-                ss << it.second.voltage;
+                ss << dtos(it.second.voltage);
             }else if(it.second.voltage < 0.01) {
-                ss << 0;
+                ss << "0";
             }else{
                 ss << "\u221E"; // Infinity symbol unicode escape.
             }
@@ -374,9 +388,9 @@ void MainWindow::runSimulation() {
         if (std::to_string(it.second.current) != "nan"){ //TODO FIX THIS MONSTROSITY
             ss << "\nCurrent: ";
             if(it.second.current < 1000){
-                ss << it.second.current;
+                ss << dtos(it.second.current);
             }else if(it.second.current < 0.01) {
-                ss << 0;
+                ss << "0";
             }else{
                 ss << "\u221E"; // Infinity symbol unicode escape.
             }
