@@ -30,10 +30,6 @@
 typedef struct SwigObj SwigObj;
 
 #include <stdbool.h>
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 typedef struct SwigObj_SWIG_CException SWIG_CException;
 
 typedef struct SwigObj_CompVector CompVector;
@@ -58,6 +54,10 @@ enum ElementType {
 };
 
 typedef struct SwigObj_MNAComponent MNAComponent;
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 SWIGIMPORT int SWIG_CException_code_get(SWIG_CException* carg1);
 

@@ -30,7 +30,7 @@ AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
 std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
     Graph graph = makeGraph();
 
-    auto mNAComponents = CompVector_new();
+    CompVector* comps = CompVector_new();
 
     // Map of UIComponent:MNAComponent to help to return the correct values to the correct UIComponent.
     auto mNAMap = new std::map<UIComponent*, MNAComponent*>;
@@ -55,9 +55,9 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
 
 
         // Add the new component to the list of components.
-        CompVector_push_back(mNAComponents, component); // TODO CompVector is corrupted. Below is broken.
+        CompVector_push_back(comps, &component); // TODO CompVector is corrupted. Below is broken.
 
-		std::cout << MNAComponent_value_get(CompVector_get(mNAComponents, 0)) << " Test 1\n";
+		std::cout << MNAComponent_value_get(CompVector_get(comps, 0)) << " Test 1\n";
 
         // Add the component to the list to set the (UIComponent => MNAComponent).
         mNAMap->insert(std::make_pair(node.first, component));
@@ -66,7 +66,7 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
     }
 
 
-    auto* cir = MNACircuit_new(mNAComponents);
+    auto* cir = MNACircuit_new(comps);
 
 	std::cout << "Test 3\n";
 
@@ -83,8 +83,8 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
             	// Add the voltage and the current of the MNAComponent into the solution map
             	// with the key of the UIComponent.
                 out[it.first] = {
-                        MNASolution_getVoltage(sol, it.second),
-                        MNASolution_getCurrent(sol, it.second)
+                        MNASolution_getVoltage(&cir, it.second),
+                        MNASolution_getCurrent(&cir, it.second)
                 };
                 break;
 
@@ -93,7 +93,7 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
             	// Add the voltage of the MNAComponent into the solution map.
             	// with the key of the UIComponent.
                 out[it.first] = {
-                        MNASolution_getVoltage(sol, it.second),
+                        MNASolution_getVoltage(&cir, it.second),
                         NAN
                 };
                 break;
@@ -105,7 +105,7 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
 	switch(it.first->getId()){
 		case UI_VOLTMETER:
 			out[it.first] = {
-                	        MNASolution_getVoltage(sol, it.second),
+                	        MNASolution_getVoltage(&cir, it.second),
 				NAN
                 	};
                 	break;
@@ -113,7 +113,7 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
 		case UI_AMMETER:
 			out[it.first] = {
                 	        NAN,
-				MNASolution_getCurrent(sol, it.second)
+				MNASolution_getCurrent(&cir, it.second)
                 	};
                 	break;
 
