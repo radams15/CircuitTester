@@ -345,10 +345,13 @@ std::string dtos(double in){
 	1 for the point char, and the null byte.*/
 	auto outa = (char*) calloc(8, sizeof(char));
 
+	// Write the double to 2 decimal places to the outa char array.
 	sprintf(outa, "%.2f", in);
 
+	// Turn the char array to a std::string.
 	auto outs = std::string(outa);
 
+	// Free the memory as we copied it to an std::string and no longer need it.
 	free((void*) outa);
 
 	return outs;
@@ -371,13 +374,12 @@ void MainWindow::runSimulation() {
     // 'it' is an iterator of a map of  UIComponent: ComponentValue.
     for(auto it : sol){
         std::stringstream ss;
-        ss << std::setprecision(2);
 
 	if (std::to_string(it.second.voltage) != "nan"){ //TODO FIX THIS MONSTROSITY
             ss << "Voltage: ";
             if(it.second.voltage < 1000){
                 ss << dtos(it.second.voltage);
-            }else if(it.second.voltage < 0.01) {
+            }else if(it.second.voltage <= 0.01) {
                 ss << "0";
             }else{
                 ss << "\u221E"; // Infinity symbol unicode escape.
