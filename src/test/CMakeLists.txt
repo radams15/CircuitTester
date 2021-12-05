@@ -1,6 +1,6 @@
 set(TEST_FILES
         Test_MNA.cc
-        Test_MNACircuit.cc Test_SaveLoad.cpp)
+        Test_MNACircuit.cc Test_SaveLoad.cc)
 
 set(C_FILES
         ../../resources/resources.qrc
@@ -47,7 +47,7 @@ set(C_FILES
        ../main/UI/UIComponent.h
        ../main/UI/AnalysisMapper.cc
        ../main/UI/AnalysisMapper.h
-        ../main/Saves/FileUtils.cpp
+        ../main/Saves/FileUtils.cc
         ../main/Saves/FileUtils.h ../main/Saves/CircuitSaver.cc ../main/Saves/CircuitSaver.h ../main/UI/Components/ResistiveElement.h)
 
 set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)
