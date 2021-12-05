@@ -1,0 +1,26 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node14 [label="QGraphicsPixmapItem",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node14 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="SceneItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSceneItem.html",tooltip="An image on the Scene."];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="UIComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUIComponent.html",tooltip="SceneItem derivative that has information about generic component info such as nodes and arrow connec..."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Battery",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBattery.html",tooltip="A battery class that has a configurable voltage and on/off state."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ResistiveElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classResistiveElement.html",tooltip="Parent class of anything with a resistance (Resistor, Switch, Wire)."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Ammeter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAmmeter.html",tooltip="Ammeter component."];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Resistor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classResistor.html",tooltip="Resistor component with configurable resistance."];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Switch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSwitch.html",tooltip="Switch component that can be on/off."];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Voltmeter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classVoltmeter.html",tooltip="Resistor component with configurable resistance."];
+  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Wire",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWire.html",tooltip="Wire component with configurable length, area and material."];
+}
