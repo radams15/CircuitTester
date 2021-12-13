@@ -6,7 +6,7 @@
 
 #include <gtest/gtest.h>
 
-#include "../main/Analysis/MNAComponent.h"
+#include "../main/Analysis/Component.h"
 
 #define APROX_EQ(a,b) ASSERT_TRUE((abs(a - b) <= 1E-3))
 
@@ -20,7 +20,7 @@
  * Expected: true
  */
 TEST(MNAComponent, ContainsNormal){
-    auto bat = new MNAComponent(2, 3, MNA_RESISTOR, 10);
+    auto bat = new Component(2, 3, MNA_RESISTOR, 10);
     
     ASSERT_EQ(bat->contains(2), true);
 }
@@ -35,7 +35,7 @@ TEST(MNAComponent, ContainsNormal){
  * Expected: false
  */
 TEST(MNAComponent, ContainsNormal2){
-    auto bat = new MNAComponent(2, 3, MNA_RESISTOR, 10);
+    auto bat = new Component(2, 3, MNA_RESISTOR, 10);
     
     ASSERT_EQ(bat->contains(100), false);
 }
@@ -50,7 +50,7 @@ TEST(MNAComponent, ContainsNormal2){
  * Expected: controlled error thrown
  */
 TEST(MNAComponent, OpposideInvalid){
-    auto bat = new MNAComponent(2, 3, MNA_RESISTOR, 10);
+    auto bat = new Component(2, 3, MNA_RESISTOR, 10);
     
     //ASSERT_EQ(bat->opposite(100), false);
 }

@@ -28,13 +28,12 @@ set(PROJECT_SOURCES
 
         Analysis/Equation.cc
         Analysis/Equation.h
-        Analysis/MNACircuit.cc
-        Analysis/MNACircuit.h
-        Analysis/MNAComponent.cc
-        Analysis/MNAComponent.h
-        Analysis/MNASolution.cc
-        Analysis/MNASolution.h
-        Analysis/MNA.h
+        Analysis/Circuit.cc
+        Analysis/Circuit.h
+        Analysis/Component.cc
+        Analysis/Component.h
+        Analysis/Solution.cc
+        Analysis/Solution.h
         UI/Components/Battery.cc
         UI/Components/Battery.h
         UI/Components/Resistor.cc

@@ -11,7 +11,7 @@
 
 #include "SceneItem.h"
 
-#include "../Analysis/MNASolution.h"
+#include "../Analysis/Solution.h"
 #include "UIComponent.h"
 
 /**

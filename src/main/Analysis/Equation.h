@@ -11,7 +11,7 @@
 
 #include <Eigen/Core>
 
-#include "MNAComponent.h"
+#include "Component.h"
 #include "Unknown.h"
 #include "Term.h"
 

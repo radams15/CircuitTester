@@ -4,8 +4,8 @@
 
 #include "Unknown.h"
 
-UnknownCurrent::UnknownCurrent(MNAComponent *element) : Unknown(CURRENT) {
-    this->element = element;
+UnknownCurrent::UnknownCurrent(Component *component) : Unknown(CURRENT) {
+    this->component = component;
 }
 
 bool UnknownCurrent::equals(Unknown* other) {
@@ -16,7 +16,7 @@ bool UnknownCurrent::equals(Unknown* other) {
 
     // Cast into an UnknownCurrent to get proper class attributes.
     auto* c = (UnknownCurrent*) other;
-    return c->element == element;
+    return c->component == component;
 }
 
 UnknownVoltage::UnknownVoltage(int node)  : Unknown(VOLTAGE) {

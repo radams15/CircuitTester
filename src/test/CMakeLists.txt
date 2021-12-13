@@ -20,16 +20,15 @@ set(C_FILES
        ../main/UI/SettingsMenu.cc
        ../main/UI/SettingsMenu.h
 
-       ../main/Analysis/Equation.cc
-       ../main/Analysis/Equation.h
-       ../main/Analysis/MNACircuit.cc
-       ../main/Analysis/MNACircuit.h
-       ../main/Analysis/MNAComponent.cc
-       ../main/Analysis/MNAComponent.h
-       ../main/Analysis/MNASolution.cc
-       ../main/Analysis/MNASolution.h
-       ../main/Analysis/MNA.h
-       ../main/UI/Components/Battery.cc
+        ../main/Analysis/Equation.cc
+        ../main/Analysis/Equation.h
+        ../main/Analysis/Circuit.cc
+        ../main/Analysis/Circuit.h
+        ../main/Analysis/Component.cc
+        ../main/Analysis/Component.h
+        ../main/Analysis/Solution.cc
+        ../main/Analysis/Solution.h
+        ../main/UI/Components/Battery.cc
        ../main/UI/Components/Battery.h
        ../main/UI/Components/Resistor.cc
        ../main/UI/Components/Resistor.h

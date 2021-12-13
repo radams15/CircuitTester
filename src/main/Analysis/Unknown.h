@@ -8,7 +8,7 @@
 #define CIRCUITTESTER_UNKNOWN_H
 
 #include <string>
-#include "MNAComponent.h"
+#include "Component.h"
 
 /** @brief Base class for unknown values
  *
@@ -54,26 +54,26 @@ protected:
 };
 
 
-/** @brief Stores an MNAComponent for which the current is unknown.
+/** @brief Stores an Component for which the current is unknown.
  *
  */
 class UnknownCurrent : public Unknown {
 private:
 
 public:
-    /** @brief The element for which the current is unknown.
+    /** @brief The component for which the current is unknown.
      *
      */
-    MNAComponent* element;
+    Component* component;
 
     /** @brief Initialiser
      *
      * Initialises the UnknownCurrent by initialising an Unknown
-     * of type CURRENT and setting this.element to element.
+     * of type CURRENT and setting this.component to component.
      *
-     * @param element The element for which current is unknown.
+     * @param component The component for which current is unknown.
      */
-    explicit UnknownCurrent(MNAComponent* element);
+    explicit UnknownCurrent(Component* component);
 
     bool equals(Unknown* other) override;
 };

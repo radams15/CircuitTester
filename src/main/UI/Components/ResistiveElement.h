@@ -22,7 +22,7 @@ public:
      */
     ResistiveElement(int ID, std::string resourcePath) : UIComponent(ID, std::move(resourcePath)){}
 
-    /** @brief Virtual method for getting the resistance of a resistive element.
+    /** @brief Virtual method for getting the resistance of a resistive component.
      *
      * @return
      */

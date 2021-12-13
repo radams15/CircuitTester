@@ -30020,32 +30020,32 @@
         <name>QPainterPath</name>
         <filename>qpainterpath.html</filename>
         <member kind="enumeration">
-            <name>ElementType</name>
+            <name>UIComponentType</name>
             <anchorfile>qpainterpath.html</anchorfile>
-            <anchor>ElementType-enum</anchor>
+            <anchor>UIComponentType-enum</anchor>
         </member>
         <member kind="enumvalue">
             <name>MoveToElement</name>
             <anchorfile>qpainterpath.html</anchorfile>
-            <anchor>ElementType-enum</anchor>
+            <anchor>UIComponentType-enum</anchor>
             <arglist></arglist>
         </member>
         <member kind="enumvalue">
             <name>LineToElement</name>
             <anchorfile>qpainterpath.html</anchorfile>
-            <anchor>ElementType-enum</anchor>
+            <anchor>UIComponentType-enum</anchor>
             <arglist></arglist>
         </member>
         <member kind="enumvalue">
             <name>CurveToElement</name>
             <anchorfile>qpainterpath.html</anchorfile>
-            <anchor>ElementType-enum</anchor>
+            <anchor>UIComponentType-enum</anchor>
             <arglist></arglist>
         </member>
         <member kind="enumvalue">
             <name>CurveToDataElement</name>
             <anchorfile>qpainterpath.html</anchorfile>
-            <anchor>ElementType-enum</anchor>
+            <anchor>UIComponentType-enum</anchor>
             <arglist></arglist>
         </member>
         <class>QPainterPath::Element</class>
@@ -30661,46 +30661,46 @@
     </compound>
     <compound kind="class">
         <name>QPainterPath::Element</name>
-        <filename>qpainterpath-element.html</filename>
+        <filename>qpainterpath-component.html</filename>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>bool</type>
             <name>isMoveTo</name>
-            <anchorfile>qpainterpath-element.html</anchorfile>
+            <anchorfile>qpainterpath-component.html</anchorfile>
             <anchor>isMoveTo</anchor>
             <arglist>() const const</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>bool</type>
             <name>isLineTo</name>
-            <anchorfile>qpainterpath-element.html</anchorfile>
+            <anchorfile>qpainterpath-component.html</anchorfile>
             <anchor>isLineTo</anchor>
             <arglist>() const const</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>bool</type>
             <name>isCurveTo</name>
-            <anchorfile>qpainterpath-element.html</anchorfile>
+            <anchorfile>qpainterpath-component.html</anchorfile>
             <anchor>isCurveTo</anchor>
             <arglist>() const const</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>QPointF</type>
             <name>operator QPointF</name>
-            <anchorfile>qpainterpath-element.html</anchorfile>
+            <anchorfile>qpainterpath-component.html</anchorfile>
             <anchor>operator-QPointF</anchor>
             <arglist>() const const</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>bool</type>
             <name>operator==</name>
-            <anchorfile>qpainterpath-element.html</anchorfile>
+            <anchorfile>qpainterpath-component.html</anchorfile>
             <anchor>operator-eq-eq</anchor>
             <arglist>(const Element &amp;other) const const</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>bool</type>
             <name>operator!=</name>
-            <anchorfile>qpainterpath-element.html</anchorfile>
+            <anchorfile>qpainterpath-component.html</anchorfile>
             <anchor>operator-not-eq</anchor>
             <arglist>(const Element &amp;other) const const</arglist>
         </member>

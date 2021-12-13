@@ -6,9 +6,9 @@
 
 #include <gtest/gtest.h>
 
-#include "../main/Analysis/MNAComponent.h"
-#include "../main/Analysis/MNACircuit.h"
-#include "../main/Analysis/MNASolution.h"
+#include "../main/Analysis/Component.h"
+#include "../main/Analysis/Circuit.h"
+#include "../main/Analysis/Solution.h"
 
 #define APROX_EQ(a,b) ASSERT_TRUE((abs(a - b) <= 1E-3))
 
@@ -18,17 +18,17 @@
  * connected to a 10.0V battery is 2.5A.
  */
 TEST(NodalAnalysis, OneResistorCurrent){
-    auto bat = new MNAComponent(0, 1, MNA_BATTERY, 10);
-    auto res = new MNAComponent(1, 0, MNA_RESISTOR, 4);
+    auto bat = new Component(0, 1, MNA_BATTERY, 10);
+    auto res = new Component(1, 0, MNA_RESISTOR, 4);
 
-    auto cir = new MNACircuit({bat, res});
+    auto cir = new Circuit({bat, res});
 
     std::map<int, double> vmap = {
             {0, 0.0},
             {1, 10.0},
     };
 
-    auto dessol = new MNASolution(vmap, {bat});
+    auto dessol = new Solution(vmap, {bat});
 
     auto sol = cir->solve();
 
@@ -45,12 +45,12 @@ TEST(NodalAnalysis, OneResistorCurrent){
  * of 1.35A to test current splitting.
  */
 TEST(NodalAnalysis, TwoResistorsInParallel){
-    auto bat = new MNAComponent(0, 1, MNA_BATTERY, 9);
-    auto res1 = new MNAComponent(2, 0, MNA_RESISTOR, 10);
-    auto res2 = new MNAComponent(2, 0, MNA_RESISTOR, 20);
-    auto am1 = new MNAComponent(1, 2, MNA_RESISTOR, 0.001);
+    auto bat = new Component(0, 1, MNA_BATTERY, 9);
+    auto res1 = new Component(2, 0, MNA_RESISTOR, 10);
+    auto res2 = new Component(2, 0, MNA_RESISTOR, 20);
+    auto am1 = new Component(1, 2, MNA_RESISTOR, 0.001);
 
-    auto cir = new MNACircuit({bat, res1, res2, am1});
+    auto cir = new Circuit({bat, res1, res2, am1});
 
     std::map<int, double> vmap = {
             {0, 0.0},
@@ -74,12 +74,12 @@ TEST(NodalAnalysis, TwoResistorsInParallel){
  * Currents should be 0.58A, 0.29A and 0.87A respectively.
  */
 TEST(NodalAnalysis, ParalellAndSeriesResistors){
-    auto bat = new MNAComponent(0, 1, MNA_BATTERY, 9);
-    auto res1 = new MNAComponent(1, 2, MNA_RESISTOR, 5);
-    auto res2 = new MNAComponent(1, 2, MNA_RESISTOR, 10);
-    auto res3 = new MNAComponent(2, 0, MNA_RESISTOR, 7);
+    auto bat = new Component(0, 1, MNA_BATTERY, 9);
+    auto res1 = new Component(1, 2, MNA_RESISTOR, 5);
+    auto res2 = new Component(1, 2, MNA_RESISTOR, 10);
+    auto res3 = new Component(2, 0, MNA_RESISTOR, 7);
 
-    auto cir = new MNACircuit({bat, res1, res2, res3});
+    auto cir = new Circuit({bat, res1, res2, res3});
 
     std::map<int, double> vmap = {
             {0, 0.0},
@@ -87,7 +87,7 @@ TEST(NodalAnalysis, ParalellAndSeriesResistors){
             {2, 6.09677},
     };
 
-    auto dessol = new MNASolution(vmap, {bat->withCurrent(0.870968)});
+    auto dessol = new Solution(vmap, {bat->withCurrent(0.870968)});
 
     auto sol = cir->solve();
 
@@ -106,11 +106,11 @@ TEST(NodalAnalysis, ParalellAndSeriesResistors){
  * of 18.0V.
  */
 TEST(NodalAnalysis, TwoBatteriesInSeries){
-    auto bat1 = new MNAComponent(0, 1, MNA_BATTERY, 9);
-    auto bat2 = new MNAComponent(1, 2, MNA_BATTERY, 9);
-    auto am1 = new MNAComponent(2, 0, MNA_RESISTOR, 10);
+    auto bat1 = new Component(0, 1, MNA_BATTERY, 9);
+    auto bat2 = new Component(1, 2, MNA_BATTERY, 9);
+    auto am1 = new Component(2, 0, MNA_RESISTOR, 10);
 
-    auto cir = new MNACircuit({bat1, bat2, am1});
+    auto cir = new Circuit({bat1, bat2, am1});
 
     std::map<int, double> vmap = {
             {0, 0.0},
@@ -118,7 +118,7 @@ TEST(NodalAnalysis, TwoBatteriesInSeries){
             {2, 18.0},
     };
 
-    auto dessol = new MNASolution(vmap, {bat1->withCurrent(1.8), bat2->withCurrent(1.8)});
+    auto dessol = new Solution(vmap, {bat1->withCurrent(1.8), bat2->withCurrent(1.8)});
 
     auto sol = cir->solve();
 
@@ -137,18 +137,18 @@ TEST(NodalAnalysis, TwoBatteriesInSeries){
  * if there is only 1 4.0V battery.
  */
 TEST(NodalAnalysis, TwoBatteriesInParallel){
-    auto bat1 = new MNAComponent(0, 1, MNA_BATTERY, 4);
-    auto bat2 = new MNAComponent(0, 1, MNA_BATTERY, 4);
-    auto res = new MNAComponent(1, 0, MNA_RESISTOR, 10);
+    auto bat1 = new Component(0, 1, MNA_BATTERY, 4);
+    auto bat2 = new Component(0, 1, MNA_BATTERY, 4);
+    auto res = new Component(1, 0, MNA_RESISTOR, 10);
 
-    auto cir = new MNACircuit({bat1, bat2, res});
+    auto cir = new Circuit({bat1, bat2, res});
 
     std::map<int, double> vmap = {
             {0, 0.0},
             {1, 4.0},
     };
 
-    auto dessol = new MNASolution(vmap, {bat1->withCurrent(0.4), bat2->withCurrent(0.0)});
+    auto dessol = new Solution(vmap, {bat1->withCurrent(0.4), bat2->withCurrent(0.0)});
 
     auto sol = cir->solve();
 

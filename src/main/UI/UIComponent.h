@@ -21,7 +21,7 @@
  * the same values.
  *
  */
-enum ComponentType{
+enum UIComponentType{
     UI_RESISTOR = 1,
     UI_BATTERY = 2,
     UI_WIRE = 3,
@@ -36,7 +36,7 @@ enum ComponentType{
  */
 class UIComponent : public SceneItem{
 protected:
-    /** @brief Is type ComponentType, allows other functions to find what type of element
+    /** @brief Is type UIComponentType, allows other functions to find what type of component
      * pointers are.
      *
      */

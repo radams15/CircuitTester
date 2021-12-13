@@ -1,7 +1,0 @@
-<map id="TEST" name="TEST">
-<area shape="rect" id="node1" title="Two Resistors In Series. Tests to see if the currents of two resistors of resistances 10...." alt="" coords="5,35,60,61"/>
-<area shape="rect" id="node2" href="$classMNASolution.html#a4fef603c0f58a4bff7ca0da98b991f9a" title=" " alt="" coords="129,5,273,32"/>
-<area shape="rect" id="node4" href="$classMNASolution.html#a916b6c6921c8d71c1fa5b90cede77666" title=" " alt="" coords="108,57,295,98"/>
-<area shape="rect" id="node3" href="$classMNASolution.html#a1d0e3d261f981b1055ba00a9f70ec3bb" title=" " alt="" coords="343,5,541,32"/>
-<area shape="rect" id="node5" href="$classMNASolution.html#a328c04370537093181facc0e162f1905" title=" " alt="" coords="359,64,525,91"/>
-</map>
