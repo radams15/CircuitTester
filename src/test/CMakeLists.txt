@@ -1,6 +1,8 @@
 set(TEST_FILES
         Test_MNA.cc
-        Test_MNACircuit.cc Test_SaveLoad.cc)
+        Test_MNACircuit.cc
+        Test_MNAComponent.cc
+        Test_MNAEquation.cc)
 
 set(C_FILES
         ../../resources/resources.qrc

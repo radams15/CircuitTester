@@ -14,7 +14,7 @@
  * @brief Assets the length of a vector.
  *
  */
-#define ASSERT_VEC_LEN(vec, len) ASSERT_EQ(vec.size(), len)
+#define ASSERT_VEC_LEN(vec, len) ASSERT_EQ((vec).size(), len)
 
 /** @brief Initialiser empty list
  *
@@ -31,6 +31,7 @@ TEST(MNACircuit, EmptyList){
     ASSERT_VEC_LEN(c->resistors, 0); // Are there 0 resistor?
     ASSERT_VEC_LEN(c->elements, 0); // Are there 0 elements overall?
 }
+
 
 /** @brief Correct categorisation.
  *
@@ -150,36 +151,6 @@ TEST(MNACircuit, CorrectRefNodes2){
     ASSERT_EQ(*(c->getRefNodes()), expected); // Are the reference nodes correct?
 }
 
-/** @brief Correct equations.
- *
- * Type: normal
- *
- * Data: [ battery(0->1), resistor(1->2), resistor(2->3), resistor(2->3), resistor(3->0) ]
- *
- * Expected: Correct equations generated from simulation code:
- *
- */
-TEST(MNACircuit, CorrectEquations){
-    auto* b1 = new MNAComponent(0, 1, MNA_BATTERY, 9);
-    auto* r1 = new MNAComponent(1, 2, MNA_RESISTOR, 4);
-    auto* r2 = new MNAComponent(2, 3, MNA_RESISTOR, 3);
-    auto* r3 = new MNAComponent(2, 3, MNA_RESISTOR, 6);
-    auto* r4 = new MNAComponent(3, 0, MNA_RESISTOR, 10);
-
-    auto c = new MNACircuit({b1, r1, r2, r3, r4});
-
-    std::vector<Equation*> expected = {
-            new Equation(0, {new Term(1, new UnknownVoltage(b1->n0))}),
-            new Equation(0, {}),
-            new Equation(0, {}),
-            new Equation(0, {}),
-            new Equation(0, {})
-    };
-
-    ASSERT_EQ(*(c->getEquations()), expected); // Are the reference nodes correct?
-}
-
-
 /** @brief getConnectedNodes invalid node
  *
  * Type: invalid
@@ -191,4 +162,43 @@ TEST(MNACircuit, CorrectEquations){
 TEST(MNACircuit, GetConnectedNodesInvalidNode){
     auto c = new MNACircuit({});
     ASSERT_EQ(*(c->getConnectedNodes(100)), std::vector<int>(1, 100));
+}
+
+/** @brief getCurrentTotal negative
+ *
+ * Type: invalid
+ *
+ * Data: node=-1, side=0
+ *
+ * Expected: Returns empty vector.
+ */
+TEST(MNACircuit, GetCurrentsNegative){
+    auto c = new MNACircuit({});
+    ASSERT_VEC_LEN(*(c->getCurrents(-1, 0)), 0);
+}
+
+/** @brief getCurrentTotal large number
+ *
+ * Type: invalid
+ *
+ * Data: node=100, side=0
+ *
+ * Expected: Returns empty vector.
+ */
+TEST(MNACircuit, GetCurrentsLargeNum){
+    auto c = new MNACircuit({});
+    ASSERT_VEC_LEN(*(c->getCurrents(100, 0)), 0);
+}
+
+/** @brief getCurrentTotal invalid sign
+ *
+ * Type: invalid
+ *
+ * Data: node=1, side=-2
+ *
+ * Expected: Controlled error thrown.
+ */
+TEST(MNACircuit, GetCurrentsInvalidSign){
+    auto c = new MNACircuit({new MNAComponent(0, 1, MNA_BATTERY, 2)});
+    EXPECT_THROW(c->getCurrents(1, -2), std::exception);
 }
