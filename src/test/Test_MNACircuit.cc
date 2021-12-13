@@ -29,7 +29,7 @@ TEST(MNACircuit, EmptyList){
 
     ASSERT_VEC_LEN(c->batteries, 0); // Are there 0 batteries?
     ASSERT_VEC_LEN(c->resistors, 0); // Are there 0 resistor?
-    ASSERT_VEC_LEN(c->elements, 0); // Are there 0 elements overall?
+    ASSERT_VEC_LEN(c->components, 0); // Are there 0 elements overall?
 }
 
 
@@ -51,7 +51,7 @@ TEST(MNACircuit, CorrectCategorisation){
 
     ASSERT_VEC_LEN(c->batteries, 2); // Are there 2 batteries?
     ASSERT_VEC_LEN(c->resistors, 1); // Is there 1 resistor?
-    ASSERT_VEC_LEN(c->elements, 3); // Are there 3 elements overall?
+    ASSERT_VEC_LEN(c->components, 3); // Are there 3 elements overall?
 }
 
 /** @brief Correct nodes.
