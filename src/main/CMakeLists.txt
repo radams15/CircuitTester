@@ -8,10 +8,14 @@ else()
     set(SYS "unknown")
 endif()
 
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(FeatureSummary)
+
 set(PROJECT_SOURCES
         main.cc
 
-        ../../resources/resources.qrc
+        ${CMAKE_SOURCE_DIR}/resources/resources.qrc
 
         UI/MainWindow.cc
         UI/MainWindow.h
@@ -79,10 +83,12 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/lib)
 find_package(Eigen3 3.3.9 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
-target_link_libraries(CircuitTester PRIVATE Qt${QT_VER}::Widgets nlohmann_json::nlohmann_json)
+target_link_libraries(CircuitTester PRIVATE
+        Qt${QT_VER}::Widgets
+        KF5::CoreAddons
+        KF5::I18n
+        KF5::XmlGui
+        nlohmann_json::nlohmann_json)
 
 
-set(BUILD_DIR ${PROJECT_SOURCE_DIR}/builds/${SYS})
-
-install(TARGETS CircuitTester
-        RUNTIME DESTINATION bin)
+install(TARGETS CircuitTester ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

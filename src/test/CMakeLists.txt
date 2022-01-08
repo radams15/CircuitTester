@@ -59,4 +59,6 @@ include_directories(${EIGEN3_INCLUDE_DIR})
 
 
 add_executable(test ${TEST_FILES} ${C_FILES})
-target_link_libraries(test gtest_main Qt${QT_VERSION_MAJOR}::Widgets nlohmann_json::nlohmann_json)
+target_link_libraries(test gtest_main Qt${QT_VERSION_MAJOR}::Widgets         KF5::CoreAddons
+        KF5::I18n
+        KF5::XmlGui nlohmann_json::nlohmann_json)

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16)
 
 project(CircuitTester LANGUAGES CXX)
 
@@ -11,6 +11,12 @@ set(CMAKE_AUTORCC ON)
 set(MAKE_DOCS ON)
 set(DO_TESTS ON CACHE BOOL "Enable Testing")
 set(MAKE_PROG ON CACHE BOOL "Enable building program")
+
+set(QT_MIN_VERSION "5.11.0")
+set(KF5_MIN_VERSION "5.88.0")
+
+find_package(ECM 1.0.0 REQUIRED NO_MODULE)
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 set(DOCTEST_NO_INSTALL ON)
 set(CMAKE_CXX_STANDARD 14)
@@ -27,6 +33,11 @@ message("QT version: ${QT_VER}")
 if(DO_TESTS OR MAKE_PROG)
     add_subdirectory(lib/nlohmann_json_cmake_fetchcontent)
     add_subdirectory(resources)
+    find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+            CoreAddons      # KAboutData
+            I18n            # KLocalizedString
+            XmlGui          # KXmlGuiWindow
+            )
     find_package(QT NAMES Qt${QT_VER} COMPONENTS Widgets REQUIRED)
     find_package(Qt${QT_VER} COMPONENTS Widgets REQUIRED)
 endif()

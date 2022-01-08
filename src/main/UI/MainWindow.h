@@ -17,6 +17,8 @@
 #include <QToolButton>
 #include <QGraphicsView>
 
+#include <KXmlGuiWindow>
+
 #include "UIComponent.h"
 #include "SceneItem.h"
 #include "Scene.h"
@@ -28,7 +30,7 @@
 /** @brief The main window class that is the GUI for the user on startup.
  *
  */
-class MainWindow : public QMainWindow {
+class MainWindow : public KXmlGuiWindow {
     Q_OBJECT
 
 public:
@@ -67,11 +69,6 @@ private slots:
      * @param item The item that has been inserted.
      */
     void itemInserted(UIComponent* item);
-
-    /** @brief Called when the about button is clicked from the toolbar.
-     *
-     */
-    void about();
 
     /** @brief Called when the tutorial button is clicked from the toolbar.
      *
@@ -125,11 +122,6 @@ private:
      *
      */
     void createActions();
-
-    /** @brief Creates the menubar for the actions.
-    *
-    */
-    void createMenubar();
 
     /** @brief Creates the toolbar for the actions.
     *

@@ -11,5 +11,8 @@
     <file>images/ammeter.png</file>
     <file>images/voltmeter.png</file>
 </qresource>
+<qresource prefix="/kxmlgui5/CircuitTester">
+    <file>circuittesterui.rc</file>
+</qresource>
 </RCC>
 

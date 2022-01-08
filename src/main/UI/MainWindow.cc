@@ -24,14 +24,11 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
+#include <KActionCollection>
 
-MainWindow::MainWindow() {
+MainWindow::MainWindow() : KXmlGuiWindow() {
     createActions();
     createToolBox();
-    createMenubar();
-    
-    // Set window icon to the connector image.
-    setWindowIcon(QIcon(":/images/linepointer.png"));
 
     // Create the scene, set it to the specified size.
     scene = new Scene(this);
@@ -70,6 +67,9 @@ MainWindow::MainWindow() {
     auto* timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(runSimulation()));
     timer->start(1000); //time specified in ms
+
+    KStandardAction::quit(qApp, &QCoreApplication::quit, actionCollection());
+    setupGUI(Default, "circuittesterui.rc");
 }
 
 
@@ -158,12 +158,6 @@ void MainWindow::itemInserted(UIComponent* c) {
     buttonGroup->button(c->getId())->setChecked(false);
 }
 
-void MainWindow::about() {
-    // Start simple about box
-    QMessageBox::about(this, tr("About Circuit Simulator"),
-                       tr("This is a circuit simulation program written by Rhys Adams (2021-22)"));
-}
-
 void MainWindow::tutorial() {
     // Start simple about box
     QMessageBox::about(this, tr("Tutorial"),
@@ -218,65 +212,55 @@ void MainWindow::createActions() {
     // Create many actions which can be placed in menubars or toolbars.
 
     // The ambersand is placed before the letter that is used for alt-navigation.
-    deleteAction = new QAction(tr("&Delete"), this);
-    deleteAction->setShortcut(tr("Delete"));
+    deleteAction = new QAction(this);
+    deleteAction->setText(tr("Delete"));
     deleteAction->setStatusTip(tr("Delete item from diagram"));
+    actionCollection()->setDefaultShortcut(deleteAction, Qt::Key_Delete);
+    actionCollection()->addAction("Delete", deleteAction);
     connect(deleteAction, &QAction::triggered, this, &MainWindow::deleteItem);
 
-    exitAction = new QAction(tr("E&xit"), this);
-    // Shortcut is the OS quit key: command-q for mac, control-q for linux/windows.
-    exitAction->setShortcuts(QKeySequence::Quit);
-    exitAction->setStatusTip(tr("Quit the circuit simulator"));
-    connect(exitAction, &QAction::triggered, this, &QWidget::close);
-
-
-    aboutAction = new QAction(tr("&About"), this);
-    aboutAction->setShortcut(tr("F1"));
-    connect(aboutAction, &QAction::triggered, this, &MainWindow::about);
-
-    tutorialAction = new QAction(tr("&Tutorial"), this);
-    tutorialAction->setShortcut(tr("F2"));
+    tutorialAction = new QAction(this);
+    tutorialAction->setText(tr("T&utorial"));
+    tutorialAction->setStatusTip(tr("How to use this program"));
+    actionCollection()->setDefaultShortcut(tutorialAction, Qt::Key_F2);
+    actionCollection()->addAction("Tutorial", tutorialAction);
     connect(tutorialAction, &QAction::triggered, this, &MainWindow::tutorial);
 
-    saveAction = new QAction(tr("&Save"), this);
+    saveAction = new QAction(this);
     saveAction->setShortcut(tr("Ctrl+S"));
+    saveAction->setText(tr("&Save"));
+    saveAction->setStatusTip(tr("Save the current circuit."));
+    actionCollection()->setDefaultShortcut(saveAction, Qt::CTRL + Qt::Key_S);
+    actionCollection()->addAction("Save", saveAction);
     connect(saveAction, &QAction::triggered, this, &MainWindow::saveScene);
 
-    openAction = new QAction(tr("&Open"), this);
-    openAction->setShortcut(tr("Ctrl+O"));
+    openAction = new QAction(this);
+    openAction->setText(tr("&Open"));
+    openAction->setStatusTip(tr("Open a saved circuit."));
+    actionCollection()->setDefaultShortcut(openAction, Qt::CTRL + Qt::Key_O);
+    actionCollection()->addAction("Open", openAction);
     connect(openAction, &QAction::triggered, this, &MainWindow::openScene);
 
-    importAction = new QAction(tr("&Import"), this);
-    importAction->setShortcut(tr("Ctrl+I"));
+    importAction = new QAction(this);
+    importAction->setText(tr("&Import"));
+    importAction->setStatusTip(tr("Import a saved circuit."));
+    actionCollection()->setDefaultShortcut(importAction, Qt::CTRL + Qt::Key_I);
+    actionCollection()->addAction("Import", importAction);
     connect(importAction, &QAction::triggered, this, &MainWindow::importScene);
 
-    exportAction = new QAction(tr("&Export"), this);
-    exportAction->setShortcut(tr("Ctrl+E"));
+    exportAction = new QAction(this);
+    exportAction->setText(tr("&Export"));
+    exportAction->setStatusTip(tr("Export a saved circuit."));
+    actionCollection()->setDefaultShortcut(exportAction, Qt::CTRL + Qt::Key_E);
+    actionCollection()->addAction("Export", exportAction);
     connect(exportAction, &QAction::triggered, this, &MainWindow::exportScene);
 
-    saveDirAction = new QAction(tr("Open Save Directory"), this);
+    saveDirAction = new QAction(this);
+    saveDirAction->setText(tr("Sa&ve Directory"));
+    saveDirAction->setStatusTip(tr("Open the save directory in the file manager."));
+    actionCollection()->setDefaultShortcut(saveDirAction, Qt::CTRL + Qt::Key_A);
+    actionCollection()->addAction("Save Directory", saveDirAction);
     connect(saveDirAction, &QAction::triggered, this, &MainWindow::openSaveDir);
-}
-
-
-void MainWindow::createMenubar() {
-    // Add the different actions to the menubar.
-
-    fileMenu = menuBar()->addMenu(tr("&File"));
-    fileMenu->addAction(saveAction);
-    fileMenu->addAction(openAction);
-    fileMenu->addAction(importAction);
-    fileMenu->addAction(exportAction);
-    fileMenu->addAction(exitAction);
-
-    itemMenu = menuBar()->addMenu(tr("&Item"));
-    itemMenu->addAction(deleteAction);
-    itemMenu->addSeparator();
-
-    aboutMenu = menuBar()->addMenu(tr("&Help"));
-    aboutMenu->addAction(saveDirAction);
-    aboutMenu->addAction(aboutAction);
-    aboutMenu->addAction(tutorialAction);
 }
 
 

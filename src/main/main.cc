@@ -4,6 +4,8 @@
 #include <iostream>
 
 #include <QApplication>
+#include <KLocalizedString>
+#include <KAboutData>
 #include "Saves/FileUtils.h"
 
 #include "UI/MainWindow.h"
@@ -17,6 +19,40 @@ int guiMain(int argc, char** argv){
     Q_INIT_RESOURCE(resources);
 
     QApplication a(argc, argv);
+
+
+    KLocalizedString::setApplicationDomain("mainwindow");
+
+    KAboutData aboutData(
+            // The program name used internally. (componentName)
+            "CircuitTester",
+            // A displayable program name string. (displayName)
+            "Circuit Simulator",
+            // The program version string. (version)
+            "1.0",
+            // Short description of what the app does. (shortDescription)
+            "A simple circuit simulation program.",
+            // The license this code is released under
+            KAboutLicense::GPL_V2,
+            // Copyright Statement (copyrightStatement = QString())
+            "(c) 2021-22",
+            // Optional text shown in the About box.
+            // Can contain any information desired. (otherText)
+            "",
+            // The program homepage string. (homePageAddress = QString())
+            "https://therhys.co.uk/",
+            // The bug report email address
+            // (bugsEmailAddress = QLatin1String("submit@bugs.kde.org")
+            "rhys@therhys.co.uk");
+
+    aboutData.addAuthor("Rhys Adams", "Author", "rhys@therhys.co.uk",
+                        "https://therhys.co.uk/");
+
+    KAboutData::setApplicationData(aboutData);
+
+    // Set window icon to the connector image.
+    QApplication::setWindowIcon(QIcon(":/images/linepointer.png"));
+
     MainWindow w;
     w.show();
     return QApplication::exec();
