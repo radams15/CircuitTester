@@ -180,28 +180,37 @@ void MainWindow::createToolBox() {
     connect(buttonGroup, static_cast<void(QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked),
             this, &MainWindow::buttonGroupClicked); // https://doc.qt.io/archives/qt-5.6/qbuttongroup.html#buttonClicked
 
-    // Create new grid layout, add the widgets for each component type to a 2*n grid.
-    auto* layout = new QGridLayout;
-    layout->addWidget(createCellWidget<Resistor>("Resistor"), 0, 0);
-    layout->addWidget(createCellWidget<Battery>("Battery"), 0, 1);
-    layout->addWidget(createCellWidget<Wire>("Wire"), 1, 0);
-    layout->addWidget(createCellWidget<Switch>("Switch"), 1, 1);
-    layout->addWidget(createCellWidget<Ammeter>("Ammeter"), 2, 0);
-    layout->addWidget(createCellWidget<Voltmeter>("Voltmeter"), 2, 1);
+    // Create new grid basicLayout, add the widgets for each component type to a 2*n grid.
+    auto* basicLayout = new QGridLayout;
+    basicLayout->addWidget(createCellWidget<Resistor>("Resistor"), 0, 0);
+    basicLayout->addWidget(createCellWidget<Battery>("Battery"), 0, 1);
+    basicLayout->addWidget(createCellWidget<Wire>("Wire"), 1, 0);
+    basicLayout->addWidget(createCellWidget<Switch>("Switch"), 1, 1);
+
+    auto* measurementLayout = new QGridLayout;
+    measurementLayout->addWidget(createCellWidget<Ammeter>("Ammeter"), 0, 0);
+    measurementLayout->addWidget(createCellWidget<Voltmeter>("Voltmeter"), 0, 1);
 
     // Don't stretch completely, just 3 pixels stretch per row.
-    layout->setRowStretch(3, 10);
-    layout->setColumnStretch(2, 10);
+    basicLayout->setRowStretch(3, 10);
+    basicLayout->setColumnStretch(2, 10);
+    measurementLayout->setRowStretch(3, 10);
+    measurementLayout->setColumnStretch(2, 10);
 
-    // Create a widget to hold the layout, add the widget.
-    auto* itemWidget = new QWidget;
-    itemWidget->setLayout(layout);
+    // Create a widget to hold the basicLayout, add the widget.
+    auto* basicWidget = new QWidget;
+    basicWidget->setLayout(basicLayout);
+
+    // Create a widget to hold the measurementLayout, add the widget.
+    auto* measurementWidget = new QWidget;
+    measurementWidget->setLayout(measurementLayout);
 
     // Create a toolbox to hold the components.
     toolBox = new QToolBox;
     toolBox->setSizePolicy(QSizePolicy(QSizePolicy::Maximum, QSizePolicy::Ignored));
-    toolBox->setMinimumWidth(itemWidget->sizeHint().width());
-    toolBox->addItem(itemWidget, tr("Basic Components"));
+    toolBox->setMinimumWidth(basicWidget->sizeHint().width());
+    toolBox->addItem(basicWidget, tr("Basic Components"));
+    toolBox->addItem(measurementWidget, tr("Measurement Components"));
 }
 
 
@@ -220,10 +229,6 @@ void MainWindow::createActions() {
     exitAction->setStatusTip(tr("Quit the circuit simulator"));
     connect(exitAction, &QAction::triggered, this, &QWidget::close);
 
-    runAction = new QAction(tr("&Run"), this);
-    runAction->setShortcut(tr("F5"));
-    runAction->setStatusTip(tr("Run the circuit"));
-    connect(runAction, &QAction::triggered, this, &MainWindow::runSimulation);
 
     aboutAction = new QAction(tr("&About"), this);
     aboutAction->setShortcut(tr("F1"));
@@ -263,9 +268,6 @@ void MainWindow::createMenubar() {
     fileMenu->addAction(importAction);
     fileMenu->addAction(exportAction);
     fileMenu->addAction(exitAction);
-
-    simMenu = menuBar()->addMenu(tr("&Simulation"));
-    simMenu->addAction(runAction);
 
     itemMenu = menuBar()->addMenu(tr("&Item"));
     itemMenu->addAction(deleteAction);

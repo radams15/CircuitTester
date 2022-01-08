@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['voltmeter_11922',['Voltmeter',['../classVoltmeter.html',1,'']]]
+  ['voltmeter',['Voltmeter',['../classVoltmeter.html',1,'']]]
 ];

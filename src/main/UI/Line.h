@@ -13,7 +13,7 @@
 /** @brief Line between two components on a Scene.
  *
  */
-class Line : public QGraphicsLineItem{
+class Line : public QGraphicsPathItem{
 public:
 
     /** @brief Initialiser

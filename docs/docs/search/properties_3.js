@@ -1,16 +1,16 @@
 var searchData=
 [
-  ['decimals_23007',['decimals',['https://doc.qt.io/qt-5/qtgui/qdoublevalidator.html#decimals-prop',1,'QDoubleValidator']]],
-  ['defaultfont_23008',['defaultFont',['https://doc.qt.io/qt-5/qtgui/qtextdocument.html#defaultFont-prop',1,'QTextDocument']]],
-  ['defaultstate_23009',['defaultState',['https://doc.qt.io/qt-5/qhistorystate.html#defaultState-prop',1,'QHistoryState']]],
-  ['defaultstylesheet_23010',['defaultStyleSheet',['https://doc.qt.io/qt-5/qtgui/qtextdocument.html#defaultStyleSheet-prop',1,'QTextDocument']]],
-  ['defaulttextoption_23011',['defaultTextOption',['https://doc.qt.io/qt-5/qtgui/qtextdocument.html#defaultTextOption-prop',1,'QTextDocument']]],
-  ['defaulttransition_23012',['defaultTransition',['https://doc.qt.io/qt-5/qhistorystate.html#defaultTransition-prop',1,'QHistoryState']]],
-  ['depth_23013',['depth',['https://doc.qt.io/qt-5/qtgui/qscreen.html#depth-prop',1,'QScreen']]],
-  ['desktopfilename_23014',['desktopFileName',['https://doc.qt.io/qt-5/qtgui/qguiapplication.html#desktopFileName-prop',1,'QGuiApplication']]],
-  ['devicepixelratio_23015',['devicePixelRatio',['https://doc.qt.io/qt-5/qtgui/qscreen.html#devicePixelRatio-prop',1,'QScreen']]],
-  ['direction_23016',['direction',['https://doc.qt.io/qt-5/qabstractanimation.html#direction-prop',1,'QAbstractAnimation::direction()'],['https://doc.qt.io/qt-5/qtimeline.html#direction-prop',1,'QTimeLine::direction()']]],
-  ['documentmargin_23017',['documentMargin',['https://doc.qt.io/qt-5/qtgui/qtextdocument.html#documentMargin-prop',1,'QTextDocument']]],
-  ['duration_23018',['duration',['https://doc.qt.io/qt-5/qabstractanimation.html#duration-prop',1,'QAbstractAnimation::duration()'],['https://doc.qt.io/qt-5/qpauseanimation.html#duration-prop',1,'QPauseAnimation::duration()'],['https://doc.qt.io/qt-5/qtimeline.html#duration-prop',1,'QTimeLine::duration()'],['https://doc.qt.io/qt-5/qvariantanimation.html#duration-prop',1,'QVariantAnimation::duration()']]],
-  ['dynamicsortfilter_23019',['dynamicSortFilter',['https://doc.qt.io/qt-5/qsortfilterproxymodel.html#dynamicSortFilter-prop',1,'QSortFilterProxyModel']]]
+  ['decimals',['decimals',['https://doc.qt.io/qt-5/qtgui/qdoublevalidator.html#decimals-prop',1,'QDoubleValidator']]],
+  ['defaultfont',['defaultFont',['https://doc.qt.io/qt-5/qtgui/qtextdocument.html#defaultFont-prop',1,'QTextDocument']]],
+  ['defaultstate',['defaultState',['https://doc.qt.io/qt-5/qhistorystate.html#defaultState-prop',1,'QHistoryState']]],
+  ['defaultstylesheet',['defaultStyleSheet',['https://doc.qt.io/qt-5/qtgui/qtextdocument.html#defaultStyleSheet-prop',1,'QTextDocument']]],
+  ['defaulttextoption',['defaultTextOption',['https://doc.qt.io/qt-5/qtgui/qtextdocument.html#defaultTextOption-prop',1,'QTextDocument']]],
+  ['defaulttransition',['defaultTransition',['https://doc.qt.io/qt-5/qhistorystate.html#defaultTransition-prop',1,'QHistoryState']]],
+  ['depth',['depth',['https://doc.qt.io/qt-5/qtgui/qscreen.html#depth-prop',1,'QScreen']]],
+  ['desktopfilename',['desktopFileName',['https://doc.qt.io/qt-5/qtgui/qguiapplication.html#desktopFileName-prop',1,'QGuiApplication']]],
+  ['devicepixelratio',['devicePixelRatio',['https://doc.qt.io/qt-5/qtgui/qscreen.html#devicePixelRatio-prop',1,'QScreen']]],
+  ['direction',['direction',['https://doc.qt.io/qt-5/qabstractanimation.html#direction-prop',1,'QAbstractAnimation::direction()'],['https://doc.qt.io/qt-5/qtimeline.html#direction-prop',1,'QTimeLine::direction()']]],
+  ['documentmargin',['documentMargin',['https://doc.qt.io/qt-5/qtgui/qtextdocument.html#documentMargin-prop',1,'QTextDocument']]],
+  ['duration',['duration',['https://doc.qt.io/qt-5/qabstractanimation.html#duration-prop',1,'QAbstractAnimation::duration()'],['https://doc.qt.io/qt-5/qpauseanimation.html#duration-prop',1,'QPauseAnimation::duration()'],['https://doc.qt.io/qt-5/qtimeline.html#duration-prop',1,'QTimeLine::duration()'],['https://doc.qt.io/qt-5/qvariantanimation.html#duration-prop',1,'QVariantAnimation::duration()']]],
+  ['dynamicsortfilter',['dynamicSortFilter',['https://doc.qt.io/qt-5/qsortfilterproxymodel.html#dynamicSortFilter-prop',1,'QSortFilterProxyModel']]]
 ];

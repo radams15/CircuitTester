@@ -3,17 +3,19 @@
 
 #include <QPainter>
 #include <QPen>
-#include <QtMath>
-
+#include <cmath>
 
 Line::Line(SceneItem *startItem, SceneItem *endItem)
-    : QGraphicsLineItem(nullptr) {
+    : QGraphicsPathItem(nullptr) {
 
     this->start = startItem;
     this->end = endItem;
 
     // Create a solid black pen with a width of 2px.
     setPen(QPen(penColour, penSize, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+
+    // Set brush to make hollow curve
+    setBrush(QBrush(Qt::NoBrush));
 
     // Can select the item to delete it.
     setFlag(QGraphicsItem::ItemIsSelectable, true);
@@ -22,9 +24,25 @@ Line::Line(SceneItem *startItem, SceneItem *endItem)
     setZValue(-1000);
 }
 
+double distance(QPointF a, QPointF b){
+    return sqrt(pow((a.x()-b.x()), 2) + pow((a.y()-b.y()), 2));
+}
+
 void Line::update(){
-    // Set the start and end coords of the line.
-    setLine(QLineF(start->startPoint(), end->endPoint()));
+
+    QPointF startp = start->endPoint();
+    QPointF endp = distance(startp, end->startPoint()) > distance(startp, end->endPoint())? end->startPoint() : end->endPoint();
+
+    // Create a path with the start point set to the start of the first item.
+    QPainterPath path(startp);
+
+    // Get point halfway between the 2 points to act as the control point in the bezier curve.
+    QPointF c(startp.x(), endp.y());
+
+    // Draw quadratic bezier curve to the endpoint of the end item through point c.
+    path.quadTo(c, endp);
+
+    setPath(path);
 }
 
 
@@ -35,11 +53,11 @@ void Line::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWid
 
     // Set the pen to the painter object.
     painter->setPen(myPen);
-    painter->setBrush(penColour);
 
     update();
 
     // Draw the line.
-    painter->drawLine(line());
+    painter->drawPath(path());
+
 }
 

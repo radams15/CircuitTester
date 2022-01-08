@@ -61,3 +61,5 @@ compile_commands.json
 /winbuild6/
 /build-dir/
 /.flatpak-builder/
+/.kdev4/
+/CircuitTester.kdev4

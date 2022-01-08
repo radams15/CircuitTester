@@ -169,11 +169,6 @@ private:
      */
     QAction* deleteAction;
 
-    /** @brief An action that runs the simulation.
-     *
-     */
-    QAction* runAction;
-
     /** @brief An action that shows the about popup.
      *
      */
@@ -223,11 +218,6 @@ private:
      *
      */
     QMenu* aboutMenu;
-
-    /** @brief The simulation menu on the menubar.
-     *
-     */
-    QMenu* simMenu;
 
     /** @brief The toolbar that allows you to select either movement or line mode.
      *
