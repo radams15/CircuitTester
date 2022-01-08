@@ -91,6 +91,8 @@ protected:
      */
     QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;
 
+    void setColour(QColor colour);
+
     /** @brief The image of this component set during initialisation.
      *
      */

@@ -17,3 +17,11 @@ UIComponent::UIComponent(int id, std::string resourcePath): ID(id), SceneItem(st
     // Create the settings box for class derivatives to use.
     settingsBox = new QVBoxLayout();
 }
+
+void UIComponent::setState(bool on) {
+    if(on){
+        setColour(onColor);
+    }else{
+        setColour(offColor);
+    }
+}
