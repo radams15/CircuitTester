@@ -21,6 +21,9 @@
 
   <ToolBar name="mainToolBar" >
     <text>Main Toolbar</text>
-    <Action name="Delete" />
+    <Action name="Move" />
+    <Action name="Connect" />
+    <Spacer />
+    <Action name="hamburger_menu" />
   </ToolBar>
 </gui>

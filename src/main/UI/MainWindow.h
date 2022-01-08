@@ -18,6 +18,7 @@
 #include <QGraphicsView>
 
 #include <KXmlGuiWindow>
+#include <QActionGroup>
 
 #include "UIComponent.h"
 #include "SceneItem.h"
@@ -61,7 +62,7 @@ private slots:
     /** @brief Called when either the drag button or the line buttons are pressed.
      *
      */
-    void pointerGroupClicked();
+    void pointerGroupClicked(QAction* action);
 
     /** @brief Called when any item is inserted onto the Scene. This unchecks the tool button
      * of that item.
@@ -104,6 +105,8 @@ private slots:
      *
     */
     void runSimulation();
+
+    int getMode();
 
 private:
     /** @brief The name of the circuit that is open.
@@ -151,20 +154,20 @@ private:
      */
     SettingsMenu* settingsMenu;
 
-    /** @brief An action that exits the application.
-     *
-     */
-    QAction* exitAction;
-
     /** @brief An action that deletes the selected component.
      *
      */
     QAction* deleteAction;
 
-    /** @brief An action that shows the about popup.
+    /** @brief An moves components.
      *
      */
-    QAction* aboutAction;
+    QAction* moveAction;
+
+    /** @brief An action that draws lines between components.
+     *
+     */
+    QAction* lineAction;
 
     /** @brief An action that shows the tutorial popup.
      *
@@ -225,11 +228,6 @@ private:
      *
      */
     QButtonGroup* buttonGroup;
-
-    /** @brief The button group that holds buttons for movement or line mode.
-     *
-     */
-    QButtonGroup* pointerTypeGroup;
 };
 
 

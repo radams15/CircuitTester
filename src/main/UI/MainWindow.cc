@@ -25,6 +25,7 @@
 #include <iomanip>
 #include <sstream>
 #include <KActionCollection>
+#include <KToolBar>
 
 MainWindow::MainWindow() : KXmlGuiWindow() {
     createActions();
@@ -70,6 +71,8 @@ MainWindow::MainWindow() : KXmlGuiWindow() {
 
     KStandardAction::quit(qApp, &QCoreApplication::quit, actionCollection());
     setupGUI(Default, "circuittesterui.rc");
+
+    menuBar()->hide();
 }
 
 
@@ -141,15 +144,25 @@ void MainWindow::deleteItem() {
 
 
 
-void MainWindow::pointerGroupClicked() {
+void MainWindow::pointerGroupClicked(QAction* action) {
     // Selected either line or move mode, set the mode.
-    scene->setMode(Scene::Mode(pointerTypeGroup->checkedId()));
+
+    if(action == moveAction){
+        moveAction->setChecked(true);
+        lineAction->setChecked(false);
+    }else{
+        moveAction->setChecked(false);
+        lineAction->setChecked(true);
+    }
+
+    scene->setMode(Scene::Mode(getMode()));
 }
 
 
 void MainWindow::itemInserted(UIComponent* c) {
     // Check the move mode button.
-    pointerTypeGroup->button((int) Scene::MOVE)->setChecked(true);
+    moveAction->setChecked(true);
+    lineAction->setChecked(false);
 
     // Set the mode to move mode.
     scene->setMode(Scene::Mode((int) Scene::MOVE));
@@ -265,27 +278,29 @@ void MainWindow::createActions() {
 
 
 void MainWindow::createToolbar() {
-    // Create button for the scene move mode.
-    auto *pointerButton = new QToolButton;
-    pointerButton->setCheckable(true);
-    // Set the move mode default on.
-    pointerButton->setChecked(true);
-    pointerButton->setIcon(QIcon(":/images/pointer.png"));
-    auto *linePointerButton = new QToolButton;
-    linePointerButton->setCheckable(true);
-    linePointerButton->setIcon(QIcon(":/images/linepointer.png"));
+    moveAction = new QAction(this);
+    moveAction->setText(tr("&Move"));
+    moveAction->setStatusTip(tr("Move a component."));
+    moveAction->setIcon(QIcon(":/images/pointer.png"));
+    moveAction->setCheckable(true);
+    moveAction->setChecked(true);
+    actionCollection()->setDefaultShortcut(moveAction, Qt::Key_M);
+    actionCollection()->addAction("Move", moveAction);
+    connect(moveAction, &QAction::triggered, this, [this]{ pointerGroupClicked(moveAction); });
 
-    pointerTypeGroup = new QButtonGroup(this);
-    pointerTypeGroup->addButton(pointerButton, (int) Scene::MOVE);
-    pointerTypeGroup->addButton(linePointerButton, (int) Scene::INSERT_LINE);
+    lineAction = new QAction(this);
+    lineAction->setText(tr("Co&nnect"));
+    lineAction->setStatusTip(tr("Connect 2 components with a wire."));
+    lineAction->setIcon(QIcon(":/images/linepointer.png"));
+    lineAction->setCheckable(true);
+    actionCollection()->setDefaultShortcut(lineAction, Qt::Key_L);
+    actionCollection()->addAction("Connect", lineAction);
+    connect(lineAction, &QAction::triggered, this, [this]{ pointerGroupClicked(lineAction); });
 
-    connect(pointerTypeGroup, static_cast<void(QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked),
-            this, &MainWindow::pointerGroupClicked);  // https://doc.qt.io/archives/qt-5.6/qbuttongroup.html#buttonClicked
-
-    pointerToolbar = addToolBar(tr("Pointer type"));
-    pointerToolbar->addWidget(pointerButton);
-    pointerToolbar->addWidget(linePointerButton);
-
+    auto hamburgerMenu = KStandardAction::hamburgerMenu(nullptr, nullptr, actionCollection());
+    toolBar()->addAction(hamburgerMenu);
+    hamburgerMenu->hideActionsOf(toolBar());
+    hamburgerMenu->setMenuBar(menuBar()); // line not needed if there is no QMenuBar
 }
 
 
@@ -481,4 +496,8 @@ void MainWindow::openSaveDir() {
     // TODO Fix open save directory button.
     // Opens the save directory in file explorer. Not working on mac/windows yet.
     QDesktopServices::openUrl(QString::fromStdString(FileUtils::getSaveDir()));
+}
+
+int MainWindow::getMode() {
+    return moveAction->isChecked()? Scene::MOVE : Scene::INSERT_LINE;
 }
