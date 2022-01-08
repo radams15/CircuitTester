@@ -140,7 +140,9 @@ void SceneItem::setColour(QColor colour) {
         }
     }
 
+    // Turn back into pixmap
     pixmap = QPixmap::fromImage(tmp);
 
+    // Refresh the image that is drawn when moved.
     setPixmap(pixmap);
 }

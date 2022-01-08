@@ -62,6 +62,10 @@ public:
      */
     inline int getId() const { return ID; }
 
+    /** @brief Sets whether or not the component is deemed on or off.
+     *
+     * @param on Boolean: is component on?
+     */
     void setState(bool on);
 
     /** @brief The constantly incrementing id field which is used to differentiate between
