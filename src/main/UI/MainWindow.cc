@@ -227,7 +227,7 @@ void MainWindow::createActions() {
     // The ambersand is placed before the letter that is used for alt-navigation.
     deleteAction = new QAction(this);
     deleteAction->setText(tr("Delete"));
-    deleteAction->setIcon(QIcon::fromTheme("edit-delete"));
+    deleteAction->setIcon(QIcon(":/images/edit-delete.png"));
     deleteAction->setStatusTip(tr("Delete item from diagram"));
     actionCollection()->setDefaultShortcut(deleteAction, Qt::Key_Delete);
     actionCollection()->addAction("Delete", deleteAction);
@@ -235,7 +235,7 @@ void MainWindow::createActions() {
 
     tutorialAction = new QAction(this);
     tutorialAction->setText(tr("T&utorial"));
-    tutorialAction->setIcon(QIcon::fromTheme("dialog-question"));
+    tutorialAction->setIcon(QIcon(":/images/dialog-question.png"));
     tutorialAction->setStatusTip(tr("How to use this program"));
     actionCollection()->setDefaultShortcut(tutorialAction, Qt::Key_F2);
     actionCollection()->addAction("Tutorial", tutorialAction);
@@ -244,7 +244,7 @@ void MainWindow::createActions() {
     saveAction = new QAction(this);
     saveAction->setShortcut(tr("Ctrl+S"));
     saveAction->setText(tr("&Save"));
-    saveAction->setIcon(QIcon::fromTheme("document-save"));
+    saveAction->setIcon(QIcon(":/images/document-save.png"));
     saveAction->setStatusTip(tr("Save the current circuit."));
     actionCollection()->setDefaultShortcut(saveAction, Qt::CTRL + Qt::Key_S);
     actionCollection()->addAction("Save", saveAction);
@@ -252,7 +252,7 @@ void MainWindow::createActions() {
 
     openAction = new QAction(this);
     openAction->setText(tr("&Open"));
-    openAction->setIcon(QIcon::fromTheme("document-open"));
+    openAction->setIcon(QIcon(":/images/document-open.png"));
     openAction->setStatusTip(tr("Open a saved circuit."));
     actionCollection()->setDefaultShortcut(openAction, Qt::CTRL + Qt::Key_O);
     actionCollection()->addAction("Open", openAction);
@@ -260,7 +260,7 @@ void MainWindow::createActions() {
 
     importAction = new QAction(this);
     importAction->setText(tr("&Import"));
-    importAction->setIcon(QIcon::fromTheme("document-open"));
+    importAction->setIcon(QIcon(":/images/document-open.png"));
     importAction->setStatusTip(tr("Import a saved circuit."));
     actionCollection()->setDefaultShortcut(importAction, Qt::CTRL + Qt::Key_I);
     actionCollection()->addAction("Import", importAction);
@@ -268,7 +268,7 @@ void MainWindow::createActions() {
 
     exportAction = new QAction(this);
     exportAction->setText(tr("&Export"));
-    exportAction->setIcon(QIcon::fromTheme("document-save"));
+    exportAction->setIcon(QIcon(":/images/document-save.png"));
     exportAction->setStatusTip(tr("Export a saved circuit."));
     actionCollection()->setDefaultShortcut(exportAction, Qt::CTRL + Qt::Key_E);
     actionCollection()->addAction("Export", exportAction);
@@ -276,7 +276,7 @@ void MainWindow::createActions() {
 
     saveDirAction = new QAction(this);
     saveDirAction->setText(tr("Sa&ve Directory"));
-    saveDirAction->setIcon(QIcon::fromTheme("folder"));
+    saveDirAction->setIcon(QIcon(":/images/document-open.png"));
     saveDirAction->setStatusTip(tr("Open the save directory in the file manager."));
     actionCollection()->setDefaultShortcut(saveDirAction, Qt::CTRL + Qt::Key_A);
     actionCollection()->addAction("Save Directory", saveDirAction);
@@ -285,6 +285,7 @@ void MainWindow::createActions() {
 
 
 void MainWindow::createToolbar() {
+qDebug() << QIcon::themeSearchPaths();
     moveAction = new QAction(this);
     moveAction->setText(tr("&Move"));
     moveAction->setStatusTip(tr("Move a component."));

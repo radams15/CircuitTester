@@ -88,5 +88,4 @@ target_link_libraries(CircuitTester PRIVATE
         KF5::XmlGui
         nlohmann_json::nlohmann_json)
 
-
 install(TARGETS CircuitTester ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

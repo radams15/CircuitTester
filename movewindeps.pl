@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 my $IN = @ARGV[0] || "deps.win";
-my $OUT = @ARGV[1] ||"winbuild5/src/main";
+my $OUT = @ARGV[1] ||"winbuild/bin";
 
 sub find{
 	my ($file, $where) = @_;
