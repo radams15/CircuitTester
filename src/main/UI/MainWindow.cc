@@ -285,7 +285,6 @@ void MainWindow::createActions() {
 
 
 void MainWindow::createToolbar() {
-qDebug() << QIcon::themeSearchPaths();
     moveAction = new QAction(this);
     moveAction->setText(tr("&Move"));
     moveAction->setStatusTip(tr("Move a component."));
@@ -309,6 +308,7 @@ qDebug() << QIcon::themeSearchPaths();
     toolBar()->addAction(hamburgerMenu);
     hamburgerMenu->hideActionsOf(toolBar());
     hamburgerMenu->setMenuBar(menuBar()); // line not needed if there is no QMenuBar
+    hamburgerMenu->setIcon(QIcon(":/images/application-menu.png"));
 }
 
 

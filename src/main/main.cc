@@ -1,6 +1,7 @@
 /** @file main.cpp
  * This is the main entry point of the program.
  */
+#include <QDir>
 #include <iostream>
 
 #include <QApplication>
@@ -14,40 +15,36 @@
  * returns the status code of it.
  */
 int guiMain(int argc, char** argv){
+    QApplication a(argc, argv);
+
     // Load all the images from the resources folder.
     Q_INIT_RESOURCE(resources);
 
-    QApplication a(argc, argv);
-
     KAboutData aboutData(
-            // The program name used internally. (componentName)
             "CircuitTester",
-            // A displayable program name string. (displayName)
             "Circuit Simulator",
-            // The program version string. (version)
             "1.0",
-            // Short description of what the app does. (shortDescription)
             "A simple circuit simulation program.",
-            // The license this code is released under
             KAboutLicense::GPL_V2,
-            // Copyright Statement (copyrightStatement = QString())
             "(c) 2021-22",
-            // Optional text shown in the About box.
-            // Can contain any information desired. (otherText)
             "",
-            // The program homepage string. (homePageAddress = QString())
-            "https://therhys.co.uk/",
-            // The bug report email address
-            // (bugsEmailAddress = QLatin1String("submit@bugs.kde.org")
+            "https://github.com/radams15/CircuitTester",
             "rhys@therhys.co.uk");
 
     aboutData.addAuthor("Rhys Adams", "Author", "rhys@therhys.co.uk",
-                        "https://therhys.co.uk/");
+                        "https://github.com/radams15");
 
     KAboutData::setApplicationData(aboutData);
 
-    // Set window icon to the connector image.
     QApplication::setWindowIcon(QIcon(":/images/linepointer.png"));
+
+    QDir::addSearchPath("icon", ":/theme/theme");
+
+    QFile file(":/theme/light_cyan.qss");
+    file.open(QFile::ReadOnly);
+
+    QString styleSheet { file.readAll() };
+    a.setStyleSheet(styleSheet);
 
     MainWindow w;
     w.show();
