@@ -8,8 +8,8 @@
     <libraryRoots>
       <file path="$PROJECT_DIR$/lib" />
     </libraryRoots>
-  </component>
-  <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/src/main/mainwindow.ui" />
+    <excludeRoots>
+      <file path="$PROJECT_DIR$/appimage" />
+    </excludeRoots>
   </component>
 </project>

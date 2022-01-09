@@ -4,7 +4,6 @@
 #include <iostream>
 
 #include <QApplication>
-#include <KLocalizedString>
 #include <KAboutData>
 #include "Saves/FileUtils.h"
 
@@ -19,9 +18,6 @@ int guiMain(int argc, char** argv){
     Q_INIT_RESOURCE(resources);
 
     QApplication a(argc, argv);
-
-
-    KLocalizedString::setApplicationDomain("mainwindow");
 
     KAboutData aboutData(
             // The program name used internally. (componentName)

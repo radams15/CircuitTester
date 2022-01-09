@@ -85,8 +85,6 @@ include_directories(${EIGEN3_INCLUDE_DIR})
 
 target_link_libraries(CircuitTester PRIVATE
         Qt${QT_VER}::Widgets
-        KF5::CoreAddons
-        KF5::I18n
         KF5::XmlGui
         nlohmann_json::nlohmann_json)
 

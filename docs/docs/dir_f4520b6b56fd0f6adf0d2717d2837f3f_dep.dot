@@ -1,0 +1,9 @@
+digraph "/home/rhys/scripts/CircuitTester/src/main/UI/Components" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_3d25aac22c9fc9d80d70c48377432879 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="UI" fontname="Helvetica", fontsize="10", URL="dir_3d25aac22c9fc9d80d70c48377432879.html"]
+  dir_f4520b6b56fd0f6adf0d2717d2837f3f [shape=box, label="Components", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_f4520b6b56fd0f6adf0d2717d2837f3f.html"];
+  }
+}
