@@ -8,13 +8,13 @@
 
   font-family: Roboto;
 
-  
-    font-size: 13px;
-  
 
-  
+    font-size: 13px;
+
+
+
     line-height: 13px;
-  
+
 
   selection-background-color: #6effff;
   selection-color: #3c3c3c;
@@ -274,9 +274,9 @@ QPushButton {
   height: 32px;
   font-weight: bold;
 
-  
+
     border-radius: 4px;
-  
+
 
 
 }
@@ -655,7 +655,7 @@ QMenu::item {
 
 QCalendarWidget QMenu::item,
 QMenu::item {
-  
+
 }
 
 QComboBox::item:selected,

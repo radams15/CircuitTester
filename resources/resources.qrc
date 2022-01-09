@@ -14,6 +14,7 @@
         <file>images/document-save.png</file>
         <file>images/edit-delete.png</file>
         <file>images/application-menu.png</file>
+        <file>images/start.png</file>
 
         <file>theme/theme/disabled/base.svg</file>
         <file>theme/theme/disabled/branch-closed.svg</file>

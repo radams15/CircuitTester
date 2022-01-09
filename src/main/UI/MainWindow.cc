@@ -42,11 +42,9 @@ MainWindow::MainWindow() : KXmlGuiWindow() {
     connect(scene, &Scene::itemInserted,
             this, &MainWindow::itemInserted);
 
-    createToolbar();
-
     // Create the main layout, add the graphics view.
     auto* layout = new QHBoxLayout;
-    layout->addWidget(toolBox);
+    layout->addWidget(componentTabs);
     view = new QGraphicsView(scene);
     layout->addWidget(view);
 
@@ -213,11 +211,12 @@ void MainWindow::createToolBox() {
     measurementWidget->setLayout(measurementLayout);
 
     // Create a toolbox to hold the components.
-    toolBox = new QToolBox;
-    toolBox->setSizePolicy(QSizePolicy(QSizePolicy::Maximum, QSizePolicy::Ignored));
-    toolBox->setMinimumWidth(basicWidget->sizeHint().width());
-    toolBox->addItem(basicWidget, tr("Basic Components"));
-    toolBox->addItem(measurementWidget, tr("Measurement Components"));
+    componentTabs = new QTabWidget;
+    componentTabs->setSizePolicy(QSizePolicy(QSizePolicy::Maximum, QSizePolicy::Ignored));
+    componentTabs->setMinimumWidth(basicWidget->sizeHint().width());
+    componentTabs->setTabPosition(QTabWidget::West);
+    componentTabs->addTab(basicWidget, tr("Basic Components"));
+    componentTabs->addTab(measurementWidget, tr("Measurement Components"));
 }
 
 
@@ -281,10 +280,7 @@ void MainWindow::createActions() {
     actionCollection()->setDefaultShortcut(saveDirAction, Qt::CTRL + Qt::Key_A);
     actionCollection()->addAction("Save Directory", saveDirAction);
     connect(saveDirAction, &QAction::triggered, this, &MainWindow::openSaveDir);
-}
 
-
-void MainWindow::createToolbar() {
     moveAction = new QAction(this);
     moveAction->setText(tr("&Move"));
     moveAction->setStatusTip(tr("Move a component."));
@@ -303,6 +299,16 @@ void MainWindow::createToolbar() {
     actionCollection()->setDefaultShortcut(lineAction, Qt::Key_L);
     actionCollection()->addAction("Connect", lineAction);
     connect(lineAction, &QAction::triggered, this, [this]{ pointerGroupClicked(lineAction); });
+
+    runningAction = new QAction(this);
+    runningAction->setText(tr("&Running"));
+    runningAction->setStatusTip(tr("Sets whether the simulation is running."));
+    runningAction->setIcon(QIcon(":/images/start.png"));
+    runningAction->setCheckable(true);
+    runningAction->setChecked(true);
+    actionCollection()->setDefaultShortcut(runningAction, Qt::Key_R);
+    actionCollection()->addAction("Running", runningAction);
+    //connect(lineAction, &QAction::triggered, this, [this]{ pointerGroupClicked(lineAction); });
 
     auto hamburgerMenu = KStandardAction::hamburgerMenu(nullptr, nullptr, actionCollection());
     toolBar()->addAction(hamburgerMenu);
@@ -367,8 +373,20 @@ std::string dtos(double in){
 }
 
 void MainWindow::runSimulation() {
-    // Is the scene empty? If it is, don't run as this crashes the program.
+    // Is the scene empty? If it is, don't run as this wastes time.
     if(scene->items().empty()){
+        return;
+    }
+
+    if(! runningAction->isChecked()){
+        // If the running button is unchecked then remove all the text and turn off all the components.
+        scene->removeAllText();
+        for(auto item : scene->items()){
+            // Turn off all UIComponents graphically.
+            if(IS_TYPE(UIComponent, item)){
+                ((UIComponent*)item)->setState(false);
+            }
+        }
         return;
     }
 

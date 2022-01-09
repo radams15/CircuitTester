@@ -126,11 +126,6 @@ private:
      */
     void createActions();
 
-    /** @brief Creates the toolbar for the actions.
-    *
-    */
-    void createToolbar();
-
     /** @brief Creates a tool button for a component.
      *
      * @tparam T The class of component to create a button for.
@@ -199,30 +194,15 @@ private:
      */
     QAction* saveDirAction;
 
-    /** @brief The file menu on the menubar.
+    /** @brief Sets globally whether or not the simulation is running.
      *
      */
-    QMenu* fileMenu;
-
-    /** @brief The item menu on the menubar.
-     *
-     */
-    QMenu* itemMenu;
-
-    /** @brief The about menu on the menubar.
-     *
-     */
-    QMenu* aboutMenu;
-
-    /** @brief The toolbar that allows you to select either movement or line mode.
-     *
-     */
-    QToolBar* pointerToolbar;
+    QAction* runningAction;
 
     /** @brief The toolbox that contains the component buttons.
      *
      */
-    QToolBox* toolBox;
+    QTabWidget* componentTabs;
 
     /** @brief The button group that holds the multiple components.
      *

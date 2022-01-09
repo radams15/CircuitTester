@@ -25,13 +25,16 @@ Line::Line(SceneItem *startItem, SceneItem *endItem)
 }
 
 double distance(QPointF a, QPointF b){
-    return sqrt(pow((a.x()-b.x()), 2) + pow((a.y()-b.y()), 2));
+    //return sqrt(pow((a.x()-b.x()), 2) + pow((a.y()-b.y()), 2));
+
+    return a.y()-b.y();
 }
 
 void Line::update(){
 
+    if(start->lines)
     QPointF startp = start->endPoint();
-    QPointF endp = distance(startp, end->startPoint()) > distance(startp, end->endPoint())? end->startPoint() : end->endPoint();
+    QPointF endp = distance(startp, end->startPoint()) < distance(startp, end->endPoint())? end->startPoint() : end->endPoint();
 
     // Create a path with the start point set to the start of the first item.
     QPainterPath path(startp);
@@ -40,7 +43,9 @@ void Line::update(){
     QPointF c(startp.x(), endp.y());
 
     // Draw quadratic bezier curve to the endpoint of the end item through point c.
-    path.quadTo(c, endp);
+    //path.quadTo(c, endp);
+    path.lineTo(c);
+    path.lineTo(endp);
 
     setPath(path);
 }
