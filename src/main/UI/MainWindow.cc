@@ -533,3 +533,7 @@ void MainWindow::openSaveDir() {
 int MainWindow::getMode() {
     return moveAction->isChecked()? Scene::MOVE : Scene::INSERT_LINE;
 }
+
+MainWindow::~MainWindow() {
+    exit(0);
+}

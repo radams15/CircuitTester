@@ -77,6 +77,18 @@ public:
      */
     QPointF endPoint();
 
+    /** @brief Returns all lines leaving this item.
+     *
+     * @return Lines leaving the item.
+     */
+    std::vector<Line*> leavingLines();
+
+    /** @brief Returns all the items entering this item.
+     *
+     * @return Lines leaving the item.
+     */
+    std::vector<Line*> enteringLines();
+
     /** @brief All the lines attached to this item.
      *
      */

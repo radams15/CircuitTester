@@ -146,3 +146,25 @@ void SceneItem::setColour(QColor colour) {
     // Refresh the image that is drawn when moved.
     setPixmap(pixmap);
 }
+
+std::vector<Line *> SceneItem::leavingLines() {
+    std::vector<Line*> out;
+    for(auto l : lines){
+        if(l->startItem() == this){
+            out.push_back(l);
+        }
+    }
+
+    return out;
+}
+
+std::vector<Line *> SceneItem::enteringLines() {
+    std::vector<Line*> out;
+    for(auto l : lines){
+        if(l->endItem() == this){
+            out.push_back(l);
+        }
+    }
+
+    return out;
+}

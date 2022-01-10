@@ -40,6 +40,8 @@ public:
      */
     MainWindow();
 
+    ~MainWindow();
+
     /** @brief Called from the Scene when any SceneItem is double clicked.
      * Places the settings widget from the SceneItem into the SettingsMenu.
      *
