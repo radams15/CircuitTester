@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['resistiveelement_11909',['ResistiveElement',['../classResistiveElement.html',1,'']]],
-  ['resistor_11910',['Resistor',['../classResistor.html',1,'']]]
+  ['resistiveelement_0',['ResistiveElement',['../class_resistive_element.html',1,'']]],
+  ['resistor_1',['Resistor',['../class_resistor.html',1,'']]]
 ];

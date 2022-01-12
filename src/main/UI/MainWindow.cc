@@ -69,8 +69,9 @@ MainWindow::MainWindow() : KXmlGuiWindow() {
 
     KStandardAction::quit(qApp, &QCoreApplication::quit, actionCollection());
     setupGUI(Default, "circuittesterui.rc");
-
+#ifndef __APPLE__
     menuBar()->hide();
+#endif
 }
 
 
@@ -486,7 +487,6 @@ void MainWindow::saveScene() {
 
 void MainWindow::openScene() {
     // Prompt the user for the name of the circuit to open.
-    //std::string name = QInputDialog::getText(this, tr("Circuit Name"), tr("Name")).toStdString();
 
     auto files = FileUtils::getSaveFiles();
 

@@ -44,7 +44,7 @@ int guiMain(int argc, char** argv){
     file.open(QFile::ReadOnly);
 
     QString styleSheet { file.readAll() };
-    a.setStyleSheet(styleSheet);
+    //a.setStyleSheet(styleSheet);
 
     MainWindow w;
     w.show();
