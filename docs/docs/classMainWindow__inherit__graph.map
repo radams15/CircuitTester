@@ -1,0 +1,4 @@
+<map id="MainWindow" name="MainWindow">
+<area shape="rect" id="node1" title="The main window class that is the GUI for the user on startup." alt="" coords="17,80,124,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,136,32"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Voltmeter" name="Voltmeter">
+<area shape="rect" id="node1" title="Resistor component with configurable resistance." alt="" coords="46,304,133,331"/>
+<area shape="rect" id="node2" href="$classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="" coords="21,229,157,256"/>
+<area shape="rect" id="node3" href="$classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="34,155,145,181"/>
+<area shape="rect" id="node4" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="44,80,135,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,5,173,32"/>
+</map>
