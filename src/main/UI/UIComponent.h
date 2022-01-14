@@ -35,6 +35,11 @@ enum UIComponentType{
  *
  */
 class UIComponent : public SceneItem{
+private:
+
+    QColor onColor = {0,255,0};
+    QColor offColor = {0,0,0};
+
 protected:
     /** @brief Is type UIComponentType, allows other functions to find what type of component
      * pointers are.
@@ -56,6 +61,12 @@ public:
      * @return The component ID.
      */
     inline int getId() const { return ID; }
+
+    /** @brief Sets whether or not the component is deemed on or off.
+     *
+     * @param on Boolean: is component on?
+     */
+    void setState(bool on);
 
     /** @brief The constantly incrementing id field which is used to differentiate between
      * individual unique components. This is only used in CircuitSaver.

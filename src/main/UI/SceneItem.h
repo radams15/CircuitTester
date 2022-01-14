@@ -77,6 +77,18 @@ public:
      */
     QPointF endPoint();
 
+    /** @brief Returns all lines leaving this item.
+     *
+     * @return Lines leaving the item.
+     */
+    std::vector<Line*> leavingLines();
+
+    /** @brief Returns all the items entering this item.
+     *
+     * @return Lines leaving the item.
+     */
+    std::vector<Line*> enteringLines();
+
     /** @brief All the lines attached to this item.
      *
      */
@@ -90,6 +102,8 @@ protected:
      * @return value parameter above.
      */
     QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;
+
+    void setColour(QColor colour);
 
     /** @brief The image of this component set during initialisation.
      *

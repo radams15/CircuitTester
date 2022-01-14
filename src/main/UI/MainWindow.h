@@ -108,6 +108,8 @@ private slots:
     */
     void runSimulation();
 
+    int getMode();
+
 private:
     /** @brief The name of the circuit that is open.
      *

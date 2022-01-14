@@ -377,24 +377,30 @@ void MainWindow::runSimulation() {
     for(auto it : sol){
         std::stringstream ss;
 
-	if (std::to_string(it.second.voltage) != "nan"){ //TODO FIX THIS MONSTROSITY
+        if (std::to_string(it.second.voltage) != "nan"){ //TODO FIX THIS MONSTROSITY
             ss << "Voltage: ";
-            if(it.second.voltage < 1000){
-                ss << dtos(it.second.voltage);
-            }else if(it.second.voltage <= 0.01) {
+            if(it.second.voltage <  0.01){
                 ss << "0";
+                it.first->setState(false);
+
+            }else if(it.second.voltage < 1000) {
+                ss << dtos(it.second.voltage);
+                it.first->setState(true);
+
             }else{
                 ss << "\u221E"; // Infinity symbol unicode escape.
+                it.first->setState(true);
+
             }
             ss << "V";
         }
 
         if (std::to_string(it.second.current) != "nan"){ //TODO FIX THIS MONSTROSITY
             ss << "\nCurrent: ";
-            if(it.second.current < 1000){
-                ss << dtos(it.second.current);
-            }else if(it.second.current < 0.01) {
+            if(it.second.current <  0.01){
                 ss << "0";
+            }else if(it.second.current < 1000) {
+                ss << dtos(it.second.current);
             }else{
                 ss << "\u221E"; // Infinity symbol unicode escape.
             }
@@ -455,7 +461,6 @@ void MainWindow::saveScene() {
 
 void MainWindow::openScene() {
     // Prompt the user for the name of the circuit to open.
-    //std::string name = QInputDialog::getText(this, tr("Circuit Name"), tr("Name")).toStdString();
 
     auto files = FileUtils::getSaveFiles();
 
@@ -497,4 +502,8 @@ void MainWindow::openSaveDir() {
     // TODO Fix open save directory button.
     // Opens the save directory in file explorer. Not working on mac/windows yet.
     QDesktopServices::openUrl(QString::fromStdString(FileUtils::getSaveDir()));
+}
+
+int MainWindow::getMode() {
+    //return moveAction->isChecked()? Scene::MOVE : Scene::INSERT_LINE;
 }

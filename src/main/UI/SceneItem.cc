@@ -121,3 +121,50 @@ QPointF SceneItem::endPoint() {
 
     return {centre.x() + (pixmap.width() / 2), centre.y()};
 }
+
+void SceneItem::setColour(QColor colour) {
+    QImage tmp = pixmap.toImage();
+
+    // Iterate over every pixel in the image.
+    for(int y1 = 0; y1 < tmp.height(); y1++) {
+        for (int x1 = 0; x1 < tmp.width(); x1++) {
+
+            // If the pixel is not completely transparent.
+            if(tmp.pixelColor(x1, y1).alpha() > 0) {
+
+                colour.setAlpha(tmp.pixelColor(x1,y1).alpha());
+
+                // Set the pixel to the new colour.
+                tmp.setPixelColor(x1, y1, colour);
+            }
+        }
+    }
+
+    // Turn back into pixmap
+    pixmap = QPixmap::fromImage(tmp);
+
+    // Refresh the image that is drawn when moved.
+    setPixmap(pixmap);
+}
+
+std::vector<Line *> SceneItem::leavingLines() {
+    std::vector<Line*> out;
+    for(auto l : lines){
+        if(l->startItem() == this){
+            out.push_back(l);
+        }
+    }
+
+    return out;
+}
+
+std::vector<Line *> SceneItem::enteringLines() {
+    std::vector<Line*> out;
+    for(auto l : lines){
+        if(l->endItem() == this){
+            out.push_back(l);
+        }
+    }
+
+    return out;
+}
