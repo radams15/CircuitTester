@@ -18,6 +18,7 @@
 #include "AnalysisMapper.h"
 
 #include "../Saves/FileUtils.h"
+#include "ExpandingSpacer.h"
 
 #include <QtWidgets>
 #include <QInputDialog>
@@ -25,11 +26,17 @@
 #include <iomanip>
 #include <sstream>
 
+/**
+ * \def SHOW_ICON(toolbar, action)
+ * Gets the toolbutton for the action, sets the toolbutton to show the text and icon.
+*/
+#define SHOW_ICON(toolbar, action) ((QToolButton*)toolbar->widgetForAction(action))->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+
 MainWindow::MainWindow() {
     createActions();
     createToolBox();
     createMenubar();
-    
+
     // Set window icon to the connector image.
     setWindowIcon(QIcon(":/images/linepointer.png"));
 
@@ -141,15 +148,25 @@ void MainWindow::deleteItem() {
 
 
 
-void MainWindow::pointerGroupClicked() {
+void MainWindow::pointerGroupClicked(QAction* action) {
     // Selected either line or move mode, set the mode.
-    scene->setMode(Scene::Mode(pointerTypeGroup->checkedId()));
+
+    if(action == moveAction){
+        moveAction->setChecked(true);
+        lineAction->setChecked(false);
+    }else{
+        moveAction->setChecked(false);
+        lineAction->setChecked(true);
+    }
+
+    scene->setMode(Scene::Mode(getMode()));
 }
 
 
 void MainWindow::itemInserted(UIComponent* c) {
     // Check the move mode button.
-    pointerTypeGroup->button((int) Scene::MOVE)->setChecked(true);
+    moveAction->setChecked(true);
+    lineAction->setChecked(false);
 
     // Set the mode to move mode.
     scene->setMode(Scene::Mode((int) Scene::MOVE));
@@ -218,44 +235,94 @@ void MainWindow::createActions() {
     // Create many actions which can be placed in menubars or toolbars.
 
     // The ambersand is placed before the letter that is used for alt-navigation.
-    deleteAction = new QAction(tr("&Delete"), this);
-    deleteAction->setShortcut(tr("Delete"));
+    deleteAction = new QAction("eksmts", this);
+    deleteAction->setText(tr("Delete"));
+    deleteAction->setIcon(QIcon(":/images/edit-delete.png"));
     deleteAction->setStatusTip(tr("Delete item from diagram"));
+    deleteAction->setShortcut(Qt::Key_Delete);
     connect(deleteAction, &QAction::triggered, this, &MainWindow::deleteItem);
 
-    exitAction = new QAction(tr("E&xit"), this);
-    // Shortcut is the OS quit key: command-q for mac, control-q for linux/windows.
-    exitAction->setShortcuts(QKeySequence::Quit);
-    exitAction->setStatusTip(tr("Quit the circuit simulator"));
-    connect(exitAction, &QAction::triggered, this, &QWidget::close);
-
-
-    aboutAction = new QAction(tr("&About"), this);
-    aboutAction->setShortcut(tr("F1"));
+    aboutAction = new QAction("eksmts", this);
+    aboutAction->setText(tr("Delete"));
+    aboutAction->setIcon(QIcon(":/images/edit-delete.png"));
+    aboutAction->setStatusTip(tr("Delete item from diagram"));
+    aboutAction->setShortcut(Qt::Key_Delete);
     connect(aboutAction, &QAction::triggered, this, &MainWindow::about);
 
-    tutorialAction = new QAction(tr("&Tutorial"), this);
-    tutorialAction->setShortcut(tr("F2"));
+    exitAction = new QAction("eksmts", this);
+    exitAction->setText(tr("Delete"));
+    exitAction->setIcon(QIcon(":/images/edit-delete.png"));
+    exitAction->setStatusTip(tr("Delete item from diagram"));
+    exitAction->setShortcut(Qt::Key_Delete);
+    connect(exitAction, &QAction::triggered, this, [this]{ destroy();});
+
+    tutorialAction = new QAction("eksmts", this);
+    tutorialAction->setText(tr("T&utorial"));
+    tutorialAction->setIcon(QIcon(":/images/dialog-question.png"));
+    tutorialAction->setStatusTip(tr("How to use this program"));
+    tutorialAction->setShortcut( Qt::Key_F2);
     connect(tutorialAction, &QAction::triggered, this, &MainWindow::tutorial);
 
-    saveAction = new QAction(tr("&Save"), this);
+    saveAction = new QAction("eksmts", this);
     saveAction->setShortcut(tr("Ctrl+S"));
+    saveAction->setText(tr("&Save"));
+    saveAction->setIcon(QIcon(":/images/document-save.png"));
+    saveAction->setStatusTip(tr("Save the current circuit."));
+    saveAction->setShortcut( Qt::CTRL + Qt::Key_S);
     connect(saveAction, &QAction::triggered, this, &MainWindow::saveScene);
 
-    openAction = new QAction(tr("&Open"), this);
-    openAction->setShortcut(tr("Ctrl+O"));
+    openAction = new QAction("eksmts", this);
+    openAction->setText(tr("&Open"));
+    openAction->setIcon(QIcon(":/images/document-open.png"));
+    openAction->setStatusTip(tr("Open a saved circuit."));
+    openAction->setShortcut( Qt::CTRL + Qt::Key_O);
     connect(openAction, &QAction::triggered, this, &MainWindow::openScene);
 
-    importAction = new QAction(tr("&Import"), this);
-    importAction->setShortcut(tr("Ctrl+I"));
+    importAction = new QAction("eksmts", this);
+    importAction->setText(tr("&Import"));
+    importAction->setIcon(QIcon(":/images/document-open.png"));
+    importAction->setStatusTip(tr("Import a saved circuit."));
+    importAction->setShortcut(Qt::CTRL + Qt::Key_I);
     connect(importAction, &QAction::triggered, this, &MainWindow::importScene);
 
-    exportAction = new QAction(tr("&Export"), this);
-    exportAction->setShortcut(tr("Ctrl+E"));
+    exportAction = new QAction("eksmts", this);
+    exportAction->setText(tr("&Export"));
+    exportAction->setIcon(QIcon(":/images/document-save.png"));
+    exportAction->setStatusTip(tr("Export a saved circuit."));
+    exportAction->setShortcut(Qt::CTRL + Qt::Key_E);
     connect(exportAction, &QAction::triggered, this, &MainWindow::exportScene);
 
-    saveDirAction = new QAction(tr("Open Save Directory"), this);
+    saveDirAction = new QAction("eksmts", this);
+    saveDirAction->setText(tr("Sa&ve Directory"));
+    saveDirAction->setIcon(QIcon(":/images/document-open.png"));
+    saveDirAction->setStatusTip(tr("Open the save directory in the file manager."));
+    saveDirAction->setShortcut(Qt::CTRL + Qt::Key_A);
     connect(saveDirAction, &QAction::triggered, this, &MainWindow::openSaveDir);
+
+    moveAction = new QAction("eksmts", this);
+    moveAction->setText(tr("&Move"));
+    moveAction->setStatusTip(tr("Move a component."));
+    moveAction->setIcon(QIcon(":/images/pointer.png"));
+    moveAction->setCheckable(true);
+    moveAction->setChecked(true);
+    moveAction->setShortcut(Qt::Key_M);
+    connect(moveAction, &QAction::triggered, this, [this]{ pointerGroupClicked(moveAction); });
+
+    lineAction = new QAction("eksmts", this);
+    lineAction->setText(tr("Co&nnect"));
+    lineAction->setStatusTip(tr("Connect 2 components with a wire."));
+    lineAction->setIcon(QIcon(":/images/linepointer.png"));
+    lineAction->setCheckable(true);
+    lineAction->setShortcut(Qt::Key_L);
+    connect(lineAction, &QAction::triggered, this, [this]{ pointerGroupClicked(lineAction); });
+
+    runningAction = new QAction("eksmts", this);
+    runningAction->setText(tr("&Running"));
+    runningAction->setStatusTip(tr("Sets whether the simulation is running."));
+    runningAction->setIcon(QIcon(":/images/start.png"));
+    runningAction->setCheckable(true);
+    runningAction->setChecked(true);
+    runningAction->setShortcut(Qt::Key_R);
 }
 
 
@@ -281,27 +348,17 @@ void MainWindow::createMenubar() {
 
 
 void MainWindow::createToolbar() {
-    // Create button for the scene move mode.
-    auto *pointerButton = new QToolButton;
-    pointerButton->setCheckable(true);
-    // Set the move mode default on.
-    pointerButton->setChecked(true);
-    pointerButton->setIcon(QIcon(":/images/pointer.png"));
-    auto *linePointerButton = new QToolButton;
-    linePointerButton->setCheckable(true);
-    linePointerButton->setIcon(QIcon(":/images/linepointer.png"));
+    pointerToolbar = addToolBar("Main Toolbar");
 
-    pointerTypeGroup = new QButtonGroup(this);
-    pointerTypeGroup->addButton(pointerButton, (int) Scene::MOVE);
-    pointerTypeGroup->addButton(linePointerButton, (int) Scene::INSERT_LINE);
+    pointerToolbar->addAction(moveAction);
+    pointerToolbar->addAction(lineAction);
+    pointerToolbar->addWidget(new ExpandingSpacer());
+    pointerToolbar->addAction(runningAction);
+    pointerToolbar->addWidget(new ExpandingSpacer());
 
-    connect(pointerTypeGroup, static_cast<void(QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked),
-            this, &MainWindow::pointerGroupClicked);  // https://doc.qt.io/archives/qt-5.6/qbuttongroup.html#buttonClicked
-
-    pointerToolbar = addToolBar(tr("Pointer type"));
-    pointerToolbar->addWidget(pointerButton);
-    pointerToolbar->addWidget(linePointerButton);
-
+    SHOW_ICON(pointerToolbar, moveAction);
+    SHOW_ICON(pointerToolbar, lineAction);
+    SHOW_ICON(pointerToolbar, runningAction);
 }
 
 
@@ -505,5 +562,5 @@ void MainWindow::openSaveDir() {
 }
 
 int MainWindow::getMode() {
-    //return moveAction->isChecked()? Scene::MOVE : Scene::INSERT_LINE;
+    return moveAction->isChecked()? Scene::MOVE : Scene::INSERT_LINE;
 }

@@ -3,6 +3,13 @@
     <file>images/pointer.png</file>
     <file>images/linepointer.png</file>
 
+    <file>images/dialog-question.png</file>
+    <file>images/document-open.png</file>
+    <file>images/document-save.png</file>
+    <file>images/edit-delete.png</file>
+    <file>images/application-menu.png</file>
+    <file>images/start.png</file>
+
     <file>images/resistor.png</file>
     <file>images/battery.png</file>
     <file>images/wire.png</file>

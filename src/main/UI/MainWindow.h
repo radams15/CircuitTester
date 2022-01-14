@@ -59,7 +59,7 @@ private slots:
     /** @brief Called when either the drag button or the line buttons are pressed.
      *
      */
-    void pointerGroupClicked();
+    void pointerGroupClicked(QAction* action);
 
     /** @brief Called when any item is inserted onto the Scene. This unchecks the tool button
      * of that item.
@@ -205,6 +205,21 @@ private:
      *
      */
     QAction* saveDirAction;
+
+    /** @brief An moves components.
+     *
+     */
+    QAction* moveAction;
+
+    /** @brief An action that draws lines between components.
+     *
+     */
+    QAction* lineAction;
+
+    /** @brief Sets globally whether or not the simulation is running.
+     *
+     */
+    QAction* runningAction;
 
     /** @brief The file menu on the menubar.
      *
