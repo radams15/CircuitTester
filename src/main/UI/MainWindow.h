@@ -21,9 +21,12 @@
 #include "SceneItem.h"
 #include "Scene.h"
 #include "SettingsMenu.h"
+#include "HamburgerMenu.h"
 
 #define CANVAS_SIZE 1000, 1000
 #define WINDOW_SIZE 1200, 700
+
+#define HAMBURGER_MENU 1
 
 /** @brief The main window class that is the GUI for the user on startup.
  *
@@ -155,6 +158,12 @@ private:
      *
      */
     QGraphicsView* view;
+
+#if HAMBURGER_MENU
+    HamburgerMenu* mainMenu;
+#else
+    QWidget* mainMenu;
+#endif
 
     /** @brief The collapsable settings menu for components.
      *

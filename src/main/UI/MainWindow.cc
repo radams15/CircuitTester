@@ -19,6 +19,7 @@
 
 #include "../Saves/FileUtils.h"
 #include "ExpandingSpacer.h"
+#include "HamburgerMenu.h"
 
 #include <QtWidgets>
 #include <QInputDialog>
@@ -235,35 +236,35 @@ void MainWindow::createActions() {
     // Create many actions which can be placed in menubars or toolbars.
 
     // The ambersand is placed before the letter that is used for alt-navigation.
-    deleteAction = new QAction("eksmts", this);
+    deleteAction = new QAction("", this);
     deleteAction->setText(tr("Delete"));
     deleteAction->setIcon(QIcon(":/images/edit-delete.png"));
     deleteAction->setStatusTip(tr("Delete item from diagram"));
     deleteAction->setShortcut(Qt::Key_Delete);
     connect(deleteAction, &QAction::triggered, this, &MainWindow::deleteItem);
 
-    aboutAction = new QAction("eksmts", this);
-    aboutAction->setText(tr("Delete"));
-    aboutAction->setIcon(QIcon(":/images/edit-delete.png"));
-    aboutAction->setStatusTip(tr("Delete item from diagram"));
-    aboutAction->setShortcut(Qt::Key_Delete);
+    aboutAction = new QAction("", this);
+    aboutAction->setText(tr("About"));
+    aboutAction->setIcon(QIcon(":/images/about.png"));
+    aboutAction->setStatusTip(tr("About the program"));
+    aboutAction->setShortcut(Qt::CTRL + Qt::Key_B);
     connect(aboutAction, &QAction::triggered, this, &MainWindow::about);
 
-    exitAction = new QAction("eksmts", this);
-    exitAction->setText(tr("Delete"));
-    exitAction->setIcon(QIcon(":/images/edit-delete.png"));
-    exitAction->setStatusTip(tr("Delete item from diagram"));
-    exitAction->setShortcut(Qt::Key_Delete);
+    exitAction = new QAction("", this);
+    exitAction->setText(tr("Exit"));
+    exitAction->setIcon(QIcon(":/images/close.png"));
+    exitAction->setStatusTip(tr("Exit the program"));
+    exitAction->setShortcut(Qt::CTRL + Qt::Key_Q);
     connect(exitAction, &QAction::triggered, this, [this]{ destroy();});
 
-    tutorialAction = new QAction("eksmts", this);
+    tutorialAction = new QAction("", this);
     tutorialAction->setText(tr("T&utorial"));
     tutorialAction->setIcon(QIcon(":/images/dialog-question.png"));
     tutorialAction->setStatusTip(tr("How to use this program"));
     tutorialAction->setShortcut( Qt::Key_F2);
     connect(tutorialAction, &QAction::triggered, this, &MainWindow::tutorial);
 
-    saveAction = new QAction("eksmts", this);
+    saveAction = new QAction("", this);
     saveAction->setShortcut(tr("Ctrl+S"));
     saveAction->setText(tr("&Save"));
     saveAction->setIcon(QIcon(":/images/document-save.png"));
@@ -271,35 +272,35 @@ void MainWindow::createActions() {
     saveAction->setShortcut( Qt::CTRL + Qt::Key_S);
     connect(saveAction, &QAction::triggered, this, &MainWindow::saveScene);
 
-    openAction = new QAction("eksmts", this);
+    openAction = new QAction("", this);
     openAction->setText(tr("&Open"));
     openAction->setIcon(QIcon(":/images/document-open.png"));
     openAction->setStatusTip(tr("Open a saved circuit."));
     openAction->setShortcut( Qt::CTRL + Qt::Key_O);
     connect(openAction, &QAction::triggered, this, &MainWindow::openScene);
 
-    importAction = new QAction("eksmts", this);
+    importAction = new QAction("", this);
     importAction->setText(tr("&Import"));
     importAction->setIcon(QIcon(":/images/document-open.png"));
     importAction->setStatusTip(tr("Import a saved circuit."));
     importAction->setShortcut(Qt::CTRL + Qt::Key_I);
     connect(importAction, &QAction::triggered, this, &MainWindow::importScene);
 
-    exportAction = new QAction("eksmts", this);
+    exportAction = new QAction("", this);
     exportAction->setText(tr("&Export"));
     exportAction->setIcon(QIcon(":/images/document-save.png"));
     exportAction->setStatusTip(tr("Export a saved circuit."));
     exportAction->setShortcut(Qt::CTRL + Qt::Key_E);
     connect(exportAction, &QAction::triggered, this, &MainWindow::exportScene);
 
-    saveDirAction = new QAction("eksmts", this);
+    saveDirAction = new QAction("", this);
     saveDirAction->setText(tr("Sa&ve Directory"));
     saveDirAction->setIcon(QIcon(":/images/document-open.png"));
     saveDirAction->setStatusTip(tr("Open the save directory in the file manager."));
     saveDirAction->setShortcut(Qt::CTRL + Qt::Key_A);
     connect(saveDirAction, &QAction::triggered, this, &MainWindow::openSaveDir);
 
-    moveAction = new QAction("eksmts", this);
+    moveAction = new QAction("", this);
     moveAction->setText(tr("&Move"));
     moveAction->setStatusTip(tr("Move a component."));
     moveAction->setIcon(QIcon(":/images/pointer.png"));
@@ -308,7 +309,7 @@ void MainWindow::createActions() {
     moveAction->setShortcut(Qt::Key_M);
     connect(moveAction, &QAction::triggered, this, [this]{ pointerGroupClicked(moveAction); });
 
-    lineAction = new QAction("eksmts", this);
+    lineAction = new QAction("", this);
     lineAction->setText(tr("Co&nnect"));
     lineAction->setStatusTip(tr("Connect 2 components with a wire."));
     lineAction->setIcon(QIcon(":/images/linepointer.png"));
@@ -316,7 +317,7 @@ void MainWindow::createActions() {
     lineAction->setShortcut(Qt::Key_L);
     connect(lineAction, &QAction::triggered, this, [this]{ pointerGroupClicked(lineAction); });
 
-    runningAction = new QAction("eksmts", this);
+    runningAction = new QAction("", this);
     runningAction->setText(tr("&Running"));
     runningAction->setStatusTip(tr("Sets whether the simulation is running."));
     runningAction->setIcon(QIcon(":/images/start.png"));
@@ -329,21 +330,44 @@ void MainWindow::createActions() {
 void MainWindow::createMenubar() {
     // Add the different actions to the menubar.
 
-    fileMenu = menuBar()->addMenu(tr("&File"));
+    QMenu* menu;
+
+#if HAMBURGER_MENU
+    mainMenu = new HamburgerMenu();
+    menu = mainMenu->menu;
+
+    menu->addAction(saveAction);
+    menu->addAction(openAction);
+    menu->addAction(importAction);
+    menu->addAction(exportAction);
+    menu->addAction(deleteAction);
+
+    menu->addAction(tutorialAction);
+
+    menu->addAction(saveDirAction);
+    menu->addAction(aboutAction);
+
+    menu->addAction(exitAction);
+#else
+    mainMenu = menuBar();
+    menu = (QMenu*) mainMenu;
+
+    fileMenu = menu->addMenu("&File");
     fileMenu->addAction(saveAction);
     fileMenu->addAction(openAction);
     fileMenu->addAction(importAction);
     fileMenu->addAction(exportAction);
     fileMenu->addAction(exitAction);
 
-    itemMenu = menuBar()->addMenu(tr("&Item"));
+    itemMenu = menu->addMenu("&Item");
     itemMenu->addAction(deleteAction);
     itemMenu->addSeparator();
 
-    aboutMenu = menuBar()->addMenu(tr("&Help"));
+    aboutMenu = menu->addMenu("&Help");
     aboutMenu->addAction(saveDirAction);
     aboutMenu->addAction(aboutAction);
     aboutMenu->addAction(tutorialAction);
+#endif
 }
 
 
@@ -355,6 +379,10 @@ void MainWindow::createToolbar() {
     pointerToolbar->addWidget(new ExpandingSpacer());
     pointerToolbar->addAction(runningAction);
     pointerToolbar->addWidget(new ExpandingSpacer());
+
+#if HAMBURGER_MENU
+    pointerToolbar->addWidget((QToolButton*) mainMenu);
+#endif
 
     SHOW_ICON(pointerToolbar, moveAction);
     SHOW_ICON(pointerToolbar, lineAction);
