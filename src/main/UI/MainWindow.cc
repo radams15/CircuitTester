@@ -332,7 +332,7 @@ void MainWindow::createMenubar() {
 
     QMenu* menu;
 
-#if HAMBURGER_MENU
+#if HAMBURGER_MENU && !defined(Q_OS_MACOS)
     mainMenu = new HamburgerMenu();
     menu = mainMenu->menu;
 
@@ -380,7 +380,7 @@ void MainWindow::createToolbar() {
     pointerToolbar->addAction(runningAction);
     pointerToolbar->addWidget(new ExpandingSpacer());
 
-#if HAMBURGER_MENU
+#if HAMBURGER_MENU  && !defined(Q_OS_MACOS)
     pointerToolbar->addWidget((QToolButton*) mainMenu);
 #endif
 
