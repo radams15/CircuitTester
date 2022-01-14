@@ -114,6 +114,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4cec31e99d6de09cb0004379670b3ee7"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="https://doc.qt.io/qt-5/qpointf.html">QPointF</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSceneItem.html#a4cec31e99d6de09cb0004379670b3ee7">endPoint</a> ()</td></tr>
 <tr class="memdesc:a4cec31e99d6de09cb0004379670b3ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the end point of the component.  <a href="classSceneItem.html#a4cec31e99d6de09cb0004379670b3ee7">More...</a><br /></td></tr>
 <tr class="separator:a4cec31e99d6de09cb0004379670b3ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44e70dd2fea77de4187ab4a3ff26c053"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classLine.html">Line</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSceneItem.html#a44e70dd2fea77de4187ab4a3ff26c053">leavingLines</a> ()</td></tr>
+<tr class="memdesc:a44e70dd2fea77de4187ab4a3ff26c053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all lines leaving this item.  <a href="classSceneItem.html#a44e70dd2fea77de4187ab4a3ff26c053">More...</a><br /></td></tr>
+<tr class="separator:a44e70dd2fea77de4187ab4a3ff26c053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2edf12506bcac6004baacc2e02281c0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classLine.html">Line</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSceneItem.html#ad2edf12506bcac6004baacc2e02281c0">enteringLines</a> ()</td></tr>
+<tr class="memdesc:ad2edf12506bcac6004baacc2e02281c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all the items entering this item.  <a href="classSceneItem.html#ad2edf12506bcac6004baacc2e02281c0">More...</a><br /></td></tr>
+<tr class="separator:ad2edf12506bcac6004baacc2e02281c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -288,6 +294,28 @@ Collaboration diagram for SceneItem:</div>
 
 </div>
 </div>
+<a id="ad2edf12506bcac6004baacc2e02281c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2edf12506bcac6004baacc2e02281c0">&#9670;&nbsp;</a></span>enteringLines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classLine.html">Line</a> * &gt; SceneItem::enteringLines </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns all the items entering this item. </p>
+<dl class="section return"><dt>Returns</dt><dd>Lines leaving the item. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="SceneItem_8cc_source.html#l00161">161</a> of file <a class="el" href="SceneItem_8cc_source.html">SceneItem.cc</a>.</p>
+
+</div>
+</div>
 <a id="a6cb1758f3a46acff918ec2ec96eba38f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6cb1758f3a46acff918ec2ec96eba38f">&#9670;&nbsp;</a></span>getPixmap()</h2>
 
@@ -364,6 +392,28 @@ Collaboration diagram for SceneItem:</div>
 <dl class="section return"><dt>Returns</dt><dd>value parameter above. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="SceneItem_8cc_source.html#l00059">59</a> of file <a class="el" href="SceneItem_8cc_source.html">SceneItem.cc</a>.</p>
+
+</div>
+</div>
+<a id="a44e70dd2fea77de4187ab4a3ff26c053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44e70dd2fea77de4187ab4a3ff26c053">&#9670;&nbsp;</a></span>leavingLines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classLine.html">Line</a> * &gt; SceneItem::leavingLines </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns all lines leaving this item. </p>
+<dl class="section return"><dt>Returns</dt><dd>Lines leaving the item. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="SceneItem_8cc_source.html#l00150">150</a> of file <a class="el" href="SceneItem_8cc_source.html">SceneItem.cc</a>.</p>
 
 </div>
 </div>
@@ -518,7 +568,7 @@ Collaboration diagram for SceneItem:</div>
 
 <p>All the lines attached to this item. </p>
 
-<p class="definition">Definition at line <a class="el" href="SceneItem_8h_source.html#l00083">83</a> of file <a class="el" href="SceneItem_8h_source.html">SceneItem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SceneItem_8h_source.html#l00095">95</a> of file <a class="el" href="SceneItem_8h_source.html">SceneItem.h</a>.</p>
 
 </div>
 </div>
@@ -544,7 +594,7 @@ Collaboration diagram for SceneItem:</div>
 
 <p>The image of this component set during initialisation. </p>
 
-<p class="definition">Definition at line <a class="el" href="SceneItem_8h_source.html#l00099">99</a> of file <a class="el" href="SceneItem_8h_source.html">SceneItem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SceneItem_8h_source.html#l00111">111</a> of file <a class="el" href="SceneItem_8h_source.html">SceneItem.h</a>.</p>
 
 </div>
 </div>
