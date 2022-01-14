@@ -40,7 +40,7 @@ int guiMain(int argc, char** argv){
 
     QDir::addSearchPath("icon", ":/theme/theme");
 
-    QFile file(":/theme/light_cyan.qss");
+    QFile file(":/theme/theme.qss");
     file.open(QFile::ReadOnly);
 
     QString styleSheet { file.readAll() };

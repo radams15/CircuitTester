@@ -90,7 +90,7 @@
         <file>theme/theme/primary/uparrow.svg</file>
         <file>theme/theme/primary/uparrow2.svg</file>
         <file>theme/theme/primary/vline.svg</file>
-        <file>theme/light_cyan.qss</file>
+        <file>theme/theme.qss</file>
     </qresource>
     <qresource prefix="/kxmlgui5/CircuitTester">
         <file>circuittesterui.rc</file>
