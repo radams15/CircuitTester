@@ -56,7 +56,7 @@ MainWindow::MainWindow() {
 
     // Create the main layout, add the graphics view.
     auto* layout = new QHBoxLayout;
-    layout->addWidget(toolBox);
+    layout->addWidget(componentTabs);
     view = new QGraphicsView(scene);
     layout->addWidget(view);
 
@@ -223,12 +223,13 @@ void MainWindow::createToolBox() {
     auto* measurementWidget = new QWidget;
     measurementWidget->setLayout(measurementLayout);
 
-    // Create a toolbox to hold the components.
-    toolBox = new QToolBox;
-    toolBox->setSizePolicy(QSizePolicy(QSizePolicy::Maximum, QSizePolicy::Ignored));
-    toolBox->setMinimumWidth(basicWidget->sizeHint().width());
-    toolBox->addItem(basicWidget, tr("Basic Components"));
-    toolBox->addItem(measurementWidget, tr("Measurement Components"));
+    // Create a componentTabs to hold the components.
+    componentTabs = new QTabWidget;
+    componentTabs->setSizePolicy(QSizePolicy(QSizePolicy::Maximum, QSizePolicy::Ignored));
+    componentTabs->setMinimumWidth(basicWidget->sizeHint().width());
+    componentTabs->setTabPosition(QTabWidget::West);
+    componentTabs->addTab(basicWidget, tr("Basic Components"));
+    componentTabs->addTab(measurementWidget, tr("Measurement Components"));
 }
 
 

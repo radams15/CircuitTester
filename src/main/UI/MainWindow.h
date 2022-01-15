@@ -26,7 +26,7 @@
 #define CANVAS_SIZE 1000, 1000
 #define WINDOW_SIZE 1200, 700
 
-#define HAMBURGER_MENU 1
+#define HAMBURGER_MENU 0
 
 /** @brief The main window class that is the GUI for the user on startup.
  *
@@ -253,7 +253,7 @@ private:
     /** @brief The toolbox that contains the component buttons.
      *
      */
-    QToolBox* toolBox;
+    QTabWidget* componentTabs;
 
     /** @brief The button group that holds the multiple components.
      *
