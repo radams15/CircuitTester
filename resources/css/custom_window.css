@@ -1,0 +1,10 @@
+CustomWindow {
+    background : #f6f5f4;
+    margin : 1px;
+    border-radius: 50%;
+}
+
+QToolBar {
+    margin : 1px;
+}
+/* no trailing space!!! */

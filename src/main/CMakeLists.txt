@@ -55,7 +55,9 @@ set(PROJECT_SOURCES
         UI/AnalysisMapper.cc
         UI/AnalysisMapper.h
         Saves/FileUtils.cc
-        Saves/FileUtils.h Saves/CircuitSaver.cc Saves/CircuitSaver.h UI/Components/ResistiveElement.h ExpandingSpacer.h UI/HamburgerMenu.cpp UI/HamburgerMenu.h)
+        Saves/FileUtils.h Saves/CircuitSaver.cc Saves/CircuitSaver.h UI/Components/ResistiveElement.h UI/ExpandingSpacer.h UI/HamburgerMenu.cpp UI/HamburgerMenu.h
+        UI/customtitlebar.cpp
+        UI/customwindow.cpp)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(CircuitTester

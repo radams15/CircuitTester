@@ -22,6 +22,7 @@
 #include "Scene.h"
 #include "SettingsMenu.h"
 #include "HamburgerMenu.h"
+#include "customwindow.h"
 
 #define CANVAS_SIZE 1000, 1000
 #define WINDOW_SIZE 1200, 700
@@ -31,7 +32,14 @@
 /** @brief The main window class that is the GUI for the user on startup.
  *
  */
-class MainWindow : public QMainWindow {
+class MainWindow
+
+#if HAMBURGER_MENU && !defined(Q_OS_MACOS)
+        : public CustomWindow {
+#else
+        : public QMainWindow {
+#endif
+
     Q_OBJECT
 
 public:
@@ -159,12 +167,6 @@ private:
      */
     QGraphicsView* view;
 
-#if HAMBURGER_MENU && !defined(Q_OS_MACOS)
-    HamburgerMenu* mainMenu;
-#else
-    QWidget* mainMenu;
-#endif
-
     /** @brief The collapsable settings menu for components.
      *
      */
@@ -248,7 +250,7 @@ private:
     /** @brief The toolbar that allows you to select either movement or line mode.
      *
      */
-    QToolBar* pointerToolbar;
+    QToolBar* mainToolbar;
 
     /** @brief The toolbox that contains the component buttons.
      *

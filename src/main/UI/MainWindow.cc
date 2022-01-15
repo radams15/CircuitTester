@@ -24,7 +24,6 @@
 #include <QtWidgets>
 #include <QInputDialog>
 #include <iostream>
-#include <iomanip>
 #include <sstream>
 
 /**
@@ -334,8 +333,7 @@ void MainWindow::createMenubar() {
     QMenu* menu;
 
 #if HAMBURGER_MENU && !defined(Q_OS_MACOS)
-    mainMenu = new HamburgerMenu();
-    menu = mainMenu->menu;
+    menu = m_titleBar->menu;
 
     menu->addAction(saveAction);
     menu->addAction(openAction);
@@ -350,8 +348,7 @@ void MainWindow::createMenubar() {
 
     menu->addAction(exitAction);
 #else
-    mainMenu = menuBar();
-    menu = (QMenu*) mainMenu;
+    menu = (QMenu*) menuBar();
 
     fileMenu = menu->addMenu("&File");
     fileMenu->addAction(saveAction);
@@ -373,21 +370,19 @@ void MainWindow::createMenubar() {
 
 
 void MainWindow::createToolbar() {
-    pointerToolbar = addToolBar("Main Toolbar");
+    mainToolbar = addToolBar("Main Toolbar");
 
-    pointerToolbar->addAction(moveAction);
-    pointerToolbar->addAction(lineAction);
-    pointerToolbar->addWidget(new ExpandingSpacer());
-    pointerToolbar->addAction(runningAction);
-    pointerToolbar->addWidget(new ExpandingSpacer());
+    mainToolbar->setMovable(false);
 
-#if HAMBURGER_MENU  && !defined(Q_OS_MACOS)
-    pointerToolbar->addWidget((QToolButton*) mainMenu);
-#endif
+    mainToolbar->addAction(moveAction);
+    mainToolbar->addAction(lineAction);
+    mainToolbar->addWidget(new ExpandingSpacer());
+    mainToolbar->addAction(runningAction);
+    mainToolbar->addWidget(new ExpandingSpacer());
 
-    SHOW_ICON(pointerToolbar, moveAction);
-    SHOW_ICON(pointerToolbar, lineAction);
-    SHOW_ICON(pointerToolbar, runningAction);
+    SHOW_ICON(mainToolbar, moveAction);
+    SHOW_ICON(mainToolbar, lineAction);
+    SHOW_ICON(mainToolbar, runningAction);
 }
 
 
