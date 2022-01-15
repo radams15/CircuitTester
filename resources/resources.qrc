@@ -19,7 +19,6 @@
     <file>images/voltmeter.png</file>
 
     <file>css/custom_titlebar.css</file>
-    <file>css/custom_toolbar.css</file>
     <file>css/custom_window.css</file>
 </qresource>
 </RCC>

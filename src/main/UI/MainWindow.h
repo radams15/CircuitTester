@@ -21,7 +21,6 @@
 #include "SceneItem.h"
 #include "Scene.h"
 #include "SettingsMenu.h"
-#include "HamburgerMenu.h"
 #include "customwindow.h"
 
 #define CANVAS_SIZE 1000, 1000
@@ -35,7 +34,7 @@
 class MainWindow
 
 #if HAMBURGER_MENU && !defined(Q_OS_MACOS)
-        : public CustomWindow {
+        : public CSDWindow {
 #else
         : public QMainWindow {
 #endif
@@ -203,8 +202,8 @@ private:
     QAction* openAction;
 
     /** @brief An action that exports the scene.
- *
- */
+     *
+     */
     QAction* exportAction;
 
     /** @brief An action that imports a save file.
@@ -261,11 +260,6 @@ private:
      *
      */
     QButtonGroup* buttonGroup;
-
-    /** @brief The button group that holds buttons for movement or line mode.
-     *
-     */
-    QButtonGroup* pointerTypeGroup;
 };
 
 

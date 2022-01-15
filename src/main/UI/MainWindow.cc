@@ -19,7 +19,6 @@
 
 #include "../Saves/FileUtils.h"
 #include "ExpandingSpacer.h"
-#include "HamburgerMenu.h"
 
 #include <QtWidgets>
 #include <QInputDialog>
@@ -73,6 +72,9 @@ MainWindow::MainWindow() {
 
     // Makes the toolbar on mac look the same colour as the titlebar - just aesthetic.
     setUnifiedTitleAndToolBarOnMac(true);
+
+    // Add statusbar to show tooltips and a resizer grip.
+    statusBar();
 
     auto* timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(runSimulation()));
@@ -333,7 +335,7 @@ void MainWindow::createMenubar() {
     QMenu* menu;
 
 #if HAMBURGER_MENU && !defined(Q_OS_MACOS)
-    menu = m_titleBar->menu;
+    menu = titleBar->menu;
 
     menu->addAction(saveAction);
     menu->addAction(openAction);
