@@ -22,18 +22,21 @@
 #include "Scene.h"
 #include "SettingsMenu.h"
 #include "customwindow.h"
+#include "HamburgerMenu.h"
 
 #define CANVAS_SIZE 1000, 1000
 #define WINDOW_SIZE 1200, 700
 
-#define HAMBURGER_MENU 1
+#if !defined(USE_CSD) && !defined(Q_OS_MACOS)
+#define HAMBURGER_NOCSD
+#endif
 
 /** @brief The main window class that is the GUI for the user on startup.
  *
  */
 class MainWindow
 
-#if HAMBURGER_MENU && !defined(Q_OS_MACOS)
+#ifdef USE_CSD
         : public CSDWindow {
 #else
         : public QMainWindow {
@@ -230,6 +233,10 @@ private:
      *
      */
     QAction* runningAction;
+
+#ifdef HAMBURGER_NOCSD
+    HamburgerMenu* hamburgerMenu;
+#endif
 
     /** @brief The file menu on the menubar.
      *

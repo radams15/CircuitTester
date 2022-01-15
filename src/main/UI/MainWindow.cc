@@ -34,6 +34,7 @@
 MainWindow::MainWindow() {
     createActions();
     createToolBox();
+    createToolbar();
     createMenubar();
 
     // Set window icon to the connector image.
@@ -49,8 +50,6 @@ MainWindow::MainWindow() {
     // Call itemInserted when an item is inserted into the scene.
     connect(scene, &Scene::itemInserted,
             this, &MainWindow::itemInserted);
-
-    createToolbar();
 
     // Create the main layout, add the graphics view.
     auto* layout = new QHBoxLayout;
@@ -334,8 +333,13 @@ void MainWindow::createMenubar() {
 
     QMenu* menu;
 
-#if HAMBURGER_MENU && !defined(Q_OS_MACOS)
+#if defined(USE_CSD) || defined(HAMBURGER_NOCSD)
+
+#ifdef USE_CSD
     menu = titleBar->menu;
+#else
+    menu = hamburgerMenu->menu;
+#endif
 
     menu->addAction(saveAction);
     menu->addAction(openAction);
@@ -381,6 +385,10 @@ void MainWindow::createToolbar() {
     mainToolbar->addWidget(new ExpandingSpacer());
     mainToolbar->addAction(runningAction);
     mainToolbar->addWidget(new ExpandingSpacer());
+#ifdef HAMBURGER_NOCSD
+    hamburgerMenu = new HamburgerMenu();
+    mainToolbar->addWidget(hamburgerMenu);
+#endif
 
     SHOW_ICON(mainToolbar, moveAction);
     SHOW_ICON(mainToolbar, lineAction);

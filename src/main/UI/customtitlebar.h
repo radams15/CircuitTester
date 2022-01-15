@@ -34,10 +34,7 @@ namespace WindowAttributes {
     Q_DECLARE_OPERATORS_FOR_FLAGS(WindowButtons)
 }
 
-struct ButtonStates{
-    bool maximise;
-    bool minimise;
-};
+
 
 class CustomTitlebar : public QWidget{
     Q_OBJECT
