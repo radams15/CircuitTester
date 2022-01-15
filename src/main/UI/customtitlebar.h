@@ -20,7 +20,9 @@
 #include <QMenu>
 #include <QToolButton>
 
-namespace QCustomAttrs {
+#define BUTTON_SIZE QSize(24, 24)
+
+namespace WindowAttributes {
     enum WindowButton {
         Minimize = 0x01,
         Maximize = 0x02,
@@ -32,16 +34,21 @@ namespace QCustomAttrs {
     Q_DECLARE_OPERATORS_FOR_FLAGS(WindowButtons)
 }
 
+struct ButtonStates{
+    bool maximise;
+    bool minimise;
+};
+
 class CustomTitlebar : public QWidget{
     Q_OBJECT
-    Q_PROPERTY(QCustomAttrs::WindowButtons windowButtons READ windowButtons WRITE setWindowButtons)
-    Q_CLASSINFO("custom_obj_type", "QTitleBar")
+    Q_PROPERTY(WindowAttributes::WindowButtons windowButtons READ windowButtons WRITE setWindowButtons)
+    Q_CLASSINFO("CustomTitlebar", "QTitleBar")
 
 public:
     explicit CustomTitlebar(QWidget *parent = nullptr);
 
-    void setWindowButtons(QCustomAttrs::WindowButtons btns);
-    inline QCustomAttrs::WindowButtons windowButtons() const { return this->m_frameButtons; }
+    void setWindowButtons(WindowAttributes::WindowButtons btns);
+    inline WindowAttributes::WindowButtons windowButtons() const { return this->buttonStates; }
 
     QMenu* menu;
 
@@ -53,24 +60,24 @@ protected:
 
 private:
     bool canMove;
-    bool maximizing;
+    bool maximised;
+    bool minimized;
 
-    QPoint m_pCursor;
-    const QSize FRAME_BUTTON_SIZE;
+    QPoint cursorPos;
 
-    QWidget *m_parentWindow;
+    QWidget *parent;
 
-    QCustomAttrs::WindowButtons m_frameButtons;
+    WindowAttributes::WindowButtons buttonStates;
 
-    QLabel lbl_windowTitle;
-    QHBoxLayout m_layout;
+    QLabel windowLabel;
+    QHBoxLayout windowLayout;
 
-    std::string custom_titlebar_css;
+    std::string titlebarCSS;
 
-    QPushButton btn_minimize;
-    QPushButton btn_maximize;
-    QPushButton btn_close;
-    QToolButton btn_menu;
+    QToolButton minimiseButton;
+    QToolButton maximiseMutton;
+    QToolButton closeButton;
+    QToolButton hamburgerMenu;
 
 signals:
     void requestClose();
