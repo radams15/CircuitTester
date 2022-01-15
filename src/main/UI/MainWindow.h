@@ -26,7 +26,7 @@
 #define CANVAS_SIZE 1000, 1000
 #define WINDOW_SIZE 1200, 700
 
-#define HAMBURGER_MENU 0
+#define HAMBURGER_MENU 1
 
 /** @brief The main window class that is the GUI for the user on startup.
  *
