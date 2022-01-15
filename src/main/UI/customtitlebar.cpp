@@ -39,8 +39,8 @@ CustomTitlebar::CustomTitlebar(QWidget *parent) : QWidget(parent){
     BUTTON_FIX_SIZE(minimiseButton, BUTTON_SIZE);
     BUTTON_FIX_SIZE(hamburgerMenu, BUTTON_SIZE);
 
-    windowLayout.addWidget(&hamburgerMenu);
     windowLayout.addWidget(&windowLabel, 1);
+    windowLayout.addWidget(&hamburgerMenu);
     windowLayout.addWidget(&minimiseButton);
     windowLayout.addWidget(&maximiseMutton);
     windowLayout.addWidget(&closeButton);
