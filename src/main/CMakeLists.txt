@@ -2,10 +2,21 @@ if(APPLE)
     set(SYS "macos")
 elseif(UNIX)
     set(SYS "unix")
+    set(LINUX TRUE)
 elseif(WIN32)
     set(SYS "windows")
 else()
     set(SYS "unknown")
+endif()
+
+if(${USE_CSD} OR LINUX)
+    set(USE_CSD 1)
+else()
+    set(USE_CSD 0)
+endif()
+
+if(${USE_CSD})
+    add_definitions(-DUSE_CSD)
 endif()
 
 set(PROJECT_SOURCES
@@ -55,7 +66,10 @@ set(PROJECT_SOURCES
         UI/AnalysisMapper.cc
         UI/AnalysisMapper.h
         Saves/FileUtils.cc
-        Saves/FileUtils.h Saves/CircuitSaver.cc Saves/CircuitSaver.h UI/Components/ResistiveElement.h ExpandingSpacer.h UI/HamburgerMenu.cpp UI/HamburgerMenu.h)
+        Saves/FileUtils.h Saves/CircuitSaver.cc Saves/CircuitSaver.h UI/Components/ResistiveElement.h UI/ExpandingSpacer.h
+        UI/CSDTitlebar.cpp
+        UI/CSDWindow.cpp
+        UI/HamburgerMenu.cpp)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(CircuitTester
@@ -78,7 +92,7 @@ endif()
 if(${APPLE})
 	set_target_properties(CircuitTester PROPERTIES
 	    BUNDLE True
-	    MACOSX_BUNDLE_GUI_IDENTIFIER my.domain.style.identifierCircuitTester
+	    MACOSX_BUNDLE_GUI_IDENTIFIER uk.co.therhys.CircuitTester
 	    MACOSX_BUNDLE_BUNDLE_NAME CircuitTester
 	    MACOSX_BUNDLE_BUNDLE_VERSION "${PROGRAM_VERSION}"
 	    MACOSX_BUNDLE_SHORT_VERSION_STRING "${PROGRAM_VERSION}"

@@ -19,12 +19,10 @@
 
 #include "../Saves/FileUtils.h"
 #include "ExpandingSpacer.h"
-#include "HamburgerMenu.h"
 
 #include <QtWidgets>
 #include <QInputDialog>
 #include <iostream>
-#include <iomanip>
 #include <sstream>
 
 /**
@@ -36,6 +34,7 @@
 MainWindow::MainWindow() {
     createActions();
     createToolBox();
+    createToolbar();
     createMenubar();
 
     // Set window icon to the connector image.
@@ -51,8 +50,6 @@ MainWindow::MainWindow() {
     // Call itemInserted when an item is inserted into the scene.
     connect(scene, &Scene::itemInserted,
             this, &MainWindow::itemInserted);
-
-    createToolbar();
 
     // Create the main layout, add the graphics view.
     auto* layout = new QHBoxLayout;
@@ -74,6 +71,9 @@ MainWindow::MainWindow() {
 
     // Makes the toolbar on mac look the same colour as the titlebar - just aesthetic.
     setUnifiedTitleAndToolBarOnMac(true);
+
+    // Add statusbar to show tooltips and a resizer grip.
+    statusBar();
 
     auto* timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(runSimulation()));
@@ -333,9 +333,13 @@ void MainWindow::createMenubar() {
 
     QMenu* menu;
 
-#if HAMBURGER_MENU && !defined(Q_OS_MACOS)
-    mainMenu = new HamburgerMenu();
-    menu = mainMenu->menu;
+#if defined(USE_CSD) || defined(HAMBURGER_NOCSD)
+
+#ifdef USE_CSD
+    menu = titleBar->menu;
+#else
+    menu = hamburgerMenu->menu;
+#endif
 
     menu->addAction(saveAction);
     menu->addAction(openAction);
@@ -350,8 +354,7 @@ void MainWindow::createMenubar() {
 
     menu->addAction(exitAction);
 #else
-    mainMenu = menuBar();
-    menu = (QMenu*) mainMenu;
+    menu = (QMenu*) menuBar();
 
     fileMenu = menu->addMenu("&File");
     fileMenu->addAction(saveAction);
@@ -373,21 +376,23 @@ void MainWindow::createMenubar() {
 
 
 void MainWindow::createToolbar() {
-    pointerToolbar = addToolBar("Main Toolbar");
+    mainToolbar = addToolBar("Main Toolbar");
 
-    pointerToolbar->addAction(moveAction);
-    pointerToolbar->addAction(lineAction);
-    pointerToolbar->addWidget(new ExpandingSpacer());
-    pointerToolbar->addAction(runningAction);
-    pointerToolbar->addWidget(new ExpandingSpacer());
+    mainToolbar->setMovable(false);
 
-#if HAMBURGER_MENU  && !defined(Q_OS_MACOS)
-    pointerToolbar->addWidget((QToolButton*) mainMenu);
+    mainToolbar->addAction(moveAction);
+    mainToolbar->addAction(lineAction);
+    mainToolbar->addWidget(new ExpandingSpacer());
+    mainToolbar->addAction(runningAction);
+    mainToolbar->addWidget(new ExpandingSpacer());
+#ifdef HAMBURGER_NOCSD
+    hamburgerMenu = new HamburgerMenu();
+    mainToolbar->addWidget(hamburgerMenu);
 #endif
 
-    SHOW_ICON(pointerToolbar, moveAction);
-    SHOW_ICON(pointerToolbar, lineAction);
-    SHOW_ICON(pointerToolbar, runningAction);
+    SHOW_ICON(mainToolbar, moveAction);
+    SHOW_ICON(mainToolbar, lineAction);
+    SHOW_ICON(mainToolbar, runningAction);
 }
 
 

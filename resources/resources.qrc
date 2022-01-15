@@ -9,6 +9,9 @@
     <file>images/edit-delete.png</file>
     <file>images/application-menu.png</file>
     <file>images/start.png</file>
+    <file>images/window-close-symbolic.png</file>
+    <file>images/window-maximize-symbolic.png</file>
+    <file>images/window-minimize-symbolic.png</file>
 
     <file>images/resistor.png</file>
     <file>images/battery.png</file>
@@ -17,6 +20,9 @@
     <file>images/switch_open.png</file>
     <file>images/ammeter.png</file>
     <file>images/voltmeter.png</file>
+
+    <file>css/custom_titlebar.css</file>
+    <file>css/custom_window.css</file>
 </qresource>
 </RCC>
 
