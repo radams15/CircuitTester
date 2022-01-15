@@ -22,7 +22,6 @@ QToolButton::menu-indicator {
 
 QMenu::item {
     height: 35px;
-    xmargin: 10px;
     width: 150px;
 }
 
