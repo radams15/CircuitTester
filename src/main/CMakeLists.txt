@@ -59,6 +59,7 @@ set(PROJECT_SOURCES
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(CircuitTester
+	    MACOSX_BUNDLE
             ${PROJECT_SOURCES}
             )
 else()
@@ -68,9 +69,21 @@ else()
                 )
     else()
         add_executable(CircuitTester
+        	MACOSX_BUNDLE
                 ${PROJECT_SOURCES}
                 )
     endif()
+endif()
+
+if(${APPLE})
+	set_target_properties(CircuitTester PROPERTIES
+	    BUNDLE True
+	    MACOSX_BUNDLE_GUI_IDENTIFIER my.domain.style.identifierCircuitTester
+	    MACOSX_BUNDLE_BUNDLE_NAME CircuitTester
+	    MACOSX_BUNDLE_BUNDLE_VERSION "${PROGRAM_VERSION}"
+	    MACOSX_BUNDLE_SHORT_VERSION_STRING "${PROGRAM_VERSION}"
+	    MACOSX_BUNDLE_INFO_PLIST ${CMAKE_SOURCE_DIR}/resources/template.plist.in
+	)
 endif()
 
 set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)
@@ -83,6 +96,3 @@ target_link_libraries(CircuitTester PRIVATE Qt${QT_VER}::Widgets nlohmann_json::
 
 
 set(BUILD_DIR ${PROJECT_SOURCE_DIR}/builds/${SYS})
-
-install(TARGETS CircuitTester
-        RUNTIME DESTINATION bin)

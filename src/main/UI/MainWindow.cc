@@ -255,7 +255,7 @@ void MainWindow::createActions() {
     exitAction->setIcon(QIcon(":/images/close.png"));
     exitAction->setStatusTip(tr("Exit the program"));
     exitAction->setShortcut(Qt::CTRL + Qt::Key_Q);
-    connect(exitAction, &QAction::triggered, this, [this]{ destroy();});
+    connect(exitAction, &QAction::triggered, this, [this]{ exit(0);});
 
     tutorialAction = new QAction("", this);
     tutorialAction->setText(tr("T&utorial"));
