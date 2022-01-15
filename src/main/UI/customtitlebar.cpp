@@ -26,10 +26,10 @@ CustomTitlebar::CustomTitlebar(QWidget *parent) : QWidget(parent){
 
     windowLabel.setAlignment(Qt::AlignCenter);
 
-    closeButton.setText("X");
-    maximiseMutton.setText("+");
-    minimiseButton.setText("-");
-    hamburgerMenu.setText("|||");
+    closeButton.setIcon(QIcon(":/images/window-close-symbolic.png"));
+    maximiseMutton.setIcon(QIcon(":/images/window-maximize-symbolic.png"));
+    minimiseButton.setIcon(QIcon(":/images/window-minimize-symbolic.png"));
+    hamburgerMenu.setIcon(QIcon(":/images/application-menu.png"));
 
     BUTTON_FIX_SIZE(closeButton, BUTTON_SIZE);
     BUTTON_FIX_SIZE(maximiseMutton, BUTTON_SIZE);

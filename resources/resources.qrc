@@ -9,6 +9,9 @@
     <file>images/edit-delete.png</file>
     <file>images/application-menu.png</file>
     <file>images/start.png</file>
+    <file>images/window-close-symbolic.png</file>
+    <file>images/window-maximize-symbolic.png</file>
+    <file>images/window-minimize-symbolic.png</file>
 
     <file>images/resistor.png</file>
     <file>images/battery.png</file>
