@@ -2,8 +2,8 @@
 // Created by rhys on 07/02/2021.
 //
 
-#ifndef CSD_CUSTOMTITLEBAR_H
-#define CSD_CUSTOMTITLEBAR_H
+#ifndef CSD_CSDTITLEBAR_H
+#define CSD_CSDTITLEBAR_H
 
 #include <QSize>
 #include <QEvent>
@@ -36,12 +36,12 @@ namespace WindowAttributes {
 
 
 
-class CustomTitlebar : public QWidget{
+class CSDTitleBar : public QWidget{
     Q_OBJECT
-    Q_CLASSINFO("CustomTitlebar", "QTitleBar")
+    Q_CLASSINFO("CSDTitleBar", "QTitleBar")
 
 public:
-    explicit CustomTitlebar(QWidget *parent = nullptr);
+    explicit CSDTitleBar(QWidget *parent = nullptr);
 
     QMenu* menu;
 
@@ -76,4 +76,4 @@ signals:
 };
 
 
-#endif //CSD_CUSTOMTITLEBAR_H
+#endif //CSD_CSDTITLEBAR_H

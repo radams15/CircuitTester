@@ -1,5 +1,5 @@
-#ifndef CUSTOMWINDOW_H
-#define CUSTOMWINDOW_H
+#ifndef CSDWINDOW_H
+#define CSDWINDOW_H
 
 #include <QMenu>
 #include <QRect>
@@ -17,7 +17,7 @@
 #include <QMouseEvent>
 #include <QVBoxLayout>
 
-#include "customtitlebar.h"
+#include "CSDTitlebar.h"
 
 class CSDWindow : public QMainWindow{
     Q_OBJECT
@@ -25,7 +25,7 @@ public:
     explicit CSDWindow(QWidget *parent = nullptr);
 
 protected:
-    CustomTitlebar *titleBar;
+    CSDTitleBar *titleBar;
 };
 
-#endif // CUSTOMWINDOW_H
+#endif // CSDWINDOW_H

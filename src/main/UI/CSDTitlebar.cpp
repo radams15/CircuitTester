@@ -2,11 +2,11 @@
 // Created by rhys on 07/02/2021.
 //
 
-#include "customtitlebar.h"
+#include "CSDTitlebar.h"
 
 #define BUTTON_FIX_SIZE(button, size)     button.setMaximumSize(size); button.setMinimumSize(size);
 
-CustomTitlebar::CustomTitlebar(QWidget *parent) : QWidget(parent){
+CSDTitleBar::CSDTitleBar(QWidget *parent) : QWidget(parent){
     canMove = false;
     buttonStates = WindowAttributes::All;
 
@@ -52,7 +52,7 @@ CustomTitlebar::CustomTitlebar(QWidget *parent) : QWidget(parent){
     connect(this, &QWidget::windowTitleChanged, &windowLabel, &QLabel::setText);
 }
 
-void CustomTitlebar::paintEvent(QPaintEvent *event){
+void CSDTitleBar::paintEvent(QPaintEvent *event){
     QStyleOption opt;
     opt.init(this);
 
@@ -62,7 +62,7 @@ void CustomTitlebar::paintEvent(QPaintEvent *event){
     QWidget::paintEvent(event);
 }
 
-void CustomTitlebar::mousePressEvent(QMouseEvent *event){
+void CSDTitleBar::mousePressEvent(QMouseEvent *event){
     if (event->button() & Qt::LeftButton){
         canMove = (event->x() > 5 && event->y() > 5 && event->x() < (parent->width() - 5));
 
@@ -71,14 +71,14 @@ void CustomTitlebar::mousePressEvent(QMouseEvent *event){
     QWidget::mousePressEvent(event);
 }
 
-void CustomTitlebar::mouseMoveEvent(QMouseEvent *event){
+void CSDTitleBar::mouseMoveEvent(QMouseEvent *event){
     if (canMove && event->buttons() & Qt::LeftButton && !parent->isMaximized()){
         parent->move(event->globalPos() - cursorPos);
     }
     QWidget::mouseMoveEvent(event);
 }
 
-void CustomTitlebar::mouseDoubleClickEvent(QMouseEvent *event){
+void CSDTitleBar::mouseDoubleClickEvent(QMouseEvent *event){
     if (buttonStates & WindowAttributes::Maximize && maximiseMutton.isEnabled() && event->buttons() & Qt::LeftButton) {
         requestMaximize();
     }

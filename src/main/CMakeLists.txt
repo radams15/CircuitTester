@@ -67,8 +67,8 @@ set(PROJECT_SOURCES
         UI/AnalysisMapper.h
         Saves/FileUtils.cc
         Saves/FileUtils.h Saves/CircuitSaver.cc Saves/CircuitSaver.h UI/Components/ResistiveElement.h UI/ExpandingSpacer.h
-        UI/customtitlebar.cpp
-        UI/customwindow.cpp
+        UI/CSDTitlebar.cpp
+        UI/CSDWindow.cpp
         UI/HamburgerMenu.cpp)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

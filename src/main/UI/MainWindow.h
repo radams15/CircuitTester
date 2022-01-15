@@ -21,7 +21,7 @@
 #include "SceneItem.h"
 #include "Scene.h"
 #include "SettingsMenu.h"
-#include "customwindow.h"
+#include "CSDWindow.h"
 #include "HamburgerMenu.h"
 
 #define CANVAS_SIZE 1000, 1000

@@ -1,4 +1,4 @@
-#include "customwindow.h"
+#include "CSDWindow.h"
 
 #include <iostream>
 
@@ -10,14 +10,14 @@ CSDWindow::CSDWindow(QWidget *parent) : QMainWindow(parent){
     setStyleSheet(windowCSS.readAll());
     windowCSS.close();
 
-    titleBar = new CustomTitlebar(this);
+    titleBar = new CSDTitleBar(this);
 
-    connect(titleBar, &CustomTitlebar::requestClose,
+    connect(titleBar, &CSDTitleBar::requestClose,
             this, &CSDWindow::close);
 
-    connect(titleBar, &CustomTitlebar::requestMaximize, [this]{ isMaximized() ? showNormal() : showMaximized(); });
+    connect(titleBar, &CSDTitleBar::requestMaximize, [this]{ isMaximized() ? showNormal() : showMaximized(); });
 
-    connect(titleBar, &CustomTitlebar::requestMinimize,
+    connect(titleBar, &CSDTitleBar::requestMinimize,
             this, &CSDWindow::showMinimized);
 
     connect(this, &QMainWindow::windowTitleChanged, titleBar,
