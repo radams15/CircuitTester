@@ -5,11 +5,10 @@
 CSDWindow::CSDWindow(QWidget *parent) : QMainWindow(parent){
     setWindowFlags(Qt::Widget | Qt::FramelessWindowHint);
 
-    QFile windowIn(":/css/custom_window.css");
-    windowIn.open(QFile::ReadOnly);
-    std::string windowCss = windowIn.readAll().toStdString();
-
-    setStyleSheet(QString::fromStdString(windowCss));
+    QFile windowCSS(":/css/custom_window.css");
+    windowCSS.open(QFile::ReadOnly);
+    setStyleSheet(windowCSS.readAll());
+    windowCSS.close();
 
     titleBar = new CustomTitlebar(this);
 

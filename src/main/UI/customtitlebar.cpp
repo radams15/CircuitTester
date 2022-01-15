@@ -8,22 +8,19 @@
 
 CustomTitlebar::CustomTitlebar(QWidget *parent) : QWidget(parent){
     canMove = false;
-    maximised = false;
     buttonStates = WindowAttributes::All;
-
-    minimized = false;
 
     menu = new QMenu;
 
     hamburgerMenu.setMenu(menu);
     hamburgerMenu.setPopupMode(QToolButton::InstantPopup);
 
-    QFile titlebarIn(":/css/custom_titlebar.css");
-    titlebarIn.open(QFile::ReadOnly);
-
-    titlebarCSS = titlebarIn.readAll().toStdString();
-
-    setStyleSheet(QString::fromStdString(titlebarCSS));
+    QFile titlebarCSS(":/css/custom_titlebar.css");
+    titlebarCSS.open(QFile::ReadOnly);
+    QString css = titlebarCSS.readAll();
+    setStyleSheet(css);
+    menu->setStyleSheet(css);
+    titlebarCSS.close();
 
     this->parent = parent;
 
@@ -55,14 +52,6 @@ CustomTitlebar::CustomTitlebar(QWidget *parent) : QWidget(parent){
     connect(this, &QWidget::windowTitleChanged, &windowLabel, &QLabel::setText);
 }
 
-
-void CustomTitlebar::setWindowButtons(WindowAttributes::WindowButtons btns){
-    buttonStates = btns;
-    closeButton.setVisible(btns & WindowAttributes::Close);
-    maximiseMutton.setVisible(btns & WindowAttributes::Maximize);
-    minimiseButton.setVisible(btns & WindowAttributes::Minimize);
-}
-
 void CustomTitlebar::paintEvent(QPaintEvent *event){
     QStyleOption opt;
     opt.init(this);
@@ -83,16 +72,14 @@ void CustomTitlebar::mousePressEvent(QMouseEvent *event){
 }
 
 void CustomTitlebar::mouseMoveEvent(QMouseEvent *event){
-    if (!maximised && canMove && event->buttons() & Qt::LeftButton && !parent->isMaximized()){
+    if (canMove && event->buttons() & Qt::LeftButton && !parent->isMaximized()){
         parent->move(event->globalPos() - cursorPos);
     }
-    maximised = false;
     QWidget::mouseMoveEvent(event);
 }
 
 void CustomTitlebar::mouseDoubleClickEvent(QMouseEvent *event){
     if (buttonStates & WindowAttributes::Maximize && maximiseMutton.isEnabled() && event->buttons() & Qt::LeftButton) {
-        maximised = true;
         requestMaximize();
     }
     QWidget::mouseDoubleClickEvent(event);

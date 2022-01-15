@@ -41,14 +41,10 @@ struct ButtonStates{
 
 class CustomTitlebar : public QWidget{
     Q_OBJECT
-    Q_PROPERTY(WindowAttributes::WindowButtons windowButtons READ windowButtons WRITE setWindowButtons)
     Q_CLASSINFO("CustomTitlebar", "QTitleBar")
 
 public:
     explicit CustomTitlebar(QWidget *parent = nullptr);
-
-    void setWindowButtons(WindowAttributes::WindowButtons btns);
-    inline WindowAttributes::WindowButtons windowButtons() const { return this->buttonStates; }
 
     QMenu* menu;
 
@@ -60,8 +56,6 @@ protected:
 
 private:
     bool canMove;
-    bool maximised;
-    bool minimized;
 
     QPoint cursorPos;
 
@@ -72,11 +66,9 @@ private:
     QLabel windowLabel;
     QHBoxLayout windowLayout;
 
-    std::string titlebarCSS;
-
-    QToolButton minimiseButton;
-    QToolButton maximiseMutton;
-    QToolButton closeButton;
+    QPushButton minimiseButton;
+    QPushButton maximiseMutton;
+    QPushButton closeButton;
     QToolButton hamburgerMenu;
 
 signals:
