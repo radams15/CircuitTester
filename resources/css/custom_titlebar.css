@@ -1,4 +1,4 @@
-QPushButton {
+QPushButton, QToolButton {
     border : 0.5px solid #e7e7e6;
     border-radius: 3px;
     min-height: 30px;
@@ -8,16 +8,18 @@ QPushButton {
     background: #e7e7e6;
     color: black;
 }
-QPushButton::hover {
+QPushButton::hover, QToolButton::hover {
     border : 0.5px solid #cbcbcb;
     color: black;
 }
-QPushButton::pressed, QPushButton::!enabled {
+QPushButton::pressed, QPushButton::!enabled, QToolButton::pressed, QToolButton::!enabled {
     background: #3584e4;
     border : 0.5px solid #cbcbcb;
 }
+
+
+
 CustomTitlebar {
     background: #e7e7e6;
     min-height: 50px;
 }
-/* no trailing space!!! */
