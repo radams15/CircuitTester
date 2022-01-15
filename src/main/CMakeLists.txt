@@ -9,7 +9,7 @@ else()
     set(SYS "unknown")
 endif()
 
-if(${USE_CSD} OR LINUX)
+if(USE_CSD OR LINUX)
     set(USE_CSD 1)
 else()
     set(USE_CSD 0)
