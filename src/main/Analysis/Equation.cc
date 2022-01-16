@@ -5,7 +5,7 @@
 #include <iostream>
 #include "Equation.h"
 
-Equation::Equation(double value, std::vector<Term*> terms) {
+Equation::Equation(double value, std::vector<Term> terms) {
     this->value = value;
     this->terms = terms;
 }
@@ -16,10 +16,10 @@ void Equation::apply(int row, Eigen::MatrixXd* A, Eigen::MatrixXd* z, std::funct
 
     for(auto t : terms){
         // Find the index of the unknown variable of this term.
-        int index = getIndexFunc(t->variable);
+        int index = getIndexFunc(t.variable);
 
         // Add the known coefficient of this term into the matrix A,
         // adding onto the existing value there.
-        (*A)(row, index) += t->coefficient;
+        (*A)(row, index) += t.coefficient;
     }
 }

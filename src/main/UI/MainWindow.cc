@@ -473,15 +473,12 @@ void MainWindow::runSimulation() {
             if(it.second.voltage <  0.01){
                 ss << "0";
                 it.first->setState(false);
-
             }else if(it.second.voltage < 1000) {
                 ss << dtos(it.second.voltage);
                 it.first->setState(true);
-
             }else{
                 ss << "\u221E"; // Infinity symbol unicode escape.
                 it.first->setState(true);
-
             }
             ss << "V";
         }
@@ -490,10 +487,14 @@ void MainWindow::runSimulation() {
             ss << "\nCurrent: ";
             if(it.second.current <  0.01){
                 ss << "0";
+                it.first->setState(false);
+
             }else if(it.second.current < 1000) {
                 ss << dtos(it.second.current);
+                it.first->setState(true);
             }else{
                 ss << "\u221E"; // Infinity symbol unicode escape.
+                it.first->setState(true);
             }
             ss << "A";
         }

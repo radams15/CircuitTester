@@ -5,7 +5,7 @@
 #include <iostream>
 #include "Component.h"
 
-Component::Component(int n0, int n1, ComponentType type, double value, double currentSolution) {
+Component::Component(int n0, int n1, ComponentType type, double value) {
     // Sets the class attributes from the passed initialiser values.
     this->n0 = n0;
     this->n1 = n1;
@@ -18,11 +18,6 @@ Component::Component(int n0, int n1, ComponentType type, double value, double cu
     }
 
     this->value = value;
-    this->currentSolution = currentSolution;
-}
-
-Component* Component::withCurrent(double newCurrent) {
-    return new Component(n0, n1, type, value, newCurrent);
 }
 
 bool Component::contains(int n) {

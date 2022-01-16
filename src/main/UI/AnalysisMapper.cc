@@ -29,10 +29,10 @@ AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
 std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
     Graph graph = makeGraph();
 
-    auto* mNAComponents = new std::vector<Component*>;
+    std::vector<Component> mNAComponents;
 
     // Map of UIComponent:Component to help to return the correct values to the correct UIComponent.
-    auto* mNAMap = new std::map<UIComponent*, Component*>;
+    std::map<UIComponent*, Component> mNAMap;
 
     for(auto node : graph){
         Component* component;
@@ -53,27 +53,27 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
         }
 
         // Add the new component to the list of components.
-        mNAComponents->push_back(component);
+        mNAComponents.push_back(*component);
 
         // Add the component to the list to set the (UIComponent => Component).
-        mNAMap->insert(std::make_pair(node.first, component));
+        mNAMap.insert(std::make_pair(node.first, *component));
     }
 
-    auto* cir = new Circuit(*mNAComponents);
+    Circuit cir(mNAComponents);
 
-    auto* sol = cir->solve();
+    auto sol = cir.solve();
 
     std::map<UIComponent*, ComponentValue> out;
 
-    for(auto it : *mNAMap){
-        switch(it.second->type){
+    for(auto it : mNAMap){
+        switch(it.second.type){
             // Resistors have a current and a voltage.
             case MNA_RESISTOR:
             	// Add the voltage and the current of the Component into the solution map
             	// with the key of the UIComponent.
                 out[it.first] = {
-                        sol->getVoltage(*it.second),
-                        sol->getCurrent(*it.second)
+                        sol.getVoltage(it.second),
+                        sol.getCurrent(it.second)
                 };
                 break;
 
@@ -82,7 +82,7 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
             	// Add the voltage of the Component into the solution map.
             	// with the key of the UIComponent.
                 out[it.first] = {
-                        sol->getVoltage(*it.second),
+                        sol.getVoltage(it.second),
                         NAN
                 };
                 break;
@@ -94,7 +94,7 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
 	switch(it.first->getId()){
 		case UI_VOLTMETER:
 			out[it.first] = {
-                	        sol->getVoltage(*it.second),
+                	        sol.getVoltage(it.second),
 				NAN
                 	};
                 	break;
@@ -102,7 +102,7 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
 		case UI_AMMETER:
 			out[it.first] = {
                 	        NAN,
-				sol->getCurrent(*it.second)
+				sol.getCurrent(it.second)
                 	};
                 	break;
 
