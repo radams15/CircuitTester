@@ -26,7 +26,7 @@
 #define CANVAS_SIZE 1000, 1000
 #define WINDOW_SIZE 1200, 700
 
-#define HAMBURGER_MENU 1
+#define HAMBURGER_MENU true
 
 /** @brief The main window class that is the GUI for the user on startup.
  *
@@ -164,6 +164,8 @@ private:
 #else
     QWidget* mainMenu;
 #endif
+
+    QMenuBar* mainMenuBar;
 
     /** @brief The collapsable settings menu for components.
      *

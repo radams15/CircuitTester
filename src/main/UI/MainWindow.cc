@@ -331,43 +331,46 @@ void MainWindow::createActions() {
 void MainWindow::createMenubar() {
     // Add the different actions to the menubar.
 
-    QMenu* menu;
+    mainMenuBar = menuBar();
 
-#if HAMBURGER_MENU && !defined(Q_OS_MACOS)
-    mainMenu = new HamburgerMenu();
-    menu = mainMenu->menu;
-
-    menu->addAction(saveAction);
-    menu->addAction(openAction);
-    menu->addAction(importAction);
-    menu->addAction(exportAction);
-    menu->addAction(deleteAction);
-
-    menu->addAction(tutorialAction);
-
-    menu->addAction(saveDirAction);
-    menu->addAction(aboutAction);
-
-    menu->addAction(exitAction);
-#else
-    mainMenu = menuBar();
-    menu = (QMenu*) mainMenu;
-
-    fileMenu = menu->addMenu("&File");
+    // Create file menu, add save, open, import, export, exit.
+    fileMenu = mainMenuBar->addMenu("&File");
     fileMenu->addAction(saveAction);
     fileMenu->addAction(openAction);
     fileMenu->addAction(importAction);
     fileMenu->addAction(exportAction);
     fileMenu->addAction(exitAction);
 
-    itemMenu = menu->addMenu("&Item");
+    itemMenu = mainMenuBar->addMenu("&Item");
     itemMenu->addAction(deleteAction);
     itemMenu->addSeparator();
 
-    aboutMenu = menu->addMenu("&Help");
-    aboutMenu->addAction(saveDirAction);
+    aboutMenu = mainMenuBar->addMenu("&Help");
     aboutMenu->addAction(aboutAction);
     aboutMenu->addAction(tutorialAction);
+    aboutMenu->addAction(saveDirAction);
+
+    // If we enabled the hamburger menu at compile-time, add it.
+#if HAMBURGER_MENU
+    // Hide the traditional menubar. Not deleted as this is still exported to global menus.
+    mainMenuBar->setHidden(true);
+
+    // Create hamburger menu
+    mainMenu = new HamburgerMenu();
+
+    // Add actions to menu in order.
+    mainMenu->menu->addAction(saveAction);
+    mainMenu->menu->addAction(openAction);
+    mainMenu->menu->addAction(importAction);
+    mainMenu->menu->addAction(exportAction);
+    mainMenu->menu->addAction(deleteAction);
+
+    mainMenu->menu->addAction(tutorialAction);
+
+    mainMenu->menu->addAction(saveDirAction);
+    mainMenu->menu->addAction(aboutAction);
+
+    mainMenu->menu->addAction(exitAction);
 #endif
 }
 
