@@ -1,11 +1,10 @@
 /** @file main.cpp
  * This is the main entry point of the program.
  */
-#include <iostream>
 
 #include <QApplication>
-#include "Saves/FileUtils.h"
 
+#include "Saves/FileUtils.h"
 #include "UI/MainWindow.h"
 
 /** @brief Main GUI method.
@@ -13,6 +12,12 @@
  * returns the status code of it.
  */
 int guiMain(int argc, char** argv){
+
+    // QMainWindow::move doesn't work on wayland, force X11 for linux CSD.
+#if defined(Q_OS_LINUX) && defined(USE_CSD)
+    putenv("QT_QPA_PLATFORM=xcb");
+#endif
+
     // Load all the images from the resources folder.
     Q_INIT_RESOURCE(resources);
 

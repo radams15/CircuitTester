@@ -51,6 +51,7 @@ set(C_FILES
         ../main/Saves/FileUtils.cc
         ../main/Saves/FileUtils.h ../main/Saves/CircuitSaver.cc ../main/Saves/CircuitSaver.h ../main/UI/Components/ResistiveElement.h
         ../main/UI/CSDTitlebar.cpp
+        ../main/UI/HamburgerMenu.cpp
         ../main/UI/CSDWindow.cpp)
 
 set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)

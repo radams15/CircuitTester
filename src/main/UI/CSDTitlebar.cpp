@@ -2,6 +2,7 @@
 // Created by rhys on 07/02/2021.
 //
 
+#include <iostream>
 #include "CSDTitlebar.h"
 
 #define BUTTON_FIX_SIZE(button, size)     button.setMaximumSize(size); button.setMinimumSize(size);
@@ -19,7 +20,7 @@ CSDTitleBar::CSDTitleBar(QWidget *parent) : QWidget(parent){
     titlebarCSS.open(QFile::ReadOnly);
     QString css = titlebarCSS.readAll();
     setStyleSheet(css);
-    menu->setStyleSheet(css);
+    //menu->setStyleSheet(css);
     titlebarCSS.close();
 
     this->parent = parent;
