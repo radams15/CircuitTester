@@ -353,25 +353,28 @@ void MainWindow::createMenubar() {
     menu->addAction(aboutAction);
 
     menu->addAction(exitAction);
-#else
-    menu = (QMenu*) menuBar();
+#endif
 
-    fileMenu = menu->addMenu("&File");
+
+    auto menu1 = new QMenuBar();
+
+    setMenuBar(menu1);
+
+    fileMenu = menu1->addMenu("&File");
     fileMenu->addAction(saveAction);
     fileMenu->addAction(openAction);
     fileMenu->addAction(importAction);
     fileMenu->addAction(exportAction);
     fileMenu->addAction(exitAction);
 
-    itemMenu = menu->addMenu("&Item");
+    itemMenu = menu1->addMenu("&Item");
     itemMenu->addAction(deleteAction);
     itemMenu->addSeparator();
 
-    aboutMenu = menu->addMenu("&Help");
+    aboutMenu = menu1->addMenu("&Help");
     aboutMenu->addAction(saveDirAction);
     aboutMenu->addAction(aboutAction);
     aboutMenu->addAction(tutorialAction);
-#endif
 }
 
 
