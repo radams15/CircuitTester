@@ -1,11 +1,10 @@
-FROM centos:8
+FROM debian:10
 
-RUN dnf -y up
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN dnf in -y qt5-qtbase-devel gcc gcc-c++ cmake make
+RUN apt-get update
 
-RUN adduser builder
-RUN echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+RUN apt-get install -y qtbase5-dev gcc g++ cmake make
 
-RUN echo -e '#!/bin/bash\ncd /CircuitTester/\nmkdir -p linbuild5\ncd linbuild5\ncmake -DCMAKE_BUILD_TYPE=release ..\nmake -j4' > /bin/build && chmod +x /bin/build
-RUN echo -e '#!/bin/bash\ncd /CircuitTester/linbuild5/src/test/\n./test' > /bin/runtest && chmod +x /bin/runtest
+RUN echo '#!/bin/bash\ncd /CircuitTester/\nmkdir -p linbuild5\ncd linbuild5\ncmake -DUSE_CSD=ON -DCMAKE_BUILD_TYPE=release ..\nmake -j4\nmv src/main/CircuitTester src/main/CircuitTesterCSD\ncmake -DUSE_CSD=OFF -DCMAKE_BUILD_TYPE=release ..\nmake -j4' > /bin/build && chmod +x /bin/build
+RUN echo '#!/bin/bash\ncd /CircuitTester/linbuild5/src/test/\n./test' > /bin/runtest && chmod +x /bin/runtest
