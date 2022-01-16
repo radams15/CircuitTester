@@ -46,7 +46,7 @@ private:
      * @return Whether the component is inside the components
      * list.
      */
-    bool containsComponent(Component* component);
+    bool containsComponent(Component component);
 
 public:
     /** @brief A map of node:voltage.
@@ -57,7 +57,7 @@ public:
     /** @brief A list of components in the solution which
      * have a known current.
      */
-    std::vector<Component*> components;
+    std::vector<Component> components;
 
     /** @brief Initialiser
      *
@@ -65,7 +65,7 @@ public:
      * @param components A list of components in the solution which
      * have a known current.
      */
-    Solution(std::map<int, double> voltageMap, std::vector<Component*> components);
+    Solution(std::map<int, double> voltageMap, std::vector<Component> components);
 
     /** @brief Whether this has every component and every component is
      * approximately equal to the other in the opposing Solution.

@@ -3,8 +3,8 @@
  * @date 18/04/2021
  */
 
-#ifndef CircuitTester_CIRCUIT_H
-#define CircuitTester_CIRCUIT_H
+#ifndef CircuitTester_MNACIRCUIT_H
+#define CircuitTester_MNACIRCUIT_H
 
 #include <vector>
 #include <map>
@@ -15,19 +15,19 @@
 #include "Solution.h"
 
 /** @brief Main class that holds a circuit for
- * modified nodal analysis ().
+ * modified nodal analysis (MNA).
  *
  */
 class Circuit {
 private:
-    /** @brief Holds all the components that are batteries */
-    std::vector<Component*> batteries;
+    /** @brief Holds all the MNAComponents that are batteries */
+    std::vector<Component> batteries;
 
-    /** @brief Holds all the components that are resistors */
-    std::vector<Component*> resistors;
+    /** @brief Holds all the MNAComponents that are resistors */
+    std::vector<Component> resistors;
 
-    /** @brief Holds all the components combined */
-    std::vector<Component*> components;
+    /** @brief Holds all the MNAComponents combined */
+    std::vector<Component> components;
 
     /** @brief The total number of nodes */
     int nodeCount;
@@ -68,20 +68,20 @@ private:
      *
      * @return A list of nodes that are references.
      */
-    std::vector<int>* getRefNodes();
+    std::vector<int> getRefNodes();
 
     /** @brief Returns a list of equations that must be solved
      * to solve the overall circuit.
      *
      * @return A list of solvable Equation objects.
      */
-    std::vector<Equation*>* getEquations();
+    std::vector<Equation> getEquations();
 
     /** @brief Returns all unknown currents in the circuit
      *
      * @return A list of all the UnknownCurrent objects.
      */
-    std::vector<UnknownCurrent*>* getUnknownCurrents();
+    std::vector<UnknownCurrent*> getUnknownCurrents();
 
     /** @brief Returns the index of the component in the array.
      *
@@ -93,7 +93,7 @@ private:
      * @return The component index in the vector, or -1 if the component is not found.
      */
     template <typename T>
-    int getComponentIndex(std::vector<T*>* array, T* component);
+    int getComponentIndex(std::vector<T*> array, T* component);
 
 public:
     /** @brief Initialises Circuit object.
@@ -104,20 +104,20 @@ public:
      *
      * @param components The list of all circuit components.
     */
-    explicit Circuit(std::vector<Component *> components);
+    explicit Circuit(std::vector<Component> components);
 
     /** @brief Solves the circuit using linear algebra and matrices.
      *
      * @return An Solution class for this circuit.
      */
-    Solution* solve();
+    Solution solve();
 
     /** Finds the nodes that are connected to the passed node.
      *
      * @param node The node to search around.
      * @return
      */
-    std::vector<int>* getConnectedNodes(int node);
+    std::vector<int> getConnectedNodes(int node);
 
     /** @brief Gets the terms that enter and leave a node.
      *
@@ -127,7 +127,7 @@ public:
      * @param side The side we are referring to - 1 for incoming, 0 for outgoing.
      * @return
      */
-    std::vector<Term*>* getCurrents(int node, int side);
+    std::vector<Term> getCurrents(int node, int side);
 };
 
-#endif //CircuitTester_CIRCUIT_H
+#endif //CircuitTester_MNACIRCUIT_H

@@ -32,14 +32,14 @@ public:
     /** @brief The value the terms equal
      * In 1a + 2b = 3 this is an array {1a, 2b}.
      */
-    std::vector<Term*> terms;
+    std::vector<Term> terms;
 
     /** @brief Initialiser
      *
      * @param value The value of the equation
      * @param terms The Term objects that equal the value when added.
      */
-    Equation(double value, std::vector<Term*> terms);
+    Equation(double value, std::vector<Term> terms);
 
     /** @brief Stamps the parts of this component onto the passed matrix to form the overall equation.
      *

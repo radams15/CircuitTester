@@ -8,7 +8,7 @@
 
 #define APPROX_EPSILON 1e-6
 
-Solution::Solution(std::map<int, double> voltageMap, std::vector<Component *> components) {
+Solution::Solution(std::map<int, double> voltageMap, std::vector<Component> components) {
     // Setup class variables.
     this->voltageMap = voltageMap;
     this->components = components;
@@ -72,19 +72,21 @@ bool Solution::hasAllComponents(Solution mnaSolution) {
     // component in mnaSolution.
     return std::all_of(mnaSolution.components.begin(),
                        mnaSolution.components.end(),
-                       [this](Component* e){
+                       [this](Component e){
         return containsComponent(e);
     });
 }
 
-bool Solution::containsComponent(Component* component) {
+bool Solution::containsComponent(Component component) {
     // Returns whether any of the components in this are equal
     // to the passed component.
     return std::any_of(components.begin(),
                        components.end(),
-                       [this, component](Component* e){
-        return e->n0 == component->n0 && e->n1 == component->n1 && numApproxEquals(e->currentSolution, component->currentSolution);
+                       [component](Component e){
+        return e.equals(component);
     });
+
+    return true;
 }
 
 bool Solution::numApproxEquals(double a, double b) {

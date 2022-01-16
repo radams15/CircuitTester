@@ -64,7 +64,7 @@ public:
     /** @brief The component for which the current is unknown.
      *
      */
-    Component* component;
+    Component component;
 
     /** @brief Initialiser
      *
@@ -73,7 +73,7 @@ public:
      *
      * @param component The component for which current is unknown.
      */
-    explicit UnknownCurrent(Component* component);
+    explicit UnknownCurrent(Component component);
 
     bool equals(Unknown* other) override;
 };
