@@ -20,9 +20,9 @@
  * Expected: true
  */
 TEST(MNAComponent, ContainsNormal){
-    auto bat = new Component(2, 3, MNA_RESISTOR, 10);
+    auto bat = Component(2, 3, MNA_RESISTOR, 10);
     
-    ASSERT_EQ(bat->contains(2), true);
+    ASSERT_EQ(bat.contains(2), true);
 }
 
 /**
@@ -35,9 +35,9 @@ TEST(MNAComponent, ContainsNormal){
  * Expected: false
  */
 TEST(MNAComponent, ContainsNormal2){
-    auto bat = new Component(2, 3, MNA_RESISTOR, 10);
+    auto bat = Component(2, 3, MNA_RESISTOR, 10);
     
-    ASSERT_EQ(bat->contains(100), false);
+    ASSERT_EQ(bat.contains(100), false);
 }
 
 /**
@@ -50,7 +50,7 @@ TEST(MNAComponent, ContainsNormal2){
  * Expected: controlled error thrown
  */
 TEST(MNAComponent, OpposideInvalid){
-    auto bat = new Component(2, 3, MNA_RESISTOR, 10);
+    auto bat = Component(2, 3, MNA_RESISTOR, 10);
     
-    //ASSERT_EQ(bat->opposite(100), false);
+    //ASSERT_EQ(bat.opposite(100), false);
 }

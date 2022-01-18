@@ -24,7 +24,7 @@ int testFunc(Unknown* a){
  * Expected: controlled error thrown.
  */
 TEST(MNAEquation, AZNull1){
-	auto* eq = new Equation(3, {});
+	auto* eq =  Equation(3, {});
 	
-	//eq->apply(NULL, NULL, *testFunc);
+	//eq.apply(NULL, NULL, *testFunc);
 }

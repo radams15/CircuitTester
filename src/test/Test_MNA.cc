@@ -18,23 +18,23 @@
  * connected to a 10.0V battery is 2.5A.
  */
 TEST(NodalAnalysis, OneResistorCurrent){
-    auto bat = new Component(0, 1, MNA_BATTERY, 10);
-    auto res = new Component(1, 0, MNA_RESISTOR, 4);
+    auto bat = Component(0, 1, MNA_BATTERY, 10);
+    auto res = Component(1, 0, MNA_RESISTOR, 4);
 
-    auto cir = new Circuit({bat, res});
+    auto cir = Circuit({bat, res});
 
     std::map<int, double> vmap = {
             {0, 0.0},
             {1, 10.0},
     };
 
-    auto dessol = new Solution(vmap, {bat});
+    auto dessol = Solution(vmap, {bat});
 
-    auto sol = cir->solve();
+    auto sol = cir.solve();
 
-    ASSERT_EQ(sol->equals(*dessol), true);
+    ASSERT_EQ(sol.equals(dessol), true);
 
-    ASSERT_EQ(sol->getCurrent(*res), 2.5);
+    ASSERT_EQ(sol.getCurrent(res), 2.5);
 }
 
 /**
@@ -45,12 +45,12 @@ TEST(NodalAnalysis, OneResistorCurrent){
  * of 1.35A to test current splitting.
  */
 TEST(NodalAnalysis, TwoResistorsInParallel){
-    auto bat = new Component(0, 1, MNA_BATTERY, 9);
-    auto res1 = new Component(2, 0, MNA_RESISTOR, 10);
-    auto res2 = new Component(2, 0, MNA_RESISTOR, 20);
-    auto am1 = new Component(1, 2, MNA_RESISTOR, 0.001);
+    auto bat = Component(0, 1, MNA_BATTERY, 9);
+    auto res1 = Component(2, 0, MNA_RESISTOR, 10);
+    auto res2 = Component(2, 0, MNA_RESISTOR, 20);
+    auto am1 = Component(1, 2, MNA_RESISTOR, 0.001);
 
-    auto cir = new Circuit({bat, res1, res2, am1});
+    auto cir = Circuit({bat, res1, res2, am1});
 
     std::map<int, double> vmap = {
             {0, 0.0},
@@ -58,11 +58,11 @@ TEST(NodalAnalysis, TwoResistorsInParallel){
             {2, 10.0},
     };
 
-    auto sol = cir->solve();
+    auto sol = cir.solve();
 
-    APROX_EQ(sol->getCurrent(*res1), 0.9);
-    APROX_EQ(sol->getCurrent(*res2), 0.45);
-    APROX_EQ(sol->getCurrent(*am1), 1.35);
+    APROX_EQ(sol.getCurrent(*res1), 0.9);
+    APROX_EQ(sol.getCurrent(*res2), 0.45);
+    APROX_EQ(sol.getCurrent(*am1), 1.35);
 }
 
 /**
@@ -74,12 +74,12 @@ TEST(NodalAnalysis, TwoResistorsInParallel){
  * Currents should be 0.58A, 0.29A and 0.87A respectively.
  */
 TEST(NodalAnalysis, ParalellAndSeriesResistors){
-    auto bat = new Component(0, 1, MNA_BATTERY, 9);
-    auto res1 = new Component(1, 2, MNA_RESISTOR, 5);
-    auto res2 = new Component(1, 2, MNA_RESISTOR, 10);
-    auto res3 = new Component(2, 0, MNA_RESISTOR, 7);
+    auto bat = Component(0, 1, MNA_BATTERY, 9);
+    auto res1 = Component(1, 2, MNA_RESISTOR, 5);
+    auto res2 = Component(1, 2, MNA_RESISTOR, 10);
+    auto res3 = Component(2, 0, MNA_RESISTOR, 7);
 
-    auto cir = new Circuit({bat, res1, res2, res3});
+    auto cir = Circuit({bat, res1, res2, res3});
 
     std::map<int, double> vmap = {
             {0, 0.0},
@@ -87,15 +87,15 @@ TEST(NodalAnalysis, ParalellAndSeriesResistors){
             {2, 6.09677},
     };
 
-    auto dessol = new Solution(vmap, {bat->withCurrent(0.870968)});
+    auto dessol = Solution(vmap, {bat.withCurrent(0.870968)});
 
-    auto sol = cir->solve();
+    auto sol = cir.solve();
 
-    ASSERT_EQ(sol->equals(*dessol), true);
+    ASSERT_EQ(sol.equals(*dessol), true);
 
-    ASSERT_DOUBLE_EQ(round(sol->getCurrent(*res1) * 100) / 100, 0.58);
-    ASSERT_DOUBLE_EQ(round(sol->getCurrent(*res2) * 100) / 100, 0.29);
-    ASSERT_DOUBLE_EQ(round(sol->getCurrent(*res3) * 100) / 100, 0.87);
+    ASSERT_DOUBLE_EQ(round(sol.getCurrent(*res1) * 100) / 100, 0.58);
+    ASSERT_DOUBLE_EQ(round(sol.getCurrent(*res2) * 100) / 100, 0.29);
+    ASSERT_DOUBLE_EQ(round(sol.getCurrent(*res3) * 100) / 100, 0.87);
 }
 
 
@@ -106,11 +106,11 @@ TEST(NodalAnalysis, ParalellAndSeriesResistors){
  * of 18.0V.
  */
 TEST(NodalAnalysis, TwoBatteriesInSeries){
-    auto bat1 = new Component(0, 1, MNA_BATTERY, 9);
-    auto bat2 = new Component(1, 2, MNA_BATTERY, 9);
-    auto am1 = new Component(2, 0, MNA_RESISTOR, 10);
+    auto bat1 = Component(0, 1, MNA_BATTERY, 9);
+    auto bat2 = Component(1, 2, MNA_BATTERY, 9);
+    auto am1 = Component(2, 0, MNA_RESISTOR, 10);
 
-    auto cir = new Circuit({bat1, bat2, am1});
+    auto cir = Circuit({bat1, bat2, am1});
 
     std::map<int, double> vmap = {
             {0, 0.0},
@@ -118,14 +118,14 @@ TEST(NodalAnalysis, TwoBatteriesInSeries){
             {2, 18.0},
     };
 
-    auto dessol = new Solution(vmap, {bat1->withCurrent(1.8), bat2->withCurrent(1.8)});
+    auto dessol = Solution(vmap, {bat1.withCurrent(1.8), bat2.withCurrent(1.8)});
 
-    auto sol = cir->solve();
+    auto sol = cir.solve();
 
-    ASSERT_EQ(sol->equals(*dessol), true);
+    ASSERT_EQ(sol.equals(*dessol), true);
 
-    APROX_EQ(sol->getCurrent(*am1), 1.8);
-    APROX_EQ(sol->getVoltage(*am1), 18);
+    APROX_EQ(sol.getCurrent(*am1), 1.8);
+    APROX_EQ(sol.getVoltage(*am1), 18);
 }
 
 /**
@@ -137,20 +137,20 @@ TEST(NodalAnalysis, TwoBatteriesInSeries){
  * if there is only 1 4.0V battery.
  */
 TEST(NodalAnalysis, TwoBatteriesInParallel){
-    auto bat1 = new Component(0, 1, MNA_BATTERY, 4);
-    auto bat2 = new Component(0, 1, MNA_BATTERY, 4);
-    auto res = new Component(1, 0, MNA_RESISTOR, 10);
+    auto bat1 = Component(0, 1, MNA_BATTERY, 4);
+    auto bat2 = Component(0, 1, MNA_BATTERY, 4);
+    auto res = Component(1, 0, MNA_RESISTOR, 10);
 
-    auto cir = new Circuit({bat1, bat2, res});
+    auto cir = Circuit({bat1, bat2, res});
 
     std::map<int, double> vmap = {
             {0, 0.0},
             {1, 4.0},
     };
 
-    auto dessol = new Solution(vmap, {bat1->withCurrent(0.4), bat2->withCurrent(0.0)});
+    auto dessol = Solution(vmap, {bat1.withCurrent(0.4), bat2.withCurrent(0.0)});
 
-    auto sol = cir->solve();
+    auto sol = cir.solve();
 
-    ASSERT_EQ(sol->equals(*dessol), true);
+    ASSERT_EQ(sol.equals(*dessol), true);
 }
