@@ -24,7 +24,8 @@ int testFunc(Unknown* a){
  * Expected: controlled error thrown.
  */
 TEST(MNAEquation, AZNull1){
-	auto* eq =  Equation(3, {});
+    std::vector<Term> empty;
+	auto eq =  Equation(3, empty);
 	
 	//eq.apply(NULL, NULL, *testFunc);
 }

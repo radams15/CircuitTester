@@ -60,9 +60,9 @@ TEST(NodalAnalysis, TwoResistorsInParallel){
 
     auto sol = cir.solve();
 
-    APROX_EQ(sol.getCurrent(*res1), 0.9);
-    APROX_EQ(sol.getCurrent(*res2), 0.45);
-    APROX_EQ(sol.getCurrent(*am1), 1.35);
+    APROX_EQ(sol.getCurrent(res1), 0.9);
+    APROX_EQ(sol.getCurrent(res2), 0.45);
+    APROX_EQ(sol.getCurrent(am1), 1.35);
 }
 
 /**
@@ -87,15 +87,17 @@ TEST(NodalAnalysis, ParalellAndSeriesResistors){
             {2, 6.09677},
     };
 
-    auto dessol = Solution(vmap, {bat.withCurrent(0.870968)});
+    bat.currentSolution = 0.870968;
+
+    auto dessol = Solution(vmap, {bat});
 
     auto sol = cir.solve();
 
-    ASSERT_EQ(sol.equals(*dessol), true);
+    ASSERT_EQ(sol.equals(dessol), true);
 
-    ASSERT_DOUBLE_EQ(round(sol.getCurrent(*res1) * 100) / 100, 0.58);
-    ASSERT_DOUBLE_EQ(round(sol.getCurrent(*res2) * 100) / 100, 0.29);
-    ASSERT_DOUBLE_EQ(round(sol.getCurrent(*res3) * 100) / 100, 0.87);
+    ASSERT_DOUBLE_EQ(round(sol.getCurrent(res1) * 100) / 100, 0.58);
+    ASSERT_DOUBLE_EQ(round(sol.getCurrent(res2) * 100) / 100, 0.29);
+    ASSERT_DOUBLE_EQ(round(sol.getCurrent(res3) * 100) / 100, 0.87);
 }
 
 
@@ -118,14 +120,17 @@ TEST(NodalAnalysis, TwoBatteriesInSeries){
             {2, 18.0},
     };
 
-    auto dessol = Solution(vmap, {bat1.withCurrent(1.8), bat2.withCurrent(1.8)});
+    bat1.currentSolution = 1.8;
+    bat2.currentSolution = 1.8;
+
+    auto dessol = Solution(vmap, {bat1, bat2});
 
     auto sol = cir.solve();
 
-    ASSERT_EQ(sol.equals(*dessol), true);
+    ASSERT_EQ(sol.equals(dessol), true);
 
-    APROX_EQ(sol.getCurrent(*am1), 1.8);
-    APROX_EQ(sol.getVoltage(*am1), 18);
+    APROX_EQ(sol.getCurrent(am1), 1.8);
+    APROX_EQ(sol.getVoltage(am1), 18);
 }
 
 /**
@@ -148,9 +153,12 @@ TEST(NodalAnalysis, TwoBatteriesInParallel){
             {1, 4.0},
     };
 
-    auto dessol = Solution(vmap, {bat1.withCurrent(0.4), bat2.withCurrent(0.0)});
+    bat1.currentSolution = 0.4;
+    bat2.currentSolution = 0;
+
+    auto dessol = Solution(vmap, {bat1, bat2});
 
     auto sol = cir.solve();
 
-    ASSERT_EQ(sol.equals(*dessol), true);
+    ASSERT_EQ(sol.equals(dessol), true);
 }
