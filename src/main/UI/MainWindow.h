@@ -159,7 +159,7 @@ private:
      */
     QGraphicsView* view;
 
-#if HAMBURGER_MENU && !defined(Q_OS_MACOS)
+#if HAMBURGER_MENU
     HamburgerMenu* mainMenu;
 #else
     QWidget* mainMenu;

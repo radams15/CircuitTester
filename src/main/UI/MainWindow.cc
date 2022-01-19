@@ -378,13 +378,15 @@ void MainWindow::createMenubar() {
 void MainWindow::createToolbar() {
     pointerToolbar = addToolBar("Main Toolbar");
 
+    pointerToolbar->setMovable(false);
+
     pointerToolbar->addAction(moveAction);
     pointerToolbar->addAction(lineAction);
     pointerToolbar->addWidget(new ExpandingSpacer());
     pointerToolbar->addAction(runningAction);
     pointerToolbar->addWidget(new ExpandingSpacer());
 
-#if HAMBURGER_MENU  && !defined(Q_OS_MACOS)
+#if HAMBURGER_MENU
     pointerToolbar->addWidget((QToolButton*) mainMenu);
 #endif
 
@@ -404,6 +406,8 @@ QWidget *MainWindow::createCellWidget(std::string text) {
     auto* button = new QToolButton;
     button->setIcon(icon);
     button->setIconSize(QSize(50, 50));
+    button->setMinimumSize(60, 60);
+    button->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     button->setCheckable(true);
     // Add the button to the buttongroup.
     buttonGroup->addButton(button, item.getId());
@@ -411,7 +415,7 @@ QWidget *MainWindow::createCellWidget(std::string text) {
     // Create a grid with the icon and a label of the icon name.
     auto *layout = new QGridLayout;
     layout->addWidget(button, 0, 0, Qt::AlignHCenter);
-    layout->addWidget(new QLabel(tr(text.c_str())), 1, 0, Qt::AlignCenter);
+    layout->addWidget(new QLabel(QString::fromStdString(text)), 1, 0, Qt::AlignCenter);
 
     // Create a widget for the layout.
     auto* widget = new QWidget;
