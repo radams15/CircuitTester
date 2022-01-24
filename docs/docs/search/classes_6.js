@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['key',['Key',['https://doc.qt.io/qt-5/qtgui/qpixmapcache-key.html',1,'QPixmapCache']]],
-  ['key_5fiterator',['key_iterator',['https://doc.qt.io/qt-5/qmap-key-iterator.html',1,'QMap::key_iterator'],['https://doc.qt.io/qt-5/qhash-key-iterator.html',1,'QHash::key_iterator']]]
+  ['iterator_10818',['iterator',['https://doc.qt.io/qt-5/qlinkedlist-iterator.html',1,'QLinkedList::iterator'],['https://doc.qt.io/qt-5/qtgui/qtextblock-iterator.html',1,'QTextBlock::iterator'],['https://doc.qt.io/qt-5/qtgui/qtextframe-iterator.html',1,'QTextFrame::iterator'],['https://doc.qt.io/qt-5/qlist-iterator.html',1,'QList::iterator'],['https://doc.qt.io/qt-5/qmap-iterator.html',1,'QMap::iterator'],['https://doc.qt.io/qt-5/qcborarray-iterator.html',1,'QCborArray::Iterator'],['https://doc.qt.io/qt-5/qcbormap-iterator.html',1,'QCborMap::Iterator'],['https://doc.qt.io/qt-5/qhash-iterator.html',1,'QHash::iterator'],['https://doc.qt.io/qt-5/qset-iterator.html',1,'QSet::iterator'],['https://doc.qt.io/qt-5/qjsonarray-iterator.html',1,'QJsonArray::iterator'],['https://doc.qt.io/qt-5/qjsonobject-iterator.html',1,'QJsonObject::iterator']]]
 ];

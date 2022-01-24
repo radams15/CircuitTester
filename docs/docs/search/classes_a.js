@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['paintcontext',['PaintContext',['https://doc.qt.io/qt-5/qtgui/qabstracttextdocumentlayout-paintcontext.html',1,'QAbstractTextDocumentLayout']]],
-  ['pixmapfragment',['PixmapFragment',['https://doc.qt.io/qt-5/qtgui/qpainter-pixmapfragment.html',1,'QPainter']]]
+  ['offsetdata_10823',['OffsetData',['https://doc.qt.io/qt-5/qtimezone-offsetdata.html',1,'QTimeZone']]]
 ];

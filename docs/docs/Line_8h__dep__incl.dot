@@ -1,0 +1,24 @@
+digraph "/home/ubuntu/scripts/CircuitTester/src/main/UI/Line.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/home/ubuntu/scripts\l/CircuitTester/src/main\l/UI/Line.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="/home/ubuntu/scripts\l/CircuitTester/src/main\l/Saves/CircuitSaver.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CircuitSaver_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="/home/ubuntu/scripts\l/CircuitTester/src/main\l/Saves/CircuitSaver.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CircuitSaver_8cc.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="/home/ubuntu/scripts\l/CircuitTester/src/main\l/UI/MainWindow.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$MainWindow_8cc.html",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="/home/ubuntu/scripts\l/CircuitTester/src/test\l/Test_SaveLoad.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Test__SaveLoad_8cc.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="/home/ubuntu/scripts\l/CircuitTester/src/main\l/UI/AnalysisMapper.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$AnalysisMapper_8cc.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="/home/ubuntu/scripts\l/CircuitTester/src/main\l/UI/Line.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Line_8cc.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="/home/ubuntu/scripts\l/CircuitTester/src/main\l/UI/Scene.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Scene_8cc.html",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="/home/ubuntu/scripts\l/CircuitTester/src/main\l/UI/SceneItem.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$SceneItem_8cc.html",tooltip=" "];
+}
