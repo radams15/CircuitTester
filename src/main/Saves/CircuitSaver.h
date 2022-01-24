@@ -11,9 +11,11 @@
 #include "../UI/Line.h"
 #include "../UI/Scene.h"
 
-#include <nlohmann/json.hpp>
+//#include "json.hpp"
 
-using json = nlohmann::json;
+//using json = nlohmann::json;
+
+#define json void*
 
 /** @brief Items in the scene.
  *
@@ -28,13 +30,6 @@ struct SceneItems{
      *
      */
     std::vector<Line*> lines;
-
-    /** @brief Scene pointer itself.
-     *
-     * Only passed if an image of the scene should be generated.
-     *
-     */
-    Scene* scene = nullptr;
 };
 
 /** @brief Class that saves/loads/exports/imports circuits.
@@ -42,14 +37,6 @@ struct SceneItems{
  */
 class CircuitSaver {
 private:
-
-    /** @brief Converts the scene to a base64 encoded image.
-     *
-     * @param s The scene to convert.
-     * @param format The image format. Defaults to 16 bit RGB to save storage.
-     * @return The base64 encoded image as a string.
-     */
-    static std::string sceneToImage(Scene *s, QImage::Format format=QImage::Format_RGB16);
 
     /** @brief Convert a UIComponent into JSON data.
      *

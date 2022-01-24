@@ -75,7 +75,7 @@ public:
      */
     explicit UnknownCurrent(Component component);
 
-    bool equals(Unknown* other) override;
+    bool equals(Unknown* other);
 };
 
 /** @brief Stores a node for which the voltage is unknown.
@@ -99,7 +99,7 @@ public:
      */
     explicit UnknownVoltage(int node);
 
-    bool equals(Unknown* other) override;
+    bool equals(Unknown* other);
 };
 
 

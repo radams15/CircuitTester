@@ -10,6 +10,8 @@
 #define CUR_IN 1
 #define CUR_OUT 0
 
+#define foreach(a, b) for(unsigned int i=0 ; i<b.size() ; i++){a = b[i];
+
 template<typename T>
 T Circuit::vecPopFront(std::vector<T>& vec){
     std::reverse(vec.begin(),vec.end()); // first becomes last, reverses the vector
@@ -27,7 +29,7 @@ Circuit::Circuit(std::vector<Component> components) {
     resistors.clear();
 
     // Split the components into the 3 types: battery, resistor and current source.
-    for(auto e : components){
+    foreach(Component e, components)
         // Each Component object is checked for its type attribute to sort it.
         // This component was set by the Resistor, Battery, CurrentSource or derivative classes.
         switch(e.type){
@@ -42,7 +44,7 @@ Circuit::Circuit(std::vector<Component> components) {
     }
 
     // Populates the node list.
-    for(auto e : components){
+    foreach(Component e, components)
         nodes.push_back(e.n0);
         nodes.push_back(e.n1);
     }
@@ -72,12 +74,12 @@ std::vector<Term> Circuit::getCurrents(int node, int side) {
     int currentDirection = side == 0 ? 1 : -1;
 
     // Check that the side is valid - either 0 or 1.
-    if(side != 0 and side != 1) throw std::invalid_argument("Invalid Side!");
+    if(side != 0 and side != 1) std::cerr <<"Invalid Side!" << std::endl; exit(1);
 
     // The current terms to return.
     std::vector<Term> out;
 
-    for(auto b : batteries){
+    foreach(Component b, batteries)
         // Convert node index into node value.
         int n = side == 0? b.n0 : b.n1;
 
@@ -88,7 +90,7 @@ std::vector<Term> Circuit::getCurrents(int node, int side) {
         }
     }
 
-    for(auto r : resistors) {
+    foreach(Component r, resistors)
         // Convert node index into node value.
         int n = side == 0 ? r.n0 : r.n1;
 
@@ -108,23 +110,24 @@ std::vector<int> Circuit::getRefNodes() {
 
     std::vector<int> toVisit = nodes;
 
-    while(! toVisit.empty()){
+    while (!toVisit.empty()) {
         // Get the component to visit next from toVisit.
         int refNodeId = toVisit.at(0);
 
         // Add the reference node to the output list
         out.push_back(refNodeId);
 
-        auto connectedNodes = getConnectedNodes(refNodeId);
+        std::vector<int> connectedNodes = getConnectedNodes(refNodeId);
 
         // Remove every node that is directly connected to this reference node,
         // as there cannot be 2 nodes that are connected but are both reference nodes.
-        for(auto c : connectedNodes){
-            // Remove c from toVisit by iterating over every item and removing
-            // the matching one.
-            toVisit.erase(std::remove_if(toVisit.begin(), toVisit.end(), [c](int i){
-                return i == c;
-            }), toVisit.end());
+
+        foreach(int c, connectedNodes)
+            foreach(int i1, toVisit)
+                if (i1 == c) {
+                    toVisit.erase(toVisit.begin() + i);
+                }
+            }
         }
     }
 
@@ -136,7 +139,8 @@ std::vector<int> Circuit::getConnectedNodes(int node) {
     std::vector<int> visited;
 
     // A list of nodes that we want to visit in the future.
-    std::vector<int> toVisit = {node};
+    std::vector<int> toVisit;
+    toVisit.push_back(node);
 
     // This is basically a breadth first iteration of every component connected to this node.
     while(not toVisit.empty()){
@@ -145,7 +149,7 @@ std::vector<int> Circuit::getConnectedNodes(int node) {
 
         visited.push_back(nodeToVisit);
 
-        for(auto e : components){
+        foreach(Component e, components)
             if(e.contains(nodeToVisit)){
                 // Get the node leaving the component.
                 int oppositeNode = e.opposite(nodeToVisit);
@@ -166,16 +170,16 @@ std::vector<int> Circuit::getConnectedNodes(int node) {
 std::vector<Equation> Circuit::getEquations() {
     std::vector<Equation> equations;
 
-    auto refNodeIds = getRefNodes();
+    std::vector<int> refNodeIds = getRefNodes();
 
-    for(auto r : refNodeIds){
+    foreach(int r, refNodeIds)
         // Reference nodes have a voltage of zero as the voltage is relative to this node.
-        equations.push_back(Equation(0, {
-                Term(1, new UnknownVoltage(r))
-        }));
+        std::vector<Term> terms;
+        terms.push_back(Term(1, new UnknownVoltage(r)));
+        equations.push_back(Equation(0, terms));
     }
 
-    for(auto n : nodes){
+    foreach(int n, nodes)
         //Create an equation containing the total current
         // source multiplied by each of the outgoing and incoming
         // current nodes from the node.
@@ -183,9 +187,9 @@ std::vector<Equation> Circuit::getEquations() {
         // If n not in refNodeIds.
         if(not std::count(refNodeIds.begin(), refNodeIds.end(), n)){
             // All current nodes entering node n at n1.
-            auto incoming = getCurrents(n, CUR_IN);
+            std::vector<Term> incoming = getCurrents(n, CUR_IN);
             // All current nodes leaving node n at n0.
-            auto outgoing = getCurrents(n, CUR_OUT);
+            std::vector<Term> outgoing = getCurrents(n, CUR_OUT);
 
             //Currents leave at n0 and enter at n1 because conventional
             // currents are opposite to actual charge flow.
@@ -200,14 +204,14 @@ std::vector<Equation> Circuit::getEquations() {
         }
     }
 
-    for(auto b : batteries){
+    foreach(Component b, batteries)
         // Make an equation for every battery.
-        equations.push_back(Equation(b.value, {
-                // N0 is negative as voltage is lost.
-                // N1 is the positive as voltage is gained.
-                Term(-1, new UnknownVoltage(b.n0)),
-                Term(1, new UnknownVoltage(b.n1))
-        }));
+        std::vector<Term> terms;
+
+        terms.push_back(Term(-1, new UnknownVoltage(b.n0)));
+        terms.push_back(Term(1, new UnknownVoltage(b.n1)));
+
+        equations.push_back(Equation(b.value, terms));
     }
 
     return equations;
@@ -216,7 +220,7 @@ std::vector<Equation> Circuit::getEquations() {
 std::vector<UnknownCurrent*> Circuit::getUnknownCurrents() {
     std::vector<UnknownCurrent*> out;
 
-    for(auto b : batteries){
+    foreach(Component b, batteries)
         //Batteries have an unknown current before they are placed into a circuit.
         out.push_back(new UnknownCurrent(b));
     }
@@ -225,12 +229,12 @@ std::vector<UnknownCurrent*> Circuit::getUnknownCurrents() {
 }
 
 Solution Circuit::solve() {
-    auto equations = getEquations();
-    auto unknownCurrents = getUnknownCurrents();
+    std::vector<Equation> equations = getEquations();
+    std::vector<UnknownCurrent*> unknownCurrents = getUnknownCurrents();
     std::vector<UnknownVoltage*> unknownVoltages;
 
     // Create an UnknownVoltage for each node as we don't know any voltage for any node.
-    for(auto v : nodes){
+    foreach(int v, nodes)
         unknownVoltages.push_back(new UnknownVoltage(v));
     }
 
@@ -240,16 +244,14 @@ Solution Circuit::solve() {
 
     //Make two matrices, one which is the width of the number of equations by the number
     // of variables, and the other has a width of the number of equations but is only 1 wide
-    auto A = Eigen::MatrixXd(equations.size(), getNumVars()).setZero();
-    auto z = Eigen::MatrixXd(equations.size(), 1).setZero();
+    Eigen::MatrixXd A = Eigen::MatrixXd(equations.size(), getNumVars()).setZero();
+    Eigen::MatrixXd z = Eigen::MatrixXd(equations.size(), 1).setZero();
 
     for(int i=0 ; i<(int)equations.size() ; i++){
         // Apply the correct numbers of every equation onto the matrices,
         //  passing in a lambda to find the index of each
         //  term of the equation in class attribute unknowns.
-        equations.at(i).apply(i, &A, &z, [this, unknowns](Unknown* u) {
-            return getComponentIndex<Unknown>(unknowns, u);
-        });
+        equations.at(i).apply(i, &A, &z, unknowns, this);
     }
 
     // Solve the matrix equation a = z
@@ -258,10 +260,10 @@ Solution Circuit::solve() {
     // A map of which nodes have which voltages on the circuit.
     std::map<int, double> voltageMap;
 
-    for(auto v : unknownVoltages){
+    foreach(UnknownVoltage* v, unknownVoltages)
         // Get the voltage out from the solved matrix at the index of the component
         // in the vector of unknowns. As the index is the node, and the node has the voltage.
-        auto voltage = x(getComponentIndex<Unknown>(unknowns, v));
+        double voltage = x(getComponentIndex<Unknown>(unknowns, v));
 
         // Add to the voltage map
         voltageMap.insert(std::pair<int, double>(v->node, voltage));
@@ -270,7 +272,7 @@ Solution Circuit::solve() {
     //
     std::vector<Component> elems;
 
-    for(auto c : unknownCurrents){
+    foreach(UnknownCurrent* c, unknownCurrents)
         // Set the new current for each component, as the matrix column 0 has the solved currents.
         c->component.currentSolution = x(getComponentIndex<Unknown>(unknowns, c), 0);
         elems.push_back(c->component);

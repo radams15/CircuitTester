@@ -83,18 +83,6 @@ private:
      */
     std::vector<UnknownCurrent*> getUnknownCurrents();
 
-    /** @brief Returns the index of the component in the array.
-     *
-     * If it does not exist, returns -1.
-     *
-     * @tparam T The type of the vector, and of the component.
-     * @param array The vector of T's.
-     * @param component The component to search for.
-     * @return The component index in the vector, or -1 if the component is not found.
-     */
-    template <typename T>
-    int getComponentIndex(std::vector<T*> array, T* component);
-
 public:
     /** @brief Initialises Circuit object.
      *
@@ -105,6 +93,18 @@ public:
      * @param components The list of all circuit components.
     */
     explicit Circuit(std::vector<Component> components);
+
+    /** @brief Returns the index of the component in the array.
+ *
+ * If it does not exist, returns -1.
+ *
+ * @tparam T The type of the vector, and of the component.
+ * @param array The vector of T's.
+ * @param component The component to search for.
+ * @return The component index in the vector, or -1 if the component is not found.
+ */
+    template <typename T>
+    int getComponentIndex(std::vector<T*> array, T* component);
 
     /** @brief Solves the circuit using linear algebra and matrices.
      *

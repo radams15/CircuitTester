@@ -57,22 +57,15 @@ set(PROJECT_SOURCES
         Saves/FileUtils.cc
         Saves/FileUtils.h Saves/CircuitSaver.cc Saves/CircuitSaver.h UI/Components/ResistiveElement.h UI/ExpandingSpacer.h UI/HamburgerMenu.cpp UI/HamburgerMenu.h)
 
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(CircuitTester
-	    MACOSX_BUNDLE
+if(ANDROID)
+    add_library(CircuitTester SHARED
             ${PROJECT_SOURCES}
             )
 else()
-    if(ANDROID)
-        add_library(CircuitTester SHARED
-                ${PROJECT_SOURCES}
-                )
-    else()
-        add_executable(CircuitTester
-        	MACOSX_BUNDLE
-                ${PROJECT_SOURCES}
-                )
-    endif()
+    add_executable(CircuitTester
+        MACOSX_BUNDLE
+            ${PROJECT_SOURCES}
+            )
 endif()
 
 if(${APPLE})
@@ -80,8 +73,8 @@ if(${APPLE})
 	    BUNDLE True
 	    MACOSX_BUNDLE_GUI_IDENTIFIER my.domain.style.identifierCircuitTester
 	    MACOSX_BUNDLE_BUNDLE_NAME CircuitTester
-	    MACOSX_BUNDLE_BUNDLE_VERSION "${PROGRAM_VERSION}"
-	    MACOSX_BUNDLE_SHORT_VERSION_STRING "${PROGRAM_VERSION}"
+	    MACOSX_BUNDLE_BUNDLE_VERSION "${CMAKE_PROJECT_VERSION}"
+	    MACOSX_BUNDLE_SHORT_VERSION_STRING "${CMAKE_PROJECT_VERSION}"
 	    MACOSX_BUNDLE_INFO_PLIST ${CMAKE_SOURCE_DIR}/resources/template.plist.in
 	)
 endif()
@@ -92,7 +85,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/lib)
 find_package(Eigen3 3.3.9 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
-target_link_libraries(CircuitTester PRIVATE Qt${QT_VER}::Widgets nlohmann_json::nlohmann_json)
+target_link_libraries(CircuitTester PRIVATE Qt${QT_VER}::Widgets)
 
 
 set(BUILD_DIR ${PROJECT_SOURCE_DIR}/builds/${SYS})

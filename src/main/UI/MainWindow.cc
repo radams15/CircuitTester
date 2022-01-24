@@ -546,7 +546,12 @@ void MainWindow::saveScene() {
         return;
     }
 
-    CircuitSaver::saveCircuit(currentOpenedCircuit, SceneItems{components, lines});
+    SceneItems items = {
+            components,
+            lines
+    };
+
+    CircuitSaver::saveCircuit(currentOpenedCircuit, items);
 
     // Indicate to the user the name of the open file.
     setWindowTitle(tr(("Circuit Simulator: " + currentOpenedCircuit).c_str()));

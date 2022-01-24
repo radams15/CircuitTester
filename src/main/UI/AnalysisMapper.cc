@@ -26,7 +26,7 @@ AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
     }
 }
 
-#import <iostream>
+#include <iostream>
 
 void printGraph(Graph graph){
     for(auto it : graph){

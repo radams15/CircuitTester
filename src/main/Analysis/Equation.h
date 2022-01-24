@@ -15,6 +15,8 @@
 #include "Unknown.h"
 #include "Term.h"
 
+class Circuit;
+
 /** @brief Class that holds an equation.
  *
  * An equation is 2x + 3b = 5 where 2x and 3b
@@ -48,7 +50,7 @@ public:
      * @param z Stores independent current and voltage sources.
      * @param getIndexFunc A function that returns the index of the Unknown on the circuit that is passed into it.
      */
-    void apply(int row, Eigen::MatrixXd* A, Eigen::MatrixXd* z, std::function<int(Unknown*)> getIndexFunc);
+    void apply(int row, Eigen::MatrixXd* A, Eigen::MatrixXd* z, std::vector<Unknown*> unknowns, Circuit* c);
 };
 
 

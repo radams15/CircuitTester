@@ -16,7 +16,7 @@ bool UnknownCurrent::equals(Unknown* other) {
     }
 
     // Cast into an UnknownCurrent to get proper class attributes.
-    auto c = (UnknownCurrent*) other;
+    UnknownCurrent* c = (UnknownCurrent*) other;
     return c->component.equals(component);
 }
 
@@ -31,7 +31,7 @@ bool UnknownVoltage::equals(Unknown *other) {
     }
 
     // Cast into an UnknownVoltage to get proper class attributes.
-    auto c = (UnknownVoltage*) other;
+    UnknownVoltage* c = (UnknownVoltage*) other;
     return c->node == node;
 }
 

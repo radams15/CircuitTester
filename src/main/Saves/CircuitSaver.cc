@@ -12,7 +12,6 @@
 
 #include <iostream>
 #include <QPainter>
-#include <QBuffer>
 #include <fstream>
 #include <regex>
 
@@ -38,7 +37,7 @@ void CircuitSaver::saveCircuit(std::string name, SceneItems items) {
 }
 
 void CircuitSaver::loadCircuit(std::string name, Scene* s) {
-    std::string path = getPath(name);
+    /*std::string path = getPath(name);
 
     // Check if file exists, if not don't try to open it.
     if(not FileUtils::pathExists(path)){
@@ -89,8 +88,6 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
             auto x = part["component"]["pos"][0].get<double>();
             auto y = part["component"]["pos"][1].get<double>();
 
-            auto sceneSize = s->sceneRect();
-
             // Validate x, y minimum value of 0.
             x = x<0? 0 : x;
             y = y<0? 0 : y;
@@ -133,12 +130,12 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
             s->addItem(line);
             line->update();
         }
-    }
+    }*/
 
 }
 
 std::string CircuitSaver::serialiseCircuit(std::string name, SceneItems items) {
-    json out = json::object();
+    /*json out = json::object();
     out["name"] = name;
 
     std::list<QGraphicsItem*> graphicsItems;
@@ -175,42 +172,12 @@ std::string CircuitSaver::serialiseCircuit(std::string name, SceneItems items) {
 
     out["parts"] = parts;
 
-    if(items.scene != nullptr){
-        // Only create the image if we have a scene to convert.
-        out["image"] = sceneToImage(items.scene);
-    }
-
-    return out.dump(4);
+    return out.dump(4);*/
 }
 
-std::string CircuitSaver::sceneToImage(Scene *s, QImage::Format format) {
-    // Create an image the size of the scene.
-    auto image = QImage(s->itemsBoundingRect().size().toSize(), format);
-    // Make the image white.
-    image.fill(QColor(Qt::color0).rgb());
-
-    QPainter painter;
-
-    // Paint onto image.
-    painter.begin(&image);
-    painter.setRenderHint(QPainter::Antialiasing);
-
-    // Render the scene onto the image.
-    s->render(&painter, image.rect(), s->itemsBoundingRect());
-    painter.end();
-
-    QByteArray ba;
-    QBuffer buf(&ba);
-    buf.open(QIODevice::WriteOnly);
-    // Save the image onto the buffer, which writes the data to the QByteArray.
-    image.save(&buf, "PNG");
-
-    // Convert the QByteArray to a base64 string and return.
-    return ba.toBase64().toStdString();
-}
 
 json CircuitSaver::serialiseUIComponent(UIComponent* comp) {
-    json out = json::object();
+    /*json out = json::object();
 
     // Get the type of component.
     out["type"] = comp->getId();
@@ -239,7 +206,7 @@ json CircuitSaver::serialiseUIComponent(UIComponent* comp) {
     // Add the coordinates of the component in a list of [x,y].
     out["pos"] = json::array({comp->pos().x(), comp->pos().y()});
 
-    return out;
+    return out;*/
 }
 
 void CircuitSaver::exportCircuit(std::string name, std::string path) {

@@ -3,10 +3,11 @@
 //
 
 #include <iostream>
-#include <algorithm>
 #include "Solution.h"
 
 #define APPROX_EPSILON 1e-6
+
+#define foreach(a, b) for(unsigned int i=0 ; i<b.size() ; i++){a = b[i];
 
 Solution::Solution(std::map<int, double> voltageMap, std::vector<Component> components) {
     // Setup class variables.
@@ -18,15 +19,15 @@ bool Solution::equals(Solution mnaSolution) {
     std::vector<int> nodes; // The nodes of this circuit.
     std::vector<int> otherNodes; // The nodes of the circuit to compare to.
 
-    for(auto n : voltageMap){
-        nodes.push_back(n.first);
+    for(std::map<int, double>::iterator n = voltageMap.begin(); n != voltageMap.end(); ++n){
+        nodes.push_back(n->first);
     }
 
-    for(auto n : mnaSolution.voltageMap){
-        otherNodes.push_back(n.first);
+    for(std::map<int, double>::iterator n = mnaSolution.voltageMap.begin(); n != mnaSolution.voltageMap.end(); ++n){
+        otherNodes.push_back(n->first);
     }
 
-    for(auto key : nodes){
+    foreach(int key, nodes)
         // Check if every key in this equals the same key in the solution.
         if(!numApproxEquals(getNodeVoltage(key), mnaSolution.getNodeVoltage(key))){
             return false;
@@ -70,23 +71,27 @@ double Solution::getVoltage(Component component) {
 bool Solution::hasAllComponents(Solution mnaSolution) {
     // Return whether containsComponent returns true for every
     // component in mnaSolution.
-    return std::all_of(mnaSolution.components.begin(),
-                       mnaSolution.components.end(),
-                       [this](Component e){
-        return containsComponent(e);
-    });
+
+    foreach(Component c, mnaSolution.components)
+        if(!containsComponent(c)) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 bool Solution::containsComponent(Component component) {
     // Returns whether any of the components in this are equal
     // to the passed component.
-    return std::any_of(components.begin(),
-                       components.end(),
-                       [component](Component e){
-        return e.equals(component);
-    });
 
-    return true;
+    foreach(Component c, components)
+        if(c.equals(component)) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 bool Solution::numApproxEquals(double a, double b) {
