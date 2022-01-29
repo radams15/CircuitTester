@@ -65,7 +65,7 @@ double Solution::getCurrent(Component resistor) {
 double Solution::getVoltage(Component component) {
     // Gets the difference between the voltages the start and end nodes
     // as voltage is the potential difference between two components.
-    return std::abs(voltageMap.at(component.n1) - voltageMap.at(component.n0));
+    return std::abs(voltageMap[component.n1] - voltageMap[component.n0]);
 }
 
 bool Solution::hasAllComponents(Solution mnaSolution) {

@@ -141,7 +141,7 @@ Path* AnalysisMapper::findShortestPath(Graph *graph, UIComponent *start, UICompo
 
         // If node has not already been explored
         if(std::find(explored.begin(), explored.end(), node) == explored.end()){
-            std::vector<UIComponent*> neighbors = graph[node];
+            std::vector<UIComponent*> neighbors = (*graph)[node];
 
             foreach(UIComponent* neighbor, neighbors){
                 Path* new_path = new Path;
@@ -171,7 +171,7 @@ Graph AnalysisMapper::makeGraph() {
     foreach(UIComponent* comp, components){
         std::vector<UIComponent*> connections;
 
-        for(auto a : comp->lines){
+        foreach(Line* a, comp->lines){
             // If the arrow goes to the component rather than away from it, ignore it.
             if(comp == a->endItem()){
                 continue;
@@ -187,22 +187,24 @@ Graph AnalysisMapper::makeGraph() {
     // TODO select correct start node
     UIComponent* start_node = components[0];
 
-    for(auto n : graph){
+    foreach(UIComponent* uiComp, graph.keys()){
         // For each node set the node 0 to the distance from the start node.
-        auto* path = findShortestPath(&graph, start_node, n.first);
+        Path* path = findShortestPath(&graph, start_node, uiComp);
 
-        n.first->n0 = path->size()-1;
+        uiComp->n0 = path->size()-1;
 
         // Temporarily set node 1 to 0.
-        n.first->n1 = 0;
+        uiComp->n1 = 0;
     }
 
-    for(auto node : graph){
-        node.first->connections.clear();
+    foreach(UIComponent* uiComp, graph.keys()){
+        uiComp->connections.clear();
+        
+        std::vector<UIComponent*> start = graph[uiComp];
 
-        for(auto connectedComp : graph.at(node.first)){
+        foreach(UIComponent* connectedComp, start){
             // For each connection to this node, set node 1 to the node 0 of the node it is connected to.
-            node.first->n1 = connectedComp->n0;
+            uiComp->n1 = connectedComp->n0;
         }
     }
 

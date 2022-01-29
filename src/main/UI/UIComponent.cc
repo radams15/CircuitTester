@@ -7,7 +7,7 @@
 
 int UIComponent::currentId = 0;
 
-UIComponent::UIComponent(int id, std::string resourcePath): ID(id), SceneItem(std::move(resourcePath)){
+UIComponent::UIComponent(int id, std::string resourcePath): ID(id), SceneItem(resourcePath) {
     // Set component id to the current value of the UIComponent ID.
     componentId = currentId;
 
@@ -18,7 +18,7 @@ UIComponent::UIComponent(int id, std::string resourcePath): ID(id), SceneItem(st
     settingsBox = new QVBoxLayout();
 
     onColor = QColor(0,255,0);
-    offColor = QColor(0,0,0)
+    offColor = QColor(0,0,0);
 }
 
 void UIComponent::setState(bool on) {

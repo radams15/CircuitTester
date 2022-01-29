@@ -11,9 +11,7 @@
 #include "FileUtils.h"
 
 #include <iostream>
-#include <QPainter>
 #include <fstream>
-#include <regex>
 
 std::string CircuitSaver::getPath(std::string name){
     std::string saveDir = FileUtils::getSaveDir();
@@ -31,7 +29,7 @@ void CircuitSaver::saveCircuit(std::string name, SceneItems items) {
     std::cout << "Save: '" << path << "'" << std::endl;
 
     // Save the JSON data to the file.
-    std::ofstream file(path);
+    std::ofstream file(path.c_str());
     file << data << std::endl;
     file.close();
 }
@@ -210,7 +208,7 @@ json CircuitSaver::serialiseUIComponent(UIComponent* comp) {
 }
 
 void CircuitSaver::exportCircuit(std::string name, std::string path) {
-    auto saveFile = getPath(name);
+    std::string saveFile = getPath(name);
 
     // If there is no path to export, quit.
     if(path.empty()){
@@ -227,19 +225,6 @@ void CircuitSaver::exportCircuit(std::string name, std::string path) {
 }
 
 void CircuitSaver::importCircuit(std::string path) {
-    // Regex removes path and extracts file name, e.g. "/home/rhys/test.cir", the output is an array ["/home/rhys/test.cir", "test"]
-    std::regex nameRegex(R"(.*(?:\/|\\)(.*).cir)");
-    std::cmatch match;
-
-    // Search the string to match the regex above.
-    if(! std::regex_search(path.c_str(), match, nameRegex)){
-        std::cerr << "Cannot regex match: " << path << std::endl;
-        return;
-    }
-
-    // Match[1] is the 1st match group which is the file name.
-    if(match[1] != ""){
-        auto saveFile = CircuitSaver::getPath(match[1]);
-        FileUtils::copyFile(path, saveFile);
-    }
+	std::string saveFile = CircuitSaver::getPath(path);
+	FileUtils::copyFile(path, saveFile);
 }

@@ -59,6 +59,8 @@ public:
      * @param value The value of this component
      */
     Component(int n0, int n1, ComponentType type, double value);
+    
+    Component();
 
     /** @brief Node in this component.
      *

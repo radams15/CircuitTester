@@ -2,13 +2,13 @@
 // Created by rhys on 10/08/2021.
 //
 
-#include <QLabel>
+#include <QtGui/QLabel>
 #include "Switch.h"
 
 Switch::Switch(bool on) : ResistiveElement(ID, ":/images/switch_open.png") {
     // Box to hold on/off label and switch.
-    auto* enabledBox = new QHBoxLayout();
-    auto* enabledLabel = new QLabel("Enabled");
+    QHBoxLayout* enabledBox = new QHBoxLayout();
+    QLabel* enabledLabel = new QLabel("Enabled");
     onOffCheckbox = new QCheckBox;
     // Add widgets to the box.
     enabledBox->addWidget(enabledLabel);

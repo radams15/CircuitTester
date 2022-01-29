@@ -8,6 +8,8 @@ else()
     set(SYS "unknown")
 endif()
 
+set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
+
 set(PROJECT_SOURCES
         main.cc
 
@@ -82,10 +84,10 @@ endif()
 set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/lib)
 
-find_package(Eigen3 3.3.9 REQUIRED)
+find_package(Eigen3 3.0.0 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
-target_link_libraries(CircuitTester PRIVATE Qt${QT_VER}::Widgets)
+target_link_libraries(CircuitTester PRIVATE Qt4::QtGui)
 
 
 set(BUILD_DIR ${PROJECT_SOURCE_DIR}/builds/${SYS})

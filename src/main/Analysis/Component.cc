@@ -20,6 +20,10 @@ Component::Component(int n0, int n1, ComponentType type, double value) {
     this->value = value;
 }
 
+Component::Component() {
+	std::cerr << "Initialised component without data, probably from indexing a QMap with an invalid key" << std::endl;
+}
+
 bool Component::contains(int n) {
     // n is contained if n0 or n1 are equal to n.
     return n == n0 || n == n1;

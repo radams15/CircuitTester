@@ -31,7 +31,8 @@ SceneItem::SceneItem(std::string resourcePath, QGraphicsItem* parent) : QGraphic
 
 void SceneItem::removeLine(Line* line){
     // Delete all from lines list which are the passed line pointer.
-    lines.erase(std::remove(lines.begin(), lines.end(), line), lines.end());
+    //TODO fix erase --V
+    //lines.erase(std::remove(lines.begin(), lines.end(), line), lines.end());
 }
 
 

@@ -2,7 +2,6 @@
 // Created by rhys on 08/04/2021.
 //
 
-#include <QLabel>
 #include "Voltmeter.h"
 
 Voltmeter::Voltmeter() : ResistiveElement(ID, ":/images/voltmeter.png") {

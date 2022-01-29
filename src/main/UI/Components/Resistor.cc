@@ -2,13 +2,13 @@
 // Created by rhys on 08/04/2021.
 //
 
-#include <QLabel>
+#include <QtGui/QLabel>
 #include "Resistor.h"
 
 Resistor::Resistor(double resistance) : ResistiveElement(ID, ":/images/resistor.png") {
     // Box to hold the resistance spinner and label.
-    auto* resistanceBox = new QHBoxLayout();
-    auto* resistanceLabel = new QLabel("Resistance (Ω)");
+    QHBoxLayout* resistanceBox = new QHBoxLayout();
+    QLabel* resistanceLabel = new QLabel("Resistance (Ω)");
     resistanceSpinner = new QDoubleSpinBox;
     // Set minimum to 0.1 Ohm, maximum to the maximum size of a double.
     resistanceSpinner->setMinimum(0.1);

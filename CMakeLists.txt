@@ -8,9 +8,6 @@ set(CMAKE_PROJECT_VERSION_PATCH 0)
 project(CircuitTester LANGUAGES CXX)
 enable_language(CXX)
 
-set( CMAKE_CXX_COMPILER "/usr/bin/c++" )
-set( CMAKE_C_COMPILER "/usr/bin/cc" )
-
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 set(CMAKE_AUTOUIC ON)
@@ -21,18 +18,14 @@ set(DO_TESTS ON CACHE BOOL "Enable Testing")
 set(MAKE_PROG ON CACHE BOOL "Enable building program")
 
 set(DOCTEST_NO_INSTALL ON)
-set(CMAKE_CXX_STANDARD 89)
+set(CMAKE_CXX_STANDARD 98)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(QT_VER 4)
-
-message("QT version: ${QT_VER}")
-
 if(DO_TESTS OR MAKE_PROG)
     add_subdirectory(resources)
-    #find_package(QT NAMES Qt${QT_VER} COMPONENTS Widgets REQUIRED)
-    find_package(Qt${QT_VER} COMPONENTS QtCore QtGui REQUIRED)
+
+    find_package(Qt4 COMPONENTS QtCore QtGui REQUIRED)
 endif()
 
 if(DO_TESTS) # if debugging, build tests

@@ -80,8 +80,7 @@ public slots:
      */
     void setItem(UIComponent* c);
 
-//signals:
-public:
+signals:
     /** @brief Called when an item is inserted into the scene.
      *
      * @param c The pointer to the UIComponent that was inserted.

@@ -3,13 +3,13 @@
 //
 
 #include <iostream>
-#include <QLabel>
+#include <QtGui/QLabel>
 #include "Battery.h"
 
 Battery::Battery(double voltage, bool on) : UIComponent(ID, ":/images/battery.png") {
     // Box to hold voltage spinner and label
-    auto* voltageBox = new QHBoxLayout;
-    auto* voltageLabel = new QLabel("Voltage (V)");
+    QHBoxLayout* voltageBox = new QHBoxLayout;
+    QLabel* voltageLabel = new QLabel("Voltage (V)");
     voltageSpinner = new QDoubleSpinBox;
     // Set minimum to 0.1V, maximum to the maximum size of a double.
     voltageSpinner->setMinimum(0.1);
@@ -21,8 +21,8 @@ Battery::Battery(double voltage, bool on) : UIComponent(ID, ":/images/battery.pn
     settingsBox->addLayout(voltageBox);
 
     // Box to hold on/off button and label
-    auto* onOffBox = new QHBoxLayout;
-    auto* onOffLabel = new QLabel("On/Off");
+    QHBoxLayout* onOffBox = new QHBoxLayout;
+    QLabel* onOffLabel = new QLabel("On/Off");
     onOffCheckbox = new QCheckBox;
     // Add components to on/off box.
     onOffBox->addWidget(onOffLabel);
