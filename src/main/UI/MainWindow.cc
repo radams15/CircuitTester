@@ -22,7 +22,16 @@
 #include "HamburgerMenu.h"
 
 #include <QtGui/QInputDialog>
+#include <QtGui/QFileDialog>
+#include <QtGui/QLabel>
 #include <QtGui/QGraphicsView>
+#include <QtGui/QButtonGroup>
+#include <QtGui/QMessageBox>
+#include <QtGui/QToolBar>
+#include <QtGui/QMenuBar>
+#include <QtCore/QTimer>
+#include <QtGui/QDesktopServices>
+#include <QtCore/QUrl>
 #include <iostream>
 #include <iomanip>
 #include <sstream>
@@ -49,13 +58,13 @@ MainWindow::MainWindow() {
     resize(WINDOW_SIZE);
 
     // Call itemInserted when an item is inserted into the scene.
-    connect(scene, &Scene::itemInserted,
-            this, &MainWindow::itemInserted);
+    connect(scene, SIGNAL(itemInserted(UIComponent*)),
+            this, SLOT(itemInserted(UIComponent*)));
 
     createToolbar();
 
     // Create the main layout, add the graphics view.
-    auto* layout = new QHBoxLayout;
+    QHBoxLayout* layout = new QHBoxLayout;
     layout->addWidget(componentTabs);
     view = new QGraphicsView(scene);
     layout->addWidget(view);
@@ -65,7 +74,7 @@ MainWindow::MainWindow() {
     layout->addWidget(settingsMenu);
 
     // Create a widget to hold the layout.
-    auto *widget = new QWidget;
+    QWidget *widget = new QWidget;
     widget->setLayout(layout);
 
     // Set the widget to the centre of the window.
@@ -75,7 +84,7 @@ MainWindow::MainWindow() {
     // Makes the toolbar on mac look the same colour as the titlebar - just aesthetic.
     setUnifiedTitleAndToolBarOnMac(true);
 
-    auto* timer = new QTimer(this);
+    QTimer* timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(runSimulation()));
     timer->start(1000); //time specified in ms
 }
@@ -84,7 +93,7 @@ MainWindow::MainWindow() {
 void MainWindow::buttonGroupClicked(QAbstractButton *button) {
     const QList<QAbstractButton *> buttons = buttonGroup->buttons();
 
-    for (QAbstractButton* myButton : buttons) {
+    foreach (QAbstractButton* myButton, buttons) {
         // Uncheck all the buttons that are not the clicked one.
         if (myButton != button){
             button->setChecked(false);
@@ -124,10 +133,10 @@ void MainWindow::buttonGroupClicked(QAbstractButton *button) {
 void MainWindow::deleteItem() {
     // First delete all the lines.
     QList<QGraphicsItem *> selectedItems = scene->selectedItems();
-    for (QGraphicsItem *item : selectedItems) {
+    foreach (QGraphicsItem *item, selectedItems) {
         if (item->type() == Line::Type) {
             scene->removeItem(item);
-            auto *arrow = (Line*) item;
+            Line *arrow = (Line*) item;
             arrow->startItem()->removeLine(arrow);
             arrow->endItem()->removeLine(arrow);
             delete item;
@@ -136,7 +145,7 @@ void MainWindow::deleteItem() {
 
     // Then delete all items.
     selectedItems = scene->selectedItems();
-    for (QGraphicsItem *item : selectedItems) {
+    foreach (QGraphicsItem *item, selectedItems) {
         // Delete all items that are selected
          if (item->type() == SceneItem::Type) {
              // If it's a SceneItem delete all the lines on it also.
@@ -195,17 +204,17 @@ void MainWindow::createToolBox() {
     buttonGroup->setExclusive(false);
 
     // When the button group is clicked, call buttonGroupClicked.
-    connect(buttonGroup, static_cast<void(QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked),
-            this, &MainWindow::buttonGroupClicked); // https://doc.qt.io/archives/qt-5.6/qbuttongroup.html#buttonClicked
+    /*connect(buttonGroup, static_cast<void(QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked),
+            this, &MainWindow::buttonGroupClicked); // https://doc.qt.io/archives/qt-5.6/qbuttongroup.html#buttonClicked*/
 
     // Create new grid basicLayout, add the widgets for each component type to a 2*n grid.
-    auto* basicLayout = new QGridLayout;
+    QGridLayout* basicLayout = new QGridLayout;
     basicLayout->addWidget(createCellWidget<Resistor>("Resistor"), 0, 0);
     basicLayout->addWidget(createCellWidget<Battery>("Battery"), 0, 1);
     basicLayout->addWidget(createCellWidget<Wire>("Wire"), 1, 0);
     basicLayout->addWidget(createCellWidget<Switch>("Switch"), 1, 1);
 
-    auto* measurementLayout = new QGridLayout;
+    QGridLayout* measurementLayout = new QGridLayout;
     measurementLayout->addWidget(createCellWidget<Ammeter>("Ammeter"), 0, 0);
     measurementLayout->addWidget(createCellWidget<Voltmeter>("Voltmeter"), 0, 1);
 
@@ -216,11 +225,11 @@ void MainWindow::createToolBox() {
     measurementLayout->setColumnStretch(2, 10);
 
     // Create a widget to hold the basicLayout, add the widget.
-    auto* basicWidget = new QWidget;
+    QWidget* basicWidget = new QWidget;
     basicWidget->setLayout(basicLayout);
 
     // Create a widget to hold the measurementLayout, add the widget.
-    auto* measurementWidget = new QWidget;
+    QWidget* measurementWidget = new QWidget;
     measurementWidget->setLayout(measurementLayout);
 
     // Create a componentTabs to hold the components.
@@ -242,28 +251,28 @@ void MainWindow::createActions() {
     deleteAction->setIcon(QIcon(":/images/edit-delete.png"));
     deleteAction->setStatusTip(tr("Delete item from diagram"));
     deleteAction->setShortcut(Qt::Key_Delete);
-    connect(deleteAction, &QAction::triggered, this, &MainWindow::deleteItem);
+    connect(deleteAction, SIGNAL(triggered()), this, SLOT(deleteItem()));
 
     aboutAction = new QAction("", this);
     aboutAction->setText(tr("About"));
     aboutAction->setIcon(QIcon(":/images/about.png"));
     aboutAction->setStatusTip(tr("About the program"));
     aboutAction->setShortcut(Qt::CTRL + Qt::Key_B);
-    connect(aboutAction, &QAction::triggered, this, &MainWindow::about);
+    connect(aboutAction, SIGNAL(triggered()), this, SLOT(about()));
 
     exitAction = new QAction("", this);
     exitAction->setText(tr("Exit"));
     exitAction->setIcon(QIcon(":/images/close.png"));
     exitAction->setStatusTip(tr("Exit the program"));
     exitAction->setShortcut(Qt::CTRL + Qt::Key_Q);
-    connect(exitAction, &QAction::triggered, this, [this]{ exit(0);});
+    //connect(exitAction, SIGNAL(triggered), this, [this]{ exit(0);});
 
     tutorialAction = new QAction("", this);
     tutorialAction->setText(tr("T&utorial"));
     tutorialAction->setIcon(QIcon(":/images/dialog-question.png"));
     tutorialAction->setStatusTip(tr("How to use this program"));
     tutorialAction->setShortcut( Qt::Key_F2);
-    connect(tutorialAction, &QAction::triggered, this, &MainWindow::tutorial);
+    connect(tutorialAction, SIGNAL(triggered()), this, SLOT(tutorial));
 
     saveAction = new QAction("", this);
     saveAction->setShortcut(tr("Ctrl+S"));
@@ -271,35 +280,35 @@ void MainWindow::createActions() {
     saveAction->setIcon(QIcon(":/images/document-save.png"));
     saveAction->setStatusTip(tr("Save the current circuit."));
     saveAction->setShortcut( Qt::CTRL + Qt::Key_S);
-    connect(saveAction, &QAction::triggered, this, &MainWindow::saveScene);
+    connect(saveAction, SIGNAL(triggered()), this, SLOT(saveScene()));
 
     openAction = new QAction("", this);
     openAction->setText(tr("&Open"));
     openAction->setIcon(QIcon(":/images/document-open.png"));
     openAction->setStatusTip(tr("Open a saved circuit."));
     openAction->setShortcut( Qt::CTRL + Qt::Key_O);
-    connect(openAction, &QAction::triggered, this, &MainWindow::openScene);
+    connect(openAction, SIGNAL(triggered()), this, SLOT(openScene()));
 
     importAction = new QAction("", this);
     importAction->setText(tr("&Import"));
     importAction->setIcon(QIcon(":/images/document-open.png"));
     importAction->setStatusTip(tr("Import a saved circuit."));
     importAction->setShortcut(Qt::CTRL + Qt::Key_I);
-    connect(importAction, &QAction::triggered, this, &MainWindow::importScene);
+    connect(importAction, SIGNAL(triggered()), this, SLOT(importScene()));
 
     exportAction = new QAction("", this);
     exportAction->setText(tr("&Export"));
     exportAction->setIcon(QIcon(":/images/document-save.png"));
     exportAction->setStatusTip(tr("Export a saved circuit."));
     exportAction->setShortcut(Qt::CTRL + Qt::Key_E);
-    connect(exportAction, &QAction::triggered, this, &MainWindow::exportScene);
+    connect(exportAction, SIGNAL(triggered()), this, SLOT(exportScene()));
 
     saveDirAction = new QAction("", this);
     saveDirAction->setText(tr("Sa&ve Directory"));
     saveDirAction->setIcon(QIcon(":/images/document-open.png"));
     saveDirAction->setStatusTip(tr("Open the save directory in the file manager."));
     saveDirAction->setShortcut(Qt::CTRL + Qt::Key_A);
-    connect(saveDirAction, &QAction::triggered, this, &MainWindow::openSaveDir);
+    connect(saveDirAction, SIGNAL(triggered()), this, SLOT(openSaveDir()));
 
     moveAction = new QAction("", this);
     moveAction->setText(tr("&Move"));
@@ -308,7 +317,7 @@ void MainWindow::createActions() {
     moveAction->setCheckable(true);
     moveAction->setChecked(true);
     moveAction->setShortcut(Qt::Key_M);
-    connect(moveAction, &QAction::triggered, this, [this]{ pointerGroupClicked(moveAction); });
+    //connect(moveAction, SIGNAL(triggered()), this, [this]{ pointerGroupClicked(moveAction); });
 
     lineAction = new QAction("", this);
     lineAction->setText(tr("Co&nnect"));
@@ -316,7 +325,7 @@ void MainWindow::createActions() {
     lineAction->setIcon(QIcon(":/images/linepointer.png"));
     lineAction->setCheckable(true);
     lineAction->setShortcut(Qt::Key_L);
-    connect(lineAction, &QAction::triggered, this, [this]{ pointerGroupClicked(lineAction); });
+    //connect(lineAction, SLOT(triggered()), this, [this]{ pointerGroupClicked(lineAction); });
 
     runningAction = new QAction("", this);
     runningAction->setText(tr("&Running"));
@@ -403,7 +412,7 @@ QWidget *MainWindow::createCellWidget(std::string text) {
     QIcon icon(item.getPixmap());
 
     // Make a 50*50 icon button for to select the item.
-    auto* button = new QToolButton;
+    QToolButton* button = new QToolButton;
     button->setIcon(icon);
     button->setIconSize(QSize(50, 50));
     button->setMinimumSize(60, 60);
@@ -413,12 +422,12 @@ QWidget *MainWindow::createCellWidget(std::string text) {
     buttonGroup->addButton(button, item.getId());
 
     // Create a grid with the icon and a label of the icon name.
-    auto *layout = new QGridLayout;
+    QGridLayout *layout = new QGridLayout;
     layout->addWidget(button, 0, 0, Qt::AlignHCenter);
     layout->addWidget(new QLabel(QString::fromStdString(text)), 1, 0, Qt::AlignCenter);
 
     // Create a widget for the layout.
-    auto* widget = new QWidget;
+    QWidget* widget = new QWidget;
     widget->setLayout(layout);
 
     return widget;
@@ -428,7 +437,7 @@ template<class T> std::list<T> toStdList(QList<T> in){
     // Turn a QList into a std::list. QT has this by default in Qt 5.12 but I am targeting 5.7 so cannot use this.
     std::list<T> out;
 
-    for(auto i : in){
+    foreach(T i, in){
         out.push_back(i);
     }
 
@@ -438,18 +447,22 @@ template<class T> std::list<T> toStdList(QList<T> in){
 std::string dtos(double in){
 	/* Alloc 10 bytes: will take up 4 bytes for the max integer part (1000 max), 2 for the 2dp, 
 	1 for the point char, and the null byte.*/
-	auto outa = (char*) calloc(8, sizeof(char));
+	char* outa = (char*) calloc(8, sizeof(char));
 
 	// Write the double to 2 decimal places to the outa char array.
 	sprintf(outa, "%.2f", in);
 
 	// Turn the char array to a std::string.
-	auto outs = std::string(outa);
+	std::string outs = std::string(outa);
 
 	// Free the memory as we copied it to an std::string and no longer need it.
 	free((void*) outa);
 
 	return outs;
+}
+
+std::string to_string(double in){
+	return "10";
 }
 
 void MainWindow::runSimulation() {
@@ -461,39 +474,39 @@ void MainWindow::runSimulation() {
     // Initialise AnalysisMapper with a std::list of scene items.
     AnalysisMapper mapper(toStdList(scene->items()));
 
-    auto sol = mapper.getSolution();
+    std::map<UIComponent*, ComponentValue> sol = mapper.getSolution();
 
     // Remove all existing text boxes.
     scene->removeAllText();
-
+    
     // 'it' is an iterator of a map of  UIComponent: ComponentValue.
-    for(auto it : sol){
+    for(std::map<UIComponent*,ComponentValue>::iterator it=sol.begin() ; it != sol.end() ; it++){
         std::stringstream ss;
 
-        if (std::to_string(it.second.voltage) != "nan"){ //TODO FIX THIS MONSTROSITY
+        if (to_string(it->second.voltage) != "nan"){ //TODO FIX THIS MONSTROSITY
             ss << "Voltage: ";
-            if(it.second.voltage <  0.01){
+            if(it->second.voltage <  0.01){
                 ss << "0";
-                it.first->setState(false);
+                it->first->setState(false);
 
-            }else if(it.second.voltage < 1000) {
-                ss << dtos(it.second.voltage);
-                it.first->setState(true);
+            }else if(it->second.voltage < 1000) {
+                ss << dtos(it->second.voltage);
+                it->first->setState(true);
 
             }else{
                 ss << "\u221E"; // Infinity symbol unicode escape.
-                it.first->setState(true);
+                it->first->setState(true);
 
             }
             ss << "V";
         }
 
-        if (std::to_string(it.second.current) != "nan"){ //TODO FIX THIS MONSTROSITY
+        if (to_string(it->second.current) != "nan"){ //TODO FIX THIS MONSTROSITY
             ss << "\nCurrent: ";
-            if(it.second.current <  0.01){
+            if(it->second.current <  0.01){
                 ss << "0";
-            }else if(it.second.current < 1000) {
-                ss << dtos(it.second.current);
+            }else if(it->second.current < 1000) {
+                ss << dtos(it->second.current);
             }else{
                 ss << "\u221E"; // Infinity symbol unicode escape.
             }
@@ -501,8 +514,8 @@ void MainWindow::runSimulation() {
         }
 
         // Create a textbox.
-        auto textBox = new SceneText(ss.str());
-        auto componentPos = it.first->pos();
+        SceneText* textBox = new SceneText(ss.str());
+        QPointF componentPos = it->first->pos();
         scene->addItem(textBox);
         // Add textbox underneath the component.
         textBox->setPos(QPointF(componentPos.x()+100, componentPos.y()+200));
@@ -524,7 +537,7 @@ void MainWindow::saveScene() {
     std::vector<Line*> lines;
 
     // Sort the items into components and lines.
-    for(QGraphicsItem *i : scene->items()){
+    foreach(QGraphicsItem *i, scene->items()){
         if(IS_TYPE(UIComponent, i)) {
             // If it is a component, cast and add to components.
             components.push_back((UIComponent*) i);
@@ -560,10 +573,12 @@ void MainWindow::saveScene() {
 void MainWindow::openScene() {
     // Prompt the user for the name of the circuit to open.
 
-    auto files = FileUtils::getSaveFiles();
+    std::vector<std::string> files = FileUtils::getSaveFiles();
 
     QStringList items;
-    for(auto file : files){ items << QString::fromStdString(file); }
+    foreach(std::string file, files){
+	    items << QString::fromStdString(file);
+    }
 
     bool ok;
 
@@ -590,7 +605,7 @@ void MainWindow::exportScene() {
     saveScene();
 
     // Get the path where the user wants to export the scene.
-    auto fileName = QFileDialog::getSaveFileName(this, tr("Destination"), ".", tr("Circuit Files (*.cir)")).toStdString();
+    std::string fileName = QFileDialog::getSaveFileName(this, tr("Destination"), ".", tr("Circuit Files (*.cir)")).toStdString();
 
     // Export the circuit to that location.
     CircuitSaver::exportCircuit(currentOpenedCircuit, fileName);
@@ -599,7 +614,7 @@ void MainWindow::exportScene() {
 void MainWindow::openSaveDir() {
     // TODO Fix open save directory button.
     // Opens the save directory in file explorer. Not working on mac/windows yet.
-    QDesktopServices::openUrl(QString::fromStdString(FileUtils::getSaveDir()));
+    QDesktopServices::openUrl(QUrl(QString::fromStdString(FileUtils::getSaveDir())));
 }
 
 int MainWindow::getMode() {

@@ -1,15 +1,15 @@
 #include "Line.h"
 #include "SceneItem.h"
 
-#include <QPainter>
-#include <QPen>
+#include <QtGui/QPainter>
+#include <QtGui/QPen>
 #include <cmath>
 #include <iostream>
 
 #define USE_CURVE 0
 
 Line::Line(SceneItem *startItem, SceneItem *endItem)
-    : QGraphicsPathItem(nullptr) {
+    : QGraphicsPathItem(NULL) {
 
     this->start = startItem;
     this->end = endItem;

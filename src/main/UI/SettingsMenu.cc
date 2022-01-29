@@ -5,9 +5,9 @@
 #include "SettingsMenu.h"
 #include <iostream>
 
-SettingsMenu::SettingsMenu() : QWidget(nullptr){
+SettingsMenu::SettingsMenu() : QWidget(NULL){
     // Create an animation group
-    toggleAnimation = new QParallelAnimationGroup(nullptr);
+    toggleAnimation = new QParallelAnimationGroup(NULL);
     // Create the container with the title of settings.
     contentArea = new QGroupBox("Settings");
     toggleButton = new QToolButton();
@@ -43,7 +43,7 @@ SettingsMenu::SettingsMenu() : QWidget(nullptr){
     setLayout(mainLayout);
 
     // Start animation when toggle button is clicked.
-    connect(toggleButton, &QToolButton::clicked, this, &SettingsMenu::startAnimation);
+    connect(toggleButton, SIGNAL(clicked(bool)), this, SLOT(startAnimation(bool)));
 
     setContentLayout(innerLayout);
 }
@@ -68,13 +68,13 @@ void SettingsMenu::setContentLayout(QLayout* contentLayout) {
 
     // Run through each animation except the last to set the properties.
     for(int i=0 ; i<toggleAnimation->animationCount()-1 ; i++){
-        auto* HelpMenuAnimation = (QPropertyAnimation*) toggleAnimation->animationAt(i);
+        QPropertyAnimation* HelpMenuAnimation = (QPropertyAnimation*) toggleAnimation->animationAt(i);
         HelpMenuAnimation->setDuration(animationDuration);
         HelpMenuAnimation->setStartValue(collapsedWidth);
         HelpMenuAnimation->setEndValue(collapsedWidth + contentWidth);
     }
 
-    auto* contentAnimation = (QPropertyAnimation*) toggleAnimation->animationAt(toggleAnimation->animationCount()-1);
+    QPropertyAnimation* contentAnimation = (QPropertyAnimation*) toggleAnimation->animationAt(toggleAnimation->animationCount()-1);
     contentAnimation->setDuration(animationDuration);
     contentAnimation->setStartValue(0);
     contentAnimation->setEndValue(contentWidth);
@@ -92,7 +92,7 @@ void SettingsMenu::clear() {
 
 void SettingsMenu::setInteriorLayout(QLayout* layout) {
     // Check layout is not a null pointer.
-    if(layout == nullptr){
+    if(layout == NULL){
         return;
     }
 
@@ -100,7 +100,7 @@ void SettingsMenu::setInteriorLayout(QLayout* layout) {
     clear();
 
     // Create a widget, set the layout to the passed layout.
-    auto* newWidget = new QWidget;
+    QWidget* newWidget = new QWidget;
     newWidget->setLayout(layout);
 
     // Add the widget to the inner layout.

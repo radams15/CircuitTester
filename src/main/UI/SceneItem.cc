@@ -1,12 +1,11 @@
 #include "SceneItem.h"
 #include "Line.h"
 
-#include <QGraphicsScene>
-#include <QGraphicsSceneContextMenuEvent>
-#include <QMenu>
-#include <QPainter>
-#include <QResource>
-#include <QMessageBox>
+#include <QtGui/QGraphicsScene>
+#include <QtGui/QGraphicsSceneContextMenuEvent>
+#include <QtGui/QMenu>
+#include <QtGui/QPainter>
+#include <QtGui/QMessageBox>
 #include <iostream>
 #include <cmath>
 
@@ -38,8 +37,8 @@ void SceneItem::removeLine(Line* line){
 
 void SceneItem::removeLines(){
     // need a copy here since removeLine() modifies the lines list
-    const auto linesCopy = lines;
-    for (Line* line : linesCopy) {
+    std::vector<Line*> linesCopy = lines;
+    foreach(Line* line, linesCopy) {
         // Remove the line from the start and end items.
         line->startItem()->removeLine(line);
         line->endItem()->removeLine(line);
@@ -59,7 +58,7 @@ void SceneItem::addLine(Line* line){
 QVariant SceneItem::itemChange(GraphicsItemChange change, const QVariant &value){
     if (change == QGraphicsItem::ItemPositionChange) {
         // Update all the lines attached to this item.
-        for (Line* arrow : lines){
+        foreach (Line* arrow, lines){
             arrow->update();
         }
     }
@@ -83,7 +82,7 @@ QPointF SceneItem::centrePoint() {
     double xc = x + (w/2);
     double yc = y + (h/2);
 
-    return {xc, yc};
+    return QPointF(xc, yc);
 }
 
 void SceneItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event) {
@@ -107,19 +106,19 @@ void SceneItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event) {
 }
 
 QPointF SceneItem::startPoint() {
-    auto centre = centrePoint();
+    QPointF centre = centrePoint();
 
     // Start is the centre x - half the width.
 
-    return {centre.x() - (pixmap.width() / 2), centre.y()};
+    return QPointF(centre.x() - (pixmap.width() / 2), centre.y());
 }
 
 QPointF SceneItem::endPoint() {
-    auto centre = centrePoint();
+    QPointF centre = centrePoint();
 
     // Start is the centre x + half the width.
 
-    return {centre.x() + (pixmap.width() / 2), centre.y()};
+    return QPointF(centre.x() + (pixmap.width() / 2), centre.y());
 }
 
 void SceneItem::setColour(QColor colour) {
@@ -130,12 +129,12 @@ void SceneItem::setColour(QColor colour) {
         for (int x1 = 0; x1 < tmp.width(); x1++) {
 
             // If the pixel is not completely transparent.
-            if(tmp.pixelColor(x1, y1).alpha() > 0) {
+            if(qAlpha(tmp.pixel(x1, y1)) > 0) {
 
-                colour.setAlpha(tmp.pixelColor(x1,y1).alpha());
+                colour.setAlpha(qAlpha(tmp.pixel(x1,y1)));
 
                 // Set the pixel to the new colour.
-                tmp.setPixelColor(x1, y1, colour);
+                tmp.setPixel(x1, y1, colour.rgb());
             }
         }
     }
@@ -149,7 +148,7 @@ void SceneItem::setColour(QColor colour) {
 
 std::vector<Line *> SceneItem::leavingLines() {
     std::vector<Line*> out;
-    for(auto l : lines){
+    foreach(Line* l, lines){
         if(l->startItem() == this){
             out.push_back(l);
         }
@@ -160,7 +159,7 @@ std::vector<Line *> SceneItem::leavingLines() {
 
 std::vector<Line *> SceneItem::enteringLines() {
     std::vector<Line*> out;
-    for(auto l : lines){
+    foreach(Line* l, lines){
         if(l->endItem() == this){
             out.push_back(l);
         }

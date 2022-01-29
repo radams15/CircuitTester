@@ -18,7 +18,7 @@
  *
  * If they are not the same class, then a dynamic cast returns a nullptr.
 */
-#define IS_TYPE(type, ptr) dynamic_cast<type*>(ptr) != nullptr
+#define IS_TYPE(type, ptr) dynamic_cast<type*>(ptr) != NULL
 
 /** @brief The scene class is a QGraphicsScene derivitive that holds the components
  * in the circuit.

@@ -1,8 +1,8 @@
 #include "Scene.h"
 #include "Line.h"
 
-#include <QGraphicsSceneMouseEvent>
-#include <QTextCursor>
+#include <QtGui/QGraphicsSceneMouseEvent>
+#include <QtGui/QTextCursor>
 #include <iostream>
 
 #include "MainWindow.h"
@@ -13,8 +13,8 @@ Scene::Scene(QObject *parent) : QGraphicsScene(parent){
     currentMode = MOVE;
 
     // No components or lines to place down currently.
-    component = nullptr;
-    line = nullptr;
+    component = NULL;
+    line = NULL;
 }
 
 
@@ -65,7 +65,7 @@ void Scene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* mouseEvent) {
     // Is there anything selected?
     if(! selectedItems().empty()){
         // Get the first selected item.
-        auto* item = selectedItems().at(0);
+        QGraphicsItem* item = selectedItems().at(0);
 
         // Is the item a UIComponent (it could be a line as this causes a crash)
         if(IS_TYPE(UIComponent, item)) {
@@ -77,7 +77,7 @@ void Scene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* mouseEvent) {
 }
 
 void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent){
-    if (currentMode == INSERT_LINE && line != nullptr) {
+    if (currentMode == INSERT_LINE && line != NULL) {
         // While moving the mouse draw the line from start to where the mouse is.
         QLineF newLine(line->line().p1(), mouseEvent->scenePos());
         line->setLine(newLine);
@@ -90,7 +90,7 @@ void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent){
 
 
 void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent){
-    if (line != nullptr && currentMode == INSERT_LINE) {
+    if (line != NULL && currentMode == INSERT_LINE) {
         // Get all the items at the position of the start of the line.
         QList<QGraphicsItem *> startItems = items(line->line().p1());
         if (startItems.count() != 0 && startItems.first() == line) {
@@ -110,10 +110,10 @@ void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent){
 
 
         if (startItems.count() > 0 && endItems.count() > 0 && startItems.first()->type() == SceneItem::Type && endItems.first()->type() == SceneItem::Type &&  startItems.first() != endItems.first()) {
-            auto* startItem = (SceneItem *) startItems.first();
-            auto* endItem = (SceneItem *) endItems.first();
+            SceneItem* startItem = (SceneItem *) startItems.first();
+            SceneItem* endItem = (SceneItem *) endItems.first();
 
-            auto* newLine = new Line(startItem, endItem);
+            Line* newLine = new Line(startItem, endItem);
             startItem->addLine(newLine);
             endItem->addLine(newLine);
             addItem(newLine);
@@ -121,13 +121,13 @@ void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent){
         }
     }
 
-    // Reset the temporary line to nullptr.
-    line = nullptr;
+    // Reset the temporary line to NULL.
+    line = NULL;
     QGraphicsScene::mouseReleaseEvent(mouseEvent);
 }
 
 void Scene::removeAllText() {
-    for(auto c : items()){
+    foreach(QGraphicsItem* c, items()){
         // For each item, if it is SceneText remove it.
         if(IS_TYPE(SceneText, c)){
             removeItem(c);
