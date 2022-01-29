@@ -6,7 +6,7 @@
 #ifndef LINE_H
 #define LINE_H
 
-#include <QGraphicsLineItem>
+#include <QtGui/QGraphicsLineItem>
 
 #include "SceneItem.h"
 
@@ -48,9 +48,13 @@ protected:
      * @param widget Unused
      */
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-               QWidget *widget = nullptr) override;
+               QWidget *widget = NULL);
 
 private:
+    enum{
+        penSize = 2
+    };
+
     /** @brief The SceneItem where the line begins from.
      *
      */
@@ -60,16 +64,6 @@ private:
      *
      */
     SceneItem* end;
-
-    /** @brief The colour of the line.
-     *
-     */
-    QColor penColour = Qt::black;
-
-    /** @brief The diameter of the line (px).
-     *
-     */
-    double penSize = 2;
 };
 
 

@@ -3,7 +3,7 @@
  */
 #include <iostream>
 
-#include <QApplication>
+#include <QtGui/QApplication>
 #include "Saves/FileUtils.h"
 
 #include "UI/MainWindow.h"
@@ -13,9 +13,6 @@
  * returns the status code of it.
  */
 int guiMain(int argc, char** argv){
-    // Load all the images from the resources folder.
-    Q_INIT_RESOURCE(resources);
-
     QApplication a(argc, argv);
     MainWindow w;
     w.show();

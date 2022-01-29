@@ -5,8 +5,8 @@
 #ifndef CIRCUITTESTER_CIRCUITSAVER_H
 #define CIRCUITTESTER_CIRCUITSAVER_H
 
-#include <QList>
-#include <QGraphicsItem>
+#include <QtCore/QList>
+#include <QtGui/QGraphicsItem>
 #include "../UI/UIComponent.h"
 #include "../UI/Line.h"
 #include "../UI/Scene.h"
@@ -32,6 +32,8 @@ struct SceneItems{
     std::vector<Line*> lines;
 };
 
+#define ext ".cir"
+
 /** @brief Class that saves/loads/exports/imports circuits.
  *
  */
@@ -52,11 +54,6 @@ public:
      * @return The path to save/load the circuit from.
      */
     static std::string getPath(std::string name);
-
-    /** @brief The file extension to use.
-     *
-     */
-    static constexpr const char* ext = ".cir";
 
     /** @brief Save circuit to file.
      *

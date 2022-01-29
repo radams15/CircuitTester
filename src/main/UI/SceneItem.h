@@ -6,9 +6,9 @@
 #ifndef DIAGRAMITEM_H
 #define DIAGRAMITEM_H
 
-#include <QGraphicsPixmapItem>
+#include <QtGui/QGraphicsPixmapItem>
 #include <vector>
-#include <QIcon>
+#include <QtGui/QIcon>
 
 // Define Line as empty class here as Line depends on SceneItem and vice-versa so they cannot include each other.
 class Line;
@@ -24,7 +24,7 @@ public:
      * @param resourcePath The path to the image of the item.
      * @param parent
      */
-    explicit SceneItem(std::string resourcePath, QGraphicsItem *parent = nullptr);
+    explicit SceneItem(std::string resourcePath, QGraphicsItem *parent = NULL);
 
     /** @brief Removes a specified line from lines.
      *
@@ -57,7 +57,7 @@ public:
      *
      * @param event Event of the dropping of the item.
      */
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* event) override;
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
 
     /** @brief Gets the centre of the component.
      *
@@ -101,7 +101,7 @@ protected:
      * @param value Unused.
      * @return value parameter above.
      */
-    QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;
+    QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 
     void setColour(QColor colour);
 

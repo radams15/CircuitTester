@@ -9,7 +9,7 @@
 #include "SceneItem.h"
 #include "SceneText.h"
 
-#include <QGraphicsScene>
+#include <QtGui/QGraphicsScene>
 #include "UIComponent.h"
 
 /**
@@ -53,7 +53,7 @@ public:
      *
      * @param parent The parent widget - unused but argument of by QGraphicsScene.
      */
-    explicit Scene(QObject* parent = nullptr);
+    explicit Scene(QObject* parent = NULL);
 
     /** @brief Sets the canvas size.
      *
@@ -80,7 +80,8 @@ public slots:
      */
     void setItem(UIComponent* c);
 
-signals:
+//signals:
+public:
     /** @brief Called when an item is inserted into the scene.
      *
      * @param c The pointer to the UIComponent that was inserted.
@@ -95,7 +96,7 @@ protected:
      *
      * @param mouseEvent The event that is created when an item is placed down.
      */
-    void mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent) override;
+    void mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent);
 
     /** @brief Called when the mouse is pressed twice.
      *
@@ -103,7 +104,7 @@ protected:
      *
      * @param mouseEvent The event that is created when an item is double clicked.
      */
-    void mouseDoubleClickEvent(QGraphicsSceneMouseEvent* mouseEvent) override;
+    void mouseDoubleClickEvent(QGraphicsSceneMouseEvent* mouseEvent);
 
     /** @brief Called when the mouse moves.
      *
@@ -111,7 +112,7 @@ protected:
      *
      * @param mouseEvent
      */
-    void mouseMoveEvent(QGraphicsSceneMouseEvent* mouseEvent) override;
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* mouseEvent);
 
     /** @brief Called when the mouse is released.
      *
@@ -119,7 +120,7 @@ protected:
      *
      * @param mouseEvent
      */
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent) override;
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent);
 
 private:
     /** @brief The component that will be placed down.

@@ -9,7 +9,7 @@
 #include <string>
 
 #include <utility>
-#include <QVBoxLayout>
+#include <QtGui/QVBoxLayout>
 #include <cfloat>
 
 #include "SceneItem.h"
@@ -37,8 +37,8 @@ enum UIComponentType{
 class UIComponent : public SceneItem{
 private:
 
-    QColor onColor = {0,255,0};
-    QColor offColor = {0,0,0};
+    QColor onColor;
+    QColor offColor;
 
 protected:
     /** @brief Is type UIComponentType, allows other functions to find what type of component
@@ -90,14 +90,14 @@ public:
      * Default -1 as unset.
      *
      */
-    int n0 = -1;
+    int n0;
 
     /** @brief Stores the end node for conversion to MNAComponents.
      *
      * Default -1 as unset.
      *
      */
-    int n1 = -1;
+    int n1;
 
     /** @brief List of lines that are connected to this component.
      *

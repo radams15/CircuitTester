@@ -20,7 +20,7 @@ public:
      * @param ID Type of the component.
      * @param resourcePath Path to the image of the component.
      */
-    ResistiveElement(int ID, std::string resourcePath) : UIComponent(ID, std::move(resourcePath)){}
+    ResistiveElement(int ID, std::string resourcePath) : UIComponent(ID, resourcePath){}
 
     /** @brief Virtual method for getting the resistance of a resistive component.
      *

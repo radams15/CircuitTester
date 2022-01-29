@@ -31,7 +31,7 @@ public:
      *
      * @return Resistance of the component in Ohms.
      */
-    double getResistance() override;
+    double getResistance();
 };
 
 

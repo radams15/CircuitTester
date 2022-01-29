@@ -6,8 +6,8 @@
 #define CIRCUITTESTER_HAMBURGERMENU_H
 
 
-#include <QToolButton>
-#include <QMenu>
+#include <QtGui/QToolButton>
+#include <QtGui/QMenu>
 
 class HamburgerMenu : public QToolButton{
 private:

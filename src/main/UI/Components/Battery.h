@@ -7,8 +7,8 @@
 #define LAYOUTTEST1_BATTERY_H
 
 
-#include <QDoubleSpinBox>
-#include <QCheckBox>
+#include <QtGui/QDoubleSpinBox>
+#include <QtGui/QCheckBox>
 #include "../UIComponent.h"
 
 /** @brief A battery class that has a configurable voltage

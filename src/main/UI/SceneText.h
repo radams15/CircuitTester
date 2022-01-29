@@ -6,7 +6,7 @@
 #ifndef DIAGRAMTEXTITEM_H
 #define DIAGRAMTEXTITEM_H
 
-#include <QGraphicsTextItem>
+#include <QtGui/QGraphicsTextItem>
 #include <string>
 
 /** @brief Places text on the screen.

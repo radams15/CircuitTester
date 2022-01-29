@@ -8,6 +8,9 @@ set(CMAKE_PROJECT_VERSION_PATCH 0)
 project(CircuitTester LANGUAGES CXX)
 enable_language(CXX)
 
+set( CMAKE_CXX_COMPILER "/usr/bin/c++" )
+set( CMAKE_C_COMPILER "/usr/bin/cc" )
+
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 set(CMAKE_AUTOUIC ON)

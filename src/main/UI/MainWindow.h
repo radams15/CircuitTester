@@ -9,14 +9,8 @@
 #include <map>
 #include <vector>
 
-#include <QMainWindow>
-#include <QAbstractButton>
-#include <QComboBox>
-#include <QFontComboBox>
-#include <QToolBox>
-#include <QToolButton>
-#include <QGraphicsView>
-
+#include <QtGui/QMainWindow>
+#include <QtGui/QAbstractButton>
 #include "UIComponent.h"
 #include "SceneItem.h"
 #include "Scene.h"

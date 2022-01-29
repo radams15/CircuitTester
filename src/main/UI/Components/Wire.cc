@@ -7,6 +7,11 @@
 #include "Wire.h"
 
 Wire::Wire(double length, double area, std::string material) : ResistiveElement(ID, ":/images/wire.png") {
+    wire["Copper"] = 1.68E-8;
+    wire["Iron"] = 1.68E-8;
+    wire["Lead"] = 1.68E-8;
+    wire["Carbon"] = 6E-4;
+
     // Box to hold length spinner and label
     auto* lengthBox = new QHBoxLayout();
     auto* lengthLabel = new QLabel("Length (cm)");

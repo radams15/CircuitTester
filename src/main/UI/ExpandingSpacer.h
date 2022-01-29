@@ -6,7 +6,7 @@
 #define CIRCUITTESTER_EXPANDINGSPACER_H
 
 
-#include <QWidget>
+#include <QtGui/QWidget>
 
 class ExpandingSpacer : public QWidget{
 public:

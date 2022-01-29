@@ -6,7 +6,7 @@
 #ifndef LAYOUTTEST1_RESISTOR_H
 #define LAYOUTTEST1_RESISTOR_H
 
-#include <QDoubleSpinBox>
+#include <QtGui/QDoubleSpinBox>
 #include "ResistiveElement.h"
 
 /** @brief Resistor component with configurable resistance.
@@ -36,7 +36,7 @@ public:
      *
      * @return Resistance of the component in Ohms.
      */
-    double getResistance() override;
+    double getResistance();
 };
 
 

@@ -10,8 +10,8 @@
 #include <map>
 #include <string>
 
-#include <QDoubleSpinBox>
-#include <QComboBox>
+#include <QtGui/QDoubleSpinBox>
+#include <QtGui/QComboBox>
 #include "ResistiveElement.h"
 
 /** @brief Wire component with configurable length, area and material.
@@ -22,12 +22,7 @@ private:
     /** @brief Map of material name: resistivity in ohm metres.
      *
      */
-    std::map<std::string, long double> resistivities = {
-            {"Copper", 1.68E-8},
-            {"Iron", 1.0E-8},
-            {"Lead", 2.2E-8},
-            {"Carbon", 6E-4},
-    };
+    std::map<std::string, long double> resistivities;
 
     /** @brief Spinner for length in cm.
      *
@@ -64,7 +59,7 @@ public:
      *
      * @return The resistance of the wire using p=(RA/l).
      */
-    double getResistance() override;
+    double getResistance();
 
     /** @brief Gets the wire length.
      *

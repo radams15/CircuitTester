@@ -7,13 +7,13 @@
 #define CIRCUITTESTER_CPP_SPOILER_H
 
 
-#include <QWidget>
-#include <QParallelAnimationGroup>
-#include <QScrollArea>
-#include <QToolButton>
-#include <QGridLayout>
-#include <QPropertyAnimation>
-#include <QGroupBox>
+#include <QtGui/QWidget>
+#include <QtCore/QParallelAnimationGroup>
+#include <QtGui/QScrollArea>
+#include <QtGui/QToolButton>
+#include <QtGui/QGridLayout>
+#include <QtCore/QPropertyAnimation>
+#include <QtGui/QGroupBox>
 
 /** @brief Settings menu that dynamically expands and contracts.
  *
@@ -23,14 +23,17 @@
  * I have also added the changeable interior and the the QGroupBox.
  *
  */
+
 class SettingsMenu : public QWidget {
 Q_OBJECT
 
 private:
     /** @brief The time the animation takes to complete in milliseconds.
      *
-     */
-    const int animationDuration = 300;
+     */    
+    enum{
+        animationDuration = 300
+    };
 
     /** @brief The animation to run to show/hide the settings menu.
      *

@@ -15,7 +15,7 @@ Line::Line(SceneItem *startItem, SceneItem *endItem)
     this->end = endItem;
 
     // Create a solid black pen with a width of 2px.
-    setPen(QPen(penColour, penSize, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    setPen(QPen(Qt::black, penSize, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 
     // Set brush to make hollow curve
     setBrush(QBrush(Qt::NoBrush));
@@ -75,7 +75,7 @@ void Line::update(){
 void Line::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget){
     // Make a pen, set the colour
     QPen myPen = pen();
-    myPen.setColor(penColour);
+    myPen.setColor(Qt::black);
 
     // Set the pen to the painter object.
     painter->setPen(myPen);

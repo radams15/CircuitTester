@@ -6,26 +6,18 @@
 #ifndef LAYOUTTEST1_SWITCH_H
 #define LAYOUTTEST1_SWITCH_H
 
-#include <QDoubleSpinBox>
-#include <QCheckBox>
+#include <QtGui/QDoubleSpinBox>
+#include <QtGui/QCheckBox>
 #include "ResistiveElement.h"
+
+#define switchOn 0.000001
+#define switchOff 10000000
 
 /** @brief Switch component that can be on/off.
  *
  */
 class Switch : public ResistiveElement {
 private:
-
-    /** @brief The resistance when the switch is off is miniscule so that current can flow.
-     *
-     */
-    const double switchOn = 0.000001;
-
-    /** @brief The resistance when the switch is on is very large so that current cannot flow.
-     *
-     */
-    const double switchOff = 10000000;
-
     /** @brief Checkbox to show on/off. Checked=on.
      *
      */
@@ -50,7 +42,7 @@ public:
      *
      * @return The resistance of the switch in ohms, high resistance if off, low resistance if on.
      */
-    double getResistance() override;
+    double getResistance();
 
     /** @brief Gets the state of the switch.
      *

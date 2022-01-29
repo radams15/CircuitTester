@@ -21,8 +21,8 @@
 #include "ExpandingSpacer.h"
 #include "HamburgerMenu.h"
 
-#include <QtWidgets>
-#include <QInputDialog>
+#include <QtGui/QInputDialog>
+#include <QtGui/QGraphicsView>
 #include <iostream>
 #include <iomanip>
 #include <sstream>
