@@ -59,6 +59,9 @@ set(PROJECT_SOURCES
         Saves/FileUtils.cc
         Saves/FileUtils.h Saves/CircuitSaver.cc Saves/CircuitSaver.h UI/Components/ResistiveElement.h UI/ExpandingSpacer.h UI/HamburgerMenu.cpp UI/HamburgerMenu.h)
 
+set(ICON_PATH ${PROJECT_SOURCE_DIR}/resources/CircuitTester.icns)
+set(CircuitTester_ICON "${ICON_PATH}")
+
 if(ANDROID)
     add_library(CircuitTester SHARED
             ${PROJECT_SOURCES}
@@ -66,6 +69,7 @@ if(ANDROID)
 else()
     add_executable(CircuitTester
         MACOSX_BUNDLE
+	    ${ICON_PATH}
             ${PROJECT_SOURCES}
             )
 endif()
@@ -78,7 +82,11 @@ if(${APPLE})
 	    MACOSX_BUNDLE_BUNDLE_VERSION "${CMAKE_PROJECT_VERSION}"
 	    MACOSX_BUNDLE_SHORT_VERSION_STRING "${CMAKE_PROJECT_VERSION}"
 	    MACOSX_BUNDLE_INFO_PLIST ${CMAKE_SOURCE_DIR}/resources/template.plist.in
+	    MACOSX_BUNDLE_ICON_FILE "CircuitTester.icns"
 	)
+
+	set_source_files_properties(${CircuitTester_ICON} PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
+	file(COPY ${ICON_PATH} DESTINATION "CircuitTester.app/Contents/Resources")
 endif()
 
 set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)
