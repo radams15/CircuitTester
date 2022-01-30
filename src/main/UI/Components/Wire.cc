@@ -8,8 +8,8 @@
 
 Wire::Wire(double length, double area, std::string material) : ResistiveElement(ID, ":/images/wire.png") {
     resistivities["Copper"] = 1.68E-8;
-    resistivities["Iron"] = 1.68E-8;
-    resistivities["Lead"] = 1.68E-8;
+    resistivities["Iron"] = 9.71E-8;
+    resistivities["Lead"] = 22E-8;
     resistivities["Carbon"] = 6E-4;
 
     // Box to hold length spinner and label
