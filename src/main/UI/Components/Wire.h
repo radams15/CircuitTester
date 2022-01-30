@@ -24,8 +24,8 @@ private:
      */
     std::map<std::string, long double> resistivities = {
             {"Copper", 1.68E-8},
-            {"Iron", 1.0E-8},
-            {"Lead", 2.2E-8},
+            {"Iron", 9.71E-8},
+            {"Lead", 22E-8},
             {"Carbon", 6E-4},
     };
 
