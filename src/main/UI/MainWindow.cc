@@ -158,17 +158,21 @@ void MainWindow::deleteItem() {
 
 
 
-void MainWindow::pointerGroupClicked(QAction* action) {
+void MainWindow::moveActionClicked() {
+    // Selected either line or move mode, set the mode.
+	
+	moveAction->setChecked(true);
+	lineAction->setChecked(false);
+
+    scene->setMode(Scene::Mode(getMode()));
+}
+
+void MainWindow::lineActionClicked() {
     // Selected either line or move mode, set the mode.
 
-    if(action == moveAction){
-        moveAction->setChecked(true);
-        lineAction->setChecked(false);
-    }else{
-        moveAction->setChecked(false);
-        lineAction->setChecked(true);
-    }
-
+    moveAction->setChecked(false);
+	lineAction->setChecked(true);
+	
     scene->setMode(Scene::Mode(getMode()));
 }
 
@@ -204,8 +208,7 @@ void MainWindow::createToolBox() {
     buttonGroup->setExclusive(false);
 
     // When the button group is clicked, call buttonGroupClicked.
-    /*connect(buttonGroup, static_cast<void(QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked),
-            this, &MainWindow::buttonGroupClicked); // https://doc.qt.io/archives/qt-5.6/qbuttongroup.html#buttonClicked*/
+    connect(buttonGroup, SIGNAL(buttonClicked(QAbstractButton*)), this, SLOT(buttonGroupClicked(QAbstractButton*))); // https://doc.qt.io/archives/qt-5.6/qbuttongroup.html#buttonClicked
 
     // Create new grid basicLayout, add the widgets for each component type to a 2*n grid.
     QGridLayout* basicLayout = new QGridLayout;
@@ -272,7 +275,7 @@ void MainWindow::createActions() {
     tutorialAction->setIcon(QIcon(":/images/dialog-question.png"));
     tutorialAction->setStatusTip(tr("How to use this program"));
     tutorialAction->setShortcut( Qt::Key_F2);
-    connect(tutorialAction, SIGNAL(triggered()), this, SLOT(tutorial));
+    connect(tutorialAction, SIGNAL(triggered()), this, SLOT(tutorial()));
 
     saveAction = new QAction("", this);
     saveAction->setShortcut(tr("Ctrl+S"));
@@ -309,7 +312,7 @@ void MainWindow::createActions() {
     saveDirAction->setStatusTip(tr("Open the save directory in the file manager."));
     saveDirAction->setShortcut(Qt::CTRL + Qt::Key_A);
     connect(saveDirAction, SIGNAL(triggered()), this, SLOT(openSaveDir()));
-
+	
     moveAction = new QAction("", this);
     moveAction->setText(tr("&Move"));
     moveAction->setStatusTip(tr("Move a component."));
@@ -317,16 +320,16 @@ void MainWindow::createActions() {
     moveAction->setCheckable(true);
     moveAction->setChecked(true);
     moveAction->setShortcut(Qt::Key_M);
-    //connect(moveAction, SIGNAL(triggered()), this, [this]{ pointerGroupClicked(moveAction); });
-
+    connect(moveAction, SIGNAL(triggered()), this, SLOT(moveActionClicked()));
+	
     lineAction = new QAction("", this);
     lineAction->setText(tr("Co&nnect"));
     lineAction->setStatusTip(tr("Connect 2 components with a wire."));
     lineAction->setIcon(QIcon(":/images/linepointer.png"));
     lineAction->setCheckable(true);
     lineAction->setShortcut(Qt::Key_L);
-    //connect(lineAction, SLOT(triggered()), this, [this]{ pointerGroupClicked(lineAction); });
-
+    connect(lineAction, SIGNAL(triggered()), this, SLOT(lineActionClicked()));
+	
     runningAction = new QAction("", this);
     runningAction->setText(tr("&Running"));
     runningAction->setStatusTip(tr("Sets whether the simulation is running."));
@@ -462,6 +465,7 @@ std::string dtos(double in){
 }
 
 std::string to_string(double in){
+	//TODO fix this in c++98
 	return "10";
 }
 

@@ -68,6 +68,7 @@ private:
      */
     void clear();
 
+public slots:
     /** Start the animation to show/hide the settings menu.
      *
      * @param checked Bool to decide which direction to go.

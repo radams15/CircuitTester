@@ -56,7 +56,8 @@ private slots:
     /** @brief Called when either the drag button or the line buttons are pressed.
      *
      */
-    void pointerGroupClicked(QAction* action);
+	void moveActionClicked();
+	void lineActionClicked();
 
     /** @brief Called when any item is inserted onto the Scene. This unchecks the tool button
      * of that item.
