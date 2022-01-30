@@ -474,15 +474,16 @@ void MainWindow::runSimulation() {
     if(scene->items().empty()){
         return;
     }
-
+		
     // Initialise AnalysisMapper with a std::list of scene items.
     AnalysisMapper mapper(toStdList(scene->items()));
-
+	
     std::map<UIComponent*, ComponentValue> sol = mapper.getSolution();
-
+	
     // Remove all existing text boxes.
     scene->removeAllText();
-    
+	
+	
     // 'it' is an iterator of a map of  UIComponent: ComponentValue.
     for(std::map<UIComponent*,ComponentValue>::iterator it=sol.begin() ; it != sol.end() ; it++){
         std::stringstream ss;
@@ -498,7 +499,7 @@ void MainWindow::runSimulation() {
                 it->first->setState(true);
 
             }else{
-                ss << "\u221E"; // Infinity symbol unicode escape.
+                ss << "INF"; // Infinity.
                 it->first->setState(true);
 
             }
@@ -512,7 +513,7 @@ void MainWindow::runSimulation() {
             }else if(it->second.current < 1000) {
                 ss << dtos(it->second.current);
             }else{
-                ss << "\u221E"; // Infinity symbol unicode escape.
+                ss << "INF"; // Infinity.
             }
             ss << "A";
         }

@@ -72,10 +72,13 @@ std::vector<Term> Circuit::getCurrents(int node, int side) {
     /*Convert the side to the current direction - if side is 0, current direction
      * is 1, otherwise the current direction is -1*/
     int currentDirection = side == 0 ? 1 : -1;
-
+	
     // Check that the side is valid - either 0 or 1.
-    if(side != 0 and side != 1) std::cerr <<"Invalid Side!" << std::endl; exit(1);
-
+    if(side != 0 and side != 1){
+		std::cerr <<"Invalid Side!" << std::endl;
+		exit(1);
+	}
+	
     // The current terms to return.
     std::vector<Term> out;
 
@@ -171,7 +174,7 @@ std::vector<Equation> Circuit::getEquations() {
     std::vector<Equation> equations;
 
     std::vector<int> refNodeIds = getRefNodes();
-
+	
     foreach(int r, refNodeIds)
         // Reference nodes have a voltage of zero as the voltage is relative to this node.
         std::vector<Term> terms;
@@ -190,7 +193,7 @@ std::vector<Equation> Circuit::getEquations() {
             std::vector<Term> incoming = getCurrents(n, CUR_IN);
             // All current nodes leaving node n at n0.
             std::vector<Term> outgoing = getCurrents(n, CUR_OUT);
-
+			
             //Currents leave at n0 and enter at n1 because conventional
             // currents are opposite to actual charge flow.
 
@@ -198,7 +201,7 @@ std::vector<Equation> Circuit::getEquations() {
             std::vector<Term> conserved;
             conserved.insert(conserved.end(), incoming.begin(), incoming.end());
             conserved.insert(conserved.end(), outgoing.begin(), outgoing.end());
-
+			
             // Create an equation of total current equals the sum of all the terms.
             equations.push_back(Equation(0, conserved));
         }
@@ -230,9 +233,11 @@ std::vector<UnknownCurrent*> Circuit::getUnknownCurrents() {
 
 Solution Circuit::solve() {
     std::vector<Equation> equations = getEquations();
-    std::vector<UnknownCurrent*> unknownCurrents = getUnknownCurrents();
-    std::vector<UnknownVoltage*> unknownVoltages;
 
+    std::vector<UnknownCurrent*> unknownCurrents = getUnknownCurrents();
+
+    std::vector<UnknownVoltage*> unknownVoltages;
+	
     // Create an UnknownVoltage for each node as we don't know any voltage for any node.
     foreach(int v, nodes)
         unknownVoltages.push_back(new UnknownVoltage(v));

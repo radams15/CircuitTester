@@ -12,6 +12,8 @@
 #include "Components/Switch.h"
 #include "Line.h"
 
+#include <iostream>
+
 #include "../Analysis/Circuit.h"
 
 AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
@@ -28,7 +30,7 @@ AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
 
 std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
     Graph graph = makeGraph();
-
+	
     std::vector<Component> mNAComponents;
 
     // Map of UIComponent:Component to help to return the correct values to the correct UIComponent.
@@ -58,13 +60,14 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
         // Add the component to the list to set the (UIComponent => Component).
         mNAMap.insert(uiComp, *component);
     }
-
+	
     Circuit cir(mNAComponents);
-
+	
     Solution sol = cir.solve();
-
+	
     std::map<UIComponent*, ComponentValue> out;
 
+	
     foreach(UIComponent* uiComp, mNAMap.keys()){
         Component comp = mNAMap[uiComp];
         switch(comp.type){
@@ -111,7 +114,7 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
                 break;
         }
     }
-
+	
     return out;
 }
 
