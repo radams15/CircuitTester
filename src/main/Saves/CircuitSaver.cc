@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
 std::string CircuitSaver::getPath(std::string name){
     std::string saveDir = FileUtils::getSaveDir();
@@ -23,7 +24,7 @@ std::string CircuitSaver::getPath(std::string name){
 void CircuitSaver::saveCircuit(std::string name, SceneItems items) {
     // Get the JSON data from the serialiseCircuit function.
     std::string data = serialiseCircuit(name, items);
-
+	
     std::string path = getPath(name);
 
     std::cout << "Save: '" << path << "'" << std::endl;
@@ -34,8 +35,12 @@ void CircuitSaver::saveCircuit(std::string name, SceneItems items) {
     file.close();
 }
 
+json::jobject get(json::jobject root, std::string key){
+	return json::jobject::parse(root.get(key));
+}
+
 void CircuitSaver::loadCircuit(std::string name, Scene* s) {
-    /*std::string path = getPath(name);
+    std::string path = getPath(name);
 
     // Check if file exists, if not don't try to open it.
     if(not FileUtils::pathExists(path)){
@@ -45,34 +50,44 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
 
     std::cout << "Load: '" << path << "'" << std::endl;
 
-    std::ifstream in(path);
+    std::ifstream in(path.c_str());
 
     // Load the JSON string into a JSON object.
-    json data;
-    in >> data;
-    in.close();
+	
+	std::stringstream rawData;
+	rawData << in.rdbuf();
+	in.close();
+	
+	json::jobject data = json::jobject::parse(rawData.str());
+
 
     std::map<int, UIComponent*> components;
 
-    for(auto part : data["parts"]){
-        UIComponent* comp = nullptr;
-
+	std::vector<json::jobject> parts;
+	parts = data["parts"];
+	
+    for(int i=0 ; i<parts.size() ; i++){
+		json::jobject part = parts[i];
+        UIComponent* comp = NULL;
+		
+		int id = part["component"]["type"];
+				
         // Create UIComponent for each json component.
-        switch(part["component"]["type"].get<int>()) {
+        switch(id) {
             case UI_BATTERY: {
-                comp = new Battery(part["component"]["voltage"].get<double>(), part["component"]["state"].get<bool>());
+                comp = new Battery((double) part["component"]["voltage"], (bool) part["component"]["state"]);
                 break;
             }
             case UI_RESISTOR: {
-                comp = new Resistor(part["component"]["resistance"].get<double>());
+                comp = new Resistor((double) part["component"]["resistance"]);
                 break;
             }
             case UI_WIRE: {
-                comp = new Wire(part["component"]["length"].get<double>(), part["component"]["area"].get<double>(), part["component"]["material"].get<std::string>());
+                comp = new Wire((double) part["component"]["length"], (double) part["component"]["area"], get(get(part, "component"), "material"));
                 break;
             }
             case UI_SWITCH: {
-                comp = new Switch(part["component"]["state"].get<bool>());
+                comp = new Switch((bool) part["component"]["state"]);
                 break;
             }
 
@@ -81,11 +96,11 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
         }
 
         // If we actually made a component.
-        if(comp != nullptr){
+        if(comp != NULL){
             // Set the coordinates of the component
-            auto x = part["component"]["pos"][0].get<double>();
-            auto y = part["component"]["pos"][1].get<double>();
-
+            double x = (double) get(part["component"], "pos").array(0);
+            double y = (double) get(part["component"], "pos").array(1);
+			
             // Validate x, y minimum value of 0.
             x = x<0? 0 : x;
             y = y<0? 0 : y;
@@ -97,7 +112,7 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
             comp->setPos(x, y);
 
             // Get the ID of the component.
-            comp->componentId = part["id"].get<int>();
+            comp->componentId = (int) part["id"];
 
             // Set the max ID by comparing this ID to the current maximum.
             if(comp->componentId > UIComponent::currentId){
@@ -109,18 +124,27 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
             // Add the component to the ID map.
             components[comp->componentId] = comp;
         }
+		
     }
+	
+	return;
 
-    for(auto part : data["parts"]){
+	parts = data["parts"];
+	
+    for(int i=0 ; i<parts.size() ; i++){
+		json::jobject part = parts[i];
         // Set the start item for all the arrows.
-        auto startItem = components[part["id"].get<int>()];
+        UIComponent* startItem = components[(int)part["id"]];
 
-        for(auto conn : part["connections"]){
+		
+		std::vector<int> connections = part["connections"];
+        for(int x=0 ; x<connections.size() ; x++){
+			int conn = connections[x];
             // For each connection in the JSON data get the component from the ID map.
-            auto endItem = components[conn.get<int>()];
+            UIComponent* endItem = components[conn];
 
             // Create a line between the start and end components.
-            auto* line = new Line(startItem, endItem);
+            Line* line = new Line(startItem, endItem);
             startItem->addLine(line);
             endItem->addLine(line);
 
@@ -128,54 +152,51 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
             s->addItem(line);
             line->update();
         }
-    }*/
+    }
 
 }
 
 std::string CircuitSaver::serialiseCircuit(std::string name, SceneItems items) {
-    /*json out = json::object();
+	json::jobject out;
     out["name"] = name;
 
-    std::list<QGraphicsItem*> graphicsItems;
-
-    // Cast each UIComponent into a QGraphicsItem for AnalysisMapper.
-    std::transform(items.components.begin(), items.components.end(), std::back_inserter(graphicsItems), [](UIComponent* c){
-        return (QGraphicsItem*) c;
-    });
+    std::list<QGraphicsItem*> graphicsItems(items.components.begin(), items.components.end());
 
     AnalysisMapper am(graphicsItems);
     // Use AnalysisMapper to simplify the code to generate a graph of the components.
     Graph graph = am.makeGraph();
 
-    json parts = json::array();
+    std::vector<json::jobject> parts;
 
-    for(auto it : graph){
-        json sect = json::object();
+    foreach(UIComponent* uicomp, graph.keys()){
+        json::jobject sect;
         // Turn the component into JSON
-        json comp = serialiseUIComponent(it.first);
-        json connections = json::array();
+        json::jobject comp = serialiseUIComponent(uicomp);
+		std::vector<json::jobject> connections;
+		
+		std::vector<UIComponent*> components = graph[uicomp];
 
         // For each connection add the ID of the connected component.
-        for(auto c : it.second){
-            connections.push_back(c->componentId);
+        for(int i=0 ; i<components.size() ; i++){
+            connections.push_back(components[i]->componentId);
         }
 
         // Add the data to the JSON map.
         sect["component"] = comp;
         sect["connections"] = connections;
-        sect["id"] = it.first->componentId;
+        sect["id"] = uicomp->componentId;
 
         parts.push_back(sect);
     }
 
     out["parts"] = parts;
 
-    return out.dump(4);*/
+    return (std::string) out;
 }
 
 
-json CircuitSaver::serialiseUIComponent(UIComponent* comp) {
-    /*json out = json::object();
+json::jobject CircuitSaver::serialiseUIComponent(UIComponent* comp) {
+	json::jobject out;
 
     // Get the type of component.
     out["type"] = comp->getId();
@@ -202,9 +223,12 @@ json CircuitSaver::serialiseUIComponent(UIComponent* comp) {
     }
 
     // Add the coordinates of the component in a list of [x,y].
-    out["pos"] = json::array({comp->pos().x(), comp->pos().y()});
+	std::vector<double> pos;
+	pos.push_back(comp->pos().x());
+	pos.push_back(comp->pos().y());
+    out["pos"] = pos;
 
-    return out;*/
+    return out;
 }
 
 void CircuitSaver::exportCircuit(std::string name, std::string path) {

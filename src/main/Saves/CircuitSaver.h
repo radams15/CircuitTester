@@ -11,11 +11,7 @@
 #include "../UI/Line.h"
 #include "../UI/Scene.h"
 
-//#include "json.hpp"
-
-//using json = nlohmann::json;
-
-#define json void*
+#include "json.h"
 
 /** @brief Items in the scene.
  *
@@ -45,7 +41,7 @@ private:
      * @param comp The component to convert.
      * @return JSON data that corresponds to the component.
      */
-    static json serialiseUIComponent(UIComponent* comp);
+    static json::jobject serialiseUIComponent(UIComponent* comp);
 
 public:
     /** @brief Gets the save path from the circuit name.
