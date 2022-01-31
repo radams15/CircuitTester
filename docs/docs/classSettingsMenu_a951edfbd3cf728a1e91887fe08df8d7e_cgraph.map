@@ -1,0 +1,10 @@
+<map id="SettingsMenu::SettingsMenu" name="SettingsMenu::SettingsMenu">
+<area shape="rect" id="node1" title="Initialiser." alt="" coords="5,64,213,91"/>
+<area shape="rect" id="node2" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qanimationgroup.html#addAnimation" title=" " alt="" coords="261,5,499,32"/>
+<area shape="rect" id="node3" href="$classSettingsMenu.html#af737360989105ff62082911ee8065770" title="Sets the layout of contentArea, configures toggleAnimation to show/hide the layout." alt="" coords="285,57,475,98"/>
+<area shape="rect" id="node6" href="$classSettingsMenu.html#adc245620b5b3f6729b19804859053e5e" title=" " alt="" coords="272,129,488,156"/>
+<area shape="rect" id="node4" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qanimationgroup.html#animationAt" title=" " alt="" coords="547,5,773,32"/>
+<area shape="rect" id="node5" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qanimationgroup.html#animationCount" title=" " alt="" coords="554,57,766,98"/>
+<area shape="rect" id="node7" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qabstractanimation.html#direction-prop" title=" " alt="" coords="583,122,737,163"/>
+<area shape="rect" id="node8" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qabstractanimation.html#start" title=" " alt="" coords="583,187,737,229"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="MainWindow::itemDoubleClicked" name="MainWindow::itemDoubleClicked">
+<area shape="rect" id="node1" title="Called from the Scene when any SceneItem is double clicked. Places the settings widget from the Scene..." alt="" coords="5,13,243,39"/>
+<area shape="rect" id="node2" href="$classSettingsMenu.html#af326c73bec61001eb4a776e83b647e44" title="Sets the layout of the widget, used to set different settings panels for each component." alt="" coords="291,5,477,47"/>
+<area shape="rect" id="node3" href="$classSettingsMenu.html#a41fab1c9ebcbb07d3945f38b9bf111ea" title="Deletes the widgets inside innerLayout." alt="" coords="525,13,676,39"/>
+</map>

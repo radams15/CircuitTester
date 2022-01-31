@@ -1,0 +1,5 @@
+<map id="MainWindow::itemInserted" name="MainWindow::itemInserted">
+<area shape="rect" id="node1" title="Called when any item is inserted onto the Scene. This unchecks the tool button of that item." alt="" coords="5,31,203,57"/>
+<area shape="rect" id="node2" href="$classUIComponent.html#aecae5af70cb4662d433eb6f5c4b32924" title="Getter for ID." alt="" coords="251,5,403,32"/>
+<area shape="rect" id="node3" href="$classScene.html#a0099b4da0b4ef962025d50dc0890f3b2" title="Setter for mode." alt="" coords="264,56,389,83"/>
+</map>

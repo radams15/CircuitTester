@@ -1,0 +1,10 @@
+<map id="Ammeter" name="Ammeter">
+<area shape="rect" id="node1" title="Ammeter component." alt="" coords="120,427,203,453"/>
+<area shape="rect" id="node2" href="$classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="" coords="93,351,229,377"/>
+<area shape="rect" id="node3" href="$classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="106,275,217,301"/>
+<area shape="rect" id="node4" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="65,171,156,197"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,81,173,108"/>
+<area shape="rect" id="node6" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html" title=" " alt="" coords="198,81,279,108"/>
+<area shape="rect" id="node7" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpaintdevice.html" title=" " alt="" coords="183,5,294,32"/>
+<area shape="rect" id="node8" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qcolor.html" title=" " alt="" coords="180,171,247,197"/>
+</map>

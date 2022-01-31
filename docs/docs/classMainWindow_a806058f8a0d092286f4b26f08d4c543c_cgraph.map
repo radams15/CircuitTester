@@ -1,0 +1,8 @@
+<map id="MainWindow::importScene" name="MainWindow::importScene">
+<area shape="rect" id="node1" title="Called when the import button is clicked from the toolbar." alt="" coords="5,31,201,57"/>
+<area shape="rect" id="node2" href="$classCircuitSaver.html#a3926081f808e08b71b306a7360bfaf5b" title="Import circuit to library." alt="" coords="249,31,444,57"/>
+<area shape="rect" id="node3" href="$classFileUtils.html#a512c8bbf8c598bf8bf4aaa0ce5646f57" title="Copies src to dst." alt="" coords="504,5,639,32"/>
+<area shape="rect" id="node4" href="$classCircuitSaver.html#abf3ccbef453b0c8861074f63a70bf2fe" title="Gets the save path from the circuit name." alt="" coords="492,56,651,83"/>
+<area shape="rect" id="node5" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="699,56,853,83"/>
+<area shape="rect" id="node6" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="901,56,1073,83"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="/home/ubuntu/scripts/CircuitTester/src/main/UI/Components/Battery.h" name="/home/ubuntu/scripts/CircuitTester/src/main/UI/Components/Battery.h">
+<area shape="rect" id="node1" title=" " alt="" coords="405,5,593,61"/>
+<area shape="rect" id="node2" href="$CircuitSaver_8cc.html" title=" " alt="" coords="5,109,172,165"/>
+<area shape="rect" id="node3" href="$Battery_8cc.html" title=" " alt="" coords="197,109,391,165"/>
+<area shape="rect" id="node4" href="$AnalysisMapper_8cc.html" title=" " alt="" coords="416,109,583,165"/>
+<area shape="rect" id="node5" href="$MainWindow_8cc.html" title=" " alt="" coords="607,109,773,165"/>
+<area shape="rect" id="node6" href="$Test__SaveLoad_8cc.html" title=" " alt="" coords="797,109,956,165"/>
+</map>

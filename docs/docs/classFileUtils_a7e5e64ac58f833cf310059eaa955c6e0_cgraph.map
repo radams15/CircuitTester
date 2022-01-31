@@ -1,0 +1,4 @@
+<map id="FileUtils::getSaveDir" name="FileUtils::getSaveDir">
+<area shape="rect" id="node1" title="Get the save directory for the user." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node2" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="208,5,380,32"/>
+</map>

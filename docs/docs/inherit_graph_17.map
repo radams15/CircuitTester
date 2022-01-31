@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classUnknown.html" title="Base class for unknown values." alt="" coords="5,31,88,57"/>
+<area shape="rect" id="node2" href="$classUnknownCurrent.html" title="Stores an Component for which the current is unknown." alt="" coords="137,5,268,32"/>
+<area shape="rect" id="node3" href="$classUnknownVoltage.html" title="Stores a node for which the voltage is unknown." alt="" coords="136,56,269,83"/>
+</map>

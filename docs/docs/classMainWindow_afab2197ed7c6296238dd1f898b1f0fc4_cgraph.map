@@ -1,0 +1,6 @@
+<map id="MainWindow::createToolBox" name="MainWindow::createToolBox">
+<area shape="rect" id="node1" title="Creates the toolbox of components." alt="" coords="5,31,212,57"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a5ac1ad5e3c553e50a1ac39b8ecaee2e6" title="Called when any component button is clicked." alt="" coords="260,31,503,57"/>
+<area shape="rect" id="node3" href="$classScene.html#a127f18d3236ad03033ff2165069ae6b9" title="Sets the new component to be placed down." alt="" coords="554,5,673,32"/>
+<area shape="rect" id="node4" href="$classScene.html#a0099b4da0b4ef962025d50dc0890f3b2" title="Setter for mode." alt="" coords="551,56,676,83"/>
+</map>

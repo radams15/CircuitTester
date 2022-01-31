@@ -1,0 +1,5 @@
+<map id="CircuitSaver::getPath" name="CircuitSaver::getPath">
+<area shape="rect" id="node1" title="Gets the save path from the circuit name." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node2" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="212,5,367,32"/>
+<area shape="rect" id="node3" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="415,5,587,32"/>
+</map>

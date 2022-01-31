@@ -1,0 +1,4 @@
+<map id="Circuit::getNumVars" name="Circuit::getNumVars">
+<area shape="rect" id="node1" title="Used to find out the number of both current and voltage variables." alt="" coords="5,5,159,32"/>
+<area shape="rect" id="node2" href="$classCircuit.html#ac86f036409fde26889b8eb8c327dc7eb" title="Gets the number of unknown currents." alt="" coords="207,5,447,32"/>
+</map>

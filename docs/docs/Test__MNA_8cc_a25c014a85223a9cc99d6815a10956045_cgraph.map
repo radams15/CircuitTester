@@ -1,0 +1,11 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title="Two Resistors In Parallel. Tests to see if the currents of two resistors of resistances 10...." alt="" coords="5,107,60,133"/>
+<area shape="rect" id="node2" href="$classCircuit.html#aea1c0c6b32a38f5812356e7d7e74649d" title="Solves the circuit using linear algebra and matrices." alt="" coords="108,107,215,133"/>
+<area shape="rect" id="node3" href="$classCircuit.html#afa4b34944acad77275b4f2a493179cb0" title="Returns a list of equations that must be solved to solve the overall circuit." alt="" coords="289,56,446,83"/>
+<area shape="rect" id="node7" href="$classCircuit.html#a9cd7662593cdaa3d24c80530b5d1d6f5" title="Used to find out the number of both current and voltage variables." alt="" coords="291,107,444,133"/>
+<area shape="rect" id="node9" href="$classCircuit.html#a765894f576a87328a00c7d901f69ff48" title="Returns all unknown currents in the circuit." alt="" coords="263,157,472,184"/>
+<area shape="rect" id="node4" href="$classCircuit.html#a3bc3876e8211f628272852411de427f6" title="Gets the terms that enter and leave a node." alt="" coords="566,5,714,32"/>
+<area shape="rect" id="node5" href="$classCircuit.html#a0207a30a1d16cc2f1d249179833e4ea8" title="Selects the components that have the reference voltage." alt="" coords="562,56,718,83"/>
+<area shape="rect" id="node6" href="$classCircuit.html#ac9c6a0788dc59146078619eb0b07203a" title=" " alt="" coords="808,56,1011,83"/>
+<area shape="rect" id="node8" href="$classCircuit.html#ac86f036409fde26889b8eb8c327dc7eb" title="Gets the number of unknown currents." alt="" coords="520,107,760,133"/>
+</map>

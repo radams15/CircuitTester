@@ -1,0 +1,12 @@
+<map id="UIComponent" name="UIComponent">
+<area shape="rect" id="node1" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="125,155,235,181"/>
+<area shape="rect" id="node4" href="$classBattery.html" title="A battery class that has a configurable voltage and on/off state." alt="" coords="81,229,151,256"/>
+<area shape="rect" id="node5" href="$classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="" coords="176,229,312,256"/>
+<area shape="rect" id="node2" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="135,80,225,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="96,5,264,32"/>
+<area shape="rect" id="node6" href="$classAmmeter.html" title="Ammeter component." alt="" coords="5,304,88,331"/>
+<area shape="rect" id="node7" href="$classResistor.html" title="Resistor component with configurable resistance." alt="" coords="112,304,187,331"/>
+<area shape="rect" id="node8" href="$classSwitch.html" title="Switch component that can be on/off." alt="" coords="211,304,277,331"/>
+<area shape="rect" id="node9" href="$classVoltmeter.html" title="Resistor component with configurable resistance." alt="" coords="301,304,387,331"/>
+<area shape="rect" id="node10" href="$classWire.html" title="Wire component with configurable length, area and material." alt="" coords="411,304,463,331"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="SettingsMenu::setInteriorLayout" name="SettingsMenu::setInteriorLayout">
+<area shape="rect" id="node1" title="Sets the layout of the widget, used to set different settings panels for each component." alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node2" href="$classSettingsMenu.html#a41fab1c9ebcbb07d3945f38b9bf111ea" title="Deletes the widgets inside innerLayout." alt="" coords="240,13,391,39"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="SceneItem::startPoint" name="SceneItem::startPoint">
+<area shape="rect" id="node1" title="Gets the start point of the component." alt="" coords="5,31,168,57"/>
+<area shape="rect" id="node2" href="$classSceneItem.html#a8e1e390e0824c01432773ff585e676d2" title="Gets the centre of the component." alt="" coords="216,56,389,83"/>
+<area shape="rect" id="node4" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html#width" title=" " alt="" coords="440,5,565,32"/>
+<area shape="rect" id="node3" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html#height" title=" " alt="" coords="437,56,568,83"/>
+<area shape="rect" id="node5" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qpointf.html#x" title=" " alt="" coords="459,107,547,133"/>
+<area shape="rect" id="node6" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qpointf.html#y" title=" " alt="" coords="459,157,547,184"/>
+</map>
