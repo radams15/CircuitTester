@@ -128,8 +128,6 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
 		
     }
 	
-	return;
-
 	parts = data["parts"];
 	
     for(int i=0 ; i<parts.size() ; i++){

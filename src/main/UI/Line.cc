@@ -24,7 +24,7 @@ Line::Line(SceneItem *startItem, SceneItem *endItem)
     setFlag(QGraphicsItem::ItemIsSelectable, true);
 
     // Set the z coordinate to -1000 so it is always behind any other components.
-    setZValue(1000);
+    setZValue(-1000);
 }
 
 double distance(QPointF a, QPointF b){
