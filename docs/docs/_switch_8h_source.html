@@ -92,7 +92,7 @@ $(function() {
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_switch.html#adc5d830e82ff65ab339e981a21afe9fb">   27</a></span>    <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="class_switch.html#adc5d830e82ff65ab339e981a21afe9fb">switchOff</a> = 10000000;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_switch.html#a6f7254cfb437b4ba57e8faf9d7feb63e">   32</a></span>    QCheckBox* <a class="code hl_variable" href="class_switch.html#a6f7254cfb437b4ba57e8faf9d7feb63e">onOffCheckbox</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_switch.html#a6f7254cfb437b4ba57e8faf9d7feb63e">   32</a></span>    <a class="code hl_classRef" href="https://doc.qt.io/qt-5/qcheckbox.html">QCheckBox</a>* <a class="code hl_variable" href="class_switch.html#a6f7254cfb437b4ba57e8faf9d7feb63e">onOffCheckbox</a>;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
@@ -104,7 +104,7 @@ $(function() {
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_switch.html#a65477636556e38f8612fa10794a7cbbf">getResistance</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_switch.html#adeba49dbac7ef722d6f1331e11538934">   59</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_switch.html#adeba49dbac7ef722d6f1331e11538934">getState</a>(){ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_switch.html#a6f7254cfb437b4ba57e8faf9d7feb63e">onOffCheckbox</a>-&gt;isChecked(); }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_switch.html#adeba49dbac7ef722d6f1331e11538934">   59</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_switch.html#adeba49dbac7ef722d6f1331e11538934">getState</a>(){ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_switch.html#a6f7254cfb437b4ba57e8faf9d7feb63e">onOffCheckbox</a>-&gt;<a class="code hl_functionRef" href="https://doc.qt.io/qt-5/qabstractbutton.html#checked-prop">isChecked</a>(); }</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
@@ -120,6 +120,8 @@ $(function() {
 <div class="ttc" id="aclass_switch_html_adc5d830e82ff65ab339e981a21afe9fb"><div class="ttname"><a href="class_switch.html#adc5d830e82ff65ab339e981a21afe9fb">Switch::switchOff</a></div><div class="ttdeci">const double switchOff</div><div class="ttdoc">The resistance when the switch is on is very large so that current cannot flow.</div><div class="ttdef"><b>Definition:</b> <a href="_switch_8h_source.html#l00027">Switch.h:27</a></div></div>
 <div class="ttc" id="aclass_switch_html_adeba49dbac7ef722d6f1331e11538934"><div class="ttname"><a href="class_switch.html#adeba49dbac7ef722d6f1331e11538934">Switch::getState</a></div><div class="ttdeci">bool getState()</div><div class="ttdoc">Gets the state of the switch.</div><div class="ttdef"><b>Definition:</b> <a href="_switch_8h_source.html#l00059">Switch.h:59</a></div></div>
 <div class="ttc" id="aclass_switch_html_afc7498eef70128d5a32dbfbaffcc23da"><div class="ttname"><a href="class_switch.html#afc7498eef70128d5a32dbfbaffcc23da">Switch::Switch</a></div><div class="ttdeci">Switch(bool on=true)</div><div class="ttdoc">Initialiser.</div><div class="ttdef"><b>Definition:</b> <a href="_switch_8cc_source.html#l00008">Switch.cc:8</a></div></div>
+<div class="ttc" id="aqabstractbutton_html_checked-prop"><div class="ttname"><a href="https://doc.qt.io/qt-5/qabstractbutton.html#checked-prop">QAbstractButton::isChecked</a></div><div class="ttdeci">bool isChecked() const</div></div>
+<div class="ttc" id="aqcheckbox_html"><div class="ttname"><a href="https://doc.qt.io/qt-5/qcheckbox.html">QCheckBox</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

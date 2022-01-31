@@ -2,15 +2,12 @@ cmake_minimum_required(VERSION 3.5)
 
 project(CircuitTester LANGUAGES CXX)
 
-set(PROGRAM_VERSION 2.0)
-
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(MAKE_DOCS ON)
 set(DO_TESTS ON CACHE BOOL "Enable Testing")
 set(MAKE_PROG ON CACHE BOOL "Enable building program")
 

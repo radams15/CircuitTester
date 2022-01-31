@@ -8,6 +8,8 @@ else()
     set(SYS "unknown")
 endif()
 
+set(CMAKE_EXE_LINKER_FLAGS "-static-libstdc++")
+
 set(PROJECT_SOURCES
         main.cc
 
@@ -57,6 +59,9 @@ set(PROJECT_SOURCES
         Saves/FileUtils.cc
         Saves/FileUtils.h Saves/CircuitSaver.cc Saves/CircuitSaver.h UI/Components/ResistiveElement.h UI/ExpandingSpacer.h UI/HamburgerMenu.cpp UI/HamburgerMenu.h)
 
+set(ICON_PATH ${PROJECT_SOURCE_DIR}/resources/CircuitTester.icns)
+set(CircuitTester_ICON "${ICON_PATH}")
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(CircuitTester
 	    MACOSX_BUNDLE
@@ -78,18 +83,22 @@ endif()
 if(${APPLE})
 	set_target_properties(CircuitTester PROPERTIES
 	    BUNDLE True
-	    MACOSX_BUNDLE_GUI_IDENTIFIER my.domain.style.identifierCircuitTester
+	    MACOSX_BUNDLE_GUI_IDENTIFIER uk.co.therhys.CircuitTester
 	    MACOSX_BUNDLE_BUNDLE_NAME CircuitTester
-	    MACOSX_BUNDLE_BUNDLE_VERSION "${PROGRAM_VERSION}"
-	    MACOSX_BUNDLE_SHORT_VERSION_STRING "${PROGRAM_VERSION}"
+	    MACOSX_BUNDLE_BUNDLE_VERSION "${CMAKE_PROJECT_VERSION}"
+	    MACOSX_BUNDLE_SHORT_VERSION_STRING "${CMAKE_PROJECT_VERSION}"
 	    MACOSX_BUNDLE_INFO_PLIST ${CMAKE_SOURCE_DIR}/resources/template.plist.in
+	    MACOSX_BUNDLE_ICON_FILE "CircuitTester.icns"
 	)
+
+	set_source_files_properties(${CircuitTester_ICON} PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
+	file(COPY ${ICON_PATH} DESTINATION "CircuitTester.app/Contents/Resources")
 endif()
 
 set(EIGEN3_ROOT ${CMAKE_SOURCE_DIR}/lib/eigen)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/lib)
 
-find_package(Eigen3 3.3.9 REQUIRED)
+find_package(Eigen3 3.0.0 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
 target_link_libraries(CircuitTester PRIVATE Qt${QT_VER}::Widgets nlohmann_json::nlohmann_json)

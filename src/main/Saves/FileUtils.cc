@@ -13,6 +13,7 @@
 #include <pwd.h>
 #include <sys/stat.h>
 #include <dirent.h> 
+#include <errno.h>
 #elif WINDOWS
 #include <windows.h>
 #include <lmcons.h>
@@ -118,7 +119,7 @@ std::string FileUtils::getUserName() {
     }
 
     std::cerr << "Cannot find unix username!" << std::endl;
-    exit(1);
+    _exit(1);
 #elif WINDOWS
     char username[UNLEN+1]; // https://stackoverflow.com/questions/11587426/get-current-username-in-c-on-windows
     DWORD username_len = UNLEN+1;
@@ -138,8 +139,8 @@ bool FileUtils::createSaveDir() {
 }
 
 void FileUtils::copyFile(std::string src, std::string dst){
-    std::ifstream in(src);
-    std::ofstream out(dst);
+    std::ifstream in(src.c_str());
+    std::ofstream out(dst.c_str());
 
     // Write content of in to out.
     out << in.rdbuf();
