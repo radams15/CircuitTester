@@ -211,9 +211,7 @@ void MainWindow::createToolBox() {
 
     // Don't stretch completely, just 3 pixels stretch per row.
     basicLayout->setRowStretch(3, 10);
-    basicLayout->setColumnStretch(2, 10);
     measurementLayout->setRowStretch(3, 10);
-    measurementLayout->setColumnStretch(2, 10);
 
     // Create a widget to hold the basicLayout, add the widget.
     auto* basicWidget = new QWidget;
@@ -226,7 +224,7 @@ void MainWindow::createToolBox() {
     // Create a componentTabs to hold the components.
     componentTabs = new QTabWidget;
     componentTabs->setSizePolicy(QSizePolicy(QSizePolicy::Maximum, QSizePolicy::Ignored));
-    componentTabs->setMinimumWidth(basicWidget->sizeHint().width());
+    componentTabs->setMinimumWidth(basicWidget->sizeHint().width()+20);
     componentTabs->setTabPosition(QTabWidget::West);
     componentTabs->addTab(basicWidget, tr("Basic Components"));
     componentTabs->addTab(measurementWidget, tr("Measurement Components"));
