@@ -1,0 +1,5 @@
+<map id="MainWindow::pointerGroupClicked" name="MainWindow::pointerGroupClicked">
+<area shape="rect" id="node1" title="Called when either the drag button or the line buttons are pressed." alt="" coords="5,23,204,65"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a227d4d7c98596d6b493901ab7e9077ea" title=" " alt="" coords="252,5,423,32"/>
+<area shape="rect" id="node3" href="$classScene.html#a0099b4da0b4ef962025d50dc0890f3b2" title="Setter for mode." alt="" coords="275,56,400,83"/>
+</map>

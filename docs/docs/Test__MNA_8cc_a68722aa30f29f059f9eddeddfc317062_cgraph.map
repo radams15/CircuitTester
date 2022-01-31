@@ -1,0 +1,9 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title="One Resistor Current. Tests to see if the current of one 4.0 Ω resistor connected to a 10...." alt="" coords="5,107,60,133"/>
+<area shape="rect" id="node2" href="$classSolution.html#ae528305d08247413446af567d1d10c52" title="Whether this has every component and every component is approximately equal to the other in the oppos..." alt="" coords="121,69,247,96"/>
+<area shape="rect" id="node6" href="$classSolution.html#ac589e0bddcec492753516913e7b2b09e" title="Gets the current at a resistor through I=V/R." alt="" coords="108,132,260,159"/>
+<area shape="rect" id="node3" href="$classSolution.html#a66edc7133ce24a3cfc77853a2b5c8454" title="Get the voltage at a specific node." alt="" coords="317,5,505,32"/>
+<area shape="rect" id="node4" href="$classSolution.html#aa0f955f8c0975309c85f3aa2d2c8c98f" title="Whether this solution has all the same components as the other solution." alt="" coords="308,56,513,83"/>
+<area shape="rect" id="node5" href="$classSolution.html#a1b619eca8a128b8f6e245502a3d60bc4" title="Check whether double a is equal to double b." alt="" coords="310,107,511,133"/>
+<area shape="rect" id="node7" href="$classSolution.html#aa69bf528b0cbee6f849d858882121667" title="Get the voltage of a specified component." alt="" coords="333,157,488,184"/>
+</map>

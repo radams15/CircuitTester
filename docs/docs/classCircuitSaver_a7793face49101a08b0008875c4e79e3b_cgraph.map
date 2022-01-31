@@ -1,0 +1,4 @@
+<map id="CircuitSaver::serialiseUIComponent" name="CircuitSaver::serialiseUIComponent">
+<area shape="rect" id="node1" title="Convert a UIComponent into JSON data." alt="" coords="5,5,259,32"/>
+<area shape="rect" id="node2" href="$classUIComponent.html#aecae5af70cb4662d433eb6f5c4b32924" title="Getter for ID." alt="" coords="307,5,459,32"/>
+</map>

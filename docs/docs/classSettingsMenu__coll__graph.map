@@ -1,0 +1,8 @@
+<map id="SettingsMenu" name="SettingsMenu">
+<area shape="rect" id="node1" title="Settings menu that dynamically expands and contracts." alt="" coords="11,323,121,349"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,233,84,260"/>
+<area shape="rect" id="node3" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qparallelanimationgroup.html" title=" " alt="" coords="109,233,295,260"/>
+<area shape="rect" id="node4" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qanimationgroup.html" title=" " alt="" coords="133,157,271,184"/>
+<area shape="rect" id="node5" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qabstractanimation.html" title=" " alt="" coords="125,81,279,108"/>
+<area shape="rect" id="node6" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html" title=" " alt="" coords="165,5,239,32"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="MainWindow::openSaveDir" name="MainWindow::openSaveDir">
+<area shape="rect" id="node1" title="Called when the open save directory button is clicked from the toolbar." alt="" coords="5,56,203,83"/>
+<area shape="rect" id="node2" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#fromStdString" title=" " alt="" coords="267,5,435,32"/>
+<area shape="rect" id="node3" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="273,56,428,83"/>
+<area shape="rect" id="node5" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qdesktopservices.html#openUrl" title=" " alt="" coords="251,107,451,133"/>
+<area shape="rect" id="node4" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="499,56,671,83"/>
+</map>

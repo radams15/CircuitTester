@@ -1,0 +1,4 @@
+<map id="UnknownVoltage" name="UnknownVoltage">
+<area shape="rect" id="node1" title="Stores a node for which the voltage is unknown." alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node2" href="$classUnknown.html" title="Base class for unknown values." alt="" coords="31,5,113,32"/>
+</map>

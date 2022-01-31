@@ -1,0 +1,9 @@
+<map id="CircuitSaver::sceneToImage" name="CircuitSaver::sceneToImage">
+<area shape="rect" id="node1" title="Converts the scene to a base64 encoded image." alt="" coords="5,132,208,159"/>
+<area shape="rect" id="node2" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#begin" title=" " alt="" coords="284,5,407,32"/>
+<area shape="rect" id="node3" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#end" title=" " alt="" coords="290,56,401,83"/>
+<area shape="rect" id="node4" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbuffer.html#open" title=" " alt="" coords="289,107,401,133"/>
+<area shape="rect" id="node5" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#setRenderHint" title=" " alt="" coords="256,157,435,184"/>
+<area shape="rect" id="node6" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbytearray.html#toBase64-1" title=" " alt="" coords="263,208,428,235"/>
+<area shape="rect" id="node7" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbytearray.html#toStdString" title=" " alt="" coords="257,259,433,285"/>
+</map>

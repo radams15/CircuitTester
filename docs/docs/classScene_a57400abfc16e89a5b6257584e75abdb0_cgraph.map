@@ -1,0 +1,6 @@
+<map id="Scene::mouseReleaseEvent" name="Scene::mouseReleaseEvent">
+<area shape="rect" id="node1" title="Called when the mouse is released." alt="" coords="5,56,208,83"/>
+<area shape="rect" id="node2" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qlist.html#count" title=" " alt="" coords="277,5,375,32"/>
+<area shape="rect" id="node3" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qlist.html#first" title=" " alt="" coords="281,56,371,83"/>
+<area shape="rect" id="node4" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qlist.html#removeFirst" title=" " alt="" coords="256,107,396,133"/>
+</map>

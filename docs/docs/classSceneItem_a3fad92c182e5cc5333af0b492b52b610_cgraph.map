@@ -1,0 +1,11 @@
+<map id="SceneItem::setColour" name="SceneItem::setColour">
+<area shape="rect" id="node1" title=" " alt="" coords="5,183,167,209"/>
+<area shape="rect" id="node2" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qcolor.html#alpha" title=" " alt="" coords="243,5,353,32"/>
+<area shape="rect" id="node3" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html#fromImage" title=" " alt="" coords="217,56,379,83"/>
+<area shape="rect" id="node4" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qimage.html#height" title=" " alt="" coords="237,107,359,133"/>
+<area shape="rect" id="node5" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qimage.html#pixelColor-1" title=" " alt="" coords="225,157,371,184"/>
+<area shape="rect" id="node6" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qcolor.html#setAlpha" title=" " alt="" coords="233,208,363,235"/>
+<area shape="rect" id="node7" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qimage.html#setPixelColor-1" title=" " alt="" coords="215,259,381,285"/>
+<area shape="rect" id="node8" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html#toImage" title=" " alt="" coords="227,309,369,336"/>
+<area shape="rect" id="node9" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qimage.html#width" title=" " alt="" coords="239,360,357,387"/>
+</map>

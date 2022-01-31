@@ -1,0 +1,6 @@
+<map id="FileUtils::saveDirExists" name="FileUtils::saveDirExists">
+<area shape="rect" id="node1" title="Does the save directory exist?" alt="" coords="5,31,176,57"/>
+<area shape="rect" id="node2" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="224,5,379,32"/>
+<area shape="rect" id="node4" href="$classFileUtils.html#a8cbeb6a583722894f964b3eb425d320c" title="Does a specific path exist?" alt="" coords="226,56,377,83"/>
+<area shape="rect" id="node3" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="427,5,599,32"/>
+</map>
