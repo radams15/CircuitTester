@@ -1,11 +1,12 @@
 <map id="ResistiveElement" name="ResistiveElement">
-<area shape="rect" id="node1" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="" coords="176,229,312,256"/>
-<area shape="rect" id="node5" href="$classAmmeter.html" title="Ammeter component." alt="" coords="5,304,88,331"/>
-<area shape="rect" id="node6" href="$classResistor.html" title="Resistor component with configurable resistance." alt="" coords="112,304,187,331"/>
-<area shape="rect" id="node7" href="$classSwitch.html" title="Switch component that can be on/off." alt="" coords="211,304,277,331"/>
-<area shape="rect" id="node8" href="$classVoltmeter.html" title="Resistor component with configurable resistance." alt="" coords="301,304,387,331"/>
-<area shape="rect" id="node9" href="$classWire.html" title="Wire component with configurable length, area and material." alt="" coords="411,304,463,331"/>
-<area shape="rect" id="node2" href="$classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="189,155,299,181"/>
-<area shape="rect" id="node3" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="199,80,289,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="160,5,328,32"/>
+<area shape="rect" id="node1" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="" coords="176,304,312,331"/>
+<area shape="rect" id="node6" href="$classAmmeter.html" title="Ammeter component." alt="" coords="5,379,88,405"/>
+<area shape="rect" id="node7" href="$classResistor.html" title="Resistor component with configurable resistance." alt="" coords="112,379,187,405"/>
+<area shape="rect" id="node8" href="$classSwitch.html" title="Switch component that can be on/off." alt="" coords="211,379,277,405"/>
+<area shape="rect" id="node9" href="$classVoltmeter.html" title="Resistor component with configurable resistance." alt="" coords="301,379,387,405"/>
+<area shape="rect" id="node10" href="$classWire.html" title="Wire component with configurable length, area and material." alt="" coords="411,379,463,405"/>
+<area shape="rect" id="node2" href="$classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="189,229,299,256"/>
+<area shape="rect" id="node3" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="199,155,289,181"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspixmapitem.html" title=" " alt="" coords="160,80,328,107"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html" title=" " alt="" coords="185,5,303,32"/>
 </map>

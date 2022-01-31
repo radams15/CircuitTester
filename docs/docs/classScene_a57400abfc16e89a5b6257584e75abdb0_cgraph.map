@@ -1,6 +1,13 @@
 <map id="Scene::mouseReleaseEvent" name="Scene::mouseReleaseEvent">
-<area shape="rect" id="node1" title="Called when the mouse is released." alt="" coords="5,56,208,83"/>
-<area shape="rect" id="node2" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qlist.html#count" title=" " alt="" coords="277,5,375,32"/>
-<area shape="rect" id="node3" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qlist.html#first" title=" " alt="" coords="281,56,371,83"/>
-<area shape="rect" id="node4" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qlist.html#removeFirst" title=" " alt="" coords="256,107,396,133"/>
+<area shape="rect" id="node1" title="Called when the mouse is released." alt="" coords="5,237,208,264"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#addItem" title=" " alt="" coords="277,5,467,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qlist.html#count" title=" " alt="" coords="323,56,421,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qlist.html#first" title=" " alt="" coords="328,107,416,133"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#items" title=" " alt="" coords="285,157,459,184"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicslineitem.html#line" title=" " alt="" coords="283,208,461,235"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#mouseReleaseEvent" title=" " alt="" coords="256,259,488,301"/>
+<area shape="rect" id="node8" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qlinef.html#p1" title=" " alt="" coords="327,325,417,352"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qlinef.html#p2" title=" " alt="" coords="327,376,417,403"/>
+<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qlist.html#removeFirst" title=" " alt="" coords="301,427,443,453"/>
+<area shape="rect" id="node11" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#removeItem" title=" " alt="" coords="264,477,480,504"/>
 </map>

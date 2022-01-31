@@ -1,0 +1,5 @@
+<map id="Scene::itemInserted" name="Scene::itemInserted">
+<area shape="rect" id="node1" title="Called when an item is inserted into the scene." alt="" coords="251,31,403,57"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,5,203,32"/>
+<area shape="rect" id="node3" href="$classScene.html#a0d1d9aaeb9d69068838c19a58afa29ff" title="Called when the mouse is pressed once." alt="" coords="11,56,197,83"/>
+</map>

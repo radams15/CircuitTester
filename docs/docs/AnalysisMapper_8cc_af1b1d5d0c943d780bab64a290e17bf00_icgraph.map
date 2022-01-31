@@ -1,0 +1,6 @@
+<map id="printGraph" name="printGraph">
+<area shape="rect" id="node1" title=" " alt="" coords="759,5,849,32"/>
+<area shape="rect" id="node2" href="$classAnalysisMapper.html#a754d7d938ec9d0b81aab9f084e947312" title="Gets solves the circuit, returning a map of components to values." alt="" coords="503,5,711,32"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#acebf5a46f730eb3e65092c2398acebd5" title="Called when the run button is clicked from the toolbar." alt="" coords="251,5,455,32"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,5,203,32"/>
+</map>

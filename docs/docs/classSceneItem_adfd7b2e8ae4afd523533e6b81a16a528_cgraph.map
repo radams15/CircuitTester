@@ -1,0 +1,5 @@
+<map id="SceneItem::removeLines" name="SceneItem::removeLines">
+<area shape="rect" id="node1" title="Removes all allows from the item." alt="" coords="5,31,188,57"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#removeItem" title=" " alt="" coords="236,5,452,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#scene" title=" " alt="" coords="261,56,427,83"/>
+</map>

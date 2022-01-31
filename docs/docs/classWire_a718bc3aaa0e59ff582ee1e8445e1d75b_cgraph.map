@@ -1,4 +1,12 @@
 <map id="Wire::Wire" name="Wire::Wire">
-<area shape="rect" id="node1" title="Initialiser." alt="" coords="5,5,96,32"/>
-<area shape="rect" id="node2" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#fromStdString" title=" " alt="" coords="144,5,312,32"/>
+<area shape="rect" id="node1" title="Initialiser." alt="" coords="5,208,96,235"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qcombobox.html#addItem" title=" " alt="" coords="174,5,339,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#addLayout" title=" " alt="" coords="168,56,345,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#addSpacerItem" title=" " alt="" coords="153,107,360,133"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#fromStdString" title=" " alt="" coords="173,157,341,184"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qcombobox.html#currentIndex-prop" title=" " alt="" coords="149,208,364,235"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qcombobox.html#currentText-prop" title=" " alt="" coords="153,259,360,285"/>
+<area shape="rect" id="node8" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qdoublespinbox.html#maximum-prop" title=" " alt="" coords="144,309,369,336"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qdoublespinbox.html#minimum-prop" title=" " alt="" coords="146,360,367,387"/>
+<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qdoublespinbox.html#value-prop" title=" " alt="" coords="159,411,354,437"/>
 </map>

@@ -1,0 +1,9 @@
+<map id="Battery::Battery" name="Battery::Battery">
+<area shape="rect" id="node1" title="Initialiser." alt="" coords="5,132,131,159"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#addLayout" title=" " alt="" coords="203,5,380,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#addSpacerItem" title=" " alt="" coords="188,56,395,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qabstractbutton.html#checked-prop" title=" " alt="" coords="185,107,397,133"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qdoublespinbox.html#maximum-prop" title=" " alt="" coords="179,157,404,184"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qdoublespinbox.html#minimum-prop" title=" " alt="" coords="181,208,402,235"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qdoublespinbox.html#value-prop" title=" " alt="" coords="194,259,389,285"/>
+</map>

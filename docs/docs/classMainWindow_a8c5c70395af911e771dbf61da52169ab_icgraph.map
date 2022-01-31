@@ -1,0 +1,6 @@
+<map id="MainWindow::saveScene" name="MainWindow::saveScene">
+<area shape="rect" id="node1" title="Called when the save button is clicked from the toolbar." alt="" coords="744,5,927,32"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a62cd8712fb41a754298f6f60eead2cb0" title="Creates all actions for the toolbar and the menubar." alt="" coords="251,5,453,32"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a65085d637ffb1a9840a08f82138a595e" title="Called when the export button is clicked from the toolbar." alt="" coords="501,31,696,57"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,5,203,32"/>
+</map>

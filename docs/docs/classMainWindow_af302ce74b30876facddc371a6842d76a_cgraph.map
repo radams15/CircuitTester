@@ -1,12 +1,18 @@
 <map id="MainWindow::openScene" name="MainWindow::openScene">
-<area shape="rect" id="node1" title="Called when the open button is clicked from the toolbar." alt="" coords="5,81,191,108"/>
-<area shape="rect" id="node2" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#fromStdString" title=" " alt="" coords="244,31,412,57"/>
-<area shape="rect" id="node3" href="$classFileUtils.html#affa0d9c11d9bb0193c3c7ea4f635bf94" title=" " alt="" coords="246,81,410,108"/>
-<area shape="rect" id="node8" href="$classCircuitSaver.html#a9ace41a84d96b09d103fa0465899ed6b" title=" " alt="" coords="239,157,417,184"/>
-<area shape="rect" id="node4" href="$classFileUtils.html#a63f60972bc2b20587c52b9500904f44f" title="Does fullString end with ending." alt="" coords="473,5,616,32"/>
-<area shape="rect" id="node5" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="672,107,827,133"/>
-<area shape="rect" id="node7" href="$classFileUtils.html#a15ebcdd895f8dea49b78829daee908ba" title=" " alt="" coords="479,107,610,133"/>
-<area shape="rect" id="node6" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="875,107,1047,133"/>
-<area shape="rect" id="node9" href="$classCircuitSaver.html#abf3ccbef453b0c8861074f63a70bf2fe" title="Gets the save path from the circuit name." alt="" coords="465,157,624,184"/>
-<area shape="rect" id="node10" href="$classFileUtils.html#a8cbeb6a583722894f964b3eb425d320c" title="Does a specific path exist?" alt="" coords="469,208,620,235"/>
+<area shape="rect" id="node1" title="Called when the open button is clicked from the toolbar." alt="" coords="5,157,189,184"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#fromStdString" title=" " alt="" coords="247,5,415,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qinputdialog.html#getItem" title=" " alt="" coords="247,56,414,83"/>
+<area shape="rect" id="node4" href="$classFileUtils.html#affa0d9c11d9bb0193c3c7ea4f635bf94" title=" " alt="" coords="247,107,414,133"/>
+<area shape="rect" id="node9" href="$classCircuitSaver.html#a9ace41a84d96b09d103fa0465899ed6b" title=" " alt="" coords="241,157,420,184"/>
+<area shape="rect" id="node14" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#windowTitle-prop" title=" " alt="" coords="237,208,424,235"/>
+<area shape="rect" id="node15" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#toStdString" title=" " alt="" coords="255,259,406,285"/>
+<area shape="rect" id="node16" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html#tr" title=" " alt="" coords="285,309,377,336"/>
+<area shape="rect" id="node5" href="$classFileUtils.html#a63f60972bc2b20587c52b9500904f44f" title="Does fullString end with ending." alt="" coords="495,5,639,32"/>
+<area shape="rect" id="node6" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="711,132,865,159"/>
+<area shape="rect" id="node8" href="$classFileUtils.html#a15ebcdd895f8dea49b78829daee908ba" title=" " alt="" coords="502,107,633,133"/>
+<area shape="rect" id="node7" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="913,132,1087,159"/>
+<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#addItem" title=" " alt="" coords="472,157,663,184"/>
+<area shape="rect" id="node11" href="$classCircuitSaver.html#abf3ccbef453b0c8861074f63a70bf2fe" title="Gets the save path from the circuit name." alt="" coords="488,208,647,235"/>
+<area shape="rect" id="node12" href="$classFileUtils.html#a8cbeb6a583722894f964b3eb425d320c" title="Does a specific path exist?" alt="" coords="492,259,643,285"/>
+<area shape="rect" id="node13" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#setPos" title=" " alt="" coords="482,309,653,336"/>
 </map>

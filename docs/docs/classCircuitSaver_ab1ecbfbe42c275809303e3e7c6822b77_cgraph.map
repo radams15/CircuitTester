@@ -1,9 +1,13 @@
 <map id="CircuitSaver::sceneToImage" name="CircuitSaver::sceneToImage">
-<area shape="rect" id="node1" title="Converts the scene to a base64 encoded image." alt="" coords="5,132,208,159"/>
-<area shape="rect" id="node2" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#begin" title=" " alt="" coords="284,5,407,32"/>
-<area shape="rect" id="node3" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#end" title=" " alt="" coords="290,56,401,83"/>
-<area shape="rect" id="node4" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbuffer.html#open" title=" " alt="" coords="289,107,401,133"/>
-<area shape="rect" id="node5" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#setRenderHint" title=" " alt="" coords="256,157,435,184"/>
-<area shape="rect" id="node6" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbytearray.html#toBase64-1" title=" " alt="" coords="263,208,428,235"/>
-<area shape="rect" id="node7" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbytearray.html#toStdString" title=" " alt="" coords="257,259,433,285"/>
+<area shape="rect" id="node1" title="Converts the scene to a base64 encoded image." alt="" coords="5,233,208,260"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#begin" title=" " alt="" coords="327,5,448,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#end" title=" " alt="" coords="333,56,442,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#itemsBoundingRect" title=" " alt="" coords="256,107,519,133"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbuffer.html#open" title=" " alt="" coords="332,157,443,184"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#render" title=" " alt="" coords="298,208,477,235"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#setRenderHint" title=" " alt="" coords="298,259,477,285"/>
+<area shape="rect" id="node8" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qrectf.html#size" title=" " alt="" coords="336,309,439,336"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbytearray.html#toBase64-1" title=" " alt="" coords="305,360,470,387"/>
+<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qsizef.html#toSize" title=" " alt="" coords="330,411,445,437"/>
+<area shape="rect" id="node11" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbytearray.html#toStdString" title=" " alt="" coords="299,461,475,488"/>
 </map>

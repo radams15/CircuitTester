@@ -1,0 +1,4 @@
+<map id="Switch::getResistance" name="Switch::getResistance">
+<area shape="rect" id="node1" title="Overrides the value in ResistiveElement to return the value of resistanceSpinner." alt="" coords="5,5,171,32"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qabstractbutton.html#checked-prop" title=" " alt="" coords="219,5,421,32"/>
+</map>

@@ -1,5 +1,8 @@
 <map id="MainWindow::buttonGroupClicked" name="MainWindow::buttonGroupClicked">
-<area shape="rect" id="node1" title="Called when any component button is clicked." alt="" coords="5,31,248,57"/>
-<area shape="rect" id="node2" href="$classScene.html#a127f18d3236ad03033ff2165069ae6b9" title="Sets the new component to be placed down." alt="" coords="299,5,418,32"/>
-<area shape="rect" id="node3" href="$classScene.html#a0099b4da0b4ef962025d50dc0890f3b2" title="Setter for mode." alt="" coords="296,56,421,83"/>
+<area shape="rect" id="node1" title="Called when any component button is clicked." alt="" coords="5,107,247,133"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qbuttongroup.html#buttons" title=" " alt="" coords="315,5,486,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qbuttongroup.html#id" title=" " alt="" coords="333,56,468,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qabstractbutton.html#checked-prop" title=" " alt="" coords="295,107,507,133"/>
+<area shape="rect" id="node5" href="$classScene.html#a127f18d3236ad03033ff2165069ae6b9" title="Sets the new component to be placed down." alt="" coords="341,157,460,184"/>
+<area shape="rect" id="node6" href="$classScene.html#a0099b4da0b4ef962025d50dc0890f3b2" title="Setter for mode." alt="" coords="338,208,463,235"/>
 </map>

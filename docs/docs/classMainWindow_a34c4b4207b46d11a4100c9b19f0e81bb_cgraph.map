@@ -1,52 +1,52 @@
 <map id="MainWindow::MainWindow" name="MainWindow::MainWindow">
-<area shape="rect" id="node1" title="Initialiser for the main window object." alt="" coords="5,613,204,640"/>
-<area shape="rect" id="node2" href="$classMainWindow.html#a62cd8712fb41a754298f6f60eead2cb0" title="Creates all actions for the toolbar and the menubar." alt="" coords="257,272,459,298"/>
-<area shape="rect" id="node34" href="$classMainWindow.html#a55e597c2fbbca5f36c85cb95bd80aa1e" title="Creates the menubar for the actions." alt="" coords="252,664,464,690"/>
-<area shape="rect" id="node35" href="$classMainWindow.html#a41db9ff7506ed6283307908b1e85408b" title="Creates the toolbar for the actions." alt="" coords="257,714,459,741"/>
-<area shape="rect" id="node36" href="$classMainWindow.html#afab2197ed7c6296238dd1f898b1f0fc4" title="Creates the toolbox of components." alt="" coords="255,562,461,589"/>
-<area shape="rect" id="node39" href="$classMainWindow.html#ab4d0f5cb119e307658fb559f4af83304" title="Called when any item is inserted onto the Scene. This unchecks the tool button of that item." alt="" coords="535,512,732,538"/>
-<area shape="rect" id="node40" href="$classMainWindow.html#acebf5a46f730eb3e65092c2398acebd5" title="Called when the run button is clicked from the toolbar." alt="" coords="255,613,461,640"/>
-<area shape="rect" id="node50" href="$classScene.html#a2cfa054f06b39370f561c0abd01f24e8" title="Sets the canvas size." alt="" coords="300,765,416,792"/>
-<area shape="rect" id="node3" href="$classMainWindow.html#a7be6a5d98970ac1a6296c6f9aee1e9bb" title="Called when the about button is clicked from the toolbar." alt="" coords="558,410,709,437"/>
-<area shape="rect" id="node4" href="$classMainWindow.html#a24bbb70be6f6e1007b0d6cbf7cd5f64d" title="Called when the delete button is pressed. Deletes all items that are selected." alt="" coords="541,90,726,117"/>
-<area shape="rect" id="node5" href="$classMainWindow.html#a65085d637ffb1a9840a08f82138a595e" title="Called when the export button is clicked from the toolbar." alt="" coords="536,141,731,168"/>
-<area shape="rect" id="node12" href="$classMainWindow.html#a8c5c70395af911e771dbf61da52169ab" title="Called when the save button is clicked from the toolbar." alt="" coords="809,242,993,269"/>
-<area shape="rect" id="node20" href="$classMainWindow.html#a806058f8a0d092286f4b26f08d4c543c" title="Called when the import button is clicked from the toolbar." alt="" coords="803,53,999,80"/>
-<area shape="rect" id="node22" href="$classMainWindow.html#ab5e7d64e9fbe24007d9b3d617bacb75d" title="Called when the open save directory button is clicked from the toolbar." alt="" coords="803,373,1000,400"/>
-<area shape="rect" id="node25" href="$classMainWindow.html#af302ce74b30876facddc371a6842d76a" title="Called when the open button is clicked from the toolbar." alt="" coords="809,192,994,218"/>
-<area shape="rect" id="node30" href="$classMainWindow.html#a05e13914f0aa1a95e0ca25b5afad020e" title="Called when either the drag button or the line buttons are pressed." alt="" coords="534,294,733,335"/>
-<area shape="rect" id="node33" href="$classMainWindow.html#abc53be620c66a0b5a124cedd768b512d" title="Called when the tutorial button is clicked from the toolbar." alt="" coords="553,360,714,386"/>
-<area shape="rect" id="node6" href="$classCircuitSaver.html#ad89930da2de5c5ffd3521df1ee4a5cf5" title="Copy circuit to directory to send to others." alt="" coords="1056,90,1249,117"/>
-<area shape="rect" id="node7" href="$classFileUtils.html#a512c8bbf8c598bf8bf4aaa0ce5646f57" title="Copies src to dst." alt="" coords="1341,141,1476,168"/>
-<area shape="rect" id="node8" href="$classFileUtils.html#a63f60972bc2b20587c52b9500904f44f" title="Does fullString end with ending." alt="" coords="1337,90,1480,117"/>
-<area shape="rect" id="node9" href="$classCircuitSaver.html#abf3ccbef453b0c8861074f63a70bf2fe" title="Gets the save path from the circuit name." alt="" coords="1329,192,1488,218"/>
-<area shape="rect" id="node10" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="1609,192,1764,218"/>
-<area shape="rect" id="node11" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="1897,192,2069,218"/>
-<area shape="rect" id="node13" href="$classCircuitSaver.html#ac93a4ae9dca765e7ae89e20e5e5ab718" title="Save circuit to file." alt="" coords="1061,242,1244,269"/>
-<area shape="rect" id="node14" href="$classCircuitSaver.html#aab319e8ddda0f4e6ceb944d88359b51b" title="Converts circuit to string." alt="" coords="1305,445,1512,472"/>
-<area shape="rect" id="node15" href="$classAnalysisMapper.html#adbd1d8db8e7863ba4cfbe34659f0c8b5" title="Makes an adjacency list out of the components of the circuit." alt="" coords="1582,606,1791,633"/>
-<area shape="rect" id="node17" href="$classCircuitSaver.html#ab1ecbfbe42c275809303e3e7c6822b77" title="Converts the scene to a base64 encoded image." alt="" coords="1585,394,1788,421"/>
-<area shape="rect" id="node18" href="$classCircuitSaver.html#a7793face49101a08b0008875c4e79e3b" title="Convert a UIComponent into JSON data." alt="" coords="1560,445,1813,472"/>
-<area shape="rect" id="node16" href="$classAnalysisMapper.html#a4e775fafccbc93cdb8e0cad7de2204a0" title="Finds the shortest path between two nodes on a graph using Dijkstra&#39;s algorithm." alt="" coords="1861,606,2104,633"/>
-<area shape="rect" id="node19" href="$classUIComponent.html#aecae5af70cb4662d433eb6f5c4b32924" title="Getter for ID." alt="" coords="1907,470,2059,497"/>
-<area shape="rect" id="node21" href="$classCircuitSaver.html#a3926081f808e08b71b306a7360bfaf5b" title="Import circuit to library." alt="" coords="1055,141,1250,168"/>
-<area shape="rect" id="node23" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#fromStdString" title=" " alt="" coords="1069,293,1237,320"/>
-<area shape="rect" id="node24" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qdesktopservices.html#openUrl" title=" " alt="" coords="1053,344,1253,370"/>
-<area shape="rect" id="node26" href="$classFileUtils.html#affa0d9c11d9bb0193c3c7ea4f635bf94" title=" " alt="" coords="1071,40,1235,66"/>
-<area shape="rect" id="node28" href="$classCircuitSaver.html#a9ace41a84d96b09d103fa0465899ed6b" title=" " alt="" coords="1063,192,1242,218"/>
-<area shape="rect" id="node27" href="$classFileUtils.html#a15ebcdd895f8dea49b78829daee908ba" title=" " alt="" coords="1343,40,1474,66"/>
-<area shape="rect" id="node29" href="$classFileUtils.html#a8cbeb6a583722894f964b3eb425d320c" title="Does a specific path exist?" alt="" coords="1333,242,1484,269"/>
-<area shape="rect" id="node31" href="$classMainWindow.html#a227d4d7c98596d6b493901ab7e9077ea" title=" " alt="" coords="816,301,987,328"/>
-<area shape="rect" id="node32" href="$classScene.html#a0099b4da0b4ef962025d50dc0890f3b2" title="Setter for mode." alt="" coords="839,546,964,573"/>
-<area shape="rect" id="node37" href="$classMainWindow.html#a5ac1ad5e3c553e50a1ac39b8ecaee2e6" title="Called when any component button is clicked." alt="" coords="512,562,755,589"/>
-<area shape="rect" id="node38" href="$classScene.html#a127f18d3236ad03033ff2165069ae6b9" title="Sets the new component to be placed down." alt="" coords="842,597,961,624"/>
-<area shape="rect" id="node41" href="$MainWindow_8cc.html#ab98a81ce81f09a6448f4cd7063b66615" title=" " alt="" coords="608,613,659,640"/>
-<area shape="rect" id="node42" href="$classAnalysisMapper.html#a754d7d938ec9d0b81aab9f084e947312" title="Gets solves the circuit, returning a map of components to values." alt="" coords="529,765,737,792"/>
-<area shape="rect" id="node48" href="$classScene.html#afb78b8b679e47ae7144135952283782f" title="Removes all text boxes from the scene." alt="" coords="552,664,715,690"/>
-<area shape="rect" id="node49" href="$MainWindow_8cc.html#a8ab63f91737d9bc9d7a41e487a5c840d" title=" " alt="" coords="594,714,673,741"/>
-<area shape="rect" id="node43" href="$AnalysisMapper_8cc.html#af1b1d5d0c943d780bab64a290e17bf00" title=" " alt="" coords="856,740,947,766"/>
-<area shape="rect" id="node44" href="$classCircuit.html#aea1c0c6b32a38f5812356e7d7e74649d" title="Solves the circuit using linear algebra and matrices." alt="" coords="848,790,955,817"/>
-<area shape="rect" id="node45" href="$classCircuit.html#afa4b34944acad77275b4f2a493179cb0" title="Returns a list of equations that must be solved to solve the overall circuit." alt="" coords="1074,740,1231,766"/>
-<area shape="rect" id="node46" href="$classCircuit.html#a9cd7662593cdaa3d24c80530b5d1d6f5" title="Used to find out the number of both current and voltage variables." alt="" coords="1076,790,1229,817"/>
-<area shape="rect" id="node47" href="$classCircuit.html#a765894f576a87328a00c7d901f69ff48" title="Returns all unknown currents in the circuit." alt="" coords="1048,841,1257,868"/>
+<area shape="rect" id="node1" title="Initialiser for the main window object." alt="" coords="5,1617,203,1644"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qlayout.html#addWidget" title=" " alt="" coords="291,5,446,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html#connect" title=" " alt="" coords="589,1085,722,1112"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a62cd8712fb41a754298f6f60eead2cb0" title="Creates all actions for the toolbar and the menubar." alt="" coords="267,629,470,656"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html#tr" title=" " alt="" coords="1114,883,1206,909"/>
+<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#windowTitle-prop" title=" " alt="" coords="1067,389,1253,416"/>
+<area shape="rect" id="node23" href="$classMainWindow.html#a55e597c2fbbca5f36c85cb95bd80aa1e" title="Creates the menubar for the actions." alt="" coords="263,1288,474,1315"/>
+<area shape="rect" id="node30" href="$classMainWindow.html#a41db9ff7506ed6283307908b1e85408b" title="Creates the toolbar for the actions." alt="" coords="268,1541,469,1568"/>
+<area shape="rect" id="node35" href="$classMainWindow.html#afab2197ed7c6296238dd1f898b1f0fc4" title="Creates the toolbox of components." alt="" coords="266,1617,471,1644"/>
+<area shape="rect" id="node40" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#QWidget" title=" " alt="" coords="584,1997,727,2024"/>
+<area shape="rect" id="node43" href="$classMainWindow.html#ab4d0f5cb119e307658fb559f4af83304" title="Called when any item is inserted onto the Scene. This unchecks the tool button of that item." alt="" coords="271,343,467,369"/>
+<area shape="rect" id="node44" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#layout" title=" " alt="" coords="305,1719,432,1745"/>
+<area shape="rect" id="node45" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#size-prop" title=" " alt="" coords="306,1769,431,1796"/>
+<area shape="rect" id="node46" href="$classMainWindow.html#acebf5a46f730eb3e65092c2398acebd5" title="Called when the run button is clicked from the toolbar." alt="" coords="267,1820,471,1847"/>
+<area shape="rect" id="node47" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmainwindow.html#setCentralWidget" title=" " alt="" coords="251,1871,487,1897"/>
+<area shape="rect" id="node48" href="$classScene.html#a2cfa054f06b39370f561c0abd01f24e8" title="Sets the canvas size." alt="" coords="311,1921,427,1948"/>
+<area shape="rect" id="node49" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmainwindow.html#unifiedTitleAndToolBarOnMac-prop" title=" " alt="" coords="259,1973,478,2014"/>
+<area shape="rect" id="node50" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#windowIcon-prop" title=" " alt="" coords="276,2039,461,2065"/>
+<area shape="rect" id="node5" href="$classMainWindow.html#a7be6a5d98970ac1a6296c6f9aee1e9bb" title="Called when the about button is clicked from the toolbar." alt="" coords="846,984,997,1011"/>
+<area shape="rect" id="node7" href="$classMainWindow.html#a24bbb70be6f6e1007b0d6cbf7cd5f64d" title="Called when the delete button is pressed. Deletes all items that are selected." alt="" coords="563,528,747,555"/>
+<area shape="rect" id="node8" href="$classMainWindow.html#a65085d637ffb1a9840a08f82138a595e" title="Called when the export button is clicked from the toolbar." alt="" coords="558,579,753,605"/>
+<area shape="rect" id="node9" href="$classMainWindow.html#a8c5c70395af911e771dbf61da52169ab" title="Called when the save button is clicked from the toolbar." alt="" coords="830,503,1013,529"/>
+<area shape="rect" id="node11" href="$classMainWindow.html#a806058f8a0d092286f4b26f08d4c543c" title="Called when the import button is clicked from the toolbar." alt="" coords="824,883,1019,909"/>
+<area shape="rect" id="node12" href="$classMainWindow.html#ab5e7d64e9fbe24007d9b3d617bacb75d" title="Called when the open save directory button is clicked from the toolbar." alt="" coords="557,680,753,707"/>
+<area shape="rect" id="node13" href="$classMainWindow.html#af302ce74b30876facddc371a6842d76a" title="Called when the open button is clicked from the toolbar." alt="" coords="829,389,1013,416"/>
+<area shape="rect" id="node14" href="$classMainWindow.html#a05e13914f0aa1a95e0ca25b5afad020e" title="Called when either the drag button or the line buttons are pressed." alt="" coords="556,259,755,301"/>
+<area shape="rect" id="node15" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qaction.html#checked-prop" title=" " alt="" coords="848,208,995,235"/>
+<area shape="rect" id="node16" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qaction.html#checkable-prop" title=" " alt="" coords="571,731,739,757"/>
+<area shape="rect" id="node17" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qaction.html#icon-prop" title=" " alt="" coords="591,781,719,808"/>
+<area shape="rect" id="node18" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qaction.html#shortcut-prop" title=" " alt="" coords="578,832,733,859"/>
+<area shape="rect" id="node19" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qaction.html#statusTip-prop" title=" " alt="" coords="574,157,737,184"/>
+<area shape="rect" id="node20" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qaction.html#text-prop" title=" " alt="" coords="591,376,719,403"/>
+<area shape="rect" id="node21" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qaction.html#triggered" title=" " alt="" coords="585,427,725,453"/>
+<area shape="rect" id="node22" href="$classMainWindow.html#abc53be620c66a0b5a124cedd768b512d" title="Called when the tutorial button is clicked from the toolbar." alt="" coords="841,933,1001,960"/>
+<area shape="rect" id="node24" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#addAction" title=" " alt="" coords="580,1136,731,1163"/>
+<area shape="rect" id="node25" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmenu.html#addAction-5" title=" " alt="" coords="585,1187,726,1213"/>
+<area shape="rect" id="node26" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmenubar.html#addMenu" title=" " alt="" coords="576,1237,735,1264"/>
+<area shape="rect" id="node27" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmenu.html#addSeparator" title=" " alt="" coords="574,1288,737,1315"/>
+<area shape="rect" id="node28" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmainwindow.html#menuBar" title=" " alt="" coords="564,1339,747,1365"/>
+<area shape="rect" id="node29" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#setHidden" title=" " alt="" coords="579,1389,731,1416"/>
+<area shape="rect" id="node31" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qtoolbar.html#addAction" title=" " alt="" coords="579,1541,732,1568"/>
+<area shape="rect" id="node32" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmainwindow.html#addToolBar" title=" " alt="" coords="558,1592,753,1619"/>
+<area shape="rect" id="node33" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qtoolbar.html#addWidget" title=" " alt="" coords="576,1440,735,1467"/>
+<area shape="rect" id="node34" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qtoolbar.html#movable-prop" title=" " alt="" coords="573,1491,737,1517"/>
+<area shape="rect" id="node36" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qtabwidget.html#addTab" title=" " alt="" coords="578,1795,733,1821"/>
+<area shape="rect" id="node37" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgridlayout.html#addWidget" title=" " alt="" coords="565,1845,746,1872"/>
+<area shape="rect" id="node38" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qbuttongroup.html#buttonClicked" title=" " alt="" coords="550,1896,761,1923"/>
+<area shape="rect" id="node39" href="$classMainWindow.html#a5ac1ad5e3c553e50a1ac39b8ecaee2e6" title="Called when any component button is clicked." alt="" coords="535,1947,776,1973"/>
+<area shape="rect" id="node41" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qbuttongroup.html#exclusive-prop" title=" " alt="" coords="553,1693,757,1720"/>
+<area shape="rect" id="node42" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#minimumWidth-prop" title=" " alt="" coords="552,1744,759,1771"/>
 </map>

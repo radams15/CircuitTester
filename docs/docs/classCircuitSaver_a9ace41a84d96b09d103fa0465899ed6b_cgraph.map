@@ -1,7 +1,9 @@
 <map id="CircuitSaver::loadCircuit" name="CircuitSaver::loadCircuit">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,184,57"/>
-<area shape="rect" id="node2" href="$classCircuitSaver.html#abf3ccbef453b0c8861074f63a70bf2fe" title="Gets the save path from the circuit name." alt="" coords="232,5,391,32"/>
-<area shape="rect" id="node5" href="$classFileUtils.html#a8cbeb6a583722894f964b3eb425d320c" title="Does a specific path exist?" alt="" coords="236,56,387,83"/>
-<area shape="rect" id="node3" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="439,5,593,32"/>
-<area shape="rect" id="node4" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="641,5,813,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,184,108"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#addItem" title=" " alt="" coords="232,5,423,32"/>
+<area shape="rect" id="node3" href="$classCircuitSaver.html#abf3ccbef453b0c8861074f63a70bf2fe" title="Gets the save path from the circuit name." alt="" coords="248,56,407,83"/>
+<area shape="rect" id="node6" href="$classFileUtils.html#a8cbeb6a583722894f964b3eb425d320c" title="Does a specific path exist?" alt="" coords="252,107,403,133"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#setPos" title=" " alt="" coords="242,157,413,184"/>
+<area shape="rect" id="node4" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="471,56,625,83"/>
+<area shape="rect" id="node5" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="673,56,847,83"/>
 </map>

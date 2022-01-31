@@ -1,0 +1,4 @@
+<map id="Line::update" name="Line::update">
+<area shape="rect" id="node1" title="Updates the position of the line when items move." alt="" coords="144,5,247,32"/>
+<area shape="rect" id="node2" href="$classLine.html#a8c3d84ae985092cf4774e625f69d5c53" title="Called by QT to paint the line onto the canvas." alt="" coords="5,5,96,32"/>
+</map>

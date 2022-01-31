@@ -1,0 +1,9 @@
+<map id="MainWindow::createMenubar" name="MainWindow::createMenubar">
+<area shape="rect" id="node1" title="Creates the menubar for the actions." alt="" coords="5,132,216,159"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#addAction" title=" " alt="" coords="280,5,431,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmenu.html#addAction-5" title=" " alt="" coords="285,56,426,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmenubar.html#addMenu" title=" " alt="" coords="276,107,435,133"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmenu.html#addSeparator" title=" " alt="" coords="274,157,437,184"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmainwindow.html#menuBar" title=" " alt="" coords="264,208,447,235"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#setHidden" title=" " alt="" coords="279,259,431,285"/>
+</map>

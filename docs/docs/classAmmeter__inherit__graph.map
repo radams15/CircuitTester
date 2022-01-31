@@ -1,7 +1,8 @@
 <map id="Ammeter" name="Ammeter">
-<area shape="rect" id="node1" title="Ammeter component." alt="" coords="48,304,131,331"/>
-<area shape="rect" id="node2" href="$classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="" coords="21,229,157,256"/>
-<area shape="rect" id="node3" href="$classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="34,155,145,181"/>
-<area shape="rect" id="node4" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="44,80,135,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,5,173,32"/>
+<area shape="rect" id="node1" title="Ammeter component." alt="" coords="48,379,131,405"/>
+<area shape="rect" id="node2" href="$classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="" coords="21,304,157,331"/>
+<area shape="rect" id="node3" href="$classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="34,229,145,256"/>
+<area shape="rect" id="node4" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="44,155,135,181"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspixmapitem.html" title=" " alt="" coords="5,80,173,107"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html" title=" " alt="" coords="30,5,149,32"/>
 </map>

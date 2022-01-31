@@ -1,4 +1,9 @@
 <map id="MainWindow::createCellWidget" name="MainWindow::createCellWidget">
-<area shape="rect" id="node1" title="Creates a tool button for a component." alt="" coords="5,5,232,32"/>
-<area shape="rect" id="node2" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#fromStdString" title=" " alt="" coords="280,5,448,32"/>
+<area shape="rect" id="node1" title="Creates a tool button for a component." alt="" coords="5,132,231,159"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qbuttongroup.html#addButton" title=" " alt="" coords="279,5,468,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qlayout.html#addWidget" title=" " alt="" coords="296,56,451,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#fromStdString" title=" " alt="" coords="289,107,457,133"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#layout" title=" " alt="" coords="310,157,437,184"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#QWidget" title=" " alt="" coords="302,208,445,235"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qabstractbutton.html#icon-prop" title=" " alt="" coords="281,259,465,285"/>
 </map>

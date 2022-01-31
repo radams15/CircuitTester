@@ -1,14 +1,11 @@
-<map id="/home/ubuntu/scripts/CircuitTester/src/main/Analysis/Unknown.h" name="/home/ubuntu/scripts/CircuitTester/src/main/Analysis/Unknown.h">
-<area shape="rect" id="node1" title=" " alt="" coords="601,5,768,61"/>
-<area shape="rect" id="node2" href="$Equation_8h.html" title=" " alt="" coords="480,213,647,269"/>
-<area shape="rect" id="node10" href="$Term_8h.html" title=" " alt="" coords="601,109,768,165"/>
-<area shape="rect" id="node12" href="$Unknown_8cc.html" title=" " alt="" coords="792,109,959,165"/>
-<area shape="rect" id="node3" href="$Circuit_8h.html" title=" " alt="" coords="289,317,456,373"/>
-<area shape="rect" id="node8" href="$Equation_8cc.html" title=" " alt="" coords="480,317,647,373"/>
-<area shape="rect" id="node9" href="$Test__MNAEquation_8cc.html" title=" " alt="" coords="671,317,837,373"/>
+<map id="/home/rhys/scripts/CircuitTester/src/main/Analysis/Unknown.h" name="/home/rhys/scripts/CircuitTester/src/main/Analysis/Unknown.h">
+<area shape="rect" id="node1" title=" " alt="" coords="316,5,483,61"/>
+<area shape="rect" id="node2" href="$Equation_8h.html" title=" " alt="" coords="195,213,361,269"/>
+<area shape="rect" id="node7" href="$Term_8h.html" title=" " alt="" coords="316,109,483,165"/>
+<area shape="rect" id="node9" href="$Unknown_8cc.html" title=" " alt="" coords="507,109,673,165"/>
+<area shape="rect" id="node3" href="$Circuit_8h.html" title=" " alt="" coords="100,317,267,373"/>
+<area shape="rect" id="node6" href="$Equation_8cc.html" title=" " alt="" coords="291,317,457,373"/>
 <area shape="rect" id="node4" href="$Circuit_8cc.html" title=" " alt="" coords="5,421,172,477"/>
 <area shape="rect" id="node5" href="$AnalysisMapper_8cc.html" title=" " alt="" coords="196,421,363,477"/>
-<area shape="rect" id="node6" href="$Test__MNA_8cc.html" title=" " alt="" coords="387,421,545,477"/>
-<area shape="rect" id="node7" href="$Test__MNACircuit_8cc.html" title=" " alt="" coords="569,421,728,477"/>
-<area shape="rect" id="node11" href="$Term_8cc.html" title=" " alt="" coords="671,213,837,269"/>
+<area shape="rect" id="node8" href="$Term_8cc.html" title=" " alt="" coords="385,213,552,269"/>
 </map>

@@ -1,0 +1,7 @@
+<map id="MainWindow::createToolbar" name="MainWindow::createToolbar">
+<area shape="rect" id="node1" title="Creates the toolbar for the actions." alt="" coords="5,81,207,108"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qtoolbar.html#addAction" title=" " alt="" coords="275,5,429,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmainwindow.html#addToolBar" title=" " alt="" coords="255,56,449,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qtoolbar.html#addWidget" title=" " alt="" coords="273,107,431,133"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qtoolbar.html#movable-prop" title=" " alt="" coords="270,157,434,184"/>
+</map>

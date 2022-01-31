@@ -1,0 +1,8 @@
+<map id="Scene::mouseMoveEvent" name="Scene::mouseMoveEvent">
+<area shape="rect" id="node1" title="Called when the mouse moves." alt="" coords="5,123,192,149"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicslineitem.html#line" title=" " alt="" coords="259,5,437,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#mouseMoveEvent" title=" " alt="" coords="240,57,456,98"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qlinef.html#p1" title=" " alt="" coords="303,123,393,149"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscenemouseevent.html#scenePos" title=" " alt="" coords="244,174,452,215"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicslineitem.html#setLine" title=" " alt="" coords="271,239,425,281"/>
+</map>
