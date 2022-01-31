@@ -5,7 +5,7 @@ set(CMAKE_PROJECT_VERSION_MAJOR 2)
 set(CMAKE_PROJECT_VERSION_MINOR 0)
 set(CMAKE_PROJECT_VERSION_PATCH 0)
 
-project(CircuitTester LANGUAGES CXX)
+project(CircuitTester CXX)
 enable_language(CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)

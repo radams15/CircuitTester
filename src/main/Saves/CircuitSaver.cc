@@ -67,27 +67,28 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
 	parts = data["parts"];
 	
     for(int i=0 ; i<parts.size() ; i++){
-		json::jobject part = parts[i];
+		json::jobject component = parts[i]["component"];
+		int uid = parts[i]["id"];
         UIComponent* comp = NULL;
 		
-		int id = part["component"]["type"];
+		int id = component["type"];
 				
         // Create UIComponent for each json component.
         switch(id) {
             case UI_BATTERY: {
-                comp = new Battery((double) part["component"]["voltage"], (bool) part["component"]["state"]);
+                comp = new Battery((double) component["voltage"], (int) component["state"]);
                 break;
             }
             case UI_RESISTOR: {
-                comp = new Resistor((double) part["component"]["resistance"]);
+                comp = new Resistor((double) component["resistance"]);
                 break;
             }
             case UI_WIRE: {
-                comp = new Wire((double) part["component"]["length"], (double) part["component"]["area"], get(get(part, "component"), "material"));
+                comp = new Wire((double) component["length"], (double) component["area"], component["material"]);
                 break;
             }
             case UI_SWITCH: {
-                comp = new Switch((bool) part["component"]["state"]);
+                comp = new Switch((int) component["state"]);
                 break;
             }
 
@@ -98,8 +99,8 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
         // If we actually made a component.
         if(comp != NULL){
             // Set the coordinates of the component
-            double x = (double) get(part["component"], "pos").array(0);
-            double y = (double) get(part["component"], "pos").array(1);
+            double x = (double) component["pos"].array(0);
+            double y = (double) component["pos"].array(1);
 			
             // Validate x, y minimum value of 0.
             x = x<0? 0 : x;
@@ -112,7 +113,7 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
             comp->setPos(x, y);
 
             // Get the ID of the component.
-            comp->componentId = (int) part["id"];
+            comp->componentId = uid;
 
             // Set the max ID by comparing this ID to the current maximum.
             if(comp->componentId > UIComponent::currentId){
