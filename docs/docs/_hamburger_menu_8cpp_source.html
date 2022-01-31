@@ -84,17 +84,21 @@ $(function() {
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_hamburger_menu_8h.html">HamburgerMenu.h</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_hamburger_menu.html#a1c17af36a553cb56edd7389a1711d01d">    7</a></span><a class="code hl_function" href="class_hamburger_menu.html#a1c17af36a553cb56edd7389a1711d01d">HamburgerMenu::HamburgerMenu</a>() {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_variable" href="class_hamburger_menu.html#a71bea39aca4050c024220fa7a405b5bc">menu</a> = <span class="keyword">new</span> QMenu();</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_variable" href="class_hamburger_menu.html#a71bea39aca4050c024220fa7a405b5bc">menu</a> = <span class="keyword">new</span> <a class="code hl_classRef" href="https://doc.qt.io/qt-5/qmenu.html">QMenu</a>();</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    QToolButton::setIcon(<a class="code hl_classRef" href="https://doc.qt.io/qt-5/qtgui/qicon.html">QIcon</a>(<span class="stringliteral">&quot;:/images/application-menu.png&quot;</span>));</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_functionRef" href="https://doc.qt.io/qt-5/qabstractbutton.html#icon-prop">QToolButton::setIcon</a>(<a class="code hl_classRef" href="https://doc.qt.io/qt-5/qicon.html">QIcon</a>(<span class="stringliteral">&quot;:/images/application-menu.png&quot;</span>));</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    setMenu(<a class="code hl_variable" href="class_hamburger_menu.html#a71bea39aca4050c024220fa7a405b5bc">menu</a>);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    setPopupMode(InstantPopup);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_functionRef" href="https://doc.qt.io/qt-5/qtoolbutton.html#setMenu">setMenu</a>(<a class="code hl_variable" href="class_hamburger_menu.html#a71bea39aca4050c024220fa7a405b5bc">menu</a>);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_functionRef" href="https://doc.qt.io/qt-5/qtoolbutton.html#popupMode-prop">setPopupMode</a>(InstantPopup);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
 <div class="ttc" id="a_hamburger_menu_8h_html"><div class="ttname"><a href="_hamburger_menu_8h.html">HamburgerMenu.h</a></div></div>
 <div class="ttc" id="aclass_hamburger_menu_html_a1c17af36a553cb56edd7389a1711d01d"><div class="ttname"><a href="class_hamburger_menu.html#a1c17af36a553cb56edd7389a1711d01d">HamburgerMenu::HamburgerMenu</a></div><div class="ttdeci">HamburgerMenu()</div><div class="ttdef"><b>Definition:</b> <a href="_hamburger_menu_8cpp_source.html#l00007">HamburgerMenu.cpp:7</a></div></div>
 <div class="ttc" id="aclass_hamburger_menu_html_a71bea39aca4050c024220fa7a405b5bc"><div class="ttname"><a href="class_hamburger_menu.html#a71bea39aca4050c024220fa7a405b5bc">HamburgerMenu::menu</a></div><div class="ttdeci">QMenu * menu</div><div class="ttdef"><b>Definition:</b> <a href="_hamburger_menu_8h_source.html#l00016">HamburgerMenu.h:16</a></div></div>
-<div class="ttc" id="aqicon_html"><div class="ttname"><a href="https://doc.qt.io/qt-5/qtgui/qicon.html">QIcon</a></div></div>
+<div class="ttc" id="aqabstractbutton_html_icon-prop"><div class="ttname"><a href="https://doc.qt.io/qt-5/qabstractbutton.html#icon-prop">QAbstractButton::setIcon</a></div><div class="ttdeci">void setIcon(const QIcon &amp;icon)</div></div>
+<div class="ttc" id="aqicon_html"><div class="ttname"><a href="https://doc.qt.io/qt-5/qicon.html">QIcon</a></div></div>
+<div class="ttc" id="aqmenu_html"><div class="ttname"><a href="https://doc.qt.io/qt-5/qmenu.html">QMenu</a></div></div>
+<div class="ttc" id="aqtoolbutton_html_popupMode-prop"><div class="ttname"><a href="https://doc.qt.io/qt-5/qtoolbutton.html#popupMode-prop">QToolButton::setPopupMode</a></div><div class="ttdeci">void setPopupMode(ToolButtonPopupMode mode)</div></div>
+<div class="ttc" id="aqtoolbutton_html_setMenu"><div class="ttname"><a href="https://doc.qt.io/qt-5/qtoolbutton.html#setMenu">QToolButton::setMenu</a></div><div class="ttdeci">void setMenu(QMenu *menu)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hamburgermenu_13764',['HamburgerMenu',['../classHamburgerMenu.html',1,'']]]
+  ['hamburgermenu_0',['HamburgerMenu',['../class_hamburger_menu.html',1,'']]]
 ];
