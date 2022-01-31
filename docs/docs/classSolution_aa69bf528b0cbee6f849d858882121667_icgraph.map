@@ -1,0 +1,4 @@
+<map id="Solution::getVoltage" name="Solution::getVoltage">
+<area shape="rect" id="node1" title="Get the voltage of a specified component." alt="" coords="205,5,359,32"/>
+<area shape="rect" id="node2" href="$classSolution.html#ac589e0bddcec492753516913e7b2b09e" title="Gets the current at a resistor through I=V/R." alt="" coords="5,5,157,32"/>
+</map>

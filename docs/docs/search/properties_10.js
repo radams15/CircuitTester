@@ -1,9 +1,23 @@
 var searchData=
 [
-  ['recursivefilteringenabled_22613',['recursiveFilteringEnabled',['https://doc.qt.io/qt-5/qsortfilterproxymodel.html#recursiveFilteringEnabled-prop',1,'QSortFilterProxyModel']]],
-  ['refreshrate_22614',['refreshRate',['https://doc.qt.io/qt-5/qtgui/qscreen.html#refreshRate-prop',1,'QScreen']]],
-  ['regexp_22615',['regExp',['https://doc.qt.io/qt-5/qtgui/qregexpvalidator.html#regExp-prop',1,'QRegExpValidator']]],
-  ['regularexpression_22616',['regularExpression',['https://doc.qt.io/qt-5/qtgui/qregularexpressionvalidator.html#regularExpression-prop',1,'QRegularExpressionValidator']]],
-  ['remainingtime_22617',['remainingTime',['https://doc.qt.io/qt-5/qtimer.html#remainingTime-prop',1,'QTimer']]],
-  ['running_22618',['running',['https://doc.qt.io/qt-5/qstatemachine.html#running-prop',1,'QStateMachine']]]
+  ['readonly_28392',['readOnly',['https://doc.qt.io/qt-5/qfilesystemmodel.html#readOnly-prop',1,'QFileSystemModel::readOnly()'],['https://doc.qt.io/qt-5/qdirmodel.html#readOnly-prop',1,'QDirModel::readOnly()'],['https://doc.qt.io/qt-5/qabstractspinbox.html#readOnly-prop',1,'QAbstractSpinBox::readOnly()'],['https://doc.qt.io/qt-5/qlineedit.html#readOnly-prop',1,'QLineEdit::readOnly()'],['https://doc.qt.io/qt-5/qplaintextedit.html#readOnly-prop',1,'QPlainTextEdit::readOnly()'],['https://doc.qt.io/qt-5/qtextbrowser.html#readOnly-prop',1,'QTextBrowser::readOnly()'],['https://doc.qt.io/qt-5/qtextedit.html#readOnly-prop',1,'QTextEdit::readOnly()'],['https://doc.qt.io/qt-5/qfiledialog-obsolete.html#readOnly-prop',1,'QFileDialog::readOnly()']]],
+  ['rect_28393',['rect',['https://doc.qt.io/qt-5/qwidget.html#rect-prop',1,'QWidget']]],
+  ['recursivefilteringenabled_28394',['recursiveFilteringEnabled',['https://doc.qt.io/qt-5/qsortfilterproxymodel.html#recursiveFilteringEnabled-prop',1,'QSortFilterProxyModel']]],
+  ['redoavailable_28395',['redoAvailable',['https://doc.qt.io/qt-5/qlineedit.html#redoAvailable-prop',1,'QLineEdit']]],
+  ['refreshrate_28396',['refreshRate',['https://doc.qt.io/qt-5/qscreen.html#refreshRate-prop',1,'QScreen']]],
+  ['regexp_28397',['regExp',['https://doc.qt.io/qt-5/qregexpvalidator.html#regExp-prop',1,'QRegExpValidator']]],
+  ['regularexpression_28398',['regularExpression',['https://doc.qt.io/qt-5/qregularexpressionvalidator.html#regularExpression-prop',1,'QRegularExpressionValidator']]],
+  ['remainingtime_28399',['remainingTime',['https://doc.qt.io/qt-5/qtimer.html#remainingTime-prop',1,'QTimer']]],
+  ['renderhints_28400',['renderHints',['https://doc.qt.io/qt-5/qgraphicsview.html#renderHints-prop',1,'QGraphicsView']]],
+  ['resizeanchor_28401',['resizeAnchor',['https://doc.qt.io/qt-5/qgraphicsview.html#resizeAnchor-prop',1,'QGraphicsView']]],
+  ['resizegripsvisible_28402',['resizeGripsVisible',['https://doc.qt.io/qt-5/qcolumnview.html#resizeGripsVisible-prop',1,'QColumnView']]],
+  ['resizemode_28403',['resizeMode',['https://doc.qt.io/qt-5/qlistview.html#resizeMode-prop',1,'QListView']]],
+  ['resolvesymlinks_28404',['resolveSymlinks',['https://doc.qt.io/qt-5/qfiledialog-obsolete.html#resolveSymlinks-prop',1,'QFileDialog::resolveSymlinks()'],['https://doc.qt.io/qt-5/qfilesystemmodel.html#resolveSymlinks-prop',1,'QFileSystemModel::resolveSymlinks()'],['https://doc.qt.io/qt-5/qdirmodel.html#resolveSymlinks-prop',1,'QDirModel::resolveSymlinks()']]],
+  ['rootisdecorated_28405',['rootIsDecorated',['https://doc.qt.io/qt-5/qtreeview.html#rootIsDecorated-prop',1,'QTreeView']]],
+  ['rotation_28406',['rotation',['https://doc.qt.io/qt-5/qgraphicsobject.html#rotation-prop',1,'QGraphicsObject']]],
+  ['rotationangle_28407',['rotationAngle',['https://doc.qt.io/qt-5/qpinchgesture.html#rotationAngle-prop',1,'QPinchGesture']]],
+  ['rowcount_28408',['rowCount',['https://doc.qt.io/qt-5/qtablewidget.html#rowCount-prop',1,'QTableWidget']]],
+  ['rowwrappolicy_28409',['rowWrapPolicy',['https://doc.qt.io/qt-5/qformlayout.html#rowWrapPolicy-prop',1,'QFormLayout']]],
+  ['rubberbandselectionmode_28410',['rubberBandSelectionMode',['https://doc.qt.io/qt-5/qgraphicsview.html#rubberBandSelectionMode-prop',1,'QGraphicsView']]],
+  ['running_28411',['running',['https://doc.qt.io/qt-5/qstatemachine.html#running-prop',1,'QStateMachine']]]
 ];

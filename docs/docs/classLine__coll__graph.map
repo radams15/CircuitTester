@@ -1,9 +1,11 @@
 <map id="Line" name="Line">
-<area shape="rect" id="node1" title="Line between two components on a Scene." alt="" coords="187,275,236,301"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,171,153,197"/>
-<area shape="rect" id="node3" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qcolor.html" title=" " alt="" coords="178,171,245,197"/>
-<area shape="rect" id="node4" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="269,171,359,197"/>
-<area shape="rect" id="node5" title=" " alt="" coords="182,81,350,108"/>
-<area shape="rect" id="node6" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html" title=" " alt="" coords="375,81,456,108"/>
-<area shape="rect" id="node7" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpaintdevice.html" title=" " alt="" coords="360,5,471,32"/>
+<area shape="rect" id="node1" title="Line between two components on a Scene." alt="" coords="302,275,351,301"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspathitem.html" title=" " alt="" coords="93,171,240,197"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qabstractgraphicsshapeitem.html" title=" " alt="" coords="5,81,219,108"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html" title=" " alt="" coords="161,5,279,32"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspixmapitem.html" title=" " alt="" coords="243,81,411,108"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qcolor.html" title=" " alt="" coords="396,171,463,197"/>
+<area shape="rect" id="node6" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="281,171,372,197"/>
+<area shape="rect" id="node8" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html" title=" " alt="" coords="435,81,517,108"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpaintdevice.html" title=" " alt="" coords="421,5,531,32"/>
 </map>

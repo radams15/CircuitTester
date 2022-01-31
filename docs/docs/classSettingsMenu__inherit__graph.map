@@ -1,4 +1,6 @@
 <map id="SettingsMenu" name="SettingsMenu">
-<area shape="rect" id="node1" title="Settings menu that dynamically expands and contracts." alt="" coords="5,80,116,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="21,5,100,32"/>
+<area shape="rect" id="node1" title="Settings menu that dynamically expands and contracts." alt="" coords="45,155,155,181"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html" title=" " alt="" coords="61,80,139,107"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html" title=" " alt="" coords="5,5,80,32"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpaintdevice.html" title=" " alt="" coords="104,5,213,32"/>
 </map>

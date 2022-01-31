@@ -1,0 +1,4 @@
+<map id="guiMain" name="guiMain">
+<area shape="rect" id="node1" title="Main GUI method. This method runs the QT GUI code and returns the status code of it." alt="" coords="108,5,183,32"/>
+<area shape="rect" id="node2" href="$main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main method. This is the main program entry point, which for now just starts the guiMain method and r..." alt="" coords="5,5,60,32"/>
+</map>

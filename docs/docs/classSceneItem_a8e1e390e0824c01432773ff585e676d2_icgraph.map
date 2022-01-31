@@ -1,0 +1,7 @@
+<map id="SceneItem::centrePoint" name="SceneItem::centrePoint">
+<area shape="rect" id="node1" title="Gets the centre of the component." alt="" coords="505,31,679,57"/>
+<area shape="rect" id="node2" href="$classSceneItem.html#a4cec31e99d6de09cb0004379670b3ee7" title="Gets the end point of the component." alt="" coords="298,5,454,32"/>
+<area shape="rect" id="node5" href="$classSceneItem.html#a37a516d8b13274718c93d7fc5cdd93b8" title="Gets the start point of the component." alt="" coords="295,56,457,83"/>
+<area shape="rect" id="node3" href="$classLine.html#ae6ea5b7357dd90fb7b2f1cafe9957d6b" title="Updates the position of the line when items move." alt="" coords="144,31,247,57"/>
+<area shape="rect" id="node4" href="$classLine.html#a8c3d84ae985092cf4774e625f69d5c53" title="Called by QT to paint the line onto the canvas." alt="" coords="5,31,96,57"/>
+</map>

@@ -1,12 +1,10 @@
-<map id="/home/ubuntu/scripts/CircuitTester/src/main/Analysis/Solution.h" name="/home/ubuntu/scripts/CircuitTester/src/main/Analysis/Solution.h">
-<area shape="rect" id="node1" title=" " alt="" coords="328,5,495,61"/>
-<area shape="rect" id="node2" href="$Circuit_8h.html" title=" " alt="" coords="233,109,400,165"/>
-<area shape="rect" id="node5" href="$Test__MNA_8cc.html" title=" " alt="" coords="5,213,164,269"/>
-<area shape="rect" id="node7" href="$Solution_8cc.html" title=" " alt="" coords="424,109,591,165"/>
-<area shape="rect" id="node8" href="$AnalysisMapper_8h.html" title=" " alt="" coords="705,109,872,165"/>
-<area shape="rect" id="node3" href="$Circuit_8cc.html" title=" " alt="" coords="188,213,355,269"/>
-<area shape="rect" id="node4" href="$AnalysisMapper_8cc.html" title=" " alt="" coords="561,213,728,269"/>
-<area shape="rect" id="node6" href="$Test__MNACircuit_8cc.html" title=" " alt="" coords="379,213,537,269"/>
-<area shape="rect" id="node9" href="$CircuitSaver_8cc.html" title=" " alt="" coords="752,213,919,269"/>
-<area shape="rect" id="node10" href="$MainWindow_8cc.html" title=" " alt="" coords="943,213,1109,269"/>
+<map id="/home/rhys/scripts/CircuitTester/src/main/Analysis/Solution.h" name="/home/rhys/scripts/CircuitTester/src/main/Analysis/Solution.h">
+<area shape="rect" id="node1" title=" " alt="" coords="196,5,363,61"/>
+<area shape="rect" id="node2" href="$Circuit_8h.html" title=" " alt="" coords="5,109,172,165"/>
+<area shape="rect" id="node5" href="$Solution_8cc.html" title=" " alt="" coords="196,109,363,165"/>
+<area shape="rect" id="node6" href="$AnalysisMapper_8h.html" title=" " alt="" coords="387,109,553,165"/>
+<area shape="rect" id="node3" href="$Circuit_8cc.html" title=" " alt="" coords="5,213,172,269"/>
+<area shape="rect" id="node4" href="$AnalysisMapper_8cc.html" title=" " alt="" coords="196,213,363,269"/>
+<area shape="rect" id="node7" href="$CircuitSaver_8cc.html" title=" " alt="" coords="387,213,553,269"/>
+<area shape="rect" id="node8" href="$MainWindow_8cc.html" title=" " alt="" coords="577,213,744,269"/>
 </map>

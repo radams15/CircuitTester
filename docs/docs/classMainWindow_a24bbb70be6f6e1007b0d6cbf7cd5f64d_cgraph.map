@@ -1,0 +1,5 @@
+<map id="MainWindow::deleteItem" name="MainWindow::deleteItem">
+<area shape="rect" id="node1" title="Called when the delete button is pressed. Deletes all items that are selected." alt="" coords="5,35,189,61"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#removeItem" title=" " alt="" coords="237,5,453,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#selectedItems" title=" " alt="" coords="250,57,441,98"/>
+</map>

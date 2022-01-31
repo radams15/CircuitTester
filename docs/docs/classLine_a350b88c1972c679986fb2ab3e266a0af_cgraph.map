@@ -1,5 +1,9 @@
 <map id="Line::Line" name="Line::Line">
-<area shape="rect" id="node1" title="Initialiser." alt="" coords="5,31,89,57"/>
-<area shape="rect" id="node2" href="$classLine.html#adaae751db39722df0f3937222999c5b8" title="Simply returns the end item." alt="" coords="141,5,251,32"/>
-<area shape="rect" id="node3" href="$classLine.html#a4d12500b762bd898ad93bbb40cdf6560" title="Simply returns the start item." alt="" coords="137,56,255,83"/>
+<area shape="rect" id="node1" title="Initialiser." alt="" coords="5,152,89,179"/>
+<area shape="rect" id="node2" href="$classLine.html#adaae751db39722df0f3937222999c5b8" title="Simply returns the end item." alt="" coords="189,5,299,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qabstractgraphicsshapeitem.html#setBrush" title=" " alt="" coords="137,57,351,98"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#setFlag" title=" " alt="" coords="157,123,331,149"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qabstractgraphicsshapeitem.html#setPen" title=" " alt="" coords="137,174,351,215"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#setZValue" title=" " alt="" coords="148,240,340,267"/>
+<area shape="rect" id="node7" href="$classLine.html#a4d12500b762bd898ad93bbb40cdf6560" title="Simply returns the start item." alt="" coords="185,291,303,317"/>
 </map>

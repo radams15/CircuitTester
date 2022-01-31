@@ -1,4 +1,9 @@
 <map id="HamburgerMenu" name="HamburgerMenu">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,136,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="20,5,121,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="57,335,187,361"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qtoolbutton.html" title=" " alt="" coords="22,259,123,285"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qabstractbutton.html" title=" " alt="" coords="5,157,135,184"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html" title=" " alt="" coords="81,81,160,108"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmenu.html" title=" " alt="" coords="137,208,205,235"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html" title=" " alt="" coords="26,5,101,32"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpaintdevice.html" title=" " alt="" coords="125,5,234,32"/>
 </map>

@@ -1,4 +1,4 @@
-<map id="/home/ubuntu/scripts/CircuitTester/src/main/UI/Components/Voltmeter.h" name="/home/ubuntu/scripts/CircuitTester/src/main/UI/Components/Voltmeter.h">
+<map id="/home/rhys/scripts/CircuitTester/src/main/UI/Components/Voltmeter.h" name="/home/rhys/scripts/CircuitTester/src/main/UI/Components/Voltmeter.h">
 <area shape="rect" id="node1" title=" " alt="" coords="49,5,255,61"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,109,136,136"/>
 <area shape="rect" id="node3" href="$ResistiveElement_8h.html" title=" " alt="" coords="161,109,309,136"/>

@@ -1,5 +1,6 @@
 <map id="SettingsMenu::startAnimation" name="SettingsMenu::startAnimation">
-<area shape="rect" id="node1" title=" " alt="" coords="5,46,221,73"/>
-<area shape="rect" id="node2" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qabstractanimation.html#direction-prop" title=" " alt="" coords="269,5,423,47"/>
-<area shape="rect" id="node3" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qabstractanimation.html#start" title=" " alt="" coords="269,71,423,112"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,64,221,91"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qtoolbutton.html#arrowType-prop" title=" " alt="" coords="269,5,467,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qabstractanimation.html#direction-prop" title=" " alt="" coords="291,57,445,98"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qabstractanimation.html#start" title=" " alt="" coords="291,122,445,163"/>
 </map>

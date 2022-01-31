@@ -1,0 +1,6 @@
+<map id="MainWindow::getMode" name="MainWindow::getMode">
+<area shape="rect" id="node1" title=" " alt="" coords="748,13,919,39"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a05e13914f0aa1a95e0ca25b5afad020e" title="Called when either the drag button or the line buttons are pressed." alt="" coords="501,5,700,47"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#a62cd8712fb41a754298f6f60eead2cb0" title="Creates all actions for the toolbar and the menubar." alt="" coords="251,13,453,39"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,13,203,39"/>
+</map>

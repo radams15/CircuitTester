@@ -1,0 +1,4 @@
+<map id="SettingsMenu::setContentLayout" name="SettingsMenu::setContentLayout">
+<area shape="rect" id="node1" title="Sets the layout of contentArea, configures toggleAnimation to show/hide the layout." alt="" coords="261,5,452,47"/>
+<area shape="rect" id="node2" href="$classSettingsMenu.html#a951edfbd3cf728a1e91887fe08df8d7e" title="Initialiser." alt="" coords="5,13,213,39"/>
+</map>

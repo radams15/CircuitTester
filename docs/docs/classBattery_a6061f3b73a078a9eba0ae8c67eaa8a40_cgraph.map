@@ -1,0 +1,4 @@
+<map id="Battery::getState" name="Battery::getState">
+<area shape="rect" id="node1" title="Returns the on/off state of the battery." alt="" coords="5,5,137,32"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qabstractbutton.html#checked-prop" title=" " alt="" coords="185,5,388,32"/>
+</map>

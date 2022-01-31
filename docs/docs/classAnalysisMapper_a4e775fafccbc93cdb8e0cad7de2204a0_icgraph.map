@@ -1,0 +1,12 @@
+<map id="AnalysisMapper::findShortestPath" name="AnalysisMapper::findShortestPath">
+<area shape="rect" id="node1" title="Finds the shortest path between two nodes on a graph using Dijkstra&#39;s algorithm." alt="" coords="1740,31,1980,57"/>
+<area shape="rect" id="node2" href="$classAnalysisMapper.html#adbd1d8db8e7863ba4cfbe34659f0c8b5" title="Makes an adjacency list out of the components of the circuit." alt="" coords="1483,31,1692,57"/>
+<area shape="rect" id="node3" href="$classAnalysisMapper.html#a754d7d938ec9d0b81aab9f084e947312" title="Gets solves the circuit, returning a map of components to values." alt="" coords="1227,5,1435,32"/>
+<area shape="rect" id="node6" href="$classCircuitSaver.html#aab319e8ddda0f4e6ceb944d88359b51b" title="Converts circuit to string." alt="" coords="1227,56,1434,83"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#acebf5a46f730eb3e65092c2398acebd5" title="Called when the run button is clicked from the toolbar." alt="" coords="744,5,948,32"/>
+<area shape="rect" id="node5" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,31,203,57"/>
+<area shape="rect" id="node7" href="$classCircuitSaver.html#ac93a4ae9dca765e7ae89e20e5e5ab718" title="Save circuit to file." alt="" coords="996,56,1179,83"/>
+<area shape="rect" id="node8" href="$classMainWindow.html#a8c5c70395af911e771dbf61da52169ab" title="Called when the save button is clicked from the toolbar." alt="" coords="755,56,937,83"/>
+<area shape="rect" id="node9" href="$classMainWindow.html#a62cd8712fb41a754298f6f60eead2cb0" title="Creates all actions for the toolbar and the menubar." alt="" coords="251,56,453,83"/>
+<area shape="rect" id="node10" href="$classMainWindow.html#a65085d637ffb1a9840a08f82138a595e" title="Called when the export button is clicked from the toolbar." alt="" coords="501,107,696,133"/>
+</map>

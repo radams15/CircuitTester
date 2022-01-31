@@ -1,11 +1,10 @@
-<map id="/home/ubuntu/scripts/CircuitTester/src/main/UI/Scene.h" name="/home/ubuntu/scripts/CircuitTester/src/main/UI/Scene.h">
-<area shape="rect" id="node1" title=" " alt="" coords="369,5,536,61"/>
-<area shape="rect" id="node2" href="$MainWindow_8h.html" title=" " alt="" coords="213,109,380,165"/>
-<area shape="rect" id="node4" href="$MainWindow_8cc.html" title=" " alt="" coords="387,213,553,269"/>
-<area shape="rect" id="node5" href="$Scene_8cc.html" title=" " alt="" coords="5,213,172,269"/>
-<area shape="rect" id="node6" href="$CircuitSaver_8h.html" title=" " alt="" coords="491,109,657,165"/>
-<area shape="rect" id="node9" href="$SceneText_8cc.html" title=" " alt="" coords="681,109,848,165"/>
-<area shape="rect" id="node3" href="$main_8cc.html" title=" " alt="" coords="196,213,363,269"/>
-<area shape="rect" id="node7" href="$CircuitSaver_8cc.html" title=" " alt="" coords="760,213,927,269"/>
-<area shape="rect" id="node8" href="$Test__SaveLoad_8cc.html" title=" " alt="" coords="577,213,736,269"/>
+<map id="/home/rhys/scripts/CircuitTester/src/main/UI/Scene.h" name="/home/rhys/scripts/CircuitTester/src/main/UI/Scene.h">
+<area shape="rect" id="node1" title=" " alt="" coords="387,5,553,61"/>
+<area shape="rect" id="node2" href="$CircuitSaver_8h.html" title=" " alt="" coords="144,109,311,165"/>
+<area shape="rect" id="node4" href="$MainWindow_8cc.html" title=" " alt="" coords="196,213,363,269"/>
+<area shape="rect" id="node5" href="$MainWindow_8h.html" title=" " alt="" coords="387,109,553,165"/>
+<area shape="rect" id="node7" href="$Scene_8cc.html" title=" " alt="" coords="577,213,744,269"/>
+<area shape="rect" id="node8" href="$SceneText_8cc.html" title=" " alt="" coords="629,109,796,165"/>
+<area shape="rect" id="node3" href="$CircuitSaver_8cc.html" title=" " alt="" coords="5,213,172,269"/>
+<area shape="rect" id="node6" href="$main_8cc.html" title=" " alt="" coords="387,213,553,269"/>
 </map>

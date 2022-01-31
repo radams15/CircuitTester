@@ -1,4 +1,12 @@
 <map id="SettingsMenu::setInteriorLayout" name="SettingsMenu::setInteriorLayout">
-<area shape="rect" id="node1" title="Sets the layout of the widget, used to set different settings panels for each component." alt="" coords="5,5,192,47"/>
-<area shape="rect" id="node2" href="$classSettingsMenu.html#a41fab1c9ebcbb07d3945f38b9bf111ea" title="Deletes the widgets inside innerLayout." alt="" coords="240,13,391,39"/>
+<area shape="rect" id="node1" title="Sets the layout of the widget, used to set different settings panels for each component." alt="" coords="5,125,192,166"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#addWidget" title=" " alt="" coords="240,56,419,83"/>
+<area shape="rect" id="node3" href="$classSettingsMenu.html#a41fab1c9ebcbb07d3945f38b9bf111ea" title="Deletes the widgets inside innerLayout." alt="" coords="254,107,405,133"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#layout" title=" " alt="" coords="266,157,393,184"/>
+<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#QWidget" title=" " alt="" coords="258,208,401,235"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#count" title=" " alt="" coords="476,5,621,32"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#itemAt" title=" " alt="" coords="472,56,625,83"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qlayout.html#removeItem" title=" " alt="" coords="467,107,631,133"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#setHidden" title=" " alt="" coords="473,157,625,184"/>
+<area shape="rect" id="node8" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qlayoutitem.html#widget" title=" " alt="" coords="469,208,628,235"/>
 </map>

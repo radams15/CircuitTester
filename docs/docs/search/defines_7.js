@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['unix_22680',['UNIX',['../FileUtils_8h.html#a2dafe4a81445873e5c3cb0dff7741429',1,'FileUtils.h']]],
-  ['use_5fcurve_22681',['USE_CURVE',['../Line_8cc.html#abdec37350809e3e25fe21ad168fdfa69',1,'Line.cc']]]
+  ['window_5fsize_28597',['WINDOW_SIZE',['../MainWindow_8h.html#ab3f68d59e815ea166f8c983bc6e85c5b',1,'MainWindow.h']]],
+  ['windows_28598',['WINDOWS',['../FileUtils_8h.html#a987b73d7cc6da72732af75c5d7872d29',1,'FileUtils.h']]]
 ];

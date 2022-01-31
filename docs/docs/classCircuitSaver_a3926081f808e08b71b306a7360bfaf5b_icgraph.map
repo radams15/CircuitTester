@@ -1,0 +1,6 @@
+<map id="CircuitSaver::importCircuit" name="CircuitSaver::importCircuit">
+<area shape="rect" id="node1" title="Import circuit to library." alt="" coords="744,5,939,32"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a806058f8a0d092286f4b26f08d4c543c" title="Called when the import button is clicked from the toolbar." alt="" coords="501,5,696,32"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#a62cd8712fb41a754298f6f60eead2cb0" title="Creates all actions for the toolbar and the menubar." alt="" coords="251,5,453,32"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,5,203,32"/>
+</map>

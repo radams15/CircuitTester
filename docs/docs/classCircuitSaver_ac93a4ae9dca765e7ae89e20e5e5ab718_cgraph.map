@@ -1,18 +1,24 @@
 <map id="CircuitSaver::saveCircuit" name="CircuitSaver::saveCircuit">
-<area shape="rect" id="node1" title="Save circuit to file." alt="" coords="5,157,188,184"/>
-<area shape="rect" id="node2" href="$classCircuitSaver.html#abf3ccbef453b0c8861074f63a70bf2fe" title="Gets the save path from the circuit name." alt="" coords="260,120,419,147"/>
-<area shape="rect" id="node5" href="$classCircuitSaver.html#aab319e8ddda0f4e6ceb944d88359b51b" title="Converts circuit to string." alt="" coords="236,183,443,209"/>
-<area shape="rect" id="node3" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="540,31,695,57"/>
-<area shape="rect" id="node4" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="827,5,999,32"/>
-<area shape="rect" id="node6" href="$classAnalysisMapper.html#adbd1d8db8e7863ba4cfbe34659f0c8b5" title="Makes an adjacency list out of the components of the circuit." alt="" coords="513,107,722,133"/>
-<area shape="rect" id="node8" href="$classCircuitSaver.html#ab1ecbfbe42c275809303e3e7c6822b77" title="Converts the scene to a base64 encoded image." alt="" coords="516,208,719,235"/>
-<area shape="rect" id="node15" href="$classCircuitSaver.html#a7793face49101a08b0008875c4e79e3b" title="Convert a UIComponent into JSON data." alt="" coords="491,335,744,361"/>
-<area shape="rect" id="node7" href="$classAnalysisMapper.html#a4e775fafccbc93cdb8e0cad7de2204a0" title="Finds the shortest path between two nodes on a graph using Dijkstra&#39;s algorithm." alt="" coords="792,56,1035,83"/>
-<area shape="rect" id="node9" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#begin" title=" " alt="" coords="852,107,975,133"/>
-<area shape="rect" id="node10" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#end" title=" " alt="" coords="858,157,969,184"/>
-<area shape="rect" id="node11" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbuffer.html#open" title=" " alt="" coords="857,208,969,235"/>
-<area shape="rect" id="node12" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#setRenderHint" title=" " alt="" coords="824,259,1003,285"/>
-<area shape="rect" id="node13" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbytearray.html#toBase64-1" title=" " alt="" coords="831,309,996,336"/>
-<area shape="rect" id="node14" href="/home/ubuntu/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbytearray.html#toStdString" title=" " alt="" coords="825,360,1001,387"/>
-<area shape="rect" id="node16" href="$classUIComponent.html#aecae5af70cb4662d433eb6f5c4b32924" title="Getter for ID." alt="" coords="837,411,989,437"/>
+<area shape="rect" id="node1" title="Save circuit to file." alt="" coords="5,259,188,285"/>
+<area shape="rect" id="node2" href="$classCircuitSaver.html#abf3ccbef453b0c8861074f63a70bf2fe" title="Gets the save path from the circuit name." alt="" coords="260,221,419,248"/>
+<area shape="rect" id="node5" href="$classCircuitSaver.html#aab319e8ddda0f4e6ceb944d88359b51b" title="Converts circuit to string." alt="" coords="236,284,443,311"/>
+<area shape="rect" id="node3" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="540,56,695,83"/>
+<area shape="rect" id="node4" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="837,5,1010,32"/>
+<area shape="rect" id="node6" href="$classAnalysisMapper.html#adbd1d8db8e7863ba4cfbe34659f0c8b5" title="Makes an adjacency list out of the components of the circuit." alt="" coords="513,157,722,184"/>
+<area shape="rect" id="node8" href="$classCircuitSaver.html#ab1ecbfbe42c275809303e3e7c6822b77" title="Converts the scene to a base64 encoded image." alt="" coords="516,309,719,336"/>
+<area shape="rect" id="node19" href="$classCircuitSaver.html#a7793face49101a08b0008875c4e79e3b" title="Convert a UIComponent into JSON data." alt="" coords="491,639,744,665"/>
+<area shape="rect" id="node7" href="$classAnalysisMapper.html#a4e775fafccbc93cdb8e0cad7de2204a0" title="Finds the shortest path between two nodes on a graph using Dijkstra&#39;s algorithm." alt="" coords="803,56,1043,83"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#begin" title=" " alt="" coords="863,107,984,133"/>
+<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#end" title=" " alt="" coords="869,157,978,184"/>
+<area shape="rect" id="node11" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#itemsBoundingRect" title=" " alt="" coords="792,208,1055,235"/>
+<area shape="rect" id="node12" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbuffer.html#open" title=" " alt="" coords="868,259,979,285"/>
+<area shape="rect" id="node13" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#render" title=" " alt="" coords="834,309,1013,336"/>
+<area shape="rect" id="node14" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainter.html#setRenderHint" title=" " alt="" coords="834,360,1013,387"/>
+<area shape="rect" id="node15" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qrectf.html#size" title=" " alt="" coords="872,411,975,437"/>
+<area shape="rect" id="node16" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbytearray.html#toBase64-1" title=" " alt="" coords="841,461,1006,488"/>
+<area shape="rect" id="node17" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qsizef.html#toSize" title=" " alt="" coords="866,512,981,539"/>
+<area shape="rect" id="node18" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qbytearray.html#toStdString" title=" " alt="" coords="835,563,1011,589"/>
+<area shape="rect" id="node20" href="$classUIComponent.html#aecae5af70cb4662d433eb6f5c4b32924" title="Getter for ID." alt="" coords="847,613,999,640"/>
+<area shape="rect" id="node21" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#pos" title=" " alt="" coords="848,664,999,691"/>
+<area shape="rect" id="node22" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qpointf.html#y" title=" " alt="" coords="879,715,967,741"/>
 </map>
