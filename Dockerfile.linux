@@ -6,5 +6,5 @@ RUN apt-get update
 
 RUN apt-get install -y qtbase5-dev gcc g++ cmake make
 
-RUN echo '#!/bin/bash\ncd /CircuitTester/\nmkdir -p linbuild5\ncd linbuild5\ncmake -DUSE_CSD=ON -DCMAKE_BUILD_TYPE=release ..\nmake -j4\nmv src/main/CircuitTester src/main/CircuitTesterCSD\ncmake -DUSE_CSD=OFF -DCMAKE_BUILD_TYPE=release ..\nmake -j4' > /bin/build && chmod +x /bin/build
+RUN echo '#!/bin/bash\ncd /CircuitTester/\nmkdir -p linbuild5\ncd linbuild5\ncmake -DCMAKE_BUILD_TYPE=release ..\nmake -j4' > /bin/build && chmod +x /bin/build
 RUN echo '#!/bin/bash\ncd /CircuitTester/linbuild5/src/test/\n./test' > /bin/runtest && chmod +x /bin/runtest
