@@ -26,8 +26,26 @@ AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
     }
 }
 
+#import <iostream>
+
+void printGraph(Graph graph){
+    for(auto it : graph){
+        auto start = it.first;
+        auto connected = it.second;
+
+        std::cout << "ID: " << start->getId() << std::endl;
+        for(auto c : connected){
+            std::cout << "\tID: " << c->getId() << std::endl;
+        }
+    }
+
+    std::cout << "\n\n\n\n";
+}
+
 std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
     Graph graph = makeGraph();
+
+    printGraph(graph);
 
     std::vector<Component> mNAComponents;
 
