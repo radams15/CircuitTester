@@ -1,0 +1,6 @@
+<map id="AnalysisMapper::makeGraph" name="AnalysisMapper::makeGraph">
+<area shape="rect" id="node1" title="Makes an adjacency list out of the components of the circuit." alt="" coords="5,56,215,83"/>
+<area shape="rect" id="node2" href="$classLine.html#adaae751db39722df0f3937222999c5b8" title="Simply returns the end item." alt="" coords="327,5,438,32"/>
+<area shape="rect" id="node3" href="$classAnalysisMapper.html#a4e775fafccbc93cdb8e0cad7de2204a0" title="Finds the shortest path between two nodes on a graph using Dijkstra&#39;s algorithm." alt="" coords="263,56,503,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qmap.html#keys" title=" " alt="" coords="333,107,432,133"/>
+</map>

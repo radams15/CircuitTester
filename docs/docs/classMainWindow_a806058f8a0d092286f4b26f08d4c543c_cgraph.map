@@ -1,0 +1,11 @@
+<map id="MainWindow::importScene" name="MainWindow::importScene">
+<area shape="rect" id="node1" title="Called when the import button is clicked from the toolbar." alt="" coords="5,81,200,108"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qfiledialog.html#getOpenFileName" title=" " alt="" coords="248,5,471,32"/>
+<area shape="rect" id="node3" href="$classCircuitSaver.html#a3926081f808e08b71b306a7360bfaf5b" title="Import circuit to library." alt="" coords="262,56,457,83"/>
+<area shape="rect" id="node8" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#toStdString" title=" " alt="" coords="284,107,435,133"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html#tr" title=" " alt="" coords="313,157,405,184"/>
+<area shape="rect" id="node4" href="$classFileUtils.html#a512c8bbf8c598bf8bf4aaa0ce5646f57" title="Copies src to dst." alt="" coords="529,31,667,57"/>
+<area shape="rect" id="node5" href="$classCircuitSaver.html#abf3ccbef453b0c8861074f63a70bf2fe" title="Gets the save path from the circuit name." alt="" coords="519,81,677,108"/>
+<area shape="rect" id="node6" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="725,81,880,108"/>
+<area shape="rect" id="node7" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="928,81,1101,108"/>
+</map>

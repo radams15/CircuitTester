@@ -1,0 +1,6 @@
+<map id="Component::equals" name="Component::equals">
+<area shape="rect" id="node1" title="Equality to another node." alt="" coords="520,31,668,57"/>
+<area shape="rect" id="node2" href="$classSolution.html#a37fa342ed9b2e3dc55c45aef31f89c23" title="Determines if component is in this solution." alt="" coords="259,5,472,32"/>
+<area shape="rect" id="node4" href="$classUnknownCurrent.html#a96268df7a2f98570ee2b155458845c4c" title="Whether this Unknown equals another." alt="" coords="274,56,457,83"/>
+<area shape="rect" id="node3" href="$classSolution.html#aa0f955f8c0975309c85f3aa2d2c8c98f" title="Whether this solution has all the same components as the other solution." alt="" coords="5,5,211,32"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="SettingsMenu::clear" name="SettingsMenu::clear">
+<area shape="rect" id="node1" title="Deletes the widgets inside innerLayout." alt="" coords="5,107,156,133"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#count" title=" " alt="" coords="213,5,359,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#itemAt" title=" " alt="" coords="209,56,363,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qlayout.html#removeItem" title=" " alt="" coords="204,107,368,133"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#setHidden" title=" " alt="" coords="210,157,362,184"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qlayoutitem.html#widget" title=" " alt="" coords="207,208,365,235"/>
+</map>

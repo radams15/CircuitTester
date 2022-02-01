@@ -1,0 +1,5 @@
+<map id="Scene::removeAllText" name="Scene::removeAllText">
+<area shape="rect" id="node1" title="Removes all text boxes from the scene." alt="" coords="5,31,168,57"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#items" title=" " alt="" coords="237,5,411,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#removeItem" title=" " alt="" coords="216,56,432,83"/>
+</map>

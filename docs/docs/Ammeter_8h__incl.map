@@ -1,0 +1,13 @@
+<map id="/home/rhys/scripts/CircuitTester/src/main/UI/Components/Ammeter.h" name="/home/rhys/scripts/CircuitTester/src/main/UI/Components/Ammeter.h">
+<area shape="rect" id="node1" title=" " alt="" coords="39,5,242,61"/>
+<area shape="rect" id="node2" href="$ResistiveElement_8h.html" title=" " alt="" coords="67,109,215,136"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,259,65,285"/>
+<area shape="rect" id="node4" href="$UIComponent_8h.html" title=" " alt="" coords="153,184,288,211"/>
+<area shape="rect" id="node5" title=" " alt="" coords="90,259,149,285"/>
+<area shape="rect" id="node6" title=" " alt="" coords="173,259,324,285"/>
+<area shape="rect" id="node7" title=" " alt="" coords="349,259,407,285"/>
+<area shape="rect" id="node8" href="$SceneItem_8h.html" title=" " alt="" coords="432,259,535,285"/>
+<area shape="rect" id="node9" title=" " alt="" coords="219,333,428,360"/>
+<area shape="rect" id="node10" title=" " alt="" coords="452,333,515,360"/>
+<area shape="rect" id="node11" title=" " alt="" coords="539,333,639,360"/>
+</map>

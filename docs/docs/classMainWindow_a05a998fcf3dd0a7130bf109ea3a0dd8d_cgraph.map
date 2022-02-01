@@ -1,0 +1,6 @@
+<map id="MainWindow::moveActionClicked" name="MainWindow::moveActionClicked">
+<area shape="rect" id="node1" title="Called when either the drag button or the line buttons are pressed." alt="" coords="5,56,244,83"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a227d4d7c98596d6b493901ab7e9077ea" title=" " alt="" coords="292,5,463,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qaction.html#checked-prop" title=" " alt="" coords="511,31,657,57"/>
+<area shape="rect" id="node4" href="$classScene.html#a0099b4da0b4ef962025d50dc0890f3b2" title="Setter for mode." alt="" coords="315,107,440,133"/>
+</map>

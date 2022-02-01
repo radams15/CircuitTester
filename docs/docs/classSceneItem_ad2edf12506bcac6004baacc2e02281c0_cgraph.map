@@ -1,0 +1,4 @@
+<map id="SceneItem::enteringLines" name="SceneItem::enteringLines">
+<area shape="rect" id="node1" title="Returns all the items entering this item." alt="" coords="5,5,192,32"/>
+<area shape="rect" id="node2" href="$classLine.html#adaae751db39722df0f3937222999c5b8" title="Simply returns the end item." alt="" coords="240,5,351,32"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="json::jobject::proxy::set_array" name="json::jobject::proxy::set_array">
+<area shape="rect" id="node1" title="Stores an array of values." alt="" coords="396,39,543,80"/>
+<area shape="rect" id="node2" href="$classjson_1_1jobject_1_1proxy.html#a655978d7d510be8e41bd4b4597f78916" title="Assigns an array of strings." alt="" coords="201,5,347,47"/>
+<area shape="rect" id="node3" href="$classjson_1_1jobject_1_1proxy.html#a91fe0c7470725630391ab126db04539c" title="Stores an array of numbers." alt="" coords="200,71,348,112"/>
+<area shape="rect" id="node4" href="$classjson_1_1jobject_1_1proxy.html#a39ac475c82d61ddb251553660c39933e" title="Assigns an array of integers." alt="" coords="5,71,152,112"/>
+</map>

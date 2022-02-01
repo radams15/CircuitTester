@@ -1,0 +1,5 @@
+<map id="SceneText::SceneText" name="SceneText::SceneText">
+<area shape="rect" id="node1" title="Initialiser." alt="" coords="5,35,168,61"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#fromStdString" title=" " alt="" coords="216,5,384,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicstextitem.html#setPlainText" title=" " alt="" coords="223,57,377,98"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="/home/rhys/scripts/CircuitTester/src/main/UI/Components/Resistor.cc" name="/home/rhys/scripts/CircuitTester/src/main/UI/Components/Resistor.cc">
+<area shape="rect" id="node1" title=" " alt="" coords="22,5,222,61"/>
+<area shape="rect" id="node2" title=" " alt="" coords="8,109,116,136"/>
+<area shape="rect" id="node3" href="$Resistor_8h.html" title=" " alt="" coords="140,109,227,136"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,184,177,211"/>
+<area shape="rect" id="node5" href="$ResistiveElement_8h.html" title=" " alt="" coords="201,184,349,211"/>
+<area shape="rect" id="node6" title=" " alt="" coords="127,333,187,360"/>
+<area shape="rect" id="node7" href="$UIComponent_8h.html" title=" " alt="" coords="275,259,409,285"/>
+<area shape="rect" id="node8" title=" " alt="" coords="211,333,270,360"/>
+<area shape="rect" id="node9" title=" " alt="" coords="295,333,445,360"/>
+<area shape="rect" id="node10" title=" " alt="" coords="470,333,529,360"/>
+<area shape="rect" id="node11" href="$SceneItem_8h.html" title=" " alt="" coords="553,333,656,360"/>
+<area shape="rect" id="node12" title=" " alt="" coords="340,408,549,435"/>
+<area shape="rect" id="node13" title=" " alt="" coords="573,408,636,435"/>
+<area shape="rect" id="node14" title=" " alt="" coords="660,408,760,435"/>
+</map>

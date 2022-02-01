@@ -1,0 +1,16 @@
+<map id="Line::endItem" name="Line::endItem">
+<area shape="rect" id="node1" title="Simply returns the end item." alt="" coords="1729,130,1840,157"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a24bbb70be6f6e1007b0d6cbf7cd5f64d" title="Called when the delete button is pressed. Deletes all items that are selected." alt="" coords="753,29,937,55"/>
+<area shape="rect" id="node5" href="$classSceneItem.html#ad2edf12506bcac6004baacc2e02281c0" title="Returns all the items entering this item." alt="" coords="1483,79,1670,106"/>
+<area shape="rect" id="node6" href="$classLine.html#a350b88c1972c679986fb2ab3e266a0af" title="Initialiser." alt="" coords="1535,130,1619,157"/>
+<area shape="rect" id="node7" href="$classAnalysisMapper.html#adbd1d8db8e7863ba4cfbe34659f0c8b5" title="Makes an adjacency list out of the components of the circuit." alt="" coords="1472,181,1681,207"/>
+<area shape="rect" id="node14" href="$classSceneItem.html#adfd7b2e8ae4afd523533e6b81a16a528" title="Removes all allows from the item." alt="" coords="1485,231,1668,258"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#a62cd8712fb41a754298f6f60eead2cb0" title="Creates all actions for the toolbar and the menubar." alt="" coords="251,93,453,119"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,130,203,157"/>
+<area shape="rect" id="node8" href="$classAnalysisMapper.html#a754d7d938ec9d0b81aab9f084e947312" title="Gets solves the circuit, returning a map of components to values." alt="" coords="1216,181,1424,207"/>
+<area shape="rect" id="node10" href="$classCircuitSaver.html#aab319e8ddda0f4e6ceb944d88359b51b" title="Converts circuit to string." alt="" coords="1217,130,1423,157"/>
+<area shape="rect" id="node9" href="$classMainWindow.html#acebf5a46f730eb3e65092c2398acebd5" title="Called when the run button is clicked from the toolbar." alt="" coords="501,181,705,207"/>
+<area shape="rect" id="node11" href="$classCircuitSaver.html#ac93a4ae9dca765e7ae89e20e5e5ab718" title="Save circuit to file." alt="" coords="985,130,1168,157"/>
+<area shape="rect" id="node12" href="$classMainWindow.html#a8c5c70395af911e771dbf61da52169ab" title="Called when the save button is clicked from the toolbar." alt="" coords="754,130,937,157"/>
+<area shape="rect" id="node13" href="$classMainWindow.html#a65085d637ffb1a9840a08f82138a595e" title="Called when the export button is clicked from the toolbar." alt="" coords="506,130,701,157"/>
+</map>

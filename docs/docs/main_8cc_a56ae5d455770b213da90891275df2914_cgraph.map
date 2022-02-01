@@ -1,0 +1,5 @@
+<map id="guiMain" name="guiMain">
+<area shape="rect" id="node1" title="Main GUI method. This method runs the QT GUI code and returns the status code of it." alt="" coords="5,31,80,57"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qapplication.html#exec" title=" " alt="" coords="128,5,271,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#show" title=" " alt="" coords="139,56,259,83"/>
+</map>

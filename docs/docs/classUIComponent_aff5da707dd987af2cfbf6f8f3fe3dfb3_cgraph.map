@@ -1,0 +1,13 @@
+<map id="UIComponent::setState" name="UIComponent::setState">
+<area shape="rect" id="node1" title="Sets whether or not the component is deemed on or off." alt="" coords="5,208,179,235"/>
+<area shape="rect" id="node2" href="$classSceneItem.html#a3fad92c182e5cc5333af0b492b52b610" title=" " alt="" coords="227,208,388,235"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html#fromImage" title=" " alt="" coords="439,5,601,32"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qimage.html#height" title=" " alt="" coords="459,56,581,83"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qimage.html#pixel-1" title=" " alt="" coords="464,107,576,133"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qcolor.html#rgb" title=" " alt="" coords="473,157,567,184"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qcolor.html#setAlpha" title=" " alt="" coords="455,208,585,235"/>
+<area shape="rect" id="node8" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qimage.html#setPixel-1" title=" " alt="" coords="454,259,586,285"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspixmapitem.html#setPixmap" title=" " alt="" coords="436,310,604,351"/>
+<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html#toImage" title=" " alt="" coords="449,376,591,403"/>
+<area shape="rect" id="node11" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qimage.html#width" title=" " alt="" coords="461,427,579,453"/>
+</map>

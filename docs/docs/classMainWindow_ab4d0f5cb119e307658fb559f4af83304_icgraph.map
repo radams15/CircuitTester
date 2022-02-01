@@ -1,0 +1,4 @@
+<map id="MainWindow::itemInserted" name="MainWindow::itemInserted">
+<area shape="rect" id="node1" title="Called when any item is inserted onto the Scene. This unchecks the tool button of that item." alt="" coords="251,5,447,32"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,5,203,32"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="SceneItem::removeLine" name="SceneItem::removeLine">
+<area shape="rect" id="node1" title="Removes a specified line from lines." alt="" coords="733,31,909,57"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a24bbb70be6f6e1007b0d6cbf7cd5f64d" title="Called when the delete button is pressed. Deletes all items that are selected." alt="" coords="501,5,685,32"/>
+<area shape="rect" id="node5" href="$classSceneItem.html#adfd7b2e8ae4afd523533e6b81a16a528" title="Removes all allows from the item." alt="" coords="502,56,685,83"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#a62cd8712fb41a754298f6f60eead2cb0" title="Creates all actions for the toolbar and the menubar." alt="" coords="251,5,453,32"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,5,203,32"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="Scene::setMode" name="Scene::setMode">
+<area shape="rect" id="node1" title="Setter for mode." alt="" coords="793,81,919,108"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a5ac1ad5e3c553e50a1ac39b8ecaee2e6" title="Called when any component button is clicked." alt="" coords="504,5,745,32"/>
+<area shape="rect" id="node5" href="$classMainWindow.html#ab4d0f5cb119e307658fb559f4af83304" title="Called when any item is inserted onto the Scene. This unchecks the tool button of that item." alt="" coords="255,56,451,83"/>
+<area shape="rect" id="node6" href="$classMainWindow.html#adcbfa9ac844ebe3630b35489976b937f" title=" " alt="" coords="512,107,737,133"/>
+<area shape="rect" id="node8" href="$classMainWindow.html#a05a998fcf3dd0a7130bf109ea3a0dd8d" title="Called when either the drag button or the line buttons are pressed." alt="" coords="505,157,744,184"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#afab2197ed7c6296238dd1f898b1f0fc4" title="Creates the toolbox of components." alt="" coords="251,5,456,32"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,56,203,83"/>
+<area shape="rect" id="node7" href="$classMainWindow.html#a62cd8712fb41a754298f6f60eead2cb0" title="Creates all actions for the toolbar and the menubar." alt="" coords="252,107,455,133"/>
+</map>

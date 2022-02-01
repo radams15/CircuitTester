@@ -1,0 +1,4 @@
+<map id="SceneItem::leavingLines" name="SceneItem::leavingLines">
+<area shape="rect" id="node1" title="Returns all lines leaving this item." alt="" coords="5,5,187,32"/>
+<area shape="rect" id="node2" href="$classLine.html#a4d12500b762bd898ad93bbb40cdf6560" title="Simply returns the start item." alt="" coords="235,5,352,32"/>
+</map>

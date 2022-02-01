@@ -1,0 +1,7 @@
+<map id="FileUtils::createSaveDir" name="FileUtils::createSaveDir">
+<area shape="rect" id="node1" title="Creates the save directory." alt="" coords="5,31,180,57"/>
+<area shape="rect" id="node2" href="$classFileUtils.html#ab4acb3154fa84242087bd1eeec9e8e5d" title="Recursively creates directory trees." alt="" coords="228,5,399,32"/>
+<area shape="rect" id="node4" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="236,56,391,83"/>
+<area shape="rect" id="node3" href="$classFileUtils.html#a8cbeb6a583722894f964b3eb425d320c" title="Does a specific path exist?" alt="" coords="458,5,609,32"/>
+<area shape="rect" id="node5" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="447,56,620,83"/>
+</map>

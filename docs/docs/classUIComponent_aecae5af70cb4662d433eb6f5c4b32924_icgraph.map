@@ -1,0 +1,13 @@
+<map id="UIComponent::getId" name="UIComponent::getId">
+<area shape="rect" id="node1" title="Getter for ID." alt="" coords="1796,56,1948,83"/>
+<area shape="rect" id="node2" href="$classAnalysisMapper.html#a754d7d938ec9d0b81aab9f084e947312" title="Gets solves the circuit, returning a map of components to values." alt="" coords="1517,5,1725,32"/>
+<area shape="rect" id="node5" href="$classMainWindow.html#ab4d0f5cb119e307658fb559f4af83304" title="Called when any item is inserted onto the Scene. This unchecks the tool button of that item." alt="" coords="996,56,1192,83"/>
+<area shape="rect" id="node6" href="$classCircuitSaver.html#a4a1733401e90ae45cc69245acf8c8710" title="Convert a UIComponent into JSON data." alt="" coords="1495,107,1748,133"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#acebf5a46f730eb3e65092c2398acebd5" title="Called when the run button is clicked from the toolbar." alt="" coords="744,5,948,32"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,56,203,83"/>
+<area shape="rect" id="node7" href="$classCircuitSaver.html#aab319e8ddda0f4e6ceb944d88359b51b" title="Converts circuit to string." alt="" coords="1240,107,1447,133"/>
+<area shape="rect" id="node8" href="$classCircuitSaver.html#ac93a4ae9dca765e7ae89e20e5e5ab718" title="Save circuit to file." alt="" coords="1003,107,1185,133"/>
+<area shape="rect" id="node9" href="$classMainWindow.html#a8c5c70395af911e771dbf61da52169ab" title="Called when the save button is clicked from the toolbar." alt="" coords="755,107,937,133"/>
+<area shape="rect" id="node10" href="$classMainWindow.html#a62cd8712fb41a754298f6f60eead2cb0" title="Creates all actions for the toolbar and the menubar." alt="" coords="251,107,453,133"/>
+<area shape="rect" id="node11" href="$classMainWindow.html#a65085d637ffb1a9840a08f82138a595e" title="Called when the export button is clicked from the toolbar." alt="" coords="501,157,696,184"/>
+</map>
