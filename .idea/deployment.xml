@@ -2,11 +2,14 @@
 <project version="4">
   <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="G5 (d5999ac4-178b-406d-9366-937341a300af)">
+      <paths name="worker (54da725f-3d81-4094-8848-3efd24e427ff)">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/CircuitTester" local="$PROJECT_DIR$" />
+            <mapping deploy="/tmp/tmp.m9gtY2Z1mP" local="$PROJECT_DIR$" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-worker" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>

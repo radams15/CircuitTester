@@ -19,10 +19,12 @@
 
 #include "../Saves/FileUtils.h"
 #include "ExpandingSpacer.h"
+#include "HamburgerMenu.h"
 
 #include <QtWidgets>
 #include <QInputDialog>
 #include <iostream>
+#include <iomanip>
 #include <sstream>
 
 /**
@@ -34,7 +36,6 @@
 MainWindow::MainWindow() {
     createActions();
     createToolBox();
-    createToolbar();
     createMenubar();
 
     // Set window icon to the connector image.
@@ -50,6 +51,8 @@ MainWindow::MainWindow() {
     // Call itemInserted when an item is inserted into the scene.
     connect(scene, &Scene::itemInserted,
             this, &MainWindow::itemInserted);
+
+    createToolbar();
 
     // Create the main layout, add the graphics view.
     auto* layout = new QHBoxLayout;
@@ -71,9 +74,6 @@ MainWindow::MainWindow() {
 
     // Makes the toolbar on mac look the same colour as the titlebar - just aesthetic.
     setUnifiedTitleAndToolBarOnMac(true);
-
-    // Add statusbar to show tooltips and a resizer grip.
-    statusBar();
 
     auto* timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(runSimulation()));
@@ -329,68 +329,68 @@ void MainWindow::createActions() {
 void MainWindow::createMenubar() {
     // Add the different actions to the menubar.
 
-    QMenu* menu;
+    mainMenuBar = menuBar();
 
-#if defined(USE_CSD) || defined(HAMBURGER_NOCSD)
-
-#ifdef USE_CSD
-    menu = titleBar->menu;
-#else
-    menu = hamburgerMenu->menu;
-#endif
-
-    menu->addAction(saveAction);
-    menu->addAction(openAction);
-    menu->addAction(importAction);
-    menu->addAction(exportAction);
-    menu->addAction(deleteAction);
-
-    menu->addAction(tutorialAction);
-
-    menu->addAction(saveDirAction);
-    menu->addAction(aboutAction);
-
-    menu->addAction(exitAction);
-#else
-    menu = (QMenu*) menuBar();
-
-    fileMenu = menu->addMenu("&File");
+    // Create file menu, add save, open, import, export, exit.
+    fileMenu = mainMenuBar->addMenu("&File");
     fileMenu->addAction(saveAction);
     fileMenu->addAction(openAction);
     fileMenu->addAction(importAction);
     fileMenu->addAction(exportAction);
     fileMenu->addAction(exitAction);
 
-    itemMenu = menu->addMenu("&Item");
+    itemMenu = mainMenuBar->addMenu("&Item");
     itemMenu->addAction(deleteAction);
     itemMenu->addSeparator();
 
-    aboutMenu = menu->addMenu("&Help");
-    aboutMenu->addAction(saveDirAction);
+    aboutMenu = mainMenuBar->addMenu("&Help");
     aboutMenu->addAction(aboutAction);
     aboutMenu->addAction(tutorialAction);
+    aboutMenu->addAction(saveDirAction);
+
+    // If we enabled the hamburger menu at compile-time, add it.
+#if HAMBURGER_MENU
+    // Hide the traditional menubar. Not deleted as this is still exported to global menus.
+    mainMenuBar->setHidden(true);
+
+    // Create hamburger menu
+    mainMenu = new HamburgerMenu();
+
+    // Add actions to menu in order.
+    mainMenu->menu->addAction(saveAction);
+    mainMenu->menu->addAction(openAction);
+    mainMenu->menu->addAction(importAction);
+    mainMenu->menu->addAction(exportAction);
+    mainMenu->menu->addAction(deleteAction);
+
+    mainMenu->menu->addAction(tutorialAction);
+
+    mainMenu->menu->addAction(saveDirAction);
+    mainMenu->menu->addAction(aboutAction);
+
+    mainMenu->menu->addAction(exitAction);
 #endif
 }
 
 
 void MainWindow::createToolbar() {
-    mainToolbar = addToolBar("Main Toolbar");
+    pointerToolbar = addToolBar("Main Toolbar");
 
-    mainToolbar->setMovable(false);
+    pointerToolbar->setMovable(false);
 
-    mainToolbar->addAction(moveAction);
-    mainToolbar->addAction(lineAction);
-    mainToolbar->addWidget(new ExpandingSpacer());
-    mainToolbar->addAction(runningAction);
-    mainToolbar->addWidget(new ExpandingSpacer());
-#ifdef HAMBURGER_NOCSD
-    hamburgerMenu = new HamburgerMenu();
-    mainToolbar->addWidget(hamburgerMenu);
+    pointerToolbar->addAction(moveAction);
+    pointerToolbar->addAction(lineAction);
+    pointerToolbar->addWidget(new ExpandingSpacer());
+    pointerToolbar->addAction(runningAction);
+    pointerToolbar->addWidget(new ExpandingSpacer());
+
+#if HAMBURGER_MENU
+    pointerToolbar->addWidget((QToolButton*) mainMenu);
 #endif
 
-    SHOW_ICON(mainToolbar, moveAction);
-    SHOW_ICON(mainToolbar, lineAction);
-    SHOW_ICON(mainToolbar, runningAction);
+    SHOW_ICON(pointerToolbar, moveAction);
+    SHOW_ICON(pointerToolbar, lineAction);
+    SHOW_ICON(pointerToolbar, runningAction);
 }
 
 
@@ -404,6 +404,8 @@ QWidget *MainWindow::createCellWidget(std::string text) {
     auto* button = new QToolButton;
     button->setIcon(icon);
     button->setIconSize(QSize(50, 50));
+    button->setMinimumSize(60, 60);
+    button->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     button->setCheckable(true);
     // Add the button to the buttongroup.
     buttonGroup->addButton(button, item.getId());
@@ -411,7 +413,7 @@ QWidget *MainWindow::createCellWidget(std::string text) {
     // Create a grid with the icon and a label of the icon name.
     auto *layout = new QGridLayout;
     layout->addWidget(button, 0, 0, Qt::AlignHCenter);
-    layout->addWidget(new QLabel(tr(text.c_str())), 1, 0, Qt::AlignCenter);
+    layout->addWidget(new QLabel(QString::fromStdString(text)), 1, 0, Qt::AlignCenter);
 
     // Create a widget for the layout.
     auto* widget = new QWidget;

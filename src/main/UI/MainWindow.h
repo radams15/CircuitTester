@@ -21,27 +21,17 @@
 #include "SceneItem.h"
 #include "Scene.h"
 #include "SettingsMenu.h"
-#include "CSDWindow.h"
 #include "HamburgerMenu.h"
 
 #define CANVAS_SIZE 1000, 1000
 #define WINDOW_SIZE 1200, 700
 
-#if !defined(USE_CSD) && !defined(Q_OS_MACOS)
-#define HAMBURGER_NOCSD
-#endif
+#define HAMBURGER_MENU true
 
 /** @brief The main window class that is the GUI for the user on startup.
  *
  */
-class MainWindow
-
-#ifdef USE_CSD
-        : public CSDWindow {
-#else
-        : public QMainWindow {
-#endif
-
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
@@ -169,6 +159,14 @@ private:
      */
     QGraphicsView* view;
 
+#if HAMBURGER_MENU
+    HamburgerMenu* mainMenu;
+#else
+    QWidget* mainMenu;
+#endif
+
+    QMenuBar* mainMenuBar;
+
     /** @brief The collapsable settings menu for components.
      *
      */
@@ -205,8 +203,8 @@ private:
     QAction* openAction;
 
     /** @brief An action that exports the scene.
-     *
-     */
+ *
+ */
     QAction* exportAction;
 
     /** @brief An action that imports a save file.
@@ -234,10 +232,6 @@ private:
      */
     QAction* runningAction;
 
-#ifdef HAMBURGER_NOCSD
-    HamburgerMenu* hamburgerMenu;
-#endif
-
     /** @brief The file menu on the menubar.
      *
      */
@@ -256,7 +250,7 @@ private:
     /** @brief The toolbar that allows you to select either movement or line mode.
      *
      */
-    QToolBar* mainToolbar;
+    QToolBar* pointerToolbar;
 
     /** @brief The toolbox that contains the component buttons.
      *
@@ -267,6 +261,11 @@ private:
      *
      */
     QButtonGroup* buttonGroup;
+
+    /** @brief The button group that holds buttons for movement or line mode.
+     *
+     */
+    QButtonGroup* pointerTypeGroup;
 };
 
 
