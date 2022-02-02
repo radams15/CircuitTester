@@ -1,0 +1,11 @@
+<map id="/home/rhys/scripts/CircuitTester/src/main/Analysis/Solution.h" name="/home/rhys/scripts/CircuitTester/src/main/Analysis/Solution.h">
+<area shape="rect" id="node1" title=" " alt="" coords="387,5,553,61"/>
+<area shape="rect" id="node2" href="$Circuit_8h.html" title=" " alt="" coords="196,109,363,165"/>
+<area shape="rect" id="node6" href="$Solution_8cc.html" title=" " alt="" coords="387,109,553,165"/>
+<area shape="rect" id="node7" href="$AnalysisMapper_8h.html" title=" " alt="" coords="577,109,744,165"/>
+<area shape="rect" id="node3" href="$Circuit_8cc.html" title=" " alt="" coords="5,213,172,269"/>
+<area shape="rect" id="node4" href="$Equation_8cc.html" title=" " alt="" coords="196,213,363,269"/>
+<area shape="rect" id="node5" href="$AnalysisMapper_8cc.html" title=" " alt="" coords="387,213,553,269"/>
+<area shape="rect" id="node8" href="$CircuitSaver_8cc.html" title=" " alt="" coords="577,213,744,269"/>
+<area shape="rect" id="node9" href="$MainWindow_8cc.html" title=" " alt="" coords="768,213,935,269"/>
+</map>

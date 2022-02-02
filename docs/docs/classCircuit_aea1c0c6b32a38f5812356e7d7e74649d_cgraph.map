@@ -1,0 +1,9 @@
+<map id="Circuit::solve" name="Circuit::solve">
+<area shape="rect" id="node1" title="Solves the circuit using linear algebra and matrices." alt="" coords="5,56,112,83"/>
+<area shape="rect" id="node2" href="$classCircuit.html#afa4b34944acad77275b4f2a493179cb0" title="Returns a list of equations that must be solved to solve the overall circuit." alt="" coords="186,31,343,57"/>
+<area shape="rect" id="node7" href="$classCircuit.html#a765894f576a87328a00c7d901f69ff48" title="Returns all unknown currents in the circuit." alt="" coords="160,81,369,108"/>
+<area shape="rect" id="node3" href="$classCircuit.html#a0207a30a1d16cc2f1d249179833e4ea8" title="Selects the components that have the reference voltage." alt="" coords="417,31,573,57"/>
+<area shape="rect" id="node4" href="$classCircuit.html#ac9c6a0788dc59146078619eb0b07203a" title=" " alt="" coords="621,31,824,57"/>
+<area shape="rect" id="node5" href="$classComponent.html#adb2592142ecf3226eec1a996e233ae3e" title="Node in this component." alt="" coords="873,5,1033,32"/>
+<area shape="rect" id="node6" href="$classComponent.html#a9b47c53680302d657dcd677c6527cccc" title="Get opposite node to passed." alt="" coords="872,56,1033,83"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Circuit::getEquations" name="Circuit::getEquations">
+<area shape="rect" id="node1" title="Returns a list of equations that must be solved to solve the overall circuit." alt="" coords="5,31,163,57"/>
+<area shape="rect" id="node2" href="$classCircuit.html#a0207a30a1d16cc2f1d249179833e4ea8" title="Selects the components that have the reference voltage." alt="" coords="211,31,367,57"/>
+<area shape="rect" id="node3" href="$classCircuit.html#ac9c6a0788dc59146078619eb0b07203a" title=" " alt="" coords="415,31,617,57"/>
+<area shape="rect" id="node4" href="$classComponent.html#adb2592142ecf3226eec1a996e233ae3e" title="Node in this component." alt="" coords="666,5,826,32"/>
+<area shape="rect" id="node5" href="$classComponent.html#a9b47c53680302d657dcd677c6527cccc" title="Get opposite node to passed." alt="" coords="665,56,827,83"/>
+</map>

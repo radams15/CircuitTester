@@ -1,0 +1,7 @@
+<map id="Switch::Switch" name="Switch::Switch">
+<area shape="rect" id="node1" title="Initialiser." alt="" coords="5,81,121,108"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#addLayout" title=" " alt="" coords="187,5,364,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#addSpacerItem" title=" " alt="" coords="172,56,379,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#addWidget" title=" " alt="" coords="186,107,365,133"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qabstractbutton.html#checked-prop" title=" " alt="" coords="169,157,381,184"/>
+</map>

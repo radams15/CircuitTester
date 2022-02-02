@@ -1,0 +1,11 @@
+<map id="SceneItem::startPoint" name="SceneItem::startPoint">
+<area shape="rect" id="node1" title="Gets the start point of the component." alt="" coords="5,233,168,260"/>
+<area shape="rect" id="node2" href="$classSceneItem.html#a8e1e390e0824c01432773ff585e676d2" title="Gets the centre of the component." alt="" coords="216,183,389,209"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html#width" title=" " alt="" coords="450,5,575,32"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qpointf.html#x" title=" " alt="" coords="469,259,557,285"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qpointf.html#y" title=" " alt="" coords="469,309,557,336"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html#height" title=" " alt="" coords="447,107,578,133"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#pos" title=" " alt="" coords="437,157,588,184"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#x" title=" " alt="" coords="445,208,580,235"/>
+<area shape="rect" id="node8" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#y" title=" " alt="" coords="445,56,580,83"/>
+</map>

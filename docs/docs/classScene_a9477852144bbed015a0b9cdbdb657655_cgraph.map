@@ -1,0 +1,9 @@
+<map id="Scene::mousePressEvent" name="Scene::mousePressEvent">
+<area shape="rect" id="node1" title="Called when the mouse is pressed once." alt="" coords="5,163,191,189"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#addItem" title=" " alt="" coords="251,5,441,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscenemouseevent.html#button" title=" " alt="" coords="242,57,450,98"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#mousePressEvent" title=" " alt="" coords="239,122,453,163"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscenemouseevent.html#scenePos" title=" " alt="" coords="242,187,450,229"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicslineitem.html#setPen" title=" " alt="" coords="269,253,423,294"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#setPos" title=" " alt="" coords="261,319,431,345"/>
+</map>

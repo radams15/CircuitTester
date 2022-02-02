@@ -1,0 +1,6 @@
+<map id="Circuit::getRefNodes" name="Circuit::getRefNodes">
+<area shape="rect" id="node1" title="Selects the components that have the reference voltage." alt="" coords="5,31,161,57"/>
+<area shape="rect" id="node2" href="$classCircuit.html#ac9c6a0788dc59146078619eb0b07203a" title=" " alt="" coords="209,31,412,57"/>
+<area shape="rect" id="node3" href="$classComponent.html#adb2592142ecf3226eec1a996e233ae3e" title="Node in this component." alt="" coords="461,5,621,32"/>
+<area shape="rect" id="node4" href="$classComponent.html#a9b47c53680302d657dcd677c6527cccc" title="Get opposite node to passed." alt="" coords="460,56,621,83"/>
+</map>

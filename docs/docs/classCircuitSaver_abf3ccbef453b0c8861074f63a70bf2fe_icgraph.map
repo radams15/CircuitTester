@@ -1,0 +1,13 @@
+<map id="CircuitSaver::getPath" name="CircuitSaver::getPath">
+<area shape="rect" id="node1" title="Gets the save path from the circuit name." alt="" coords="1228,81,1387,108"/>
+<area shape="rect" id="node2" href="$classCircuitSaver.html#ad89930da2de5c5ffd3521df1ee4a5cf5" title="Copy circuit to directory to send to others." alt="" coords="744,107,937,133"/>
+<area shape="rect" id="node6" href="$classCircuitSaver.html#a3926081f808e08b71b306a7360bfaf5b" title="Import circuit to library." alt="" coords="985,5,1180,32"/>
+<area shape="rect" id="node8" href="$classCircuitSaver.html#a9ace41a84d96b09d103fa0465899ed6b" title=" " alt="" coords="993,56,1172,83"/>
+<area shape="rect" id="node10" href="$classCircuitSaver.html#ac93a4ae9dca765e7ae89e20e5e5ab718" title="Save circuit to file." alt="" coords="991,157,1174,184"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#a65085d637ffb1a9840a08f82138a595e" title="Called when the export button is clicked from the toolbar." alt="" coords="501,107,696,133"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a62cd8712fb41a754298f6f60eead2cb0" title="Creates all actions for the toolbar and the menubar." alt="" coords="251,81,453,108"/>
+<area shape="rect" id="node5" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,81,203,108"/>
+<area shape="rect" id="node7" href="$classMainWindow.html#a806058f8a0d092286f4b26f08d4c543c" title="Called when the import button is clicked from the toolbar." alt="" coords="501,5,696,32"/>
+<area shape="rect" id="node9" href="$classMainWindow.html#af302ce74b30876facddc371a6842d76a" title="Called when the open button is clicked from the toolbar." alt="" coords="507,56,691,83"/>
+<area shape="rect" id="node11" href="$classMainWindow.html#a8c5c70395af911e771dbf61da52169ab" title="Called when the save button is clicked from the toolbar." alt="" coords="749,157,932,184"/>
+</map>

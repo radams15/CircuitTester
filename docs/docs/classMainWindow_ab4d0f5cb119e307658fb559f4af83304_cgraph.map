@@ -1,0 +1,8 @@
+<map id="MainWindow::itemInserted" name="MainWindow::itemInserted">
+<area shape="rect" id="node1" title="Called when any item is inserted onto the Scene. This unchecks the tool button of that item." alt="" coords="5,107,201,133"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qbuttongroup.html#button" title=" " alt="" coords="273,5,437,32"/>
+<area shape="rect" id="node3" href="$classUIComponent.html#aecae5af70cb4662d433eb6f5c4b32924" title="Getter for ID." alt="" coords="279,56,431,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qabstractbutton.html#checked-prop" title=" " alt="" coords="249,107,461,133"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qaction.html#checked-prop" title=" " alt="" coords="277,157,433,184"/>
+<area shape="rect" id="node6" href="$classScene.html#a0099b4da0b4ef962025d50dc0890f3b2" title="Setter for mode." alt="" coords="293,208,418,235"/>
+</map>

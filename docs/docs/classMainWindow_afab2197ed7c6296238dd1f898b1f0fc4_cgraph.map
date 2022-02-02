@@ -1,0 +1,21 @@
+<map id="MainWindow::createToolBox" name="MainWindow::createToolBox">
+<area shape="rect" id="node1" title="Creates the toolbox of components." alt="" coords="5,309,211,336"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qtabwidget.html#addTab" title=" " alt="" coords="302,5,457,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgridlayout.html#addWidget" title=" " alt="" coords="289,56,470,83"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a5ac1ad5e3c553e50a1ac39b8ecaee2e6" title="Called when any component button is clicked." alt="" coords="259,107,500,133"/>
+<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html#connect" title=" " alt="" coords="313,157,446,184"/>
+<area shape="rect" id="node11" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#QWidget" title=" " alt="" coords="308,208,451,235"/>
+<area shape="rect" id="node12" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgridlayout.html#setColumnStretch" title=" " alt="" coords="266,259,493,285"/>
+<area shape="rect" id="node13" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qbuttongroup.html#exclusive-prop" title=" " alt="" coords="277,309,481,336"/>
+<area shape="rect" id="node14" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#setLayout" title=" " alt="" coords="304,360,455,387"/>
+<area shape="rect" id="node15" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#minimumWidth-prop" title=" " alt="" coords="276,411,483,437"/>
+<area shape="rect" id="node16" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgridlayout.html#setRowStretch" title=" " alt="" coords="277,461,482,488"/>
+<area shape="rect" id="node17" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#sizePolicy-prop" title=" " alt="" coords="293,512,465,539"/>
+<area shape="rect" id="node18" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qtabwidget.html#tabPosition-prop" title=" " alt="" coords="278,563,481,589"/>
+<area shape="rect" id="node19" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html#tr" title=" " alt="" coords="333,613,425,640"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qbuttongroup.html#buttons" title=" " alt="" coords="569,5,739,32"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qbuttongroup.html#id" title=" " alt="" coords="587,56,721,83"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qabstractbutton.html#checked-prop" title=" " alt="" coords="548,107,760,133"/>
+<area shape="rect" id="node8" href="$classScene.html#a127f18d3236ad03033ff2165069ae6b9" title="Sets the new component to be placed down." alt="" coords="595,157,713,184"/>
+<area shape="rect" id="node9" href="$classScene.html#a0099b4da0b4ef962025d50dc0890f3b2" title="Setter for mode." alt="" coords="591,208,717,235"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Circuit::getConnectedNodes" name="Circuit::getConnectedNodes">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,208,57"/>
+<area shape="rect" id="node2" href="$classComponent.html#adb2592142ecf3226eec1a996e233ae3e" title="Node in this component." alt="" coords="257,5,417,32"/>
+<area shape="rect" id="node3" href="$classComponent.html#a9b47c53680302d657dcd677c6527cccc" title="Get opposite node to passed." alt="" coords="256,56,417,83"/>
+</map>

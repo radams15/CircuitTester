@@ -1,0 +1,6 @@
+<map id="json::jobject::proxy::set_number" name="json::jobject::proxy::set_number">
+<area shape="rect" id="node1" title="Sets a number value in the parent object." alt="" coords="5,35,152,76"/>
+<area shape="rect" id="node2" href="$namespacejson_1_1parsing.html#a948ba79c724a7f8ee43498aad8ce1a9c" title="Converts a number to a string." alt="" coords="200,5,335,47"/>
+<area shape="rect" id="node3" href="$classjson_1_1jobject.html#a0f46648e98ac477819d189c2a150ce1e" title="Sets the value assocaited with the key." alt="" coords="203,71,332,98"/>
+<area shape="rect" id="node4" href="$classjson_1_1jobject.html#a4879f57bf3cd03d94ed33afca1541e9b" title="Returns the number of entries in the JSON object or array." alt="" coords="383,71,517,98"/>
+</map>

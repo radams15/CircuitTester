@@ -1,0 +1,11 @@
+<map id="Wire::Wire" name="Wire::Wire">
+<area shape="rect" id="node1" title="Initialiser." alt="" coords="5,183,96,209"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qcombobox.html#addItem" title=" " alt="" coords="174,5,339,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#addLayout" title=" " alt="" coords="168,56,345,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#addSpacerItem" title=" " alt="" coords="153,107,360,133"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#addWidget" title=" " alt="" coords="167,157,346,184"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qcombobox.html#currentIndex-prop" title=" " alt="" coords="149,208,364,235"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qdoublespinbox.html#maximum-prop" title=" " alt="" coords="144,259,369,285"/>
+<area shape="rect" id="node8" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qdoublespinbox.html#minimum-prop" title=" " alt="" coords="146,309,367,336"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qdoublespinbox.html#value-prop" title=" " alt="" coords="159,360,354,387"/>
+</map>

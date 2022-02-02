@@ -1,0 +1,9 @@
+<map id="SettingsMenu::setContentLayout" name="SettingsMenu::setContentLayout">
+<area shape="rect" id="node1" title="Sets the layout of contentArea, configures toggleAnimation to show/hide the layout." alt="" coords="5,155,196,197"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qanimationgroup.html#animationAt" title=" " alt="" coords="244,5,471,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qanimationgroup.html#animationCount" title=" " alt="" coords="251,57,463,98"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qvariantanimation.html#duration-prop" title=" " alt="" coords="281,122,434,163"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qvariantanimation.html#endValue-prop" title=" " alt="" coords="281,187,434,229"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#setLayout" title=" " alt="" coords="282,253,433,280"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qvariantanimation.html#startValue-prop" title=" " alt="" coords="281,305,434,346"/>
+</map>

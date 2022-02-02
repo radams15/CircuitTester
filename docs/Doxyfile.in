@@ -1,18 +1,19 @@
 PROJECT_NAME = Circuit Simulator
 
 OUTPUT_DIRECTORY = .
-INPUT = ../src/main ../src/main/Analysis ../src/main/Saves ../src/main/UI/Components ../src/main/UI ../src/test
+INPUT = ../src/main ../src/main/Analysis ../src/main/Saves ../src/main/UI/Components ../src/main/UI
 
 GENERATE_TAGFILE = YES
-TAGFILES = tagfiles/qtcore.tags=https://doc.qt.io/qt-5/ \
-    tagfiles/qtgui.tags=https://doc.qt.io/qt-5/qtgui/ \
-    tagfiles/qtxml.tags=https://doc.qt.io/qt-5/qtxml/
+TAGFILES = tagfiles/qtcore.tags=https://doc.qt.io/qt-5/ tagfiles/qtgui.tags=https://doc.qt.io/qt-5/ tagfiles/qtwidgets.tags=https://doc.qt.io/qt-5/ tagfiles/qtxml.tags=https://doc.qt.io/qt-5/
 
 GENERATE_HTML = YES
 HTML_OUTPUT = docs/
 HTML_FILE_EXTENSION = .html
 
 USE_MATHJAX = YES
+
+CALL_GRAPH = YES
+CALLER_GRAPH = YES
 
 EXTRACT_ALL = YES
 

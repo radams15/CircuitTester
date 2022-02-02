@@ -1,0 +1,12 @@
+<map id="CircuitSaver::serialiseCircuit" name="CircuitSaver::serialiseCircuit">
+<area shape="rect" id="node1" title="Converts circuit to string." alt="" coords="5,56,212,83"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qmap.html#keys" title=" " alt="" coords="632,5,731,32"/>
+<area shape="rect" id="node3" href="$classAnalysisMapper.html#adbd1d8db8e7863ba4cfbe34659f0c8b5" title="Makes an adjacency list out of the components of the circuit." alt="" coords="282,56,491,83"/>
+<area shape="rect" id="node6" href="$classCircuitSaver.html#a4a1733401e90ae45cc69245acf8c8710" title="Convert a UIComponent into JSON data." alt="" coords="260,208,513,235"/>
+<area shape="rect" id="node4" href="$classLine.html#adaae751db39722df0f3937222999c5b8" title="Simply returns the end item." alt="" coords="626,56,737,83"/>
+<area shape="rect" id="node5" href="$classAnalysisMapper.html#a4e775fafccbc93cdb8e0cad7de2204a0" title="Finds the shortest path between two nodes on a graph using Dijkstra&#39;s algorithm." alt="" coords="561,107,801,133"/>
+<area shape="rect" id="node7" href="$classUIComponent.html#aecae5af70cb4662d433eb6f5c4b32924" title="Getter for ID." alt="" coords="605,157,757,184"/>
+<area shape="rect" id="node8" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#pos" title=" " alt="" coords="606,208,757,235"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qpointf.html#x" title=" " alt="" coords="637,259,725,285"/>
+<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qpointf.html#y" title=" " alt="" coords="637,309,725,336"/>
+</map>

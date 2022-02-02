@@ -1,0 +1,9 @@
+<map id="MainWindow::deleteItem" name="MainWindow::deleteItem">
+<area shape="rect" id="node1" title="Called when the delete button is pressed. Deletes all items that are selected." alt="" coords="5,136,189,163"/>
+<area shape="rect" id="node2" href="$classLine.html#adaae751db39722df0f3937222999c5b8" title="Simply returns the end item." alt="" coords="290,5,401,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#removeItem" title=" " alt="" coords="237,56,453,83"/>
+<area shape="rect" id="node4" href="$classSceneItem.html#a1eb92397802d6ef13bd2343ad2204f20" title="Removes a specified line from lines." alt="" coords="257,107,433,133"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#selectedItems" title=" " alt="" coords="250,158,441,199"/>
+<area shape="rect" id="node6" href="$classLine.html#a4d12500b762bd898ad93bbb40cdf6560" title="Simply returns the start item." alt="" coords="287,224,404,251"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#type" title=" " alt="" coords="267,275,423,301"/>
+</map>

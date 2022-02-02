@@ -1,0 +1,5 @@
+<map id="SettingsMenu::clear" name="SettingsMenu::clear">
+<area shape="rect" id="node1" title="Deletes the widgets inside innerLayout." alt="" coords="524,13,675,39"/>
+<area shape="rect" id="node2" href="$classSettingsMenu.html#af326c73bec61001eb4a776e83b647e44" title="Sets the layout of the widget, used to set different settings panels for each component." alt="" coords="289,5,476,47"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#a0530eec28d489e8ce39886f231208c51" title="Called from the Scene when any SceneItem is double clicked. Places the settings widget from the Scene..." alt="" coords="5,13,241,39"/>
+</map>

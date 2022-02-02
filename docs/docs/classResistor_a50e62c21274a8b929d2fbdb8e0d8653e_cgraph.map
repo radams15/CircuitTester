@@ -1,0 +1,9 @@
+<map id="Resistor::Resistor" name="Resistor::Resistor">
+<area shape="rect" id="node1" title="Initialiser." alt="" coords="5,132,141,159"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#addLayout" title=" " alt="" coords="213,5,391,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#addSpacerItem" title=" " alt="" coords="199,56,405,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qboxlayout.html#addWidget" title=" " alt="" coords="213,107,391,133"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qdoublespinbox.html#maximum-prop" title=" " alt="" coords="189,157,415,184"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qdoublespinbox.html#minimum-prop" title=" " alt="" coords="191,208,413,235"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qdoublespinbox.html#value-prop" title=" " alt="" coords="205,259,399,285"/>
+</map>
