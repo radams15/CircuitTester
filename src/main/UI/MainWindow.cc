@@ -617,9 +617,15 @@ void MainWindow::exportScene() {
 }
 
 void MainWindow::openSaveDir() {
-    // TODO Fix open save directory button.
-    // Opens the save directory in file explorer. Not working on mac/windows yet.
+#if defined(WIN32)
+	std::cerr << "Cannot open save dir on windows!" << std::endl;
+#elif __APPLE__
+	system((std::string("open '")+FileUtils::getSaveDir()+std::string("' &")).c_str());
+#elif __linux__
     QDesktopServices::openUrl(QUrl(QString::fromStdString(FileUtils::getSaveDir())));
+#else
+	std::cerr << "Cannot open save dir on this platform!" << std::endl;
+#endif
 }
 
 int MainWindow::getMode() {
