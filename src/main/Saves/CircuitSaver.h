@@ -11,9 +11,7 @@
 #include "../UI/Line.h"
 #include "../UI/Scene.h"
 
-#include <nlohmann/json.hpp>
-
-using json = nlohmann::json;
+#include "json.h"
 
 /** @brief Items in the scene.
  *
@@ -28,14 +26,9 @@ struct SceneItems{
      *
      */
     std::vector<Line*> lines;
-
-    /** @brief Scene pointer itself.
-     *
-     * Only passed if an image of the scene should be generated.
-     *
-     */
-    Scene* scene = nullptr;
 };
+
+#define ext ".cir"
 
 /** @brief Class that saves/loads/exports/imports circuits.
  *
@@ -43,20 +36,12 @@ struct SceneItems{
 class CircuitSaver {
 private:
 
-    /** @brief Converts the scene to a base64 encoded image.
-     *
-     * @param s The scene to convert.
-     * @param format The image format. Defaults to 16 bit RGB to save storage.
-     * @return The base64 encoded image as a string.
-     */
-    static std::string sceneToImage(Scene *s, QImage::Format format=QImage::Format_RGB16);
-
     /** @brief Convert a UIComponent into JSON data.
      *
      * @param comp The component to convert.
      * @return JSON data that corresponds to the component.
      */
-    static json serialiseUIComponent(UIComponent* comp);
+    static json::jobject serialiseUIComponent(UIComponent* comp);
 
 public:
     /** @brief Gets the save path from the circuit name.
@@ -65,11 +50,6 @@ public:
      * @return The path to save/load the circuit from.
      */
     static std::string getPath(std::string name);
-
-    /** @brief The file extension to use.
-     *
-     */
-    static constexpr const char* ext = ".cir";
 
     /** @brief Save circuit to file.
      *

@@ -60,6 +60,8 @@ public:
      */
     Component(int n0, int n1, ComponentType type, double value);
 
+    Component();
+
     /** @brief Node in this component.
      *
      * Returns true if either n0 or n1 equals n.

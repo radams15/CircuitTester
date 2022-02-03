@@ -21,13 +21,13 @@
  * If they are not the same class, then a dynamic cast returns a nullptr.
 */
 
-#define IS_TYPE(type, ptr) dynamic_cast<type*>(ptr) != nullptr
+#define IS_TYPE(type, ptr) dynamic_cast<type*>(ptr) != NULL
 
 /** @brief A map of component: list of components.
  *
  * This shows the connections between components as an adjacency list.
  */
-typedef std::map<UIComponent*, std::vector<UIComponent*>> Graph;
+typedef QMap<UIComponent*, std::vector<UIComponent*> > Graph;
 
 /** @brief A list of the paths between multiple components on a graph.
  *

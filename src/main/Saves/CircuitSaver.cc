@@ -11,10 +11,8 @@
 #include "FileUtils.h"
 
 #include <iostream>
-#include <QPainter>
-#include <QBuffer>
 #include <fstream>
-#include <regex>
+#include <sstream>
 
 std::string CircuitSaver::getPath(std::string name){
     std::string saveDir = FileUtils::getSaveDir();
@@ -26,15 +24,19 @@ std::string CircuitSaver::getPath(std::string name){
 void CircuitSaver::saveCircuit(std::string name, SceneItems items) {
     // Get the JSON data from the serialiseCircuit function.
     std::string data = serialiseCircuit(name, items);
-
+	
     std::string path = getPath(name);
 
     std::cout << "Save: '" << path << "'" << std::endl;
 
     // Save the JSON data to the file.
-    std::ofstream file(path);
+    std::ofstream file(path.c_str());
     file << data << std::endl;
     file.close();
+}
+
+json::jobject get(json::jobject root, std::string key){
+	return json::jobject::parse(root.get(key));
 }
 
 void CircuitSaver::loadCircuit(std::string name, Scene* s) {
@@ -48,34 +50,45 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
 
     std::cout << "Load: '" << path << "'" << std::endl;
 
-    std::ifstream in(path);
+    std::ifstream in(path.c_str());
 
     // Load the JSON string into a JSON object.
-    json data;
-    in >> data;
-    in.close();
+	
+	std::stringstream rawData;
+	rawData << in.rdbuf();
+	in.close();
+	
+	json::jobject data = json::jobject::parse(rawData.str());
+
 
     std::map<int, UIComponent*> components;
 
-    for(auto part : data["parts"]){
-        UIComponent* comp = nullptr;
-
+	std::vector<json::jobject> parts;
+	parts = data["parts"];
+	
+    for(int i=0 ; i<parts.size() ; i++){
+		json::jobject component = parts[i]["component"];
+		int uid = parts[i]["id"];
+        UIComponent* comp = NULL;
+		
+		int id = component["type"];
+				
         // Create UIComponent for each json component.
-        switch(part["component"]["type"].get<int>()) {
+        switch(id) {
             case UI_BATTERY: {
-                comp = new Battery(part["component"]["voltage"].get<double>(), part["component"]["state"].get<bool>());
+                comp = (UIComponent*) new Battery((double) component["voltage"], (int) component["state"]);
                 break;
             }
             case UI_RESISTOR: {
-                comp = new Resistor(part["component"]["resistance"].get<double>());
+                comp = (UIComponent*) new Resistor((double) component["resistance"]);
                 break;
             }
             case UI_WIRE: {
-                comp = new Wire(part["component"]["length"].get<double>(), part["component"]["area"].get<double>(), part["component"]["material"].get<std::string>());
+                comp = (UIComponent*) new Wire((double) component["length"], (double) component["area"], component["material"]);
                 break;
             }
             case UI_SWITCH: {
-                comp = new Switch(part["component"]["state"].get<bool>());
+                comp = (UIComponent*) new Switch((int) component["state"]);
                 break;
             }
 
@@ -84,13 +97,11 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
         }
 
         // If we actually made a component.
-        if(comp != nullptr){
+        if(comp != NULL){
             // Set the coordinates of the component
-            auto x = part["component"]["pos"][0].get<double>();
-            auto y = part["component"]["pos"][1].get<double>();
-
-            auto sceneSize = s->sceneRect();
-
+            double x = (double) component["pos"].array(0);
+            double y = (double) component["pos"].array(1);
+			
             // Validate x, y minimum value of 0.
             x = x<0? 0 : x;
             y = y<0? 0 : y;
@@ -102,7 +113,7 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
             comp->setPos(x, y);
 
             // Get the ID of the component.
-            comp->componentId = part["id"].get<int>();
+            comp->componentId = uid;
 
             // Set the max ID by comparing this ID to the current maximum.
             if(comp->componentId > UIComponent::currentId){
@@ -114,18 +125,25 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
             // Add the component to the ID map.
             components[comp->componentId] = comp;
         }
+		
     }
-
-    for(auto part : data["parts"]){
+	
+	parts = data["parts"];
+	
+    for(int i=0 ; i<parts.size() ; i++){
+		json::jobject part = parts[i];
         // Set the start item for all the arrows.
-        auto startItem = components[part["id"].get<int>()];
+        UIComponent* startItem = components[(int)part["id"]];
 
-        for(auto conn : part["connections"]){
+		
+		std::vector<int> connections = part["connections"];
+        for(int x=0 ; x<connections.size() ; x++){
+			int conn = connections[x];
             // For each connection in the JSON data get the component from the ID map.
-            auto endItem = components[conn.get<int>()];
+            UIComponent* endItem = components[conn];
 
             // Create a line between the start and end components.
-            auto* line = new Line(startItem, endItem);
+            Line* line = new Line(startItem, endItem);
             startItem->addLine(line);
             endItem->addLine(line);
 
@@ -138,79 +156,46 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
 }
 
 std::string CircuitSaver::serialiseCircuit(std::string name, SceneItems items) {
-    json out = json::object();
+	json::jobject out;
     out["name"] = name;
 
-    std::list<QGraphicsItem*> graphicsItems;
-
-    // Cast each UIComponent into a QGraphicsItem for AnalysisMapper.
-    std::transform(items.components.begin(), items.components.end(), std::back_inserter(graphicsItems), [](UIComponent* c){
-        return (QGraphicsItem*) c;
-    });
+    std::list<QGraphicsItem*> graphicsItems(items.components.begin(), items.components.end());
 
     AnalysisMapper am(graphicsItems);
     // Use AnalysisMapper to simplify the code to generate a graph of the components.
     Graph graph = am.makeGraph();
 
-    json parts = json::array();
+    std::vector<json::jobject> parts;
 
-    for(auto it : graph){
-        json sect = json::object();
+    foreach(UIComponent* uicomp, graph.keys()){
+        json::jobject sect;
         // Turn the component into JSON
-        json comp = serialiseUIComponent(it.first);
-        json connections = json::array();
+        json::jobject comp = serialiseUIComponent(uicomp);
+		std::vector<int> connections;
+		
+		std::vector<UIComponent*> components = graph[uicomp];
 
         // For each connection add the ID of the connected component.
-        for(auto c : it.second){
-            connections.push_back(c->componentId);
+        for(int i=0 ; i<components.size() ; i++){
+            connections.push_back(components[i]->componentId);
         }
 
         // Add the data to the JSON map.
         sect["component"] = comp;
         sect["connections"] = connections;
-        sect["id"] = it.first->componentId;
+        sect["id"] = uicomp->componentId;
 
         parts.push_back(sect);
     }
 
     out["parts"] = parts;
 
-    if(items.scene != nullptr){
-        // Only create the image if we have a scene to convert.
-        out["image"] = sceneToImage(items.scene);
-    }
-
-    return out.dump(4);
+    return (std::string) out;
 }
 
-std::string CircuitSaver::sceneToImage(Scene *s, QImage::Format format) {
-    // Create an image the size of the scene.
-    auto image = QImage(s->itemsBoundingRect().size().toSize(), format);
-    // Make the image white.
-    image.fill(QColor(Qt::color0).rgb());
 
-    QPainter painter;
-
-    // Paint onto image.
-    painter.begin(&image);
-    painter.setRenderHint(QPainter::Antialiasing);
-
-    // Render the scene onto the image.
-    s->render(&painter, image.rect(), s->itemsBoundingRect());
-    painter.end();
-
-    QByteArray ba;
-    QBuffer buf(&ba);
-    buf.open(QIODevice::WriteOnly);
-    // Save the image onto the buffer, which writes the data to the QByteArray.
-    image.save(&buf, "PNG");
-
-    // Convert the QByteArray to a base64 string and return.
-    return ba.toBase64().toStdString();
-}
-
-json CircuitSaver::serialiseUIComponent(UIComponent* comp) {
-    json out = json::object();
+json::jobject CircuitSaver::serialiseUIComponent(UIComponent* comp) {
+	json::jobject out;
 
     // Get the type of component.
     out["type"] = comp->getId();
@@ -237,13 +222,16 @@ json CircuitSaver::serialiseUIComponent(UIComponent* comp) {
     }
 
     // Add the coordinates of the component in a list of [x,y].
-    out["pos"] = json::array({comp->pos().x(), comp->pos().y()});
+	std::vector<double> pos;
+	pos.push_back(comp->pos().x());
+	pos.push_back(comp->pos().y());
+    out["pos"] = pos;
 
     return out;
 }
 
 void CircuitSaver::exportCircuit(std::string name, std::string path) {
-    auto saveFile = getPath(name);
+    std::string saveFile = getPath(name);
 
     // If there is no path to export, quit.
     if(path.empty()){
@@ -260,19 +248,6 @@ void CircuitSaver::exportCircuit(std::string name, std::string path) {
 }
 
 void CircuitSaver::importCircuit(std::string path) {
-    // Regex removes path and extracts file name, e.g. "/home/rhys/test.cir", the output is an array ["/home/rhys/test.cir", "test"]
-    std::regex nameRegex(R"(.*(?:\/|\\)(.*).cir)");
-    std::cmatch match;
-
-    // Search the string to match the regex above.
-    if(! std::regex_search(path.c_str(), match, nameRegex)){
-        std::cerr << "Cannot regex match: " << path << std::endl;
-        return;
-    }
-
-    // Match[1] is the 1st match group which is the file name.
-    if(match[1] != ""){
-        auto saveFile = CircuitSaver::getPath(match[1]);
-        FileUtils::copyFile(path, saveFile);
-    }
+	std::string saveFile = CircuitSaver::getPath(path);
+	FileUtils::copyFile(path, saveFile);
 }

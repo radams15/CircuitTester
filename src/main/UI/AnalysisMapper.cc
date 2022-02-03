@@ -12,12 +12,14 @@
 #include "Components/Switch.h"
 #include "Line.h"
 
+#include <iostream>
+
 #include "../Analysis/Circuit.h"
 
 AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
 
     // Sorts the QGraphicsItems into UIComponents and Arrows.
-    for(QGraphicsItem* i : graphicsItems){
+    foreach(QGraphicsItem* i, graphicsItems){
         if(IS_TYPE(UIComponent, i)) {
             components.push_back((UIComponent*) i);
         } else if(IS_TYPE(Line, i)) {
@@ -26,44 +28,26 @@ AnalysisMapper::AnalysisMapper(std::list<QGraphicsItem*> graphicsItems) {
     }
 }
 
-#import <iostream>
-
-void printGraph(Graph graph){
-    for(auto it : graph){
-        auto start = it.first;
-        auto connected = it.second;
-
-        std::cout << "ID: " << start->getId() << std::endl;
-        for(auto c : connected){
-            std::cout << "\tID: " << c->getId() << std::endl;
-        }
-    }
-
-    std::cout << "\n\n\n\n";
-}
-
 std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
     Graph graph = makeGraph();
-
-    printGraph(graph);
-
+	
     std::vector<Component> mNAComponents;
 
     // Map of UIComponent:Component to help to return the correct values to the correct UIComponent.
-    std::map<UIComponent*, Component> mNAMap;
+    QMap<UIComponent*, Component> mNAMap;
 
-    for(auto node : graph){
+    foreach(UIComponent* uiComp, graph.keys()){
         Component* component;
 
         // Get the type of the node (node.first is node, node.second is connections).
-        switch(node.first->getId()){
+        switch(uiComp->getId()){
             case UI_BATTERY:
-                component = new Component(node.first->n0, node.first->n1, MNA_BATTERY, ((Battery*)node.first)->getVoltage());
+                component = new Component(uiComp->n0, uiComp->n1, MNA_BATTERY, ((Battery*)uiComp)->getVoltage());
                 break;
 
             // Resistors, wires and switches all have resistances.
             case UI_RESISTOR: case UI_WIRE: case UI_SWITCH: case UI_AMMETER: case UI_VOLTMETER:
-                component = new Component(node.first->n0, node.first->n1, MNA_RESISTOR, ((ResistiveElement*)node.first)->getResistance());
+                component = new Component(uiComp->n0, uiComp->n1, MNA_RESISTOR, ((ResistiveElement*)uiComp)->getResistance());
                 break;
 
             default:
@@ -74,24 +58,26 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
         mNAComponents.push_back(*component);
 
         // Add the component to the list to set the (UIComponent => Component).
-        mNAMap.insert(std::make_pair(node.first, *component));
+        mNAMap.insert(uiComp, *component);
     }
-
+	
     Circuit cir(mNAComponents);
-
-    auto sol = cir.solve();
-
+	
+    Solution sol = cir.solve();
+	
     std::map<UIComponent*, ComponentValue> out;
 
-    for(auto it : mNAMap){
-        switch(it.second.type){
+	
+    foreach(UIComponent* uiComp, mNAMap.keys()){
+        Component comp = mNAMap[uiComp];
+        switch(comp.type){
             // Resistors have a current and a voltage.
             case MNA_RESISTOR:
             	// Add the voltage and the current of the Component into the solution map
             	// with the key of the UIComponent.
-                out[it.first] = {
-                        sol.getVoltage(it.second),
-                        sol.getCurrent(it.second)
+                out[uiComp] = (ComponentValue){
+                        sol.getVoltage(comp),
+                        sol.getCurrent(comp)
                 };
                 break;
 
@@ -99,8 +85,8 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
             case MNA_BATTERY:
             	// Add the voltage of the Component into the solution map.
             	// with the key of the UIComponent.
-                out[it.first] = {
-                        sol.getVoltage(it.second),
+                out[uiComp] = (ComponentValue){
+                        sol.getVoltage(comp),
                         NAN
                 };
                 break;
@@ -109,26 +95,26 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
                 break;
         }
 
-	switch(it.first->getId()){
-		case UI_VOLTMETER:
-			out[it.first] = {
-                	        sol.getVoltage(it.second),
-				NAN
-                	};
-                	break;
+        switch(uiComp->getId()){
+            case UI_VOLTMETER:
+                out[uiComp] = (ComponentValue){
+                                sol.getVoltage(comp),
+                    NAN
+                        };
+                        break;
 
-		case UI_AMMETER:
-			out[it.first] = {
-                	        NAN,
-				sol.getCurrent(it.second)
-                	};
-                	break;
+            case UI_AMMETER:
+                out[uiComp] = (ComponentValue){
+                                NAN,
+                    sol.getCurrent(comp)
+                        };
+                        break;
 
-		default:
-			break;
-	}
+            default:
+                break;
+        }
     }
-
+	
     return out;
 }
 
@@ -137,14 +123,14 @@ Path* AnalysisMapper::findShortestPath(Graph *graph, UIComponent *start, UICompo
 
     std::queue<std::vector<UIComponent*>*> q;
 
-    auto v = new std::vector<UIComponent*>;
+    std::vector<UIComponent*>* v = new std::vector<UIComponent*>;
     v->push_back(start);
-    q.emplace(v);
+    q.push(v);
 
     // Is the path to the same node?
     // If so just return the end node.
     if(start == end){
-        auto out = new Path;
+        Path* out = new Path;
         out->push_back(end);
         return out;
     }
@@ -158,13 +144,13 @@ Path* AnalysisMapper::findShortestPath(Graph *graph, UIComponent *start, UICompo
 
         // If node has not already been explored
         if(std::find(explored.begin(), explored.end(), node) == explored.end()){
-            auto neighbors = graph->at(node);
+            std::vector<UIComponent*> neighbors = (*graph)[node];
 
-            for(auto neighbor : neighbors){
+            foreach(UIComponent* neighbor, neighbors){
                 Path* new_path = new Path;
                 std::copy(path->begin(), path->end(), back_inserter(*new_path));
                 new_path->push_back(neighbor);
-                q.emplace(new_path);
+                q.push(new_path);
 
                 // Have we reached the end node?
                 // If so return the path.
@@ -185,10 +171,10 @@ Graph AnalysisMapper::makeGraph() {
     // This is a map of UIComponent:list of UIComponents to show a matrix as an adjacency list.
     Graph graph;
 
-    for(auto comp : components){
+    foreach(UIComponent* comp, components){
         std::vector<UIComponent*> connections;
 
-        for(auto a : comp->lines){
+        foreach(Line* a, comp->lines){
             // If the arrow goes to the component rather than away from it, ignore it.
             if(comp == a->endItem()){
                 continue;
@@ -202,24 +188,26 @@ Graph AnalysisMapper::makeGraph() {
     }
 
     // TODO select correct start node
-    auto start_node = components[0];
+    UIComponent* start_node = components[0];
 
-    for(auto n : graph){
+    foreach(UIComponent* uiComp, graph.keys()){
         // For each node set the node 0 to the distance from the start node.
-        auto* path = findShortestPath(&graph, start_node, n.first);
+        Path* path = findShortestPath(&graph, start_node, uiComp);
 
-        n.first->n0 = path->size()-1;
+        uiComp->n0 = path->size()-1;
 
         // Temporarily set node 1 to 0.
-        n.first->n1 = 0;
+        uiComp->n1 = 0;
     }
 
-    for(auto node : graph){
-        node.first->connections.clear();
+    foreach(UIComponent* uiComp, graph.keys()){
+        uiComp->connections.clear();
+        
+        std::vector<UIComponent*> start = graph[uiComp];
 
-        for(auto connectedComp : graph.at(node.first)){
+        foreach(UIComponent* connectedComp, start){
             // For each connection to this node, set node 1 to the node 0 of the node it is connected to.
-            node.first->n1 = connectedComp->n0;
+            uiComp->n1 = connectedComp->n0;
         }
     }
 
