@@ -722,10 +722,10 @@ namespace json
 			void operator=(const char input) { this->set_number(input, "%c"); }
 
 			/*! \brief Assigns an double floating-point integer  */
-			void operator=(const double input) { this->set_number(input, "%e"); }
+			void operator=(const double input) { this->set_number(input, "%lf"); }
 
 			/*! \brief Assigns an floating-point integer  */
-			void operator=(const float input) { this->set_number(input, "%e"); }
+			void operator=(const float input) { this->set_number(input, "%f"); }
 
 			/*! \brief Assigns a JSON object or array */
 			void operator=(json::jobject input)
@@ -749,10 +749,10 @@ namespace json
 			void operator=(const std::vector<char> input) { this->set_number_array(input, "%c"); }
 
 			/*! \brief Assigns an array of floating-point numbers */
-			void operator=(const std::vector<float> input) { this->set_number_array(input, "%e"); }
+			void operator=(const std::vector<float> input) { this->set_number_array(input, "%f"); }
 
 			/*! \brief Assigns an array of double floating-point numbers */
-			void operator=(const std::vector<double> input) { this->set_number_array(input, "%e"); }
+			void operator=(const std::vector<double> input) { this->set_number_array(input, "%lf"); }
 
 			/*! \brief Assigns an array of strings */
 			void operator=(const std::vector<std::string> input) { this->set_array(input, true); }

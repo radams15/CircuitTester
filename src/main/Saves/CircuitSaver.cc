@@ -171,7 +171,7 @@ std::string CircuitSaver::serialiseCircuit(std::string name, SceneItems items) {
         json::jobject sect;
         // Turn the component into JSON
         json::jobject comp = serialiseUIComponent(uicomp);
-		std::vector<json::jobject> connections;
+		std::vector<int> connections;
 		
 		std::vector<UIComponent*> components = graph[uicomp];
 
@@ -205,19 +205,19 @@ json::jobject CircuitSaver::serialiseUIComponent(UIComponent* comp) {
         case UI_BATTERY:
             // getVoltageValue as this gives the raw value, getVoltage changes the voltage by error
             // checking and including the state value.
-            out["voltage"] = ((Battery*) comp)->getVoltageValue();
-            out["state"] = ((Battery*) comp)->getState();
+            out["voltage"] = (double) ((Battery*) comp)->getVoltageValue();
+            out["state"] = (double) ((Battery*) comp)->getState();
             break;
         case UI_RESISTOR:
-            out["resistance"] = ((Resistor*) comp)->getResistance();
+            out["resistance"] = (double) ((Resistor*) comp)->getResistance();
             break;
         case UI_WIRE:
-            out["area"] = ((Wire*) comp)->getArea();
-            out["length"] = ((Wire*) comp)->getLength();
+            out["area"] = (double) ((Wire*) comp)->getArea();
+            out["length"] = (double) ((Wire*) comp)->getLength();
             out["material"] = ((Wire*) comp)->getMaterial();
             break;
         case UI_SWITCH:
-            out["state"] = ((Switch*) comp)->getState();
+            out["state"] = (int) ((Switch*) comp)->getState();
             break;
     }
 

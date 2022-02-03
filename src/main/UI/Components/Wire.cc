@@ -39,9 +39,22 @@ Wire::Wire(double length, double area, std::string material) : ResistiveElement(
     QLabel* wireLabel = new QLabel("Wire");
     wireCombo = new QComboBox;
     // Add each resistivity key (string) to the combobox.
+	int i=0;
+	bool set = false;
     for(std::map<std::string,long double>::iterator it=resistivities.begin() ; it!=resistivities.end() ; it++){
         wireCombo->addItem(it->first.c_str());
+		if(it->first == material){
+			wireCombo->setCurrentIndex(i);
+			set = true;
+		}
+		i++;
     }
+	
+	if(!set){
+			wireCombo->setCurrentIndex(0);
+	}
+	
+	
     wireBox->addWidget(wireLabel);
     wireBox->addWidget(wireCombo);
     settingsBox->addLayout(wireBox);
@@ -51,15 +64,6 @@ Wire::Wire(double length, double area, std::string material) : ResistiveElement(
 
     // Validate area to ensure that it is greater than 0.1 mm. If it is less than 0.1 mm set voltage to 0.1 mm.
     areaSpinner->setValue(area < 0.1? 0.1 : area);
-
-    if(resistivities.find(material) != resistivities.end()) {
-        // If the material is a valid one (in the resistivities map).
-        //TODO Fix loading material from save -V
-        //wireCombo->setCurrentText(QString::fromStdString(material));
-    }else {
-        // The material is invalid, set material to the first one in the combobox.
-        wireCombo->setCurrentIndex(0);
-    }
 
     // Add spacer to push widget to top.
     settingsBox->addSpacerItem(new QSpacerItem(0,0, QSizePolicy::Expanding,QSizePolicy::Expanding));
