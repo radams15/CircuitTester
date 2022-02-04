@@ -1,0 +1,12 @@
+<map id="QGraphicsPixmapItem" name="QGraphicsPixmapItem">
+<area shape="rect" id="node1" title=" " alt="" coords="233,5,401,83"/>
+<area shape="rect" id="node2" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="227,131,407,399"/>
+<area shape="rect" id="node3" href="$classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="249,447,385,671"/>
+<area shape="rect" id="node4" href="$classBattery.html" title="A battery class that has a configurable voltage and on/off state." alt="" coords="150,719,303,855"/>
+<area shape="rect" id="node5" href="$classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="" coords="327,741,489,833"/>
+<area shape="rect" id="node6" href="$classAmmeter.html" title="Ammeter component." alt="" coords="5,947,144,1039"/>
+<area shape="rect" id="node7" href="$classResistor.html" title="Resistor component with configurable resistance." alt="" coords="168,947,315,1039"/>
+<area shape="rect" id="node8" href="$classSwitch.html" title="Switch component that can be on/off." alt="" coords="339,925,477,1061"/>
+<area shape="rect" id="node9" href="$classVoltmeter.html" title="Resistor component with configurable resistance." alt="" coords="501,947,640,1039"/>
+<area shape="rect" id="node10" href="$classWire.html" title="Wire component with configurable length, area and material." alt="" coords="664,903,803,1083"/>
+</map>

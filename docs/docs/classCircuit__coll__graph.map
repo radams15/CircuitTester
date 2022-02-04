@@ -1,0 +1,9 @@
+<map id="Circuit" name="Circuit">
+<area shape="rect" id="node1" title="Main class that holds a circuit for modified nodal analysis (MNA)." alt="" coords="38,884,248,1108"/>
+<area shape="rect" id="node2" title=" " alt="" coords="125,5,164,83"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="111,320,250,544"/>
+<area shape="rect" id="node5" href="$classComponent.html" title="Main class that holds circuit components for modified nodal analysis (MNA)." alt="" coords="254,160,376,296"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="217,568,413,792"/>
+<area shape="rect" id="node6" title=" " alt="" coords="282,5,348,83"/>
+<area shape="rect" id="node7" title=" " alt="" coords="397,5,524,83"/>
+</map>

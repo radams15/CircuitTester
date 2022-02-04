@@ -1,0 +1,4 @@
+<map id="Wire::getResistance" name="Wire::getResistance">
+<area shape="rect" id="node1" title="Overrides the value in ResistiveElement to return the value of resistanceSpinner." alt="" coords="5,5,157,32"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/map/at.html#" title=" " alt="" coords="205,5,305,32"/>
+</map>
