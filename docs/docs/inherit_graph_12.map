@@ -1,12 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,173,108"/>
-<area shape="rect" id="node2" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="221,81,312,108"/>
-<area shape="rect" id="node3" href="$classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="360,81,471,108"/>
-<area shape="rect" id="node4" href="$classBattery.html" title="A battery class that has a configurable voltage and on/off state." alt="" coords="551,56,622,83"/>
-<area shape="rect" id="node5" href="$classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="" coords="519,107,655,133"/>
-<area shape="rect" id="node6" href="$classAmmeter.html" title="Ammeter component." alt="" coords="705,5,787,32"/>
-<area shape="rect" id="node7" href="$classResistor.html" title="Resistor component with configurable resistance." alt="" coords="709,56,783,83"/>
-<area shape="rect" id="node8" href="$classSwitch.html" title="Switch component that can be on/off." alt="" coords="713,107,779,133"/>
-<area shape="rect" id="node9" href="$classVoltmeter.html" title="Resistor component with configurable resistance." alt="" coords="703,157,789,184"/>
-<area shape="rect" id="node10" href="$classWire.html" title="Wire component with configurable length, area and material." alt="" coords="720,208,772,235"/>
+<area shape="rect" id="node1" href="$classUnknown.html" title="Base class for unknown values." alt="" coords="5,31,88,57"/>
+<area shape="rect" id="node2" href="$classUnknownCurrent.html" title="Stores an Component for which the current is unknown." alt="" coords="137,5,267,32"/>
+<area shape="rect" id="node3" href="$classUnknownVoltage.html" title="Stores a node for which the voltage is unknown." alt="" coords="136,56,268,83"/>
 </map>

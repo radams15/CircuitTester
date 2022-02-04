@@ -1,6 +1,10 @@
 <map id="Solution::equals" name="Solution::equals">
-<area shape="rect" id="node1" title="Whether this has every component and every component is approximately equal to the other in the oppos..." alt="" coords="5,56,132,83"/>
-<area shape="rect" id="node2" href="$classSolution.html#a66edc7133ce24a3cfc77853a2b5c8454" title="Get the voltage at a specific node." alt="" coords="189,5,377,32"/>
+<area shape="rect" id="node1" title="Whether this has every component and every component is approximately equal to the other in the oppos..." alt="" coords="5,81,132,108"/>
+<area shape="rect" id="node2" href="$classSolution.html#a66edc7133ce24a3cfc77853a2b5c8454" title="Get the voltage at a specific node." alt="" coords="189,5,376,32"/>
 <area shape="rect" id="node3" href="$classSolution.html#aa0f955f8c0975309c85f3aa2d2c8c98f" title="Whether this solution has all the same components as the other solution." alt="" coords="180,56,385,83"/>
-<area shape="rect" id="node4" href="$classSolution.html#a1b619eca8a128b8f6e245502a3d60bc4" title="Check whether double a is equal to double b." alt="" coords="182,107,383,133"/>
+<area shape="rect" id="node7" href="$classSolution.html#a1b619eca8a128b8f6e245502a3d60bc4" title="Check whether double a is equal to double b." alt="" coords="182,107,383,133"/>
+<area shape="rect" id="node8" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/push_back.html#" title=" " alt="" coords="199,157,367,184"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/algorithm/all_any_none_of.html#" title=" " alt="" coords="457,5,544,32"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/begin.html#" title=" " alt="" coords="433,56,568,83"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/end.html#" title=" " alt="" coords="439,107,562,133"/>
 </map>

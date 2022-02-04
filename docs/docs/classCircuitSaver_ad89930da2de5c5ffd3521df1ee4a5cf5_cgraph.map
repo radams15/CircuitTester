@@ -1,8 +1,17 @@
 <map id="CircuitSaver::exportCircuit" name="CircuitSaver::exportCircuit">
-<area shape="rect" id="node1" title="Copy circuit to directory to send to others." alt="" coords="5,56,199,83"/>
-<area shape="rect" id="node2" href="$classFileUtils.html#a512c8bbf8c598bf8bf4aaa0ce5646f57" title="Copies src to dst." alt="" coords="259,5,393,32"/>
-<area shape="rect" id="node3" href="$classFileUtils.html#a63f60972bc2b20587c52b9500904f44f" title="Does fullString end with ending." alt="" coords="255,56,397,83"/>
-<area shape="rect" id="node4" href="$classCircuitSaver.html#abf3ccbef453b0c8861074f63a70bf2fe" title="Gets the save path from the circuit name." alt="" coords="247,107,405,133"/>
-<area shape="rect" id="node5" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="453,107,608,133"/>
-<area shape="rect" id="node6" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="656,107,828,133"/>
+<area shape="rect" id="node1" title="Copy circuit to directory to send to others." alt="" coords="5,195,199,221"/>
+<area shape="rect" id="node2" href="$classFileUtils.html#a512c8bbf8c598bf8bf4aaa0ce5646f57" title="Copies src to dst." alt="" coords="257,107,395,133"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/empty.html#" title=" " alt="" coords="257,169,395,196"/>
+<area shape="rect" id="node8" href="$classFileUtils.html#a63f60972bc2b20587c52b9500904f44f" title="Does fullString end with ending." alt="" coords="254,220,398,247"/>
+<area shape="rect" id="node11" href="$classCircuitSaver.html#abf3ccbef453b0c8861074f63a70bf2fe" title="Gets the save path from the circuit name." alt="" coords="247,296,405,323"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/c_str.html#" title=" " alt="" coords="467,5,594,32"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_ofstream/close.html#" title=" " alt="" coords="455,56,606,83"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_ifstream/close.html#" title=" " alt="" coords="457,107,604,133"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_ios/rdbuf.html#" title=" " alt="" coords="457,157,604,184"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/compare.html#" title=" " alt="" coords="455,208,607,235"/>
+<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/size.html#" title=" " alt="" coords="463,259,599,285"/>
+<area shape="rect" id="node12" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="453,309,608,336"/>
+<area shape="rect" id="node13" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="656,284,829,311"/>
+<area shape="rect" id="node15" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_stringstream/str.html#" title=" " alt="" coords="663,335,822,361"/>
+<area shape="rect" id="node14" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/manip/endl.html#" title=" " alt="" coords="877,284,956,311"/>
 </map>

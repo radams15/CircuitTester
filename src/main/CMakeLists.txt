@@ -1,13 +1,3 @@
-if(APPLE)
-    set(SYS "macos")
-elseif(UNIX)
-    set(SYS "unix")
-elseif(WIN32)
-    set(SYS "windows")
-else()
-    set(SYS "unknown")
-endif()
-
 set(CMAKE_EXE_LINKER_FLAGS "-static-libstdc++")
 
 set(PROJECT_SOURCES
@@ -105,3 +95,5 @@ target_link_libraries(CircuitTester PRIVATE Qt${QT_VER}::Widgets nlohmann_json::
 
 
 set(BUILD_DIR ${PROJECT_SOURCE_DIR}/builds/${SYS})
+
+install(TARGETS CircuitTester DESTINATION bin)

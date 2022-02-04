@@ -20,12 +20,12 @@
 <area shape="rect" id="node19" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html" title=" " alt="" coords="215,284,343,311"/>
 <area shape="rect" id="node21" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html" title=" " alt="" coords="239,385,318,412"/>
 <area shape="rect" id="node20" href="$classScene.html" title="The scene class is a QGraphicsScene derivitive that holds the components in the circuit." alt="" coords="476,284,537,311"/>
-<area shape="rect" id="node22" href="$classExpandingSpacer.html" title=" " alt="" coords="439,335,574,361"/>
+<area shape="rect" id="node22" href="$classExpandingSpacer.html" title="Widget that fills all horizontal space." alt="" coords="439,335,574,361"/>
 <area shape="rect" id="node23" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qabstractbutton.html" title=" " alt="" coords="442,385,571,412"/>
 <area shape="rect" id="node26" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmainwindow.html" title=" " alt="" coords="449,436,565,463"/>
 <area shape="rect" id="node28" href="$classSettingsMenu.html" title="Settings menu that dynamically expands and contracts." alt="" coords="451,487,562,513"/>
 <area shape="rect" id="node24" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qtoolbutton.html" title=" " alt="" coords="633,385,734,412"/>
-<area shape="rect" id="node25" href="$classHamburgerMenu.html" title=" " alt="" coords="789,385,920,412"/>
+<area shape="rect" id="node25" href="$classHamburgerMenu.html" title="Simple hamburger menu." alt="" coords="789,385,920,412"/>
 <area shape="rect" id="node27" href="$classMainWindow.html" title="The main window class that is the GUI for the user on startup." alt="" coords="630,436,737,463"/>
 <area shape="rect" id="node29" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpaintdevice.html" title=" " alt="" coords="10,385,119,412"/>
 </map>

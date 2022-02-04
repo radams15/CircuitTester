@@ -1,13 +1,13 @@
 <map id="UIComponent" name="UIComponent">
-<area shape="rect" id="node1" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="125,229,235,256"/>
-<area shape="rect" id="node5" href="$classBattery.html" title="A battery class that has a configurable voltage and on/off state." alt="" coords="81,304,151,331"/>
-<area shape="rect" id="node6" href="$classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="" coords="176,304,312,331"/>
-<area shape="rect" id="node2" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="135,155,225,181"/>
-<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspixmapitem.html" title=" " alt="" coords="96,80,264,107"/>
-<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html" title=" " alt="" coords="121,5,239,32"/>
-<area shape="rect" id="node7" href="$classAmmeter.html" title="Ammeter component." alt="" coords="5,379,88,405"/>
-<area shape="rect" id="node8" href="$classResistor.html" title="Resistor component with configurable resistance." alt="" coords="112,379,187,405"/>
-<area shape="rect" id="node9" href="$classSwitch.html" title="Switch component that can be on/off." alt="" coords="211,379,277,405"/>
-<area shape="rect" id="node10" href="$classVoltmeter.html" title="Resistor component with configurable resistance." alt="" coords="301,379,387,405"/>
-<area shape="rect" id="node11" href="$classWire.html" title="Wire component with configurable length, area and material." alt="" coords="411,379,463,405"/>
+<area shape="rect" id="node1" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="249,1027,385,1251"/>
+<area shape="rect" id="node5" href="$classBattery.html" title="A battery class that has a configurable voltage and on/off state." alt="" coords="150,1299,303,1435"/>
+<area shape="rect" id="node6" href="$classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="" coords="327,1321,489,1413"/>
+<area shape="rect" id="node2" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="227,711,407,979"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspixmapitem.html" title=" " alt="" coords="215,439,419,663"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html" title=" " alt="" coords="233,5,402,391"/>
+<area shape="rect" id="node7" href="$classAmmeter.html" title="Ammeter component." alt="" coords="5,1527,144,1619"/>
+<area shape="rect" id="node8" href="$classResistor.html" title="Resistor component with configurable resistance." alt="" coords="168,1527,315,1619"/>
+<area shape="rect" id="node9" href="$classSwitch.html" title="Switch component that can be on/off." alt="" coords="339,1505,477,1641"/>
+<area shape="rect" id="node10" href="$classVoltmeter.html" title="Resistor component with configurable resistance." alt="" coords="501,1527,640,1619"/>
+<area shape="rect" id="node11" href="$classWire.html" title="Wire component with configurable length, area and material." alt="" coords="664,1483,803,1663"/>
 </map>

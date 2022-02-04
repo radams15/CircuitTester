@@ -85,10 +85,10 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a24a4dc5743aa88c53e11ba82e5963c26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquation.html#a24a4dc5743aa88c53e11ba82e5963c26">Equation</a> (double <a class="el" href="classEquation.html#acc5de909a6de828d78578a29f46a1252">value</a>, std::vector&lt; <a class="el" href="classTerm.html">Term</a> &gt; <a class="el" href="classEquation.html#af43ed09ca77ef6e24f61a0d59f71a7dc">terms</a>)</td></tr>
+<tr class="memitem:a24a4dc5743aa88c53e11ba82e5963c26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquation.html#a24a4dc5743aa88c53e11ba82e5963c26">Equation</a> (double <a class="el" href="classEquation.html#acc5de909a6de828d78578a29f46a1252">value</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classTerm.html">Term</a> &gt; <a class="el" href="classEquation.html#af43ed09ca77ef6e24f61a0d59f71a7dc">terms</a>)</td></tr>
 <tr class="memdesc:a24a4dc5743aa88c53e11ba82e5963c26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser.  <a href="classEquation.html#a24a4dc5743aa88c53e11ba82e5963c26">More...</a><br /></td></tr>
 <tr class="separator:a24a4dc5743aa88c53e11ba82e5963c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a901399ef8377cba746aad6f03d231727"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquation.html#a901399ef8377cba746aad6f03d231727">apply</a> (int row, Eigen::MatrixXd *A, Eigen::MatrixXd *z, std::function&lt; int(<a class="el" href="classUnknown.html">Unknown</a> *)&gt; getIndexFunc)</td></tr>
+<tr class="memitem:a901399ef8377cba746aad6f03d231727"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquation.html#a901399ef8377cba746aad6f03d231727">apply</a> (int row, Eigen::MatrixXd *A, Eigen::MatrixXd *z, <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">std::function</a>&lt; int(<a class="el" href="classUnknown.html">Unknown</a> *)&gt; getIndexFunc)</td></tr>
 <tr class="memdesc:a901399ef8377cba746aad6f03d231727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stamps the parts of this component onto the passed matrix to form the overall equation.  <a href="classEquation.html#a901399ef8377cba746aad6f03d231727">More...</a><br /></td></tr>
 <tr class="separator:a901399ef8377cba746aad6f03d231727"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -97,7 +97,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:acc5de909a6de828d78578a29f46a1252"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquation.html#acc5de909a6de828d78578a29f46a1252">value</a></td></tr>
 <tr class="memdesc:acc5de909a6de828d78578a29f46a1252"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value the terms equal In 1a + 2b = 3 this is 3.  <a href="classEquation.html#acc5de909a6de828d78578a29f46a1252">More...</a><br /></td></tr>
 <tr class="separator:acc5de909a6de828d78578a29f46a1252"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af43ed09ca77ef6e24f61a0d59f71a7dc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classTerm.html">Term</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquation.html#af43ed09ca77ef6e24f61a0d59f71a7dc">terms</a></td></tr>
+<tr class="memitem:af43ed09ca77ef6e24f61a0d59f71a7dc"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classTerm.html">Term</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquation.html#af43ed09ca77ef6e24f61a0d59f71a7dc">terms</a></td></tr>
 <tr class="memdesc:af43ed09ca77ef6e24f61a0d59f71a7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value the terms equal In 1a + 2b = 3 this is an array {1a, 2b}.  <a href="classEquation.html#af43ed09ca77ef6e24f61a0d59f71a7dc">More...</a><br /></td></tr>
 <tr class="separator:af43ed09ca77ef6e24f61a0d59f71a7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -108,7 +108,20 @@ Public Attributes</h2></td></tr>
 <p>An equation is 2x + 3b = 5 where 2x and 3b are the terms, and 5 us the value. </p>
 
 <p class="definition">Definition at line <a class="el" href="Equation_8h_source.html#l00023">23</a> of file <a class="el" href="Equation_8h_source.html">Equation.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><div class="dynheader">
+Collaboration diagram for Equation:</div>
+<div class="dyncontent">
+<div class="center"><img src="classEquation__coll__graph.png" border="0" usemap="#aEquation_coll__map" alt="Collaboration graph"/></div>
+<map name="aEquation_coll__map" id="aEquation_coll__map">
+<area shape="rect" title="Class that holds an equation." alt="" coords="5,727,109,819"/>
+<area shape="rect" title=" " alt="" coords="25,153,92,230"/>
+<area shape="rect" href="classTerm.html" title="Class that holds a term." alt="" coords="111,300,190,377"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/vector.html" title=" " alt="" coords="74,440,227,664"/>
+<area shape="rect" href="classUnknown.html" title="Base class for unknown values." alt="" coords="141,145,249,237"/>
+<area shape="rect" title=" " alt="" coords="169,5,221,83"/>
+</map>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a24a4dc5743aa88c53e11ba82e5963c26"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24a4dc5743aa88c53e11ba82e5963c26">&#9670;&nbsp;</a></span>Equation()</h2>
 
@@ -124,7 +137,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classTerm.html">Term</a> &gt;&#160;</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classTerm.html">Term</a> &gt;&#160;</td>
           <td class="paramname"><em>terms</em>&#160;</td>
         </tr>
         <tr>
@@ -176,7 +189,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::function&lt; int(<a class="el" href="classUnknown.html">Unknown</a> *)&gt;&#160;</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">std::function</a>&lt; int(<a class="el" href="classUnknown.html">Unknown</a> *)&gt;&#160;</td>
           <td class="paramname"><em>getIndexFunc</em>&#160;</td>
         </tr>
         <tr>
@@ -210,7 +223,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classTerm.html">Term</a>&gt; Equation::terms</td>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt;<a class="el" href="classTerm.html">Term</a>&gt; Equation::terms</td>
         </tr>
       </table>
 </div><div class="memdoc">

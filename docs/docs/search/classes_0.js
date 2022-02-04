@@ -1,7 +1,24 @@
 var searchData=
 [
-  ['ammeter_0',['Ammeter',['../class_ammeter.html',1,'']]],
-  ['analysismapper_1',['AnalysisMapper',['../class_analysis_mapper.html',1,'']]],
-  ['attribute_2',['Attribute',['https://doc.qt.io/qt-5/qinputmethodevent-attribute.html',1,'QInputMethodEvent']]],
-  ['availablesizesargument_3',['AvailableSizesArgument',['https://doc.qt.io/qt-5/qiconengine-availablesizesargument.html',1,'QIconEngine']]]
+  ['add_5fconst_15106',['add_const',['http://en.cppreference.com/w/cpp/types/add_cv.html',1,'std']]],
+  ['add_5fcv_15107',['add_cv',['http://en.cppreference.com/w/cpp/types/add_cv.html',1,'std']]],
+  ['add_5flvalue_5freference_15108',['add_lvalue_reference',['http://en.cppreference.com/w/cpp/types/add_reference.html',1,'std']]],
+  ['add_5fpointer_15109',['add_pointer',['http://en.cppreference.com/w/cpp/types/add_pointer.html',1,'std']]],
+  ['add_5frvalue_5freference_15110',['add_rvalue_reference',['http://en.cppreference.com/w/cpp/types/add_reference.html',1,'std']]],
+  ['add_5fvolatile_15111',['add_volatile',['http://en.cppreference.com/w/cpp/types/add_cv.html',1,'std']]],
+  ['adopt_5flock_5ft_15112',['adopt_lock_t',['http://en.cppreference.com/w/cpp/thread/lock_tag_t.html',1,'std']]],
+  ['aligned_5fstorage_15113',['aligned_storage',['http://en.cppreference.com/w/cpp/types/aligned_storage.html',1,'std']]],
+  ['aligned_5funion_15114',['aligned_union',['http://en.cppreference.com/w/cpp/types/aligned_union.html',1,'std']]],
+  ['alignment_5fof_15115',['alignment_of',['http://en.cppreference.com/w/cpp/types/alignment_of.html',1,'std']]],
+  ['allocator_15116',['allocator',['http://en.cppreference.com/w/cpp/memory/allocator.html',1,'std']]],
+  ['allocator_5farg_5ft_15117',['allocator_arg_t',['http://en.cppreference.com/w/cpp/memory/allocator_arg_t.html',1,'std']]],
+  ['allocator_5ftraits_15118',['allocator_traits',['http://en.cppreference.com/w/cpp/memory/allocator_traits.html',1,'std']]],
+  ['ammeter_15119',['Ammeter',['../classAmmeter.html',1,'']]],
+  ['analysismapper_15120',['AnalysisMapper',['../classAnalysisMapper.html',1,'']]],
+  ['array_15121',['array',['http://en.cppreference.com/w/cpp/container/array.html',1,'std']]],
+  ['atomic_15122',['atomic',['http://en.cppreference.com/w/cpp/atomic/atomic.html',1,'std']]],
+  ['atomic_5fflag_15123',['atomic_flag',['http://en.cppreference.com/w/cpp/atomic/atomic_flag.html',1,'std']]],
+  ['attribute_15124',['Attribute',['https://doc.qt.io/qt-5/qinputmethodevent-attribute.html',1,'QInputMethodEvent']]],
+  ['auto_5fptr_15125',['auto_ptr',['http://en.cppreference.com/w/cpp/memory/auto_ptr.html',1,'std']]],
+  ['availablesizesargument_15126',['AvailableSizesArgument',['https://doc.qt.io/qt-5/qiconengine-availablesizesargument.html',1,'QIconEngine']]]
 ];

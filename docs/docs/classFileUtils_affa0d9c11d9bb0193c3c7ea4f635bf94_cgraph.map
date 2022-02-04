@@ -1,7 +1,14 @@
 <map id="FileUtils::getSaveFiles" name="FileUtils::getSaveFiles">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,169,83"/>
-<area shape="rect" id="node2" href="$classFileUtils.html#a63f60972bc2b20587c52b9500904f44f" title="Does fullString end with ending." alt="" coords="223,5,366,32"/>
-<area shape="rect" id="node3" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="217,56,372,83"/>
-<area shape="rect" id="node5" href="$classFileUtils.html#a15ebcdd895f8dea49b78829daee908ba" title=" " alt="" coords="229,107,360,133"/>
-<area shape="rect" id="node4" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="420,56,592,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,172,159"/>
+<area shape="rect" id="node2" href="$classFileUtils.html#a63f60972bc2b20587c52b9500904f44f" title="Does fullString end with ending." alt="" coords="232,107,376,133"/>
+<area shape="rect" id="node5" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="227,56,381,83"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/push_back.html#" title=" " alt="" coords="220,157,388,184"/>
+<area shape="rect" id="node10" href="$classFileUtils.html#a15ebcdd895f8dea49b78829daee908ba" title=" " alt="" coords="239,208,369,235"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/compare.html#" title=" " alt="" coords="447,107,599,133"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/size.html#" title=" " alt="" coords="455,157,591,184"/>
+<area shape="rect" id="node6" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="436,5,609,32"/>
+<area shape="rect" id="node8" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_stringstream/str.html#" title=" " alt="" coords="443,56,602,83"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/manip/endl.html#" title=" " alt="" coords="657,5,736,32"/>
+<area shape="rect" id="node11" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/find.html#" title=" " alt="" coords="463,208,582,235"/>
+<area shape="rect" id="node12" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/replace.html#" title=" " alt="" coords="451,259,594,285"/>
 </map>

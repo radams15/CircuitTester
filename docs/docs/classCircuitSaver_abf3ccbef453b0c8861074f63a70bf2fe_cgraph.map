@@ -1,5 +1,7 @@
 <map id="CircuitSaver::getPath" name="CircuitSaver::getPath">
-<area shape="rect" id="node1" title="Gets the save path from the circuit name." alt="" coords="5,5,164,32"/>
-<area shape="rect" id="node2" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="212,5,367,32"/>
-<area shape="rect" id="node3" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="415,5,587,32"/>
+<area shape="rect" id="node1" title="Gets the save path from the circuit name." alt="" coords="5,31,164,57"/>
+<area shape="rect" id="node2" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="212,31,367,57"/>
+<area shape="rect" id="node3" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="415,5,588,32"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_stringstream/str.html#" title=" " alt="" coords="422,56,581,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/manip/endl.html#" title=" " alt="" coords="636,5,715,32"/>
 </map>

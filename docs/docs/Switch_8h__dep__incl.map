@@ -1,7 +1,7 @@
 <map id="/home/rhys/scripts/CircuitTester/src/main/UI/Components/Switch.h" name="/home/rhys/scripts/CircuitTester/src/main/UI/Components/Switch.h">
-<area shape="rect" id="node1" title=" " alt="" coords="300,5,485,61"/>
+<area shape="rect" id="node1" title=" " alt="" coords="288,5,473,61"/>
 <area shape="rect" id="node2" href="$CircuitSaver_8cc.html" title=" " alt="" coords="5,109,172,165"/>
-<area shape="rect" id="node3" href="$Switch_8cc.html" title=" " alt="" coords="196,109,387,165"/>
-<area shape="rect" id="node4" href="$AnalysisMapper_8cc.html" title=" " alt="" coords="411,109,577,165"/>
+<area shape="rect" id="node3" href="$AnalysisMapper_8cc.html" title=" " alt="" coords="196,109,363,165"/>
+<area shape="rect" id="node4" href="$Switch_8cc.html" title=" " alt="" coords="387,109,577,165"/>
 <area shape="rect" id="node5" href="$MainWindow_8cc.html" title=" " alt="" coords="601,109,768,165"/>
 </map>

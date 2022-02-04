@@ -1,14 +1,38 @@
 <map id="AnalysisMapper::getSolution" name="AnalysisMapper::getSolution">
-<area shape="rect" id="node1" title="Gets solves the circuit, returning a map of components to values." alt="" coords="5,56,213,83"/>
-<area shape="rect" id="node2" href="$classAnalysisMapper.html#adbd1d8db8e7863ba4cfbe34659f0c8b5" title="Makes an adjacency list out of the components of the circuit." alt="" coords="261,5,471,32"/>
-<area shape="rect" id="node4" href="$AnalysisMapper_8cc.html#af1b1d5d0c943d780bab64a290e17bf00" title=" " alt="" coords="321,56,411,83"/>
-<area shape="rect" id="node5" href="$classCircuit.html#aea1c0c6b32a38f5812356e7d7e74649d" title="Solves the circuit using linear algebra and matrices." alt="" coords="313,107,419,133"/>
-<area shape="rect" id="node3" href="$classAnalysisMapper.html#a4e775fafccbc93cdb8e0cad7de2204a0" title="Finds the shortest path between two nodes on a graph using Dijkstra&#39;s algorithm." alt="" coords="519,5,761,32"/>
-<area shape="rect" id="node6" href="$classCircuit.html#afa4b34944acad77275b4f2a493179cb0" title="Returns a list of equations that must be solved to solve the overall circuit." alt="" coords="561,56,719,83"/>
-<area shape="rect" id="node10" href="$classCircuit.html#a9cd7662593cdaa3d24c80530b5d1d6f5" title="Used to find out the number of both current and voltage variables." alt="" coords="563,107,717,133"/>
-<area shape="rect" id="node12" href="$classCircuit.html#a765894f576a87328a00c7d901f69ff48" title="Returns all unknown currents in the circuit." alt="" coords="535,157,745,184"/>
-<area shape="rect" id="node7" href="$classCircuit.html#a3bc3876e8211f628272852411de427f6" title="Gets the terms that enter and leave a node." alt="" coords="855,5,1003,32"/>
-<area shape="rect" id="node8" href="$classCircuit.html#a0207a30a1d16cc2f1d249179833e4ea8" title="Selects the components that have the reference voltage." alt="" coords="851,56,1007,83"/>
-<area shape="rect" id="node9" href="$classCircuit.html#ac9c6a0788dc59146078619eb0b07203a" title=" " alt="" coords="1097,56,1300,83"/>
-<area shape="rect" id="node11" href="$classCircuit.html#ac86f036409fde26889b8eb8c327dc7eb" title="Gets the number of unknown currents." alt="" coords="809,107,1049,133"/>
+<area shape="rect" id="node1" title="Gets solves the circuit, returning a map of components to values." alt="" coords="5,235,213,262"/>
+<area shape="rect" id="node2" href="$classSolution.html#ac589e0bddcec492753516913e7b2b09e" title="Gets the current at a resistor through I=V/R." alt="" coords="261,58,413,85"/>
+<area shape="rect" id="node3" href="$classSolution.html#aa69bf528b0cbee6f849d858882121667" title="Get the voltage of a specified component." alt="" coords="489,83,643,110"/>
+<area shape="rect" id="node5" href="$classUIComponent.html#aecae5af70cb4662d433eb6f5c4b32924" title="Getter for ID." alt="" coords="261,159,413,186"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qmap.html#insert" title=" " alt="" coords="285,210,390,237"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qmap.html#keys" title=" " alt="" coords="789,159,888,186"/>
+<area shape="rect" id="node8" href="$classAnalysisMapper.html#adbd1d8db8e7863ba4cfbe34659f0c8b5" title="Makes an adjacency list out of the components of the circuit." alt="" coords="461,311,671,338"/>
+<area shape="rect" id="node21" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/push_back.html#" title=" " alt="" coords="1257,1173,1425,1199"/>
+<area shape="rect" id="node23" href="$classCircuit.html#aea1c0c6b32a38f5812356e7d7e74649d" title="Solves the circuit using linear algebra and matrices." alt="" coords="284,1129,391,1155"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/map/at.html#" title=" " alt="" coords="789,83,889,110"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/clear.html#" title=" " alt="" coords="773,311,904,338"/>
+<area shape="rect" id="node10" href="$classLine.html#adaae751db39722df0f3937222999c5b8" title="Simply returns the end item." alt="" coords="783,261,894,287"/>
+<area shape="rect" id="node11" href="$classAnalysisMapper.html#a4e775fafccbc93cdb8e0cad7de2204a0" title="Finds the shortest path between two nodes on a graph using Dijkstra&#39;s algorithm." alt="" coords="719,210,959,237"/>
+<area shape="rect" id="node22" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/size.html#" title=" " alt="" coords="1045,463,1171,490"/>
+<area shape="rect" id="node12" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/at.html#" title=" " alt="" coords="1052,565,1164,591"/>
+<area shape="rect" id="node13" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/begin.html#" title=" " alt="" coords="1274,691,1409,718"/>
+<area shape="rect" id="node14" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/algorithm/copy.html#" title=" " alt="" coords="1067,58,1149,85"/>
+<area shape="rect" id="node15" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/queue/empty.html#" title=" " alt="" coords="1038,109,1178,135"/>
+<area shape="rect" id="node16" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/end.html#" title=" " alt="" coords="1280,514,1403,541"/>
+<area shape="rect" id="node17" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/algorithm/find.html#" title=" " alt="" coords="1071,159,1145,186"/>
+<area shape="rect" id="node18" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/queue/front.html#" title=" " alt="" coords="1043,210,1173,237"/>
+<area shape="rect" id="node19" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/queue/pop.html#" title=" " alt="" coords="1047,261,1169,287"/>
+<area shape="rect" id="node20" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/queue/push.html#" title=" " alt="" coords="1043,311,1173,338"/>
+<area shape="rect" id="node24" href="$classCircuit.html#afa4b34944acad77275b4f2a493179cb0" title="Returns a list of equations that must be solved to solve the overall circuit." alt="" coords="487,1230,645,1257"/>
+<area shape="rect" id="node32" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/insert.html#" title=" " alt="" coords="771,1325,907,1351"/>
+<area shape="rect" id="node33" href="$classCircuit.html#a9cd7662593cdaa3d24c80530b5d1d6f5" title="Used to find out the number of both current and voltage variables." alt="" coords="490,539,642,566"/>
+<area shape="rect" id="node35" href="$classCircuit.html#a765894f576a87328a00c7d901f69ff48" title="Returns all unknown currents in the circuit." alt="" coords="461,1369,671,1395"/>
+<area shape="rect" id="node36" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/map/insert.html#" title=" " alt="" coords="504,1179,628,1206"/>
+<area shape="rect" id="node25" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/algorithm/count.html#" title=" " alt="" coords="1298,1021,1385,1047"/>
+<area shape="rect" id="node26" href="$classCircuit.html#a3bc3876e8211f628272852411de427f6" title="Gets the terms that enter and leave a node." alt="" coords="765,1274,913,1301"/>
+<area shape="rect" id="node27" href="$classCircuit.html#a0207a30a1d16cc2f1d249179833e4ea8" title="Selects the components that have the reference voltage." alt="" coords="761,818,917,845"/>
+<area shape="rect" id="node28" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/empty.html#" title=" " alt="" coords="1271,843,1412,870"/>
+<area shape="rect" id="node29" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/erase.html#" title=" " alt="" coords="1274,767,1409,794"/>
+<area shape="rect" id="node30" href="$classCircuit.html#ac9c6a0788dc59146078619eb0b07203a" title=" " alt="" coords="1007,818,1209,845"/>
+<area shape="rect" id="node31" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/algorithm/remove.html#" title=" " alt="" coords="1050,970,1166,997"/>
+<area shape="rect" id="node34" href="$classCircuit.html#ac86f036409fde26889b8eb8c327dc7eb" title="Gets the number of unknown currents." alt="" coords="719,463,959,490"/>
 </map>

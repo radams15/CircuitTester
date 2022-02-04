@@ -1,7 +1,9 @@
 <map id="MainWindow::openSaveDir" name="MainWindow::openSaveDir">
-<area shape="rect" id="node1" title="Called when the open save directory button is clicked from the toolbar." alt="" coords="5,56,201,83"/>
-<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#fromStdString" title=" " alt="" coords="265,5,433,32"/>
-<area shape="rect" id="node3" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="272,56,427,83"/>
-<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qdesktopservices.html#openUrl" title=" " alt="" coords="249,107,449,133"/>
-<area shape="rect" id="node4" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="497,56,671,83"/>
+<area shape="rect" id="node1" title="Called when the open save directory button is clicked from the toolbar." alt="" coords="5,60,201,86"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/manip/endl.html#" title=" " alt="" coords="719,9,797,36"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#fromStdString" title=" " alt="" coords="265,34,433,61"/>
+<area shape="rect" id="node4" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="272,85,427,112"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qdesktopservices.html#openUrl" title=" " alt="" coords="249,136,449,162"/>
+<area shape="rect" id="node5" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="497,34,671,61"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_stringstream/str.html#" title=" " alt="" coords="505,85,663,112"/>
 </map>

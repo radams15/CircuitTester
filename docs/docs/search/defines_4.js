@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['is_5ftype_0',['IS_TYPE',['../_analysis_mapper_8h.html#ac2f2b00884edd6025a1dd60300a7ed84',1,'IS_TYPE():&#160;AnalysisMapper.h'],['../_scene_8h.html#ac2f2b00884edd6025a1dd60300a7ed84',1,'IS_TYPE():&#160;Scene.h']]]
+  ['hamburger_5fmenu_31540',['HAMBURGER_MENU',['../MainWindow_8h.html#afc4334225a27dc7703919e27b30fe1a4',1,'MainWindow.h']]]
 ];

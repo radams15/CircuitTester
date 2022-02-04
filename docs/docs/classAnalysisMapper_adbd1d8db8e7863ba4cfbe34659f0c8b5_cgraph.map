@@ -1,4 +1,18 @@
 <map id="AnalysisMapper::makeGraph" name="AnalysisMapper::makeGraph">
-<area shape="rect" id="node1" title="Makes an adjacency list out of the components of the circuit." alt="" coords="5,5,215,32"/>
-<area shape="rect" id="node2" href="$classAnalysisMapper.html#a4e775fafccbc93cdb8e0cad7de2204a0" title="Finds the shortest path between two nodes on a graph using Dijkstra&#39;s algorithm." alt="" coords="263,5,505,32"/>
+<area shape="rect" id="node1" title="Makes an adjacency list out of the components of the circuit." alt="" coords="5,335,215,361"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/clear.html#" title=" " alt="" coords="317,208,448,235"/>
+<area shape="rect" id="node3" href="$classLine.html#adaae751db39722df0f3937222999c5b8" title="Simply returns the end item." alt="" coords="327,259,438,285"/>
+<area shape="rect" id="node4" href="$classAnalysisMapper.html#a4e775fafccbc93cdb8e0cad7de2204a0" title="Finds the shortest path between two nodes on a graph using Dijkstra&#39;s algorithm." alt="" coords="263,309,503,336"/>
+<area shape="rect" id="node14" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/push_back.html#" title=" " alt="" coords="551,461,719,488"/>
+<area shape="rect" id="node15" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/size.html#" title=" " alt="" coords="572,512,697,539"/>
+<area shape="rect" id="node16" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qmap.html#keys" title=" " alt="" coords="333,461,432,488"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/at.html#" title=" " alt="" coords="579,309,691,336"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/begin.html#" title=" " alt="" coords="567,360,702,387"/>
+<area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/algorithm/copy.html#" title=" " alt="" coords="594,411,675,437"/>
+<area shape="rect" id="node8" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/queue/empty.html#" title=" " alt="" coords="565,5,705,32"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/end.html#" title=" " alt="" coords="573,56,696,83"/>
+<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/algorithm/find.html#" title=" " alt="" coords="597,107,672,133"/>
+<area shape="rect" id="node11" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/queue/front.html#" title=" " alt="" coords="570,157,699,184"/>
+<area shape="rect" id="node12" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/queue/pop.html#" title=" " alt="" coords="573,208,696,235"/>
+<area shape="rect" id="node13" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/queue/push.html#" title=" " alt="" coords="570,259,699,285"/>
 </map>

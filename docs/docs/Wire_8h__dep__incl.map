@@ -1,7 +1,7 @@
 <map id="/home/rhys/scripts/CircuitTester/src/main/UI/Components/Wire.h" name="/home/rhys/scripts/CircuitTester/src/main/UI/Components/Wire.h">
-<area shape="rect" id="node1" title=" " alt="" coords="299,5,471,61"/>
+<area shape="rect" id="node1" title=" " alt="" coords="292,5,464,61"/>
 <area shape="rect" id="node2" href="$CircuitSaver_8cc.html" title=" " alt="" coords="5,109,172,165"/>
-<area shape="rect" id="node3" href="$Wire_8cc.html" title=" " alt="" coords="197,109,375,165"/>
-<area shape="rect" id="node4" href="$AnalysisMapper_8cc.html" title=" " alt="" coords="400,109,567,165"/>
+<area shape="rect" id="node3" href="$AnalysisMapper_8cc.html" title=" " alt="" coords="196,109,363,165"/>
+<area shape="rect" id="node4" href="$Wire_8cc.html" title=" " alt="" coords="387,109,566,165"/>
 <area shape="rect" id="node5" href="$MainWindow_8cc.html" title=" " alt="" coords="591,109,757,165"/>
 </map>

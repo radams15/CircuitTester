@@ -1,4 +1,8 @@
 <map id="Line::update" name="Line::update">
-<area shape="rect" id="node1" title="Updates the position of the line when items move." alt="" coords="144,5,247,32"/>
-<area shape="rect" id="node2" href="$classLine.html#a8c3d84ae985092cf4774e625f69d5c53" title="Called by QT to paint the line onto the canvas." alt="" coords="5,5,96,32"/>
+<area shape="rect" id="node1" title="Updates the position of the line when items move." alt="" coords="960,31,1063,57"/>
+<area shape="rect" id="node2" href="$classCircuitSaver.html#a9ace41a84d96b09d103fa0465899ed6b" title=" " alt="" coords="733,5,912,32"/>
+<area shape="rect" id="node6" href="$classLine.html#a8c3d84ae985092cf4774e625f69d5c53" title="Called by QT to paint the line onto the canvas." alt="" coords="777,56,868,83"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#af302ce74b30876facddc371a6842d76a" title="Called when the open button is clicked from the toolbar." alt="" coords="501,5,685,32"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a62cd8712fb41a754298f6f60eead2cb0" title="Creates all actions for the toolbar and the menubar." alt="" coords="251,5,453,32"/>
+<area shape="rect" id="node5" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,5,203,32"/>
 </map>

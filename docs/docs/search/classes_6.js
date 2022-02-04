@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['iterator_0',['Iterator',['https://doc.qt.io/qt-5/qcborarray-iterator.html',1,'QCborArray::Iterator'],['https://doc.qt.io/qt-5/qcbormap-iterator.html',1,'QCborMap::Iterator']]],
-  ['iterator_1',['iterator',['https://doc.qt.io/qt-5/qhash-iterator.html',1,'QHash::iterator'],['https://doc.qt.io/qt-5/qjsonarray-iterator.html',1,'QJsonArray::iterator'],['https://doc.qt.io/qt-5/qjsonobject-iterator.html',1,'QJsonObject::iterator'],['https://doc.qt.io/qt-5/qlinkedlist-iterator.html',1,'QLinkedList::iterator'],['https://doc.qt.io/qt-5/qlist-iterator.html',1,'QList::iterator'],['https://doc.qt.io/qt-5/qmap-iterator.html',1,'QMap::iterator'],['https://doc.qt.io/qt-5/qset-iterator.html',1,'QSet::iterator'],['https://doc.qt.io/qt-5/qtextblock-iterator.html',1,'QTextBlock::iterator'],['https://doc.qt.io/qt-5/qtextframe-iterator.html',1,'QTextFrame::iterator']]]
+  ['gamma_5fdistribution_15281',['gamma_distribution',['http://en.cppreference.com/w/cpp/numeric/random/gamma_distribution.html',1,'std']]],
+  ['geometric_5fdistribution_15282',['geometric_distribution',['http://en.cppreference.com/w/cpp/numeric/random/geometric_distribution.html',1,'std']]],
+  ['giga_15283',['giga',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio.html',1,'std']]],
+  ['greater_15284',['greater',['http://en.cppreference.com/w/cpp/utility/functional/greater.html',1,'std']]],
+  ['greater_5fequal_15285',['greater_equal',['http://en.cppreference.com/w/cpp/utility/functional/greater_equal.html',1,'std']]]
 ];

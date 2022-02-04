@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hamburger_5fmenu_0',['HAMBURGER_MENU',['../_main_window_8h.html#afc4334225a27dc7703919e27b30fe1a4',1,'MainWindow.h']]]
+  ['grid_5fsnap_5fstep_31539',['GRID_SNAP_STEP',['../SceneItem_8cc.html#a62a5515807d109a4a9712e9f131cc681',1,'SceneItem.cc']]]
 ];

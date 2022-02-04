@@ -1,5 +1,5 @@
 <map id="HamburgerMenu::HamburgerMenu" name="HamburgerMenu::HamburgerMenu">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,253,83"/>
+<area shape="rect" id="node1" title="Initialiser." alt="" coords="5,56,253,83"/>
 <area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qabstractbutton.html#icon-prop" title=" " alt="" coords="312,5,496,32"/>
 <area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qtoolbutton.html#setMenu" title=" " alt="" coords="321,56,487,83"/>
 <area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qtoolbutton.html#popupMode-prop" title=" " alt="" coords="301,107,507,133"/>

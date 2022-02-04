@@ -2,9 +2,10 @@ PROJECT_NAME = Circuit Simulator
 
 OUTPUT_DIRECTORY = .
 INPUT = ../src/main ../src/main/Analysis ../src/main/Saves ../src/main/UI/Components ../src/main/UI
+EXCLUDE = ../src/main/Saves/json.h ../src/main/Saves/json.cpp
 
 GENERATE_TAGFILE = YES
-TAGFILES = tagfiles/qtcore.tags=https://doc.qt.io/qt-5/ tagfiles/qtgui.tags=https://doc.qt.io/qt-5/ tagfiles/qtwidgets.tags=https://doc.qt.io/qt-5/ tagfiles/qtxml.tags=https://doc.qt.io/qt-5/
+TAGFILES = tagfiles/qtcore.tags=https://doc.qt.io/qt-5/ tagfiles/qtgui.tags=https://doc.qt.io/qt-5/ tagfiles/qtwidgets.tags=https://doc.qt.io/qt-5/ tagfiles/qtxml.tags=https://doc.qt.io/qt-5/ tagfiles/cppreference-doxygen-web.tag.xml=http://en.cppreference.com/w/
 
 GENERATE_HTML = YES
 HTML_OUTPUT = docs/
@@ -14,8 +15,15 @@ USE_MATHJAX = YES
 
 CALL_GRAPH = YES
 CALLER_GRAPH = YES
+DIRECTORY_GRAPH = YES
 
-EXTRACT_ALL = YES
+RECURSIVE              = YES
+HIDE_UNDOC_RELATIONS   = NO
+HAVE_DOT               = YES
+UML_LOOK               = YES
+
+BUILTIN_STL_SUPPORT    = YES
+EXTRACT_ALL            = YES
 
 EXTRACT_PRIVATE        = YES
 EXTRACT_STATIC         = YES

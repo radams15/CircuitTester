@@ -1,4 +1,12 @@
 <map id="Circuit::getRefNodes" name="Circuit::getRefNodes">
-<area shape="rect" id="node1" title="Selects the components that have the reference voltage." alt="" coords="5,5,161,32"/>
-<area shape="rect" id="node2" href="$classCircuit.html#ac9c6a0788dc59146078619eb0b07203a" title=" " alt="" coords="209,5,412,32"/>
+<area shape="rect" id="node1" title="Selects the components that have the reference voltage." alt="" coords="5,183,161,209"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/at.html#" title=" " alt="" coords="255,5,367,32"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/begin.html#" title=" " alt="" coords="477,56,611,83"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/empty.html#" title=" " alt="" coords="473,107,615,133"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/end.html#" title=" " alt="" coords="483,208,605,235"/>
+<area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/erase.html#" title=" " alt="" coords="477,259,611,285"/>
+<area shape="rect" id="node7" href="$classCircuit.html#ac9c6a0788dc59146078619eb0b07203a" title=" " alt="" coords="209,157,412,184"/>
+<area shape="rect" id="node9" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/push_back.html#" title=" " alt="" coords="460,309,628,336"/>
+<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/algorithm/remove.html#" title=" " alt="" coords="253,360,369,387"/>
+<area shape="rect" id="node8" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/algorithm/count.html#" title=" " alt="" coords="501,157,587,184"/>
 </map>

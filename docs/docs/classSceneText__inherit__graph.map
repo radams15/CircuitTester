@@ -1,7 +1,7 @@
 <map id="SceneText" name="SceneText">
-<area shape="rect" id="node1" title="Places text on the screen." alt="" coords="59,229,147,256"/>
-<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicstextitem.html" title=" " alt="" coords="29,155,176,181"/>
-<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsobject.html" title=" " alt="" coords="37,80,168,107"/>
-<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html" title=" " alt="" coords="5,5,80,32"/>
-<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html" title=" " alt="" coords="105,5,223,32"/>
+<area shape="rect" id="node1" title="Places text on the screen." alt="" coords="128,1525,241,1603"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicstextitem.html" title=" " alt="" coords="81,1077,288,1477"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsobject.html" title=" " alt="" coords="98,585,271,1029"/>
+<area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html" title=" " alt="" coords="5,5,172,537"/>
+<area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html" title=" " alt="" coords="196,79,365,464"/>
 </map>

@@ -87,7 +87,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2ad2251bcb43c5ef85a3d171a9aaee83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolution.html#a2ad2251bcb43c5ef85a3d171a9aaee83">Solution</a> (std::map&lt; int, double &gt; <a class="el" href="classSolution.html#ac94bb630e29ae285effe48ee0c3a3648">voltageMap</a>, std::vector&lt; <a class="el" href="classComponent.html">Component</a> &gt; <a class="el" href="classSolution.html#af42cc1bc9be9f501ae79dc59b2006123">components</a>)</td></tr>
+<tr class="memitem:a2ad2251bcb43c5ef85a3d171a9aaee83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolution.html#a2ad2251bcb43c5ef85a3d171a9aaee83">Solution</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/container/map.html">std::map</a>&lt; int, double &gt; <a class="el" href="classSolution.html#ac94bb630e29ae285effe48ee0c3a3648">voltageMap</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classComponent.html">Component</a> &gt; <a class="el" href="classSolution.html#af42cc1bc9be9f501ae79dc59b2006123">components</a>)</td></tr>
 <tr class="memdesc:a2ad2251bcb43c5ef85a3d171a9aaee83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser.  <a href="classSolution.html#a2ad2251bcb43c5ef85a3d171a9aaee83">More...</a><br /></td></tr>
 <tr class="separator:a2ad2251bcb43c5ef85a3d171a9aaee83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae528305d08247413446af567d1d10c52"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolution.html#ae528305d08247413446af567d1d10c52">equals</a> (<a class="el" href="classSolution.html">Solution</a> mnaSolution)</td></tr>
@@ -105,10 +105,10 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ac94bb630e29ae285effe48ee0c3a3648"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolution.html#ac94bb630e29ae285effe48ee0c3a3648">voltageMap</a></td></tr>
+<tr class="memitem:ac94bb630e29ae285effe48ee0c3a3648"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/map.html">std::map</a>&lt; int, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolution.html#ac94bb630e29ae285effe48ee0c3a3648">voltageMap</a></td></tr>
 <tr class="memdesc:ac94bb630e29ae285effe48ee0c3a3648"><td class="mdescLeft">&#160;</td><td class="mdescRight">A map of node:voltage.  <a href="classSolution.html#ac94bb630e29ae285effe48ee0c3a3648">More...</a><br /></td></tr>
 <tr class="separator:ac94bb630e29ae285effe48ee0c3a3648"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af42cc1bc9be9f501ae79dc59b2006123"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classComponent.html">Component</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolution.html#af42cc1bc9be9f501ae79dc59b2006123">components</a></td></tr>
+<tr class="memitem:af42cc1bc9be9f501ae79dc59b2006123"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classComponent.html">Component</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolution.html#af42cc1bc9be9f501ae79dc59b2006123">components</a></td></tr>
 <tr class="memdesc:af42cc1bc9be9f501ae79dc59b2006123"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of components in the solution which have a known current.  <a href="classSolution.html#af42cc1bc9be9f501ae79dc59b2006123">More...</a><br /></td></tr>
 <tr class="separator:af42cc1bc9be9f501ae79dc59b2006123"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -134,7 +134,21 @@ Static Private Member Functions</h2></td></tr>
 <p>This class stores the voltage map, and every component that has a known current so that voltages can be calculated through V=IR. </p>
 
 <p class="definition">Definition at line <a class="el" href="Solution_8h_source.html#l00021">21</a> of file <a class="el" href="Solution_8h_source.html">Solution.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><div class="dynheader">
+Collaboration diagram for Solution:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolution__coll__graph.png" border="0" usemap="#aSolution_coll__map" alt="Collaboration graph"/></div>
+<map name="aSolution_coll__map" id="aSolution_coll__map">
+<area shape="rect" title="Stores the solution of a circuit." alt="" coords="157,733,327,913"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/map.html" title=" " alt="" coords="230,160,409,384"/>
+<area shape="rect" title=" " alt="" coords="258,5,325,83"/>
+<area shape="rect" href="classComponent.html" title="Main class that holds circuit components for modified nodal analysis (MNA)." alt="" coords="83,204,206,340"/>
+<area shape="rect" title=" " alt="" coords="180,5,219,83"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/vector.html" title=" " alt="" coords="67,447,263,671"/>
+<area shape="rect" title=" " alt="" coords="5,5,132,83"/>
+</map>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2ad2251bcb43c5ef85a3d171a9aaee83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2ad2251bcb43c5ef85a3d171a9aaee83">&#9670;&nbsp;</a></span>Solution()</h2>
 
@@ -144,13 +158,13 @@ Static Private Member Functions</h2></td></tr>
         <tr>
           <td class="memname">Solution::Solution </td>
           <td>(</td>
-          <td class="paramtype">std::map&lt; int, double &gt;&#160;</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/map.html">std::map</a>&lt; int, double &gt;&#160;</td>
           <td class="paramname"><em>voltageMap</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classComponent.html">Component</a> &gt;&#160;</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classComponent.html">Component</a> &gt;&#160;</td>
           <td class="paramname"><em>components</em>&#160;</td>
         </tr>
         <tr>
@@ -209,6 +223,17 @@ Static Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Whether the component is inside the components list. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Solution_8cc_source.html#l00080">80</a> of file <a class="el" href="Solution_8cc_source.html">Solution.cc</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolution_a37fa342ed9b2e3dc55c45aef31f89c23_cgraph.png" border="0" usemap="#aclassSolution_a37fa342ed9b2e3dc55c45aef31f89c23_cgraph" alt=""/></div>
+<map name="aclassSolution_a37fa342ed9b2e3dc55c45aef31f89c23_cgraph" id="aclassSolution_a37fa342ed9b2e3dc55c45aef31f89c23_cgraph">
+<area shape="rect" title="Determines if component is in this solution." alt="" coords="5,56,219,83"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/algorithm/all_any_none_of.html#" title=" " alt="" coords="287,5,381,32"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/vector/begin.html#" title=" " alt="" coords="267,56,401,83"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/vector/end.html#" title=" " alt="" coords="273,107,395,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -243,10 +268,14 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSolution_ae528305d08247413446af567d1d10c52_cgraph.png" border="0" usemap="#aclassSolution_ae528305d08247413446af567d1d10c52_cgraph" alt=""/></div>
 <map name="aclassSolution_ae528305d08247413446af567d1d10c52_cgraph" id="aclassSolution_ae528305d08247413446af567d1d10c52_cgraph">
-<area shape="rect" title="Whether this has every component and every component is approximately equal to the other in the oppos..." alt="" coords="5,56,132,83"/>
-<area shape="rect" href="classSolution.html#a66edc7133ce24a3cfc77853a2b5c8454" title="Get the voltage at a specific node." alt="" coords="189,5,377,32"/>
+<area shape="rect" title="Whether this has every component and every component is approximately equal to the other in the oppos..." alt="" coords="5,81,132,108"/>
+<area shape="rect" href="classSolution.html#a66edc7133ce24a3cfc77853a2b5c8454" title="Get the voltage at a specific node." alt="" coords="189,5,376,32"/>
 <area shape="rect" href="classSolution.html#aa0f955f8c0975309c85f3aa2d2c8c98f" title="Whether this solution has all the same components as the other solution." alt="" coords="180,56,385,83"/>
 <area shape="rect" href="classSolution.html#a1b619eca8a128b8f6e245502a3d60bc4" title="Check whether double a is equal to double b." alt="" coords="182,107,383,133"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/vector/push_back.html#" title=" " alt="" coords="199,157,367,184"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/algorithm/all_any_none_of.html#" title=" " alt="" coords="457,5,544,32"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/vector/begin.html#" title=" " alt="" coords="433,56,568,83"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/vector/end.html#" title=" " alt="" coords="439,107,562,133"/>
 </map>
 </div>
 
@@ -284,7 +313,19 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSolution_ac589e0bddcec492753516913e7b2b09e_cgraph.png" border="0" usemap="#aclassSolution_ac589e0bddcec492753516913e7b2b09e_cgraph" alt=""/></div>
 <map name="aclassSolution_ac589e0bddcec492753516913e7b2b09e_cgraph" id="aclassSolution_ac589e0bddcec492753516913e7b2b09e_cgraph">
 <area shape="rect" title="Gets the current at a resistor through I=V/R." alt="" coords="5,5,157,32"/>
-<area shape="rect" href="classSolution.html#aa69bf528b0cbee6f849d858882121667" title="Get the voltage of a specified component." alt="" coords="205,5,360,32"/>
+<area shape="rect" href="classSolution.html#aa69bf528b0cbee6f849d858882121667" title="Get the voltage of a specified component." alt="" coords="205,5,359,32"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/map/at.html#" title=" " alt="" coords="407,5,507,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolution_ac589e0bddcec492753516913e7b2b09e_icgraph.png" border="0" usemap="#aclassSolution_ac589e0bddcec492753516913e7b2b09e_icgraph" alt=""/></div>
+<map name="aclassSolution_ac589e0bddcec492753516913e7b2b09e_icgraph" id="aclassSolution_ac589e0bddcec492753516913e7b2b09e_icgraph">
+<area shape="rect" title="Gets the current at a resistor through I=V/R." alt="" coords="759,5,911,32"/>
+<area shape="rect" href="classAnalysisMapper.html#a754d7d938ec9d0b81aab9f084e947312" title="Gets solves the circuit, returning a map of components to values." alt="" coords="503,5,711,32"/>
+<area shape="rect" href="classMainWindow.html#acebf5a46f730eb3e65092c2398acebd5" title="Called when the run button is clicked from the toolbar." alt="" coords="251,5,455,32"/>
+<area shape="rect" href="classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,5,203,32"/>
 </map>
 </div>
 
@@ -355,12 +396,24 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="Solution_8cc_source.html#l00064">64</a> of file <a class="el" href="Solution_8cc_source.html">Solution.cc</a>.</p>
 <div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolution_aa69bf528b0cbee6f849d858882121667_cgraph.png" border="0" usemap="#aclassSolution_aa69bf528b0cbee6f849d858882121667_cgraph" alt=""/></div>
+<map name="aclassSolution_aa69bf528b0cbee6f849d858882121667_cgraph" id="aclassSolution_aa69bf528b0cbee6f849d858882121667_cgraph">
+<area shape="rect" title="Get the voltage of a specified component." alt="" coords="5,5,159,32"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/map/at.html#" title=" " alt="" coords="207,5,307,32"/>
+</map>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSolution_aa69bf528b0cbee6f849d858882121667_icgraph.png" border="0" usemap="#aclassSolution_aa69bf528b0cbee6f849d858882121667_icgraph" alt=""/></div>
 <map name="aclassSolution_aa69bf528b0cbee6f849d858882121667_icgraph" id="aclassSolution_aa69bf528b0cbee6f849d858882121667_icgraph">
-<area shape="rect" title="Get the voltage of a specified component." alt="" coords="205,5,359,32"/>
-<area shape="rect" href="classSolution.html#ac589e0bddcec492753516913e7b2b09e" title="Gets the current at a resistor through I=V/R." alt="" coords="5,5,157,32"/>
+<area shape="rect" title="Get the voltage of a specified component." alt="" coords="959,31,1112,57"/>
+<area shape="rect" href="classSolution.html#ac589e0bddcec492753516913e7b2b09e" title="Gets the current at a resistor through I=V/R." alt="" coords="759,5,911,32"/>
+<area shape="rect" href="classAnalysisMapper.html#a754d7d938ec9d0b81aab9f084e947312" title="Gets solves the circuit, returning a map of components to values." alt="" coords="503,31,711,57"/>
+<area shape="rect" href="classMainWindow.html#acebf5a46f730eb3e65092c2398acebd5" title="Called when the run button is clicked from the toolbar." alt="" coords="251,31,455,57"/>
+<area shape="rect" href="classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,31,203,57"/>
 </map>
 </div>
 
@@ -400,6 +453,17 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>Whether the two solutions are equal. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Solution_8cc_source.html#l00070">70</a> of file <a class="el" href="Solution_8cc_source.html">Solution.cc</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolution_aa0f955f8c0975309c85f3aa2d2c8c98f_cgraph.png" border="0" usemap="#aclassSolution_aa0f955f8c0975309c85f3aa2d2c8c98f_cgraph" alt=""/></div>
+<map name="aclassSolution_aa0f955f8c0975309c85f3aa2d2c8c98f_cgraph" id="aclassSolution_aa0f955f8c0975309c85f3aa2d2c8c98f_cgraph">
+<area shape="rect" title="Whether this solution has all the same components as the other solution." alt="" coords="5,56,211,83"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/algorithm/all_any_none_of.html#" title=" " alt="" coords="283,5,369,32"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/vector/begin.html#" title=" " alt="" coords="259,56,393,83"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/vector/end.html#" title=" " alt="" coords="265,107,387,133"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -478,7 +542,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classComponent.html">Component</a>&gt; Solution::components</td>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt;<a class="el" href="classComponent.html">Component</a>&gt; Solution::components</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -496,7 +560,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;int, double&gt; Solution::voltageMap</td>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/map.html">std::map</a>&lt;int, double&gt; Solution::voltageMap</td>
         </tr>
       </table>
 </div><div class="memdoc">

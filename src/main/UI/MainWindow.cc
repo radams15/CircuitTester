@@ -1,6 +1,4 @@
 #include <vector>
-#include <queue>
-
 #include "Line.h"
 #include "SceneItem.h"
 #include "Scene.h"
@@ -24,8 +22,11 @@
 #include <QtWidgets>
 #include <QInputDialog>
 #include <iostream>
-#include <iomanip>
 #include <sstream>
+
+#ifdef WIN32
+#include <shellapi.h>
+#endif
 
 /**
  * \def SHOW_ICON(toolbar, action)
@@ -590,9 +591,15 @@ void MainWindow::exportScene() {
 }
 
 void MainWindow::openSaveDir() {
-    // TODO Fix open save directory button.
-    // Opens the save directory in file explorer. Not working on mac/windows yet.
-    QDesktopServices::openUrl(QString::fromStdString(FileUtils::getSaveDir()));
+#if defined(WIN32)
+        ShellExecute(NULL, "open", FileUtils::getSaveDir().c_str(), NULL, NULL, SW_SHOWMINIMIZED);
+#elif __APPLE__
+	system((std::string("open '")+FileUtils::getSaveDir()+std::string("' &")).c_str());
+#elif __linux__
+    QDesktopServices::openUrl(QUrl(QString::fromStdString(FileUtils::getSaveDir())));
+#else
+	std::cerr << "Cannot open save dir on this platform!" << std::endl;
+#endif
 }
 
 int MainWindow::getMode() {

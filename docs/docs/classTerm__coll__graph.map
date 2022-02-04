@@ -1,4 +1,6 @@
 <map id="Term" name="Term">
-<area shape="rect" id="node1" title="Class that holds a term." alt="" coords="19,95,74,121"/>
-<area shape="rect" id="node2" href="$classUnknown.html" title="Base class for unknown values." alt="" coords="5,5,88,32"/>
+<area shape="rect" id="node1" title="Class that holds a term." alt="" coords="57,300,135,377"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,153,72,230"/>
+<area shape="rect" id="node3" href="$classUnknown.html" title="Base class for unknown values." alt="" coords="99,145,207,237"/>
+<area shape="rect" id="node4" title=" " alt="" coords="127,5,179,83"/>
 </map>
