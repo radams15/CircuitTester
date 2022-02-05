@@ -1,7 +1,7 @@
 <map id="Battery" name="Battery">
 <area shape="rect" id="node1" title="A battery class that has a configurable voltage and on/off state." alt="" coords="1019,3297,1172,3419"/>
 <area shape="rect" id="node2" href="$classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="702,3141,838,3248"/>
-<area shape="rect" id="node3" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="568,1555,748,1808"/>
+<area shape="rect" id="node3" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="568,1562,748,1801"/>
 <area shape="rect" id="node8" href="$classLine.html" title="Line between two components on a Scene." alt="" coords="448,2047,554,2183"/>
 <area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspixmapitem.html" title=" " alt="" coords="94,916,298,1140"/>
 <area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html" title=" " alt="" coords="315,211,484,597"/>

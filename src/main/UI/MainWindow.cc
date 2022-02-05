@@ -36,7 +36,7 @@
 
 MainWindow::MainWindow() {
     createActions();
-    createToolBox();
+    createComponentView();
     createMenubar();
 
     // Set window icon to the connector image.
@@ -50,8 +50,10 @@ MainWindow::MainWindow() {
     resize(WINDOW_SIZE);
 
     // Call itemInserted when an item is inserted into the scene.
-    connect(scene, &Scene::itemInserted,
-            this, &MainWindow::itemInserted);
+    connect(scene, &Scene::itemInserted,this, &MainWindow::itemInserted);
+
+    // Call itemDoubleClicked when the scene triggers the event.
+    connect(scene, &Scene::itemDoubleClicked,this, &MainWindow::itemDoubleClicked);
 
     createToolbar();
 
@@ -66,18 +68,18 @@ MainWindow::MainWindow() {
     layout->addWidget(settingsMenu);
 
     // Create a widget to hold the layout.
-    auto *widget = new QWidget;
-    widget->setLayout(layout);
+    auto* mainWidget = new QWidget;
+    mainWidget->setLayout(layout);
 
-    // Set the widget to the centre of the window.
-    setCentralWidget(widget);
+    // Set the mainWidget to the centre of the window.
+    setCentralWidget(mainWidget);
     setWindowTitle(tr("Circuit Simulator"));
 
     // Makes the toolbar on mac look the same colour as the titlebar - just aesthetic.
     setUnifiedTitleAndToolBarOnMac(true);
 
     auto* timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(runSimulation()));
+    connect(timer, &QTimer::timeout, this, &MainWindow::runSimulation);
     timer->start(1000); //time specified in ms
 }
 
@@ -179,18 +181,18 @@ void MainWindow::itemInserted(UIComponent* c) {
 
 void MainWindow::about() {
     // Start simple about box
-    QMessageBox::about(this, tr("About Circuit Simulator"),
-                       tr("This is a circuit simulation program written by Rhys Adams (2021-22)"));
+    QMessageBox::about(this, "About Circuit Simulator",
+                       "This is a circuit simulation program written by Rhys Adams (2021-22)");
 }
 
 void MainWindow::tutorial() {
     // Start simple about box
-    QMessageBox::about(this, tr("Tutorial"),
-                       tr("Welcome to Rhys' circuit simulation program.\n\nHere is a brief tutorial to understand how the program works.\n\nTo place down a component, first click on the component button, then click on the location\non the canvas where you want the component to go.\n\nYou can move components by dragging the black parts.\n\nAt the top left, you can either select movement mode (the mouse pointer button) to drag components,\nor the connector button (the black line to the left of the mouse pointer) to connect components\nwith lines.\n\nDouble-clicking any component will open up the settings menu on the right, which allows you to\nchange anything about any of the Components, such as voltage, resistance or whether they are on or off.\n\nYou can reach this info again at the help->Tutorial menu."));
+    QMessageBox::about(this, "Tutorial",
+                       "Welcome to Rhys' circuit simulation program.\n\nHere is a brief tutorial to understand how the program works.\n\nTo place down a component, first click on the component button, then click on the location\non the canvas where you want the component to go.\n\nYou can move components by dragging the black parts.\n\nAt the top left, you can either select movement mode (the mouse pointer button) to drag components,\nor the connector button (the black line to the left of the mouse pointer) to connect components\nwith lines.\n\nDouble-clicking any component will open up the settings menu on the right, which allows you to\nchange anything about any of the Components, such as voltage, resistance or whether they are on or off.\n\nYou can reach this info again at the help->Tutorial menu.");
 }
 
 
-void MainWindow::createToolBox() {
+void MainWindow::createComponentView() {
     // Create the button group.
     buttonGroup = new QButtonGroup(this);
     buttonGroup->setExclusive(false);
@@ -227,8 +229,8 @@ void MainWindow::createToolBox() {
     componentTabs->setSizePolicy(QSizePolicy(QSizePolicy::Maximum, QSizePolicy::Ignored));
     componentTabs->setMinimumWidth(basicWidget->sizeHint().width()+20);
     componentTabs->setTabPosition(QTabWidget::West);
-    componentTabs->addTab(basicWidget, tr("Basic Components"));
-    componentTabs->addTab(measurementWidget, tr("Measurement Components"));
+    componentTabs->addTab(basicWidget, "Basic Components");
+    componentTabs->addTab(measurementWidget, "Measurement Components");
 }
 
 
@@ -255,7 +257,7 @@ void MainWindow::createActions() {
     exitAction->setIcon(QIcon(":/images/close.png"));
     exitAction->setStatusTip(tr("Exit the program"));
     exitAction->setShortcut(Qt::CTRL + Qt::Key_Q);
-    connect(exitAction, &QAction::triggered, this, [this]{ exit(0);});
+    connect(exitAction, &QAction::triggered, this, []{ exit(0);});
 
     tutorialAction = new QAction("", this);
     tutorialAction->setText(tr("T&utorial"));
@@ -389,9 +391,9 @@ void MainWindow::createToolbar() {
     pointerToolbar->addWidget((QToolButton*) mainMenu);
 #endif
 
-    SHOW_ICON(pointerToolbar, moveAction);
-    SHOW_ICON(pointerToolbar, lineAction);
-    SHOW_ICON(pointerToolbar, runningAction);
+    SHOW_ICON(pointerToolbar, moveAction)
+    SHOW_ICON(pointerToolbar, lineAction)
+    SHOW_ICON(pointerToolbar, runningAction)
 }
 
 
@@ -452,8 +454,22 @@ std::string dtos(double in){
 }
 
 void MainWindow::runSimulation() {
+    scene->removeAllText();
+
     // Is the scene empty? If it is, don't run as this crashes the program.
     if(scene->items().empty()){
+        return;
+    }
+
+    // If the run button is off then don't run.
+    if(! runningAction->isChecked()){
+        // Turn off all the components visually.
+        for(auto* comp : scene->items()){
+            if(IS_TYPE(UIComponent, comp)){
+                ((UIComponent*)comp)->setState(false);
+            }
+        }
+
         return;
     }
 
@@ -463,13 +479,11 @@ void MainWindow::runSimulation() {
     auto sol = mapper.getSolution();
 
     // Remove all existing text boxes.
-    scene->removeAllText();
-
     // 'it' is an iterator of a map of  UIComponent: ComponentValue.
     for(auto it : sol){
         std::stringstream ss;
 
-        if (std::to_string(it.second.voltage) != "nan"){ //TODO FIX THIS MONSTROSITY
+        if (std::to_string(it.second.voltage) != "nan"){ //TODO FIX
             ss << "Voltage: ";
             if(it.second.voltage <  0.01){
                 ss << "0";
@@ -487,7 +501,7 @@ void MainWindow::runSimulation() {
             ss << "V";
         }
 
-        if (std::to_string(it.second.current) != "nan"){ //TODO FIX THIS MONSTROSITY
+        if (std::to_string(it.second.current) != "nan"){ //TODO FIX
             ss << "\nCurrent: ";
             if(it.second.current <  0.01){
                 ss << "0";
@@ -536,7 +550,7 @@ void MainWindow::saveScene() {
     // Is there already a circuit open? If not name this circuit.
     if(currentOpenedCircuit.empty()){
         // Prompt the user for the name of the circuit to save.
-        std::string name = QInputDialog::getText(this, tr("Circuit Name"), tr("Name")).toStdString();
+        std::string name = QInputDialog::getText(this, "Circuit Name", "Name").toStdString();
         currentOpenedCircuit = name;
     }
 
@@ -548,7 +562,7 @@ void MainWindow::saveScene() {
     CircuitSaver::saveCircuit(currentOpenedCircuit, SceneItems{components, lines});
 
     // Indicate to the user the name of the open file.
-    setWindowTitle(tr(("Circuit Simulator: " + currentOpenedCircuit).c_str()));
+    setWindowTitle(("Circuit Simulator: " + currentOpenedCircuit).c_str());
 }
 
 void MainWindow::openScene() {
@@ -557,11 +571,13 @@ void MainWindow::openScene() {
     auto files = FileUtils::getSaveFiles();
 
     QStringList items;
-    for(auto file : files){ items << QString::fromStdString(file); }
+    for(auto file : files){
+        items << QString::fromStdString(file);
+    }
 
     bool ok;
 
-    std::string name = QInputDialog::getItem(this, tr("Source"), tr("Select a file to open"), items, 0, false, &ok).toStdString();
+    std::string name = QInputDialog::getItem(this, "Source", "Select a file to open", items, 0, false, &ok).toStdString();
 
     CircuitSaver::loadCircuit(name, scene);
     currentOpenedCircuit = name;
@@ -573,7 +589,7 @@ void MainWindow::openScene() {
 
 void MainWindow::importScene() {
     // Get the file which the user wants to load.
-    std::string toImport = QFileDialog::getOpenFileName(this, tr("Source"), ".", tr("Circuit Files (*.cir)")).toStdString();
+    std::string toImport = QFileDialog::getOpenFileName(this, "Source", ".", "Circuit Files (*.cir)").toStdString();
 
     // Load that file.
     CircuitSaver::importCircuit(toImport);
@@ -584,7 +600,7 @@ void MainWindow::exportScene() {
     saveScene();
 
     // Get the path where the user wants to export the scene.
-    auto fileName = QFileDialog::getSaveFileName(this, tr("Destination"), ".", tr("Circuit Files (*.cir)")).toStdString();
+    auto fileName = QFileDialog::getSaveFileName(this, "Destination", ".", "Circuit Files (*.cir)").toStdString();
 
     // Export the circuit to that location.
     CircuitSaver::exportCircuit(currentOpenedCircuit, fileName);

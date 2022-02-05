@@ -1,5 +1,4 @@
 <map id="MainWindow::tutorial" name="MainWindow::tutorial">
-<area shape="rect" id="node1" title="Called when the tutorial button is clicked from the toolbar." alt="" coords="5,31,165,57"/>
+<area shape="rect" id="node1" title="Called when the tutorial button is clicked from the toolbar." alt="" coords="5,5,165,32"/>
 <area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmessagebox.html#about" title=" " alt="" coords="213,5,373,32"/>
-<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html#tr" title=" " alt="" coords="247,56,339,83"/>
 </map>

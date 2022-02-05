@@ -38,7 +38,7 @@ public:
     /** @brief Updates the position of the line when items move.
      *
      */
-    void update();
+    void redraw();
 
 protected:
     /** @brief Called by QT to paint the line onto the canvas.

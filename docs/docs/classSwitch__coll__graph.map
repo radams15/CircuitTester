@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title="Switch component that can be on/off." alt="" coords="532,3232,671,3339"/>
 <area shape="rect" id="node2" href="$classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="" coords="521,3091,682,3183"/>
 <area shape="rect" id="node3" href="$classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="533,2921,669,3028"/>
-<area shape="rect" id="node4" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="509,1555,689,1808"/>
+<area shape="rect" id="node4" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="509,1562,689,1801"/>
 <area shape="rect" id="node9" href="$classLine.html" title="Line between two components on a Scene." alt="" coords="363,2047,469,2183"/>
 <area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspixmapitem.html" title=" " alt="" coords="495,916,699,1140"/>
 <area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html" title=" " alt="" coords="513,211,682,597"/>

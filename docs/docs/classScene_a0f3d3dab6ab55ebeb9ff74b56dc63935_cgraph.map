@@ -1,0 +1,5 @@
+<map id="Scene::mouseDoubleClickEvent" name="Scene::mouseDoubleClickEvent">
+<area shape="rect" id="node1" title="Called when the mouse is pressed twice." alt="" coords="5,46,233,73"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#mouseDoubleClickEvent" title=" " alt="" coords="281,5,508,47"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#selectedItems" title=" " alt="" coords="299,71,490,112"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="MainWindow::itemDoubleClicked" name="MainWindow::itemDoubleClicked">
+<area shape="rect" id="node1" title="Called from the Scene when any SceneItem is double clicked. Places the settings widget from the Scene..." alt="" coords="251,5,487,32"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,5,203,32"/>
+</map>

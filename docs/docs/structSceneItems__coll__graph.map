@@ -1,7 +1,7 @@
 <map id="SceneItems" name="SceneItems">
 <area shape="rect" id="node1" title="Items in the scene." alt="" coords="5,2748,104,2825"/>
 <area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="294,1301,453,1525"/>
-<area shape="rect" id="node10" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="637,1771,817,2024"/>
+<area shape="rect" id="node10" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="637,1778,817,2017"/>
 <area shape="rect" id="node15" href="$classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="747,2277,883,2384"/>
 <area shape="rect" id="node3" href="$classLine.html" title="Line between two components on a Scene." alt="" coords="293,2263,400,2399"/>
 <area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspathitem.html" title=" " alt="" coords="71,1778,254,2017"/>

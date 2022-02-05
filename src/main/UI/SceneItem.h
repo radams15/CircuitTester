@@ -10,7 +10,7 @@
 #include <vector>
 #include <QIcon>
 
-// Define Line as empty class here as Line depends on SceneItem and vice-versa so they cannot include each other.
+// Define Line as empty class here as Line depends on SceneItem and vice-versa, so they cannot include each other.
 class Line;
 
 /** @brief An image on the Scene.
@@ -83,12 +83,6 @@ public:
      */
     std::vector<Line*> leavingLines();
 
-    /** @brief Returns all the items entering this item.
-     *
-     * @return Lines leaving the item.
-     */
-    std::vector<Line*> enteringLines();
-
     /** @brief All the lines attached to this item.
      *
      */
@@ -103,6 +97,10 @@ protected:
      */
     QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;
 
+    /** Changes all black in the image to this colour.
+     *
+     * @param colour The new colour.
+     */
     void setColour(QColor colour);
 
     /** @brief The image of this component set during initialisation.

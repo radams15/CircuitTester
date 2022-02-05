@@ -1,6 +1,6 @@
 <map id="SceneItem::startPoint" name="SceneItem::startPoint">
 <area shape="rect" id="node1" title="Gets the start point of the component." alt="" coords="1111,31,1273,57"/>
-<area shape="rect" id="node2" href="$classLine.html#ae6ea5b7357dd90fb7b2f1cafe9957d6b" title="Updates the position of the line when items move." alt="" coords="960,31,1063,57"/>
+<area shape="rect" id="node2" href="$classLine.html#a72cdff62e5240bdfa35d0ab0454b3bfe" title="Updates the position of the line when items move." alt="" coords="960,31,1063,57"/>
 <area shape="rect" id="node3" href="$classCircuitSaver.html#a9ace41a84d96b09d103fa0465899ed6b" title=" " alt="" coords="733,5,912,32"/>
 <area shape="rect" id="node7" href="$classLine.html#a8c3d84ae985092cf4774e625f69d5c53" title="Called by QT to paint the line onto the canvas." alt="" coords="777,56,868,83"/>
 <area shape="rect" id="node4" href="$classMainWindow.html#af302ce74b30876facddc371a6842d76a" title="Called when the open button is clicked from the toolbar." alt="" coords="501,5,685,32"/>

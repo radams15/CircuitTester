@@ -1,6 +1,6 @@
 <map id="Scene::setItem" name="Scene::setItem">
-<area shape="rect" id="node1" title="Sets the new component to be placed down." alt="" coords="793,5,912,32"/>
-<area shape="rect" id="node2" href="$classMainWindow.html#a5ac1ad5e3c553e50a1ac39b8ecaee2e6" title="Called when any component button is clicked." alt="" coords="504,5,745,32"/>
-<area shape="rect" id="node3" href="$classMainWindow.html#afab2197ed7c6296238dd1f898b1f0fc4" title="Creates the toolbox of components." alt="" coords="251,5,456,32"/>
+<area shape="rect" id="node1" title="Sets the new component to be placed down." alt="" coords="849,5,968,32"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a5ac1ad5e3c553e50a1ac39b8ecaee2e6" title="Called when any component button is clicked." alt="" coords="560,5,801,32"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#adf187153e06e7824a6f1ee246efe201f" title="Creates the toolbox of components." alt="" coords="251,5,512,32"/>
 <area shape="rect" id="node4" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,5,203,32"/>
 </map>

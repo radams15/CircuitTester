@@ -149,7 +149,7 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
 
             // Add the line to the scene and update it.
             s->addItem(line);
-            line->update();
+            line->redraw();
         }
     }
 

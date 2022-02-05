@@ -37,7 +37,14 @@ enum UIComponentType{
 class UIComponent : public SceneItem{
 private:
 
+    /** @brief The Colour when on (green)
+     *
+     */
     QColor onColor = {0,255,0};
+
+    /** @brief The Colour when off (black)
+    *
+    */
     QColor offColor = {0,0,0};
 
 protected:

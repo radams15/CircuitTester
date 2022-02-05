@@ -40,13 +40,6 @@ public:
      */
     MainWindow();
 
-    /** @brief Called from the Scene when any SceneItem is double clicked.
-     * Places the settings widget from the SceneItem into the SettingsMenu.
-     *
-     * @param item The item that has been double clicked.
-     */
-    void itemDoubleClicked(UIComponent* item);
-
 private slots:
     /** @brief Called when any component button is clicked.
      *
@@ -63,6 +56,13 @@ private slots:
      *
      */
     void pointerGroupClicked(QAction* action);
+
+    /** @brief Called from the Scene when any SceneItem is double clicked.
+     * Places the settings widget from the SceneItem into the SettingsMenu.
+     *
+     * @param item The item that has been double clicked.
+     */
+    void itemDoubleClicked(UIComponent* item);
 
     /** @brief Called when any item is inserted onto the Scene. This unchecks the tool button
      * of that item.
@@ -124,7 +124,7 @@ private:
     /** @brief Creates the toolbox of components.
      *
      */
-    void createToolBox();
+    void createComponentView();
 
     /** @brief Creates all actions for the toolbar and the menubar.
      *
@@ -203,8 +203,8 @@ private:
     QAction* openAction;
 
     /** @brief An action that exports the scene.
- *
- */
+     *
+     */
     QAction* exportAction;
 
     /** @brief An action that imports a save file.
@@ -261,11 +261,6 @@ private:
      *
      */
     QButtonGroup* buttonGroup;
-
-    /** @brief The button group that holds buttons for movement or line mode.
-     *
-     */
-    QButtonGroup* pointerTypeGroup;
 };
 
 

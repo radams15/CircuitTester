@@ -87,39 +87,45 @@ signals:
      */
     void itemInserted(UIComponent* c);
 
+    /** @brief Called when a canvas item is double-clicked.
+     *
+     * @param item The item that was double-clicked.
+     */
+    void itemDoubleClicked(UIComponent* item);
+
 
 protected:
     /** @brief Called when the mouse is pressed once.
      *
      * Called to handle selecting an item or placing an item down.
      *
-     * @param mouseEvent The event that is created when an item is placed down.
+     * @param evt The event that is created when an item is placed down.
      */
-    void mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent) override;
+    void mousePressEvent(QGraphicsSceneMouseEvent* evt) override;
 
     /** @brief Called when the mouse is pressed twice.
      *
      * Called to handle accessing the settings menu of a component.
      *
-     * @param mouseEvent The event that is created when an item is double clicked.
+     * @param evt The event that is created when an item is double clicked.
      */
-    void mouseDoubleClickEvent(QGraphicsSceneMouseEvent* mouseEvent) override;
+    void mouseDoubleClickEvent(QGraphicsSceneMouseEvent* evt) override;
 
     /** @brief Called when the mouse moves.
      *
      * Called to handle moving an item or placing down a line.
      *
-     * @param mouseEvent
+     * @param evt
      */
-    void mouseMoveEvent(QGraphicsSceneMouseEvent* mouseEvent) override;
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* evt) override;
 
     /** @brief Called when the mouse is released.
      *
      * Called to handle finishing placing a line.
      *
-     * @param mouseEvent
+     * @param evt
      */
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent) override;
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* evt) override;
 
 private:
     /** @brief The component that will be placed down.
@@ -139,7 +145,7 @@ private:
     /** @brief The mode that the scene is currently in.
      *
      */
-    Mode currentMode;
+    Mode mode;
 };
 
 

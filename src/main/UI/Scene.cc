@@ -10,7 +10,7 @@
 
 Scene::Scene(QObject *parent) : QGraphicsScene(parent){
     // Default to move mode.
-    currentMode = MOVE;
+    mode = MOVE;
 
     // No components or lines to place down currently.
     component = nullptr;
@@ -19,23 +19,23 @@ Scene::Scene(QObject *parent) : QGraphicsScene(parent){
 
 
 void Scene::setMode(Mode mode){
-    currentMode = mode;
+    this->mode = mode;
 }
 
 void Scene::setItem(UIComponent* c){
     this->component = c;
 }
 
-void Scene::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent){
+void Scene::mousePressEvent(QGraphicsSceneMouseEvent* evt){
     // Only do anything if there was a left click.
-    if (mouseEvent->button() == Qt::LeftButton){
-        switch (currentMode) {
+    if (evt->button() == Qt::LeftButton){
+        switch (mode) {
             case INSERT_ITEM:
                 // Add the item to the scene.
                 addItem(component);
 
                 // Set the position of the component to where the mouse click occurred.
-                component->setPos(mouseEvent->scenePos());
+                component->setPos(evt->scenePos());
 
                 // Notify others that an item was inserted.
                 itemInserted(component);
@@ -43,7 +43,7 @@ void Scene::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent){
 
             case INSERT_LINE:
                 // Create the line
-                line = new QGraphicsLineItem(QLineF(mouseEvent->scenePos(), mouseEvent->scenePos()));
+                line = new QGraphicsLineItem(QLineF(evt->scenePos(), evt->scenePos()));
 
                 // Set the pen to be 2px wide and black
                 line->setPen(QPen(Qt::black, 2));
@@ -57,11 +57,11 @@ void Scene::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent){
         }
 
         // QGraphicsScene then completes what it normally completes by default.
-        QGraphicsScene::mousePressEvent(mouseEvent);
+        QGraphicsScene::mousePressEvent(evt);
     }
 }
 
-void Scene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* mouseEvent) {
+void Scene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* evt) {
     // Is there anything selected?
     if(! selectedItems().empty()){
         // Get the first selected item.
@@ -69,37 +69,36 @@ void Scene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* mouseEvent) {
 
         // Is the item a UIComponent (it could be a line as this causes a crash)
         if(IS_TYPE(UIComponent, item)) {
-            ((MainWindow *) parent())->itemDoubleClicked((UIComponent *) item);
+            itemDoubleClicked((UIComponent *) item);
         }
     }
 
-    QGraphicsScene::mouseDoubleClickEvent(mouseEvent);
+    QGraphicsScene::mouseDoubleClickEvent(evt);
 }
 
-void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent){
-    if (currentMode == INSERT_LINE && line != nullptr) {
+void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent* evt){
+    if (mode == INSERT_LINE && line != nullptr) {
         // While moving the mouse draw the line from start to where the mouse is.
-        QLineF newLine(line->line().p1(), mouseEvent->scenePos());
-        line->setLine(newLine);
-    } else if (currentMode == MOVE) {
+        line->setLine(QLineF(line->line().p1(), evt->scenePos()));
+    } else if (mode == MOVE) {
         // Just do what QGraphicsScene normally does.
-        QGraphicsScene::mouseMoveEvent(mouseEvent);
+        QGraphicsScene::mouseMoveEvent(evt);
     }
 }
 
 
 
-void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent){
-    if (line != nullptr && currentMode == INSERT_LINE) {
+void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent* evt){
+    if (line != nullptr && mode == INSERT_LINE) {
         // Get all the items at the position of the start of the line.
-        QList<QGraphicsItem *> startItems = items(line->line().p1());
+        auto startItems = items(line->line().p1());
         if (startItems.count() != 0 && startItems.first() == line) {
             // Remove the line as the line starts at the start point of the line obviously.
             startItems.removeFirst();
         }
 
         // Same as above but with the end point.
-        QList<QGraphicsItem *> endItems = items(line->line().p2());
+        auto endItems = items(line->line().p2());
         if (endItems.count() != 0 && endItems.first() == line) {
             endItems.removeFirst();
         }
@@ -109,7 +108,7 @@ void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent){
         delete line;
 
 
-        if (startItems.count() > 0 && endItems.count() > 0 && startItems.first()->type() == SceneItem::Type && endItems.first()->type() == SceneItem::Type &&  startItems.first() != endItems.first()) {
+        if (!startItems.empty() && !endItems.empty() && IS_TYPE(SceneItem, startItems.first()) && IS_TYPE(SceneItem, endItems.first()) &&  startItems.first() != endItems.first()) {
             auto* startItem = (SceneItem *) startItems.first();
             auto* endItem = (SceneItem *) endItems.first();
 
@@ -117,13 +116,13 @@ void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent){
             startItem->addLine(newLine);
             endItem->addLine(newLine);
             addItem(newLine);
-            newLine->update();
+            newLine->redraw();
         }
     }
 
     // Reset the temporary line to nullptr.
     line = nullptr;
-    QGraphicsScene::mouseReleaseEvent(mouseEvent);
+    QGraphicsScene::mouseReleaseEvent(evt);
 }
 
 void Scene::removeAllText() {

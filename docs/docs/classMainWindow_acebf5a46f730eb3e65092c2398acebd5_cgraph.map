@@ -3,11 +3,12 @@
 <area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#addItem" title=" " alt="" coords="266,904,457,931"/>
 <area shape="rect" id="node3" href="$MainWindow_8cc.html#ab98a81ce81f09a6448f4cd7063b66615" title=" " alt="" coords="336,955,387,981"/>
 <area shape="rect" id="node4" href="$classAnalysisMapper.html#a754d7d938ec9d0b81aab9f084e947312" title="Gets solves the circuit, returning a map of components to values." alt="" coords="257,1005,465,1032"/>
-<area shape="rect" id="node40" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#items" title=" " alt="" coords="535,1157,708,1184"/>
-<area shape="rect" id="node41" href="$classScene.html#afb78b8b679e47ae7144135952283782f" title="Removes all text boxes from the scene." alt="" coords="280,1132,443,1159"/>
-<area shape="rect" id="node43" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_stringstream/str.html#" title=" " alt="" coords="282,1183,441,1209"/>
-<area shape="rect" id="node44" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/to_string.html#" title=" " alt="" coords="308,1233,415,1260"/>
-<area shape="rect" id="node45" href="$MainWindow_8cc.html#a8ab63f91737d9bc9d7a41e487a5c840d" title=" " alt="" coords="322,1284,401,1311"/>
+<area shape="rect" id="node40" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qaction.html#checked-prop" title=" " alt="" coords="288,1056,435,1083"/>
+<area shape="rect" id="node41" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#items" title=" " alt="" coords="535,1157,708,1184"/>
+<area shape="rect" id="node42" href="$classScene.html#afb78b8b679e47ae7144135952283782f" title="Removes all text boxes from the scene." alt="" coords="280,1157,443,1184"/>
+<area shape="rect" id="node44" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_stringstream/str.html#" title=" " alt="" coords="282,1208,441,1235"/>
+<area shape="rect" id="node45" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/to_string.html#" title=" " alt="" coords="308,1259,415,1285"/>
+<area shape="rect" id="node46" href="$MainWindow_8cc.html#a8ab63f91737d9bc9d7a41e487a5c840d" title=" " alt="" coords="322,1309,401,1336"/>
 <area shape="rect" id="node5" href="$classSolution.html#ac589e0bddcec492753516913e7b2b09e" title="Gets the current at a resistor through I=V/R." alt="" coords="545,1005,697,1032"/>
 <area shape="rect" id="node6" href="$classSolution.html#aa69bf528b0cbee6f849d858882121667" title="Get the voltage of a specified component." alt="" coords="805,955,959,981"/>
 <area shape="rect" id="node8" href="$classUIComponent.html#aecae5af70cb4662d433eb6f5c4b32924" title="Getter for ID." alt="" coords="545,904,697,931"/>
@@ -43,6 +44,6 @@
 <area shape="rect" id="node33" href="$classCircuit.html#ac9c6a0788dc59146078619eb0b07203a" title=" " alt="" coords="1323,701,1525,728"/>
 <area shape="rect" id="node34" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/algorithm/remove.html#" title=" " alt="" coords="1366,549,1482,576"/>
 <area shape="rect" id="node37" href="$classCircuit.html#ac86f036409fde26889b8eb8c327dc7eb" title="Gets the number of unknown currents." alt="" coords="1035,904,1275,931"/>
-<area shape="rect" id="node42" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#removeItem" title=" " alt="" coords="513,1208,729,1235"/>
-<area shape="rect" id="node46" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/list/push_back.html#" title=" " alt="" coords="548,1284,695,1311"/>
+<area shape="rect" id="node43" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#removeItem" title=" " alt="" coords="513,1208,729,1235"/>
+<area shape="rect" id="node47" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/list/push_back.html#" title=" " alt="" coords="548,1309,695,1336"/>
 </map>

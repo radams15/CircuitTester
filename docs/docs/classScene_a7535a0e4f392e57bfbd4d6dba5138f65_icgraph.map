@@ -1,0 +1,5 @@
+<map id="Scene::itemDoubleClicked" name="Scene::itemDoubleClicked">
+<area shape="rect" id="node1" title="Called when a canvas item is double&#45;clicked." alt="" coords="281,31,473,57"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="21,5,218,32"/>
+<area shape="rect" id="node3" href="$classScene.html#a0f3d3dab6ab55ebeb9ff74b56dc63935" title="Called when the mouse is pressed twice." alt="" coords="5,56,233,83"/>
+</map>

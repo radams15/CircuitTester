@@ -1,48 +1,48 @@
 <map id="MainWindow::openScene" name="MainWindow::openScene">
-<area shape="rect" id="node1" title="Called when the open button is clicked from the toolbar." alt="" coords="5,385,189,412"/>
-<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#fromStdString" title=" " alt="" coords="247,233,415,260"/>
-<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qinputdialog.html#getItem" title=" " alt="" coords="247,284,414,311"/>
-<area shape="rect" id="node4" href="$classFileUtils.html#affa0d9c11d9bb0193c3c7ea4f635bf94" title=" " alt="" coords="484,81,651,108"/>
-<area shape="rect" id="node16" href="$classCircuitSaver.html#a9ace41a84d96b09d103fa0465899ed6b" title=" " alt="" coords="241,385,420,412"/>
-<area shape="rect" id="node44" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#windowTitle-prop" title=" " alt="" coords="237,436,424,463"/>
-<area shape="rect" id="node45" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#toStdString" title=" " alt="" coords="255,487,406,513"/>
-<area shape="rect" id="node46" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html#tr" title=" " alt="" coords="285,537,377,564"/>
+<area shape="rect" id="node1" title="Called when the open button is clicked from the toolbar." alt="" coords="5,411,189,437"/>
+<area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#fromStdString" title=" " alt="" coords="247,259,415,285"/>
+<area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qinputdialog.html#getItem" title=" " alt="" coords="247,309,414,336"/>
+<area shape="rect" id="node4" href="$classFileUtils.html#affa0d9c11d9bb0193c3c7ea4f635bf94" title=" " alt="" coords="484,107,651,133"/>
+<area shape="rect" id="node16" href="$classCircuitSaver.html#a9ace41a84d96b09d103fa0465899ed6b" title=" " alt="" coords="241,411,420,437"/>
+<area shape="rect" id="node44" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html#windowTitle-prop" title=" " alt="" coords="237,461,424,488"/>
+<area shape="rect" id="node45" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qstring.html#toStdString" title=" " alt="" coords="255,512,406,539"/>
+<area shape="rect" id="node46" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html#tr" title=" " alt="" coords="285,563,377,589"/>
 <area shape="rect" id="node5" href="$classFileUtils.html#a63f60972bc2b20587c52b9500904f44f" title="Does fullString end with ending." alt="" coords="731,107,875,133"/>
-<area shape="rect" id="node8" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="725,284,880,311"/>
-<area shape="rect" id="node12" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/push_back.html#" title=" " alt="" coords="945,436,1113,463"/>
+<area shape="rect" id="node8" href="$classFileUtils.html#a7e5e64ac58f833cf310059eaa955c6e0" title="Get the save directory for the user." alt="" coords="725,157,880,184"/>
+<area shape="rect" id="node12" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/push_back.html#" title=" " alt="" coords="945,411,1113,437"/>
 <area shape="rect" id="node13" href="$classFileUtils.html#a15ebcdd895f8dea49b78829daee908ba" title=" " alt="" coords="737,56,868,83"/>
 <area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/compare.html#" title=" " alt="" coords="953,157,1105,184"/>
 <area shape="rect" id="node7" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/size.html#" title=" " alt="" coords="961,107,1097,133"/>
-<area shape="rect" id="node9" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="943,284,1116,311"/>
-<area shape="rect" id="node11" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_stringstream/str.html#" title=" " alt="" coords="950,360,1109,387"/>
-<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/manip/endl.html#" title=" " alt="" coords="1200,259,1279,285"/>
+<area shape="rect" id="node9" href="$classFileUtils.html#a63335b71a69af04b18b4a023e67523f0" title="Returns the username." alt="" coords="943,208,1116,235"/>
+<area shape="rect" id="node11" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_stringstream/str.html#" title=" " alt="" coords="950,259,1109,285"/>
+<area shape="rect" id="node10" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/manip/endl.html#" title=" " alt="" coords="1200,284,1279,311"/>
 <area shape="rect" id="node14" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/find.html#" title=" " alt="" coords="970,56,1089,83"/>
 <area shape="rect" id="node15" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/replace.html#" title=" " alt="" coords="958,5,1101,32"/>
-<area shape="rect" id="node17" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#addItem" title=" " alt="" coords="472,436,663,463"/>
-<area shape="rect" id="node18" href="$classSceneItem.html#a9c688e187e0d4eecc0101481e3940e48" title="Add a line that is attached to this SceneItem." alt="" coords="492,487,643,513"/>
-<area shape="rect" id="node19" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/c_str.html#" title=" " alt="" coords="739,1161,866,1188"/>
-<area shape="rect" id="node20" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_ifstream/close.html#" title=" " alt="" coords="494,132,641,159"/>
-<area shape="rect" id="node21" href="$classCircuitSaver.html#abf3ccbef453b0c8861074f63a70bf2fe" title="Gets the save path from the circuit name." alt="" coords="488,335,647,361"/>
-<area shape="rect" id="node22" href="$classFileUtils.html#a8cbeb6a583722894f964b3eb425d320c" title="Does a specific path exist?" alt="" coords="492,876,643,903"/>
-<area shape="rect" id="node23" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_ios/rdbuf.html#" title=" " alt="" coords="494,183,641,209"/>
-<area shape="rect" id="node24" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#setPos" title=" " alt="" coords="482,284,653,311"/>
-<area shape="rect" id="node25" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/size.html#" title=" " alt="" coords="740,487,865,513"/>
-<area shape="rect" id="node26" href="$classLine.html#ae6ea5b7357dd90fb7b2f1cafe9957d6b" title="Updates the position of the line when items move." alt="" coords="516,748,619,775"/>
-<area shape="rect" id="node27" href="$Line_8cc.html#a03bdf1d65db5f8be866fd8f2f09914f4" title=" " alt="" coords="991,857,1068,884"/>
-<area shape="rect" id="node28" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qpointf.html#y" title=" " alt="" coords="1195,807,1283,833"/>
-<area shape="rect" id="node29" href="$classSceneItem.html#a4cec31e99d6de09cb0004379670b3ee7" title="Gets the end point of the component." alt="" coords="725,1009,881,1036"/>
-<area shape="rect" id="node35" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qpointf.html#x" title=" " alt="" coords="1195,1111,1283,1137"/>
-<area shape="rect" id="node37" href="$Line_8cc.html#a8975427cb63150bb3a0af967bad393fb" title=" " alt="" coords="998,908,1061,935"/>
-<area shape="rect" id="node38" href="$classSceneItem.html#a44e70dd2fea77de4187ab4a3ff26c053" title="Returns all lines leaving this item." alt="" coords="712,537,893,564"/>
-<area shape="rect" id="node39" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainterpath.html#lineTo" title=" " alt="" coords="727,588,878,615"/>
-<area shape="rect" id="node40" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspathitem.html#path" title=" " alt="" coords="711,639,895,665"/>
-<area shape="rect" id="node41" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainterpath.html#quadTo" title=" " alt="" coords="723,689,882,716"/>
-<area shape="rect" id="node42" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspathitem.html#setPath" title=" " alt="" coords="725,741,880,782"/>
-<area shape="rect" id="node43" href="$classSceneItem.html#a37a516d8b13274718c93d7fc5cdd93b8" title="Gets the start point of the component." alt="" coords="721,959,884,985"/>
-<area shape="rect" id="node30" href="$classSceneItem.html#a8e1e390e0824c01432773ff585e676d2" title="Gets the centre of the component." alt="" coords="943,959,1116,985"/>
-<area shape="rect" id="node33" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html#width" title=" " alt="" coords="1177,1060,1302,1087"/>
-<area shape="rect" id="node31" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html#height" title=" " alt="" coords="1174,959,1305,985"/>
-<area shape="rect" id="node32" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#pos" title=" " alt="" coords="1164,1009,1315,1036"/>
-<area shape="rect" id="node34" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#x" title=" " alt="" coords="1172,857,1307,884"/>
-<area shape="rect" id="node36" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#y" title=" " alt="" coords="1172,908,1307,935"/>
+<area shape="rect" id="node17" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsscene.html#addItem" title=" " alt="" coords="472,309,663,336"/>
+<area shape="rect" id="node18" href="$classSceneItem.html#a9c688e187e0d4eecc0101481e3940e48" title="Add a line that is attached to this SceneItem." alt="" coords="492,411,643,437"/>
+<area shape="rect" id="node19" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/string/basic_string/c_str.html#" title=" " alt="" coords="739,461,866,488"/>
+<area shape="rect" id="node20" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_ifstream/close.html#" title=" " alt="" coords="494,461,641,488"/>
+<area shape="rect" id="node21" href="$classCircuitSaver.html#abf3ccbef453b0c8861074f63a70bf2fe" title="Gets the save path from the circuit name." alt="" coords="488,208,647,235"/>
+<area shape="rect" id="node22" href="$classFileUtils.html#a8cbeb6a583722894f964b3eb425d320c" title="Does a specific path exist?" alt="" coords="492,563,643,589"/>
+<area shape="rect" id="node23" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/io/basic_ios/rdbuf.html#" title=" " alt="" coords="494,613,641,640"/>
+<area shape="rect" id="node24" href="$classLine.html#a72cdff62e5240bdfa35d0ab0454b3bfe" title="Updates the position of the line when items move." alt="" coords="516,765,619,792"/>
+<area shape="rect" id="node41" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/cppreference-doxygen-web.tag.xml$cpp/container/vector/size.html#" title=" " alt="" coords="740,1085,865,1112"/>
+<area shape="rect" id="node43" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#setPos" title=" " alt="" coords="482,157,653,184"/>
+<area shape="rect" id="node25" href="$Line_8cc.html#a03bdf1d65db5f8be866fd8f2f09914f4" title=" " alt="" coords="991,563,1068,589"/>
+<area shape="rect" id="node26" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qpointf.html#y" title=" " alt="" coords="1195,639,1283,665"/>
+<area shape="rect" id="node27" href="$classSceneItem.html#a4cec31e99d6de09cb0004379670b3ee7" title="Gets the end point of the component." alt="" coords="725,1035,881,1061"/>
+<area shape="rect" id="node33" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qpointf.html#x" title=" " alt="" coords="1195,832,1283,859"/>
+<area shape="rect" id="node35" href="$Line_8cc.html#a8975427cb63150bb3a0af967bad393fb" title=" " alt="" coords="998,613,1061,640"/>
+<area shape="rect" id="node36" href="$classSceneItem.html#a44e70dd2fea77de4187ab4a3ff26c053" title="Returns all lines leaving this item." alt="" coords="712,512,893,539"/>
+<area shape="rect" id="node37" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainterpath.html#lineTo" title=" " alt="" coords="727,715,878,741"/>
+<area shape="rect" id="node38" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspathitem.html#path" title=" " alt="" coords="711,765,895,792"/>
+<area shape="rect" id="node39" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpainterpath.html#quadTo" title=" " alt="" coords="723,816,882,843"/>
+<area shape="rect" id="node40" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspathitem.html#setPath" title=" " alt="" coords="725,867,880,909"/>
+<area shape="rect" id="node42" href="$classSceneItem.html#a37a516d8b13274718c93d7fc5cdd93b8" title="Gets the start point of the component." alt="" coords="721,984,884,1011"/>
+<area shape="rect" id="node28" href="$classSceneItem.html#a8e1e390e0824c01432773ff585e676d2" title="Gets the centre of the component." alt="" coords="943,984,1116,1011"/>
+<area shape="rect" id="node31" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html#width" title=" " alt="" coords="1177,1085,1302,1112"/>
+<area shape="rect" id="node29" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtgui.tags$qpixmap.html#height" title=" " alt="" coords="1174,984,1305,1011"/>
+<area shape="rect" id="node30" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#pos" title=" " alt="" coords="1164,1035,1315,1061"/>
+<area shape="rect" id="node32" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#x" title=" " alt="" coords="1172,883,1307,909"/>
+<area shape="rect" id="node34" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html#y" title=" " alt="" coords="1172,933,1307,960"/>
 </map>

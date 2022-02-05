@@ -1,6 +1,6 @@
 <map id="UIComponent" name="UIComponent">
 <area shape="rect" id="node1" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="477,2345,613,2452"/>
-<area shape="rect" id="node2" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="455,1261,635,1515"/>
+<area shape="rect" id="node2" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="455,1269,635,1507"/>
 <area shape="rect" id="node7" href="$classLine.html" title="Line between two components on a Scene." alt="" coords="286,1709,393,1845"/>
 <area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspixmapitem.html" title=" " alt="" coords="380,791,584,1015"/>
 <area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html" title=" " alt="" coords="167,211,336,597"/>

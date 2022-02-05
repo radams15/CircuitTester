@@ -1,5 +1,5 @@
 <map id="MainWindow" name="MainWindow">
-<area shape="rect" id="node1" title="The main window class that is the GUI for the user on startup." alt="" coords="110,1672,283,2175"/>
+<area shape="rect" id="node1" title="The main window class that is the GUI for the user on startup." alt="" coords="102,1672,291,2175"/>
 <area shape="rect" id="node2" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qmainwindow.html" title=" " alt="" coords="83,1253,311,1624"/>
 <area shape="rect" id="node3" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qwidget.html" title=" " alt="" coords="93,585,300,1205"/>
 <area shape="rect" id="node4" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtcore.tags$qobject.html" title=" " alt="" coords="5,5,172,537"/>

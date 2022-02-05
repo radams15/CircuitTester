@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title="Gets the centre of the component." alt="" coords="1321,31,1495,57"/>
 <area shape="rect" id="node2" href="$classSceneItem.html#a4cec31e99d6de09cb0004379670b3ee7" title="Gets the end point of the component." alt="" coords="1114,5,1270,32"/>
 <area shape="rect" id="node9" href="$classSceneItem.html#a37a516d8b13274718c93d7fc5cdd93b8" title="Gets the start point of the component." alt="" coords="1111,56,1273,83"/>
-<area shape="rect" id="node3" href="$classLine.html#ae6ea5b7357dd90fb7b2f1cafe9957d6b" title="Updates the position of the line when items move." alt="" coords="960,31,1063,57"/>
+<area shape="rect" id="node3" href="$classLine.html#a72cdff62e5240bdfa35d0ab0454b3bfe" title="Updates the position of the line when items move." alt="" coords="960,31,1063,57"/>
 <area shape="rect" id="node4" href="$classCircuitSaver.html#a9ace41a84d96b09d103fa0465899ed6b" title=" " alt="" coords="733,5,912,32"/>
 <area shape="rect" id="node8" href="$classLine.html#a8c3d84ae985092cf4774e625f69d5c53" title="Called by QT to paint the line onto the canvas." alt="" coords="777,56,868,83"/>
 <area shape="rect" id="node5" href="$classMainWindow.html#af302ce74b30876facddc371a6842d76a" title="Called when the open button is clicked from the toolbar." alt="" coords="501,5,685,32"/>

@@ -1,8 +1,8 @@
 <map id="Resistor" name="Resistor">
-<area shape="rect" id="node1" title="Resistor component with configurable resistance." alt="" coords="34,1439,181,1531"/>
-<area shape="rect" id="node2" href="$classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="" coords="27,1299,188,1391"/>
-<area shape="rect" id="node3" href="$classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="39,1027,175,1251"/>
-<area shape="rect" id="node4" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="17,711,197,979"/>
+<area shape="rect" id="node1" title="Resistor component with configurable resistance." alt="" coords="34,1424,181,1516"/>
+<area shape="rect" id="node2" href="$classResistiveElement.html" title="Parent class of anything with a resistance (Resistor, Switch, Wire)." alt="" coords="27,1284,188,1376"/>
+<area shape="rect" id="node3" href="$classUIComponent.html" title="SceneItem derivative that has information about generic component info such as nodes and arrow connec..." alt="" coords="39,1012,175,1236"/>
+<area shape="rect" id="node4" href="$classSceneItem.html" title="An image on the Scene." alt="" coords="17,711,197,964"/>
 <area shape="rect" id="node5" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicspixmapitem.html" title=" " alt="" coords="5,439,209,663"/>
 <area shape="rect" id="node6" href="/home/rhys/scripts/CircuitTester/docs/tagfiles/qtwidgets.tags$qgraphicsitem.html" title=" " alt="" coords="23,5,192,391"/>
 </map>

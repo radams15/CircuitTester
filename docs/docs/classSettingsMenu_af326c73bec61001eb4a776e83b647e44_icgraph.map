@@ -1,4 +1,5 @@
 <map id="SettingsMenu::setInteriorLayout" name="SettingsMenu::setInteriorLayout">
-<area shape="rect" id="node1" title="Sets the layout of the widget, used to set different settings panels for each component." alt="" coords="289,5,476,47"/>
-<area shape="rect" id="node2" href="$classMainWindow.html#a0530eec28d489e8ce39886f231208c51" title="Called from the Scene when any SceneItem is double clicked. Places the settings widget from the Scene..." alt="" coords="5,13,241,39"/>
+<area shape="rect" id="node1" title="Sets the layout of the widget, used to set different settings panels for each component." alt="" coords="535,5,721,47"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a0530eec28d489e8ce39886f231208c51" title="Called from the Scene when any SceneItem is double clicked. Places the settings widget from the Scene..." alt="" coords="251,13,487,39"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb" title="Initialiser for the main window object." alt="" coords="5,13,203,39"/>
 </map>

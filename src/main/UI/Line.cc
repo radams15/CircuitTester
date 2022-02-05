@@ -37,7 +37,7 @@ bool higher(QPointF a, QPointF b){
     return a.y() > b.y();
 }
 
-void Line::update(){
+void Line::redraw(){
     QPointF startp;
     QPointF endp;
 
@@ -80,7 +80,7 @@ void Line::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWid
     // Set the pen to the painter object.
     painter->setPen(myPen);
 
-    update();
+    redraw();
 
     // Draw the line.
     painter->drawPath(path());
