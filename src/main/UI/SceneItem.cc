@@ -157,14 +157,3 @@ std::vector<Line *> SceneItem::leavingLines() {
 
     return out;
 }
-
-std::vector<Line *> SceneItem::enteringLines() {
-    std::vector<Line*> out;
-    for(auto l : lines){
-        if(l->endItem() == this){
-            out.push_back(l);
-        }
-    }
-
-    return out;
-}

@@ -236,17 +236,6 @@ $(function() {
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> out;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector&lt;Line *&gt;</a> SceneItem::enteringLines() {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector&lt;Line*&gt;</a> out;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> l : <a class="code" href="classSceneItem.html#a4bdba74b206e8baaa8e6711b1027d75a">lines</a>){</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">if</span>(l-&gt;endItem() == <span class="keyword">this</span>){</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            out.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/push_back.html">push_back</a>(l);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> out;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
 <div class="ttc" id="aLine_8h_html"><div class="ttname"><a href="Line_8h.html">Line.h</a></div></div>
 <div class="ttc" id="aSceneItem_8cc_html_a62a5515807d109a4a9712e9f131cc681"><div class="ttname"><a href="SceneItem_8cc.html#a62a5515807d109a4a9712e9f131cc681">GRID_SNAP_STEP</a></div><div class="ttdeci">#define GRID_SNAP_STEP</div><div class="ttdef"><b>Definition:</b> <a href="SceneItem_8cc_source.html#l00013">SceneItem.cc:13</a></div></div>
 <div class="ttc" id="aSceneItem_8cc_html_a706cc1045507d21ebd3fdc6f4d05f60a"><div class="ttname"><a href="SceneItem_8cc.html#a706cc1045507d21ebd3fdc6f4d05f60a">SCENEITEM_SIZE</a></div><div class="ttdeci">#define SCENEITEM_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="SceneItem_8cc_source.html#l00014">SceneItem.cc:14</a></div></div>
