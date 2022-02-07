@@ -57,6 +57,8 @@ public:
      * @return Whether the on/off checkbox is checked or not.
      */
     inline bool getState(){ return onOffCheckbox->isChecked(); }
+
+    json::jobject toJson();
 };
 
 

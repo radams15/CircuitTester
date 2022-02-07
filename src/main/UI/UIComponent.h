@@ -14,6 +14,8 @@
 
 #include "SceneItem.h"
 
+#include "../Saves/json.h"
+
 /** @brief Enum to determine the type of UI component is in the
  * generic UIComponent.
  *
@@ -110,6 +112,8 @@ public:
      *
      */
     std::vector<Line*> connections;
+
+    virtual json::jobject toJson() = 0;
 };
 
 

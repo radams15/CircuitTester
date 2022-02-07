@@ -13,3 +13,18 @@ double Ammeter::getResistance() {
     // Min resistance means max current, which is the perfect ammeter.
     return 0.000000001;
 }
+
+json::jobject Ammeter::toJson(){
+    json::jobject out;
+
+    // Get the type of component.
+    out["type"] = getId();
+
+    // Add the coordinates of the component in a list of [x,y].
+	std::vector<double> position;
+	position.push_back(pos().x());
+	position.push_back(pos().y());
+    out["pos"] = position;
+
+    return out;
+}

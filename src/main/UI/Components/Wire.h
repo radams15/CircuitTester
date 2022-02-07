@@ -83,6 +83,8 @@ public:
      * @return Material of the wire as string value.
      */
     inline std::string getMaterial() const{ return wireCombo->currentText().toStdString(); }
+
+    json::jobject toJson();
 };
 
 

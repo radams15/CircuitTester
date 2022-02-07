@@ -366,10 +366,9 @@ void MainWindow::createMenubar() {
     mainMenu->menu->addAction(exportAction);
     mainMenu->menu->addAction(deleteAction);
 
-    mainMenu->menu->addAction(tutorialAction);
-
     mainMenu->menu->addAction(saveDirAction);
     mainMenu->menu->addAction(aboutAction);
+    mainMenu->menu->addAction(tutorialAction);
 
     mainMenu->menu->addAction(exitAction);
 #endif
@@ -437,7 +436,7 @@ template<class T> std::list<T> toStdList(QList<T> in){
 }
 
 std::string dtos(double in){
-	/* Alloc 10 bytes: will take up 4 bytes for the max integer part (1000 max), 2 for the 2dp, 
+	/* Alloc 8 bytes: will take up 4 bytes for the max integer part (1000 max), 2 for the 2dp,
 	1 for the point char, and the null byte.*/
 	auto outa = (char*) calloc(8, sizeof(char));
 
@@ -583,7 +582,7 @@ void MainWindow::openScene() {
     currentOpenedCircuit = name;
 
     // Indicate to the user the name of the open file.
-    setWindowTitle(tr(("Circuit Simulator: " + currentOpenedCircuit).c_str()));
+    setWindowTitle(QString::fromStdString("Circuit Simulator: " + currentOpenedCircuit));
 }
 
 
@@ -608,7 +607,7 @@ void MainWindow::exportScene() {
 
 void MainWindow::openSaveDir() {
 #if defined(WIN32)
-        ShellExecute(NULL, "open", FileUtils::getSaveDir().c_str(), NULL, NULL, SW_SHOWMINIMIZED);
+    ShellExecute(NULL, "open", FileUtils::getSaveDir().c_str(), NULL, NULL, SW_SHOWMINIMIZED);
 #elif __APPLE__
 	system((std::string("open '")+FileUtils::getSaveDir()+std::string("' &")).c_str());
 #elif __linux__

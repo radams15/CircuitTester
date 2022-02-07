@@ -14,3 +14,18 @@ double Voltmeter::getResistance() {
     // Max resistance means minimum current, which is the perfect voltmeter.
     return 10000000;
 }
+
+json::jobject Voltmeter::toJson(){
+    json::jobject out;
+
+    // Get the type of component.
+    out["type"] = getId();
+
+    // Add the coordinates of the component in a list of [x,y].
+	std::vector<double> position;
+	position.push_back(pos().x());
+	position.push_back(pos().y());
+    out["pos"] = position;
+
+    return out;
+}

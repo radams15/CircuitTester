@@ -36,13 +36,6 @@ struct SceneItems{
 class CircuitSaver {
 private:
 
-    /** @brief Convert a UIComponent into JSON data.
-     *
-     * @param comp The component to convert.
-     * @return JSON data that corresponds to the component.
-     */
-    static json::jobject serialiseUIComponent(UIComponent* comp);
-
 public:
     /** @brief Gets the save path from the circuit name.
      *
@@ -51,13 +44,6 @@ public:
      */
     static std::string getPath(std::string name);
 
-    /** @brief Save circuit to file.
-     *
-     * @param name The name of the circuit.
-     * @param items The SceneItems object containing the components and lines.
-     */
-    static void saveCircuit(std::string name, SceneItems items);
-
     /** @brief Converts circuit to string.
      *
      * @param name The name of the circuit.
@@ -65,6 +51,13 @@ public:
      * @return JSON string of circuit.
      */
     static std::string serialiseCircuit(std::string name, SceneItems items);
+
+    /** @brief Save circuit to file.
+     *
+     * @param name The name of the circuit.
+     * @param items The SceneItems object containing the components and lines.
+     */
+    static void saveCircuit(std::string name, SceneItems items);
 
     /** Load circuit onto scene.
      *

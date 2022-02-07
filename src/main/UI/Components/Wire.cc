@@ -75,3 +75,24 @@ double Wire::getResistance() {
 
     return (double) resistance;
 }
+
+json::jobject Wire::toJson(){
+    json::jobject out;
+
+    // Get the type of component.
+    out["type"] = getId();
+
+
+        out["area"] = getArea();
+        out["length"] = getLength();
+        out["material"] = getMaterial();
+
+
+    // Add the coordinates of the component in a list of [x,y].
+	std::vector<double> position;
+	position.push_back(pos().x());
+	position.push_back(pos().y());
+    out["pos"] = position;
+
+    return out;
+}

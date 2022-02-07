@@ -27,3 +27,22 @@ Resistor::Resistor(double resistance) : ResistiveElement(ID, ":/images/resistor.
 double Resistor::getResistance() {
     return resistanceSpinner->value();
 }
+
+json::jobject Resistor::toJson(){
+    json::jobject out;
+
+    // Get the type of component.
+    out["type"] = getId();
+
+
+    out["resistance"] = getResistance();
+
+
+    // Add the coordinates of the component in a list of [x,y].
+	std::vector<double> position;
+	position.push_back(pos().x());
+	position.push_back(pos().y());
+    out["pos"] = position;
+
+    return out;
+}

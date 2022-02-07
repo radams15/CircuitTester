@@ -44,3 +44,23 @@ double Battery::getVoltage() {
     // but cannot be 0 otherwise the MNA will not function.
     return onOffCheckbox->isChecked()? voltageSpinner->value() : 0.0001;
 }
+
+json::jobject Battery::toJson(){
+    json::jobject out;
+
+    // Get the type of component.
+    out["type"] = getId();
+
+
+    out["voltage"] = getVoltageValue();
+    out["state"] = getState();
+
+
+    // Add the coordinates of the component in a list of [x,y].
+	std::vector<double> position;
+	position.push_back(pos().x());
+	position.push_back(pos().y());
+    out["pos"] = position;
+
+    return out;
+}
