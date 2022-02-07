@@ -48,25 +48,15 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
         return;
     }
 
-    std::cout << "Load: '" << path << "'" << std::endl;
+    /*std::cout << "Load: '" << path << "'" << std::endl;
 
-    std::ifstream in(path.c_str());
-
-    // Load the JSON string into a JSON object.
-	
-	std::stringstream rawData;
-	rawData << in.rdbuf();
-	in.close();
-	
-	json::jobject data = json::jobject::parse(rawData.str());
-
+    Table data = cpptoml::parse_file(path.c_str());
 
     std::map<int, UIComponent*> components;
 
-	std::vector<json::jobject> parts;
-	parts = data["parts"];
+	Array parts = data->get_as<Array>("parts").value_or(cpptoml::make_array());
 	
-    for(int i=0 ; i<parts.size() ; i++){
+    for(int i=0 ; i<parts->size() ; i++){
 		json::jobject component = parts[i]["component"];
 		int uid = parts[i]["id"];
         UIComponent* comp = NULL;
@@ -151,13 +141,13 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
             s->addItem(line);
             line->redraw();
         }
-    }
+    }*/
 
 }
 
 std::string CircuitSaver::serialiseCircuit(std::string name, SceneItems items) {
-	json::jobject out;
-    out["name"] = name;
+	Table out;
+    out->insert("name", name);
 
     std::list<QGraphicsItem*> graphicsItems(items.components.begin(), items.components.end());
 
@@ -165,67 +155,72 @@ std::string CircuitSaver::serialiseCircuit(std::string name, SceneItems items) {
     // Use AnalysisMapper to simplify the code to generate a graph of the components.
     Graph graph = am.makeGraph();
 
-    std::vector<json::jobject> parts;
+    Table parts = cpptoml::make_table();
 
+    int i=0;
     foreach(UIComponent* uicomp, graph.keys()){
-        json::jobject sect;
+
+        Table sect = cpptoml::make_table();
         // Turn the component into JSON
-        json::jobject comp = serialiseUIComponent(uicomp);
-		std::vector<int> connections;
+        Table comp = serialiseUIComponent(uicomp);
+		Array connections = cpptoml::make_array();
 		
 		std::vector<UIComponent*> components = graph[uicomp];
 
         // For each connection add the ID of the connected component.
         for(int i=0 ; i<components.size() ; i++){
-            connections.push_back(components[i]->componentId);
+            connections->push_back(components[i]->componentId);
         }
 
         // Add the data to the JSON map.
-        sect["component"] = comp;
-        sect["connections"] = connections;
-        sect["id"] = uicomp->componentId;
+        sect->insert("component", comp);
+        sect->insert("connections", connections);
+        sect->insert("id", uicomp->componentId);
 
-        parts.push_back(sect);
+        parts->insert(std::to_string(i), sect);
     }
 
-    out["parts"] = parts;
+    out->insert("parts", parts);
 
-    return (std::string) out;
+    std::stringstream outs;
+    outs << (*out);
+
+    return outs.str();
 }
 
 
-json::jobject CircuitSaver::serialiseUIComponent(UIComponent* comp) {
-	json::jobject out;
+Table CircuitSaver::serialiseUIComponent(UIComponent* comp) {
+    Table out = cpptoml::make_table();
 
     // Get the type of component.
-    out["type"] = comp->getId();
+    out->insert("type", comp->getId());
 
     // Different components have different saved values.
     switch(comp->getId()){
         case UI_BATTERY:
             // getVoltageValue as this gives the raw value, getVoltage changes the voltage by error
             // checking and including the state value.
-            out["voltage"] = ((Battery*) comp)->getVoltageValue();
-            out["state"] = ((Battery*) comp)->getState();
+            out->insert("voltage", ((Battery*) comp)->getVoltageValue());
+            out->insert("state", ((Battery*) comp)->getState());
             break;
         case UI_RESISTOR:
-            out["resistance"] = ((Resistor*) comp)->getResistance();
+            out->insert("resistance", ((Resistor*) comp)->getResistance());
             break;
         case UI_WIRE:
-            out["area"] = ((Wire*) comp)->getArea();
-            out["length"] = ((Wire*) comp)->getLength();
-            out["material"] = ((Wire*) comp)->getMaterial();
+            out->insert("area", ((Wire*) comp)->getArea());
+            out->insert("length", ((Wire*) comp)->getLength());
+            out->insert("material", ((Wire*) comp)->getMaterial());
             break;
         case UI_SWITCH:
-            out["state"] = ((Switch*) comp)->getState();
+            out->insert("state", ((Switch*) comp)->getState());
             break;
     }
 
     // Add the coordinates of the component in a list of [x,y].
-	std::vector<double> pos;
-	pos.push_back(comp->pos().x());
-	pos.push_back(comp->pos().y());
-    out["pos"] = pos;
+	Array pos = cpptoml::make_array();
+	pos->push_back(comp->pos().x());
+	pos->push_back(comp->pos().y());
+    out->insert("pos", pos);
 
     return out;
 }

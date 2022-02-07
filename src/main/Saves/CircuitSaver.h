@@ -13,6 +13,8 @@
 
 #include "json.h"
 
+#include <cpptoml.h>
+
 /** @brief Items in the scene.
  *
  */
@@ -30,6 +32,9 @@ struct SceneItems{
 
 #define ext ".cir"
 
+typedef std::shared_ptr<cpptoml::table> Table;
+typedef std::shared_ptr<cpptoml::array> Array;
+
 /** @brief Class that saves/loads/exports/imports circuits.
  *
  */
@@ -41,7 +46,7 @@ private:
      * @param comp The component to convert.
      * @return JSON data that corresponds to the component.
      */
-    static json::jobject serialiseUIComponent(UIComponent* comp);
+    static Table serialiseUIComponent(UIComponent* comp);
 
 public:
     /** @brief Gets the save path from the circuit name.
