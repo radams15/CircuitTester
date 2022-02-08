@@ -84,7 +84,7 @@ public:
      */
     inline std::string getMaterial() const{ return wireCombo->currentText().toStdString(); }
 
-    json::jobject toJson();
+    YAML::Node toYaml();
 };
 
 

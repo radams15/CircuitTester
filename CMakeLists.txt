@@ -15,6 +15,9 @@ set(DOCTEST_NO_INSTALL ON)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(YAML_CPP_BUILD_TOOLS OFF)
+set(YAML_CPP_BUILD_TESTS OFF)
+set(YAML_CPP_INSTALL OFF)
 
 if(${QT_VER})
 else()
@@ -24,10 +27,10 @@ endif()
 message("QT version: ${QT_VER}")
 
 if(DO_TESTS OR MAKE_PROG)
-    add_subdirectory(lib/nlohmann_json_cmake_fetchcontent)
     add_subdirectory(resources)
     find_package(QT NAMES Qt${QT_VER} COMPONENTS Widgets REQUIRED)
     find_package(Qt${QT_VER} COMPONENTS Widgets REQUIRED)
+    add_subdirectory(lib/yaml-cpp)
 endif()
 
 if(DO_TESTS) # if debugging, build tests

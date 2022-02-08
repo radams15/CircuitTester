@@ -14,7 +14,7 @@
 
 #include "SceneItem.h"
 
-#include "../Saves/json.h"
+#include <yaml-cpp/yaml.h>
 
 /** @brief Enum to determine the type of UI component is in the
  * generic UIComponent.
@@ -113,7 +113,7 @@ public:
      */
     std::vector<Line*> connections;
 
-    virtual json::jobject toJson() = 0;
+    virtual YAML::Node toYaml() = 0;
 };
 
 

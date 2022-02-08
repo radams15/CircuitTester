@@ -29,8 +29,8 @@ double Switch::getResistance() {
 }
 
 
-json::jobject Switch::toJson(){
-    json::jobject out;
+YAML::Node Switch::toYaml(){
+    YAML::Node out;
 
     // Get the type of component.
     out["type"] = getId();

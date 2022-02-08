@@ -62,7 +62,7 @@ public:
      */
     inline bool getState(){ return onOffCheckbox->isChecked(); }
 
-    json::jobject toJson();
+    YAML::Node toYaml();
 };
 
 

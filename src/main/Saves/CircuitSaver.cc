@@ -12,7 +12,8 @@
 
 #include <iostream>
 #include <fstream>
-#include <sstream>
+
+#include <yaml-cpp/yaml.h>
 
 std::string CircuitSaver::getPath(std::string name){
     std::string saveDir = FileUtils::getSaveDir();
@@ -35,10 +36,6 @@ void CircuitSaver::saveCircuit(std::string name, SceneItems items) {
     file.close();
 }
 
-json::jobject get(json::jobject root, std::string key){
-	return json::jobject::parse(root.get(key));
-}
-
 void CircuitSaver::loadCircuit(std::string name, Scene* s) {
     std::string path = getPath(name);
 
@@ -58,37 +55,36 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
 	rawData << in.rdbuf();
 	in.close();
 	
-	json::jobject data = json::jobject::parse(rawData.str());
-
+	YAML::Node data = YAML::Load(rawData.str());
 
     std::map<int, UIComponent*> components;
 
-	std::vector<json::jobject> parts;
+	YAML::Node parts;
 	parts = data["parts"];
 	
     for(int i=0 ; i<parts.size() ; i++){
-		json::jobject component = parts[i]["component"];
-		int uid = parts[i]["id"];
+		YAML::Node component = parts[i]["component"];
+		int uid = parts[i]["id"].as<int>();
         UIComponent* comp = NULL;
 		
-		int id = component["type"];
+		int id = component["type"].as<int>();
 				
         // Create UIComponent for each json component.
         switch(id) {
             case UI_BATTERY: {
-                comp = (UIComponent*) new Battery((double) component["voltage"], (int) component["state"]);
+                comp = (UIComponent*) new Battery(component["voltage"].as<double>(), component["state"].as<bool>());
                 break;
             }
             case UI_RESISTOR: {
-                comp = (UIComponent*) new Resistor((double) component["resistance"]);
+                comp = (UIComponent*) new Resistor(component["resistance"].as<double>());
                 break;
             }
             case UI_WIRE: {
-                comp = (UIComponent*) new Wire((double) component["length"], (double) component["area"], component["material"]);
+                comp = (UIComponent*) new Wire(component["length"].as<double>(), component["area"].as<double>(), component["material"].as<std::string>());
                 break;
             }
             case UI_SWITCH: {
-                comp = (UIComponent*) new Switch((int) component["state"]);
+                comp = (UIComponent*) new Switch(component["state"].as<bool>());
                 break;
             }
 
@@ -99,8 +95,8 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
         // If we actually made a component.
         if(comp != NULL){
             // Set the coordinates of the component
-            double x = (double) component["pos"].array(0);
-            double y = (double) component["pos"].array(1);
+            double x = component["pos"][0].as<double>();
+            double y = component["pos"][1].as<double>();
 			
             // Validate x, y minimum value of 0.
             x = x<0? 0 : x;
@@ -131,14 +127,14 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
 	parts = data["parts"];
 	
     for(int i=0 ; i<parts.size() ; i++){
-		json::jobject part = parts[i];
+		YAML::Node part = parts[i];
         // Set the start item for all the arrows.
-        UIComponent* startItem = components[(int)part["id"]];
+        UIComponent* startItem = components[part["id"].as<int>()];
 
 		
-		std::vector<int> connections = part["connections"];
+		YAML::Node connections = part["connections"];
         for(int x=0 ; x<connections.size() ; x++){
-			int conn = connections[x];
+			int conn = connections[x].as<int>();
             // For each connection in the JSON data get the component from the ID map.
             UIComponent* endItem = components[conn];
 
@@ -156,7 +152,7 @@ void CircuitSaver::loadCircuit(std::string name, Scene* s) {
 }
 
 std::string CircuitSaver::serialiseCircuit(std::string name, SceneItems items) {
-	json::jobject out;
+	YAML::Node out;
     out["name"] = name;
 
     std::list<QGraphicsItem*> graphicsItems(items.components.begin(), items.components.end());
@@ -165,12 +161,12 @@ std::string CircuitSaver::serialiseCircuit(std::string name, SceneItems items) {
     // Use AnalysisMapper to simplify the code to generate a graph of the components.
     Graph graph = am.makeGraph();
 
-    std::vector<json::jobject> parts;
+    YAML::Node parts;
 
     foreach(UIComponent* uicomp, graph.keys()){
-        json::jobject sect;
+        YAML::Node sect;
         // Turn the component into JSON
-        json::jobject comp = uicomp->toJson();
+        YAML::Node comp = uicomp->toYaml();
 		std::vector<int> connections;
 		
 		std::vector<UIComponent*> components = graph[uicomp];
@@ -190,7 +186,11 @@ std::string CircuitSaver::serialiseCircuit(std::string name, SceneItems items) {
 
     out["parts"] = parts;
 
-    return (std::string) out;
+    std::stringstream outs;
+
+    outs << out;
+
+    return outs.str();
 }
 
 void CircuitSaver::exportCircuit(std::string name, std::string path) {

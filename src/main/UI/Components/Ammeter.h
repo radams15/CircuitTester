@@ -33,7 +33,7 @@ public:
      */
     double getResistance() override;
 
-    json::jobject toJson();
+    YAML::Node toYaml();
 };
 
 

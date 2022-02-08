@@ -11,8 +11,6 @@
 #include "../UI/Line.h"
 #include "../UI/Scene.h"
 
-#include "json.h"
-
 /** @brief Items in the scene.
  *
  */

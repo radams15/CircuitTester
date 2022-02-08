@@ -14,8 +14,8 @@ double Ammeter::getResistance() {
     return 0.000000001;
 }
 
-json::jobject Ammeter::toJson(){
-    json::jobject out;
+YAML::Node Ammeter::toYaml(){
+    YAML::Node out;
 
     // Get the type of component.
     out["type"] = getId();

@@ -28,8 +28,8 @@ double Resistor::getResistance() {
     return resistanceSpinner->value();
 }
 
-json::jobject Resistor::toJson(){
-    json::jobject out;
+YAML::Node Resistor::toYaml(){
+    YAML::Node out;
 
     // Get the type of component.
     out["type"] = getId();

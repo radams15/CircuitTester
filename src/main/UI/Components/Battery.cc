@@ -45,8 +45,8 @@ double Battery::getVoltage() {
     return onOffCheckbox->isChecked()? voltageSpinner->value() : 0.0001;
 }
 
-json::jobject Battery::toJson(){
-    json::jobject out;
+YAML::Node Battery::toYaml(){
+    YAML::Node out;
 
     // Get the type of component.
     out["type"] = getId();

@@ -15,8 +15,8 @@ double Voltmeter::getResistance() {
     return 10000000;
 }
 
-json::jobject Voltmeter::toJson(){
-    json::jobject out;
+YAML::Node Voltmeter::toYaml(){
+    YAML::Node out;
 
     // Get the type of component.
     out["type"] = getId();

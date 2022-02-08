@@ -76,8 +76,8 @@ double Wire::getResistance() {
     return (double) resistance;
 }
 
-json::jobject Wire::toJson(){
-    json::jobject out;
+YAML::Node Wire::toYaml(){
+    YAML::Node out;
 
     // Get the type of component.
     out["type"] = getId();
