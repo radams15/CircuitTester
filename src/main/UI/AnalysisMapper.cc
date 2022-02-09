@@ -72,23 +72,25 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
         Component comp = mNAMap[uiComp];
         switch(comp.type){
             // Resistors have a current and a voltage.
-            case MNA_RESISTOR:
+            case MNA_RESISTOR:{
             	// Add the voltage and the current of the Component into the solution map
             	// with the key of the UIComponent.
                 out[uiComp] = (ComponentValue){
                         sol.getVoltage(comp),
                         sol.getCurrent(comp)
                 };
+                }
                 break;
 
             // Batteries have only a voltage, not a current.
-            case MNA_BATTERY:
+            case MNA_BATTERY:{
             	// Add the voltage of the Component into the solution map.
             	// with the key of the UIComponent.
                 out[uiComp] = (ComponentValue){
                         sol.getVoltage(comp),
                         NAN
                 };
+                }
                 break;
 
             default:
@@ -96,19 +98,21 @@ std::map<UIComponent*, ComponentValue> AnalysisMapper::getSolution() {
         }
 
         switch(uiComp->getId()){
-            case UI_VOLTMETER:
+            case UI_VOLTMETER:{
                 out[uiComp] = (ComponentValue){
                                 sol.getVoltage(comp),
                     NAN
                         };
-                        break;
+        	}
+                break;
 
-            case UI_AMMETER:
+            case UI_AMMETER:{
                 out[uiComp] = (ComponentValue){
                                 NAN,
                     sol.getCurrent(comp)
-                        };
-                        break;
+                };
+                }
+                break;
 
             default:
                 break;
