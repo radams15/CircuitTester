@@ -5,11 +5,11 @@
 #include "SettingsMenu.h"
 #include <iostream>
 
-SettingsMenu::SettingsMenu() : QWidget(nullptr){
+SettingsMenu::SettingsMenu(std::string name) : QWidget(nullptr){
     // Create an animation group
     toggleAnimation = new QParallelAnimationGroup(nullptr);
     // Create the container with the title of settings.
-    contentArea = new QGroupBox("Settings");
+    contentArea = new QGroupBox(QString::fromStdString(name));
     toggleButton = new QToolButton();
     mainLayout = new QGridLayout();
 
@@ -37,8 +37,8 @@ SettingsMenu::SettingsMenu() : QWidget(nullptr){
 
     // Add the button at coordinates 0, 0.
     mainLayout->addWidget(toggleButton, 0, 0, 1, 1, Qt::AlignTop);
-    // Add the changeable widget at coordinates 0, 1, i.e. to the right of the button.
-    mainLayout->addWidget(contentArea, 0, 1, 1, 1);
+    // Add the changeable widget at coordinates 0, 1, i.e. below the button.
+    mainLayout->addWidget(contentArea, 1, 0, 1, 1);
 
     setLayout(mainLayout);
 

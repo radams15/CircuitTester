@@ -21,7 +21,10 @@
  * If they are not the same class, then a dynamic cast returns a nullptr.
 */
 
+
+#ifndef IS_TYPE
 #define IS_TYPE(type, ptr) dynamic_cast<type*>(ptr) != NULL
+#endif
 
 /** @brief A map of component: list of components.
  *

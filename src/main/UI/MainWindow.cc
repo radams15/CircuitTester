@@ -59,12 +59,19 @@ MainWindow::MainWindow() {
 
     // Create the main layout, add the graphics view.
     auto* layout = new QHBoxLayout;
-    layout->addWidget(componentTabs);
+    auto* compLayout = new QVBoxLayout;
+    compLayout->addWidget(componentTabs);
+
+    settingsMenu2 = new SettingsMenu("Components");
+    layout->addWidget(settingsMenu2);
+    settingsMenu2->setInteriorLayout(compLayout);
+    settingsMenu2->toggleButton->click();
+
     view = new QGraphicsView(scene);
     layout->addWidget(view);
 
     // Create and add the settings menu.
-    settingsMenu = new SettingsMenu();
+    settingsMenu = new SettingsMenu("Settings");
     layout->addWidget(settingsMenu);
 
     // Create a widget to hold the layout.
@@ -233,6 +240,21 @@ void MainWindow::createComponentView() {
     componentTabs->addTab(measurementWidget, "Measurement Components");
 }
 
+void incrementCombo(QComboBox* cb){
+    int next = cb->currentIndex()+1;
+
+    if(next < cb->count()) {
+        cb->setCurrentIndex(next);
+    }
+}
+
+void decrementCombo(QComboBox* cb){
+    int next = cb->currentIndex()-1;
+
+    if(next >= 0) {
+        cb->setCurrentIndex(next);
+    }
+}
 
 void MainWindow::createActions() {
     // Create many actions which can be placed in menubars or toolbars.
@@ -326,6 +348,21 @@ void MainWindow::createActions() {
     runningAction->setCheckable(true);
     runningAction->setChecked(true);
     runningAction->setShortcut(Qt::Key_R);
+
+    scaleAction = new QWidgetAction(nullptr);
+    QWidget* hboxwidget = new QWidget;
+    QHBoxLayout* hbox = new QHBoxLayout;
+    hboxwidget->setLayout(hbox);
+    QComboBox* scaleCombo = new QComboBox;
+    QStringList scales;
+    scales << tr("50%") << tr("75%") << tr("100%") << tr("125%") << tr("150%");
+    scaleCombo->addItems(scales);
+    scaleCombo->setCurrentText("100%");
+    hbox->addWidget(new QLabel("Scale"));
+    hbox->addWidget(scaleCombo);
+    scaleAction->setDefaultWidget(hboxwidget);
+
+    connect(scaleCombo, &QComboBox::currentTextChanged,this, &MainWindow::sceneScaleChanged);
 }
 
 
@@ -358,6 +395,9 @@ void MainWindow::createMenubar() {
 
     // Create hamburger menu
     mainMenu = new HamburgerMenu();
+
+    scaleAction->setParent(mainMenu->menu);
+    mainMenu->menu->addAction(scaleAction);
 
     // Add actions to menu in order.
     mainMenu->menu->addAction(saveAction);
@@ -406,7 +446,7 @@ QWidget *MainWindow::createCellWidget(std::string text) {
     auto* button = new QToolButton;
     button->setIcon(icon);
     button->setIconSize(QSize(50, 50));
-    button->setMinimumSize(60, 60);
+    button->setMinimumSize(10, 10);
     button->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     button->setCheckable(true);
     // Add the button to the buttongroup.
@@ -619,4 +659,17 @@ void MainWindow::openSaveDir() {
 
 int MainWindow::getMode() {
     return moveAction->isChecked()? Scene::MOVE : Scene::INSERT_LINE;
+}
+
+void MainWindow::sceneScaleChanged(const QString &scale) {
+    double newScale = scale.leftRef(scale.indexOf(tr("%"))).toDouble() / 100.0;
+    setScale(newScale);
+}
+
+
+void MainWindow::setScale(double scale) {
+    QTransform oldMatrix = view->transform();
+    view->resetTransform();
+    view->translate(oldMatrix.dx(), oldMatrix.dy());
+    view->scale(scale, scale);
 }

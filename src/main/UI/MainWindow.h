@@ -16,6 +16,7 @@
 #include <QToolBox>
 #include <QToolButton>
 #include <QGraphicsView>
+#include <QWidgetAction>
 
 #include "UIComponent.h"
 #include "SceneItem.h"
@@ -113,6 +114,8 @@ private slots:
 
     int getMode();
 
+    void sceneScaleChanged(const QString &scale);
+
 private:
     /** @brief The name of the circuit that is open.
      *
@@ -120,6 +123,8 @@ private:
      *
      */
     std::string currentOpenedCircuit;
+
+    void setScale(double scale);
 
     /** @brief Creates the toolbox of components.
      *
@@ -171,6 +176,11 @@ private:
      *
      */
     SettingsMenu* settingsMenu;
+
+
+    SettingsMenu* settingsMenu2;
+
+    QWidgetAction* scaleAction;
 
     /** @brief An action that exits the application.
      *

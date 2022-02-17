@@ -82,7 +82,7 @@ public:
     /** @brief Initialiser.
      *
      */
-    SettingsMenu();
+    SettingsMenu(std::string name);
 
     /** @brief Sets the layout of the widget, used to set different settings panels for
      * each component.
