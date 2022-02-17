@@ -1,10 +1,12 @@
 CONFIG += qt debug c++98
 
-CONFIG += x86_64 ppc
+CONFIG:macos += x86_64 x86 ppc
 
 QT += gui
 
 QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.4
+
+QMAKE_LIBFLAGS += -lstdc++
 
 INCLUDEPATH += lib/eigen
 HEADERS += src/main/Analysis/*.h

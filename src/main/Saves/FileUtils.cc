@@ -85,7 +85,7 @@ bool FileUtils::createDirTree(std::string tree){
         // Find position of the last path separator.
         pos = tree.find_first_of("\\/", pos + 1);
         // CreateDirectory repeatedly until pos is end of the string.
-        CreateDirectory(tree.substr(0, pos).c_str(), NULL);
+        CreateDirectory((const WCHAR*) tree.substr(0, pos).c_str(), NULL);
     } while (pos != std::string::npos);
 
     return false;
@@ -102,7 +102,7 @@ std::string FileUtils::getSaveDir() {
 #elif defined(__linux)|| UNIX
     out << "/home/" << getUserName() << "/.local/share/" << SAVE_FOLDER << "/save/";
 #elif defined(_WIN32)
-    out << R"(C:\Users\)" << getUserName() << R"(\AppData\Local\)" << SAVE_FOLDER << R"(\save\)";
+    out << "C:\\Users\\" << getUserName() << "\\AppData\\Local\\" << SAVE_FOLDER << "\\save\\";
 #else
 #error Cannot determine OS (getOs)!
 #endif
@@ -123,7 +123,7 @@ std::string FileUtils::getUserName() {
 #elif WINDOWS
     char username[UNLEN+1]; // https://stackoverflow.com/questions/11587426/get-current-username-in-c-on-windows
     DWORD username_len = UNLEN+1;
-    GetUserName(username, &username_len);
+    GetUserName((WCHAR*) username, &username_len);
     return std::string(username);
 #else
 #error Cannot determine OS (getUsername)!
@@ -195,18 +195,18 @@ std::vector<std::string> FileUtils::getSaveFiles(){
 
     sprintf(sPath, "%s\\*.*", getSaveDir().c_str());
 
-    if((hFind = FindFirstFile(sPath, &fdFile)) == INVALID_HANDLE_VALUE){
+    if((hFind = FindFirstFile((const WCHAR*) sPath, &fdFile)) == INVALID_HANDLE_VALUE){
         printf("Path not found: [%s]\n", getSaveDir().c_str());
         return out;
     }
 
     do{
-        if(strcmp(fdFile.cFileName, ".") != 0 && strcmp(fdFile.cFileName, "..") != 0){
+        if(strcmp((const char*) fdFile.cFileName, ".") != 0 && strcmp((const char*) fdFile.cFileName, "..") != 0){
             sprintf(sPath, "%s\\%s", getSaveDir().c_str(), fdFile.cFileName);
 
             if(fdFile.dwFileAttributes &FILE_ATTRIBUTE_DIRECTORY){}else{
                 if(endsWith(sPath, ".cir")){
-                    out.push_back(replace(std::string(fdFile.cFileName), ".cir", ""));
+                    out.push_back(replace(std::string((const char*) fdFile.cFileName), ".cir", ""));
                 }
             }
         }

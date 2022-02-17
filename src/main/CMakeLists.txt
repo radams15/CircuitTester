@@ -57,7 +57,7 @@ set(PROJECT_SOURCES
         UI/AnalysisMapper.cc
         UI/AnalysisMapper.h
         Saves/FileUtils.cc
-        Saves/FileUtils.h Saves/json.cpp Saves/json.cpp Saves/CircuitSaver.cc Saves/CircuitSaver.h UI/Components/ResistiveElement.h UI/ExpandingSpacer.h UI/HamburgerMenu.cpp UI/HamburgerMenu.h)
+        Saves/FileUtils.h Saves/json.cpp Saves/json.cpp Saves/CircuitSaver.cc Saves/CircuitSaver.h UI/Components/ResistiveElement.h UI/ExpandingSpacer.h UI/HamburgerMenu.cc UI/HamburgerMenu.h)
 
 set(ICON_PATH ${PROJECT_SOURCE_DIR}/resources/CircuitTester.icns)
 set(CircuitTester_ICON "${ICON_PATH}")

@@ -3,7 +3,82 @@
 //
 
 #include "SettingsMenu.h"
+
 #include <iostream>
+
+#if (QT_VERSION < QT_VERSION_CHECK(4, 6, 0)) // No animations below this
+SettingsMenu::SettingsMenu() : QWidget(NULL){
+    // Create the container with the title of settings.
+    contentArea = new QGroupBox("Settings");
+    toggleButton = new QToolButton();
+    mainLayout = new QGridLayout();
+
+    innerLayout = new QVBoxLayout();
+
+    toggleButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    toggleButton->setArrowType(Qt::LeftArrow);
+    toggleButton->setCheckable(true);
+    // Default to closed.
+    toggleButton->setChecked(false);
+    toggleButton->setHidden(true);
+
+    // Fixed horizontal size, expands vertically as much as possible.
+    contentArea->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+    // Set width to 0 initially so it starts minimised.
+    contentArea->setMaximumWidth(0);
+    contentArea->setMinimumWidth(0);
+
+    mainLayout->setVerticalSpacing(0);
+    // No margins.
+    mainLayout->setContentsMargins(0, 0, 0, 0);
+
+    // Add the button at coordinates 0, 0.
+    mainLayout->addWidget(toggleButton, 0, 0, 1, 1, Qt::AlignTop);
+    // Add the changeable widget at coordinates 0, 1, i.e. to the right of the button.
+    mainLayout->addWidget(contentArea, 0, 1, 1, 1);
+
+    setLayout(mainLayout);
+
+    setContentLayout(innerLayout);
+}
+
+
+void SettingsMenu::setContentLayout(QLayout* contentLayout) {
+    contentArea->setLayout(contentLayout);
+}
+
+void SettingsMenu::clear() {
+    for(int i=0 ; i<innerLayout->count() ; i++){
+        // Hide the widget so it disappears.
+        innerLayout->itemAt(i)->widget()->setHidden(true);
+
+        // Remove the widget.
+        innerLayout->removeItem(innerLayout->itemAt(i));
+    }
+}
+
+void SettingsMenu::setInteriorLayout(QLayout* layout) {
+    // Check layout is not a null pointer.
+    if(layout == NULL){
+        return;
+    }
+
+    // Remove any widgets there already.
+    clear();
+
+    // Create a widget, set the layout to the passed layout.
+    QWidget* newWidget = new QWidget;
+    newWidget->setLayout(layout);
+
+    // Add the widget to the inner layout.
+    innerLayout->addWidget(newWidget);
+}
+
+void SettingsMenu::startAnimation(bool checked) {
+
+}
+
+#else
 
 SettingsMenu::SettingsMenu() : QWidget(NULL){
     // Create an animation group
@@ -106,3 +181,5 @@ void SettingsMenu::setInteriorLayout(QLayout* layout) {
     // Add the widget to the inner layout.
     innerLayout->addWidget(newWidget);
 }
+
+#endif
